@@ -1,0 +1,48 @@
+package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados
+
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
+import com.pruden.tetris_2.Piezas.Piezas
+
+fun izquierda_4x1(pieza: Piezas) {
+    var puedeMoverse = true
+    if (pieza.getOrientacion() == 0) {
+        puedeMoverse = if (pieza.getColumnaCentro() != 1) {
+            matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() - 2] == 0
+        } else {
+            false
+        }
+    } else if (pieza.getOrientacion() == 2) {
+        puedeMoverse = if (pieza.getColumnaCentro() != 2) {
+            matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() - 3] == 0
+        } else {
+            false
+        }
+    } else if (pieza.getOrientacion() == 3) {
+        if (pieza.getColumnaCentro() != 0) {
+            for (i in -2..1) {
+                if (matrizNumerica[pieza.getFilaCentro() + i][pieza.getColumnaCentro() - 1] != 0) {
+                    puedeMoverse = false
+                    break
+                }
+            }
+        } else {
+            puedeMoverse = false
+        }
+    } else if (pieza.getOrientacion() == 1) {
+        if (pieza.getColumnaCentro() != 0) {
+            for (i in -1..2) {
+                if (matrizNumerica[pieza.getFilaCentro() + i][pieza.getColumnaCentro() - 1] != 0) {
+                    puedeMoverse = false
+                    break
+                }
+            }
+        } else {
+            puedeMoverse = false
+        }
+    }
+    if (puedeMoverse) {
+        pieza.limpiar()
+        pieza.columna = (pieza.columna - 1)
+        pieza.pintar()
+    }
+}

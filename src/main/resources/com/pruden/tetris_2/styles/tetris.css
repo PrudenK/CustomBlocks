@@ -1,0 +1,15 @@
+.casillas {
+    -fx-background-color: #595757;
+    -fx-border-color: white;
+    -fx-border-width: 0.2px;
+    -fx-max-width: 30px;
+    -fx-min-width: 30px;
+    -fx-max-height: 30px;
+    -fx-min-height: 30px;
+}
+
+.tablero{
+    -fx-border-color: white;
+    -fx-border-width: 0.5px;
+}
+

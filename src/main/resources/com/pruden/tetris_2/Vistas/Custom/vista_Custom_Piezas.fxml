@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="700.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <children>
+      <Button layoutX="230.0" layoutY="760.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+      <Label layoutX="132.0" layoutY="29.0" prefHeight="32.0" prefWidth="437.0" text="¡Elige las piezas con las que vas a jugar!" textFill="#b7b7b7">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+
+        <ScrollPane hbarPolicy="NEVER" layoutX="60.0" layoutY="84.0" prefHeight="652.0" prefWidth="580.0" styleClass="pane-1" vbarPolicy="AS_NEEDED">
+         <content>
+            <Pane prefHeight="1293.0" prefWidth="568.0">
+               <children>
+                  <ImageView fitHeight="79.0" fitWidth="77.0" layoutX="39.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_O.png" />
+                       </image>
+                  </ImageView>
+                  <ImageView fitHeight="121.0" fitWidth="35.0" layoutX="204.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../../../../Imagenes/Piezas/Pieza_I.png" />
+                      </image>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="65.0" layoutX="329.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../../../../Imagenes/Piezas/Pieza_L.png" />
+                      </image>
+                  </ImageView>
+                   <ImageView fitHeight="61.0" fitWidth="94.0" layoutX="440.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_Z.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="99.0" fitWidth="63.0" layoutX="45.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_J.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="63.0" fitWidth="89.0" layoutX="180.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_S.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="63.0" fitWidth="89.0" layoutX="320.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_T.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="88.0" fitWidth="67.0" layoutX="464.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_P.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="93.0" fitWidth="102.0" layoutX="34.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_X.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="62.0" fitWidth="90.0" layoutX="179.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_U.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="328.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_L_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="458.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_W.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="33.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_T_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="184.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_Z_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="329.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_X_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="92.0" fitWidth="93.0" layoutX="457.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_L_v3.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="35.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_F.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="205.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="330.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_S_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="471.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_B.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="40.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_Y.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="194.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_K.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="361.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_I_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="456.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_C.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="32.0" layoutY="980.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v3.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="195.0" layoutY="1006.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_V.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="338.0" layoutY="980.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_H.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="110.0" fitWidth="33.0" layoutX="482.0" layoutY="962.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_I_v3.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="39.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_Y_v2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="196.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v4.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="340.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_1.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="452.0" layoutY="1119.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../../../../../Imagenes/Piezas/Pieza_A.png" />
+                       </image>
+                   </ImageView>
+                  <Label layoutX="36.0" layoutY="161.0" text="Pieza O" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                   <Label layoutX="181.0" layoutY="161.0" text="Pieza I" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="326.0" layoutY="163.0" text="Pieza L" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="454.0" layoutY="162.0" text="Pieza Z" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="42.0" layoutY="323.0" text="Pieza J" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="186.0" layoutY="323.0" text="Pieza S" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="329.0" layoutY="323.0" text="Pieza T" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="458.0" layoutY="323.0" text="Pieza P" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="41.0" layoutY="489.0" text="Pieza X" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="185.0" layoutY="487.0" text="Pieza U" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="327.0" layoutY="489.0" text="Pieza L v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="461.0" layoutY="489.0" text="Pieza W" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="32.0" layoutY="647.0" text="Pieza T v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="181.0" layoutY="647.0" text="Pieza Z v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="329.0" layoutY="647.0" text="Pieza X v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="453.0" layoutY="647.0" text="Pieza L v3" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="50.0" layoutY="791.0" text="Pieza F" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="191.0" layoutY="791.0" text="Pieza O v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="329.0" layoutY="791.0" text="Pieza S v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="469.0" layoutY="791.0" text="Pieza B" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="49.0" layoutY="928.0" text="Pieza Y" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="203.0" layoutY="929.0" text="Pieza K" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="335.0" layoutY="930.0" text="Pieza I v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="469.0" layoutY="929.0" text="Pieza C" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="32.0" layoutY="1081.0" text="Pieza O v3" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="201.0" layoutY="1081.0" text="Pieza V" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="342.0" layoutY="1080.0" text="Pieza H" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="454.0" layoutY="1079.0" text="Pieza I v3" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="33.0" layoutY="1224.0" text="Pieza Y v2" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="194.0" layoutY="1223.0" text="Pieza O v4" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="350.0" layoutY="1223.0" text="Pieza 1" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <Label layoutX="463.0" layoutY="1223.0" text="Pieza A" textFill="#b7b7b7">
+                       <font>
+                           <Font name="System Bold" size="14.0" />
+                       </font>
+                   </Label>
+                   <CheckBox fx:id="ck_O" layoutX="98.0" layoutY="161.0" mnemonicParsing="false" selected="true" />
+                   <CheckBox fx:id="ck_I" layoutX="237.0" layoutY="161.0" mnemonicParsing="false" selected="true" />
+                   <CheckBox fx:id="ck_L" layoutX="385.0" layoutY="163.0" mnemonicParsing="false" selected="true" />
+                   <CheckBox fx:id="ck_Z" layoutX="516.0" layoutY="164.0" mnemonicParsing="false" selected="true" />
+                   <CheckBox fx:id="ck_J" layoutX="106.0" layoutY="325.0" mnemonicParsing="false" selected="true" />
+                   <CheckBox fx:id="ck_S" layoutX="245.0" layoutY="325.0" mnemonicParsing="false" selected="true" />
+                   <CheckBox fx:id="ck_T" layoutX="385.0" layoutY="324.0" mnemonicParsing="false" selected="true" />
+                   <CheckBox fx:id="ck_P" layoutX="516.0" layoutY="325.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_X" layoutX="108.0" layoutY="488.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_U" layoutX="248.0" layoutY="488.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_L_v2" layoutX="403.0" layoutY="490.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_W" layoutX="525.0" layoutY="490.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_T_v2" layoutX="111.0" layoutY="647.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_Z_v2" layoutX="258.0" layoutY="647.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_X_v2" layoutX="405.0" layoutY="647.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_L_v3" layoutX="526.0" layoutY="647.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_F" layoutX="111.0" layoutY="791.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_O_v2" layoutX="269.0" layoutY="791.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_S_v2" layoutX="403.0" layoutY="791.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_B" layoutX="525.0" layoutY="793.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_Y" layoutX="111.0" layoutY="930.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_K" layoutX="269.0" layoutY="931.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_I_v2" layoutX="407.0" layoutY="932.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_C" layoutX="525.0" layoutY="932.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_O_v3" layoutX="111.0" layoutY="1080.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_V" layoutX="265.0" layoutY="1080.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_H" layoutX="405.0" layoutY="1079.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_I_v3" layoutX="524.0" layoutY="1080.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_Y_v2" layoutX="112.0" layoutY="1224.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_O_v4" layoutX="272.0" layoutY="1224.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_1" layoutX="407.0" layoutY="1224.0" mnemonicParsing="false" />
+                   <CheckBox fx:id="ck_A" layoutX="524.0" layoutY="1224.0" mnemonicParsing="false" />
+                </children>
+            </Pane>
+         </content>
+        </ScrollPane>
+      <Button fx:id="guarda_y_salir" layoutX="350.0" layoutY="760.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y salir" />
+   </children>
+</Pane>

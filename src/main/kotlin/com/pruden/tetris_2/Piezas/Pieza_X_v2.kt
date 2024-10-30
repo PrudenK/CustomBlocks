@@ -1,0 +1,90 @@
+package com.pruden.tetris_2.Piezas
+
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar3x3
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_3x3
+import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
+import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
+import javafx.scene.paint.Color
+
+class Pieza_X_v2 (override var fila: Int, override var columna: Int) : Piezas(fila, columna) {
+    private var orientacion = 0
+    private var columnaCentro = columna+1
+    private var filaCentro = fila
+
+    private val CENTRO = 158
+    private val NUMPIEZA = 15
+    private val COLOR = Color.GOLD
+
+    private val FORMAS_X_v2 = arrayOf(
+        arrayOf(
+            intArrayOf(NUMPIEZA, BLANCO, NUMPIEZA),
+            intArrayOf(BLANCO, CENTRO, BLANCO),
+            intArrayOf(NUMPIEZA, BLANCO, NUMPIEZA)
+        )
+    )
+
+    companion object {
+        const val NUMPIEZA_X_v2 = 15
+        const val CENTRO_X_v2 = 158
+        val COLOR_X_v2 = Color.GOLD!!
+    }
+
+    override fun limpiar() {
+        limpiarPieza(this)
+    }
+
+    override fun pintar() {
+        val filaColumna = pintarPieza(this)
+        filaCentro = filaColumna[0]
+        columnaCentro = filaColumna[1]
+    }
+
+    override fun rotar(): Boolean {
+        return true
+    }
+
+    override fun bajar(): Boolean {
+        return bajar3x3(this, intArrayOf(0, 2, 1, 1, 0, 2))
+    }
+
+    override fun derecha() {
+        moverDerechaIzquierda_3x3(this, intArrayOf(0, 2, 1, 1, 0, 2), 1)
+    }
+
+    override fun izquierda() {
+        moverDerechaIzquierda_3x3(this, intArrayOf(0, -2, -1, -1, 0, -2), -1)
+    }
+
+    override fun getForma(): Array<Array<IntArray>>  {
+        return FORMAS_X_v2
+    }
+
+    override fun getOrientacion(): Int {
+        return orientacion
+    }
+
+    override fun getColumnaCentro(): Int {
+        return columnaCentro
+    }
+
+    override fun getFilaCentro(): Int {
+        return filaCentro
+    }
+
+    override fun getNumpieza(): Int {
+        return NUMPIEZA
+    }
+
+    override fun getCentro(): Int {
+        return CENTRO
+    }
+
+    override fun getColor(): Color {
+        return COLOR
+    }
+
+    override fun set_Orientacion(ori: Int) {
+        orientacion = ori
+    }
+
+}

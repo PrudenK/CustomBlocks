@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="600.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <children>
+      <Button layoutX="55.0" layoutY="457.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+      <Button layoutX="431.0" layoutY="457.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y volver" />
+      <Button layoutX="184.0" layoutY="457.0" mnemonicParsing="false" onAction="#reestablecer" text="Reestablecer configuración" />
+      <Label layoutX="41.0" layoutY="74.0" prefHeight="25.0" prefWidth="181.0" text="Tiempo de caída inicial" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="349.0" layoutY="78.0" prefHeight="25.0" prefWidth="26.0" text="ms" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTiempoCaidaInicial" layoutX="307.0" layoutY="81.0" prefHeight="18.0" prefWidth="43.0" />
+      <Button layoutX="378.0" layoutY="71.0" minWidth="32.0" mnemonicParsing="false" onAction="#masTiempoCaidaInicial" prefHeight="30.0" prefWidth="32.0" text="+" />
+      <Button layoutX="246.0" layoutY="72.0" mnemonicParsing="false" onAction="#menosTiempoCaidaInicial" text="-" />
+      <Label layoutX="41.0" layoutY="136.0" prefHeight="25.0" prefWidth="181.0" text="Líneas para salto de nivel" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="247.0" layoutY="131.0" mnemonicParsing="false" onAction="#menosLinesSaltoNivel" text="-" />
+      <Button layoutX="378.0" layoutY="131.0" mnemonicParsing="false" onAction="#masLinesSaltoNivel" text="+" />
+      <Label fx:id="labelLinesSaltoNivel" layoutX="319.0" layoutY="140.0" prefHeight="18.0" prefWidth="43.0" />
+      <Label layoutX="41.0" layoutY="195.0" prefHeight="25.0" prefWidth="181.0" text="Salto de tiempo por nivel" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="247.0" layoutY="193.0" mnemonicParsing="false" onAction="#menosSaltoTiempoNivel" text="-" />
+      <Button layoutX="378.0" layoutY="193.0" mnemonicParsing="false" onAction="#masSaltoTiempoNivel" text="+" />
+      <Label fx:id="labelSaltoTiempoNivel" layoutX="309.0" layoutY="202.0" prefHeight="18.0" prefWidth="36.0" />
+      <Label layoutX="349.0" layoutY="196.0" prefHeight="25.0" prefWidth="26.0" text="ms" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="265.0" prefHeight="25.0" prefWidth="181.0" text="Límite de rotaciones" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="menosLimiteRotacionesB" layoutX="246.0" layoutY="263.0" mnemonicParsing="false" onAction="#menosLimiteRotaciones" text="-" />
+      <Button fx:id="masLimiteRotacionesB" layoutX="378.0" layoutY="263.0" mnemonicParsing="false" onAction="#masLimiteRotaciones" text="+" />
+      <Label fx:id="labelLimiteRotaciones" layoutX="319.0" layoutY="269.0" prefHeight="18.0" prefWidth="43.0" />
+      <Button fx:id="activarLimite" layoutX="485.0" layoutY="263.0" mnemonicParsing="false" onAction="#limiteB" text="sin limite" />
+      <Label layoutX="40.0" layoutY="323.0" prefHeight="25.0" prefWidth="181.0" text="Desactivar Hold" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="activarHoldB" layoutX="243.0" layoutY="321.0" mnemonicParsing="false" onAction="#activarHold" text="Activo" />
+      <Button fx:id="siguientesPiezasB" layoutX="242.0" layoutY="379.0" mnemonicParsing="false" onAction="#siguientesPiezas" text="Activo" />
+      <Label layoutX="40.0" layoutY="381.0" prefHeight="25.0" prefWidth="181.0" text="Siguientes piezas" textFill="#ddd8d8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

@@ -1,0 +1,73 @@
+/* Archivo: tetris.css */
+
+/* Estilo para todos los botones */
+.button {
+    -fx-background-color: #4b4b4b; /* Gris oscuro */
+    -fx-text-fill: white; /* Texto blanco */
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-font-weight: bold; /* Fuente en negrita */
+    -fx-padding: 4 8; /* Espaciado interno */
+    -fx-border-radius: 5; /* Bordes redondeados */
+    -fx-background-radius: 5; /* Bordes redondeados */
+    -fx-border-color: #6c6c6c; /* Gris más claro para el borde */
+    -fx-border-width: 2; /* Ancho del borde */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.5, 0, 2); /* Sombra */
+    -fx-cursor: hand; /* Cursor de mano al pasar sobre el botón */
+}
+
+.button:hover {
+    -fx-background-color: #6c6c6c; /* Gris intermedio al pasar el ratón */
+}
+
+.button:pressed {
+    -fx-background-color: #3c3c3c; /* Gris más oscuro al hacer clic */
+}
+
+.pane-1{
+    -fx-background-color: #595959; /* Gris claro */
+    -fx-border-color: #2e2f2f; /* Gris más oscuro para el borde */
+    -fx-border-width: 5; /* Ancho del borde */
+}
+.scroll-pane {
+    -fx-background-color: #595959; /* Cambia el color de fondo aquí */
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #595959; /* Cambia el color de fondo del área de contenido aquí */
+}
+
+.scroll-pane .thumb {
+    -fx-background-color: #888; /* Opcional: Cambia el color de la barra de desplazamiento */
+}
+
+  /*
+
+.root {
+    -fx-background-color: #515757;
+}
+
+.secondary-pane {
+    -fx-background-color: #A9A9A9;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+
+#label_puntuacion {
+    -fx-text-fill: #00ff00;
+}
+
+
+#label_nivel {
+    -fx-text-fill: #ffff00;
+}
+
+
+#label_lineas {
+    -fx-text-fill: #ff4500;
+}
+*/

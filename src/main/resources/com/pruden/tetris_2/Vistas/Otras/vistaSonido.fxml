@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--  -->
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="305.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Otros.ControladorSonido">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <children>
+      <Slider fx:id="barraMusica" layoutX="80.0" layoutY="139.0" />
+      <Button layoutX="77.0" layoutY="285.0" mnemonicParsing="false" onAction="#atras" prefHeight="33.0" prefWidth="140.0" text="Volver Atrás" />
+      <Slider fx:id="barraEfectosSonido" layoutX="80.0" layoutY="193.0" prefHeight="33.0" prefWidth="140.0" />
+      <Label layoutX="105.0" layoutY="113.0" prefHeight="17.0" prefWidth="83.0" text="Música" />
+      <Label layoutX="97.0" layoutY="169.0" prefHeight="17.0" prefWidth="107.0" text="Efectos de sonido" />
+      <Label fx:id="porcentajeMusica" layoutX="230.0" layoutY="138.0" prefHeight="17.0" prefWidth="41.0" />
+      <Label fx:id="porcentajeEfectos" layoutX="230.0" layoutY="201.0" prefHeight="17.0" prefWidth="47.0" />
+   </children>
+</Pane>

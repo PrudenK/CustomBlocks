@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="370.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaOtrasConfi">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <children>
+        <Button layoutX="65.0" layoutY="140.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+        <Button layoutX="232.0" layoutY="140.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+        <Label layoutX="35.0" layoutY="66.0" prefHeight="27.0" prefWidth="350.0" text="Si guardas las nuevas configuraciones" textFill="#bfb9b9">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+      <Label layoutX="100.0" layoutY="93.0" text=" la partida se reiniciará" textFill="#bfb9b9">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

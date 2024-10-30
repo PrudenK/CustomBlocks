@@ -1,0 +1,38 @@
+package com.pruden.tetris_2.Metodos.IniciarPartida
+
+import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.lockCuentaRegresiva
+import javafx.scene.control.Label
+import java.util.concurrent.locks.Lock
+
+
+private lateinit var lineas: Label
+private lateinit var puntuacion: Label
+
+
+fun iniciarPartida(){
+    pararTimeline()
+    sincronizacion()
+
+    configuracionesIniciarPartida()
+    actualizarTimeline()
+}
+
+private fun sincronizacion(){
+    synchronized(lockCuentaRegresiva){
+        while (!ControladorPrincipal.cuentaRegresivaHecha){
+            try {
+                (lockCuentaRegresiva as Object).wait()
+            }catch (e : InterruptedException) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
+
+
+fun initLabels(label_puntuacion : Label, label_lineas : Label){
+    lineas = label_lineas
+    puntuacion = label_puntuacion
+}
+
