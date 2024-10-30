@@ -7,23 +7,23 @@ import com.pruden.tetris_2.Piezas.Piezas
 
 fun bajar_4x1(pieza: Piezas): Boolean {
     var puedeBajar = true
-    if (pieza.getOrientacion() == 0) {
+    if (pieza.orientacion == 0) {
         for (i in -1..2) {
             if (matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + i] != 0) {
                 puedeBajar = false
                 break
             }
         }
-    } else if (pieza.getOrientacion() == 2) {
+    } else if (pieza.orientacion == 2) {
         for (i in -2..1) {
             if (matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + i] != 0) {
                 puedeBajar = false
                 break
             }
         }
-    } else if (pieza.getOrientacion() == 3) {
+    } else if (pieza.orientacion == 3) {
         puedeBajar = matrizNumerica[pieza.getFilaCentro() + 2][pieza.getColumnaCentro()] == 0
-    } else if (pieza.getOrientacion() == 1) {
+    } else if (pieza.orientacion == 1) {
         puedeBajar = matrizNumerica[pieza.getFilaCentro() + 3][pieza.getColumnaCentro()] == 0
     }
     if (puedeBajar) {

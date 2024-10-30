@@ -7,7 +7,7 @@ import javafx.scene.canvas.GraphicsContext
 
 fun moverDerechaIzquierda_3x1(pieza: Piezas, dech_o_izq: Int) { //1 o -1
     var puedeMoverse = true
-    puedeMoverse = if (pieza.getOrientacion() == 0) {
+    puedeMoverse = if (pieza.orientacion == 0) {
         matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + 2 * dech_o_izq] == BLANCO
     } else {
         matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + dech_o_izq] == BLANCO

@@ -44,7 +44,7 @@ fun dibujarTableroSecundarioTIPO1(gc: GraphicsContext) {
 }
 
 fun pintarPiezaTableroTIPO1(gc: GraphicsContext, pieza : Piezas) {
-    val forma = pieza.getForma()[pieza.getOrientacion()]
+    val forma = pieza.getForma()[pieza.orientacion]
     for (i in forma.indices) {
         for (j in forma[i].indices) {
             if (forma[i][j] != BLANCO && forma[i][j] != CENTRO_BLANCO) {

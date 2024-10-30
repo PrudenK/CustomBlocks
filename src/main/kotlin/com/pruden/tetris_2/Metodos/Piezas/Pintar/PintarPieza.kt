@@ -5,7 +5,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNu
 import com.pruden.tetris_2.Piezas.Piezas
 
 fun pintarPieza(pieza: Piezas) : IntArray{
-    val forma = pieza.getForma()[pieza.getOrientacion()]
+    val forma = pieza.getForma()[pieza.orientacion]
     val filaColumna = IntArray(2)
 
     for (i in forma.indices) {

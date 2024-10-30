@@ -64,7 +64,7 @@ fun dibujarTableroSecundarioTIPO0(gc: GraphicsContext) {
 
 
 fun pintarPiezaTableroTIPO0(gc: GraphicsContext, pieza: Piezas) {
-    val forma = pieza.getForma()[pieza.getOrientacion()]
+    val forma = pieza.getForma()[pieza.orientacion]
 
     // Calcular el tamaño del tablero en píxeles
     val tamanoTableroEnPixeles: Int = TAMA_TABLERO_SECUN.toInt() * TAMA_CELDA_SECUN.toInt()

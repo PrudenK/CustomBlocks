@@ -13,8 +13,6 @@ interface FuncionesPiezas {
 
     fun getForma(): Array<Array<IntArray>>
 
-    fun getOrientacion(): Int
-
     fun getColumnaCentro(): Int
 
     fun getFilaCentro(): Int
@@ -33,4 +31,5 @@ interface FuncionesPiezas {
 
     fun set_Orientacion(ori: Int)
 
+    fun puedeRotar(nuevaOrientacion: Int) : Boolean
 }

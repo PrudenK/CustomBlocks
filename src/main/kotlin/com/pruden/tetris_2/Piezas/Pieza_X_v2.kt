@@ -6,8 +6,9 @@ import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
 import javafx.scene.paint.Color
 
-class Pieza_X_v2 (override var fila: Int, override var columna: Int) : Piezas(fila, columna) {
-    private var orientacion = 0
+class Pieza_X_v2 (override var fila: Int, override var columna: Int,
+                  override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
+    : Piezas(fila, columna, orientacion, condicionEspecial_b) {
     private var columnaCentro = columna+1
     private var filaCentro = fila
 
@@ -59,9 +60,6 @@ class Pieza_X_v2 (override var fila: Int, override var columna: Int) : Piezas(fi
         return FORMAS_X_v2
     }
 
-    override fun getOrientacion(): Int {
-        return orientacion
-    }
 
     override fun getColumnaCentro(): Int {
         return columnaCentro
@@ -85,6 +83,10 @@ class Pieza_X_v2 (override var fila: Int, override var columna: Int) : Piezas(fi
 
     override fun set_Orientacion(ori: Int) {
         orientacion = ori
+    }
+
+    override fun puedeRotar(nuevaOrientacion: Int): Boolean {
+        return false
     }
 
 }

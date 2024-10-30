@@ -4,14 +4,16 @@ import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar3x3
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_3x3
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones.condicionRotarEspecial
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones.rotarNormal
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
 import javafx.scene.paint.Color
 
-class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila, columna) {
-    private var orientacion = 0
+class Pieza_1 (override var fila: Int, override var columna: Int,
+               override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
+    : Piezas(fila, columna, orientacion, condicionEspecial_b) {
+
     private var columnaCentro = columna+1
     private var filaCentro = fila
-
     private val CENTRO = 328
     private val NUMPIEZA = 32
     private val COLOR = Color.web("ecffa9")
@@ -43,7 +45,6 @@ class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila,
         const val NUMPIEZA_1 = 32
         const val CENTRO_1 = 328
         val COLOR_1 = Color.web("ecffa9")!!
-        var condicionEspecial_b = false
     }
 
     override fun limpiar() {
@@ -56,23 +57,11 @@ class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila,
         columnaCentro = filaColumna[1]
     }
 
-
-    private fun condicionRotar_especial(d_f1: Int, d_c1: Int, d_f2: Int, d_c2: Int, d_f3: Int, d_c3: Int, d_f4: Int, d_c4: Int,
-                                        columna_bolean: Boolean, movimiento: Int): Boolean {
-        return if (matrizNumerica[filaCentro + d_f1][columnaCentro + d_c1] == BLANCO
-            && matrizNumerica[filaCentro + d_f2][columnaCentro + d_c2] == BLANCO
-            && matrizNumerica[filaCentro + d_f3][columnaCentro + d_c3] == BLANCO
-            && matrizNumerica[filaCentro + d_f4][columnaCentro + d_c4] == BLANCO) {
-            limpiar()
-            if (columna_bolean) {
-                columna += movimiento
-            } else fila += movimiento
-            condicionEspecial_b = true
-            true
-        } else false
+    override fun rotar(): Boolean {
+        return rotarNormal(this,4)
     }
 
-    private fun puedeRotar(nuevaOrientacion: Int): Boolean {
+    override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         condicionEspecial_b = false
         if (nuevaOrientacion == 0) {
             if (matrizNumerica[filaCentro - 1][columnaCentro - 1] == BLANCO
@@ -84,8 +73,7 @@ class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila,
                     || matrizNumerica[filaCentro - 1][columnaCentro] != BLANCO) {
                     return condicionRotarEspecial(this, intArrayOf(1,2,2,2), intArrayOf(0,-1,0,1), false, 1)
                 }
-            }
-            //condicionRotar_especial( 1, 0, 2, -1, 2, 0, 2, 1, false, 1)
+            } //condicionRotar_especial( 1, 0, 2, -1, 2, 0, 2, 1, false, 1)
         } else if (nuevaOrientacion == 1) {
             if (matrizNumerica[filaCentro][columnaCentro - 1] == BLANCO
                 && matrizNumerica[filaCentro - 1][columnaCentro + 1] == BLANCO
@@ -96,8 +84,7 @@ class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila,
                     || matrizNumerica[filaCentro][columnaCentro + 1] != BLANCO) {
                     return condicionRotarEspecial(this, intArrayOf(-1,0,0,1), intArrayOf(-2,-2,-1,-2), true, -1)
                 }
-            }
-            // condicionRotar_especial( -1, -2, 0, -2, 0, -1, 1, -2, true, -1)
+            } // condicionRotar_especial( -1, -2, 0, -2, 0, -1, 1, -2, true, -1)
         } else if (nuevaOrientacion == 2) {
             if (matrizNumerica[filaCentro - 1][columnaCentro] == BLANCO
                 && matrizNumerica[filaCentro + 1][columnaCentro] == BLANCO
@@ -108,9 +95,7 @@ class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila,
                     || matrizNumerica[filaCentro + 1][columnaCentro + 1] != BLANCO) {
                     return condicionRotarEspecial(this, intArrayOf(-1,-2,-2,-2), intArrayOf(0,-1,0,1), false, -1)
                 }
-            }
-            // condicionRotar_especial( -1, 0, -2, -1, -2, 0, -2, 1, false, -1)
-
+            } // condicionRotar_especial( -1, 0, -2, -1, -2, 0, -2, 1, false, -1)
         } else {
             if (matrizNumerica[filaCentro][columnaCentro - 1] == BLANCO
                 && matrizNumerica[filaCentro][columnaCentro + 1] == BLANCO
@@ -121,25 +106,10 @@ class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila,
                     || matrizNumerica[filaCentro + 1][columnaCentro - 1] != BLANCO) {
                     return condicionRotarEspecial(this, intArrayOf(-1,0,0,1), intArrayOf(2,2,1,2), true, 1)
                 }
-            }
-            // condicionRotar_especial( -1, 2, 0, 2, 0, 1, 1, 2, true, 1)
+            } // condicionRotar_especial( -1, 2, 0, 2, 0, 1, 1, 2, true, 1)
         }
         return false
     }
-
-    override fun rotar(): Boolean {
-        val nuevaOrientacion = (orientacion + 1) % 4
-        if (puedeRotar(nuevaOrientacion)) {
-            if (!condicionEspecial_b) {
-                limpiar()
-            }
-            orientacion = nuevaOrientacion
-            pintar()
-            return true
-        }
-        return false
-    }
-
 
     override fun bajar(): Boolean {
         return bajar3x3(this, intArrayOf(0, 2, 2, 2, 2, 2, 0, 0, 2, 2, 0, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2))
@@ -155,10 +125,6 @@ class Pieza_1 (override var fila: Int, override var columna: Int) : Piezas(fila,
 
     override fun getForma(): Array<Array<IntArray>>  {
         return FORMAS_1
-    }
-
-    override fun getOrientacion(): Int {
-        return orientacion
     }
 
     override fun getColumnaCentro(): Int {

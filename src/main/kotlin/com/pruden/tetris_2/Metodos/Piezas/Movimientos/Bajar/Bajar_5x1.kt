@@ -7,7 +7,7 @@ import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
 import com.pruden.tetris_2.Piezas.Piezas
 
 fun bajar_5x1(pieza: Piezas): Boolean {
-    val puedeBajar = if (pieza.getOrientacion() == 0) {
+    val puedeBajar = if (pieza.orientacion == 0) {
         matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() - 2] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() - 1] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro()] == BLANCO

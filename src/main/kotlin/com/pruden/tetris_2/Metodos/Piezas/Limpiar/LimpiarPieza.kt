@@ -8,7 +8,7 @@ import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
 import com.pruden.tetris_2.Piezas.Piezas
 
 fun limpiarPieza(pieza: Piezas){
-    val forma = pieza.getForma()[pieza.getOrientacion()]
+    val forma = pieza.getForma()[pieza.orientacion]
     for (i in forma.indices) {
         for (j in forma[i].indices) {
             if (forma[i][j] == pieza.getNumpieza()){

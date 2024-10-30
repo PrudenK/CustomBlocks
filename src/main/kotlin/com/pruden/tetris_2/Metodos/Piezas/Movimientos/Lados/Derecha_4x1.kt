@@ -6,20 +6,20 @@ import com.pruden.tetris_2.Piezas.Piezas
 
 fun derecha_4x1(pieza: Piezas) {
     var puedeMoverse = true
-    if (pieza.getOrientacion() == 0) {
+    if (pieza.orientacion == 0) {
 
         puedeMoverse = if (pieza.getColumnaCentro() != COLUMNAS - 3) {
             matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + 3] == 0
         } else {
             false
         }
-    } else if (pieza.getOrientacion() == 2) {
+    } else if (pieza.orientacion == 2) {
         puedeMoverse = if (pieza.getColumnaCentro() != COLUMNAS - 2) {
             matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + 2] == 0
         } else {
             false
         }
-    } else if (pieza.getOrientacion() == 3) {
+    } else if (pieza.orientacion == 3) {
         if (pieza.getColumnaCentro() != COLUMNAS - 1) {
             for (i in -2..1) {
                 if (matrizNumerica[pieza.getFilaCentro() + i][pieza.getColumnaCentro() + 1] != 0) {
@@ -30,7 +30,7 @@ fun derecha_4x1(pieza: Piezas) {
         } else {
             puedeMoverse = false
         }
-    } else if (pieza.getOrientacion() == 1) {
+    } else if (pieza.orientacion == 1) {
         if (pieza.getColumnaCentro() != COLUMNAS - 1) {
             for (i in -1..2) {
                 if (matrizNumerica[pieza.getFilaCentro() + i][pieza.getColumnaCentro() + 1] != 0) {

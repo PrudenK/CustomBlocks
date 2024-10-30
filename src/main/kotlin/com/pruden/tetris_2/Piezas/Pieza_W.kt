@@ -3,11 +3,13 @@ package com.pruden.tetris_2.Piezas
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar3x3
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_3x3
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones.rotarNormal
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
 import javafx.scene.paint.Color
 
-class Pieza_W (override var fila: Int, override var columna: Int) : Piezas(fila, columna) {
-    private var orientacion = 0
+class Pieza_W (override var fila: Int, override var columna: Int,
+               override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
+    : Piezas(fila, columna, orientacion, condicionEspecial_b) {
     private var columnaCentro = columna+1
     private var filaCentro = fila
 
@@ -54,8 +56,10 @@ class Pieza_W (override var fila: Int, override var columna: Int) : Piezas(fila,
         columnaCentro = filaColumna[1]
     }
 
-
-    private fun puedeRotar(nuevaOrientacion: Int): Boolean {
+    override fun rotar(): Boolean {
+        return rotarNormal(this,4)
+    }
+    override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         return if (nuevaOrientacion == 0) {
             matrizNumerica[filaCentro - 1][columnaCentro - 1] == BLANCO
                     && matrizNumerica[filaCentro][columnaCentro - 1] == BLANCO
@@ -75,17 +79,6 @@ class Pieza_W (override var fila: Int, override var columna: Int) : Piezas(fila,
         }
     }
 
-    override fun rotar(): Boolean {
-        val nuevaOrientacion = (orientacion + 1) % 4
-        if (puedeRotar(nuevaOrientacion)) {
-            limpiar()
-            orientacion = nuevaOrientacion
-            pintar()
-            return true
-        }
-        return false
-    }
-
 
     override fun bajar(): Boolean {
         return bajar3x3(this, intArrayOf(1,1, 2,2, 2,2, 0,0, 1,1, 2,2, 2,2, 1,1, 0,0, 2,2, 2,2, 1,1))
@@ -103,9 +96,6 @@ class Pieza_W (override var fila: Int, override var columna: Int) : Piezas(fila,
         return FORMAS_W
     }
 
-    override fun getOrientacion(): Int {
-        return orientacion
-    }
 
     override fun getColumnaCentro(): Int {
         return columnaCentro

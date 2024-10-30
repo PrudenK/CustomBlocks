@@ -6,11 +6,14 @@ import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar_4x1
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.derecha_4x1
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.izquierda_4x1
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones.condicionRotarEspecial
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones.rotarNormal
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
 import javafx.scene.paint.Color
 
-class Pieza_I (override var fila: Int, override var columna: Int) : Piezas(fila, columna) {
-    private var orientacion = 0
+class Pieza_I (override var fila: Int, override var columna: Int,
+               override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
+    : Piezas(fila, columna, orientacion, condicionEspecial_b) {
     private var columnaCentro = columna+1
     private var filaCentro = fila
 
@@ -68,24 +71,11 @@ class Pieza_I (override var fila: Int, override var columna: Int) : Piezas(fila,
         columnaCentro = filaColumna[1]
     }
 
-
-    private var condicionEspecial_b = false
-
-    private fun condicionRotar_especial(d_f1: Int, d_c1: Int, d_f2: Int, d_c2: Int, d_f3: Int, d_c3: Int, 
-                                        columna_bolean: Boolean, movimiento: Int): Boolean {
-        return if (matrizNumerica[filaCentro + d_f1][columnaCentro + d_c1] == BLANCO 
-            && matrizNumerica[filaCentro + d_f2][columnaCentro + d_c2] == BLANCO 
-            && matrizNumerica[filaCentro + d_f3][columnaCentro + d_c3] == BLANCO) {
-            limpiar()
-            if (columna_bolean) {
-                columna += movimiento
-            } else fila += movimiento
-            condicionEspecial_b = true
-            true
-        } else false
+    override fun rotar(): Boolean {
+        return rotarNormal(this,4)
     }
 
-    private fun puedeRotar(nuevaOrientacion: Int): Boolean {
+    override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         condicionEspecial_b = false
         return if (nuevaOrientacion == 0) {
             if (columnaCentro <= COLUMNAS - 3 && columnaCentro != 0) {
@@ -95,20 +85,20 @@ class Pieza_I (override var fila: Int, override var columna: Int) : Piezas(fila,
                     true
                 } else {
                     if (matrizNumerica[filaCentro - 1][columnaCentro + 1] != BLANCO) { // para el caso R0-2
-                        return condicionRotar_especial( -1, -1, -1, -2, -1, -3, true, -2)
+                        return condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(-1, -2, -3), true, -2)
                     } else if (matrizNumerica[filaCentro - 1][columnaCentro + 2] != 0) { // para el caso R0-1
-                        return condicionRotar_especial( -1, +1, -1, -1, -1, -2, true, -1)
+                        return condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(1, -1, -2), true, -1)
                     }
-                    condicionRotar_especial( -1, +1, -1, +2, -1, +3, true, +1)
+                    condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(1, 2, 3), true, +1)
                 }
             } else {
                 if (columnaCentro == COLUMNAS - 2) {
                     if (matrizNumerica[filaCentro - 1][columnaCentro + 1] != BLANCO) {
-                        condicionRotar_especial( -1, -1, -1, -2, -1, -3, true, -2)
-                    } else condicionRotar_especial( -1, -1, -1, -2, -1, +1, true, -1)
+                        condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(-1, -2, -3), true, -2)
+                    } else condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(-1, -2, 1), true, -1)
                 } else if (columnaCentro == COLUMNAS - 1) {
-                    condicionRotar_especial( -1, -1, -1, -2, -1, -3, true, -2)
-                } else condicionRotar_especial( -1, +1, -1, +2, -1, +3, true, +1)
+                    condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(-1, -2, -3), true, -2)
+                } else condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(1, 2, 3), true, +1)
             }
         } else if (nuevaOrientacion == 1) {
             if (filaCentro <= FILAS - 3 && filaCentro != 0) {
@@ -118,20 +108,20 @@ class Pieza_I (override var fila: Int, override var columna: Int) : Piezas(fila,
                     true
                 } else {
                     if (matrizNumerica[filaCentro + 1][columnaCentro + 1] != BLANCO) { // R1-2
-                        condicionRotar_especial( -1, +1, -2, +1, -3, +1, false, -2)
+                        condicionRotarEspecial(this,intArrayOf(-1, -2, -3),intArrayOf(1, 1, 1), false, -2)
                     } else if (matrizNumerica[filaCentro + 2][columnaCentro + 1] != BLANCO) { // Para R1-1
-                        condicionRotar_especial( +1, +1, -1, +1, -2, +1, false, -1)
-                    } else condicionRotar_especial(+1, +1, +2, +1, +3, +1, false, +1
+                        condicionRotarEspecial(this,intArrayOf(1, -1, -2),intArrayOf(1, 1, 1), false, -1)
+                    } else condicionRotarEspecial(this,intArrayOf(1, 2, 3),intArrayOf(1, 1, 1),  false, +1
                     ) // R1+1 (punto conflictivo (-1,1))
                 }
             } else {
                 if (filaCentro == FILAS - 2) {
                     if (matrizNumerica[filaCentro + 1][columnaCentro + 1] != BLANCO) { // R1-2
-                        condicionRotar_especial( -1, +1, -2, +1, -3, +1, false, -2)
-                    } else condicionRotar_especial( +1, +1, -1, +1, -2, +1, false, -1)
+                        condicionRotarEspecial(this,intArrayOf(-1, -2, -3),intArrayOf(1, 1, 1), false, -2)
+                    } else condicionRotarEspecial(this,intArrayOf(1, -1, -2),intArrayOf(1, 1, 1), false, -1)
                 } else if (filaCentro == FILAS - 1) {
-                    condicionRotar_especial( -1, +1, -2, +1, -3, +1, false, -2)
-                } else condicionRotar_especial( -1, +1, +1, +1, +2, +1, false, +1)
+                    condicionRotarEspecial(this,intArrayOf(-1, -2, -3),intArrayOf(1, 1, 1), false, -2)
+                } else condicionRotarEspecial(this,intArrayOf(-1, 1, 2),intArrayOf(1, 1, 1), false, +1)
             }
         } else if (nuevaOrientacion == 2) {
             if (columnaCentro >= 2 && columnaCentro != COLUMNAS - 1) {
@@ -141,19 +131,19 @@ class Pieza_I (override var fila: Int, override var columna: Int) : Piezas(fila,
                     true
                 } else {
                     if (matrizNumerica[filaCentro + 1][columnaCentro - 1] != BLANCO) { // R2+2
-                        condicionRotar_especial( +1, +1, +1, +2, +1, +3, true, +2)
+                        condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(1, 2, 3), true, +2)
                     } else if (matrizNumerica[filaCentro + 1][columnaCentro - 2] != 0) { // R2+1
-                        condicionRotar_especial( +1, -1, +1, +1, +1, +2, true, +1)
-                    } else condicionRotar_especial( +1, -1, +1, -2, +1, -3, true, -1)
+                        condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(-1, 1, 2), true, +1)
+                    } else condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(-1, -2, -3), true, -1)
                 }
             } else {
                 if (columnaCentro == 0) {
-                    condicionRotar_especial( +1, +1, +1, +2, +1, +3, true, +2)
+                    condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(1, 2, 3), true, +2)
                 } else if (columnaCentro == 1) {
                     if (matrizNumerica[filaCentro + 1][columnaCentro - 1] != BLANCO) { // R2+2
-                        condicionRotar_especial( +1, +1, +1, +2, +1, +3, true, +2)
-                    } else condicionRotar_especial( +1, -1, +1, +1, +1, +2, true, +1)
-                } else condicionRotar_especial( +1, -1, +1, -2, +1, -3, true, -1)
+                        condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(1, 2, 3), true, +2)
+                    } else condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(-1, 1, 2), true, +1)
+                } else condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(-1, -2, -3), true, -1)
             }
         } else {
             if (filaCentro >= 2 && filaCentro != FILAS - 1) {
@@ -163,35 +153,20 @@ class Pieza_I (override var fila: Int, override var columna: Int) : Piezas(fila,
                     true
                 } else {
                     if (matrizNumerica[filaCentro - 1][columnaCentro - 1] != BLANCO) {
-                        condicionRotar_especial( +1, -1, +2, -1, +3, -1, false, +2)
+                        condicionRotarEspecial(this,intArrayOf(1, 2, 3),intArrayOf(-1, -1, -1), false, +2)
                     } else if (matrizNumerica[filaCentro - 2][columnaCentro - 1] != BLANCO) {
-                        condicionRotar_especial( -1, -1, +1, -1, +2, -1, false, +1)
-                    } else condicionRotar_especial( -1, -1, -2, -1, -3, -1, false, -1)
+                        condicionRotarEspecial(this,intArrayOf(-1, 1, 2),intArrayOf(-1, -1, -1), false, +1)
+                    } else condicionRotarEspecial(this,intArrayOf(-1, -2, -3),intArrayOf(-1, -1, -1), false, -1)
                 }
             } else {
                 if (filaCentro == 0) { //Aquí omito una situación ilógica q en las otras si que tengo en cuenta
-                    condicionRotar_especial( +1, -1, +2, -1, +3, -1, false, +2)
+                    condicionRotarEspecial(this,intArrayOf(1, 2, 3),intArrayOf(-1, -1, -1), false, +2)
                 } else if (filaCentro == 1) {
-                    condicionRotar_especial( -1, -1, +1, -1, +2, -1, false, +1)
-                } else condicionRotar_especial( -1, -1, -2, -1, -3, -1, false, -1)
+                    condicionRotarEspecial(this,intArrayOf(-1, 1, 2),intArrayOf(-1, -1, -1), false, +1)
+                } else condicionRotarEspecial(this,intArrayOf(-1, -2, -3),intArrayOf(-1, -1, -1), false, -1)
             }
         }
     }
-
-    override fun rotar(): Boolean {
-        val nuevaOrientacion = (orientacion + 1) % 4
-        if (puedeRotar(nuevaOrientacion)) {
-            if (!condicionEspecial_b) {
-                limpiar()
-            }
-            orientacion = nuevaOrientacion
-            pintar()
-            return true
-        }
-        return false
-    }
-
-
     override fun bajar(): Boolean {
         return bajar_4x1(this)
     }
@@ -208,9 +183,6 @@ class Pieza_I (override var fila: Int, override var columna: Int) : Piezas(fila,
         return FORMAS_I
     }
 
-    override fun getOrientacion(): Int {
-        return orientacion
-    }
 
     override fun getColumnaCentro(): Int {
         return columnaCentro

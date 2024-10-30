@@ -9,7 +9,7 @@ import javafx.scene.canvas.GraphicsContext
 
 fun moverDerechaIzquierda_3x3(pieza: Piezas, desplazamientos: IntArray, direccion: Int) { //1 o -1
     var puedeMoverse = true
-    if (pieza.getOrientacion() == 0) {
+    if (pieza.orientacion == 0) {
         puedeMoverse = if (pieza is Pieza_U || pieza is Pieza_V) {
             matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[0]] == BLANCO
                     && matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[1]] == BLANCO
@@ -23,7 +23,7 @@ fun moverDerechaIzquierda_3x3(pieza: Piezas, desplazamientos: IntArray, direccio
                     && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[4]] == BLANCO
                     && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[5]] == BLANCO
         }
-    } else if (pieza.getOrientacion() == 2) {
+    } else if (pieza.orientacion == 2) {
         puedeMoverse = if (pieza is Pieza_U || pieza is Pieza_V) {
             matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[8]] == BLANCO
                     && matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[9]] == BLANCO
@@ -37,14 +37,14 @@ fun moverDerechaIzquierda_3x3(pieza: Piezas, desplazamientos: IntArray, direccio
                     && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[10]] == BLANCO
                     && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[11]] == BLANCO
         }
-    } else if (pieza.getOrientacion() == 1) {
+    } else if (pieza.orientacion == 1) {
         puedeMoverse = matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[12]] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[13]] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[14]] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[15]] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[16]] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[17]] == BLANCO
-    } else if (pieza.getOrientacion() == 3) {
+    } else if (pieza.orientacion == 3) {
         puedeMoverse = matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[18]] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[19]] == BLANCO
                 && matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[20]] == BLANCO

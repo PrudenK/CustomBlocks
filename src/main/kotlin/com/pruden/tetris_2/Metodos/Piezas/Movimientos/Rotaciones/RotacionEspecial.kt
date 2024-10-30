@@ -2,7 +2,6 @@ package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Piezas.Pieza_1.Companion.condicionEspecial_b
 import com.pruden.tetris_2.Piezas.Piezas
 
 
