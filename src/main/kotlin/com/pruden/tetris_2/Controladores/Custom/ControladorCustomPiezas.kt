@@ -45,7 +45,7 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
     @FXML private lateinit var ck_I_v3: CheckBox
     @FXML private lateinit var ck_Y_v2: CheckBox
     @FXML private lateinit var ck_O_v4: CheckBox
-    @FXML private lateinit var ck_1: CheckBox
+    @FXML private lateinit var ck_J_v2: CheckBox
     @FXML private lateinit var ck_A: CheckBox
 
     private lateinit var elemento : Button
@@ -53,7 +53,7 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
 
     companion object{
         lateinit var checkBoxes: List<CheckBox>
-        val listaPiezasSeleccionadas = ArrayList<Boolean>()
+        var listaPiezasSeleccionadas = ArrayList<Boolean>()
         lateinit var guardarPiezas: BooleanProperty
         lateinit var stageCustomPiezas : Stage
     }
@@ -87,7 +87,7 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
             ck_O, ck_I, ck_L, ck_Z, ck_J, ck_S, ck_T, ck_P, ck_X, ck_U,
             ck_L_v2, ck_W, ck_T_v2, ck_Z_v2, ck_X_v2, ck_L_v3, ck_F, ck_O_v2,
             ck_S_v2, ck_B, ck_Y, ck_K, ck_I_v2, ck_C, ck_O_v3, ck_V, ck_H,
-            ck_I_v3, ck_Y_v2, ck_O_v4, ck_1, ck_A
+            ck_I_v3, ck_Y_v2, ck_O_v4, ck_J_v2, ck_A
         )
     }
 

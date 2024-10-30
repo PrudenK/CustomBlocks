@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="310.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Modos.ControladorModosJuego">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <children>
+        <Button layoutX="89.0" layoutY="334.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="132.0" text="Volver" />
+        <HBox layoutX="82.0" layoutY="94.0" spacing="5">
+            <Button mnemonicParsing="false" onAction="#clasico" text="Modo clásico" />
+            <ImageView fx:id="infoIcon1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../../../Imagenes/Logos/info.png" />
+                </image>
+            </ImageView>
+        </HBox>
+        <Label layoutX="13.0" layoutY="28.0" prefHeight="66.0" prefWidth="287.0" style="-fx-text-fill: #FFFFFF;" text="Elige distintos modos de juego predefinidos que cuentan para los rankings oficiales" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <HBox layoutX="93.0" layoutY="144.0" spacing="5">
+            <Button mnemonicParsing="false" onAction="#clasicoV2" text="Modo clásico v2" />
+            <ImageView fx:id="infoIcon2" fitHeight="45.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../../../Imagenes/Logos/info.png" />
+                </image>
+            </ImageView>
+        </HBox>
+        <HBox layoutX="89.0" layoutY="190.0" spacing="5">
+            <Button mnemonicParsing="false" onAction="#todo" text="¡Vamos con todo!" />
+            <ImageView fx:id="infoIcon3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../../../Imagenes/Logos/info.png" />
+                </image>
+            </ImageView>
+        </HBox>
+        <HBox layoutX="94.0" layoutY="233.0" spacing="5">
+            <Button mnemonicParsing="false" onAction="#algebra" prefHeight="32.0" prefWidth="126.0" text="¿Álgebra?" />
+            <ImageView fx:id="infoIcon4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../../../Imagenes/Logos/info.png" />
+                </image>
+            </ImageView>
+        </HBox>
+        <HBox layoutX="92.0" layoutY="282.0" spacing="5">
+            <Button mnemonicParsing="false" onAction="#rapido" prefHeight="32.0" prefWidth="126.0" text="RápidO" />
+            <ImageView fx:id="infoIcon5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../../../Imagenes/Logos/info.png" />
+                </image>
+            </ImageView>
+        </HBox>
+    </children>
+</Pane>

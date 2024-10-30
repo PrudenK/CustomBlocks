@@ -1,33 +1,14 @@
-package com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero
+package com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Secundarios
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.CENTRO_BLANCO
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_CELDA_SECUN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_TABLERO_SECUN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcPrincipal
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasillaSecun
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.paint.Color
 
-
-fun dibujarTableroNormalTIPO1() {
-    val desplazamiento = 0.5
-    gcPrincipal.stroke = Color.BLACK
-
-    for (i in 0..FILAS) {
-        val y: Double = i * TAMANO_CELDA + desplazamiento
-        gcPrincipal.strokeLine(0.0, y, (COLUMNAS * TAMANO_CELDA).toDouble(), y)
-    }
-
-    for (i in 0..COLUMNAS) {
-        val x: Double = i * TAMANO_CELDA + desplazamiento
-        gcPrincipal.strokeLine(x, 0.0, x, (FILAS * TAMANO_CELDA).toDouble())
-    }
-}
 
 fun dibujarTableroSecundarioTIPO1(gc: GraphicsContext) {
     // Dibujar las líneas horizontales
@@ -43,7 +24,7 @@ fun dibujarTableroSecundarioTIPO1(gc: GraphicsContext) {
     }
 }
 
-fun pintarPiezaTableroTIPO1(gc: GraphicsContext, pieza : Piezas) {
+fun pintarPiezaTableroSecundarioTIPO1(gc: GraphicsContext, pieza : Piezas) {
     val forma = pieza.getForma()[pieza.orientacion]
     for (i in forma.indices) {
         for (j in forma[i].indices) {

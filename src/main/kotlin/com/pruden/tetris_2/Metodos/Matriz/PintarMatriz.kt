@@ -4,9 +4,9 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
-import com.pruden.tetris_2.Piezas.Pieza_1.Companion.CENTRO_1
-import com.pruden.tetris_2.Piezas.Pieza_1.Companion.COLOR_1
-import com.pruden.tetris_2.Piezas.Pieza_1.Companion.NUMPIEZA_1
+import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.CENTRO_J_v2
+import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.COLOR_J_v2
+import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.NUMPIEZA_J_v2
 import com.pruden.tetris_2.Piezas.Pieza_A.Companion.CENTRO_A
 import com.pruden.tetris_2.Piezas.Pieza_A.Companion.COLOR_A
 import com.pruden.tetris_2.Piezas.Pieza_A.Companion.NUMPIEZA_A
@@ -128,8 +128,8 @@ fun pintarMatriz(j : Int, tipo : Int){
                 pintarCasilla(COLOR_U, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_V || matrizNumerica[j][k] == CENTRO_V){
                 pintarCasilla(COLOR_V, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_1 || matrizNumerica[j][k] == CENTRO_1){
-                pintarCasilla(COLOR_1, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_J_v2 || matrizNumerica[j][k] == CENTRO_J_v2){
+                pintarCasilla(COLOR_J_v2, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_B || matrizNumerica[j][k] == CENTRO_B){
                 pintarCasilla(COLOR_B, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_C){

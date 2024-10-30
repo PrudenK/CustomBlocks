@@ -2,10 +2,11 @@ package com.pruden.tetris_2.Metodos.DibujarTablero.General
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
-import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.*
+import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.dibujarTableroNormalTIPO0
+import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.dibujarTableroNormalTIPO1
+import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Secundarios.*
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.scene.canvas.GraphicsContext
-import javafx.scene.paint.Color
 
 
 fun dibujarTableroPrincipal(){
@@ -26,15 +27,15 @@ fun dibujarTableroSecundario(gc: GraphicsContext){
 
 
 fun borrarTableroSecundario(gc: GraphicsContext) {
-    borrarSiguienteTIPO0(gc)
+    borrarTableroSecundarioTIPO0(gc)
     dibujarTableroSecundario(gc)
 }
 
 fun pintarPiezaTableroSecun(gc: GraphicsContext, pieza : Piezas) {
     if (tipoTableroSecun == 0) {
-        pintarPiezaTableroTIPO0(gc, pieza)
+        pintarPiezaTableroSecundarioTIPO0(gc, pieza)
     } else {
-        pintarPiezaTableroTIPO1(gc,pieza)
+        pintarPiezaTableroSecundarioTIPO1(gc,pieza)
     }
 }
 

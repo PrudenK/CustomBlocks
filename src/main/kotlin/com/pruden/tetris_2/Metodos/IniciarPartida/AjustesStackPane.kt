@@ -30,5 +30,5 @@ fun setStackpane12x8() {
 fun setStackpane30x20() {
     stackPane.layoutX = (stackPaneX - 5)
     stackPane.layoutY = (stackPaneY + 10)
-    cuentaRegresivaIMG.layoutX = (stackPaneX - 5) // todo: revisar
+    cuentaRegresivaIMG.layoutX = (stackPaneX - 5)
 }
