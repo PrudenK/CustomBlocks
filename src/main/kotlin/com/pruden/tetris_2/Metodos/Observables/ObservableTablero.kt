@@ -1,8 +1,13 @@
 package com.pruden.tetris_2.Metodos.Observables
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioTablero
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.guardarTablero
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumColumnas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumFilas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaTamaCelda
@@ -11,12 +16,12 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Compani
 import javafx.beans.property.SimpleBooleanProperty
 
 fun cargarObservableTablero(){
-    ControladorCustomTablero.guardarTablero = SimpleBooleanProperty(false)
+    guardarTablero = SimpleBooleanProperty(false)
 
-    ControladorCustomTablero.guardarTablero.addListener { _, _, newValue ->
+    guardarTablero.addListener { _, _, newValue ->
         if (newValue) {
             cambiarConfiguracionesTablero()
-            ControladorCustomOpciones.cambioTablero = true
+            cambioTablero = true
 
             stageCustomTablero.close()
         }
@@ -24,7 +29,7 @@ fun cargarObservableTablero(){
 }
 
 private fun cambiarConfiguracionesTablero(){
-    ControladorPrincipal.FILAS = (listaNumFilas[tabPosicion])
-    ControladorPrincipal.COLUMNAS = (listaNumColumnas[tabPosicion])
-    ControladorPrincipal.TAMANO_CELDA = (listaTamaCelda[tabPosicion])
+    FILAS = (listaNumFilas[tabPosicion])
+    COLUMNAS = (listaNumColumnas[tabPosicion])
+    TAMANO_CELDA = (listaTamaCelda[tabPosicion])
 }

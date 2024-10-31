@@ -1,6 +1,5 @@
-package com.pruden.tetris_2.Controladores.Modos
+package com.pruden.tetris_2.Metodos.Modos
 
-import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
@@ -10,45 +9,42 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_P
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumColumnas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumFilas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaTamaCelda
-import com.pruden.tetris_2.Controladores.Modos.ControladorModosJuego.Companion.modoClasico
-import com.pruden.tetris_2.Controladores.Modos.ControladorModosJuego.Companion.stageModos
-import com.pruden.tetris_2.Metodos.Modos.ModoDeJuego
-import com.pruden.tetris_2.Metodos.Modos.cargarCambiosModo
-import com.pruden.tetris_2.Metodos.Modos.cargarPosicionesPiezasModos
-import javafx.fxml.FXML
-import javafx.scene.control.Button
-import javafx.stage.Stage
+import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
+import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
+import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
+import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane12x8
+import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane18x10
+import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane30x20
 
-class ControladorModoClasico : ControladorGEN(){
-    private lateinit var stage : Stage
-    private lateinit var cPrincipal : ControladorPrincipal
+fun cargarCambiosModo(modo : ModoDeJuego){
+    with(modo){
+        listaPiezasSeleccionadas = cargarPosicionesPiezasModos(piezasDisponiblesPosiciones)
+        TIEMPO_CAIDA_PIEZAS_INICIAL = tiempoCaidaInicial
+        LINEAS_POR_NIVEL = lineasPorNivel
+        REDUCCION_TIEMPO_POR_NIVEL = saltoDeTiempoPorNivel
+        LIMITE_ROTACIONES_B = limiteRotacionesB
+        if (LIMITE_ROTACIONES_B) LIMITE_ROTACIONES = limiteRotacionesNum
+        holdActivo = holdActivoModo
 
-    @FXML private fun salir(){
-        stage.close()
-    }
+        FILAS = (listaNumFilas[tablero])
+        COLUMNAS = (listaNumColumnas[tablero])
+        TAMANO_CELDA = (listaTamaCelda[tablero])
 
-    @FXML private fun guardar(){
-        cargarCambiosModo(modoClasico)
-        cPrincipal.reiniciarPartida()
-        stage.close()
-        stageModos.close()
-    }
+        siguientesPiezaActivo = siguientesDisponibles
 
-    override fun setStage(stage: Stage?) {
-        this.stage = stage!!
-    }
-    override fun setBoton(b: Button?) {}
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
+        siguientePieza.clear()
+        piezasBolsa.clear()
+
+        cambioDeTablero()
     }
 }

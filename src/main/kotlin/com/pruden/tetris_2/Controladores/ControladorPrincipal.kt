@@ -224,6 +224,7 @@ class ControladorPrincipal : Initializable {
 
     fun reiniciarPartida(){
         if (!animacionEnCurso) {
+            hasPerdido = false
             reiniciarLineasBorradas()
             tiempoCaidaPieza = TIEMPO_CAIDA_PIEZAS_INICIAL
 

@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Controladores.Otros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
 import com.pruden.tetris_2.Metodos.IniciarPartida.iniciarPartida
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarTimeline
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
@@ -34,8 +35,10 @@ class ControladorOpciones : ControladorGEN(){
     }
     @FXML
     private fun reanudar() {
-        cronometro.reanudar()
-        reanudarTimeline()
+        if (!hasPerdido) {
+            cronometro.reanudar()
+            reanudarTimeline()
+        }
         stageOpciones!!.close()
     }
 

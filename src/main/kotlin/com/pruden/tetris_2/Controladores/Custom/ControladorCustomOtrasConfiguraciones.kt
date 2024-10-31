@@ -39,20 +39,20 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     @FXML private lateinit var labelLimiteRotaciones: Label
 
     private val TIEMPO_MAXIMO_CAIDA = 3000
-    private val TIEMPO_MINIMO_CAIDA = 100
+    private val TIEMPO_MINIMO_CAIDA = 50
 
     private val LINEAS_SALTO_NIVEL_MINIMO = 1
     private val LINEAS_SALTO_NIVEL_MAXIMO = 99
 
-    private val SALTO_TIEMPO_NIVEL_MINIMO = 100
+    private val SALTO_TIEMPO_NIVEL_MINIMO = 50
     private val SALTO_TIEMPO_NIVEL_MAXIMO = 500
 
     private val LIMITE_ROTACIONES_MINIMO = 0
     private val LIMITE_ROTACIONES_MAXIMO = 10
 
-    private val SALTO_TIEMPO_CAIDA = 100
+    private val SALTO_TIEMPO_CAIDA = 50
     private val SALTO_LINEAS_SALTO_NIVEL = 1
-    private val SALTO_SALTO_TIEMPO_NIVEL = 100
+    private val SALTO_SALTO_TIEMPO_NIVEL = 50
     private val SALTO_ROTACIONES = 1
 
     companion object{

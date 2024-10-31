@@ -3,7 +3,10 @@ package com.pruden.tetris_2.Controladores.Modos
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
+import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarTimeline
+import com.pruden.tetris_2.Metodos.Modos.ModoDeJuego
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
@@ -16,66 +19,57 @@ import kotlin.collections.ArrayList
 
 
 class ControladorModosJuego : ControladorGEN(), Initializable {
-    private lateinit var stage: Stage
     private lateinit var cPrincipal : ControladorPrincipal
     private lateinit var elemento : Button
+    companion object{
+        lateinit var stageModos: Stage
 
-    var posicionesModoClasico : IntArray = intArrayOf(0, 1, 2, 3, 4, 5, 6)
-    var posicionesModoClasicoV2 : IntArray = intArrayOf(10, 12, 13, 17, 18, 22)
-    var posicionesModoAlgebra : IntArray = intArrayOf(3, 8, 13, 14, 20, 28)
-    var posicionesRapido : IntArray = intArrayOf(0, 17, 24, 29)
-
-    val listaPiezas = ArrayList(List(32) { false })
-    val listaPiezasTodas = ArrayList(List(32) { true })
-
-    val TIEMPO_CAIDA_INICIAL_CONST = 1500
-
+        val modoClasico = ModoDeJuego(intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 10,
+            100, false, -1, true, 1, true)
+        val modoClasicoV2 = ModoDeJuego(intArrayOf(10, 12, 13, 17, 18, 22, 30), 1500, 10,
+            100, false, -1, true, 1, true)
+        val modoTodo = ModoDeJuego(IntArray(32) { it }, 1500, 10,
+            100, false, -1, true, 2, true)
+        val modoAlgebra = ModoDeJuego(intArrayOf(3, 8, 13, 14, 20, 28), 1800, 5,
+            100, true, 4, true, 1, true)
+        val modoRapidO  = ModoDeJuego(intArrayOf(0, 17, 24, 29), 500, 5,
+            50, false, -1, true, 0, true)
+    }
     override fun initialize(location: URL?, resources: ResourceBundle?) {
 
     }
 
 
     @FXML private fun volver() {
-        stage.close()
+        if (!hasPerdido) {
+            ControladorPrincipal.cronometro.reanudar()
+            reanudarTimeline()
+        }
+        stageModos.close()
     }
 
     @FXML private fun clasico() {
-        cargarPosiciones(listaPiezas, posicionesModoClasico)
-        TIEMPO_CAIDA_PIEZAS_INICIAL= TIEMPO_CAIDA_INICIAL_CONST
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_Clasico.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
     @FXML private fun clasicoV2() {
-        cargarPosiciones(listaPiezas, posicionesModoClasicoV2)
-        TIEMPO_CAIDA_PIEZAS_INICIAL= TIEMPO_CAIDA_INICIAL_CONST
+        crearStage(ClaseStage("Vistas/Modos/vista_Modo_ClasicoV2.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
     @FXML private fun todo() {
-        listaPiezasSeleccionadas = listaPiezasTodas
-        TIEMPO_CAIDA_PIEZAS_INICIAL= TIEMPO_CAIDA_INICIAL_CONST
+        crearStage(ClaseStage("Vistas/Modos/vista_Modo_Todo.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-
     @FXML private fun algebra() {
-        cargarPosiciones(listaPiezas, posicionesModoAlgebra)
-        TIEMPO_CAIDA_PIEZAS_INICIAL= TIEMPO_CAIDA_INICIAL_CONST
+        crearStage(ClaseStage("Vistas/Modos/vista_Modo_Algebra.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
     @FXML private fun rapido() {
-        cargarPosiciones(listaPiezas, posicionesRapido)
-        TIEMPO_CAIDA_PIEZAS_INICIAL= 500
+        crearStage(ClaseStage("Vistas/Modos/vista_Modo_RapidO.fxml", elemento,700.0,820.0, null,0, 0))
     }
-
-    private fun cargarPosiciones(lista : ArrayList<Boolean>, posiciones : IntArray){
-        for (pos in posiciones){
-            lista[pos] = true
-        }
-        listaPiezasSeleccionadas = listaPiezas
-    }
-
 
     override fun setStage(stage: Stage?) {
-        this.stage = stage!!
+        stageModos = stage!!
     }
 
     override fun setBoton(b: Button?) {
