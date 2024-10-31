@@ -2,17 +2,13 @@ package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
-import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarTimeline
-import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane12x8
-import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane18x10
-import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane30x20
+import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
+import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTableroSecundario
+import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.beans.property.BooleanProperty
@@ -33,6 +29,10 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
         var cambioPiezas = false
         var cambioTablero = false
         var cambioOtrasConfi = false
+        var cambioTipoTablero = false
+        var cambioTipoTableroSinReiniciar = false
+        var cambioTipoTableroSinReiniciarSecundario = false
+        var haGuardadoTipoTablero = false
         lateinit var cerrarYGuardarCambio : BooleanProperty
     }
 
@@ -55,14 +55,23 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
 
 
     private fun cambiasAlCerrar(){
-        if (cambioTablero){
-            cambioDeTablero()
-        }
 
 
-        if (cambioPiezas || cambioTablero || cambioOtrasConfi){
+        if (cambioPiezas || cambioTablero || cambioOtrasConfi || cambioTipoTablero){
+            cPrincipal.labelModo.text = "Custom"
             cPrincipal.reiniciarPartida()
         }else{
+            if(haGuardadoTipoTablero) {
+                if (cambioTipoTableroSinReiniciar) {
+                    cambiosTipoTablero()
+                    println("afdasdf")
+                }
+                if (cambioTipoTableroSinReiniciarSecundario) {
+                    cambiosTipoTableroSecundario()
+                    cambioTipoTableroSinReiniciarSecundario = false
+                }
+                haGuardadoTipoTablero = false
+            }
             if (!hasPerdido) {
                 cronometro.reanudar()
                 reanudarTimeline()
@@ -70,8 +79,9 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
         }
 
         cambioPiezas = false
-        cambioTablero = false
         cambioOtrasConfi = false
+
+
     }
 
 

@@ -1,17 +1,20 @@
 package com.pruden.tetris_2.Controladores.Custom
 
+import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2.Companion.mensajeAdvertenciaTT2
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcHold
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente1
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente2
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente3
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
-import com.pruden.tetris_2.Metodos.BolsaPiezas.dibujarPiezasSiguientes
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
+import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
+import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTablero
+import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTableroSinReiniciar
+import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTableroSinReiniciarSecundario
+import com.pruden.tetris_2.Metodos.Stages.ClaseStage
+import com.pruden.tetris_2.Metodos.Stages.crearStage
+import javafx.beans.property.BooleanProperty
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -23,8 +26,8 @@ import java.net.URL
 import java.util.*
 
 class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
-    private lateinit var stage : Stage
     private lateinit var cPrincipal : ControladorPrincipal
+    private lateinit var elemento : Button
 
     @FXML private lateinit var labelSecundario: Label
     @FXML private lateinit var labelPrincipal: Label
@@ -33,6 +36,8 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
 
     private val pClasico = deRutaAImagen("/Imagenes/Tipos_De_Tableros/clasico.jpg")
     private val pVacio = deRutaAImagen("/Imagenes/Tipos_De_Tableros/vacio_principal.jpg")
+    private val pMemory = deRutaAImagen("/Imagenes/Tipos_De_Tableros/Memory.jpg")
+
     private val sClasico = deRutaAImagen("/Imagenes/Tipos_De_Tableros/clasico_secundario.jpg")
     private val sVacio = deRutaAImagen("/Imagenes/Tipos_De_Tableros/vacio_secundario.jpg")
 
@@ -42,41 +47,54 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
     private lateinit var listaNombresPrincipales : ArrayList<String>
     private lateinit var listaNombresSecundarios : ArrayList<String>
 
-    private var tableroPrincipalNum = 0
-    private var tableroSecundarioNum = 0
+    private var tableroPartidaActual = tipoTableroPrin
 
+    companion object{
+        var tableroPrincipalNum = 0
+        var tableroSecundarioNum = 0
+        lateinit var stageTipoTablero : Stage
+        lateinit var guardarTipoTablero: BooleanProperty
+        lateinit var guardarTipoTableroSinReiciniar: BooleanProperty
+        lateinit var guardarTipoTableroSinReiciniarSecundario: BooleanProperty
+    }
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         incializarArrays()
+        cargarObservableTipoTablero()
+        cargarObservableTipoTableroSinReiniciar()
+        cargarObservableTipoTableroSinReiniciarSecundario()
     }
 
     @FXML
     private fun guardar() {
-        cambiosTipoTablero()
-
-
-        stage.close()
+        if(tableroPrincipalNum == 2 || tableroPartidaActual == 2){
+            if(partidaEnCurso) {
+                if (tableroPrincipalNum == 2 && tableroPartidaActual == 2){
+                    guardarTipoTableroSinReiciniarSecundario.set(true)
+                    stageTipoTablero.close()
+                }else {
+                    mensajeAdvertenciaTT2 = if (tableroPrincipalNum == 2) {
+                        "Si cambias al talbero Memory tu partida actual se reiniciará ya que este tablero aumenta notablemente las mecánicas del juego "
+                    } else { "Has empezado una partida con el tablero Memory, si lo cambias esta se reiniciará, ¿estás seguro?" }
+                    crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tipo_Tablero2.fxml", elemento, 370.0, 210.0, null, 0, 0))
+                }
+            }else{
+                if (tableroPrincipalNum == 2) controladorPrincipal.labelModo.text = "Custom"
+                else controladorPrincipal.labelModo.text = "Clásico"
+                guardarTipoTableroSinReiciniar.set(true)
+                stageTipoTablero.close()
+            }
+        }else{
+            if (!partidaEnCurso) controladorPrincipal.labelModo.text = "Clásico"
+            guardarTipoTableroSinReiciniar.set(true)
+            stageTipoTablero.close()
+        }
+        ControladorCustomOpciones.haGuardadoTipoTablero = true
     }
 
     @FXML
     private fun volver() {
-        stage.close()
+        stageTipoTablero.close()
     }
-
-    fun cambiosTipoTablero() {
-        tipoTableroPrin = tableroPrincipalNum
-        tipoTableroSecun = tableroSecundarioNum
-
-        dibujarTableroPrincipal()
-
-        borrarTableroSecundario(gcSiguiente1)
-        borrarTableroSecundario(gcSiguiente2)
-        borrarTableroSecundario(gcSiguiente3)
-        borrarTableroSecundario(gcHold)
-
-
-        dibujarPiezasSiguientes(-1)
-    }
-
 
     @FXML
     private fun siguienteSecun() {
@@ -123,10 +141,12 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
         listaNombresSecundarios = ArrayList<String>()
         listaPrincipales.add(pVacio)
         listaPrincipales.add(pClasico)
+        listaPrincipales.add(pMemory)
         listaSecundarios.add(sVacio)
         listaSecundarios.add(sClasico)
         listaNombresPrincipales.add("Tablero vacío")
         listaNombresPrincipales.add("Tablero clásico")
+        listaNombresPrincipales.add("Tablero Memory")
         listaNombresSecundarios.add("Tablero vacío")
         listaNombresSecundarios.add("Tablero clásico")
         tableroPrincipalNum = tipoTableroPrin
@@ -139,14 +159,12 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
 
 
     override fun setStage(stage: Stage?) {
-        this.stage = stage!!
+        stageTipoTablero = stage!!
     }
 
-    override fun setBoton(b: Button?) {}
+    override fun setBoton(b: Button?) {elemento = b!!}
 
     override fun setControladorPrincipal(principal: ControladorPrincipal?) {
         cPrincipal = principal!!
     }
-
-
 }

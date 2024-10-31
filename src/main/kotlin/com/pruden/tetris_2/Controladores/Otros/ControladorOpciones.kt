@@ -4,8 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
-import com.pruden.tetris_2.Metodos.IniciarPartida.iniciarPartida
-import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarTimeline
+import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.application.Platform

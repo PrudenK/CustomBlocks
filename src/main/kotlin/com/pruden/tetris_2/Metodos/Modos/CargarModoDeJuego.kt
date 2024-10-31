@@ -14,6 +14,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActi
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumColumnas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumFilas
@@ -25,6 +26,8 @@ import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane12x8
 import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane18x10
 import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane30x20
+import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
+import com.pruden.tetris_2.Metodos.Timelines.borrarMascara
 
 fun cargarCambiosModo(modo : ModoDeJuego){
     with(modo){
@@ -45,6 +48,13 @@ fun cargarCambiosModo(modo : ModoDeJuego){
         siguientePieza.clear()
         piezasBolsa.clear()
 
+        controladorPrincipal.labelModo.text = nombre
+
+        tipoTableroPrin = tipoTablero
+
         cambioDeTablero()
+
+        borrarMascara()
+        dibujarTableroPrincipal()
     }
 }

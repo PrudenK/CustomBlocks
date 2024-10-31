@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="370.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <children>
+        <Button layoutX="53.0" layoutY="160.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+        <Button layoutX="213.0" layoutY="160.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y reiniciar" />
+        <Label fx:id="labelAdvertencia" ellipsisString="" layoutX="17.0" layoutY="71.0" prefHeight="48.0" prefWidth="337.0" text="Si tienes una partida en curso esta se reiniciará al volver a la pantalla principal, ya que este tablero altera el modo de juego" textFill="WHITE" wrapText="true" />
+    </children>
+</Pane>

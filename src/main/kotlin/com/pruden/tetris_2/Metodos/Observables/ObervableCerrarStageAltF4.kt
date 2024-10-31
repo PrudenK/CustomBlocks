@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.Observables
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarTimeline
+import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
 
 fun cargarObervableCerrarStageAltF4(){
     ControladorPrincipal.cerrarStageAltF4.addListener { _, _, newValue ->

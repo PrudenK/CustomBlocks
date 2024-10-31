@@ -2,8 +2,9 @@ package com.pruden.tetris_2.Metodos.IniciarPartida
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.lockCuentaRegresiva
+import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
+import com.pruden.tetris_2.Metodos.Timelines.pararTimeline
 import javafx.scene.control.Label
-import java.util.concurrent.locks.Lock
 
 
 private lateinit var lineas: Label

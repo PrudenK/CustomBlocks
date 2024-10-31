@@ -4,6 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTabl
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.dibujarTableroNormalTIPO0
 import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.dibujarTableroNormalTIPO1
+import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.dibujarTableroNormalTIPO2
 import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Secundarios.*
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.scene.canvas.GraphicsContext
@@ -12,8 +13,10 @@ import javafx.scene.canvas.GraphicsContext
 fun dibujarTableroPrincipal(){
     if (tipoTableroPrin == 0){
         dibujarTableroNormalTIPO0()
-    }else{
+    }else if (tipoTableroPrin == 1){
         dibujarTableroNormalTIPO1()
+    }else{
+        dibujarTableroNormalTIPO2()
     }
 }
 

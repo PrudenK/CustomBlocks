@@ -1,5 +1,7 @@
 package com.pruden.tetris_2.Controladores
 
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioTipoTablero
 import com.pruden.tetris_2.Metodos.Media.Audio.musicaPartida
 import com.pruden.tetris_2.Metodos.BorrarPiezas.initLabelsBorrarLineas
 import com.pruden.tetris_2.Metodos.BorrarPiezas.reiniciarLineasBorradas
@@ -8,11 +10,15 @@ import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundari
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.pintarPiezaTableroSecun
+import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.ponerMascaraTableroTIPO2
+import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Matriz.borrarCasillas
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Matriz.rellenarMatriz
+import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
+import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableCerrarStageAltF4
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
 import com.pruden.tetris_2.Metodos.Observables.initLabelsObervableNivel
@@ -20,14 +26,17 @@ import com.pruden.tetris_2.Metodos.Perder.initBotonPartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Teclado.initLabelsMoverPiezas
+import com.pruden.tetris_2.Metodos.Teclado.moverPiezaAbajo
 import com.pruden.tetris_2.Metodos.Teclado.moverPiezas
 import com.pruden.tetris_2.Piezas.Piezas
+import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.application.Platform
 import javafx.beans.property.BooleanProperty
 import javafx.beans.property.IntegerProperty
 import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleIntegerProperty
+import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.Scene
@@ -41,6 +50,7 @@ import javafx.scene.layout.Pane
 import javafx.scene.layout.StackPane
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
+import javafx.util.Duration
 import java.net.URL
 import java.util.*
 import java.util.concurrent.locks.Lock
@@ -48,6 +58,7 @@ import java.util.concurrent.locks.ReentrantLock
 
 class ControladorPrincipal : Initializable {
     @FXML lateinit var canvasPrincipal: Canvas
+    @FXML lateinit var canvasMascara: Canvas
     @FXML lateinit var canvasSiguientePieza1: Canvas
     @FXML lateinit var canvasSiguientePieza2: Canvas
     @FXML lateinit var canvasSiguientePieza3: Canvas
@@ -60,10 +71,10 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var labelPuntuacion: Label
     @FXML lateinit var labelNivel: Label
     @FXML private lateinit var cronometroLabel: Label
+    @FXML lateinit var labelModo: Label
     @FXML private lateinit var nuevaPartidaB: Button
 
     @FXML private lateinit var stackPane : StackPane
-
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         timelinePartida = Timeline()
@@ -139,7 +150,10 @@ class ControladorPrincipal : Initializable {
         var partidaEnCurso = false
 
         lateinit var piezaActual : Piezas
+
+
         lateinit var gcPrincipal: GraphicsContext
+        lateinit var gcMascara: GraphicsContext
         lateinit var gcSiguiente1: GraphicsContext
         lateinit var gcSiguiente2: GraphicsContext
         lateinit var gcSiguiente3: GraphicsContext
@@ -212,7 +226,7 @@ class ControladorPrincipal : Initializable {
 
     @FXML
     private fun borrar() {
-        pintarPiezaTableroSecun(gcSiguiente1, piezaActual)
+
         imprimirMatriz_TAB()
     }
 
@@ -241,6 +255,17 @@ class ControladorPrincipal : Initializable {
             borrarCasillas()
             reiniciarLabels()
 
+            if (ControladorCustomOpciones.cambioTablero){
+                cambioDeTablero()
+                ControladorCustomOpciones.cambioTablero = false
+            }
+
+            if(cambioTipoTablero){
+                cambiosTipoTablero()
+                cambioTipoTablero = false
+            }
+
+
 
             Thread { iniciarPartida() }.start()
         }
@@ -262,9 +287,9 @@ class ControladorPrincipal : Initializable {
         cargarComponentesStackPane(stackPane, cuentaRegresivaIMG)
         initLabelsObervableNivel(labelLineas,labelNivel)
     }
-
     private fun cargarGc(){
         gcPrincipal = canvasPrincipal.graphicsContext2D
+        gcMascara = canvasMascara.graphicsContext2D
         gcSiguiente1 = canvasSiguientePieza1.graphicsContext2D
         gcSiguiente2 = canvasSiguientePieza2.graphicsContext2D
         gcSiguiente3 = canvasSiguientePieza3.graphicsContext2D

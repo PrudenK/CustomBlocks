@@ -2,7 +2,8 @@ package com.pruden.tetris_2.Metodos.Observables
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
-import com.pruden.tetris_2.Metodos.IniciarPartida.actualizarTimeline
+import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
+import com.pruden.tetris_2.Metodos.Timelines.timelineMascara
 import javafx.beans.binding.Bindings
 import javafx.beans.binding.NumberBinding
 import javafx.beans.value.ObservableValue
