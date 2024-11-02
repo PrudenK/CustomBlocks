@@ -5,18 +5,21 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNu
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.scene.canvas.GraphicsContext
 
-fun moverDerechaIzquierda_3x1(pieza: Piezas, dech_o_izq: Int) { //1 o -1
+fun moverDerechaIzquierda_3x1(pieza: Piezas, dech_o_izq: Int): Boolean { //1 o -1
     var puedeMoverse = true
-    puedeMoverse = if (pieza.orientacion == 0) {
-        matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + 2 * dech_o_izq] == BLANCO
-    } else {
-        matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + dech_o_izq] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + dech_o_izq] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + dech_o_izq] == BLANCO
+    with(pieza){
+        puedeMoverse = if (orientacion == 0) {
+            matrizNumerica[getFilaCentro()][getColumnaCentro() + 2 * dech_o_izq] == BLANCO
+        } else {
+            matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + dech_o_izq] == BLANCO
+                    && matrizNumerica[getFilaCentro()][getColumnaCentro() + dech_o_izq] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + dech_o_izq] == BLANCO
+        }
+        if (puedeMoverse) {
+            limpiar()
+            columna = (columna + dech_o_izq)
+            pintar()
+        }
     }
-    if (puedeMoverse) {
-        pieza.limpiar()
-        pieza.columna = (pieza.columna + dech_o_izq)
-        pieza.pintar()
-    }
+    return puedeMoverse
 }

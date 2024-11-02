@@ -98,12 +98,12 @@ class Pieza_P (override var fila: Int, override var columna: Int,
         return bajar_3x2(this, intArrayOf(0, 1, 1, 2, 2, 2, 2, 2, 1, 2))
     }
 
-    override fun derecha() {
-        moverDerechaIzquierda_3x2(this, intArrayOf(2, 2, 1, 2, 2, 2, 2, 1, 1, 0), 1)
+    override fun derecha(): Boolean {
+       return moverDerechaIzquierda_3x2(this, intArrayOf(2, 2, 1, 2, 2, 2, 2, 1, 1, 0), 1)
     }
 
-    override fun izquierda() {
-        moverDerechaIzquierda_3x2(this, intArrayOf(-1, -2, -2, -2, 0, -1, -1, -2, -2, -2), -1)
+    override fun izquierda(): Boolean {
+       return moverDerechaIzquierda_3x2(this, intArrayOf(-1, -2, -2, -2, 0, -1, -1, -2, -2, -2), -1)
     }
 
     override fun getForma(): Array<Array<IntArray>>  {

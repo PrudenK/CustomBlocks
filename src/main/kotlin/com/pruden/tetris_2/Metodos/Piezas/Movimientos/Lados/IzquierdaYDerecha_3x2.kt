@@ -4,26 +4,29 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Piezas.Piezas
 
-fun moverDerechaIzquierda_3x2(pieza: Piezas, desplazamientos: IntArray, direccion: Int) {
+fun moverDerechaIzquierda_3x2(pieza: Piezas, desplazamientos: IntArray, direccion: Int): Boolean {
     var puedeMoverse = true
-    if (pieza.orientacion == 0) {
-        puedeMoverse = matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[0]] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[1]] == BLANCO
-    } else if (pieza.orientacion == 2) {
-        puedeMoverse = matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[2]] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[3]] == BLANCO
-    } else if (pieza.orientacion == 1) {
-        puedeMoverse = matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[4]] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[5]] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[6]] == BLANCO
-    } else if (pieza.orientacion == 3) {
-        puedeMoverse = matrizNumerica[pieza.getFilaCentro() - 1][pieza.getColumnaCentro() + desplazamientos[7]] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro()][pieza.getColumnaCentro() + desplazamientos[8]] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + desplazamientos[9]] == BLANCO
+    with(pieza){
+        if (orientacion == 0) {
+            puedeMoverse = matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[0]] == BLANCO
+                    && matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[1]] == BLANCO
+        } else if (orientacion == 2) {
+            puedeMoverse = matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[2]] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[3]] == BLANCO
+        } else if (orientacion == 1) {
+            puedeMoverse = matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[4]] == BLANCO
+                    && matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[5]] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[6]] == BLANCO
+        } else if (orientacion == 3) {
+            puedeMoverse = matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[7]] == BLANCO
+                    && matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[8]] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[9]] == BLANCO
+        }
+        if (puedeMoverse) {
+            limpiar()
+            columna = (columna + direccion)
+            pintar()
+        }
     }
-    if (puedeMoverse) {
-        pieza.limpiar()
-        pieza.columna = (pieza.columna + direccion)
-        pieza.pintar()
-    }
+    return puedeMoverse
 }

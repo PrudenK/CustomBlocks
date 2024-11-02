@@ -7,23 +7,25 @@ import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
 import com.pruden.tetris_2.Piezas.Piezas
 
 fun bajar_5x1(pieza: Piezas): Boolean {
-    val puedeBajar = if (pieza.orientacion == 0) {
-        matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() - 2] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() - 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + 2] == BLANCO
-    } else {
-        matrizNumerica[pieza.getFilaCentro() + 3][pieza.getColumnaCentro()] == BLANCO
+    with(pieza) {
+        val puedeBajar = if (orientacion == 0) {
+            matrizNumerica[getFilaCentro() + 1][getColumnaCentro() - 2] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro() - 1] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro()] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + 1] == BLANCO
+                    && matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + 2] == BLANCO
+        } else {
+            matrizNumerica[getFilaCentro() + 3][getColumnaCentro()] == BLANCO
+        }
+        if (puedeBajar) {
+            limpiar()
+            fila = (fila + 1)
+            pintar()
+        } else {
+            borrarLinea()
+            comprbarPerder()
+            return true
+        }
+        return false
     }
-    if (puedeBajar) {
-        pieza.limpiar()
-        pieza.fila = (pieza.fila + 1)
-        pieza.pintar()
-    } else {
-        borrarLinea()
-        comprbarPerder()
-        return true
-    }
-    return false
 }

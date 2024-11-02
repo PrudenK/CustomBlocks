@@ -11,5 +11,6 @@ data class ModoDeJuego(
     val holdActivoModo: Boolean,
     val tablero: Int,
     val siguientesDisponibles: Boolean,
-    val tipoTablero: Int
+    val tipoTablero: Int,
+    val dash: Boolean
 )

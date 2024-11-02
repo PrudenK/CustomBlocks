@@ -6,34 +6,36 @@ import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
 import com.pruden.tetris_2.Piezas.Piezas
 
 fun bajar_4x1(pieza: Piezas): Boolean {
-    var puedeBajar = true
-    if (pieza.orientacion == 0) {
-        for (i in -1..2) {
-            if (matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + i] != 0) {
-                puedeBajar = false
-                break
+    with(pieza) {
+        var puedeBajar = true
+        if (orientacion == 0) {
+            for (i in -1..2) {
+                if (matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + i] != 0) {
+                    puedeBajar = false
+                    break
+                }
             }
-        }
-    } else if (pieza.orientacion == 2) {
-        for (i in -2..1) {
-            if (matrizNumerica[pieza.getFilaCentro() + 1][pieza.getColumnaCentro() + i] != 0) {
-                puedeBajar = false
-                break
+        } else if (orientacion == 2) {
+            for (i in -2..1) {
+                if (matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + i] != 0) {
+                    puedeBajar = false
+                    break
+                }
             }
+        } else if (orientacion == 3) {
+            puedeBajar = matrizNumerica[getFilaCentro() + 2][getColumnaCentro()] == 0
+        } else if (orientacion == 1) {
+            puedeBajar = matrizNumerica[getFilaCentro() + 3][getColumnaCentro()] == 0
         }
-    } else if (pieza.orientacion == 3) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + 2][pieza.getColumnaCentro()] == 0
-    } else if (pieza.orientacion == 1) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + 3][pieza.getColumnaCentro()] == 0
+        if (puedeBajar) {
+            limpiar()
+            fila = (fila + 1)
+            pintar()
+        } else {
+            borrarLinea()
+            comprbarPerder()
+            return true
+        }
+        return false
     }
-    if (puedeBajar) {
-        pieza.limpiar()
-        pieza.fila = (pieza.fila + 1)
-        pieza.pintar()
-    } else {
-        borrarLinea()
-        comprbarPerder()
-        return true
-    }
-    return false
 }

@@ -48,12 +48,12 @@ class Pieza_O_v4 (override var fila: Int, override var columna: Int,
         return bajar3x3(this, intArrayOf(2,2, 2,2, 2,2))
     }
 
-    override fun derecha() {
-        moverDerechaIzquierda_3x3(this, intArrayOf(2,2, 2,2, 2,2), 1)
+    override fun derecha(): Boolean {
+       return moverDerechaIzquierda_3x3(this, intArrayOf(2,2, 2,2, 2,2), 1)
     }
 
-    override fun izquierda() {
-        moverDerechaIzquierda_3x3(this, intArrayOf(-2, -2,-2, -2,-2, -2), -1)
+    override fun izquierda(): Boolean {
+       return moverDerechaIzquierda_3x3(this, intArrayOf(-2, -2,-2, -2,-2, -2), -1)
     }
 
     override fun getForma(): Array<Array<IntArray>>  {

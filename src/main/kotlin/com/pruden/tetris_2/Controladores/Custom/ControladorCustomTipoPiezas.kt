@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoPieza
+import com.pruden.tetris_2.Metodos.BolsaPiezas.dibujarPiezasSiguientes
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
@@ -75,7 +76,7 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
         for (j in FILAS downTo 0) {
             pintarMatriz(j, -10)
         }
-        //pintar_piezas_tablero_secundario() // lo del listener del cambio de diseño de tablero, me vale también para el cambio de diseño de pieza
+        dibujarPiezasSiguientes(-1)
     }
 
     private fun obtenerClavePorValor(valor: Any): Int {

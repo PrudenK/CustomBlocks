@@ -7,6 +7,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_R
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
@@ -32,6 +33,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     @FXML private lateinit var masLimiteRotacionesB: Button
     @FXML private lateinit var activarHoldB: Button
     @FXML private lateinit var siguientesPiezasB: Button
+    @FXML private lateinit var activarDashButton: Button
 
     @FXML private lateinit var labelTiempoCaidaInicial: Label
     @FXML private lateinit var labelLinesSaltoNivel: Label
@@ -67,6 +69,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         var limiteRotaciones = false
         var activarSiguientesPiezasB = false
         var activarHoldGuardar = false
+        var activarDashes = false
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
@@ -100,9 +103,11 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
 
         activarHoldB.text = "Activo"
         siguientesPiezasB.text = "Activo"
+        activarDashButton.text = "Desactivado"
 
         activarSiguientesPiezasB = true
         activarHoldGuardar = true
+        activarDashes = false
     }
 
     @FXML private fun menosTiempoCaidaInicial() {
@@ -197,6 +202,16 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         }
     }
 
+    @FXML private fun activarDashes(){
+        if (activarDashButton.text == "Activo"){
+            activarDashButton.text = "Desactivado"
+            activarDashes = false
+        }else{
+            activarDashButton.text = "Activo"
+            activarDashes = true
+        }
+    }
+
     private fun cargarValoresInit(){
         labelTiempoCaidaInicial.text = TIEMPO_CAIDA_PIEZAS_INICIAL.toString()
         labelLinesSaltoNivel.text = LINEAS_POR_NIVEL.toString()
@@ -228,6 +243,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
 
         activarSiguientesPiezasB = siguientesPiezaActivo
         activarHoldGuardar = holdActivo
+        activarDashes = dashActivo
 
         if (activarSiguientesPiezasB) {
             siguientesPiezasB.text = "Activo"
@@ -239,6 +255,12 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
             activarHoldB.text = "Activo"
         } else {
             activarHoldB.text = "Desactivado"
+        }
+
+        if (activarDashes){
+            activarDashButton.text = "Activo"
+        }else{
+            activarDashButton.text = "Desactivado"
         }
     }
 

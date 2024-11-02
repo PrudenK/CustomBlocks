@@ -2,14 +2,15 @@ package com.pruden.tetris_2.Metodos.Piezas.Pintar
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcPrincipal
+import javafx.scene.canvas.GraphicsContext
 import kotlin.math.cos
 import kotlin.math.sin
 
-fun poligono(y: Double, x: Double, n_lados: Int) {
+fun poligono(y: Double, x: Double, n_lados: Int, gc : GraphicsContext, tama : Int) {
     // Calcular el centro de la celda
-    val centerX = x + TAMANO_CELDA / 2.0
-    val centerY = y + TAMANO_CELDA / 2.0
-    val radius = (TAMANO_CELDA - 2) / 2.0
+    val centerX = x + tama / 2.0
+    val centerY = y + tama / 2.0
+    val radius = (tama - 2) / 2.0
     val xPoints = DoubleArray(n_lados)
     val yPoints = DoubleArray(n_lados)
 
@@ -23,5 +24,5 @@ fun poligono(y: Double, x: Double, n_lados: Int) {
             yPoints[i] = centerY + radius * sin(2 * Math.PI * i / n_lados)
         }
     }
-    gcPrincipal.fillPolygon(xPoints, yPoints, n_lados)
+    gc.fillPolygon(xPoints, yPoints, n_lados)
 }

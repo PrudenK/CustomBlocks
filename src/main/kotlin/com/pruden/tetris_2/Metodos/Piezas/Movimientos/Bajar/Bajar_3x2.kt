@@ -8,30 +8,32 @@ import com.pruden.tetris_2.Piezas.Piezas
 
 
 fun bajar_3x2(pieza: Piezas, desplazamientos: IntArray): Boolean {
-    var puedeBajar = true
-    if (pieza.orientacion == 0) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + desplazamientos[0]][pieza.getColumnaCentro() - 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[1]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[2]][pieza.getColumnaCentro() + 1] == BLANCO
-    } else if (pieza.orientacion == 2) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + desplazamientos[3]][pieza.getColumnaCentro() - 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[4]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[5]][pieza.getColumnaCentro() + 1] == BLANCO
-    } else if (pieza.orientacion == 1) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + desplazamientos[6]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[7]][pieza.getColumnaCentro() + 1] == BLANCO
-    } else if (pieza.orientacion == 3) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + desplazamientos[8]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[9]][pieza.getColumnaCentro() - 1] == BLANCO
+    with(pieza) {
+        var puedeBajar = true
+        if (orientacion == 0) {
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[0]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[1]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[2]][getColumnaCentro() + 1] == BLANCO
+        } else if (orientacion == 2) {
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[3]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[4]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[5]][getColumnaCentro() + 1] == BLANCO
+        } else if (orientacion == 1) {
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[6]][getColumnaCentro()] == BLANCO
+                    && matrizNumerica[getFilaCentro() + desplazamientos[7]][getColumnaCentro() + 1] == BLANCO
+        } else if (orientacion == 3) {
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[8]][getColumnaCentro()] == BLANCO
+                    && matrizNumerica[getFilaCentro() + desplazamientos[9]][getColumnaCentro() - 1] == BLANCO
+        }
+        if (puedeBajar) {
+            limpiar()
+            fila = (fila + 1)
+            pintar()
+        } else {
+            borrarLinea()
+            comprbarPerder()
+            return true
+        }
+        return false
     }
-    if (puedeBajar) {
-        pieza.limpiar()
-        pieza.fila = (pieza.fila + 1)
-        pieza.pintar()
-    } else {
-        borrarLinea()
-        comprbarPerder()
-        return true
-    }
-    return false
 }

@@ -64,7 +64,6 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
             if(haGuardadoTipoTablero) {
                 if (cambioTipoTableroSinReiniciar) {
                     cambiosTipoTablero()
-                    println("afdasdf")
                 }
                 if (cambioTipoTableroSinReiniciarSecundario) {
                     cambiosTipoTableroSecundario()

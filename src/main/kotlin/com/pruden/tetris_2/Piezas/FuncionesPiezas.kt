@@ -25,9 +25,9 @@ interface FuncionesPiezas {
 
     fun bajar(): Boolean
 
-    fun derecha()
+    fun derecha(): Boolean
 
-    fun izquierda()
+    fun izquierda(): Boolean
 
     fun set_Orientacion(ori: Int)
 

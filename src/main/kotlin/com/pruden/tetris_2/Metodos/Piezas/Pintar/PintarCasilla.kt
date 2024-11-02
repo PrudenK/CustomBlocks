@@ -41,7 +41,7 @@ private fun pintarComun(gc : GraphicsContext, color : Color, fila : Double, colu
         } else if (tipoPieza == 0) { // círculo
             gc.fillOval(x + 1, y + 1, (tama - 2), (tama - 2))
         } else { //polígono dependiendo de los lados (tipo_pieza)
-            poligono(y, x, tipoPieza)
+            poligono(y, x, tipoPieza, gc, tama.toInt())
         }
     }
 }

@@ -9,58 +9,62 @@ import com.pruden.tetris_2.Piezas.Pieza_V
 import com.pruden.tetris_2.Piezas.Piezas
 
 fun bajar3x3(pieza: Piezas, desplazamientos: IntArray): Boolean {
-    var puedeBajar = true
-    if (pieza.orientacion == 0) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + desplazamientos[0]][pieza.getColumnaCentro() - 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[1]][pieza.getColumnaCentro() - 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[2]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[3]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[4]][pieza.getColumnaCentro() + 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[5]][pieza.getColumnaCentro() + 1] == BLANCO
-    } else if (pieza.orientacion == 2) {
-        puedeBajar = matrizNumerica[pieza.getFilaCentro() + desplazamientos[6]][pieza.getColumnaCentro() - 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[7]][pieza.getColumnaCentro() - 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[8]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[9]][pieza.getColumnaCentro()] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[10]][pieza.getColumnaCentro() + 1] == BLANCO
-                && matrizNumerica[pieza.getFilaCentro() + desplazamientos[11]][pieza.getColumnaCentro() + 1] == BLANCO
-    } else if (pieza.orientacion == 1) {
-        puedeBajar = if (pieza is Pieza_U || pieza is Pieza_V) {
-            matrizNumerica[pieza.getFilaCentro() + desplazamientos[14]][pieza.getColumnaCentro()] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[15]][pieza.getColumnaCentro()] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[16]][pieza.getColumnaCentro() + 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[17]][pieza.getColumnaCentro() + 1] == BLANCO
-        } else {
-            matrizNumerica[pieza.getFilaCentro() + desplazamientos[12]][pieza.getColumnaCentro() - 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[13]][pieza.getColumnaCentro() - 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[14]][pieza.getColumnaCentro()] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[15]][pieza.getColumnaCentro()] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[16]][pieza.getColumnaCentro() + 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[17]][pieza.getColumnaCentro() + 1] == BLANCO
+    with(pieza) {
+        var puedeBajar = true
+        if (orientacion == 0) {
+            puedeBajar =
+                matrizNumerica[getFilaCentro() + desplazamientos[0]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[1]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[2]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[3]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[4]][getColumnaCentro() + 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[5]][getColumnaCentro() + 1] == BLANCO
+        } else if (orientacion == 2) {
+            puedeBajar =
+                matrizNumerica[getFilaCentro() + desplazamientos[6]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[7]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[8]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[9]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[10]][getColumnaCentro() + 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[11]][getColumnaCentro() + 1] == BLANCO
+        } else if (orientacion == 1) {
+            puedeBajar = if (pieza is Pieza_U || pieza is Pieza_V) {
+                matrizNumerica[getFilaCentro() + desplazamientos[14]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[15]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[16]][getColumnaCentro() + 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[17]][getColumnaCentro() + 1] == BLANCO
+            } else {
+                matrizNumerica[getFilaCentro() + desplazamientos[12]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[13]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[14]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[15]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[16]][getColumnaCentro() + 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[17]][getColumnaCentro() + 1] == BLANCO
+            }
+        } else if (orientacion == 3) {
+            puedeBajar = if (pieza is Pieza_U || pieza is Pieza_V) {
+                matrizNumerica[getFilaCentro() + desplazamientos[18]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[19]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[20]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[21]][getColumnaCentro()] == BLANCO
+            } else {
+                matrizNumerica[getFilaCentro() + desplazamientos[18]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[19]][getColumnaCentro() - 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[20]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[21]][getColumnaCentro()] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[22]][getColumnaCentro() + 1] == BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[23]][getColumnaCentro() + 1] == BLANCO
+            }
         }
-    } else if (pieza.orientacion == 3) {
-        puedeBajar = if (pieza is Pieza_U || pieza is Pieza_V) {
-            matrizNumerica[pieza.getFilaCentro() + desplazamientos[18]][pieza.getColumnaCentro() - 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[19]][pieza.getColumnaCentro() - 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[20]][pieza.getColumnaCentro()] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[21]][pieza.getColumnaCentro()] == BLANCO
+        if (puedeBajar) {
+            limpiar()
+            fila = (fila + 1)
+            pintar()
         } else {
-            matrizNumerica[pieza.getFilaCentro() + desplazamientos[18]][pieza.getColumnaCentro() - 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[19]][pieza.getColumnaCentro() - 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[20]][pieza.getColumnaCentro()] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[21]][pieza.getColumnaCentro()] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[22]][pieza.getColumnaCentro() + 1] == BLANCO
-                    && matrizNumerica[pieza.getFilaCentro() + desplazamientos[23]][pieza.getColumnaCentro() + 1] == BLANCO
+            borrarLinea()
+            comprbarPerder()
+            return true
         }
+        return false
     }
-    if (puedeBajar) {
-        pieza.limpiar()
-        pieza.fila = (pieza.fila + 1)
-        pieza.pintar()
-    } else {
-        borrarLinea()
-        comprbarPerder()
-        return true
-    }
-    return false
 }

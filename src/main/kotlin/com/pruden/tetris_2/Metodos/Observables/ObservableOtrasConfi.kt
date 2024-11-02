@@ -5,10 +5,12 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_R
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarDashes
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarHoldGuardar
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarSiguientesPiezasB
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.guardar_valores_otras_confi
@@ -35,6 +37,7 @@ fun cargarObservableOtrasConfi(){
 
             holdActivo = activarHoldGuardar
             siguientesPiezaActivo = activarSiguientesPiezasB
+            dashActivo = activarDashes
 
             ControladorCustomOpciones.cambioOtrasConfi = true
             stageOtrasConfi.close()

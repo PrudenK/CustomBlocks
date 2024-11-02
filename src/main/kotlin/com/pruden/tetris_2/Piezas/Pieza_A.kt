@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones.condicionRotarEspecial
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones.rotarNormal
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
+import com.pruden.tetris_2.Metodos.Teclado.moverPiezaAbajo
 import javafx.scene.paint.Color
 
 class Pieza_A (override var fila: Int, override var columna: Int,
@@ -100,12 +101,12 @@ class Pieza_A (override var fila: Int, override var columna: Int,
         return bajar3x3(this, intArrayOf(2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1, 0, 2, 2, 2, 1, 1, 1, 1, 2, 2, 0, 2))
     }
 
-    override fun derecha() {
-        moverDerechaIzquierda_3x3(this, intArrayOf(1, 1, 2, 2, 0, 2, 0, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2), 1)
+    override fun derecha(): Boolean {
+        return moverDerechaIzquierda_3x3(this, intArrayOf(1, 1, 2, 2, 0, 2, 0, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2), 1)
     }
 
-    override fun izquierda() {
-        moverDerechaIzquierda_3x3(this, intArrayOf(-1, -1, -2, -2, 0, -2, 0, -2, -2, -2, -1, -1, -2, -2, -1, -1, -2, -2, -1, -1, -2, -2, -1, -1), -1)
+    override fun izquierda(): Boolean {
+       return moverDerechaIzquierda_3x3(this, intArrayOf(-1, -1, -2, -2, 0, -2, 0, -2, -2, -2, -1, -1, -2, -2, -1, -1, -2, -2, -1, -1, -2, -2, -1, -1), -1)
     }
 
     override fun getForma(): Array<Array<IntArray>>  {

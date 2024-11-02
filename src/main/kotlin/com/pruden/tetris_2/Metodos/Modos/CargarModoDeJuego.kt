@@ -10,6 +10,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCIO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
@@ -51,6 +52,8 @@ fun cargarCambiosModo(modo : ModoDeJuego){
         controladorPrincipal.labelModo.text = nombre
 
         tipoTableroPrin = tipoTablero
+
+        dashActivo = dash
 
         cambioDeTablero()
 

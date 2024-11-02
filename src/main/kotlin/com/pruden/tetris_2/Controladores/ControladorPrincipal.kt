@@ -143,7 +143,7 @@ class ControladorPrincipal : Initializable {
 
         var puedeHoldear = false
         var holdActivo = true
-
+        var dashActivo = false
 
         var siguientesPiezaActivo = true
 

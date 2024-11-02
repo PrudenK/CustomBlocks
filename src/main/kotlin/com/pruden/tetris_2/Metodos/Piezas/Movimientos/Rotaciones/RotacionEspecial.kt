@@ -6,9 +6,7 @@ import com.pruden.tetris_2.Piezas.Piezas
 
 
 fun condicionRotarEspecial(pieza : Piezas, dFilas : IntArray, dColumnas : IntArray, columnaB: Boolean, movimiento: Int): Boolean {
-
     with(pieza) {
-
         var condicion = true
         println(0)
         for (i in dFilas.indices){

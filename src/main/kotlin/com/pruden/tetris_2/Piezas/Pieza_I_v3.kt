@@ -130,12 +130,12 @@ class Pieza_I_v3 (override var fila: Int, override var columna: Int,
         return bajar_5x1(this)
     }
 
-    override fun derecha() {
-        moverDerechaIzquierda_5x1(this, 1)
+    override fun derecha(): Boolean {
+       return moverDerechaIzquierda_5x1(this, 1)
     }
 
-    override fun izquierda() {
-        moverDerechaIzquierda_5x1(this, -1)
+    override fun izquierda(): Boolean {
+       return moverDerechaIzquierda_5x1(this, -1)
     }
 
     override fun getForma(): Array<Array<IntArray>>  {

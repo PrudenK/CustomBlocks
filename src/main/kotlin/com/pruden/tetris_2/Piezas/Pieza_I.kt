@@ -171,12 +171,12 @@ class Pieza_I (override var fila: Int, override var columna: Int,
         return bajar_4x1(this)
     }
 
-    override fun derecha() {
-        derecha_4x1(this)
+    override fun derecha(): Boolean {
+       return derecha_4x1(this)
     }
 
-    override fun izquierda() {
-        izquierda_4x1(this)
+    override fun izquierda(): Boolean {
+       return izquierda_4x1(this)
     }
 
     override fun getForma(): Array<Array<IntArray>>  {

@@ -55,24 +55,28 @@ class Pieza_O(override var fila: Int, override var columna: Int,
         }
     }
 
-    override fun derecha() {
+    override fun derecha(): Boolean {
         if (columna != COLUMNAS - 2) {
             if (!(matrizNumerica[fila][columna + 2] != 0 || matrizNumerica[fila + 1][columna + 2] != 0)) {
                 limpiar()
                 columna +=1
                 pintar()
+                return true
             }
         }
+        return false
     }
 
-    override fun izquierda() {
+    override fun izquierda(): Boolean {
         if (columna > 0) {
             if (!(matrizNumerica[fila][columna - 1] != 0 || matrizNumerica[fila + 1][columna - 1] != 0)) {
                 limpiar()
                 columna -=1
                 pintar()
+                return true
             }
         }
+        return false
     }
 
 
