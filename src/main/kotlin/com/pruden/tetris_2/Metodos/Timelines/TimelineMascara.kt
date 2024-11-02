@@ -3,7 +3,10 @@ package com.pruden.tetris_2.Metodos.Timelines
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcMascara
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.ponerMascaraTableroTIPO2
+import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.ponerMascaraTableroTIPO3
+import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.ponerMascaraTableroTIPO4
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.event.ActionEvent
@@ -15,12 +18,16 @@ fun timelineMascara(lineas : Int){
             borrarMascara()
         }),
         KeyFrame(Duration.seconds(0.5 * lineas), { _: ActionEvent? ->
-            ponerMascaraTableroTIPO2()
+            if(tipoTableroPrin == 2) ponerMascaraTableroTIPO2()
+            if(tipoTableroPrin == 3) ponerMascaraTableroTIPO3()
+            if(tipoTableroPrin == 4) ponerMascaraTableroTIPO4()
         })
     )
     timelineMascara.cycleCount = 1
     timelineMascara.play()
 }
+
+
 
 fun borrarMascara(){
     gcMascara.clearRect(0.0,0.0, controladorPrincipal.canvasMascara.width,controladorPrincipal.canvasMascara.height)

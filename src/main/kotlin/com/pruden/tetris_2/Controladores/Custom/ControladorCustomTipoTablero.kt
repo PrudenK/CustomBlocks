@@ -4,6 +4,7 @@ import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipo
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
@@ -37,6 +38,8 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
     private val pClasico = deRutaAImagen("/Imagenes/Tipos_De_Tableros/clasico.jpg")
     private val pVacio = deRutaAImagen("/Imagenes/Tipos_De_Tableros/vacio_principal.jpg")
     private val pMemory = deRutaAImagen("/Imagenes/Tipos_De_Tableros/Memory.jpg")
+    private val pMemoryX = deRutaAImagen("/Imagenes/Tipos_De_Tableros/MemoryX.jpg")
+    private val pMemoryY = deRutaAImagen("/Imagenes/Tipos_De_Tableros/MemoryY.jpg")
 
     private val sClasico = deRutaAImagen("/Imagenes/Tipos_De_Tableros/clasico_secundario.jpg")
     private val sVacio = deRutaAImagen("/Imagenes/Tipos_De_Tableros/vacio_secundario.jpg")
@@ -66,22 +69,23 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
 
     @FXML
     private fun guardar() {
-        if(tableroPrincipalNum == 2 || tableroPartidaActual == 2){
+        if(tableroPrincipalNum >= 2 || tableroPartidaActual >= 2){
             if(partidaEnCurso) {
-                if (tableroPrincipalNum == 2 && tableroPartidaActual == 2){
+                if ((tableroPrincipalNum == 2 && tableroPartidaActual == 2) ||
+                    (tableroPrincipalNum == 3 && tableroPartidaActual == 3) ||
+                    (tableroPrincipalNum == 4 && tableroPartidaActual == 4)){
                     guardarTipoTableroSinReiciniarSecundario.set(true)
                     stageTipoTablero.close()
-                }else {
-                    mensajeAdvertenciaTT2 = if (tableroPrincipalNum == 2) {
+                }else{
+                    mensajeAdvertenciaTT2 = if (tableroPrincipalNum >= 2) {
                         "Si cambias al talbero Memory tu partida actual se reiniciará ya que este tablero aumenta notablemente las mecánicas del juego "
                     } else { "Has empezado una partida con el tablero Memory, si lo cambias esta se reiniciará, ¿estás seguro?" }
                     crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tipo_Tablero2.fxml", elemento, 370.0, 210.0, null, 0, 0))
                 }
             }else{
-                if (tableroPrincipalNum == 2) controladorPrincipal.labelModo.text = "Custom"
+                if (tableroPrincipalNum >= 2) controladorPrincipal.labelModo.text = "Custom"
                 else controladorPrincipal.labelModo.text = "Clásico"
                 guardarTipoTableroSinReiciniar.set(true)
-                stageTipoTablero.close()
             }
         }else{
             if (!partidaEnCurso) controladorPrincipal.labelModo.text = "Clásico"
@@ -137,22 +141,42 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
     private fun incializarArrays() {
         listaPrincipales = ArrayList<Image>()
         listaSecundarios = ArrayList<Image>()
+
+
         listaNombresPrincipales = ArrayList<String>()
         listaNombresSecundarios = ArrayList<String>()
+
+
         listaPrincipales.add(pVacio)
         listaPrincipales.add(pClasico)
         listaPrincipales.add(pMemory)
+        listaPrincipales.add(pMemoryX)
+        listaPrincipales.add(pMemoryY)
+
+
         listaSecundarios.add(sVacio)
         listaSecundarios.add(sClasico)
+
+
         listaNombresPrincipales.add("Tablero vacío")
         listaNombresPrincipales.add("Tablero clásico")
         listaNombresPrincipales.add("Tablero Memory")
+        listaNombresPrincipales.add("Tablero MemoryX")
+        listaNombresPrincipales.add("Tablero MemoryY")
+
+
         listaNombresSecundarios.add("Tablero vacío")
         listaNombresSecundarios.add("Tablero clásico")
+
+
         tableroPrincipalNum = tipoTableroPrin
         tableroSecundarioNum = tipoTableroSecun
+
+
         imgViewPrincipal.image = listaPrincipales[tableroPrincipalNum]
         imgViewSecundarios.image = listaSecundarios[tableroSecundarioNum]
+
+
         labelPrincipal.text = listaNombresPrincipales[tableroPrincipalNum]
         labelSecundario.text = listaNombresSecundarios[tableroSecundarioNum]
     }

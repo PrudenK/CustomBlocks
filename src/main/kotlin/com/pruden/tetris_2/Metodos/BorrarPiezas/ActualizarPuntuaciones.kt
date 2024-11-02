@@ -1,5 +1,7 @@
 package com.pruden.tetris_2.Metodos.BorrarPiezas
 
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.cambiarParesImparesTablero3y4
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
 import com.pruden.tetris_2.Metodos.Timelines.timelineMascara
 import javafx.scene.control.Label
@@ -21,7 +23,7 @@ fun puntuaciones(lineasBorradas: Int, label_puntuacion: Label) {
         puntuacion += 1200
     }
 
-    timelineMascara(lineasBorradas)
+    if (tipoTableroPrin == 3 || tipoTableroPrin == 4 ||tipoTableroPrin == 2) timelineMascara(lineasBorradas)
 
     if (lineasBorradas == 4 || lineasBorradas == 5) {
         efectoSonido("/Musica/Efectos/lineasTetris.mp3")

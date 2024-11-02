@@ -19,17 +19,13 @@ fun dibujarTableroNormalTIPO2(){
 }
 
 fun ponerMascaraTableroTIPO2(){
-    with(controladorPrincipal){
-        val clipHeight = alturaMascara() * TAMANO_CELDA
-        val clipWidth = (COLUMNAS * TAMANO_CELDA).toDouble()
+    val clipHeight = alturaMascara() * TAMANO_CELDA
+    val clipWidth = (COLUMNAS * TAMANO_CELDA).toDouble()
 
-        val yPosition = (FILAS * TAMANO_CELDA) - clipHeight
+    val yPosition = (FILAS * TAMANO_CELDA) - clipHeight
 
-        canvasMascara.clip = Rectangle(1.0, yPosition+1, clipWidth-1, clipHeight-1)
-
-        gcMascara.fill = FONDO // Cambia esto al color que desees
-        gcMascara.fillRect(1.0, yPosition+1, clipWidth-1, clipHeight-1)
-    }
+    gcMascara.fill = FONDO // Cambia esto al color que desees
+    gcMascara.fillRect(1.0, yPosition+1, clipWidth-1, clipHeight-1)
 }
 
 private fun alturaMascara() :Double{

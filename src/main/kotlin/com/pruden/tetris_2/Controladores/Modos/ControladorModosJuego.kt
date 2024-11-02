@@ -34,6 +34,10 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
             50, false, -1, true, 0, true,1, true)
         val modoMemory  = ModoDeJuego("Memory",intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 10,
             100, false, -1, true, 1, true, 2, false)
+        val modoMemoryX  = ModoDeJuego("MemoryX",intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 10,
+            100, false, -1, true, 1, true, 3, false)
+        val modoMemoryY  = ModoDeJuego("MemoryY",intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 10,
+            100, false, -1, true, 1, true, 4, false)
     }
     override fun initialize(location: URL?, resources: ResourceBundle?) {
 
@@ -70,6 +74,14 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
 
     @FXML private fun memory() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_Memory.fxml", elemento,700.0,820.0, null,0, 0))
+    }
+
+    @FXML private fun memoryX() {
+        crearStage(ClaseStage("Vistas/Modos/vista_Modo_MemoryX.fxml", elemento,700.0,820.0, null,0, 0))
+    }
+
+    @FXML private fun memoryY() {
+        crearStage(ClaseStage("Vistas/Modos/vista_Modo_MemoryY.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
     override fun setStage(stage: Stage?) {
