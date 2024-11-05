@@ -18,9 +18,11 @@ class ControladorAdvertenciaTipoTablero2: ControladorGEN(), Initializable {
 
     companion object{
         var mensajeAdvertenciaTT2 : String = ""
+        var haGuardadoAdvertencia = false
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+        haGuardadoAdvertencia = false
         labelAdvertencia.text = mensajeAdvertenciaTT2
     }
 
@@ -33,6 +35,7 @@ class ControladorAdvertenciaTipoTablero2: ControladorGEN(), Initializable {
 
     @FXML
     private fun guardar() {
+        haGuardadoAdvertencia = true
         guardarTipoTablero.set(true)
         stage.close()
     }

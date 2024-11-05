@@ -1,5 +1,4 @@
 Rotaciones especiales Pieza_P
 
-Modo dash
-
 Revisar cambio tipo tablero cuando has perdido
+Bug cambio de piezas cuando "hasPerdido"

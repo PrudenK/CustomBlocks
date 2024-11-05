@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.BorrarPiezas
 
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.cambiarParesImparesTablero3y4
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
@@ -8,20 +9,14 @@ import javafx.scene.control.Label
 
 
 
-fun puntuaciones(lineasBorradas: Int, label_puntuacion: Label) {
+fun puntuaciones(lineasBorradas: Int) {
     var puntuacion = 0
 
-    if (lineasBorradas == 1) {
-        puntuacion += 100
-    } else if (lineasBorradas == 2) {
-        puntuacion += 300
-    } else if (lineasBorradas == 3) {
-        puntuacion += 500
-    } else if (lineasBorradas == 4) {
-        puntuacion += 800
-    } else if (lineasBorradas == 5) {
-        puntuacion += 1200
-    }
+         if (lineasBorradas == 1) puntuacion += 100
+    else if (lineasBorradas == 2) puntuacion += 300
+    else if (lineasBorradas == 3) puntuacion += 500
+    else if (lineasBorradas == 4) puntuacion += 800
+    else if (lineasBorradas == 5) puntuacion += 1200
 
     if (tipoTableroPrin == 3 || tipoTableroPrin == 4 ||tipoTableroPrin == 2) timelineMascara(lineasBorradas)
 
@@ -31,5 +26,5 @@ fun puntuaciones(lineasBorradas: Int, label_puntuacion: Label) {
         efectoSonido("/Musica/Efectos/romperLineas.mp3")
     }
 
-    label_puntuacion.text = (label_puntuacion.text.toInt() + puntuacion).toString()
+    cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.toInt() + puntuacion).toString()
 }

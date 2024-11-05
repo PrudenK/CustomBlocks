@@ -2,15 +2,13 @@ package com.pruden.tetris_2.Metodos.Perder
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
-import javafx.scene.control.Button
-
-private lateinit var elemento : Button
 
 fun comprbarPerder(){
     if (verificarPerdida()) {
@@ -18,7 +16,7 @@ fun comprbarPerder(){
         timelinePartida.stop()
         cronometro.parar()
 
-        crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", elemento, 315.0, 400.0, null, 0, -60))
+        crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 400.0, null, 0, -60))
     }
 }
 
@@ -31,6 +29,3 @@ fun verificarPerdida(): Boolean {
     return false // No has perdido
 }
 
-fun initBotonPartida(b : Button){
-    elemento = b
-}

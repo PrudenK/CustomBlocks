@@ -20,7 +20,7 @@ class ControladorModoClasicoV2 : ControladorGEN(){
     @FXML
     private fun guardar(){
         cargarCambiosModo(modoClasicoV2)
-        cPrincipal.reiniciarPartida()
+        cPrincipal.partdiaNueva()
         stage.close()
         ControladorModosJuego.stageModos.close()
     }

@@ -1,16 +1,11 @@
 package com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcMascara
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcPrincipal
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumFilas
-import javafx.scene.paint.Color
-import javafx.scene.shape.Rectangle
 
 
 fun dibujarTableroNormalTIPO2(){

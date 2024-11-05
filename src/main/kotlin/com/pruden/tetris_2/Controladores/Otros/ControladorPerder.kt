@@ -19,7 +19,7 @@ class ControladorPerder : ControladorGEN() {
     private lateinit var cPrincipal: ControladorPrincipal
 
     @FXML private fun otra(){
-        cPrincipal.reiniciarPartida()
+        cPrincipal.partdiaNueva()
         stage.close()
     }
 

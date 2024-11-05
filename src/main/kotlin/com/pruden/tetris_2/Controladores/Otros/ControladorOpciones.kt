@@ -29,7 +29,7 @@ class ControladorOpciones : ControladorGEN(){
 
     @FXML
     private fun reiniciar() {
-        cPrincipal!!.reiniciarPartida()
+        cPrincipal!!.partdiaNueva()
         stageOpciones!!.close()
     }
     @FXML

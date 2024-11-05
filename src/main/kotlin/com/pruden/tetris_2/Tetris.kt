@@ -1,6 +1,6 @@
 package com.pruden.tetris_2
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
@@ -22,7 +22,7 @@ class Tetris : Application() {
         stage.isResizable = false
         stage.show()
 
-        controladorPrincipal.pasarEscena(scene)
+        cPrin.pasarEscena(scene)
 
 
     }

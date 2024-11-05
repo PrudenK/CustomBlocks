@@ -21,7 +21,7 @@ class ControladorModoTodo : ControladorGEN(){
     @FXML
     private fun guardar(){
         cargarCambiosModo(modoTodo)
-        cPrincipal.reiniciarPartida()
+        cPrincipal.partdiaNueva()
         stage.close()
         stageModos.close()
     }

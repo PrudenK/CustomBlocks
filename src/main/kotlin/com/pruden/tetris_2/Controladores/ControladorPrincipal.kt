@@ -1,42 +1,26 @@
 package com.pruden.tetris_2.Controladores
 
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioTipoTablero
-import com.pruden.tetris_2.Metodos.Media.Audio.musicaPartida
-import com.pruden.tetris_2.Metodos.BorrarPiezas.initLabelsBorrarLineas
-import com.pruden.tetris_2.Metodos.BorrarPiezas.reiniciarLineasBorradas
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.pintarPiezaTableroSecun
-import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.ponerMascaraTableroTIPO2
-import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
-import com.pruden.tetris_2.Metodos.Matriz.borrarCasillas
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Matriz.rellenarMatriz
-import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
-import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
+import com.pruden.tetris_2.Metodos.Media.Audio.musicaPartida
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableCerrarStageAltF4
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
-import com.pruden.tetris_2.Metodos.Observables.initLabelsObervableNivel
-import com.pruden.tetris_2.Metodos.Perder.initBotonPartida
+import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
-import com.pruden.tetris_2.Metodos.Teclado.initLabelsMoverPiezas
-import com.pruden.tetris_2.Metodos.Teclado.moverPiezaAbajo
 import com.pruden.tetris_2.Metodos.Teclado.moverPiezas
 import com.pruden.tetris_2.Piezas.Piezas
-import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.application.Platform
 import javafx.beans.property.BooleanProperty
 import javafx.beans.property.IntegerProperty
 import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleIntegerProperty
-import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.Scene
@@ -50,7 +34,6 @@ import javafx.scene.layout.Pane
 import javafx.scene.layout.StackPane
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
-import javafx.util.Duration
 import java.net.URL
 import java.util.*
 import java.util.concurrent.locks.Lock
@@ -65,36 +48,40 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var canvasHold: Canvas
 
 
-    @FXML private lateinit var idPrincipal : Pane
-    @FXML private lateinit var cuentaRegresivaIMG : ImageView
+    @FXML lateinit var idPrincipal : Pane
+    @FXML lateinit var cuentaRegresivaIMG : ImageView
     @FXML lateinit var labelLineas: Label
     @FXML lateinit var labelPuntuacion: Label
     @FXML lateinit var labelNivel: Label
-    @FXML private lateinit var cronometroLabel: Label
+    @FXML lateinit var cronometroLabel: Label
     @FXML lateinit var labelModo: Label
-    @FXML private lateinit var nuevaPartidaB: Button
+    @FXML lateinit var nuevaPartidaB: Button
 
-    @FXML private lateinit var stackPane : StackPane
+    @FXML lateinit var stackPane : StackPane
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+        cPrin = this
+
         timelinePartida = Timeline()
 
         musicaPartida(javaClass.getResource("/Musica/Canciones/saturada.mp3")!!.toExternalForm())
 
-        cargarLabels()
+
+        rellenarMatriz()
+
         cargarGc()
 
-        arrastrarFun(idPrincipal)
+        arrastrarFun()
 
         cargarTableros()
 
-        rellenarMatriz()
+
 
         canvasPrincipal.clip = Rectangle(0.0, (2 * TAMANO_CELDA).toDouble(), canvasPrincipal.width, canvasPrincipal.height - 2 * TAMANO_CELDA)
 
         lockCuentaRegresiva = ReentrantLock()
 
-        cronometro = Cronometro(controladorPrincipal)
+        cronometro = Cronometro()
 
         cargarObervableCerrarStageAltF4()
         cargarObervableNivel()
@@ -105,12 +92,6 @@ class ControladorPrincipal : Initializable {
         setStackpane18x10()
 
 
-    }
-
-    init { controladorPrincipal = this }
-
-    fun iniciarCronometroLabel() : Label{
-        return cronometroLabel
     }
 
 
@@ -172,7 +153,7 @@ class ControladorPrincipal : Initializable {
         var hasPerdido = false
 
         lateinit var lockCuentaRegresiva : Lock
-        lateinit var controladorPrincipal: ControladorPrincipal
+        lateinit var cPrin: ControladorPrincipal
         lateinit var timelinePartida : Timeline
 
         lateinit var cronometro : Cronometro
@@ -195,98 +176,52 @@ class ControladorPrincipal : Initializable {
 
 
 
-    fun pasarEscena(scene: Scene) {
-        scene.addEventFilter(KeyEvent.KEY_PRESSED) {event -> moverPiezas(event)}
-    }
 
 
 
 
-    @FXML
-    private fun opciones() {
+
+    @FXML fun opciones() {
         cronometro.parar()
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB, 315.0, 400.0,timelinePartida, 0, -60))
     }
-    @FXML
-    private fun custom() {
+    @FXML fun custom() {
         cronometro.parar()
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,315.0,400.0, timelinePartida, 0, -60))
     }
 
-    @FXML
-    private fun modosDeJuego() {
+    @FXML fun modosDeJuego() {
         cronometro.parar()
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Modos/vista_Modos_Juego.fxml", nuevaPartidaB, 315.0, 400.0,timelinePartida, 0, -60))
     }
 
-    @FXML
-    private fun partdiaNueva() {
+    @FXML fun partdiaNueva() {
         reiniciarPartida()
     }
 
-    @FXML
-    private fun borrar() {
+    @FXML fun borrar() {
 
         imprimirMatriz_TAB()
     }
 
-    @FXML
-    private fun salir() {
+    @FXML fun salir() {
         Platform.exit()
     }
 
-
-    fun reiniciarPartida(){
-        if (!animacionEnCurso) {
-            hasPerdido = false
-            reiniciarLineasBorradas()
-            tiempoCaidaPieza = TIEMPO_CAIDA_PIEZAS_INICIAL
-
-            borrarTableroSecundario(gcSiguiente1)
-            borrarTableroSecundario(gcSiguiente2)
-            borrarTableroSecundario(gcSiguiente3)
-            borrarTableroSecundario(gcHold)
-
-            cronometro.parar()
-            cronometro.seTCronometroA0()
-
-            cuentaAtras(cuentaRegresivaIMG)
-
-            borrarCasillas()
-            reiniciarLabels()
-
-            if (ControladorCustomOpciones.cambioTablero){
-                cambioDeTablero()
-                ControladorCustomOpciones.cambioTablero = false
-            }
-
-            if(cambioTipoTablero){
-                cambiosTipoTablero()
-                cambioTipoTablero = false
-            }
-
-
-
-            Thread { iniciarPartida() }.start()
-        }
+    @FXML fun abrirPublicidad(){
+        abrirBanner()
     }
+
 
     fun cargarTablero(){
         gcPrincipal.clearRect(0.0,0.0, canvasPrincipal.width, canvasPrincipal.height)
         canvasPrincipal.clip = Rectangle(0.0, (2 * TAMANO_CELDA).toDouble(), canvasPrincipal.width, canvasPrincipal.height - 2 * TAMANO_CELDA)
     }
 
-
-
-    private fun cargarLabels(){
-        initLabelsBorrarLineas(labelPuntuacion, labelLineas)
-        initLabelsMoverPiezas(labelPuntuacion)
-        initLabels(labelPuntuacion, labelLineas)
-        initLabelsConfiguraciones(labelPuntuacion, labelLineas, labelNivel)
-        initBotonPartida(nuevaPartidaB)
-        cargarComponentesStackPane(stackPane, cuentaRegresivaIMG)
-        initLabelsObervableNivel(labelLineas,labelNivel)
+    fun pasarEscena(scene: Scene) {
+        scene.addEventFilter(KeyEvent.KEY_PRESSED) {event -> moverPiezas(event)}
     }
+
     private fun cargarGc(){
         gcPrincipal = canvasPrincipal.graphicsContext2D
         gcMascara = canvasMascara.graphicsContext2D

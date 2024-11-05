@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.IniciarPartida
 
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cuentaRegresivaHecha
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.lockCuentaRegresiva
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
@@ -17,15 +18,15 @@ private val num2 = deRutaAImagen("/Imagenes/NumerosCuentaRegresiva/i2.png")
 private val num3 = deRutaAImagen("/Imagenes/NumerosCuentaRegresiva/i3.png")
 
 
-fun cuentaAtras(imgView : ImageView){
+fun cuentaAtras(){
     configuracionInicioAnimacion()
     cuentaRegresivaHecha = false
 
     val timeline = Timeline(
-        crearFrame(0.0, num3, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", imgView),
-        crearFrame(1.0, num2, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", imgView),
-        crearFrame(2.0, num1, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", imgView),
-        crearFrame(3.0, null, "/Musica/Efectos/cuenta_final.mp3", imgView)
+        crearFrame(0.0, num3, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
+        crearFrame(1.0, num2, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
+        crearFrame(2.0, num1, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
+        crearFrame(3.0, null, "/Musica/Efectos/cuenta_final.mp3", cPrin.cuentaRegresivaIMG)
     )
     timeline.cycleCount = 1
 

@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcMascara
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.paresImparesTableroTipo3y4
 
@@ -14,7 +14,7 @@ fun dibujarTableroNormalTIPO3(){
 }
 
 fun ponerMascaraTableroTIPO3(){
-    with(controladorPrincipal){
+    with(cPrin){
         gcMascara.clearRect(0.0,0.0, canvasMascara.width,canvasMascara.height)
 
         val clipWidth = (COLUMNAS * TAMANO_CELDA).toDouble()

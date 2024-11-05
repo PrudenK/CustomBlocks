@@ -6,11 +6,6 @@ import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
 import com.pruden.tetris_2.Metodos.Timelines.pararTimeline
 import javafx.scene.control.Label
 
-
-private lateinit var lineas: Label
-private lateinit var puntuacion: Label
-
-
 fun iniciarPartida(){
     pararTimeline()
     sincronizacion()
@@ -29,11 +24,5 @@ private fun sincronizacion(){
             }
         }
     }
-}
-
-
-fun initLabels(label_puntuacion : Label, label_lineas : Label){
-    lineas = label_lineas
-    puntuacion = label_puntuacion
 }
 

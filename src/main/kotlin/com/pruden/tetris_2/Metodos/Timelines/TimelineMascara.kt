@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Metodos.Timelines
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcMascara
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.ponerMascaraTableroTIPO2
@@ -30,5 +29,5 @@ fun timelineMascara(lineas : Int){
 
 
 fun borrarMascara(){
-    gcMascara.clearRect(0.0,0.0, controladorPrincipal.canvasMascara.width,controladorPrincipal.canvasMascara.height)
+    gcMascara.clearRect(0.0,0.0, cPrin.canvasMascara.width,cPrin.canvasMascara.height)
 }

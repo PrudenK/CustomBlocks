@@ -2,10 +2,8 @@ package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
-import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTableroSecundario
 import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
@@ -59,7 +57,7 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
 
         if (cambioPiezas || cambioTablero || cambioOtrasConfi || cambioTipoTablero){
             cPrincipal.labelModo.text = "Custom"
-            cPrincipal.reiniciarPartida()
+            cPrincipal.partdiaNueva()
         }else{
             if(haGuardadoTipoTablero) {
                 if (cambioTipoTableroSinReiniciar) {

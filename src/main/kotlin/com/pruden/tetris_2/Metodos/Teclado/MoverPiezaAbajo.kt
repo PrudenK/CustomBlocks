@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.Teclado
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
@@ -9,17 +10,17 @@ import com.pruden.tetris_2.Metodos.DibujarTablero.General.cambiarParesImparesTab
 import javafx.scene.control.Label
 import javafx.scene.input.KeyEvent
 
-fun bajar(labelPuntuacion: Label){
+fun bajar(){
     if (moverPiezaAbajo()) {
-        labelPuntuacion.text = (labelPuntuacion.text.toInt() + 2).toString()
+        cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.toInt() + 2).toString()
         efectoSonido("/Musica/Efectos/sonidoMoverPieza.mp3")
     }
 }
 
-fun moverEspacio(event : KeyEvent, labelPuntuacion : Label){
+fun moverEspacio(event : KeyEvent){
     event.consume()
     while (moverPiezaAbajo()) {
-        labelPuntuacion.text = (labelPuntuacion.text.toInt() + 4).toString()
+       cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.toInt() + 4).toString()
     }
     efectoSonido("/Musica/Efectos/caidaPieza.mp3")
 }

@@ -21,7 +21,7 @@ class ControladorModoAlgebra : ControladorGEN(){
     @FXML
     private fun guardar(){
         cargarCambiosModo(modoAlgebra)
-        cPrincipal.reiniciarPartida()
+        cPrincipal.partdiaNueva()
         stage.close()
         stageModos.close()
     }

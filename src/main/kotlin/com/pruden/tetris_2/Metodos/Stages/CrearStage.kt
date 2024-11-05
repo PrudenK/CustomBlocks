@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaPiez
 import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTablero
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Custom.*
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioOtrasConfi
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioPiezas
@@ -41,7 +41,7 @@ fun crearStage(objetoStage: ClaseStage) {
 
     c.setStage(stage)
     c.setBoton(objetoStage.elemento)
-    c.setControladorPrincipal(controladorPrincipal)
+    c.setControladorPrincipal(cPrin)
 
     val stageOwner = objetoStage.elemento.scene.window as Stage
     stage.initOwner(stageOwner)

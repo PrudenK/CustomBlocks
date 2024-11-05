@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Metodos.Modos
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
@@ -9,11 +8,9 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_P
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
@@ -24,10 +21,6 @@ import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
-import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane12x8
-import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane18x10
-import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane30x20
-import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
 import com.pruden.tetris_2.Metodos.Timelines.borrarMascara
 
 fun cargarCambiosModo(modo : ModoDeJuego){
@@ -49,7 +42,7 @@ fun cargarCambiosModo(modo : ModoDeJuego){
         siguientePieza.clear()
         piezasBolsa.clear()
 
-        controladorPrincipal.labelModo.text = nombre
+        cPrin.labelModo.text = nombre
 
         tipoTableroPrin = tipoTablero
 

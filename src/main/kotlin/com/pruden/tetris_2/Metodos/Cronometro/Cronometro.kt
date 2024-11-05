@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.Cronometro
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.application.Platform
@@ -8,8 +9,8 @@ import javafx.event.ActionEvent
 import javafx.scene.control.Label
 import javafx.util.Duration
 
-class Cronometro (private val controlador : ControladorPrincipal) {
-    private var cronometroLabel : Label = controlador.iniciarCronometroLabel()
+class Cronometro () {
+    private var cronometroLabel : Label = cPrin.cronometroLabel
     private var horas = 0
     private var minutos = 0
     private var segundos = 0

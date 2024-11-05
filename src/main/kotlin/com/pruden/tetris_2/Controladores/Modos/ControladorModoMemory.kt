@@ -22,7 +22,7 @@ class ControladorModoMemory : ControladorGEN(){
     @FXML
     private fun guardar(){
         cargarCambiosModo(modoMemory)
-        cPrincipal.reiniciarPartida()
+        cPrincipal.partdiaNueva()
         stage.close()
         ControladorModosJuego.stageModos.close()
     }

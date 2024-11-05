@@ -1,15 +1,14 @@
 package com.pruden.tetris_2.Controladores.Custom
 
+import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2.Companion.haGuardadoAdvertencia
 import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2.Companion.mensajeAdvertenciaTT2
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.controladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
-import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
 import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTablero
 import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTableroSinReiniciar
 import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTableroSinReiniciarSecundario
@@ -83,16 +82,16 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
                     crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tipo_Tablero2.fxml", elemento, 370.0, 210.0, null, 0, 0))
                 }
             }else{
-                if (tableroPrincipalNum >= 2) controladorPrincipal.labelModo.text = "Custom"
-                else controladorPrincipal.labelModo.text = "Clásico"
+                if (tableroPrincipalNum >= 2) cPrin.labelModo.text = "Custom"
+                else cPrin.labelModo.text = "Clásico"
                 guardarTipoTableroSinReiciniar.set(true)
             }
         }else{
-            if (!partidaEnCurso) controladorPrincipal.labelModo.text = "Clásico"
+            if (!partidaEnCurso) cPrin.labelModo.text = "Clásico"
             guardarTipoTableroSinReiciniar.set(true)
             stageTipoTablero.close()
         }
-        ControladorCustomOpciones.haGuardadoTipoTablero = true
+        if (haGuardadoAdvertencia || !partidaEnCurso || tableroPrincipalNum < 2) ControladorCustomOpciones.haGuardadoTipoTablero = true
     }
 
     @FXML
