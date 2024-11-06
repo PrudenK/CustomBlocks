@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores
 
+import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.conexion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
@@ -35,6 +36,9 @@ import javafx.scene.layout.StackPane
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
 import java.net.URL
+import java.sql.Connection
+import java.sql.SQLException
+import java.sql.Statement
 import java.util.*
 import java.util.concurrent.locks.Lock
 import java.util.concurrent.locks.ReentrantLock
@@ -71,7 +75,7 @@ class ControladorPrincipal : Initializable {
 
         cargarGc()
 
-        arrastrarFun()
+        arrastrarFun(idPrincipal)
 
         cargarTableros()
 
@@ -90,8 +94,6 @@ class ControladorPrincipal : Initializable {
         stackPaneY = stackPane.layoutY
 
         setStackpane18x10()
-
-
     }
 
 
@@ -163,6 +165,8 @@ class ControladorPrincipal : Initializable {
 
         var stackPaneX = 0.0
         var stackPaneY = 0.0
+
+        var jugarOnline = false
     }
 
 
@@ -202,6 +206,31 @@ class ControladorPrincipal : Initializable {
     @FXML fun borrar() {
 
         imprimirMatriz_TAB()
+
+        val consulta = "Select * from jugador"
+
+        try {
+            val statement = conexion.createStatement()
+            val resultado = statement.executeQuery(consulta)
+
+            if (resultado.next()) {
+                val id = resultado.getInt("id")
+                val nombre = resultado.getString("nombre")
+                val contrasena = resultado.getString("contrasena")
+                val nivel = resultado.getInt("nivel")
+                val fechaini = resultado.getDate("fechaini")
+                val pais = resultado.getString("pais")
+                val experiencia = resultado.getInt("experiencia")
+
+                println("ID: $id, Nombre: $nombre, Contraseña: $contrasena, Nivel: $nivel, Fecha de inicio: $fechaini, País: $pais, Experiencia: $experiencia")
+            }
+        } catch (err: SQLException) {
+            println("Error al ejecutar la consulta: ${err.message}")
+        } finally {
+
+        }
+
+
     }
 
     @FXML fun salir() {

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="367.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse">
+    <stylesheets>
+        <URL value="@../../styles/tetris.css" />
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <children>
+        <Button layoutX="40.0" layoutY="495.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="103.0" text="Volver" />
+        <ImageView fitHeight="212.0" fitWidth="217.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../Imagenes/Logos/logoCustom.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="193.0" layoutY="495.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="32.0" prefWidth="103.0" text="Registrarse" />
+        <Label layoutX="43.0" layoutY="218.0" text="Usuario" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="userInput" layoutX="193.0" layoutY="218.0" />
+        <Label layoutX="31.0" layoutY="260.0" text="Contraseña" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <PasswordField fx:id="passInput" layoutX="193.0" layoutY="258.0" />
+        <Label fx:id="errorLabel" layoutX="145.0" layoutY="313.0" />
+      <Label layoutX="21.0" layoutY="301.0" text="Repetir contraseña" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="repetirPassInput" layoutX="193.0" layoutY="301.0" />
+      <Label layoutX="28.0" layoutY="345.0" text="Introduce tu pais" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+        <ComboBox fx:id="comboPais" layoutX="193.0" layoutY="345.0" prefHeight="25.0" prefWidth="149.0" promptText="País" />
+    </children>
+</Pane>
