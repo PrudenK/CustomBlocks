@@ -100,4 +100,5 @@
          <Image url="@../../../../../Imagenes/Logos/msi.jpg" />
       </image>
    </ImageView>
+   <Button fx:id="sesionB" layoutX="195.0" layoutY="792.0" mnemonicParsing="false" onAction="#sesion" text="Cerrar sesión" />
 </Pane>

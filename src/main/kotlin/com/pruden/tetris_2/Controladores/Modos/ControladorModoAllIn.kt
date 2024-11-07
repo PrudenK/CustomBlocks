@@ -2,14 +2,14 @@ package com.pruden.tetris_2.Controladores.Modos
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.Modos.ControladorModosJuego.Companion.modoTodo
-import com.pruden.tetris_2.Controladores.Modos.ControladorModosJuego.Companion.stageModos
+import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.modoAllIn
+import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.stageModos
 import com.pruden.tetris_2.Metodos.Modos.cargarCambiosModo
 import javafx.fxml.FXML
 import javafx.scene.control.Button
 import javafx.stage.Stage
 
-class ControladorModoTodo : ControladorGEN(){
+class ControladorModoAllIn : ControladorGEN(){
     private lateinit var stage : Stage
     private lateinit var cPrincipal : ControladorPrincipal
 
@@ -20,7 +20,7 @@ class ControladorModoTodo : ControladorGEN(){
 
     @FXML
     private fun guardar(){
-        cargarCambiosModo(modoTodo)
+        cargarCambiosModo(modoAllIn)
         cPrincipal.partdiaNueva()
         stage.close()
         stageModos.close()

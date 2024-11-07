@@ -9,7 +9,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActi
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarDashes
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarHoldGuardar
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarSiguientesPiezasB

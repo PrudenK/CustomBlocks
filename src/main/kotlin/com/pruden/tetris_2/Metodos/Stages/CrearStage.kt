@@ -6,10 +6,11 @@ import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Custom.*
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioOtrasConfi
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioPiezas
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cambioTablero
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones.Companion.cerrarYGuardarCambio
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioOtrasConfi
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioPiezas
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioTablero
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cerrarYGuardarCambio
 import com.pruden.tetris_2.Controladores.Otros.ControladorPerder
 import com.pruden.tetris_2.Controladores.Otros.ControladorSonido
 import com.pruden.tetris_2.Tetris

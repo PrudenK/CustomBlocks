@@ -1,9 +1,9 @@
-package com.pruden.tetris_2.Controladores.Modos
+package com.pruden.tetris_2.Controladores.Opciones
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
 import com.pruden.tetris_2.Metodos.Modos.ModoDeJuego
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
@@ -26,7 +26,7 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
             100, false, -1, true, 1, true, 1,false)
         val modoClasicoV2 = ModoDeJuego("Clásico v2",intArrayOf(10, 12, 13, 17, 18, 22, 30), 1500, 10,
             100, false, -1, true, 1, true, 1, false)
-        val modoTodo = ModoDeJuego("All in",IntArray(32) { it }, 1500, 10,
+        val modoAllIn = ModoDeJuego("All in",IntArray(32) { it }, 1500, 10,
             100, false, -1, true, 2, true, 1, true)
         val modoAlgebra = ModoDeJuego("Algebra",intArrayOf(3, 8, 13, 14, 20, 28), 1800, 5,
             100, true, 4, true, 1, true, 1, false)
@@ -40,13 +40,13 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
             100, false, -1, true, 1, true, 4, false)
     }
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-
+        cronometro.parar()
     }
 
 
     @FXML private fun volver() {
         if (!hasPerdido) {
-            ControladorPrincipal.cronometro.reanudar()
+            cronometro.reanudar()
             reanudarTimeline()
         }
         stageModos.close()

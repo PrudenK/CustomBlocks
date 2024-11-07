@@ -8,6 +8,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTablero
 import com.pruden.tetris_2.Metodos.Observables.cargarObservableTipoTableroSinReiniciar

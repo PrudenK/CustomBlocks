@@ -1,8 +1,10 @@
 package com.pruden.tetris_2.Controladores.Login
 
+import com.pruden.tetris_2.BaseDeDatos.hashearContraConSAl
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
+import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.conexion
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.statment
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
@@ -27,7 +29,8 @@ class ControladorRegistrarse : Initializable{
     @FXML lateinit var errorLabel: Label
     @FXML lateinit var comboPais: ComboBox<String>
     lateinit var stageRegistrarse :Stage
-
+    private var contraHas = ""
+    private var loginCorrecto = true
 
     private val paises = listOf(
         "Afganistán", "Albania", "Argelia", "Andorra", "Angola", "Antigua y Barbuda", "Argentina", "Armenia",
@@ -65,22 +68,72 @@ class ControladorRegistrarse : Initializable{
 
 
     @FXML fun volver(){
-
         stageLogin.x = stageRegistrarse.x
         stageLogin.y = stageRegistrarse.y
 
         stageRegistrarse.close()
 
-        stageLogin.requestFocus()
 
         stageLogin.isIconified = false
 
     }
 
     @FXML fun registrarse(){
-        //statment.execute()
+        val consulta = "Insert into jugador (nombre, contrasena, nivel, fechaini, pais, experiencia) values (?,?,0,current_date,?,0)"
+        val preparedStatment = conexion.prepareStatement(consulta)
 
+        comprobacionesRegistrar()
+
+        if(loginCorrecto){
+            preparedStatment.setString(1, userInput.text)
+            preparedStatment.setString(2, contraHas)
+            preparedStatment.setString(3, comboPais.value)
+
+            preparedStatment.executeUpdate()
+            reiniciarCampos()
+
+            errorLabel.text = "El registro ha sido correcto"
+        }
 
     }
 
+    private fun comprobacionesRegistrar(){
+        if(comboPais.value == null){
+            loginCorrecto = false
+            errorLabel.text = "Selecciona tu país"
+        }
+
+        if(!comprobarNombreUsuario()) {
+            errorLabel.text = "Ese usario ya está registrado"
+        }else if (userInput.text.isBlank()){
+            loginCorrecto = false
+            errorLabel.text = "El nombre no puede estar vacio"
+        }else if(passInput.text == repetirPassInput.text){
+            if (passInput.text.isBlank()){
+                loginCorrecto = false
+                errorLabel.text = "No puedes tener la contrasña en blanco"
+            }else contraHas = hashearContraConSAl(passInput.text)
+        } else {
+            loginCorrecto = false
+            errorLabel.text = "Las contraseñas no coinciden"
+        }
+    }
+
+
+    private fun comprobarNombreUsuario() :Boolean{
+        val todosNombres = statment.executeQuery("Select nombre from jugador")
+        while (todosNombres.next()){
+            if (userInput.text == todosNombres.getString("nombre")){
+                return false
+            }
+        }
+        return true
+    }
+
+    private fun reiniciarCampos(){
+        userInput.clear()
+        passInput.clear()
+        repetirPassInput.clear()
+        comboPais.value = null
+    }
 }

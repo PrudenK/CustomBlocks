@@ -42,6 +42,8 @@ class ControladorCustomTablero : ControladorGEN(), Initializable {
         val listaTamaCelda = intArrayOf(45, 33, 20)
 
         var tabPosicion = 0
+
+        var cambioDeTAbleroParaTipoPieza = false
     }
 
 

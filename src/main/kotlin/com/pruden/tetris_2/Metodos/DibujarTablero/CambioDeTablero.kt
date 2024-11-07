@@ -4,13 +4,14 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.cargarTablero
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane12x8
 import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane18x10
 import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane30x20
 
 fun cambioDeTablero(){
-    cPrin.cargarTablero()
+    cargarTablero()
 
     matrizNumerica = Array(FILAS + 1) { IntArray(COLUMNAS) }
     dibujarTableroPrincipal()

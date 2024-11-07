@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Observables
 
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
 import javafx.beans.property.SimpleBooleanProperty
 

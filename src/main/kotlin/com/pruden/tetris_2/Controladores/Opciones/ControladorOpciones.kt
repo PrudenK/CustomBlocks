@@ -1,23 +1,31 @@
-package com.pruden.tetris_2.Controladores.Otros
+package com.pruden.tetris_2.Controladores.Opciones
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.stagePrincipal
+import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.application.Platform
 import javafx.fxml.FXML
+import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.stage.Stage
+import java.net.URL
+import java.util.*
 
-class ControladorOpciones : ControladorGEN(){
+class ControladorOpciones : ControladorGEN(), Initializable{
     @FXML private lateinit var sonidoo_B: Button
     private var stageOpciones: Stage? = null
     private var cPrincipal: ControladorPrincipal? = null
 
-
+    override fun initialize(location: URL?, resources: ResourceBundle?) {
+        //arrastrarFun(sonidoo_B, stagePrincipal)
+        cronometro.parar()
+    }
     @FXML
     private fun salir() {
         Platform.exit()

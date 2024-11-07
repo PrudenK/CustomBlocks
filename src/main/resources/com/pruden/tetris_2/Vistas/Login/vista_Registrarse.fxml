@@ -36,7 +36,10 @@
             </font>
         </Label>
         <PasswordField fx:id="passInput" layoutX="193.0" layoutY="258.0" />
-        <Label fx:id="errorLabel" layoutX="145.0" layoutY="313.0" />
+        <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="407.0" prefHeight="27.0" prefWidth="283.0" style="-fx-text-fill: Blue;">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
       <Label layoutX="21.0" layoutY="301.0" text="Repetir contraseña" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />

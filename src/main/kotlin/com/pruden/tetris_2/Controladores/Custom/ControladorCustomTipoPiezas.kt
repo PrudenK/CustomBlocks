@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoPieza
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.cambioDeTAbleroParaTipoPieza
 import com.pruden.tetris_2.Metodos.BolsaPiezas.dibujarPiezasSiguientes
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
@@ -68,15 +69,23 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
 
     private fun cambioTipoPieza() {
         tipoPieza = (obtenerClavePorValor(listaPiezasIMG[posicionLista]))
-        for (i in 0 until FILAS) {
-            for (j in 0 until COLUMNAS) {
-                pintarCasilla(FONDO,i.toDouble(), j.toDouble())
+
+
+        if (!cambioDeTAbleroParaTipoPieza){
+            for (i in 0 until FILAS) {
+                for (j in 0 until COLUMNAS) {
+                    pintarCasilla(FONDO,i.toDouble(), j.toDouble())
+                }
             }
+
+            for (j in FILAS downTo 0) {
+                pintarMatriz(j, -10)
+            }
+
+            dibujarPiezasSiguientes(-1)
         }
-        for (j in FILAS downTo 0) {
-            pintarMatriz(j, -10)
-        }
-        dibujarPiezasSiguientes(-1)
+
+
     }
 
     private fun obtenerClavePorValor(valor: Any): Int {

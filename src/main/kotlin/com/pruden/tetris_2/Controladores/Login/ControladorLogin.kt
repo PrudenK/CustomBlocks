@@ -1,13 +1,11 @@
 package com.pruden.tetris_2.Controladores.Login
 
+import com.pruden.tetris_2.BaseDeDatos.comprobarContra
 import com.pruden.tetris_2.BaseDeDatos.getConexion
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
 import com.pruden.tetris_2.Metodos.Stages.cargarStageRegistrarse
-import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -30,9 +28,7 @@ class ControladorLogin : Initializable{
 
     companion object{
         lateinit var cLogin : ControladorLogin
-
         lateinit var stageLogin: Stage
-
         lateinit var conexion : Connection
         lateinit var statment : Statement
     }
@@ -47,21 +43,35 @@ class ControladorLogin : Initializable{
     }
 
     @FXML fun iniciarSesion(){
-
         conexion = getConexion()
 
+        var loginCorrecto = false
+
+        val nombresContras = statment.executeQuery("Select nombre, contrasena from jugador")
+        while (nombresContras.next()){
+            if (userInput.text == nombresContras.getString("nombre")
+                && comprobarContra(passInput.text, nombresContras.getNString("contrasena"))){
+                loginCorrecto = true
+                break
+
+            }
+        }
+
+        if(loginCorrecto){
+            cargarStagePrincipal()
+            jugarOnline = true
+        }else errorLabel.text = "Login incorrecto"
 
 
 
-        cargarStagePrincipal()
-
-
-        jugarOnline = true
     }
 
     @FXML fun jugarOff(){
         cargarStagePrincipal()
 
+        try {
+            conexion.close()
+        }catch (ignored: Exception){}
 
         jugarOnline = false
     }

@@ -31,15 +31,3 @@ fun getConexion(): Connection {
     }
     return conexion!!
 }
-
-
-
-
-fun cerrarConexion(conexion: Connection) {
-    try {
-        conexion.close()
-    } catch (err: SQLException) {
-        println("Error al cerrar la conexión: ${err.message}")
-    }
-}
-

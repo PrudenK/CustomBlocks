@@ -6,7 +6,32 @@ val query = """
                 VALUES (?, ?, ?, ?, ?, ?)
             """
 """
+                """"
 
+                val consulta = "Select * from jugador"
+
+        try {
+            val statement = conexion.createStatement()
+            val resultado = statement.executeQuery(consulta)
+
+            while (resultado.next()) {
+                val id = resultado.getInt("id")
+                val nombre = resultado.getString("nombre")
+                val contrasena = resultado.getString("contrasena")
+                val nivel = resultado.getInt("nivel")
+                val fechaini = resultado.getDate("fechaini")
+                val pais = resultado.getString("pais")
+                val experiencia = resultado.getInt("experiencia")
+
+                println("ID: $id, Nombre: $nombre, Contraseña: $contrasena, Nivel: $nivel, Fecha de inicio: $fechaini, País: $pais, Experiencia: $experiencia")
+            }
+        } catch (err: SQLException) {
+            println("Error al ejecutar la consulta: ${err.message}")
+        } finally {
+
+        }
+
+                """"
 
 CREATE TABLE jugador (
     id INT AUTO_INCREMENT PRIMARY KEY,

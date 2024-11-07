@@ -1,8 +1,8 @@
 package com.pruden.tetris_2.Metodos.IniciarPartida
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOpciones
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero
+import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Metodos.BorrarPiezas.reiniciarLineasBorradas
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
@@ -37,6 +37,8 @@ fun reiniciarPartida(){
             cambiosTipoTablero()
             ControladorCustomOpciones.cambioTipoTablero = false
         }
+
+        ControladorCustomTablero.cambioDeTAbleroParaTipoPieza = false
 
         Thread { iniciarPartida() }.start()
     }

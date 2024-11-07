@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Advertencias
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.cambioDeTAbleroParaTipoPieza
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.guardarTablero
 import javafx.fxml.FXML
 import javafx.scene.control.Button
@@ -18,6 +19,7 @@ class ControladorAdvertenciaTablero: ControladorGEN() {
 
 
     @FXML private fun guardar() {
+        cambioDeTAbleroParaTipoPieza = true
         guardarTablero.set(true)
         stage.close()
     }

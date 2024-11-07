@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Controladores.Custom
+package com.pruden.tetris_2.Controladores.Opciones
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
@@ -36,6 +36,7 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
 
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+        cronometro.parar()
         cerrarYGuardarCambio = SimpleBooleanProperty(false)
 
         cerrarYGuardarCambio.addListener { _, _, newValue ->

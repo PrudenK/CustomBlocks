@@ -36,6 +36,9 @@
          </font>
       </Label>
       <PasswordField fx:id="passInput" layoutX="117.0" layoutY="263.0" />
-      <Label fx:id="errorLabel" layoutX="145.0" layoutY="313.0" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="54.0" layoutY="313.0" prefHeight="17.0" prefWidth="217.0" style="-fx-text-fill: blue;">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
    </children>
 </Pane>
