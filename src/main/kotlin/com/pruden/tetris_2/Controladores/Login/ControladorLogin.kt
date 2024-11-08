@@ -1,7 +1,9 @@
 package com.pruden.tetris_2.Controladores.Login
 
+import com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Login.iniciarSesionLogin
 import com.pruden.tetris_2.BaseDeDatos.comprobarContra
 import com.pruden.tetris_2.BaseDeDatos.getConexion
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
@@ -43,27 +45,7 @@ class ControladorLogin : Initializable{
     }
 
     @FXML fun iniciarSesion(){
-        conexion = getConexion()
-
-        var loginCorrecto = false
-
-        val nombresContras = statment.executeQuery("Select nombre, contrasena from jugador")
-        while (nombresContras.next()){
-            if (userInput.text == nombresContras.getString("nombre")
-                && comprobarContra(passInput.text, nombresContras.getNString("contrasena"))){
-                loginCorrecto = true
-                break
-
-            }
-        }
-
-        if(loginCorrecto){
-            cargarStagePrincipal()
-            jugarOnline = true
-        }else errorLabel.text = "Login incorrecto"
-
-
-
+        iniciarSesionLogin()
     }
 
     @FXML fun jugarOff(){
@@ -81,7 +63,5 @@ class ControladorLogin : Initializable{
 
         cargarStageRegistrarse(iniciarSesionB)
     }
-
-
 
 }

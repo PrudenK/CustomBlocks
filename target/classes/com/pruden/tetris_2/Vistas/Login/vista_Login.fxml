@@ -16,7 +16,7 @@
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button fx:id="iniciarSesionB" layoutX="105.0" layoutY="348.0" mnemonicParsing="false" onAction="#iniciarSesion" text="IniciarSesión" />
+      <Button fx:id="iniciarSesionB" defaultButton="true" layoutX="105.0" layoutY="348.0" mnemonicParsing="false" onAction="#iniciarSesion" text="IniciarSesión" />
         <ImageView fitHeight="212.0" fitWidth="217.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../../../Imagenes/Logos/logoCustom.png" />

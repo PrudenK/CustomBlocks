@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.ControladorPrincipal
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
@@ -16,6 +17,7 @@ fun cerrarSesion(){
         vReiniciarPartida()
         ControladorCustomPiezas.listaPiezasSeleccionadas = cargarPosicionesPiezasModos(intArrayOf(0, 1, 2, 3, 4, 5, 6))
         vStages()
+        idJugador = -1
     }
 }
 

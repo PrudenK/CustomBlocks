@@ -123,6 +123,8 @@ class ControladorPrincipal : Initializable {
         var jugarOnline = false
 
         lateinit var stagePrincipal: Stage
+
+        var idJugador = -1
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
@@ -152,6 +154,7 @@ class ControladorPrincipal : Initializable {
 
 
     @FXML fun borrar() {
+        println(idJugador)
         imprimirMatriz_TAB()
     }
 
@@ -162,5 +165,9 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun abrirPublicidad(){
         abrirBanner()
+    }
+
+    @FXML fun estadisticas(){
+
     }
 }

@@ -101,4 +101,5 @@
       </image>
    </ImageView>
    <Button fx:id="sesionB" layoutX="195.0" layoutY="792.0" mnemonicParsing="false" onAction="#sesion" text="Cerrar sesión" />
+   <Button layoutX="689.0" layoutY="696.0" mnemonicParsing="false" onAction="#estadisticas" text="Estadísticas" />
 </Pane>

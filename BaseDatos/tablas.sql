@@ -182,6 +182,17 @@ CREATE TABLE estaCustom (
     lineasSum INT,
     puntuacionesSum INT,
     tiempoTotal VARCHAR(50),
+    partidas INT,
+    PRIMARY KEY (idJugador),
+    FOREIGN KEY (idJugador) REFERENCES jugador(id)
+);
+
+CREATE TABLE estaTotales (
+    idJugador INT,
+    lineasSum INT,
+    puntuacionesSum INT,
+    tiempoTotal VARCHAR(50),
+    partidas INT,
     PRIMARY KEY (idJugador),
     FOREIGN KEY (idJugador) REFERENCES jugador(id)
 );
@@ -224,3 +235,18 @@ CREATE TABLE estaPiezas (
     PRIMARY KEY (idJugador),
     FOREIGN KEY (idJugador) REFERENCES jugador(id)
 );
+
+
+
+select * from clan;
+select * from jugador_clan;
+select * from estaCustom;
+select * from estaPiezas;
+select * from estaMemoryX;
+select * from estaMemory;
+select * from estaAlgebra;
+select * from estaAllIn;
+select * from estaClasicoV2;
+select * from estaClasico;
+select * from partida;
+select * from jugador;

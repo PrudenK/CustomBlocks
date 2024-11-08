@@ -8,3 +8,7 @@ cambio tipo pieza cuando no hay partida en curso [x]
 revisar crearStage + ALT F4 en modos
 
 arrastrar todas las vista para el futuro
+
+**
+docker exec -it baseCustom mysql -u root -p
+source /tmp/select.sql;
