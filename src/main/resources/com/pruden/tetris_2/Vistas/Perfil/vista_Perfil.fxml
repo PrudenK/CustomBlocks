@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="440.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil">
+    <stylesheets>
+        <URL value="@../../styles/custom.css" />
+        <URL value="@../../styles/general.css" />
+        <URL value="@../../styles/perfil.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="usuarioLabel" layoutX="226.0" layoutY="40.0" text="Nombre usuario">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="29.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Imagenes/Logos/logoCustom.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="226.0" layoutY="83.0" text="Miembro desde:" />
+      <Label fx:id="fechaIniLabel" layoutX="339.0" layoutY="83.0" text="00-00-0000" />
+      <Label layoutX="226.0" layoutY="108.0" text="Nivel:" />
+      <Label fx:id="nivelLabel" layoutX="272.0" layoutY="108.0" text="0" />
+      <Label layoutX="227.0" layoutY="131.0" text="Ranking global:" />
+      <Label fx:id="rankingLabel" layoutX="351.0" layoutY="131.0" text="#1" />
+      <Label layoutX="228.0" layoutY="156.0" text="País:" />
+      <Label fx:id="paisLabel" layoutX="344.0" layoutY="156.0" text="España" />
+      <ComboBox fx:id="comboBox" layoutX="248.0" layoutY="200.0" prefHeight="25.0" prefWidth="140.0" />
+      <Label layoutX="73.0" layoutY="204.0" text="Estadísticas modo clásico" />
+      <Label layoutX="79.0" layoutY="369.0" text="Estadísticas totales" />
+      <Label layoutX="29.0" layoutY="404.0" text="Puntus acumulados:" />
+      <Label fx:id="puntosTotalesLabel" layoutX="162.0" layoutY="404.0" text="Puntos" />
+      <Label layoutX="29.0" layoutY="432.0" text="Lineas totales:" />
+      <Label fx:id="lineasTotalesLabel" layoutX="167.0" layoutY="432.0" text="Lineas" />
+      <Label layoutX="29.0" layoutY="463.0" text="Partidas jugadas:" />
+      <Label fx:id="partidasTotalesLabel" layoutX="162.0" layoutY="463.0" text="Partidas" />
+      <Label layoutX="29.0" layoutY="491.0" text="Tiempo jugado:" />
+      <Label fx:id="tiempoTotalLabel" layoutX="162.0" layoutY="491.0" text="00:00:00" />
+      <Label layoutX="29.0" layoutY="522.0" prefWidth="89.0" text="Piezas usadas:" />
+      <Label fx:id="totalPiezas" layoutX="173.0" layoutY="522.0" text="123" />
+      <Button fx:id="verPiezasB" layoutX="47.0" layoutY="565.0" mnemonicParsing="false" onAction="#verPiezas" text="Ver piezas en detalle" />
+      <Button layoutX="290.0" layoutY="565.0" mnemonicParsing="false" onAction="#volver" text="Volver atrás" />
+      <Label layoutX="39.0" layoutY="241.0" text="Max nivel:" />
+      <Label layoutX="39.0" layoutY="265.0" text="Max lineas:" />
+      <Label layoutX="38.0" layoutY="293.0" text="Max puntuación:" />
+      <Label layoutX="38.0" layoutY="322.0" text="Max tiempo:" />
+      <Label fx:id="maxNivelModoLabel" layoutX="150.0" layoutY="241.0" text="maxNivel" />
+      <Label fx:id="maxLineasModoLabel" layoutX="150.0" layoutY="265.0" text="maxLineas" />
+      <Label fx:id="maxPuntuModoLabel" layoutX="161.0" layoutY="293.0" text="maxP" />
+      <Label fx:id="maxTiempoModoLabel" layoutX="153.0" layoutY="322.0" text="00:00:00" />
+      <Label layoutX="237.0" layoutY="265.0" text="Lineas totales:" />
+      <Label layoutX="235.0" layoutY="293.0" text="Puntus acumulados:" />
+      <Label layoutX="235.0" layoutY="322.0" text="Tiempo jugado:" />
+      <Label fx:id="lineasSumModoLabel" layoutX="369.0" layoutY="265.0" text="12" />
+      <Label fx:id="puntosSumModoLabel" layoutX="374.0" layoutY="293.0" text="12" />
+      <Label fx:id="tiempoSumModoLabel" layoutX="357.0" layoutY="322.0" text="00:00:00" />
+      <Label layoutX="305.0" layoutY="108.0" text="Experiencia:" />
+      <Label fx:id="experienciaLabel" layoutX="388.0" layoutY="108.0" text="0" />
+      <Label layoutX="265.0" layoutY="369.0" text="Estadísticas custom" />
+      <Label layoutX="238.0" layoutY="404.0" text="Puntus acumulados:" />
+      <Label layoutX="238.0" layoutY="432.0" text="Lineas totales:" />
+      <Label layoutX="238.0" layoutY="463.0" text="Partidas jugadas:" />
+      <Label layoutX="238.0" layoutY="491.0" text="Tiempo jugado:" />
+      <Label layoutX="238.0" layoutY="522.0" prefWidth="89.0" text="Piezas jugadas:" />
+      <Label fx:id="puntosCustomLabel" layoutX="371.0" layoutY="404.0" text="Puntos" />
+      <Label fx:id="lineasCustomLabel" layoutX="376.0" layoutY="432.0" text="Lineas" />
+      <Label fx:id="partidasCustomLabel" layoutX="371.0" layoutY="463.0" text="Partidas" />
+      <Label fx:id="tiempoCustomLabel" layoutX="371.0" layoutY="491.0" text="00:00:00" />
+      <Label fx:id="customPiezasLabel" layoutX="382.0" layoutY="522.0" text="123" />
+   </children>
+
+</Pane>

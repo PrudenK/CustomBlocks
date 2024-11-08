@@ -1,0 +1,10 @@
+.labelG{
+    -fx-text-fill: white;
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-font-weight: bold;
+}
+
+.label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}

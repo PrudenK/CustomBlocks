@@ -12,7 +12,7 @@
 
 <Pane fx:id="idPrincipal" prefHeight="865.0" prefWidth="843.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ControladorPrincipal">
     <stylesheets>
-        <URL value="@../../styles/tetris.css" />
+        <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
     </stylesheets>
 
@@ -101,5 +101,6 @@
       </image>
    </ImageView>
    <Button fx:id="sesionB" layoutX="195.0" layoutY="792.0" mnemonicParsing="false" onAction="#sesion" text="Cerrar sesión" />
-   <Button layoutX="689.0" layoutY="696.0" mnemonicParsing="false" onAction="#estadisticas" text="Estadísticas" />
+   <Button layoutX="691.0" layoutY="680.0" mnemonicParsing="false" onAction="#perfil" prefHeight="32.0" prefWidth="93.0" text="Perfil" />
+   <Button layoutX="691.0" layoutY="736.0" mnemonicParsing="false" onAction="#rankings" prefHeight="32.0" prefWidth="93.0" text="Rankings" />
 </Pane>

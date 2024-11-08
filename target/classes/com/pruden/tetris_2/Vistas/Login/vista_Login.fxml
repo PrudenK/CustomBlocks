@@ -12,7 +12,7 @@
 
 <Pane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="314.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Login.ControladorLogin">
     <stylesheets>
-        <URL value="@../../styles/tetris.css" />
+        <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>

@@ -167,7 +167,11 @@ class ControladorPrincipal : Initializable {
         abrirBanner()
     }
 
-    @FXML fun estadisticas(){
+    @FXML fun perfil(){
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", nuevaPartidaB, 440.0, 647.0, timelinePartida, 0, -60))
+    }
+
+    @FXML fun rankings(){
 
     }
 }
