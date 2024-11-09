@@ -6,7 +6,7 @@ import com.pruden.tetris_2.Controladores.Perfil.ControladorPiezasPerfil.Companio
 import javafx.application.Platform
 import javafx.scene.control.Label
 
-fun cargarDatosPiezas(){
+fun cargarDatosPiezasPerfil(){
     Platform.runLater{
         val consulta = "Select * from estaPiezas where idJugador = ${ControladorPrincipal.idJugador}"
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="658.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas">
+    <stylesheets>
+        <URL value="@../../styles/custom.css" />
+        <URL value="@../../styles/general.css" />
+        <URL value="@../../styles/partidaVista.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableView" layoutX="30.0" layoutY="169.0" prefHeight="431.0" prefWidth="604.0">
+        <columns>
+          <TableColumn fx:id="modo" prefWidth="93.0" text="Modo" />
+          <TableColumn fx:id="nivel" prefWidth="50.0" text="Nivel" />
+            <TableColumn fx:id="puntu" prefWidth="86.0" text="Puntuacion" />
+            <TableColumn fx:id="tiempo" prefWidth="114.0" text="Tiempo" />
+            <TableColumn fx:id="lineas" prefWidth="60.0" text="Lineas" />
+            <TableColumn fx:id="fecha" prefWidth="174.0" text="Fecha de Juego" />
+        </columns>
+      </TableView>
+      <Label layoutX="82.0" layoutY="60.0" prefHeight="27.0" prefWidth="541.0" text="Aquí puedes ver los registros de todas las partidas que has jugado" textFill="#fcfcfc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="454.0" layoutY="616.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+      <ComboBox fx:id="comboFiltrar" layoutX="121.0" layoutY="120.0" prefWidth="150.0" />
+      <Label layoutX="30.0" layoutY="120.0" text="Filtrar por" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="378.0" layoutY="120.0" text="Ordenar por" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboOrdenar" layoutX="485.0" layoutY="120.0" prefWidth="150.0" />
+   </children>
+
+
+</Pane>

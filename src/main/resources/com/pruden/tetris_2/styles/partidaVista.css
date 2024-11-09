@@ -1,0 +1,68 @@
+.table-view {
+    -fx-background-color: #595959; /* Fondo gris claro */
+    -fx-border-color: #2e2f2f; /* Borde gris más oscuro */
+    -fx-border-width: 2px; /* Ancho del borde */
+    -fx-table-cell-border-color: #2e2f2f; /* Color de borde de las celdas */
+    -fx-padding: 10px; /* Espaciado interno */
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-font-weight: bold; /* Fuente en negrita */
+    -fx-text-fill: white; /* Texto blanco */
+}
+
+.table-view .column-header {
+    -fx-background-color: #4b4b4b; /* Fondo gris oscuro */
+    -fx-border-color: #6c6c6c; /* Borde gris más claro */
+    -fx-border-width: 0 0 2px 0; /* Borde solo en la parte inferior */
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-font-weight: bold; /* Fuente en negrita */
+    -fx-text-fill: white; /* Texto blanco */
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #595959; /* Fondo gris claro */
+    -fx-border-color: #2e2f2f; /* Borde gris más oscuro */
+    -fx-border-width: 0 0 1px 0; /* Borde solo en la parte inferior */
+    -fx-text-fill: white; /* Texto blanco */
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #4b4b4b; /* Fondo gris oscuro para filas impares */
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #6c6c6c; /* Fondo gris intermedio al seleccionar */
+    -fx-text-fill: white; /* Texto blanco */
+}
+
+.table-view .table-cell {
+    -fx-padding: 4px 8px; /* Espaciado interno */
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #4b4b4b; /* Fondo gris oscuro para el encabezado */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white; /* Texto blanco */
+}
+
+.table-view .focus-indicator {
+    -fx-border-color: transparent; /* Eliminar el borde de enfoque */
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: #595959; /* Fondo gris claro */
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #595959; /* Fondo gris claro del área de contenido */
+}
+
+.scroll-pane .thumb {
+    -fx-background-color: #888; /* Color de la barra de desplazamiento */
+}
+
+.scroll-pane .track {
+    -fx-background-color: #2e2f2f; /* Fondo del track de desplazamiento */
+}

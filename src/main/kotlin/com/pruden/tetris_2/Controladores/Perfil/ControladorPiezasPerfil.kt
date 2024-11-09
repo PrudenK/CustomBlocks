@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Controladores.Perfil
 
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.cargarDatosPiezas
+import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.cargarDatosPiezasPerfil
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import javafx.fxml.FXML
@@ -16,7 +16,7 @@ class ControladorPiezasPerfil : ControladorGEN(), Initializable {
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cPiezasPerfil = this
-        cargarDatosPiezas()
+        cargarDatosPiezasPerfil()
     }
 
 

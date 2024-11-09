@@ -12,7 +12,7 @@ module com.pruden.tetris_2 {
 
     opens com.pruden.tetris_2 to javafx.fxml;
     opens com.pruden.tetris_2.Controladores to javafx.fxml;
-
+    opens com.pruden.tetris_2.Metodos.PartidaVistaDatos to javafx.base;
 
 
     opens com.pruden.tetris_2.Controladores.Otros to javafx.fxml; //////////
@@ -22,6 +22,7 @@ module com.pruden.tetris_2 {
     opens com.pruden.tetris_2.Controladores.Login to javafx.fxml;
     opens com.pruden.tetris_2.Controladores.Opciones to javafx.fxml;
     opens com.pruden.tetris_2.Controladores.Perfil to javafx.fxml;
+    opens com.pruden.tetris_2.Controladores.Partidas to javafx.fxml;
 
     exports com.pruden.tetris_2;
 

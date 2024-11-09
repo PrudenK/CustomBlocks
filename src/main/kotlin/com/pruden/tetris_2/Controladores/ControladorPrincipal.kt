@@ -174,4 +174,8 @@ class ControladorPrincipal : Initializable {
     @FXML fun rankings(){
 
     }
+
+    @FXML fun registroPartidas(){
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vista_Partidas.fxml", nuevaPartidaB, 658.0, 675.0, timelinePartida, 0, -60))
+    }
 }

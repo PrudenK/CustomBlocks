@@ -40,7 +40,8 @@ class ControladorLogin : Initializable{
         cLogin = this
 
         arrastrarFun(paneLogin)
-
+        userInput.text = "Pruden"
+        passInput.text = "1234"
 
     }
 

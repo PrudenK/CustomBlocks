@@ -4,6 +4,10 @@ import com.pruden.tetris_2.Piezas.*
 
 val listaModos = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY")
 
+val listaModosConTodos = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY", "Todos")
+
+val listaOrdenar = listOf("Fecha", "Nivel", "Lineas", "Puntuación", "Tiempo")
+
 val listaModosEsta = listOf("estaClasico", "estaClasicoV2", "estaAllIn", "estaAlgebra", "estaRapidO",
     "estaMemory", "estaMemoryX", "estaMemoryY")
 
