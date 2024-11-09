@@ -16,10 +16,10 @@ fun initPartidaDatos(){
         comboOrdenar.value = listaOrdenar[0]
 
 
-        agregarDatos()
+        cargarDatosPartidas()
 
         comboFiltrar.valueProperty().addListener { _, _, _ ->
-            agregarDatos()
+            cargarDatosPartidas()
         }
 
         comboOrdenar.valueProperty().addListener { _, _, _ ->

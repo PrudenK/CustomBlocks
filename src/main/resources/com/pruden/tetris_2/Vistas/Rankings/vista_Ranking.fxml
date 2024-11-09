@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="936.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Rankings.ControladorRankings">
+    <stylesheets>
+        <URL value="@../../styles/custom.css" />
+        <URL value="@../../styles/general.css" />
+        <URL value="@../../styles/partidaVista.css" />
+    </stylesheets>
+    <children>
+        <TableView fx:id="tableView" layoutX="30.0" layoutY="169.0" prefHeight="431.0" prefWidth="872.0">
+            <columns>
+                <TableColumn fx:id="nombre" prefWidth="154.0" text="Nombre" />
+                <TableColumn fx:id="nivelUser" prefWidth="102.0" text="Nivel Usuario" />
+                <TableColumn fx:id="nivelPartida" prefWidth="105.0" text="Nivel Partida" />
+                <TableColumn fx:id="lineas" prefWidth="67.0" text="Lineas" />
+            <TableColumn fx:id="puntu" prefWidth="97.0" text="Puntuación" />
+            <TableColumn fx:id="tiempoPartida" prefWidth="170.0" text="Tiempo de partida" />
+            <TableColumn fx:id="pais" prefWidth="152.0" text="Pais" />
+            </columns>
+        </TableView>
+        <Label layoutX="165.0" layoutY="38.0" prefHeight="27.0" prefWidth="618.0" text="Bienvenido a los rankings donde aparecen los mejores jugadores del mundo" textFill="#fcfcfc">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="454.0" layoutY="616.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+        <ComboBox fx:id="comboModo" layoutX="162.0" layoutY="120.0" prefWidth="150.0" />
+        <Label layoutX="30.0" layoutY="120.0" text="Filtrar por modo" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="372.0" layoutY="120.0" text="Filtrar por pais" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="comboPais" layoutX="485.0" layoutY="120.0" prefWidth="150.0" />
+    </children>
+</Pane>

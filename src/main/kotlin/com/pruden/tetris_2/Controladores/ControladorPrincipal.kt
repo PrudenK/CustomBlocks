@@ -172,7 +172,7 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun rankings(){
-
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", nuevaPartidaB, 936.0, 675.0, timelinePartida, 0, -60))
     }
 
     @FXML fun registroPartidas(){

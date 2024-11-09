@@ -5,7 +5,7 @@ import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas.Companion.cPartidas
 import java.sql.ResultSet
 
-fun agregarDatos(){
+fun cargarDatosPartidas(){
     cPartidas.datosPartida.clear()
     val datos = consultaPartidas()
     with(datos){

@@ -1,14 +1,8 @@
 package com.pruden.tetris_2.Controladores.Login
 
-import com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Registrarse.comprobacionesRegistrar
+import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.paises
 import com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Registrarse.registrarJugador
-import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insertarEnTablaPiezas
-import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insertarEstasGen
-import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insetarEnTablasModos
-import com.pruden.tetris_2.BaseDeDatos.hashearContraConSAl
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.conexion
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.statment
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -32,33 +26,6 @@ class ControladorRegistrarse : Initializable{
 
     var contraHas = ""
     var loginCorrecto = true
-
-    private val paises = listOf(
-        "Afganistán", "Albania", "Argelia", "Andorra", "Angola", "Antigua y Barbuda", "Argentina", "Armenia",
-        "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bahrein", "Bangladesh", "Barbados", "Bielorrusia",
-        "Bélgica", "Belice", "Benín", "Bután", "Bolivia", "Bosnia y Herzegovina", "Botsuana", "Brasil",
-        "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Camboya", "Camerún", "Canadá",
-        "Catar", "Chile", "China", "Chipre", "Colombia", "Comoras", "Congo", "Corea del Norte", "Corea del Sur",
-        "Costa Rica", "Croacia", "Cuba", "Curazao", "Chipre", "República Checa", "Dinamarca", "Djibouti",
-        "Dominica", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Ecuador", "Eritrea", "Eslovaquia",
-        "Eslovenia", "España", "Estados Unidos", "Estonia", "Eswatini", "Etiopía", "Fiyi", "Filipinas",
-        "Finlandia", "Francia", "Gabon", "Gambia", "Georgia", "Ghana", "Granada", "Grecia", "Guatemala",
-        "Guayana", "Guinea", "Guinea Ecuatorial", "Guyana Francesa", "Haití", "Honduras", "Hungría", "India",
-        "Indonesia", "Irak", "Irán", "Irlanda", "Islandia", "Islas Cook", "Islas Marshall", "Islas Salomón",
-        "Israel", "Italia", "Jamaica", "Japón", "Jordania", "Kazajistán", "Kenia", "Kirguistán", "Kiribati",
-        "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania",
-        "Luxemburgo", "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Marruecos", "Marianas del Norte",
-        "Mauricio", "Mauritania", "México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro",
-        "Mozambique", "Namibia", "Nauru", "Nepal", "Nicaragua", "Níger", "Nigeria", "Noruega", "Nueva Zelanda",
-        "Omán", "Países Bajos", "Pakistán", "Palaos", "Panamá", "Papúa Nueva Guinea", "Paraguay", "Perú", "Polonia",
-        "Portugal", "Reino Unido", "República Dominicana", "República Checa", "Rumanía", "Rusia", "Ruanda",
-        "Samoa", "San Cristóbal y Nieves", "San Marino", "San Vicente y las Granadinas", "Santo Tomé y Príncipe",
-        "Senegal", "Serbia", "Seychelles", "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka", "Sudáfrica",
-        "Sudán", "Sudán del Sur", "Suecia", "Suiza", "Surinam", "Seychelles", "Tailandia", "Tanzania", "Togo",
-        "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay",
-        "Uzbekistán", "Vanuatu", "Vaticano", "Venezuela", "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue"
-    )
-
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cRegistrarse = this
