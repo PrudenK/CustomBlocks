@@ -19,8 +19,6 @@ import java.net.URL
 import java.util.*
 
 class ControladorCustomTablero : ControladorGEN(), Initializable {
-    private lateinit var cPrincipal : ControladorPrincipal
-
     @FXML private lateinit var carrusel: ImageView
     @FXML private lateinit var tableroLabel: Label
     @FXML private lateinit var guardarB: Button
@@ -100,8 +98,4 @@ class ControladorCustomTablero : ControladorGEN(), Initializable {
     }
 
     override fun setBoton(b: Button?) {}
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
-    }
 }

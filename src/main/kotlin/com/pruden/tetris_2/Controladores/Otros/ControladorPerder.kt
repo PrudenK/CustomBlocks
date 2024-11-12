@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Controladores.Otros
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
 import javafx.fxml.FXML
@@ -16,37 +16,32 @@ class ControladorPerder : ControladorGEN() {
     @FXML private lateinit var lineas: Label
 
     private lateinit var stage: Stage
-    private lateinit var cPrincipal: ControladorPrincipal
 
-    @FXML private fun otra(){
-        cPrincipal.partdiaNueva()
+    @FXML fun otra(){
+        cPrin.partdiaNueva()
         stage.close()
     }
 
-    @FXML private fun cerrar(){
+    @FXML fun cerrar(){
         stage.close()
     }
 
     override fun setStage(stage: Stage?) {
         this.stage = stage!!
-    }
-
-    override fun setBoton(b: Button?) {}
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
         iniciarLabels()
         musicaPerder()
         partidaEnCurso = false
     }
 
+    override fun setBoton(b: Button?) {}
+
+
     private fun iniciarLabels(){
-        nivel.text = cPrincipal.labelNivel.text
-        puntuacion.text = cPrincipal.labelPuntuacion.text
-        lineas.text = cPrincipal.labelLineas.text
+        nivel.text = cPrin.labelNivel.text
+        puntuacion.text = cPrin.labelPuntuacion.text
+        lineas.text = cPrin.labelLineas.text
     }
     private fun musicaPerder(){
         efectoSonido("/Musica/Efectos/sonidoPerder.mp3")
     }
-
 }

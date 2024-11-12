@@ -99,7 +99,4 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
     override fun setBoton(b: Button?) {
         elemento = b!!
     }
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-    }
 }

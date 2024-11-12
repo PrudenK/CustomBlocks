@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Modos
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego
 import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.modoRapidO
 import com.pruden.tetris_2.Metodos.Modos.cargarCambiosModo
@@ -11,7 +12,6 @@ import javafx.stage.Stage
 
 class ControladorModoRapidO : ControladorGEN(){
     private lateinit var stage : Stage
-    private lateinit var cPrincipal : ControladorPrincipal
 
     @FXML
     private fun salir(){
@@ -21,7 +21,7 @@ class ControladorModoRapidO : ControladorGEN(){
     @FXML
     private fun guardar(){
         cargarCambiosModo(modoRapidO)
-        cPrincipal.partdiaNueva()
+        cPrin.partdiaNueva()
         stage.close()
         ControladorModosJuego.stageModos.close()
     }
@@ -30,7 +30,4 @@ class ControladorModoRapidO : ControladorGEN(){
         this.stage = stage!!
     }
     override fun setBoton(b: Button?) {}
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
-    }
 }

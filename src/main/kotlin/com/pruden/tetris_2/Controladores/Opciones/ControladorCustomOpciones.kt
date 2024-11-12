@@ -2,8 +2,14 @@ package com.pruden.tetris_2.Controladores.Opciones
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelTerminado
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objPuntuacionBajar
+import com.pruden.tetris_2.Metodos.BorrarPiezas.objLineasNivel
+import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
+import com.pruden.tetris_2.Metodos.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTableroSecundario
 import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
@@ -21,7 +27,6 @@ import java.util.*
 class ControladorCustomOpciones : ControladorGEN(), Initializable{
     private lateinit var elemnto : Button
     private lateinit var stageCustomOpciones: Stage
-    private lateinit var cPrincipal: ControladorPrincipal
 
     companion object{
         var cambioPiezas = false
@@ -57,8 +62,12 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
 
 
         if (cambioPiezas || cambioTablero || cambioOtrasConfi || cambioTipoTablero){
-            cPrincipal.labelModo.text = "Custom"
-            cPrincipal.partdiaNueva()
+            cPrin.labelModo.text = "Custom"
+
+
+            cambiarLabelsAlSalirDelModoCampa()
+
+            cPrin.partdiaNueva()
         }else{
             if(haGuardadoTipoTablero) {
                 if (cambioTipoTableroSinReiniciar) {
@@ -70,15 +79,13 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
                 }
                 haGuardadoTipoTablero = false
             }
-            if (!hasPerdido) {
-                cronometro.reanudar()
-                reanudarTimeline()
-            }
+            reanudarPartida()
         }
+
+
 
         cambioPiezas = false
         cambioOtrasConfi = false
-
 
     }
 
@@ -127,10 +134,4 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
     override fun setBoton(b: Button?) {
         elemnto = b!!
     }
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
-    }
-
-
 }

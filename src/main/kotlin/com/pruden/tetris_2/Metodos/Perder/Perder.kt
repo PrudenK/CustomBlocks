@@ -8,7 +8,9 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronomet
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel.perderNivelModoCampa
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 
@@ -18,9 +20,14 @@ fun comprbarPerder(){
         timelinePartida.stop()
         cronometro.parar()
 
-        crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 400.0, null, 0, -60))
+        if(nivelEnJuego){
+            perderNivelModoCampa()
+        }else{
+            crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 400.0, null, 0, -60))
+        }
 
-        if (jugarOnline) subirDatosPerder()
+
+        if (jugarOnline && !nivelEnJuego) subirDatosPerder()
     }
 }
 

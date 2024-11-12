@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Partidas
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.PartidaVistaDatos.Partida
 import com.pruden.tetris_2.Metodos.PartidaVistaDatos.initPartidaDatos
 import javafx.collections.ObservableList
@@ -38,6 +39,7 @@ class ControladorPartidas: ControladorGEN(), Initializable {
     }
 
     @FXML fun volver(){
+        reanudarPartida()
         stagePartidas.close()
     }
 
@@ -47,10 +49,6 @@ class ControladorPartidas: ControladorGEN(), Initializable {
     }
 
     override fun setBoton(b: Button?) {
-
-    }
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
 
     }
 }

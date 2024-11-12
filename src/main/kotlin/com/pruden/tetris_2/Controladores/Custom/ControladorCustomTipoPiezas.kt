@@ -25,7 +25,6 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
     @FXML private lateinit var labelNombreTipoPieza: Label
     @FXML private lateinit var imgViewTiposPieza: ImageView
     private lateinit var stage : Stage
-    private lateinit var cPrincipal : ControladorPrincipal
 
     private val pieza0 : Image = deRutaAImagen("/Imagenes/Tipo_De_Pieza/Circulo.png")
     private val pieza3 = deRutaAImagen("/Imagenes/Tipo_De_Pieza/Triangulo.png")
@@ -127,8 +126,4 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
     }
 
     override fun setBoton(b: Button?) {}
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
-    }
 }

@@ -1,11 +1,11 @@
 package com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro
 
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.listaModos
+import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.listaModosEsta
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse
 
 fun insetarEnTablasModos(){
-    for (modo : String in listaModos){
+    for (modo : String in listaModosEsta){
         val consulta = """
                 INSERT INTO $modo (
                     idJugador, maxNivel, maxLineas, maxPuntuacion, maxTiempo, lineasSum, puntuacionesSum, tiempoTotal

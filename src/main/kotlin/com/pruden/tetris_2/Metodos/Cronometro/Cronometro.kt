@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Metodos.Cronometro
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoObj
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.application.Platform
@@ -30,7 +31,7 @@ class Cronometro () {
 
     fun seTCronometroA0() {
         Platform.runLater {
-            cronometroLabel.text = "0:00:00"
+            cronometroLabel.text = "0:00:00"+ tiempoObj
         }
     }
 
@@ -67,7 +68,7 @@ class Cronometro () {
                         if (minutos.toString().length == 1) {
                             minutosS = ":0$minutos"
                         } else minutosS = ":$minutos"
-                        cronometroLabel.text = horas.toString() + minutosS + segundosS
+                        cronometroLabel.text = horas.toString() + minutosS + segundosS + tiempoObj
                     })
             )
         }

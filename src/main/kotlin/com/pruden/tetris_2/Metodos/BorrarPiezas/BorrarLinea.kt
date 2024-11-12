@@ -9,10 +9,12 @@ import javafx.scene.control.Label
 
 private var lineasBorradas = 0
 
+var objLineasNivel = ""
+
 fun borrarLinea(){
     val filaBorrar = filasQueHayQueBorrar()
     lineasBorradas += filaBorrar.size
-    cPrin.labelLineas.text = lineasBorradas.toString()
+    cPrin.labelLineas.text = lineasBorradas.toString()+ objLineasNivel
     puntuaciones(filaBorrar.size)
 
     for (i in filaBorrar.indices) {

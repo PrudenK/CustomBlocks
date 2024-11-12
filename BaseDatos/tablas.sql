@@ -236,6 +236,31 @@ CREATE TABLE estaPiezas (
     FOREIGN KEY (idJugador) REFERENCES jugador(id)
 );
 
+CREATE TABLE mundo (
+   idMundo INT,
+   idJugador INT,
+   completado BOOLEAN NOT NULL,
+   desbloqueado BOOLEAN NOT NULL,
+   PRIMARY KEY (idMundo, idJugador),
+   FOREIGN KEY (idJugador) REFERENCES jugador(id)
+);
+
+CREATE TABLE nivel (
+   idNivel INT,
+   idMundo INT,
+   idJugador INT,
+   tiempoObj VARCHAR(8),
+   puntuacionObj INT,
+   lineasObj INT,
+   mejorTiempo VARCHAR(10),
+   mejorPuntuacion INT,
+   mejorLineas INT,
+   completado BOOLEAN NOT NULL,
+   desbloqueado BOOLEAN NOT NULL,
+   PRIMARY KEY (idNivel, idMundo, idJugador),
+   FOREIGN KEY (idMundo, idJugador) REFERENCES mundo(idMundo, idJugador)
+);
+
 
 
 select * from clan;

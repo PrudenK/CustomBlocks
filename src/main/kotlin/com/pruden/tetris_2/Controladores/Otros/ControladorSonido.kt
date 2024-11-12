@@ -58,9 +58,4 @@ class ControladorSonido : ControladorGEN(), Initializable {
 
     override fun setBoton(b: Button?) {
     }
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-    }
-
-
 }

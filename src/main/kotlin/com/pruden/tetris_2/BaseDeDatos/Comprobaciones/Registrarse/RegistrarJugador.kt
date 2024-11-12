@@ -4,8 +4,8 @@ import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insertarEnTablaPiez
 import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insertarEstasGen
 import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insetarEnTablasModos
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
-import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse
 import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse.Companion.cRegistrarse
+import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse.Companion.idNuevoJugador
 
 fun registrarJugador(){
     with(cRegistrarse){
@@ -39,7 +39,7 @@ fun registrarJugador(){
 private fun cargarIdNuevoJugador(){
     val idNuevo = ControladorLogin.statment.executeQuery("Select max(id) as id from jugador")
     idNuevo.next()
-    ControladorRegistrarse.idNuevoJugador = idNuevo.getInt("id")
+    idNuevoJugador = idNuevo.getInt("id")
 }
 
 

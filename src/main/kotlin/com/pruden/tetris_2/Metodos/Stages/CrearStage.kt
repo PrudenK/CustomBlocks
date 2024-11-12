@@ -42,7 +42,6 @@ fun crearStage(objetoStage: ClaseStage) {
 
     c.setStage(stage)
     c.setBoton(objetoStage.elemento)
-    c.setControladorPrincipal(cPrin)
 
     val stageOwner = objetoStage.elemento.scene.window as Stage
     stage.initOwner(stageOwner)

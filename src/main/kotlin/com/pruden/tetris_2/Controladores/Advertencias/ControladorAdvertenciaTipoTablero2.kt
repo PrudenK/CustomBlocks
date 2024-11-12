@@ -45,6 +45,4 @@ class ControladorAdvertenciaTipoTablero2: ControladorGEN(), Initializable {
         this.stage = stage!!
     }
     override fun setBoton(b: Button?) {}
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {}
-
 }

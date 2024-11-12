@@ -4,6 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
+import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
 import com.pruden.tetris_2.Metodos.Modos.ModoDeJuego
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
@@ -17,7 +18,6 @@ import java.util.*
 
 
 class ControladorModosJuego : ControladorGEN(), Initializable {
-    private lateinit var cPrincipal : ControladorPrincipal
     private lateinit var elemento : Button
     companion object{
         lateinit var stageModos: Stage
@@ -44,43 +44,40 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
     }
 
 
-    @FXML private fun volver() {
-        if (!hasPerdido) {
-            cronometro.reanudar()
-            reanudarTimeline()
-        }
+    @FXML fun volver() {
+        reanudarPartida()
         stageModos.close()
     }
 
-    @FXML private fun clasico() {
+    @FXML fun clasico() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_Clasico.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-    @FXML private fun clasicoV2() {
+    @FXML fun clasicoV2() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_ClasicoV2.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-    @FXML private fun todo() {
+    @FXML fun todo() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_Todo.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-    @FXML private fun algebra() {
+    @FXML fun algebra() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_Algebra.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-    @FXML private fun rapido() {
+    @FXML fun rapido() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_RapidO.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-    @FXML private fun memory() {
+    @FXML fun memory() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_Memory.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-    @FXML private fun memoryX() {
+    @FXML fun memoryX() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_MemoryX.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
-    @FXML private fun memoryY() {
+    @FXML fun memoryY() {
         crearStage(ClaseStage("Vistas/Modos/vista_Modo_MemoryY.fxml", elemento,700.0,820.0, null,0, 0))
     }
 
@@ -90,9 +87,5 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
 
     override fun setBoton(b: Button?) {
         elemento = b!!
-    }
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
     }
 }

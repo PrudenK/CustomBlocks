@@ -23,5 +23,4 @@ class ControladorAdvertenciaOtrasConfi : ControladorGEN() {
 
     override fun setStage(stage: Stage?) { this.stage = stage!! }
     override fun setBoton(b: Button?) {}
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {}
 }

@@ -40,14 +40,26 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var canvasHold: Canvas
 
     @FXML lateinit var idPrincipal : Pane
+    @FXML lateinit var paneCuentaRegresiva : Pane
     @FXML lateinit var cuentaRegresivaIMG : ImageView
     @FXML lateinit var labelLineas: Label
     @FXML lateinit var labelPuntuacion: Label
     @FXML lateinit var labelNivel: Label
+    @FXML lateinit var labelNivelTit: Label
     @FXML lateinit var cronometroLabel: Label
     @FXML lateinit var labelModo: Label
+    @FXML lateinit var mundoNivel: Label
     @FXML lateinit var nuevaPartidaB: Button
     @FXML lateinit var sesionB: Button
+
+
+    @FXML lateinit var nivelMarcoNivelTit: Label
+    @FXML lateinit var tiempoMarcoNivel: Label
+    @FXML lateinit var puntuacionMarcoNivel: Label
+    @FXML lateinit var lineasMarcoNivel: Label
+    @FXML lateinit var tiempoMarcoNivelRes: Label
+    @FXML lateinit var puntuacionMarcoNivelRes: Label
+    @FXML lateinit var lineasMarcoNivelRes: Label
 
     @FXML lateinit var stackPane : StackPane
 
@@ -125,7 +137,19 @@ class ControladorPrincipal : Initializable {
         lateinit var stagePrincipal: Stage
 
         var idJugador = -1
+
+        var tiempoObj = ""
+        var lineasObj = ""
+        var objPuntuacionBajar = ""
+
+        var nivelEnJuego = false
+
+        var objFasesNivel = ""
+
+        var nivelTerminado = false
+        var nivelCompletado = false
     }
+
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cPrin = this
@@ -154,7 +178,6 @@ class ControladorPrincipal : Initializable {
 
 
     @FXML fun borrar() {
-        println(idJugador)
         imprimirMatriz_TAB()
     }
 
@@ -165,6 +188,7 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun abrirPublicidad(){
         abrirBanner()
+        opciones()
     }
 
     @FXML fun perfil(){
@@ -177,5 +201,9 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun registroPartidas(){
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vista_Partidas.fxml", nuevaPartidaB, 658.0, 675.0, timelinePartida, 0, -60))
+    }
+
+    @FXML fun campa(){
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModoCampa/vista_Menu_Mundos.fxml", nuevaPartidaB, 600.0, 797.0, timelinePartida, 0, 0))
     }
 }

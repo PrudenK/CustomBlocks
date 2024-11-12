@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Metodos.Teclado
 import com.pruden.tetris_2.BaseDeDatos.SubirDatos.sumarTipoPieza
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objPuntuacionBajar
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
@@ -12,7 +13,7 @@ import javafx.scene.input.KeyEvent
 
 fun bajar(){
     if (moverPiezaAbajo()) {
-        cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.toInt() + 2).toString()
+        cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.split("/")[0].toInt() + 2).toString() + objPuntuacionBajar
         efectoSonido("/Musica/Efectos/sonidoMoverPieza.mp3")
     }
 }
@@ -20,7 +21,7 @@ fun bajar(){
 fun moverEspacio(event : KeyEvent){
     event.consume()
     while (moverPiezaAbajo()) {
-       cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.toInt() + 4).toString()
+       cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.split("/")[0].toInt() + 4).toString() + objPuntuacionBajar
     }
     efectoSonido("/Musica/Efectos/caidaPieza.mp3")
 }

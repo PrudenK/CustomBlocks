@@ -5,9 +5,11 @@ Bug cambio de piezas cuando "hasPerdido"
 
 cambio tipo pieza cuando no hay partida en curso [x]
 
-revisar crearStage + ALT F4 en modos
+revisar crearStage + ALT F4 en modos, (en todo)
 
 arrastrar todas las vista para el futuro
+
+ajustar stackPane de la animación
 
 **
 docker exec -it baseCustom mysql -u root -p

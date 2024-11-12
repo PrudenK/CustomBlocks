@@ -41,3 +41,14 @@ select * from estaPiezas;
 
 partida.sql
 select * from partida;
+
+
+
+mundo.sql
+select 'mundo' as nombre;
+
+select * from mundo;
+
+select 'nivel' as nombre;
+
+select * from nivel;

@@ -23,8 +23,6 @@ import java.net.URL
 import java.util.*
 
 class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
-    private lateinit var cPrincipal : ControladorPrincipal
-
     @FXML private lateinit var activarLimite: Button
     @FXML private lateinit var menosLimiteRotacionesB: Button
     @FXML private lateinit var masLimiteRotacionesB: Button
@@ -266,8 +264,4 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     }
 
     override fun setBoton(b: Button?) {}
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
-    }
 }

@@ -24,10 +24,8 @@ class ControladorAdvertenciaPiezas : ControladorGEN() {
         stage.close()
     }
 
-
     override fun setStage(stage: Stage?) {
         this.stage = stage!!
     }
     override fun setBoton(b: Button?) {}
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {}
 }

@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.statment
+import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
@@ -19,7 +20,6 @@ import java.util.*
 
 class ControladorPerfil : ControladorGEN(), Initializable {
     private lateinit var stagePerfil: Stage
-    private lateinit var cPrincipal: ControladorPrincipal
 
     @FXML lateinit var usuarioLabel: Label
     @FXML lateinit var fechaIniLabel: Label
@@ -77,6 +77,7 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     }
 
     @FXML fun volver(){
+        reanudarPartida()
         stagePerfil.close()
     }
 
@@ -84,7 +85,4 @@ class ControladorPerfil : ControladorGEN(), Initializable {
         stagePerfil = stage!!
     }
     override fun setBoton(b: Button?) {}
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
-    }
 }

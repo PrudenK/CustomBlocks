@@ -27,7 +27,6 @@ import java.net.URL
 import java.util.*
 
 class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
-    private lateinit var cPrincipal : ControladorPrincipal
     private lateinit var elemento : Button
 
     @FXML private lateinit var labelSecundario: Label
@@ -187,8 +186,4 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
     }
 
     override fun setBoton(b: Button?) {elemento = b!!}
-
-    override fun setControladorPrincipal(principal: ControladorPrincipal?) {
-        cPrincipal = principal!!
-    }
 }
