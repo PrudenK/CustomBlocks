@@ -1,10 +1,9 @@
 package com.pruden.tetris_2.Controladores.ModoCampa
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Metodos.ModoCampa.Data.cargarAccionesImageViewsNiveles
-import com.pruden.tetris_2.Metodos.ModoCampa.Data.imagenesMundo1
-import com.pruden.tetris_2.Metodos.ModoCampa.Data.listaImagenesMundos
-import com.pruden.tetris_2.Metodos.ModoCampa.Data.listaNivelesMundo1
+import com.pruden.tetris_2.Metodos.ModoCampa.Data.*
+import com.pruden.tetris_2.Metodos.ModoCampa.Dataº.cargarAccionesImageViewsNiveles
+import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -27,12 +26,11 @@ class ControladorMundos : ControladorGEN(), Initializable {
     @FXML lateinit var nivel8 : ImageView
     @FXML lateinit var nivel9 : ImageView
 
-    var mundoActual = 1
-    val listaNivelesMundos = listOf(listaNivelesMundo1)
+    val listaNivelesMundos = listOf(listaNivelesMundo1, listaNivelesMundo2, listaNivelesMundo3, listaNivelesMundo4)
 
     companion object{
         lateinit var cMundo1: ControladorMundos
-
+        var mundoActual = 1
     }
 
 
@@ -49,15 +47,16 @@ class ControladorMundos : ControladorGEN(), Initializable {
     }
 
 
-    
-
     fun setMundo(mundo : Int){
         mundoActual = mundo-1
+        Platform.runLater {
 
-        val listaImageView = listOf(nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9)
 
-        for (i in imagenesMundo1.indices){
-            listaImageView[i].image = listaImagenesMundos[mundoActual][i]
+            val listaImageView = listOf(nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9)
+
+            for (i in imagenesMundo1.indices){
+                listaImageView[i].image = listaImagenesMundos[mundoActual][i]
+            }
         }
     }
 

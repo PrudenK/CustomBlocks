@@ -6,7 +6,7 @@ import javafx.scene.media.MediaPlayer
 
 
 lateinit var efectoSonidoMP : MediaPlayer
-var volumenEfectos : Double = 100.0
+var volumenEfectos : Double = 0.0
 
 fun efectoSonido(rutaAudio : String){
     Thread {

@@ -1,7 +1,8 @@
-package com.pruden.tetris_2.Metodos.ModoCampa.Data
+package com.pruden.tetris_2.Metodos.ModoCampa.Dataº
 
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa.Companion.cModoCampa
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
+import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.mundoActual
 import com.pruden.tetris_2.Metodos.ModoCampa.CargarNivel.cargarStageCargaYNivel
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -12,8 +13,9 @@ fun cargarAccionesImageViewsNiveles(){
     Platform.runLater{
         for (i in 1 .. 9){
             val imgView = cMundo1.stageMundo1.scene.lookup("#nivel$i") as ImageView
-            imgView.setOnMouseClicked { cargarStageCargaYNivel(cMundo1.listaNivelesMundos[cMundo1.mundoActual][i], cMundo1.stageMundo1) }
+            imgView.setOnMouseClicked { cargarStageCargaYNivel(cMundo1.listaNivelesMundos[mundoActual][i-1], cMundo1.stageMundo1) }
         }
+        println(mundoActual)
     }
 }
 

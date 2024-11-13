@@ -1,7 +1,5 @@
 package com.pruden.tetris_2.Piezas
 
-import javafx.scene.canvas.GraphicsContext
-import javafx.scene.control.Label
 import javafx.scene.paint.Color
 
 interface FuncionesPiezas {

@@ -3,7 +3,7 @@ package com.pruden.tetris_2.Controladores.ModoCampa
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
-import com.pruden.tetris_2.Metodos.ModoCampa.Data.cargarAccionesImageViewsMundos
+import com.pruden.tetris_2.Metodos.ModoCampa.Dataº.cargarAccionesImageViewsMundos
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
