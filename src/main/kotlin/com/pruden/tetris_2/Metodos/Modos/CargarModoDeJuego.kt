@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Metodos.Modos
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
@@ -12,10 +11,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_C
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.lineasObj
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objPuntuacionBajar
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoObj
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumColumnas
@@ -23,7 +19,6 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Compani
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaTamaCelda
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
-import com.pruden.tetris_2.Metodos.BorrarPiezas.objLineasNivel
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.ModoCampa.cambiarLabelsAlSalirDelModoCampa

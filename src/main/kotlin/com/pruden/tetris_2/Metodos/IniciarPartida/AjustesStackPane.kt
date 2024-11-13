@@ -3,8 +3,6 @@ package com.pruden.tetris_2.Metodos.IniciarPartida
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.stackPaneX
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.stackPaneY
-import javafx.scene.image.ImageView
-import javafx.scene.layout.StackPane
 
 fun setStackpane18x10() {
     cPrin.stackPane.layoutX = (stackPaneX + 40)

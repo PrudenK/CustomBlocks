@@ -2,7 +2,6 @@ package com.pruden.tetris_2.Metodos.DibujarTablero
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.cargarTablero
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal

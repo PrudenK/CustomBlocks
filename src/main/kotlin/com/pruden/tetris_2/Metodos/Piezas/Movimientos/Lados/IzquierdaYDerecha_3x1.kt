@@ -3,7 +3,6 @@ package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Piezas.Piezas
-import javafx.scene.canvas.GraphicsContext
 
 fun moverDerechaIzquierda_3x1(pieza: Piezas, dech_o_izq: Int): Boolean { //1 o -1
     var puedeMoverse = true

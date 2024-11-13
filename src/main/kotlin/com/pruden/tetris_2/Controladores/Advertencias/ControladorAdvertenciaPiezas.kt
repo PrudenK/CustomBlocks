@@ -1,9 +1,7 @@
 package com.pruden.tetris_2.Controladores.Advertencias
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.guardarPiezas
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero
 import javafx.fxml.FXML
 import javafx.scene.control.Button
 import javafx.stage.Stage

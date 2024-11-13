@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="797.0" prefWidth="600.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundo1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="797.0" prefWidth="600.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos">
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
@@ -26,47 +26,47 @@
             <content>
                 <Pane prefHeight="578.0" prefWidth="501.0">
                     <children>
-                        <ImageView fx:id="nivel_1_1" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="27.0" onMouseClicked="#nivel1_1F" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="nivel1" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="27.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_1.jpg" />
                      </image>
                         </ImageView>
-                  <ImageView fx:id="nivel_1_2" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="27.0" onMouseClicked="#nivel1_2F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel2" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="27.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_2.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="nivel_1_3" fitHeight="98.0" fitWidth="106.0" layoutX="354.0" layoutY="27.0" onMouseClicked="#nivel1_3F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel3" fitHeight="98.0" fitWidth="106.0" layoutX="354.0" layoutY="27.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_3.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="nivel_1_4" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="185.0" onMouseClicked="#nivel1_4F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel4" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="185.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_4.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="nivel_1_5" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="185.0" onMouseClicked="#nivel1_5F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel5" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="185.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_5.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="nivel_1_6" fitHeight="98.0" fitWidth="106.0" layoutX="354.0" layoutY="185.0" onMouseClicked="#nivel1_6F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel6" fitHeight="98.0" fitWidth="106.0" layoutX="354.0" layoutY="185.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_6.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="nivel_1_7" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="328.0" onMouseClicked="#nivel1_7F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel7" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="328.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_7.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="nivel_1_8" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="328.0" onMouseClicked="#nivel1_8F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel8" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_8.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="nivel_1_9" fitHeight="98.0" fitWidth="106.0" layoutX="354.0" layoutY="328.0" onMouseClicked="#nivel1_9F" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="nivel9" fitHeight="98.0" fitWidth="106.0" layoutX="354.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_9.jpg" />
                      </image>

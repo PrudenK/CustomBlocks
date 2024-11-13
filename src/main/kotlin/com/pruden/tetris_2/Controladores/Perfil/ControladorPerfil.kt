@@ -2,10 +2,7 @@ package com.pruden.tetris_2.Controladores.Perfil
 
 import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.*
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.statment
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage

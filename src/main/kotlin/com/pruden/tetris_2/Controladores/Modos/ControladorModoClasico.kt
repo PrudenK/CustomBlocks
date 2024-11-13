@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Controladores.Modos
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.modoClasico
 import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.stageModos

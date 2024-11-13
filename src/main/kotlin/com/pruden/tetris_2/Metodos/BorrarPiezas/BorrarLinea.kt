@@ -5,7 +5,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BORDE_TA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
-import javafx.scene.control.Label
 
 private var lineasBorradas = 0
 

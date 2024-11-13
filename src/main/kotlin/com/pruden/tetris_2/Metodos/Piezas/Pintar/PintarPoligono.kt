@@ -1,7 +1,5 @@
 package com.pruden.tetris_2.Metodos.Piezas.Pintar
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcPrincipal
 import javafx.scene.canvas.GraphicsContext
 import kotlin.math.cos
 import kotlin.math.sin

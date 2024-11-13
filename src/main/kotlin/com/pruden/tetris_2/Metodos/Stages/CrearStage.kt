@@ -1,18 +1,20 @@
 package com.pruden.tetris_2.Metodos.Stages
 
-import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaPiezas
-import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTablero
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.Custom.*
+import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa
+import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioOtrasConfi
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioPiezas
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioTablero
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cerrarYGuardarCambio
+import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego
+import com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones
 import com.pruden.tetris_2.Controladores.Otros.ControladorPerder
-import com.pruden.tetris_2.Controladores.Otros.ControladorSonido
+import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas
+import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil
+import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings
 import com.pruden.tetris_2.Tetris
 import javafx.event.EventHandler
 import javafx.fxml.FXMLLoader
@@ -26,6 +28,10 @@ fun crearStage(objetoStage: ClaseStage) {
     val fxmlLoader = FXMLLoader(Tetris::class.java.getResource(objetoStage.vista))
     val scene = Scene(fxmlLoader.load(), objetoStage.ancho, objetoStage.alto)
     val stage = Stage()
+
+    if(objetoStage.mundo != -1){
+        cMundo1.setMundo(objetoStage.mundo)
+    }
 
     stage.initStyle(StageStyle.UNDECORATED) // Eliminar barra de título
 
@@ -54,9 +60,8 @@ fun crearStage(objetoStage: ClaseStage) {
         stage.y = centroY + objetoStage.movY
     }
 
-    if (!(c is ControladorAdvertenciaPiezas || c is ControladorCustomPiezas || c is ControladorAdvertenciaTablero
-                || c is ControladorCustomTablero || c is ControladorSonido || c is ControladorPerder
-                || c is ControladorCustomTipoTablero || c is ControladorCustomOtrasConfiguraciones)
+    if (c is ControladorCustomOpciones || c is ControladorOpciones || c is ControladorPerfil || c is ControladorRankings
+        || c is ControladorModoCampa || c is ControladorModosJuego || c is ControladorPartidas //|| c is ControladorCargarNivel
     ) {
         if (c is ControladorCustomOpciones) {
             stage.onCloseRequest = EventHandler { _: WindowEvent? ->

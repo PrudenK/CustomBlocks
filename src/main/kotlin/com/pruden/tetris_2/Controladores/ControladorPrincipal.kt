@@ -114,7 +114,7 @@ class ControladorPrincipal : Initializable {
 
 
 
-        var matrizNumerica: Array<IntArray> = Array(FILAS+1) { IntArray(COLUMNAS) }
+        var matrizNumerica: Array<IntArray> = Array(FILAS +1) { IntArray(COLUMNAS) }
         var piezaHold: ArrayList<Piezas> = ArrayList()
 
 
@@ -158,14 +158,16 @@ class ControladorPrincipal : Initializable {
 
 
     @FXML fun opciones() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB, 315.0, 400.0,timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB, 315.0, 400.0,
+            timelinePartida, 0, -60))
     }
     @FXML fun custom() {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,315.0,400.0, timelinePartida, 0, -60))
     }
 
     @FXML fun modosDeJuego() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Modos/vista_Modos_Juego.fxml", nuevaPartidaB, 315.0, 400.0,timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Modos/vista_Modos_Juego.fxml", nuevaPartidaB, 315.0, 400.0,
+            timelinePartida, 0, -60))
     }
 
     @FXML fun sesion(){

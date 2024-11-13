@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Controladores.Advertencias
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.guardar_valores_otras_confi
 import javafx.fxml.FXML

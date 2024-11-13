@@ -26,13 +26,53 @@
          <content>
             <Pane prefHeight="578.0" prefWidth="501.0">
                <children>
-                  <ImageView fx:id="imgViewMundo1" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="27.0" onMouseClicked="#abrirMundo1" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgViewMundo1" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="27.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo1.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="32.0" layoutY="135.0" text="Completados" />
                   <Label fx:id="completadosMundo1" layoutX="124.0" layoutY="135.0" />
+                  <ImageView fx:id="imgViewMundo2" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="27.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo2.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewMundo3" fitHeight="98.0" fitWidth="106.0" layoutX="355.0" layoutY="27.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo3.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewMundo4" fitHeight="98.0" fitWidth="106.0" layoutX="32.0" layoutY="172.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo4.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewMundo5" fitHeight="98.0" fitWidth="106.0" layoutX="198.0" layoutY="172.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo5.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewMundo6" fitHeight="98.0" fitWidth="106.0" layoutX="355.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo6.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewMundo7" fitHeight="98.0" fitWidth="106.0" layoutX="36.0" layoutY="313.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo7.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewMundo8" fitHeight="98.0" fitWidth="106.0" layoutX="202.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo8.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewMundo9" fitHeight="98.0" fitWidth="106.0" layoutX="359.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/ModoCampa/Mundos/Mundo9.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </content>

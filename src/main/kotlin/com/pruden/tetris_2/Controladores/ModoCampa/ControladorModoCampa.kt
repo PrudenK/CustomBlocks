@@ -1,14 +1,9 @@
 package com.pruden.tetris_2.Controladores.ModoCampa
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
-import com.pruden.tetris_2.Metodos.Stages.crearStage
-import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
+import com.pruden.tetris_2.Metodos.ModoCampa.Data.cargarAccionesImageViewsMundos
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -30,12 +25,9 @@ class ControladorModoCampa : ControladorGEN(), Initializable {
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cronometro.parar()
         cModoCampa = this
-    }
 
-    @FXML fun abrirMundo1(){
-        crearStage(ClaseStage("Vistas/ModoCampa/vista_Mundo1.fxml", volverB, 600.0, 797.0, null, 0, 0))
+        cargarAccionesImageViewsMundos()
     }
-
 
 
 

@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Controladores.Partidas
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.PartidaVistaDatos.Partida
 import com.pruden.tetris_2.Metodos.PartidaVistaDatos.initPartidaDatos

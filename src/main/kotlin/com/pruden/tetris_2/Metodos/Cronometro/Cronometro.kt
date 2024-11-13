@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Metodos.Cronometro
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoObj
 import javafx.animation.KeyFrame

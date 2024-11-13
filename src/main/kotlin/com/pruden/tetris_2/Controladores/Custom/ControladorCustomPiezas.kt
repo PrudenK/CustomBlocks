@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Metodos.Observables.cargarObersvablePiezas
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage

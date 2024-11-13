@@ -3,7 +3,6 @@ package com.pruden.tetris_2.Controladores.Custom
 import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2.Companion.haGuardadoAdvertencia
 import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2.Companion.mensajeAdvertenciaTT2
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin

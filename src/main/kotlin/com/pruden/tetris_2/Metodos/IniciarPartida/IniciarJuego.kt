@@ -4,7 +4,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.lockCuentaRegresiva
 import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
 import com.pruden.tetris_2.Metodos.Timelines.pararTimeline
-import javafx.scene.control.Label
 
 fun iniciarPartida(){
     pararTimeline()
