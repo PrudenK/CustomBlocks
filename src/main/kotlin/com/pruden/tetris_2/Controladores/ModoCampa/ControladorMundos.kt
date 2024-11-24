@@ -7,6 +7,7 @@ import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
+import javafx.scene.control.Label
 import javafx.scene.image.ImageView
 import javafx.stage.Stage
 import java.net.URL
@@ -26,7 +27,9 @@ class ControladorMundos : ControladorGEN(), Initializable {
     @FXML lateinit var nivel8 : ImageView
     @FXML lateinit var nivel9 : ImageView
 
-    val listaNivelesMundos = listOf(listaNivelesMundo1, listaNivelesMundo2, listaNivelesMundo3, listaNivelesMundo4)
+    @FXML lateinit var labelNumMundo: Label
+
+    val listaNivelesMundos = listOf(listaNivelesMundo1, listaNivelesMundo2, listaNivelesMundo3, listaNivelesMundo4, listaNivelesMundo5)
 
     companion object{
         lateinit var cMundo1: ControladorMundos
@@ -41,7 +44,6 @@ class ControladorMundos : ControladorGEN(), Initializable {
     }
 
 
-
     @FXML fun volver(){
         stageMundo1.close()
     }
@@ -49,9 +51,10 @@ class ControladorMundos : ControladorGEN(), Initializable {
 
     fun setMundo(mundo : Int){
         mundoActual = mundo-1
+
+        labelNumMundo.text = "Mundo "+ (mundoActual+1)
+
         Platform.runLater {
-
-
             val listaImageView = listOf(nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9)
 
             for (i in imagenesMundo1.indices){

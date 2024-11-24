@@ -15,6 +15,9 @@ import com.pruden.tetris_2.Piezas.Pieza_B.Companion.COLOR_B
 import com.pruden.tetris_2.Piezas.Pieza_B.Companion.NUMPIEZA_B
 import com.pruden.tetris_2.Piezas.Pieza_C.Companion.COLOR_C
 import com.pruden.tetris_2.Piezas.Pieza_C.Companion.NUMPIEZA_C
+import com.pruden.tetris_2.Piezas.Pieza_E.Companion.CENTRO_E
+import com.pruden.tetris_2.Piezas.Pieza_E.Companion.COLOR_E
+import com.pruden.tetris_2.Piezas.Pieza_E.Companion.NUMPIEZA_E
 import com.pruden.tetris_2.Piezas.Pieza_F.Companion.CENTRO_F
 import com.pruden.tetris_2.Piezas.Pieza_F.Companion.COLOR_F
 import com.pruden.tetris_2.Piezas.Pieza_F.Companion.NUMPIEZA_F
@@ -44,6 +47,17 @@ import com.pruden.tetris_2.Piezas.Pieza_L_v2.Companion.NUMPIEZA_L_v2
 import com.pruden.tetris_2.Piezas.Pieza_L_v3.Companion.CENTRO_L_v3
 import com.pruden.tetris_2.Piezas.Pieza_L_v3.Companion.COLOR_L_v3
 import com.pruden.tetris_2.Piezas.Pieza_L_v3.Companion.NUMPIEZA_L_v3
+import com.pruden.tetris_2.Piezas.Pieza_Mini_I.Companion.CENTRO_MINI_I
+import com.pruden.tetris_2.Piezas.Pieza_Mini_I.Companion.COLOR_MINI_I
+import com.pruden.tetris_2.Piezas.Pieza_Mini_I.Companion.NUMPIEZA_MINI_I
+import com.pruden.tetris_2.Piezas.Pieza_Mini_I_v2.Companion.CENTRO_MINI_I_v2
+import com.pruden.tetris_2.Piezas.Pieza_Mini_I_v2.Companion.COLOR_MINI_I_v2
+import com.pruden.tetris_2.Piezas.Pieza_Mini_I_v2.Companion.NUMPIEZA_MINI_I_v2
+import com.pruden.tetris_2.Piezas.Pieza_Mini_L.Companion.CENTRO_MINI_L
+import com.pruden.tetris_2.Piezas.Pieza_Mini_L.Companion.COLOR_MINI_L
+import com.pruden.tetris_2.Piezas.Pieza_Mini_L.Companion.NUMPIEZA_MINI_L
+import com.pruden.tetris_2.Piezas.Pieza_Mini_O.Companion.CENTRO_MINI_O
+import com.pruden.tetris_2.Piezas.Pieza_Mini_O.Companion.COLOR_MINI_O
 import com.pruden.tetris_2.Piezas.Pieza_O.Companion.COLOR_O
 import com.pruden.tetris_2.Piezas.Pieza_O.Companion.NUMPIEZA_O
 import com.pruden.tetris_2.Piezas.Pieza_O_v2.Companion.CENTRO_O_v2
@@ -97,7 +111,6 @@ import com.pruden.tetris_2.Piezas.Pieza_Z.Companion.NUMPIEZA_Z
 import com.pruden.tetris_2.Piezas.Pieza_Z_v2.Companion.CENTRO_Z_v2
 import com.pruden.tetris_2.Piezas.Pieza_Z_v2.Companion.COLOR_Z_v2
 import com.pruden.tetris_2.Piezas.Pieza_Z_v2.Companion.NUMPIEZA_Z_v2
-
 fun pintarMatriz(j : Int, tipo : Int){
     for (k in matrizNumerica[0].indices) {
         if(j == tipo){
@@ -174,6 +187,16 @@ fun pintarMatriz(j : Int, tipo : Int){
                 pintarCasilla(COLOR_A, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_L_v3 || matrizNumerica[j][k] == CENTRO_L_v3){
                 pintarCasilla(COLOR_L_v3, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == CENTRO_MINI_O){
+                pintarCasilla(COLOR_MINI_O, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_MINI_I || matrizNumerica[j][k] == CENTRO_MINI_I){
+                pintarCasilla(COLOR_MINI_I, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_MINI_L || matrizNumerica[j][k] == CENTRO_MINI_L){
+                pintarCasilla(COLOR_MINI_L, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_MINI_I_v2 || matrizNumerica[j][k] == CENTRO_MINI_I_v2){
+                pintarCasilla(COLOR_MINI_I_v2, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_E || matrizNumerica[j][k] == CENTRO_E){
+                pintarCasilla(COLOR_E, j.toDouble(), k.toDouble())
             }
 
 

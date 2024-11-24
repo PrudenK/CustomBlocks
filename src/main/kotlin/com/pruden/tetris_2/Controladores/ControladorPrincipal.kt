@@ -180,6 +180,7 @@ class ControladorPrincipal : Initializable {
 
 
     @FXML fun borrar() {
+        TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
         imprimirMatriz_TAB()
     }
 

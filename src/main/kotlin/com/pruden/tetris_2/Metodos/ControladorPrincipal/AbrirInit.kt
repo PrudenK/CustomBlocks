@@ -23,7 +23,10 @@ fun cargarTodoInit(){
     cargarArrastrar()
     cargarVariablesInit()
     cargarObervablesInit()
-    cargarMusicaInit()
+    Platform.runLater{
+        cargarMusicaInit()
+    }
+
     cargarBotonIniciarCerrarSesionInit()
 }
 

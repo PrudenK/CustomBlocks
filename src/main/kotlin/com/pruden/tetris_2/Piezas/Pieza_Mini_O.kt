@@ -1,30 +1,29 @@
 package com.pruden.tetris_2.Piezas
 
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
-import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar2x2
-import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerecha_O_2x2
-import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverIzquierda_O_2x2
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar1x1
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerecha_1x1
+import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverIzquierda_1x1
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
 import javafx.scene.paint.Color
 
-class Pieza_O(override var fila: Int, override var columna: Int,
-              override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
+class Pieza_Mini_O (override var fila: Int, override var columna: Int,
+                    override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
     : Piezas(fila, columna, orientacion, condicionEspecial_b) {
-    private val CENTRO = 18
+    private val CENTRO = 368
     private val NUMPIEZA = 1
-    private val COLOR = Color.YELLOW
+    private val COLOR = Color.web("#7d0202")
 
 
-    private val FORMAS_O = arrayOf(
+    private val FORMAS_MINI_O = arrayOf(
         arrayOf(
-            intArrayOf(NUMPIEZA, NUMPIEZA),
-            intArrayOf(NUMPIEZA, NUMPIEZA)
+            intArrayOf(CENTRO)
         )
     )
 
     companion object {
-        const val NUMPIEZA_O = 1
-        val COLOR_O = Color.YELLOW!!
+        const val CENTRO_MINI_O = 368
+        val COLOR_MINI_O = Color.web("#7d0202")!!
     }
 
 
@@ -42,19 +41,19 @@ class Pieza_O(override var fila: Int, override var columna: Int,
 
 
     override fun bajar(): Boolean {
-        return bajar2x2(this, intArrayOf(2,2))
+        return bajar1x1(this)
     }
 
     override fun derecha(): Boolean {
-        return moverDerecha_O_2x2(this)
+       return moverDerecha_1x1(this)
     }
 
     override fun izquierda(): Boolean {
-       return moverIzquierda_O_2x2(this)
+        return moverIzquierda_1x1(this)
     }
 
     override fun getForma(): Array<Array<IntArray>> {
-        return FORMAS_O
+        return FORMAS_MINI_O
     }
 
     override fun set_Orientacion(ori: Int) {
