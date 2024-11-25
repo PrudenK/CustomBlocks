@@ -29,7 +29,7 @@ fun devolverPiezaAleatoria(): Piezas {
     return if(random.nextBoolean()){
         Pieza_E(0, 5)
     }else{
-        Pieza_I_v3(-1,5)
+        Pieza_Mini_O(0,5)
     }
 }
 

@@ -11,6 +11,10 @@ arrastrar todas las vista para el futuro
 
 ajustar stackPane de la animación
 
+
+Para el futuro rotaciones avanzadas para E
+
+
 **
 docker exec -it baseCustom mysql -u root -p
 source /tmp/select.sql;
