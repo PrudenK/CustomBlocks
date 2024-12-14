@@ -24,13 +24,18 @@ fun devolverPiezaAleatoria(): Piezas {
 
     dibujarPiezasSiguientes(0)
     puedeHoldear = true
-    //return siguientePieza.removeAt(0)
 
+    return Pieza_O_v6(0,5)
+
+    //return siguientePieza.removeAt(0)
+        /*
     return if(random.nextBoolean()){
         Pieza_E(0, 5)
     }else{
         Pieza_Mini_O(0,5)
     }
+
+         */
 }
 
 

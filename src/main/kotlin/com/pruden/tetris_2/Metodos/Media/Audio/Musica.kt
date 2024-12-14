@@ -7,8 +7,10 @@ lateinit var musicaJuego: MediaPlayer
 
 fun musicaPartida(pathAudio: String?) {
     val media = Media(pathAudio)
-
+    println(media)
     musicaJuego = MediaPlayer(media)
+
+
 
     musicaJuego.cycleCount = MediaPlayer.INDEFINITE
     musicaJuego.volume = 0.0
