@@ -40,7 +40,7 @@ fun bajar4x4(pieza: Piezas, desplazamientos: IntArray): Boolean {
                         && matrizNumerica[getFilaCentro() + desplazamientos[22]][getColumnaCentro() + 1] == BLANCO
                         && matrizNumerica[getFilaCentro() + desplazamientos[23]][getColumnaCentro() + 1] == BLANCO
         } else if (orientacion == 3) {
-            matrizNumerica[getFilaCentro() + desplazamientos[24]][getColumnaCentro() - 1] == BLANCO
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[24]][getColumnaCentro() - 1] == BLANCO
                     && matrizNumerica[getFilaCentro() + desplazamientos[25]][getColumnaCentro() - 1] == BLANCO
                     && matrizNumerica[getFilaCentro() + desplazamientos[26]][getColumnaCentro()] == BLANCO
                     && matrizNumerica[getFilaCentro() + desplazamientos[27]][getColumnaCentro()] == BLANCO

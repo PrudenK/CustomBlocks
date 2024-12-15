@@ -20,7 +20,7 @@ fun moverPiezas(evento : KeyEvent){
             else if (evento.code == KeyCode.SPACE) moverEspacio(evento)
             else if(evento.code == KeyCode.H) holdear()
         } catch (ignored: Exception) {
-
+            println("error")
         }
     }
 }

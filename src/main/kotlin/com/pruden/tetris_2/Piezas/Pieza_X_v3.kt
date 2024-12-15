@@ -6,29 +6,29 @@ import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierd
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarPieza
 import javafx.scene.paint.Color
 
-class Pieza_O_v6(override var fila: Int, override var columna: Int,
-                 override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
+class Pieza_X_v3 (override var fila: Int, override var columna: Int,
+                  override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
     : Piezas(fila, columna, orientacion, condicionEspecial_b) {
     private var columnaCentro = columna+1
     private var filaCentro = fila
 
-    private val CENTRO = 438
-    private val NUMPIEZA = 43
-    private val COLOR = Color.web("#82C1D8")
+    private val CENTRO = 468
+    private val NUMPIEZA = 46
+    private val COLOR = Color.web("#9b8f4d")
 
-    private val FORMAS_O_v6 = arrayOf(
+    private val FORMAS_X_v3 = arrayOf(
         arrayOf(
-            intArrayOf(NUMPIEZA, NUMPIEZA, NUMPIEZA, NUMPIEZA),
-            intArrayOf(NUMPIEZA, CENTRO, NUMPIEZA, NUMPIEZA),
-            intArrayOf(NUMPIEZA, NUMPIEZA, NUMPIEZA, NUMPIEZA),
-            intArrayOf(NUMPIEZA, NUMPIEZA, NUMPIEZA, NUMPIEZA)
+            intArrayOf(NUMPIEZA, BLANCO, BLANCO, NUMPIEZA),
+            intArrayOf(BLANCO, CENTRO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, NUMPIEZA, BLANCO),
+            intArrayOf(NUMPIEZA, BLANCO, BLANCO, NUMPIEZA)
         )
     )
 
     companion object {
-        const val NUMPIEZA_O_v6 = 43
-        const val CENTRO_O_v6 = 438
-        val COLOR_O_v6 = Color.web("#82C1D8")!!
+        const val NUMPIEZA_X_v3 = 46
+        const val CENTRO_X_v3 = 468
+        val COLOR_X_v3 = Color.web("#9b8f4d")!!
     }
 
     override fun limpiar() {
@@ -46,19 +46,19 @@ class Pieza_O_v6(override var fila: Int, override var columna: Int,
     }
 
     override fun bajar(): Boolean {
-        return bajar4x4(this, intArrayOf(3,3, 3,3, 3,3, 3,3))
+        return bajar4x4(this, intArrayOf(0,3, 2,2, 2,2, 0,3))
     }
 
     override fun derecha(): Boolean {
-        return moverDerechaIzquierda_4x4(this, intArrayOf(3,3, 3,3, 3,3, 3,3), 1)
+        return moverDerechaIzquierda_4x4(this, intArrayOf(0,3, 2,2, 2,2, 0,3), 1)
     }
 
     override fun izquierda(): Boolean {
-        return moverDerechaIzquierda_4x4(this, intArrayOf(-2, -2,-2, -2,-2, -2, -2,-2), -1)
+        return moverDerechaIzquierda_4x4(this, intArrayOf(1,-2, -1,-1, -1,-1, 1,-2), -1)
     }
 
     override fun getForma(): Array<Array<IntArray>>  {
-        return FORMAS_O_v6
+        return FORMAS_X_v3
     }
 
     override fun getColumnaCentro(): Int {

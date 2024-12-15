@@ -90,6 +90,12 @@ import com.pruden.tetris_2.Piezas.Pieza_T.Companion.NUMPIEZA_T
 import com.pruden.tetris_2.Piezas.Pieza_T_v2.Companion.CENTRO_T_v2
 import com.pruden.tetris_2.Piezas.Pieza_T_v2.Companion.COLOR_T_v2
 import com.pruden.tetris_2.Piezas.Pieza_T_v2.Companion.NUMPIEZA_T_v2
+import com.pruden.tetris_2.Piezas.Pieza_Twin_O.Companion.CENTRO_TWIN_O
+import com.pruden.tetris_2.Piezas.Pieza_Twin_O.Companion.NUMPIEZA_TWIN_O
+import com.pruden.tetris_2.Piezas.Pieza_Twin_O.Companion.COLOR_TWIN_O
+import com.pruden.tetris_2.Piezas.Pieza_Twin_Y.Companion.CENTRO_TWIN_Y
+import com.pruden.tetris_2.Piezas.Pieza_Twin_Y.Companion.COLOR_TWIN_Y
+import com.pruden.tetris_2.Piezas.Pieza_Twin_Y.Companion.NUMPIEZA_TWIN_Y
 import com.pruden.tetris_2.Piezas.Pieza_U.Companion.CENTRO_U
 import com.pruden.tetris_2.Piezas.Pieza_U.Companion.COLOR_U
 import com.pruden.tetris_2.Piezas.Pieza_U.Companion.NUMPIEZA_U
@@ -105,6 +111,9 @@ import com.pruden.tetris_2.Piezas.Pieza_X.Companion.NUMPIEZA_X
 import com.pruden.tetris_2.Piezas.Pieza_X_v2.Companion.CENTRO_X_v2
 import com.pruden.tetris_2.Piezas.Pieza_X_v2.Companion.COLOR_X_v2
 import com.pruden.tetris_2.Piezas.Pieza_X_v2.Companion.NUMPIEZA_X_v2
+import com.pruden.tetris_2.Piezas.Pieza_X_v3.Companion.CENTRO_X_v3
+import com.pruden.tetris_2.Piezas.Pieza_X_v3.Companion.COLOR_X_v3
+import com.pruden.tetris_2.Piezas.Pieza_X_v3.Companion.NUMPIEZA_X_v3
 import com.pruden.tetris_2.Piezas.Pieza_Y.Companion.CENTRO_Y
 import com.pruden.tetris_2.Piezas.Pieza_Y.Companion.COLOR_Y
 import com.pruden.tetris_2.Piezas.Pieza_Y.Companion.NUMPIEZA_Y
@@ -207,6 +216,12 @@ fun pintarMatriz(j : Int, tipo : Int){
                 pintarCasilla(COLOR_O_v5, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_O_v6 || matrizNumerica[j][k] == CENTRO_O_v6){
                 pintarCasilla(COLOR_O_v6, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_TWIN_O || matrizNumerica[j][k] == CENTRO_TWIN_O){
+                pintarCasilla(COLOR_TWIN_O, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_TWIN_Y || matrizNumerica[j][k] == CENTRO_TWIN_Y){
+                pintarCasilla(COLOR_TWIN_Y, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_X_v3 || matrizNumerica[j][k] == CENTRO_X_v3){
+                pintarCasilla(COLOR_X_v3, j.toDouble(), k.toDouble())
             }
 
 
