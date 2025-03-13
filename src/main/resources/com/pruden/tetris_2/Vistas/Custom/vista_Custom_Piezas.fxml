@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="700.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="700.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
@@ -24,7 +24,7 @@
 
         <ScrollPane hbarPolicy="NEVER" layoutX="60.0" layoutY="84.0" prefHeight="652.0" prefWidth="580.0" styleClass="pane-1" vbarPolicy="AS_NEEDED">
          <content>
-            <Pane prefHeight="1293.0" prefWidth="568.0">
+            <Pane prefHeight="1684.0" prefWidth="568.0">
                <children>
                   <ImageView fitHeight="79.0" fitWidth="77.0" layoutX="39.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
                        <image>
@@ -378,6 +378,116 @@
                    <CheckBox fx:id="ck_O_v4" layoutX="272.0" layoutY="1224.0" mnemonicParsing="false" />
                    <CheckBox fx:id="ck_J_v2" layoutX="407.0" layoutY="1224.0" mnemonicParsing="false" />
                    <CheckBox fx:id="ck_A" layoutX="524.0" layoutY="1224.0" mnemonicParsing="false" />
+                  <ImageView fitHeight="67.0" fitWidth="33.0" layoutX="60.0" layoutY="1258.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_I_Mini.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="69.0" fitWidth="68.0" layoutX="194.0" layoutY="1256.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_I_v2_Mini.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="466.0" layoutY="1278.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_O_Mini.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="67.0" fitWidth="72.0" layoutX="340.0" layoutY="1259.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_L_Mini.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="27.0" layoutY="1340.0" text="Pieza Mini I" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="165.0" layoutY="1341.0" text="Pieza Mini I v2" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="322.0" layoutY="1342.0" text="Pieza Mini L" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="441.0" layoutY="1342.0" text="Pieza Mini O" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="103.0" fitWidth="43.0" layoutX="464.0" layoutY="1379.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_E.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="462.0" layoutY="1494.0" text="Pieza E" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="91.0" fitWidth="84.0" layoutX="33.0" layoutY="1398.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v5.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="30.0" layoutY="1494.0" text="Pieza O v5" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="179.0" layoutY="1394.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v6.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="177.0" layoutY="1494.0" text="Pieza O v6" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="326.0" layoutY="1394.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_X_v3.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="325.0" layoutY="1494.0" text="Pieza X v3" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="31.0" layoutY="1528.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_O_Twin.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="1629.0" text="Pieza Twin O" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="179.0" layoutY="1528.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_Y_Twin.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="167.0" layoutY="1629.0" text="Pieza Twin Y" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="ck_Mini_I" layoutX="118.0" layoutY="1340.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Mini_I_v2" layoutX="272.0" layoutY="1342.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Mini_L_v2" layoutX="414.0" layoutY="1343.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Mini_O" layoutX="532.0" layoutY="1343.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_E" layoutX="517.0" layoutY="1495.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_X_v3" layoutX="412.0" layoutY="1494.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_O_v6" layoutX="272.0" layoutY="1494.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_O_v5" layoutX="118.0" layoutY="1496.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Tw_O" layoutX="120.0" layoutY="1629.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Tw_Y" layoutX="273.0" layoutY="1629.0" mnemonicParsing="false" />
                 </children>
             </Pane>
          </content>
