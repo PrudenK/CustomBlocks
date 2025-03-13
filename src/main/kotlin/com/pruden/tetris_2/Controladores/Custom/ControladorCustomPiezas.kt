@@ -46,6 +46,16 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
     @FXML private lateinit var ck_O_v4: CheckBox
     @FXML private lateinit var ck_J_v2: CheckBox
     @FXML private lateinit var ck_A: CheckBox
+    @FXML private lateinit var ck_Mini_I: CheckBox
+    @FXML private lateinit var ck_Mini_I_v2: CheckBox
+    @FXML private lateinit var ck_Mini_L_v2: CheckBox
+    @FXML private lateinit var ck_Mini_O: CheckBox
+    @FXML private lateinit var ck_O_v5: CheckBox
+    @FXML private lateinit var ck_O_v6: CheckBox
+    @FXML private lateinit var ck_X_v3: CheckBox
+    @FXML private lateinit var ck_E: CheckBox
+    @FXML private lateinit var ck_Tw_O: CheckBox
+    @FXML private lateinit var ck_Tw_Y: CheckBox
 
     private lateinit var elemento : Button
 
@@ -86,7 +96,9 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
             ck_O, ck_I, ck_L, ck_Z, ck_J, ck_S, ck_T, ck_P, ck_X, ck_U,
             ck_L_v2, ck_W, ck_T_v2, ck_Z_v2, ck_X_v2, ck_L_v3, ck_F, ck_O_v2,
             ck_S_v2, ck_B, ck_Y, ck_K, ck_I_v2, ck_C, ck_O_v3, ck_V, ck_H,
-            ck_I_v3, ck_Y_v2, ck_O_v4, ck_J_v2, ck_A
+            ck_I_v3, ck_Y_v2, ck_O_v4, ck_J_v2, ck_A, ck_Mini_I, ck_Mini_I_v2,
+            ck_Mini_L_v2, ck_Mini_O, ck_O_v5, ck_O_v6, ck_X_v3, ck_E, ck_Tw_O,
+            ck_Tw_Y
         )
     }
 

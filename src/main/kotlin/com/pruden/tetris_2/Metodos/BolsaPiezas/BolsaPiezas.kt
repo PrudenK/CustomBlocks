@@ -25,9 +25,9 @@ fun devolverPiezaAleatoria(): Piezas {
     dibujarPiezasSiguientes(0)
     puedeHoldear = true
 
-    return Pieza_X_v3(0, 5)
+    //return Pieza_X_v3(0, 5)
 
-    //return siguientePieza.removeAt(0)
+    return siguientePieza.removeAt(0)
     /*
     return if(random.nextBoolean()){
         Pieza_E(0, 5)
@@ -96,6 +96,16 @@ private fun cargarLista(){
         if (arrayBooleanos[29]) bolsaTemp.add(Pieza_O_v4(0, columnaInicial))
         if (arrayBooleanos[30]) bolsaTemp.add(Pieza_J_v2(0, columnaInicial))
         if (arrayBooleanos[31]) bolsaTemp.add(Pieza_A(0, columnaInicial))
+        if (arrayBooleanos[32]) bolsaTemp.add(Pieza_Mini_I(0, columnaInicial))
+        if (arrayBooleanos[33]) bolsaTemp.add(Pieza_Mini_I_v2(0, columnaInicial))
+        if (arrayBooleanos[34]) bolsaTemp.add(Pieza_Mini_L(0, columnaInicial))
+        if (arrayBooleanos[35]) bolsaTemp.add(Pieza_Mini_O(0, columnaInicial))
+        if (arrayBooleanos[36]) bolsaTemp.add(Pieza_O_v5(0, columnaInicial))
+        if (arrayBooleanos[37]) bolsaTemp.add(Pieza_O_v6(0, columnaInicial))
+        if (arrayBooleanos[38]) bolsaTemp.add(Pieza_X_v3(0, columnaInicial))
+        if (arrayBooleanos[39]) bolsaTemp.add(Pieza_E(0, columnaInicial))
+        if (arrayBooleanos[40]) bolsaTemp.add(Pieza_Twin_O(0, columnaInicial))
+        if (arrayBooleanos[41]) bolsaTemp.add(Pieza_Twin_Y(0, columnaInicial))
     } else {
         bolsaTemp.add(Pieza_O(0, columnaInicial))
         bolsaTemp.add(Pieza_I(0, columnaInicial))
