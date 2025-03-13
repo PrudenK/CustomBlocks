@@ -103,7 +103,7 @@ private fun cargarLista(){
         if (arrayBooleanos[36]) bolsaTemp.add(Pieza_O_v5(0, columnaInicial))
         if (arrayBooleanos[37]) bolsaTemp.add(Pieza_O_v6(0, columnaInicial))
         if (arrayBooleanos[38]) bolsaTemp.add(Pieza_X_v3(0, columnaInicial))
-        if (arrayBooleanos[39]) bolsaTemp.add(Pieza_E(0, columnaInicial))
+        if (arrayBooleanos[39]) bolsaTemp.add(Pieza_E(-1, columnaInicial-1))
         if (arrayBooleanos[40]) bolsaTemp.add(Pieza_Twin_O(0, columnaInicial))
         if (arrayBooleanos[41]) bolsaTemp.add(Pieza_Twin_Y(0, columnaInicial))
     } else {
