@@ -29,7 +29,7 @@ class ControladorOpciones : ControladorGEN(), Initializable{
         stageOpciones!!.close()
     }
     @FXML fun sonido() {
-        crearStage(ClaseStage("Vistas/Otras/vistaSonido.fxml", sonidoo_B, 315.0, 400.0, null, 0, 0))
+        crearStage(ClaseStage("Vistas/Otras/vistaSonido.fxml", sonidoo_B, 243.0, 264.0, null, 0, 0))
     }
 
     @FXML fun reiniciar() {
