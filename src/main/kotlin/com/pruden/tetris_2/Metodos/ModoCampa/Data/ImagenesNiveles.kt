@@ -14,7 +14,7 @@ val imagenesMundo1 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo1/nivel_1_9.jpg")
 )
 
-val imagenesMundo2 = listOf(
+private val imagenesMundo2 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo2/Nivel_2_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo2/Nivel_2_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo2/Nivel_2_3.jpg"),
@@ -26,7 +26,7 @@ val imagenesMundo2 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo2/Nivel_2_9.jpg")
 )
 
-val imagenesMundo3 = listOf(
+private val imagenesMundo3 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo3/Nivel_3_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo3/Nivel_3_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo3/Nivel_3_3.jpg"),
@@ -38,7 +38,7 @@ val imagenesMundo3 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo3/Nivel_3_9.jpg")
 )
 
-val imagenesMundo4 = listOf(
+private val imagenesMundo4 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo4/Nivel_4_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo4/Nivel_4_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo4/Nivel_4_3.jpg"),
@@ -51,7 +51,7 @@ val imagenesMundo4 = listOf(
 )
 
 
-val imagenesMundo5 = listOf(
+private val imagenesMundo5 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo5/Nivel_5_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo5/Nivel_5_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo5/Nivel_5_3.jpg"),
@@ -64,7 +64,7 @@ val imagenesMundo5 = listOf(
 )
 
 
-val imagenesMundo6 = listOf(
+private val imagenesMundo6 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo6/Nivel_6_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo6/Nivel_6_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo6/Nivel_6_3.jpg"),
@@ -77,7 +77,7 @@ val imagenesMundo6 = listOf(
 )
 
 
-val imagenesMundo7 = listOf(
+private val imagenesMundo7 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo7/Nivel_7_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo7/Nivel_7_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo7/Nivel_7_3.jpg"),
@@ -90,7 +90,7 @@ val imagenesMundo7 = listOf(
 )
 
 
-val imagenesMundo8 = listOf(
+private val imagenesMundo8 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo8/Nivel_8_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo8/Nivel_8_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo8/Nivel_8_3.jpg"),
@@ -103,7 +103,7 @@ val imagenesMundo8 = listOf(
 )
 
 
-val imagenesMundo9 = listOf(
+private val imagenesMundo9 = listOf(
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo9/Nivel_9_1.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo9/Nivel_9_2.jpg"),
     deRutaAImagen("/Imagenes/ModoCampa/Niveles/Mundo9/Nivel_9_3.jpg"),
