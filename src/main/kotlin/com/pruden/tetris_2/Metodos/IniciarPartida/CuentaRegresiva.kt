@@ -22,11 +22,11 @@ fun cuentaAtras(){
     configuracionInicioAnimacion()
     cuentaRegresivaHecha = false
 
-    val timeline = Timeline(
+    val timeline = Timeline( // TODO cambiar tiempo
         crearFrame(0.0, num3, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
-        crearFrame(1.0, num2, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
-        crearFrame(2.0, num1, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
-        crearFrame(3.0, null, "/Musica/Efectos/cuenta_final.mp3", cPrin.cuentaRegresivaIMG)
+        crearFrame(1.0/30, num2, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
+        crearFrame(2.0/30, num1, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
+        crearFrame(3.0/30, null, "/Musica/Efectos/cuenta_final.mp3", cPrin.cuentaRegresivaIMG)
     )
     timeline.cycleCount = 1
 

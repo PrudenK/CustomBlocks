@@ -158,8 +158,8 @@ class ControladorPrincipal : Initializable {
 
 
     @FXML fun opciones() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB, 315.0, 400.0,
-            timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB, 300.0, 350.0,
+            timelinePartida, 0, 0))
     }
     @FXML fun custom() {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,315.0,400.0, timelinePartida, 0, -60))
@@ -192,18 +192,6 @@ class ControladorPrincipal : Initializable {
     @FXML fun abrirPublicidad(){
         abrirBanner()
         opciones()
-    }
-
-    @FXML fun perfil(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", nuevaPartidaB, 440.0, 647.0, timelinePartida, 0, -60))
-    }
-
-    @FXML fun rankings(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", nuevaPartidaB, 936.0, 675.0, timelinePartida, 0, -60))
-    }
-
-    @FXML fun registroPartidas(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vista_Partidas.fxml", nuevaPartidaB, 658.0, 675.0, timelinePartida, 0, -60))
     }
 
     @FXML fun campa(){

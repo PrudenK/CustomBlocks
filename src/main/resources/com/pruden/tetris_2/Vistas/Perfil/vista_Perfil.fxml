@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="440.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="440.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil">
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
@@ -47,7 +47,7 @@
       <Label fx:id="tiempoTotalLabel" layoutX="162.0" layoutY="491.0" text="00:00:00" />
       <Label layoutX="29.0" layoutY="522.0" prefWidth="89.0" text="Piezas usadas:" />
       <Label fx:id="totalPiezas" layoutX="173.0" layoutY="522.0" text="123" />
-      <Button fx:id="verPiezasB" layoutX="47.0" layoutY="565.0" mnemonicParsing="false" onAction="#verPiezas" text="Ver piezas en detalle" />
+      <Button fx:id="verPiezasB" layoutX="47.0" layoutY="556.0" mnemonicParsing="false" onAction="#verPiezas" text="Ver piezas en detalle" />
       <Button layoutX="290.0" layoutY="565.0" mnemonicParsing="false" onAction="#volver" text="Volver atrás" />
       <Label layoutX="39.0" layoutY="241.0" text="Max nivel:" />
       <Label layoutX="39.0" layoutY="265.0" text="Max lineas:" />
@@ -76,6 +76,7 @@
       <Label fx:id="partidasCustomLabel" layoutX="371.0" layoutY="463.0" text="Partidas" />
       <Label fx:id="tiempoCustomLabel" layoutX="371.0" layoutY="491.0" text="00:00:00" />
       <Label fx:id="customPiezasLabel" layoutX="382.0" layoutY="522.0" text="123" />
+      <Button layoutX="48.0" layoutY="597.0" mnemonicParsing="false" onAction="#registroPartidas" prefHeight="32.0" prefWidth="163.0" text="Registro partidas" />
    </children>
 
 </Pane>

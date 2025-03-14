@@ -1,8 +1,10 @@
 package com.pruden.tetris_2.Controladores.Opciones
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.animacionEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -22,8 +24,9 @@ class ControladorOpciones : ControladorGEN(), Initializable{
         //arrastrarFun(sonidoo_B, stagePrincipal)
         cronometro.parar()
     }
-    @FXML fun salir() {
-        Platform.exit()
+    @FXML fun volver() {
+        reanudarPartida()
+        stageOpciones!!.close()
     }
     @FXML fun sonido() {
         crearStage(ClaseStage("Vistas/Otras/vistaSonido.fxml", sonidoo_B, 315.0, 400.0, null, 0, 0))
@@ -38,6 +41,13 @@ class ControladorOpciones : ControladorGEN(), Initializable{
         stageOpciones!!.close()
     }
 
+    @FXML fun perfil(){
+        crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", sonidoo_B, 440.0, 647.0, timelinePartida, 0, 0))
+    }
+
+    @FXML fun rankings(){
+        crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", sonidoo_B, 936.0, 675.0, timelinePartida, 0, 0))
+    }
 
     override fun setStage(stage: Stage?) {
         stageOpciones = stage

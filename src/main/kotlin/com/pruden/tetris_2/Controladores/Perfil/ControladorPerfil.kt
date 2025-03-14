@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Controladores.Perfil
 import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.*
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -50,8 +51,6 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cPerfil = this
 
-        cronometro.parar()
-
         comboBox.items.addAll(listaModos)
         comboBox.value = listaModos[0]
 
@@ -73,9 +72,10 @@ class ControladorPerfil : ControladorGEN(), Initializable {
         crearStage(ClaseStage("Vistas/Perfil/vista_Perfil_Piezas.fxml",verPiezasB,700.0,820.0, null,0, 0))
     }
 
-    @FXML fun volver(){
-        reanudarPartida()
-        stagePerfil.close()
+    @FXML fun volver() = stagePerfil.close()
+
+    @FXML fun registroPartidas(){
+        crearStage(ClaseStage("Vistas/Partidas/vista_Partidas.fxml", verPiezasB, 658.0, 675.0, timelinePartida, 0, 0))
     }
 
     override fun setStage(stage: Stage?) {
