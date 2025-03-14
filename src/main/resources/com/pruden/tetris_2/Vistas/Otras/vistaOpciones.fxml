@@ -15,7 +15,7 @@
    <children>
       <VBox alignment="CENTER" prefHeight="350.0" prefWidth="300.0" spacing="20">
          <children>
-            <Label text="Partida actual" textFill="#1b1919">
+            <Label text="Partida actual" textFill="#e9e8e8">
                <font>
                   <Font name="Liberation Mono Bold" size="26.0" />
                </font>
@@ -28,7 +28,7 @@
                </children>
             </HBox>
 
-            <Label text="Perfil" textFill="#1b1919">
+            <Label text="Perfil" textFill="#e9e8e8">
                <font>
                   <Font name="Liberation Mono Bold" size="26.0" />
                </font>
@@ -41,7 +41,7 @@
                </children>
             </HBox>
 
-            <Label text="Otras opciones" textFill="#1b1919">
+            <Label text="Otras opciones" textFill="#e9e8e8">
                <font>
                   <Font name="Liberation Mono Bold" size="26.0" />
                </font>
