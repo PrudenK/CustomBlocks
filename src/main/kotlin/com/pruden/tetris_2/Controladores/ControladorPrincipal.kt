@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores
 
+import com.pruden.tetris_2.ApiPublicidad
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.conexion
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
@@ -160,16 +161,17 @@ class ControladorPrincipal : Initializable {
 
 
     @FXML fun opciones() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB, 300.0, 350.0,
-            timelinePartida, 0, 0))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB,
+            300.0, 350.0, timelinePartida, 0, 0))
     }
     @FXML fun custom() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,315.0,400.0, timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,
+            315.0,400.0, timelinePartida, 0, -60))
     }
 
     @FXML fun modosDeJuego() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Modos/vista_Modos_Juego.fxml", nuevaPartidaB, 315.0, 400.0,
-            timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Modos/vista_Modos_Juego.fxml", nuevaPartidaB,
+            315.0, 400.0, timelinePartida, 0, -60))
     }
 
     @FXML fun sesion(){
@@ -184,6 +186,7 @@ class ControladorPrincipal : Initializable {
     @FXML fun borrar() {
         TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
         imprimirMatriz_TAB()
+        println(ApiPublicidad.anuncios)
     }
 
     @FXML fun salir() {

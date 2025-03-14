@@ -19,20 +19,3 @@ fun abrirBanner(){
 
     cPrin.imgPublicidad.image
 }
-
-fun obtenerAnuncios() {
-    ApiPublicidad.apiService.getAnuncios().enqueue(object : Callback<List<Anuncio>> {
-        override fun onResponse(call: Call<List<Anuncio>>, response: Response<List<Anuncio>>) {
-            if (response.isSuccessful) {
-                val anuncios = response.body()
-                println("Anuncios recibidos: $anuncios")
-            } else {
-                println("Error: ${response.code()}")
-            }
-        }
-
-        override fun onFailure(call: Call<List<Anuncio>>, t: Throwable) {
-            println("Error en la conexión: ${t.message}")
-        }
-    })
-}

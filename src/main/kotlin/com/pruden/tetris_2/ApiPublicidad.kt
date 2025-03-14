@@ -1,5 +1,6 @@
 package com.pruden.tetris_2
 
+import com.pruden.tetris_2.Metodos.Publicidad.Anuncio
 import com.pruden.tetris_2.Metodos.Publicidad.PublicidadService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -12,4 +13,5 @@ object ApiPublicidad {
 
     val apiService: PublicidadService = retrofit.create(PublicidadService::class.java)
 
+    var anuncios = listOf<Anuncio>()
 }
