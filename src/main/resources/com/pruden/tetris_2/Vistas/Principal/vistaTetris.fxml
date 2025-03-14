@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="idPrincipal" prefHeight="865.0" prefWidth="843.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ControladorPrincipal">
+<Pane fx:id="idPrincipal" prefHeight="865.0" prefWidth="843.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ControladorPrincipal">
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
@@ -103,9 +103,9 @@
           </Label>
       </children>
    </Pane>
-   <ImageView fx:id="IMG_LOGO" fitHeight="88.0" fitWidth="302.0" layoutX="291.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="IMG_LOGO" fitHeight="88.0" fitWidth="302.0" layoutX="283.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
         <image>
-            <Image url="@../../../../../Imagenes/Logos/tetrisLogo.png" />
+            <Image url="@../../../../../Imagenes/Logos/logo_custom.png" />
         </image>
     </ImageView>
    <Canvas fx:id="canvasSiguientePieza1" height="150.0" layoutX="655.0" layoutY="167.0" width="150.0" />
@@ -114,7 +114,7 @@
          <Font name="System Bold" size="16.0" />
       </font>
    </Label>
-   <Button fx:id="opciones_B" layoutX="568.0" layoutY="40.0" mnemonicParsing="false" onAction="#opciones" prefHeight="32.0" prefWidth="81.0" text="Opciones" />
+   <Button fx:id="opciones_B" layoutX="72.0" layoutY="783.0" mnemonicParsing="false" onAction="#opciones" prefHeight="32.0" prefWidth="81.0" text="Opciones" />
    <Button fx:id="custom_B" layoutX="699.0" layoutY="824.0" mnemonicParsing="false" onAction="#custom" prefHeight="33.0" prefWidth="127.0" text="Custom Game" />
    <Button layoutX="123.0" layoutY="318.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
    <Canvas fx:id="canvasHold" height="150.0" layoutX="37.0" layoutY="160.0" width="150.0" />
