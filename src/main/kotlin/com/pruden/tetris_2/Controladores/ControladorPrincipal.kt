@@ -63,6 +63,8 @@ class ControladorPrincipal : Initializable {
 
     @FXML lateinit var stackPane : StackPane
 
+    @FXML lateinit var imgPublicidad : ImageView
+
     companion object {
         var FILAS = 20
         var COLUMNAS = 10

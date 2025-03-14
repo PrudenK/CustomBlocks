@@ -138,7 +138,7 @@
    <Button layoutX="39.0" layoutY="737.0" mnemonicParsing="false" onAction="#modosDeJuego" prefHeight="32.0" prefWidth="138.0" text="Modos de juego" />
    <Label layoutX="31.0" layoutY="47.0" style="-fx-text-fill: FFFFFF;" text="Modo de juego actual:" />
    <Label fx:id="labelModo" layoutX="176.0" layoutY="47.0" style="-fx-text-fill: FFFFFF;" text="Clásico" />
-   <ImageView fx:id="publicidadMsi" fitHeight="80.0" fitWidth="211.0" layoutX="654.0" layoutY="32.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="imgPublicidad" fitHeight="80.0" fitWidth="211.0" layoutX="654.0" layoutY="32.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../../../../../Imagenes/Logos/msi.jpg" />
       </image>

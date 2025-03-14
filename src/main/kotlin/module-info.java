@@ -9,6 +9,12 @@ module com.pruden.tetris_2 {
     requires java.desktop;
     requires javafx.media;
     requires java.sql;
+    requires retrofit2;
+    requires retrofit2.converter.gson;
+    requires com.google.gson;
+    opens com.pruden.tetris_2.Metodos.Publicidad to com.google.gson;
+
+
 
     opens com.pruden.tetris_2 to javafx.fxml;
     opens com.pruden.tetris_2.Controladores to javafx.fxml;
