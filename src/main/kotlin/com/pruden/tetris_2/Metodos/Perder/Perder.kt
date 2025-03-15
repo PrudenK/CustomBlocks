@@ -23,7 +23,7 @@ fun comprbarPerder(){
         if(nivelEnJuego){
             perderNivelModoCampa()
         }else{
-            crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 400.0, null, 0, -60))
+            crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 232.0, null, 0, -120))
         }
 
 

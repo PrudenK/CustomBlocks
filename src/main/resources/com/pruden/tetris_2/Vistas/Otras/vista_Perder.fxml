@@ -4,19 +4,43 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="315.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Otros.ControladorPerder">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="315.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Otros.ControladorPerder">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button layoutX="32.0" layoutY="309.0" mnemonicParsing="false" onAction="#otra" prefHeight="25.0" prefWidth="98.0" text="Jugar otra" />
-      <Button layoutX="177.0" layoutY="309.0" mnemonicParsing="false" onAction="#cerrar" text="Cerrar ventana" />
-      <Label layoutX="50.0" layoutY="133.0" prefHeight="17.0" prefWidth="117.0" text="Nivel:" />
-      <Label layoutX="50.0" layoutY="102.0" prefHeight="17.0" prefWidth="72.0" text="Puntuación :" />
-      <Label layoutX="50.0" layoutY="159.0" prefHeight="17.0" prefWidth="117.0" text="Líneas destruidas:" />
-      <Label fx:id="puntuacion" layoutX="194.0" layoutY="102.0" prefHeight="17.0" prefWidth="33.0" />
-      <Label fx:id="nivel" layoutX="194.0" layoutY="133.0" prefHeight="17.0" prefWidth="33.0" />
-      <Label fx:id="lineas" layoutX="194.0" layoutY="159.0" prefHeight="17.0" prefWidth="33.0" />
+      <Button layoutX="34.0" layoutY="178.0" mnemonicParsing="false" onAction="#otra" prefHeight="25.0" prefWidth="98.0" text="Jugar otra" />
+      <Button layoutX="156.0" layoutY="178.0" mnemonicParsing="false" onAction="#cerrar" text="Cerrar ventana" />
+      <Label layoutX="42.0" layoutY="111.0" prefHeight="24.0" prefWidth="78.0" text="Nivel:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="42.0" layoutY="80.0" prefHeight="24.0" prefWidth="145.0" text="Puntuación :" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="42.0" layoutY="137.0" prefHeight="24.0" prefWidth="78.0" text="Líneas:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="puntuacion" layoutX="186.0" layoutY="82.0" prefHeight="17.0" prefWidth="33.0" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono" size="18.0" />
+         </font></Label>
+      <Label fx:id="nivel" layoutX="186.0" layoutY="110.0" prefHeight="17.0" prefWidth="33.0" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono" size="18.0" />
+         </font></Label>
+      <Label fx:id="lineas" layoutX="186.0" layoutY="136.0" prefHeight="17.0" prefWidth="33.0" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono" size="18.0" />
+         </font></Label>
+      <Label layoutX="59.0" layoutY="27.0" prefHeight="30.0" prefWidth="198.0" text="¡Has perdido!" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
