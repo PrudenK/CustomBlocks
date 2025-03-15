@@ -202,7 +202,7 @@ class ControladorPrincipal : Initializable {
 
 
     @FXML fun abrirPublicidad(){
-        abrirBanner(ApiPublicidad.anuncios[indiceActual].link)
+        abrirBanner(ApiPublicidad.anuncios[indiceActual].link, ApiPublicidad.anuncios[indiceActual].id)
         opciones()
     }
 

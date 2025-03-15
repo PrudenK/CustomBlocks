@@ -1,14 +1,14 @@
 package com.pruden.tetris_2.Metodos.Publicidad
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import java.util.*
 
 
-fun abrirBanner(web: String){
+fun abrirBanner(web: String, id: Int){
     val pb: ProcessBuilder = if (System.getProperty("os.name").lowercase(Locale.getDefault()).contains("win")) {
         ProcessBuilder("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", web)
     } else {
         ProcessBuilder("firefox", web)
     }
+    onClickAnuncio(id)
     pb.start()
 }
