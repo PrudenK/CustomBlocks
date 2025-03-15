@@ -126,6 +126,10 @@ import com.pruden.tetris_2.Piezas.Pieza_Z.Companion.NUMPIEZA_Z
 import com.pruden.tetris_2.Piezas.Pieza_Z_v2.Companion.CENTRO_Z_v2
 import com.pruden.tetris_2.Piezas.Pieza_Z_v2.Companion.COLOR_Z_v2
 import com.pruden.tetris_2.Piezas.Pieza_Z_v2.Companion.NUMPIEZA_Z_v2
+import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.CENTRO_Z_v3
+import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.COLOR_Z_v3
+import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.NUMPIEZA_Z_v3
+
 fun pintarMatriz(j : Int, tipo : Int){
     for (k in matrizNumerica[0].indices) {
         if(j == tipo){
@@ -222,6 +226,8 @@ fun pintarMatriz(j : Int, tipo : Int){
                 pintarCasilla(COLOR_TWIN_Y, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_X_v3 || matrizNumerica[j][k] == CENTRO_X_v3){
                 pintarCasilla(COLOR_X_v3, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_Z_v3 || matrizNumerica[j][k] == CENTRO_Z_v3){
+                pintarCasilla(COLOR_Z_v3, j.toDouble(), k.toDouble())
             }
 
 
