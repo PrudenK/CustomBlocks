@@ -6,7 +6,7 @@ import java.sql.DriverManager
 import java.sql.SQLException
 
 
-val DB_HOST = "192.168.1.102"
+val DB_HOST = "192.168.1.111"
 val DB_PORT = "3306"
 val DB_USER = "root"
 val DB_PASSWORD = "1234"

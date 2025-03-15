@@ -11,6 +11,7 @@ import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Piezas.Piezas
+import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.application.Platform
 import javafx.beans.property.BooleanProperty
@@ -23,11 +24,13 @@ import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.control.Button
 import javafx.scene.control.Label
+import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.Pane
 import javafx.scene.layout.StackPane
 import javafx.scene.paint.Color
 import javafx.stage.Stage
+import javafx.util.Duration
 import java.net.URL
 import java.util.*
 import java.util.concurrent.locks.Lock
@@ -157,8 +160,9 @@ class ControladorPrincipal : Initializable {
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cPrin = this
         cargarTodoInit()
-    }
 
+        cargarTimeLineAuncios()
+    }
 
     @FXML fun opciones() {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB,
@@ -194,9 +198,29 @@ class ControladorPrincipal : Initializable {
         Platform.exit()
     }
 
+    private var indiceActual = ApiPublicidad.anuncios.size-1
+
+
     @FXML fun abrirPublicidad(){
-        abrirBanner()
+        abrirBanner(ApiPublicidad.anuncios[indiceActual].link)
         opciones()
+    }
+
+    private fun cargarTimeLineAuncios(){
+        if (ApiPublicidad.anuncios.isEmpty()) return
+
+        imgPublicidad.image = Image(ApiPublicidad.anuncios[indiceActual].imagen)
+
+        Timeline(
+            KeyFrame(Duration.seconds(5.0), {
+                indiceActual = (indiceActual + 1) % ApiPublicidad.anuncios.size
+                val anuncio = ApiPublicidad.anuncios[indiceActual]
+                imgPublicidad.image = Image(anuncio.imagen)
+            })
+        ).apply {
+            cycleCount = Timeline.INDEFINITE
+            play()
+        }
     }
 
     @FXML fun campa(){
