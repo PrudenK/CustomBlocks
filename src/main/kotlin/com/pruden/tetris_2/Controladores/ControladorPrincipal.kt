@@ -10,8 +10,9 @@ import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
+import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
+import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
 import com.pruden.tetris_2.Piezas.Piezas
-import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.application.Platform
 import javafx.beans.property.BooleanProperty
@@ -24,13 +25,11 @@ import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.control.Button
 import javafx.scene.control.Label
-import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.Pane
 import javafx.scene.layout.StackPane
 import javafx.scene.paint.Color
 import javafx.stage.Stage
-import javafx.util.Duration
 import java.net.URL
 import java.util.*
 import java.util.concurrent.locks.Lock
@@ -186,7 +185,6 @@ class ControladorPrincipal : Initializable {
         reiniciarPartida()
     }
 
-
     @FXML fun borrar() {
         TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
         imprimirMatriz_TAB()
@@ -198,29 +196,9 @@ class ControladorPrincipal : Initializable {
         Platform.exit()
     }
 
-    private var indiceActual = ApiPublicidad.anuncios.size-1
-
-
     @FXML fun abrirPublicidad(){
-        abrirBanner(ApiPublicidad.anuncios[indiceActual].link, ApiPublicidad.anuncios[indiceActual].id)
+        abrirBanner(ApiPublicidad.anuncios[indiceActualAnuncio].link, ApiPublicidad.anuncios[indiceActualAnuncio].id)
         opciones()
-    }
-
-    private fun cargarTimeLineAuncios(){
-        if (ApiPublicidad.anuncios.isEmpty()) return
-
-        imgPublicidad.image = Image(ApiPublicidad.anuncios[indiceActual].imagen)
-
-        Timeline(
-            KeyFrame(Duration.seconds(5.0), {
-                indiceActual = (indiceActual + 1) % ApiPublicidad.anuncios.size
-                val anuncio = ApiPublicidad.anuncios[indiceActual]
-                imgPublicidad.image = Image(anuncio.imagen)
-            })
-        ).apply {
-            cycleCount = Timeline.INDEFINITE
-            play()
-        }
     }
 
     @FXML fun campa(){
