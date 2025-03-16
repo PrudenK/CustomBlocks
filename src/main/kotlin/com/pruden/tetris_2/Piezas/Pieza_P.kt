@@ -64,6 +64,7 @@ class Pieza_P (override var fila: Int, override var columna: Int,
     }
 
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
+        condicionEspecial_b = false
         return if (nuevaOrientacion == 0) {
             if (columnaCentro != COLUMNAS - 1) {
                 if (matrizNumerica[filaCentro - 1][columnaCentro + 1] == BLANCO

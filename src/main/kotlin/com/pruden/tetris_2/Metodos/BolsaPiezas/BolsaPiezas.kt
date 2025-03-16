@@ -25,7 +25,7 @@ fun devolverPiezaAleatoria(): Piezas {
     dibujarPiezasSiguientes(0)
     puedeHoldear = true
 
-    return Pieza_Twin_O_v2(0, 5)
+    return Pieza_Ladder(0, 5)
 
     //return siguientePieza.removeAt(0)
     /*
