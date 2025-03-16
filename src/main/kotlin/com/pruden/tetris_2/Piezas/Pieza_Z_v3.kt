@@ -19,7 +19,7 @@ class Pieza_Z_v3 (override var fila: Int, override var columna: Int,
     private val NUMPIEZA = 47
     private val COLOR =  Color.web("#7cf686")
 
-    private val FORMAS_I_v3 = arrayOf(
+    private val FORMAS_Z_v3 = arrayOf(
         arrayOf(
             intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
             intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, NUMPIEZA),
@@ -151,9 +151,8 @@ class Pieza_Z_v3 (override var fila: Int, override var columna: Int,
     }
 
     override fun getForma(): Array<Array<IntArray>>  {
-        return FORMAS_I_v3
+        return FORMAS_Z_v3
     }
-
 
     override fun getColumnaCentro(): Int {
         return columnaCentro

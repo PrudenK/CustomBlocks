@@ -93,6 +93,9 @@ import com.pruden.tetris_2.Piezas.Pieza_T_v2.Companion.NUMPIEZA_T_v2
 import com.pruden.tetris_2.Piezas.Pieza_Twin_O.Companion.CENTRO_TWIN_O
 import com.pruden.tetris_2.Piezas.Pieza_Twin_O.Companion.NUMPIEZA_TWIN_O
 import com.pruden.tetris_2.Piezas.Pieza_Twin_O.Companion.COLOR_TWIN_O
+import com.pruden.tetris_2.Piezas.Pieza_Twin_O_v2.Companion.CENTRO_TWIN_O_v2
+import com.pruden.tetris_2.Piezas.Pieza_Twin_O_v2.Companion.COLOR_TWIN_O_v2
+import com.pruden.tetris_2.Piezas.Pieza_Twin_O_v2.Companion.NUMPIEZA_TWIN_O_v2
 import com.pruden.tetris_2.Piezas.Pieza_Twin_Y.Companion.CENTRO_TWIN_Y
 import com.pruden.tetris_2.Piezas.Pieza_Twin_Y.Companion.COLOR_TWIN_Y
 import com.pruden.tetris_2.Piezas.Pieza_Twin_Y.Companion.NUMPIEZA_TWIN_Y
@@ -228,6 +231,8 @@ fun pintarMatriz(j : Int, tipo : Int){
                 pintarCasilla(COLOR_X_v3, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_Z_v3 || matrizNumerica[j][k] == CENTRO_Z_v3){
                 pintarCasilla(COLOR_Z_v3, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_TWIN_O_v2 || matrizNumerica[j][k] == CENTRO_TWIN_O_v2){
+                pintarCasilla(COLOR_TWIN_O_v2, j.toDouble(), k.toDouble())
             }
 
 
