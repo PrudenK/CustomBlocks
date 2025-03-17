@@ -14,6 +14,7 @@ import com.pruden.tetris_2.Metodos.BolsaPiezas.devolverPiezaAleatoria
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.pintarPiezaTableroSecun
 import com.pruden.tetris_2.Piezas.Pieza_I
+import com.pruden.tetris_2.Piezas.Pieza_Pickaxe
 
 fun holdear(){
     if (puedeHoldear && holdActivo){
@@ -24,6 +25,9 @@ fun holdear(){
         if (piezaActual is Pieza_I) {
             piezaActual.set_Orientacion(4)
         }
+        if(piezaActual is Pieza_Pickaxe){
+            piezaActual.set_Orientacion(2)
+        }
         pintarPiezaTableroSecun(gcHold, piezaActual)
         piezaHold.add(piezaActual)
 
@@ -33,6 +37,9 @@ fun holdear(){
             piezaActual = piezaHold.removeAt(0)
             piezaActual.fila = 0
             piezaActual.set_Orientacion(0)
+            if(piezaActual is Pieza_Pickaxe){
+                piezaActual.set_Orientacion(2)
+            }
             piezaActual.columna = (Globales.COLUMNAS / 2 - 2)
             piezaActual.pintar()
 
