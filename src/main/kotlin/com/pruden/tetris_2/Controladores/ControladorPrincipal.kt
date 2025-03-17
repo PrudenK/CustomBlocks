@@ -160,7 +160,7 @@ class ControladorPrincipal : Initializable {
         cPrin = this
         cargarTodoInit()
 
-        cargarTimeLineAuncios()
+        //cargarTimeLineAuncios()
     }
 
     @FXML fun opciones() {

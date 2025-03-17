@@ -25,17 +25,19 @@ fun devolverPiezaAleatoria(): Piezas {
     dibujarPiezasSiguientes(0)
     puedeHoldear = true
 
-    return Pieza_S_v3(0, 5)
+    return Pieza_H_v2(0, 5)
 
     //return siguientePieza.removeAt(0)
-    /*
+/*
     return if(random.nextBoolean()){
-        Pieza_Z_v3(0, 5)
+        Pieza_H_v2(0, 5)
     }else{
         Pieza_Mini_O(0,5)
     }
 
-     */
+
+ */
+
 
 
 
