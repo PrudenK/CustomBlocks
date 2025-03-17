@@ -1,4 +1,4 @@
-package com.pruden.tetris_2
+package com.pruden.tetris_2.Constantes
 
 import com.pruden.tetris_2.Metodos.Publicidad.Anuncio
 import com.pruden.tetris_2.Metodos.Publicidad.PublicidadService

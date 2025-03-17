@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Matriz
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
+import com.pruden.tetris_2.Constantes.ConstantesPiezas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BORDE_TABLERO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
@@ -13,7 +13,7 @@ fun rellenarMatriz() {
             if (i == FILAS) {
                 matrizNumerica[i][j] = BORDE_TABLERO
             } else {
-                matrizNumerica[i][j] = BLANCO
+                matrizNumerica[i][j] = ConstantesPiezas.BLANCO
                 //pintarCasilla(FONDO, i.toDouble(), j.toDouble())
             }
         }

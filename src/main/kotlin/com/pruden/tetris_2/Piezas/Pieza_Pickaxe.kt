@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Piezas
 
+import com.pruden.tetris_2.Constantes.ConstantesPiezas
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar3x3
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_3x3

@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Publicidad
 
-import com.pruden.tetris_2.ApiPublicidad
+import com.pruden.tetris_2.Constantes.ApiPublicidad
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

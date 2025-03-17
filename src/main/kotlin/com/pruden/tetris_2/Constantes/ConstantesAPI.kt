@@ -1,4 +1,4 @@
-package com.pruden.tetris_2
+package com.pruden.tetris_2.Constantes
 
 object ConstantesAPI {
     const val PATH_PUBLICIDAD = "http://localhost:8082"

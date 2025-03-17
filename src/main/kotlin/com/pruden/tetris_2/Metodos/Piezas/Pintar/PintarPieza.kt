@@ -1,8 +1,7 @@
 package com.pruden.tetris_2.Metodos.Piezas.Pintar
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Piezas.ConstantesPiezas
+import com.pruden.tetris_2.Constantes.ConstantesPiezas
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.scene.paint.Color
 
@@ -12,7 +11,7 @@ fun pintarPieza(pieza: Piezas) : IntArray{
 
     for (i in forma.indices) {
         for (j in forma[i].indices) {
-            if (forma[i][j] != BLANCO) {
+            if (forma[i][j] != ConstantesPiezas.BLANCO) {
                 if (forma[i][j] == pieza.getCentro()) {
                     if (pieza.getCentro() != 80) {
                         pintarCasilla(pieza.getColor(), (pieza.fila + i).toDouble(), (pieza.columna + j).toDouble())

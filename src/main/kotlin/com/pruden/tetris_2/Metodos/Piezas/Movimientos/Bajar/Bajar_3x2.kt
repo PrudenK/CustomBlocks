@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
+import com.pruden.tetris_2.Constantes.ConstantesPiezas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.BorrarPiezas.borrarLinea
 import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
@@ -11,19 +11,19 @@ fun bajar_3x2(pieza: Piezas, desplazamientos: IntArray): Boolean {
     with(pieza) {
         var puedeBajar = true
         if (orientacion == 0) {
-            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[0]][getColumnaCentro() - 1] == BLANCO
-                        && matrizNumerica[getFilaCentro() + desplazamientos[1]][getColumnaCentro()] == BLANCO
-                        && matrizNumerica[getFilaCentro() + desplazamientos[2]][getColumnaCentro() + 1] == BLANCO
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[0]][getColumnaCentro() - 1] == ConstantesPiezas.BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[1]][getColumnaCentro()] == ConstantesPiezas.BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[2]][getColumnaCentro() + 1] == ConstantesPiezas.BLANCO
         } else if (orientacion == 2) {
-            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[3]][getColumnaCentro() - 1] == BLANCO
-                        && matrizNumerica[getFilaCentro() + desplazamientos[4]][getColumnaCentro()] == BLANCO
-                        && matrizNumerica[getFilaCentro() + desplazamientos[5]][getColumnaCentro() + 1] == BLANCO
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[3]][getColumnaCentro() - 1] == ConstantesPiezas.BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[4]][getColumnaCentro()] == ConstantesPiezas.BLANCO
+                        && matrizNumerica[getFilaCentro() + desplazamientos[5]][getColumnaCentro() + 1] == ConstantesPiezas.BLANCO
         } else if (orientacion == 1) {
-            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[6]][getColumnaCentro()] == BLANCO
-                    && matrizNumerica[getFilaCentro() + desplazamientos[7]][getColumnaCentro() + 1] == BLANCO
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[6]][getColumnaCentro()] == ConstantesPiezas.BLANCO
+                    && matrizNumerica[getFilaCentro() + desplazamientos[7]][getColumnaCentro() + 1] == ConstantesPiezas.BLANCO
         } else if (orientacion == 3) {
-            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[8]][getColumnaCentro()] == BLANCO
-                    && matrizNumerica[getFilaCentro() + desplazamientos[9]][getColumnaCentro() - 1] == BLANCO
+            puedeBajar = matrizNumerica[getFilaCentro() + desplazamientos[8]][getColumnaCentro()] == ConstantesPiezas.BLANCO
+                    && matrizNumerica[getFilaCentro() + desplazamientos[9]][getColumnaCentro() - 1] == ConstantesPiezas.BLANCO
         }
         if (puedeBajar) {
             limpiar()

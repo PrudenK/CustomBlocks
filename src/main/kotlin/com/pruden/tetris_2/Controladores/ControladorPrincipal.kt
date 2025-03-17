@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Controladores
 
-import com.pruden.tetris_2.ApiPublicidad
+import com.pruden.tetris_2.Constantes.ApiPublicidad
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.conexion
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
@@ -10,7 +10,6 @@ import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
-import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.animation.Timeline
@@ -72,7 +71,6 @@ class ControladorPrincipal : Initializable {
         var FILAS = 20
         var COLUMNAS = 10
         var TAMANO_CELDA =33
-        var BLANCO = 0
         var CENTRO_BLANCO = 80
         var BORDE_TABLERO = 9
         const val TAMA_TABLERO_SECUN = 5.0

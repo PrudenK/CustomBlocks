@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Publicidad
 
-import com.pruden.tetris_2.ConstantesAPI
+import com.pruden.tetris_2.Constantes.ConstantesAPI
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.GET

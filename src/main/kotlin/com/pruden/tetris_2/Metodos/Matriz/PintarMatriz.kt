@@ -1,10 +1,9 @@
 package com.pruden.tetris_2.Metodos.Matriz
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
-import com.pruden.tetris_2.Piezas.ConstantesPiezas
+import com.pruden.tetris_2.Constantes.ConstantesPiezas
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.CENTRO_J_v2
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.COLOR_J_v2
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.NUMPIEZA_J_v2
@@ -149,14 +148,14 @@ import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.NUMPIEZA_Z_v3
 fun pintarMatriz(j : Int, tipo : Int){
     for (k in matrizNumerica[0].indices) {
         if(j == tipo){
-            matrizNumerica[j][k] = BLANCO
+            matrizNumerica[j][k] = ConstantesPiezas.BLANCO
             pintarCasilla(FONDO, j.toDouble(), k.toDouble());
         }else {
             if(tipo == 0){
                 matrizNumerica[j][k] = matrizNumerica[j-1][k];
             }
 
-            if (matrizNumerica[j][k] == BLANCO) {
+            if (matrizNumerica[j][k] == ConstantesPiezas.BLANCO) {
                 pintarCasilla(FONDO, j.toDouble(), k.toDouble())
             } else if (matrizNumerica[j][k] == NUMPIEZA_O) {
                 pintarCasilla(COLOR_O, j.toDouble(), k.toDouble())

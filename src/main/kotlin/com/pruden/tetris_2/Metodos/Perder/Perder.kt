@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.Perder
 
 import com.pruden.tetris_2.BaseDeDatos.SubirDatos.subirDatosPerder
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
+import com.pruden.tetris_2.Constantes.ConstantesPiezas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
@@ -33,7 +33,7 @@ fun comprbarPerder(){
 
 fun verificarPerdida(): Boolean {
     for (columna in 0 until COLUMNAS) {
-        if (matrizNumerica[2][columna] != BLANCO) {  // Si alguna celda no está vacía
+        if (matrizNumerica[2][columna] != ConstantesPiezas.BLANCO) {  // Si alguna celda no está vacía
             return true // Has perdido
         }
     }

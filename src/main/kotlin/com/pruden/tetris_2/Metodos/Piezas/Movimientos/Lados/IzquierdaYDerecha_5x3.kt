@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados
 
+import com.pruden.tetris_2.Constantes.ConstantesPiezas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Piezas.Piezas
 
@@ -15,38 +16,38 @@ fun moverDerechaIzquierda5x3(pieza: Piezas, desplazamientos: IntArray, direccion
     var puedeMoverse = true
     with(pieza){
         if (orientacion == 0) {
-            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[0]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[1]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[2]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[3]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[4]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[5]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()+1][getColumnaCentro() + desplazamientos[6]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()+1][getColumnaCentro() + desplazamientos[7]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()+1][getColumnaCentro() + desplazamientos[8]] == ControladorPrincipal.BLANCO
+            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[0]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[1]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[2]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[3]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[4]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[5]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()+1][getColumnaCentro() + desplazamientos[6]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()+1][getColumnaCentro() + desplazamientos[7]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()+1][getColumnaCentro() + desplazamientos[8]] == ConstantesPiezas.BLANCO
         } else if (orientacion == 2) {
-            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[9]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[10]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[11]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[12]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[13]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[14]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[15]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[16]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[17]] == ControladorPrincipal.BLANCO
+            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[9]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[10]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[11]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[12]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[13]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[14]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[15]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[16]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[17]] == ConstantesPiezas.BLANCO
 
         } else if (orientacion == 1) {
-            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 2][getColumnaCentro() + desplazamientos[18]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[19]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[20]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[21]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 2][getColumnaCentro() + desplazamientos[22]] == ControladorPrincipal.BLANCO
+            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 2][getColumnaCentro() + desplazamientos[18]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[19]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[20]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[21]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 2][getColumnaCentro() + desplazamientos[22]] == ConstantesPiezas.BLANCO
         } else if (orientacion == 3) {
-            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 2][getColumnaCentro() + desplazamientos[23]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[24]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[25]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[26]] == ControladorPrincipal.BLANCO
-                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 2][getColumnaCentro() + desplazamientos[27]] == ControladorPrincipal.BLANCO
+            puedeMoverse = ControladorPrincipal.matrizNumerica[getFilaCentro() - 2][getColumnaCentro() + desplazamientos[23]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() - 1][getColumnaCentro() + desplazamientos[24]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro()][getColumnaCentro() + desplazamientos[25]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 1][getColumnaCentro() + desplazamientos[26]] == ConstantesPiezas.BLANCO
+                    && ControladorPrincipal.matrizNumerica[getFilaCentro() + 2][getColumnaCentro() + desplazamientos[27]] == ConstantesPiezas.BLANCO
         }
         if (puedeMoverse) {
             limpiar()
