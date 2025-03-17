@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Metodos.RankingVistaDatos
 
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.listaModos
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.paises
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings.Companion.cRanking
 import javafx.collections.FXCollections
 import javafx.scene.control.cell.PropertyValueFactory
@@ -11,11 +10,11 @@ fun initRankingDatos(){
         datosRanking = FXCollections.observableArrayList()
 
         comboPais.items.add("Global")
-        comboPais.items.addAll(paises)
+        comboPais.items.addAll(Listas.LISTA_PAISES)
         comboPais.value = "Global"
 
-        comboModo.items.addAll(listaModos)
-        comboModo.value = listaModos[0]
+        comboModo.items.addAll(Listas.LISTA_MODOS_DE_JUEGOS)
+        comboModo.value = Listas.LISTA_MODOS_DE_JUEGOS[0]
 
 
         cargarDatosRanking()

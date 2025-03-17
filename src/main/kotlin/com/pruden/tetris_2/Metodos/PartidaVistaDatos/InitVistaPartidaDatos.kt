@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Metodos.PartidaVistaDatos
 
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.listaModosConTodos
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.listaOrdenar
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas.Companion.cPartidas
 import javafx.collections.FXCollections
 import javafx.scene.control.cell.PropertyValueFactory
@@ -10,10 +9,10 @@ fun initPartidaDatos(){
     with(cPartidas){
         datosPartida = FXCollections.observableArrayList()
 
-        comboFiltrar.items.addAll(listaModosConTodos)
-        comboFiltrar.value = listaModosConTodos[0]
-        comboOrdenar.items.addAll(listaOrdenar)
-        comboOrdenar.value = listaOrdenar[0]
+        comboFiltrar.items.addAll(Listas.LISTA_MODOS_CON_TODOS)
+        comboFiltrar.value = Listas.LISTA_MODOS_CON_TODOS[0]
+        comboOrdenar.items.addAll(Listas.LISTA_FILTRARDOS)
+        comboOrdenar.value = Listas.LISTA_FILTRARDOS[0]
 
 
         cargarDatosPartidas()

@@ -1,15 +1,14 @@
 package com.pruden.tetris_2.BaseDeDatos.SubirDatos
 
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.listaInstancias
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.nombresPiezas
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Piezas.*
 
-var contadorPiezas = MutableList(nombresPiezas.size) { 0 }
+var contadorPiezas = MutableList(Listas.NOMBRES_PIEZAS.size) { 0 }
 
 fun sumarTipoPieza(pieza : Piezas){
-    for ((indice, p) in listaInstancias.withIndex()){
+    for ((indice, p) in Listas.LISTA_INSTANCIAS_PIEZAS.withIndex()){
         if (p.isInstance(pieza)){
             contadorPiezas[indice] += 1
             break
@@ -17,7 +16,7 @@ fun sumarTipoPieza(pieza : Piezas){
     }
 }
 fun subirTodoEstaPiezas(){
-    for (pieza in nombresPiezas){
+    for (pieza in Listas.NOMBRES_PIEZAS){
         subirPiezas(pieza)
     }
     val consultaSubirTotal = """
@@ -56,7 +55,7 @@ private fun subirPiezas(piezaColumna : String){
 
     val piezaTabla = ControladorLogin.statment.executeQuery(consultaObtenerPieza)
     piezaTabla.next()
-    val piezaActu = piezaTabla.getInt(piezaColumna) + contadorPiezas[nombresPiezas.indexOf(piezaColumna)]
+    val piezaActu = piezaTabla.getInt(piezaColumna) + contadorPiezas[Listas.NOMBRES_PIEZAS.indexOf(piezaColumna)]
 
     val preparedStatement = ControladorLogin.conexion.prepareStatement(consultaSubirPieza)
 

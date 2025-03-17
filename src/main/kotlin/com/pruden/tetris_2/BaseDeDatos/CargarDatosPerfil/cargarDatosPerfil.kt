@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil
 
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil.Companion.cPerfil
@@ -22,7 +23,7 @@ fun cargarDatosUsuarioPerfil(){
 
 fun cargarDatosModos(){
     with(cPerfil){
-        val modoActual = listaModosEsta[listaModos.indexOf(comboBox.value)]
+        val modoActual = Listas.LISTA_MODOS_ESTADISTICAS[Listas.LISTA_MODOS_DE_JUEGOS.indexOf(comboBox.value)]
 
         val consulta = "Select maxNivel, maxLineas, maxPuntuacion, maxTiempo, lineasSum, puntuacionesSum, " +
                 "tiempoTotal from $modoActual where idJugador = ${ControladorPrincipal.idJugador}"
@@ -75,7 +76,7 @@ fun cargarDatosCustom(){
         tiempoCustomLabel.text = datos.getString("tiempoTotal")
         partidasCustomLabel.text = datos.getInt("partidas").toString()
 
-        val selectPiezasDistintoACero = nombresPiezas.joinToString(" + ") { "SIGN($it)" }
+        val selectPiezasDistintoACero = Listas.NOMBRES_PIEZAS.joinToString(" + ") { "SIGN($it)" }
 
         val consultaPiezasJugadas = "Select ($selectPiezasDistintoACero) as piezasNoCero from estaPiezas where idJugador = ${ControladorPrincipal.idJugador}"
 

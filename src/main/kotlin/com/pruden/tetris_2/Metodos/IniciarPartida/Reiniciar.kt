@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.IniciarPartida
 
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.nombresPiezas
 import com.pruden.tetris_2.BaseDeDatos.SubirDatos.contadorPiezas
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero
@@ -43,7 +43,7 @@ fun reiniciarPartida(){
 
         ControladorCustomTablero.cambioDeTAbleroParaTipoPieza = false
 
-        if (jugarOnline) contadorPiezas = MutableList(nombresPiezas.size) { 0 }
+        if (jugarOnline) contadorPiezas = MutableList(Listas.NOMBRES_PIEZAS.size) { 0 }
 
         Thread { iniciarPartida() }.start()
     }

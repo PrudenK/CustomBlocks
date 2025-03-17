@@ -1,10 +1,9 @@
 package com.pruden.tetris_2.Controladores.Perfil
 
 import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.*
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
-import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
@@ -51,8 +50,8 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cPerfil = this
 
-        comboBox.items.addAll(listaModos)
-        comboBox.value = listaModos[0]
+        comboBox.items.addAll(Listas.LISTA_MODOS_DE_JUEGOS)
+        comboBox.value = Listas.LISTA_MODOS_DE_JUEGOS[0]
 
         cargarDatosUsuarioPerfil()
         cargarDatosModos()

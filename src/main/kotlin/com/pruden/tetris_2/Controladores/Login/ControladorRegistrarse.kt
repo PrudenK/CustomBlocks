@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Controladores.Login
 
-import com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil.paises
 import com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Registrarse.registrarJugador
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import javafx.fxml.FXML
@@ -31,7 +31,7 @@ class ControladorRegistrarse : Initializable{
         cRegistrarse = this
         arrastrarFun(paneLogin, stageLogin)
 
-        comboPais.items.addAll(paises)
+        comboPais.items.addAll(Listas.LISTA_PAISES)
     }
 
     companion object{
