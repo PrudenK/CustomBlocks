@@ -4,6 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
+import com.pruden.tetris_2.Piezas.ConstantesPiezas
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.CENTRO_J_v2
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.COLOR_J_v2
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.NUMPIEZA_J_v2
@@ -84,6 +85,9 @@ import com.pruden.tetris_2.Piezas.Pieza_O_v6.Companion.NUMPIEZA_O_v6
 import com.pruden.tetris_2.Piezas.Pieza_P.Companion.CENTRO_P
 import com.pruden.tetris_2.Piezas.Pieza_P.Companion.COLOR_P
 import com.pruden.tetris_2.Piezas.Pieza_P.Companion.NUMPIEZA_P
+import com.pruden.tetris_2.Piezas.Pieza_Pickaxe.Companion.CENTRO_PICKAXE
+import com.pruden.tetris_2.Piezas.Pieza_Pickaxe.Companion.COLOR_PICKAXE
+import com.pruden.tetris_2.Piezas.Pieza_Pickaxe.Companion.NUMPIEZA_PICKAXE
 import com.pruden.tetris_2.Piezas.Pieza_S.Companion.CENTRO_S
 import com.pruden.tetris_2.Piezas.Pieza_S.Companion.COLOR_S
 import com.pruden.tetris_2.Piezas.Pieza_S.Companion.NUMPIEZA_S
@@ -248,6 +252,10 @@ fun pintarMatriz(j : Int, tipo : Int){
                 pintarCasilla(COLOR_S_v3, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_H_v2 || matrizNumerica[j][k] == CENTRO_H_v2){
                 pintarCasilla(COLOR_H_v2, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == NUMPIEZA_PICKAXE){
+                pintarCasilla(COLOR_PICKAXE, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == CENTRO_PICKAXE || matrizNumerica[j][k] == ConstantesPiezas.NUMPIEZA_PICO){
+                pintarCasilla(ConstantesPiezas.COLOR_MANGO_PICO, j.toDouble(), k.toDouble())
             }
 
 

@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Publicidad
 
-import com.pruden.tetris_2.Constantes
+import com.pruden.tetris_2.ConstantesAPI
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.GET
@@ -8,9 +8,9 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface PublicidadService {
-    @GET(Constantes.TODOS_ANUNCIOS)
+    @GET(ConstantesAPI.TODOS_ANUNCIOS)
     fun getAnuncios(): Call<List<Anuncio>>
 
-    @PUT(Constantes.PATH_CLICK_PUBLICIDAD)
+    @PUT(ConstantesAPI.PATH_CLICK_PUBLICIDAD)
     fun onClickAnuncio(@Path("id") id: Int): Call<ResponseBody>
 }

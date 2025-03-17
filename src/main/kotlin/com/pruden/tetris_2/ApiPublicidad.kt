@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiPublicidad {
     private val retrofit = Retrofit.Builder()
-        .baseUrl(Constantes.PATH_PUBLICIDAD)
+        .baseUrl(ConstantesAPI.PATH_PUBLICIDAD)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

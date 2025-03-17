@@ -25,7 +25,7 @@ fun devolverPiezaAleatoria(): Piezas {
     dibujarPiezasSiguientes(0)
     puedeHoldear = true
 
-    return Pieza_H_v2(0, 5)
+    return Pieza_Pickaxe(0, 5)
 
     //return siguientePieza.removeAt(0)
 /*
