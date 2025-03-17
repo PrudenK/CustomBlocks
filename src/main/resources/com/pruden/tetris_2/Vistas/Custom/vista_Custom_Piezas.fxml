@@ -15,16 +15,16 @@
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button layoutX="230.0" layoutY="760.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+      <Button layoutX="228.0" layoutY="760.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
       <Label layoutX="132.0" layoutY="29.0" prefHeight="32.0" prefWidth="437.0" text="¡Elige las piezas con las que vas a jugar!" textFill="#b7b7b7">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
 
-        <ScrollPane hbarPolicy="NEVER" layoutX="60.0" layoutY="84.0" prefHeight="652.0" prefWidth="580.0" styleClass="pane-1" vbarPolicy="AS_NEEDED">
+        <ScrollPane hbarPolicy="NEVER" layoutX="55.0" layoutY="84.0" prefHeight="652.0" prefWidth="591.0" styleClass="pane-1" vbarPolicy="AS_NEEDED">
          <content>
-            <Pane prefHeight="1684.0" prefWidth="568.0">
+            <Pane prefHeight="1843.0" prefWidth="568.0">
                <children>
                   <ImageView fitHeight="79.0" fitWidth="77.0" layoutX="39.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
                        <image>
@@ -166,12 +166,12 @@
                            <Image url="@../../../../../Imagenes/Piezas/Pieza_I_v3.png" />
                        </image>
                    </ImageView>
-                   <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="39.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="39.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
                        <image>
                            <Image url="@../../../../../Imagenes/Piezas/Pieza_Y_v2.png" />
                        </image>
                    </ImageView>
-                   <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="196.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                   <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="196.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
                        <image>
                            <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v4.png" />
                        </image>
@@ -458,22 +458,22 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="31.0" layoutY="1528.0">
+                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="31.0" layoutY="1537.0">
                      <image>
                         <Image url="@../../../../../Imagenes/Piezas/Pieza_O_Twin.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="21.0" layoutY="1629.0" text="Pieza Twin O" textFill="#b7b7b7">
+                  <Label layoutX="21.0" layoutY="1644.0" text="Pieza Twin O" textFill="#b7b7b7">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="179.0" layoutY="1528.0">
+                  <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="179.0" layoutY="1537.0">
                      <image>
                         <Image url="@../../../../../Imagenes/Piezas/Pieza_Y_Twin.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="167.0" layoutY="1629.0" text="Pieza Twin Y" textFill="#b7b7b7">
+                  <Label layoutX="167.0" layoutY="1644.0" text="Pieza Twin Y" textFill="#b7b7b7">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -486,12 +486,78 @@
                   <CheckBox fx:id="ck_X_v3" layoutX="412.0" layoutY="1494.0" mnemonicParsing="false" />
                   <CheckBox fx:id="ck_O_v6" layoutX="272.0" layoutY="1494.0" mnemonicParsing="false" />
                   <CheckBox fx:id="ck_O_v5" layoutX="118.0" layoutY="1496.0" mnemonicParsing="false" />
-                  <CheckBox fx:id="ck_Tw_O" layoutX="120.0" layoutY="1629.0" mnemonicParsing="false" />
-                  <CheckBox fx:id="ck_Tw_Y" layoutX="273.0" layoutY="1629.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Tw_O" layoutX="120.0" layoutY="1644.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Tw_Y" layoutX="273.0" layoutY="1644.0" mnemonicParsing="false" />
+                  <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="332.0" layoutY="1541.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_Pickaxe.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="316.0" layoutY="1644.0" text="Pieza Pickaxe" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="103.0" fitWidth="70.0" layoutX="461.0" layoutY="1535.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_S_v3.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="452.0" layoutY="1644.0" text="Pieza S v3" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="31.0" layoutY="1685.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v2_Twin.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="13.0" layoutY="1795.0" text="Pieza Twin O v2" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="103.0" fitWidth="70.0" layoutX="183.0" layoutY="1683.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_Z_v3.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="181.0" layoutY="1795.0" text="Pieza Z v3" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="70.0" fitWidth="110.0" layoutX="436.0" layoutY="1702.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_H_v2.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="449.0" layoutY="1795.0" text="Pieza H v2" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="318.0" layoutY="1685.0">
+                     <image>
+                        <Image url="@../../../../../Imagenes/Piezas/Pieza_Ladder.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="315.0" layoutY="1795.0" text="Pieza Ladder" textFill="#b7b7b7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="ck_Pick" layoutX="416.0" layoutY="1644.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_S_v3" layoutX="527.0" layoutY="1644.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_H_v2" layoutX="530.0" layoutY="1795.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Ladder" layoutX="414.0" layoutY="1795.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Z_v3" layoutX="273.0" layoutY="1795.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="ck_Tw_O_v2" layoutX="133.0" layoutY="1795.0" mnemonicParsing="false" />
                 </children>
             </Pane>
          </content>
         </ScrollPane>
-      <Button fx:id="guarda_y_salir" layoutX="350.0" layoutY="760.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y salir" />
+      <Button fx:id="guarda_y_salir" layoutX="348.0" layoutY="760.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y salir" />
    </children>
 </Pane>
