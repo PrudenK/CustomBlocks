@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Piezas
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar_3x2
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_3x2
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
@@ -65,7 +64,7 @@ class Pieza_L (override var fila: Int, override var columna: Int,
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         condicionEspecial_b = false
         return if (nuevaOrientacion == 0) {
-            if (columnaCentro != COLUMNAS - 1) {
+            if (columnaCentro != Globales.COLUMNAS - 1) {
                 if (matrizNumerica[filaCentro - 1][columnaCentro + 1] == BLANCO
                     && matrizNumerica[filaCentro][columnaCentro - 1] == BLANCO
                     && matrizNumerica[filaCentro][columnaCentro + 1] == BLANCO) {
@@ -73,7 +72,7 @@ class Pieza_L (override var fila: Int, override var columna: Int,
                 } else condicionRotarEspecial(this,intArrayOf(0, 0),intArrayOf(-1, -2), true, -1)
             } else condicionRotarEspecial(this,intArrayOf(0, 0),intArrayOf(-1, -2), true, -1)
         } else if (nuevaOrientacion == 1) {
-            if (filaCentro != FILAS - 1) {
+            if (filaCentro != Globales.FILAS - 1) {
                 if (matrizNumerica[filaCentro - 1][columnaCentro] == BLANCO
                     && matrizNumerica[filaCentro + 1][columnaCentro] == BLANCO
                     && matrizNumerica[filaCentro + 1][columnaCentro + 1] == BLANCO

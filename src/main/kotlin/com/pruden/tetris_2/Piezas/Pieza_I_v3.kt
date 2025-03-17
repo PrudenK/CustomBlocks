@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Piezas
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar_5x1
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_5x1
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
@@ -58,7 +57,7 @@ class Pieza_I_v3 (override var fila: Int, override var columna: Int,
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         condicionEspecial_b = false
         return if (nuevaOrientacion == 0) {
-            if (columnaCentro != 0 && columnaCentro != 1 && columnaCentro != COLUMNAS - 1 && columnaCentro != COLUMNAS - 2) {
+            if (columnaCentro != 0 && columnaCentro != 1 && columnaCentro != Globales.COLUMNAS - 1 && columnaCentro != Globales.COLUMNAS - 2) {
                 if (matrizNumerica[filaCentro][columnaCentro - 2] == BLANCO
                     && matrizNumerica[filaCentro][columnaCentro - 1] == BLANCO
                     && matrizNumerica[filaCentro][columnaCentro + 1] == BLANCO
@@ -83,7 +82,7 @@ class Pieza_I_v3 (override var fila: Int, override var columna: Int,
                     if (matrizNumerica[filaCentro][columnaCentro - 1] == BLANCO) {
                         condicionRotarEspecial(this,intArrayOf(0, 0, 0, 0),intArrayOf(-1, 1, 2, 3), true, 1)
                     } else condicionRotarEspecial(this,intArrayOf(0, 0, 0, 0),intArrayOf(1, 2, 3, 4), true, 2)
-                } else if (columnaCentro == COLUMNAS - 1) {
+                } else if (columnaCentro == Globales.COLUMNAS - 1) {
                     condicionRotarEspecial(this,intArrayOf(0, 0, 0, 0),intArrayOf(-1, -2, -3, -4), true, -2)
                 } else {
                     if (matrizNumerica[filaCentro][columnaCentro + 1] == BLANCO) {
@@ -92,7 +91,7 @@ class Pieza_I_v3 (override var fila: Int, override var columna: Int,
                 }
             }
         } else {
-            if (filaCentro != 0 && filaCentro != 1 && filaCentro != FILAS - 1 && filaCentro != FILAS - 2) {
+            if (filaCentro != 0 && filaCentro != 1 && filaCentro != Globales.FILAS - 1 && filaCentro != Globales.FILAS - 2) {
                 if (matrizNumerica[filaCentro - 2][columnaCentro] == BLANCO
                     && matrizNumerica[filaCentro - 1][columnaCentro] == BLANCO
                     && matrizNumerica[filaCentro + 1][columnaCentro] == BLANCO
@@ -115,7 +114,7 @@ class Pieza_I_v3 (override var fila: Int, override var columna: Int,
                     condicionRotarEspecial(this,intArrayOf(1, 2, 3, 4),intArrayOf(0, 0, 0, 0), false, 2)
                 } else if (filaCentro == 1) {
                     condicionRotarEspecial(this,intArrayOf(-1, 1, 2, 3),intArrayOf(0, 0, 0, 0), false, 1)
-                } else if (filaCentro == FILAS - 1) {
+                } else if (filaCentro == Globales.FILAS - 1) {
                     condicionRotarEspecial(this,intArrayOf(-1, -2, -3, -4),intArrayOf(0, 0, 0, 0), false, -2)
                 } else {
                     if (matrizNumerica[filaCentro + 1][columnaCentro] == BLANCO) {

@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores
 
 import com.pruden.tetris_2.Constantes.ApiPublicidad
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.conexion
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
@@ -68,11 +69,6 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var imgPublicidad : ImageView
 
     companion object {
-        var FILAS = 20
-        var COLUMNAS = 10
-        var TAMANO_CELDA =33
-        var CENTRO_BLANCO = 80
-        var BORDE_TABLERO = 9
         const val TAMA_TABLERO_SECUN = 5.0
         const val TAMA_CELDA_SECUN = 30.0
         val FONDO = Color.web("#595959")!!
@@ -117,7 +113,7 @@ class ControladorPrincipal : Initializable {
 
 
 
-        var matrizNumerica: Array<IntArray> = Array(FILAS +1) { IntArray(COLUMNAS) }
+        var matrizNumerica: Array<IntArray> = Array(Globales.FILAS +1) { IntArray(Globales.COLUMNAS) }
         var piezaHold: ArrayList<Piezas> = ArrayList()
 
 

@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Controladores.Custom
 
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.Observables.cargarObservableTablero
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
@@ -83,7 +83,7 @@ class ControladorCustomTablero : ControladorGEN(), Initializable {
     }
 
     private fun cargarPosicionTablero(){
-        tabPosicion = FILAS.toString()[0].toString().toInt() - 1
+        tabPosicion = Globales.FILAS.toString()[0].toString().toInt() - 1
     }
 
     private fun cargarTableroYTitulo(){

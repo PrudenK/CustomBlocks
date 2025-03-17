@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.DibujarTablero.General
 
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Principal.*
 import javafx.scene.shape.Rectangle
@@ -24,7 +25,7 @@ fun dibujarTableroPrincipal(){
 fun cargarTablero(){
     with(ControladorPrincipal.cPrin){
         ControladorPrincipal.gcPrincipal.clearRect(0.0,0.0, canvasPrincipal.width, canvasPrincipal.height)
-        canvasPrincipal.clip = Rectangle(0.0, (2 * ControladorPrincipal.TAMANO_CELDA).toDouble(), canvasPrincipal.width, canvasPrincipal.height - 2 * ControladorPrincipal.TAMANO_CELDA)
+        canvasPrincipal.clip = Rectangle(0.0, (2 * Globales.TAMANO_CELDA).toDouble(), canvasPrincipal.width, canvasPrincipal.height - 2 * Globales.TAMANO_CELDA)
     }
 }
 

@@ -1,9 +1,8 @@
 package com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Secundarios
 
-import com.pruden.tetris_2.Constantes.ConstantesPiezas
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.ALTURA_CANVAS_SECUN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.ANCHO_CANVAS_SECUN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.CENTRO_BLANCO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_CELDA_SECUN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_TABLERO_SECUN
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasillaSecun
@@ -46,7 +45,7 @@ fun pintarPiezaTableroSecundarioTIPO0(gc: GraphicsContext, pieza: Piezas) {
     // Dibujar la figura en el centro del tablero
     for (i in forma.indices) {
         for (j in forma[i].indices) {
-            if (forma[i][j] != ConstantesPiezas.BLANCO && forma[i][j] != CENTRO_BLANCO) {
+            if (forma[i][j] != Globales.BLANCO && forma[i][j] != Globales.CENTRO_BLANCO) {
                 val x: Double = inicioX + j * TAMA_CELDA_SECUN
                 val y: Double = inicioY + i * TAMA_CELDA_SECUN
                 pintarCasillaSecun(gc,pieza.getColor(),  x, y, TAMA_CELDA_SECUN)

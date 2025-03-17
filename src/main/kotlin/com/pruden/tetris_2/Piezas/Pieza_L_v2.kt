@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Piezas
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar3x3
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_3x3
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
@@ -64,12 +64,12 @@ class Pieza_L_v2 (override var fila: Int, override var columna: Int,
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         condicionEspecial_b = false
         if (nuevaOrientacion == 0) {
-            if (columnaCentro != COLUMNAS - 1) {
+            if (columnaCentro != Globales.COLUMNAS - 1) {
                 return matrizNumerica[filaCentro - 1][columnaCentro - 1] == BLANCO
                         && matrizNumerica[filaCentro][columnaCentro - 1] == BLANCO
             }
         } else if (nuevaOrientacion == 1) {
-            if (filaCentro != FILAS - 1) {
+            if (filaCentro != Globales.FILAS - 1) {
                 return matrizNumerica[filaCentro - 1][columnaCentro] == BLANCO
                         && matrizNumerica[filaCentro - 1][columnaCentro + 1] == BLANCO
             }

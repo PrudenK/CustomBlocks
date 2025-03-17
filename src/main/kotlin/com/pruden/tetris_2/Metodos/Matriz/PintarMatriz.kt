@@ -3,7 +3,7 @@ package com.pruden.tetris_2.Metodos.Matriz
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
-import com.pruden.tetris_2.Constantes.ConstantesPiezas
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.CENTRO_J_v2
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.COLOR_J_v2
 import com.pruden.tetris_2.Piezas.Pieza_J_v2.Companion.NUMPIEZA_J_v2
@@ -148,14 +148,14 @@ import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.NUMPIEZA_Z_v3
 fun pintarMatriz(j : Int, tipo : Int){
     for (k in matrizNumerica[0].indices) {
         if(j == tipo){
-            matrizNumerica[j][k] = ConstantesPiezas.BLANCO
+            matrizNumerica[j][k] = Globales.BLANCO
             pintarCasilla(FONDO, j.toDouble(), k.toDouble());
         }else {
             if(tipo == 0){
                 matrizNumerica[j][k] = matrizNumerica[j-1][k];
             }
 
-            if (matrizNumerica[j][k] == ConstantesPiezas.BLANCO) {
+            if (matrizNumerica[j][k] == Globales.BLANCO) {
                 pintarCasilla(FONDO, j.toDouble(), k.toDouble())
             } else if (matrizNumerica[j][k] == NUMPIEZA_O) {
                 pintarCasilla(COLOR_O, j.toDouble(), k.toDouble())
@@ -253,8 +253,8 @@ fun pintarMatriz(j : Int, tipo : Int){
                 pintarCasilla(COLOR_H_v2, j.toDouble(), k.toDouble())
             }else if (matrizNumerica[j][k] == NUMPIEZA_PICKAXE){
                 pintarCasilla(COLOR_PICKAXE, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == CENTRO_PICKAXE || matrizNumerica[j][k] == ConstantesPiezas.NUMPIEZA_PICO){
-                pintarCasilla(ConstantesPiezas.COLOR_MANGO_PICO, j.toDouble(), k.toDouble())
+            }else if (matrizNumerica[j][k] == CENTRO_PICKAXE || matrizNumerica[j][k] == Globales.NUMPIEZA_PICO){
+                pintarCasilla(Globales.COLOR_MANGO_PICO, j.toDouble(), k.toDouble())
             }
 
 

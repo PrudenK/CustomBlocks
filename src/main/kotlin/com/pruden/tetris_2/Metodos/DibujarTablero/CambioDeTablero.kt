@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Metodos.DibujarTablero
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.cargarTablero
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
@@ -12,14 +11,14 @@ import com.pruden.tetris_2.Metodos.IniciarPartida.setStackpane30x20
 fun cambioDeTablero(){
     cargarTablero()
 
-    matrizNumerica = Array(FILAS + 1) { IntArray(COLUMNAS) }
+    matrizNumerica = Array(Globales.FILAS + 1) { IntArray(Globales.COLUMNAS) }
     dibujarTableroPrincipal()
 
-    if (FILAS == 20) {
+    if (Globales.FILAS == 20) {
         setStackpane18x10()
-    } else if (FILAS == 14) {
+    } else if (Globales.FILAS == 14) {
         setStackpane12x8()
-    } else if (FILAS == 32) {
+    } else if (Globales.FILAS == 32) {
         setStackpane30x20()
     }
 }

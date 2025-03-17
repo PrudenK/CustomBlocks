@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Piezas
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar_4x1
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.derecha_4x1
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.izquierda_4x1
@@ -78,7 +77,7 @@ class Pieza_I (override var fila: Int, override var columna: Int,
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         condicionEspecial_b = false
         return if (nuevaOrientacion == 0) {
-            if (columnaCentro <= COLUMNAS - 3 && columnaCentro != 0) {
+            if (columnaCentro <= Globales.COLUMNAS - 3 && columnaCentro != 0) {
                 if (matrizNumerica[filaCentro - 1][columnaCentro - 1] == BLANCO
                     && matrizNumerica[filaCentro - 1][columnaCentro + 1] == BLANCO
                     && matrizNumerica[filaCentro - 1][columnaCentro + 2] == BLANCO) {
@@ -92,16 +91,16 @@ class Pieza_I (override var fila: Int, override var columna: Int,
                     condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(1, 2, 3), true, +1)
                 }
             } else {
-                if (columnaCentro == COLUMNAS - 2) {
+                if (columnaCentro == Globales.COLUMNAS - 2) {
                     if (matrizNumerica[filaCentro - 1][columnaCentro + 1] != BLANCO) {
                         condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(-1, -2, -3), true, -2)
                     } else condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(-1, -2, 1), true, -1)
-                } else if (columnaCentro == COLUMNAS - 1) {
+                } else if (columnaCentro == Globales.COLUMNAS - 1) {
                     condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(-1, -2, -3), true, -2)
                 } else condicionRotarEspecial(this,intArrayOf(-1, -1, -1),intArrayOf(1, 2, 3), true, +1)
             }
         } else if (nuevaOrientacion == 1) {
-            if (filaCentro <= FILAS - 3 && filaCentro != 0) {
+            if (filaCentro <= Globales.FILAS - 3 && filaCentro != 0) {
                 if (matrizNumerica[filaCentro - 1][columnaCentro + 1] == BLANCO
                     && matrizNumerica[filaCentro + 1][columnaCentro + 1] == BLANCO
                     && matrizNumerica[filaCentro + 2][columnaCentro + 1] == BLANCO) {
@@ -115,16 +114,16 @@ class Pieza_I (override var fila: Int, override var columna: Int,
                     ) // R1+1 (punto conflictivo (-1,1))
                 }
             } else {
-                if (filaCentro == FILAS - 2) {
+                if (filaCentro == Globales.FILAS - 2) {
                     if (matrizNumerica[filaCentro + 1][columnaCentro + 1] != BLANCO) { // R1-2
                         condicionRotarEspecial(this,intArrayOf(-1, -2, -3),intArrayOf(1, 1, 1), false, -2)
                     } else condicionRotarEspecial(this,intArrayOf(1, -1, -2),intArrayOf(1, 1, 1), false, -1)
-                } else if (filaCentro == FILAS - 1) {
+                } else if (filaCentro == Globales.FILAS - 1) {
                     condicionRotarEspecial(this,intArrayOf(-1, -2, -3),intArrayOf(1, 1, 1), false, -2)
                 } else condicionRotarEspecial(this,intArrayOf(-1, 1, 2),intArrayOf(1, 1, 1), false, +1)
             }
         } else if (nuevaOrientacion == 2) {
-            if (columnaCentro >= 2 && columnaCentro != COLUMNAS - 1) {
+            if (columnaCentro >= 2 && columnaCentro != Globales.COLUMNAS - 1) {
                 if (matrizNumerica[filaCentro + 1][columnaCentro - 2] == BLANCO
                     && matrizNumerica[filaCentro + 1][columnaCentro - 1] == BLANCO
                     && matrizNumerica[filaCentro + 1][columnaCentro + 1] == BLANCO) {
@@ -146,7 +145,7 @@ class Pieza_I (override var fila: Int, override var columna: Int,
                 } else condicionRotarEspecial(this,intArrayOf(1, 1, 1),intArrayOf(-1, -2, -3), true, -1)
             }
         } else {
-            if (filaCentro >= 2 && filaCentro != FILAS - 1) {
+            if (filaCentro >= 2 && filaCentro != Globales.FILAS - 1) {
                 if (matrizNumerica[filaCentro + 1][columnaCentro - 1] == BLANCO
                     && matrizNumerica[filaCentro - 1][columnaCentro - 1] == BLANCO
                     && matrizNumerica[filaCentro - 2][columnaCentro - 1] == BLANCO) {

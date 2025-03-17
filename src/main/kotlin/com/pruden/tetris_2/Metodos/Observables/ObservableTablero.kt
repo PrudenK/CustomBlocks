@@ -1,8 +1,6 @@
 package com.pruden.tetris_2.Metodos.Observables
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioTablero
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.guardarTablero
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumColumnas
@@ -26,7 +24,7 @@ fun cargarObservableTablero(){
 }
 
 private fun cambiarConfiguracionesTablero(){
-    FILAS = (listaNumFilas[tabPosicion])
-    COLUMNAS = (listaNumColumnas[tabPosicion])
-    TAMANO_CELDA = (listaTamaCelda[tabPosicion])
+    Globales.FILAS = (listaNumFilas[tabPosicion])
+    Globales.COLUMNAS = (listaNumColumnas[tabPosicion])
+    Globales.TAMANO_CELDA = (listaTamaCelda[tabPosicion])
 }

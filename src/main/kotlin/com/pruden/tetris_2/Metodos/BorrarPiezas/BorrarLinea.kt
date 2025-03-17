@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.Metodos.BorrarPiezas
 
-import com.pruden.tetris_2.Constantes.ConstantesPiezas
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.BORDE_TABLERO
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
@@ -31,7 +30,7 @@ private fun filasQueHayQueBorrar(): ArrayList<Int> {
     for (i in  matrizNumerica.indices - 1) {
         contador0PorLinea = 0
         for (j in  matrizNumerica[0].indices) {
-            if (matrizNumerica[i][j] == ConstantesPiezas.BLANCO || matrizNumerica[i][j] == BORDE_TABLERO) {
+            if (matrizNumerica[i][j] == Globales.BLANCO || matrizNumerica[i][j] == Globales.BORDE_TABLERO) {
                 contador0PorLinea++
             }
         }

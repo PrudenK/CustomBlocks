@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.ControladorPrincipal
 
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
@@ -22,9 +23,9 @@ fun cerrarSesion(){
 }
 
 private fun vTableroPrin(){
-    ControladorPrincipal.FILAS = 20
-    ControladorPrincipal.COLUMNAS = 10
-    ControladorPrincipal.TAMANO_CELDA =33
+    Globales.FILAS = 20
+    Globales.COLUMNAS = 10
+    Globales.TAMANO_CELDA =33
 }
 
 private fun vTipos(){

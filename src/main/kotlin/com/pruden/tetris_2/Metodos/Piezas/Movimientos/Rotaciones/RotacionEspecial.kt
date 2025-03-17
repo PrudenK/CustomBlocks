@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Rotaciones
 
-import com.pruden.tetris_2.Constantes.ConstantesPiezas
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Piezas.Piezas
 
@@ -9,7 +9,7 @@ fun condicionRotarEspecial(pieza : Piezas, dFilas : IntArray, dColumnas : IntArr
     with(pieza) {
         var condicion = true
         for (i in dFilas.indices){
-            if(matrizNumerica[getFilaCentro() + dFilas[i]][getColumnaCentro() + dColumnas[i]] != ConstantesPiezas.BLANCO){
+            if(matrizNumerica[getFilaCentro() + dFilas[i]][getColumnaCentro() + dColumnas[i]] != Globales.BLANCO){
                 condicion = false; break
             }
         }

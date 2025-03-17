@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.ModoCampa.CargarNivel
 
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objFasesNivel
@@ -34,9 +35,9 @@ fun cargarNivel(nivel: Nivel){
 
             ControladorPrincipal.tipoTableroPrin = tipoTablero
 
-            ControladorPrincipal.FILAS = (ControladorCustomTablero.listaNumFilas[tablero])
-            ControladorPrincipal.COLUMNAS = (ControladorCustomTablero.listaNumColumnas[tablero])
-            ControladorPrincipal.TAMANO_CELDA = (ControladorCustomTablero.listaTamaCelda[tablero])
+            Globales.FILAS = (ControladorCustomTablero.listaNumFilas[tablero])
+            Globales.COLUMNAS = (ControladorCustomTablero.listaNumColumnas[tablero])
+            Globales.TAMANO_CELDA = (ControladorCustomTablero.listaTamaCelda[tablero])
 
 
             dibujarTableroPrincipal()

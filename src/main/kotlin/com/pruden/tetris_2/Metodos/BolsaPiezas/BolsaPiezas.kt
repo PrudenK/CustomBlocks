@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.BolsaPiezas
 
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES_B
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puedeHoldear
@@ -59,7 +59,7 @@ private fun guardarPiezaSiBolsaVacia(){
 
 
 private fun cargarLista(){
-    val columnaInicial = COLUMNAS /2
+    val columnaInicial = Globales.COLUMNAS /2
     val bolsaTemp: ArrayList<Piezas> = ArrayList()
     val piezasAgregar : ArrayList<Boolean> = listaPiezasSeleccionadas
 

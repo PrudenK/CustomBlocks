@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Piezas
 
-import com.pruden.tetris_2.Constantes.ConstantesPiezas
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar3x3
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda_3x3
@@ -15,9 +15,9 @@ class Pieza_Pickaxe (override var fila: Int, override var columna: Int,
     private var columnaCentro = columna+1
     private var filaCentro = fila
 
-    private val CENTRO = ConstantesPiezas.CENTRO_PIEZA_PICO
+    private val CENTRO = Globales.CENTRO_PIEZA_PICO
     private val NUMPIEZA = 53
-    private val NUMPIEZA_AUX = ConstantesPiezas.NUMPIEZA_PICO
+    private val NUMPIEZA_AUX = Globales.NUMPIEZA_PICO
     private val COLOR = Color.web("#7bf3f5")
 
     private val FORMAS_PICKAXE = arrayOf(

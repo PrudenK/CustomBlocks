@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Teclado
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES_B
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcHold
@@ -33,7 +33,7 @@ fun holdear(){
             piezaActual = piezaHold.removeAt(0)
             piezaActual.fila = 0
             piezaActual.set_Orientacion(0)
-            piezaActual.columna = (COLUMNAS / 2 - 2)
+            piezaActual.columna = (Globales.COLUMNAS / 2 - 2)
             piezaActual.pintar()
 
             if(LIMITE_ROTACIONES_B) rotacionesActuales = LIMITE_ROTACIONES

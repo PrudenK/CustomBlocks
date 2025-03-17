@@ -1,12 +1,11 @@
 package com.pruden.tetris_2.Metodos.Modos
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES_B
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMANO_CELDA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
@@ -34,9 +33,9 @@ fun cargarCambiosModo(modo : ModoDeJuego){
         if (LIMITE_ROTACIONES_B) LIMITE_ROTACIONES = limiteRotacionesNum
         holdActivo = holdActivoModo
 
-        FILAS = (listaNumFilas[tablero])
-        COLUMNAS = (listaNumColumnas[tablero])
-        TAMANO_CELDA = (listaTamaCelda[tablero])
+        Globales.FILAS = (listaNumFilas[tablero])
+        Globales.COLUMNAS = (listaNumColumnas[tablero])
+        Globales.TAMANO_CELDA = (listaTamaCelda[tablero])
 
         siguientesPiezaActivo = siguientesDisponibles
 

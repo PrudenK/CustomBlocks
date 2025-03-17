@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Piezas
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar5x3
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.moverDerechaIzquierda5x3
@@ -116,7 +116,7 @@ class Pieza_H_v2  (override var fila: Int, override var columna: Int,
                         condicionRotarEspecial(this,intArrayOf(-1,0,1,0,0,0),intArrayOf(4,4,4,3,2,1), true, 2)
                     }
                 }else{
-                    if(columnaCentro == COLUMNAS -2){
+                    if(columnaCentro == Globales.COLUMNAS -2){
                         if(matrizNumerica[filaCentro - 1][columnaCentro + 1] == BLANCO &&
                             matrizNumerica[filaCentro][columnaCentro + 1] == BLANCO &&
                             matrizNumerica[filaCentro + 1][columnaCentro + 1] == BLANCO

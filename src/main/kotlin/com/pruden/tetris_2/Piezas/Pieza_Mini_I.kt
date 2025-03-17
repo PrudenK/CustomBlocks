@@ -1,8 +1,6 @@
 package com.pruden.tetris_2.Piezas
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.Piezas.Limpiar.limpiarPieza
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Bajar.bajar2x1
 import com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados.derecha_2x1
@@ -64,7 +62,7 @@ class Pieza_Mini_I (override var fila: Int, override var columna: Int,
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         condicionEspecial_b = false
         return if (nuevaOrientacion == 0) {
-          if(filaCentro < FILAS-1){
+          if(filaCentro < Globales.FILAS-1){
               if (matrizNumerica[filaCentro +1][columnaCentro +1] == BLANCO){
                   true
               }else condicionRotarEspecial(this, intArrayOf(-1), intArrayOf(1),false, -1)
@@ -82,7 +80,7 @@ class Pieza_Mini_I (override var fila: Int, override var columna: Int,
                 true
             }else condicionRotarEspecial(this, intArrayOf(-1), intArrayOf(1),false, 1)
         } else {
-            if (columnaCentro < COLUMNAS-1){
+            if (columnaCentro < Globales.COLUMNAS-1){
                 if (matrizNumerica[filaCentro -1][columnaCentro +1] == BLANCO){
                     true
                 }else condicionRotarEspecial(this, intArrayOf(-1), intArrayOf(-1),true, -1)

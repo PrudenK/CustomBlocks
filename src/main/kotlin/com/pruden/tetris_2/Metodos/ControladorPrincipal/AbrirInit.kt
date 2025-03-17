@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.ControladorPrincipal
 
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
@@ -34,8 +35,8 @@ private fun tablerosInit(){
     rellenarMatriz()
     cargarGc()
     cargarTableros()
-    cPrin.canvasPrincipal.clip = Rectangle(0.0, (2 * ControladorPrincipal.TAMANO_CELDA).toDouble(),
-        cPrin.canvasPrincipal.width, cPrin.canvasPrincipal.height - 2 * ControladorPrincipal.TAMANO_CELDA)
+    cPrin.canvasPrincipal.clip = Rectangle(0.0, (2 * Globales.TAMANO_CELDA).toDouble(),
+        cPrin.canvasPrincipal.width, cPrin.canvasPrincipal.height - 2 * Globales.TAMANO_CELDA)
     ControladorPrincipal.stackPaneX = cPrin.stackPane.layoutX
     ControladorPrincipal.stackPaneY = cPrin.stackPane.layoutY
     setStackpane18x10()

@@ -1,8 +1,7 @@
 package com.pruden.tetris_2.Controladores.Custom
 
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.COLUMNAS
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FILAS
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoPieza
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.cambioDeTAbleroParaTipoPieza
@@ -70,13 +69,13 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
 
 
         if (!cambioDeTAbleroParaTipoPieza){
-            for (i in 0 until FILAS) {
-                for (j in 0 until COLUMNAS) {
+            for (i in 0 until Globales.FILAS) {
+                for (j in 0 until Globales.COLUMNAS) {
                     pintarCasilla(FONDO,i.toDouble(), j.toDouble())
                 }
             }
 
-            for (j in FILAS downTo 0) {
+            for (j in Globales.FILAS downTo 0) {
                 pintarMatriz(j, -10)
             }
 
