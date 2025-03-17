@@ -48,7 +48,11 @@ fun pintarPiezaTableroSecundarioTIPO0(gc: GraphicsContext, pieza: Piezas) {
             if (forma[i][j] != Globales.BLANCO && forma[i][j] != Globales.CENTRO_BLANCO) {
                 val x: Double = inicioX + j * TAMA_CELDA_SECUN
                 val y: Double = inicioY + i * TAMA_CELDA_SECUN
-                pintarCasillaSecun(gc,pieza.getColor(),  x, y, TAMA_CELDA_SECUN)
+                if(forma[i][j] == Globales.CENTRO_PIEZA_PICO || forma[i][j] == Globales.NUMPIEZA_PICO){
+                    pintarCasillaSecun(gc,Globales.COLOR_MANGO_PICO,  x, y, TAMA_CELDA_SECUN)
+                }else{
+                    pintarCasillaSecun(gc,pieza.getColor(),  x, y, TAMA_CELDA_SECUN)
+                }
             }
         }
     }
