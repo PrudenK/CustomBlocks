@@ -34,6 +34,13 @@ class Pieza_Mini_L (override var fila: Int, override var columna: Int,
         arrayOf(
             intArrayOf(BLANCO, NUMPIEZA),
             intArrayOf(NUMPIEZA, CENTRO)
+        ),
+        arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, NUMPIEZA, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, CENTRO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
         )
     )
 

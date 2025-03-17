@@ -21,6 +21,13 @@ class Pieza_X_v2 (override var fila: Int, override var columna: Int,
             intArrayOf(NUMPIEZA, BLANCO, NUMPIEZA),
             intArrayOf(BLANCO, CENTRO, BLANCO),
             intArrayOf(NUMPIEZA, BLANCO, NUMPIEZA)
+        ),
+        arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, BLANCO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, CENTRO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, BLANCO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
         )
     )
 

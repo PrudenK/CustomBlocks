@@ -32,6 +32,12 @@ class Pieza_Z_v3 (override var fila: Int, override var columna: Int,
             intArrayOf(BLANCO, BLANCO, CENTRO, BLANCO, BLANCO),
             intArrayOf(BLANCO, BLANCO, NUMPIEZA, BLANCO, BLANCO),
             intArrayOf(BLANCO, BLANCO, NUMPIEZA, NUMPIEZA, BLANCO)
+        ), arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, NUMPIEZA),
+            intArrayOf(NUMPIEZA, NUMPIEZA, CENTRO, NUMPIEZA, NUMPIEZA),
+            intArrayOf(NUMPIEZA, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
         )
     )
 

@@ -38,6 +38,13 @@ class Pieza_O_v3 (override var fila: Int, override var columna: Int,
             intArrayOf(BLANCO, NUMPIEZA, NUMPIEZA),
             intArrayOf(BLANCO, CENTRO, NUMPIEZA),
             intArrayOf(NUMPIEZA, BLANCO, BLANCO)
+        ),
+        arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, CENTRO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, NUMPIEZA, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
         )
     )
 

@@ -27,6 +27,12 @@ class Pieza_H (override var fila: Int, override var columna: Int,
             intArrayOf(NUMPIEZA, NUMPIEZA, NUMPIEZA),
             intArrayOf(BLANCO, CENTRO, BLANCO),
             intArrayOf(NUMPIEZA, NUMPIEZA, NUMPIEZA)
+        ), arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, BLANCO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, NUMPIEZA, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, BLANCO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
         )
     )
 

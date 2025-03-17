@@ -28,6 +28,13 @@ class Pieza_Twin_O_v2 (override var fila: Int, override var columna: Int,
             intArrayOf(BLANCO, NUMPIEZA, NUMPIEZA),
             intArrayOf(NUMPIEZA, CENTRO, NUMPIEZA),
             intArrayOf(NUMPIEZA, NUMPIEZA, BLANCO)
+        ),
+        arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, NUMPIEZA, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, CENTRO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, NUMPIEZA, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
         )
     )
 

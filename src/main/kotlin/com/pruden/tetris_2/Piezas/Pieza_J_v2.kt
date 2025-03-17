@@ -38,8 +38,14 @@ class Pieza_J_v2 (override var fila: Int, override var columna: Int,
             intArrayOf(NUMPIEZA, BLANCO, NUMPIEZA),
             intArrayOf(NUMPIEZA, CENTRO, NUMPIEZA),
             intArrayOf(NUMPIEZA, BLANCO, BLANCO)
-        ) // 1 // -> 3
-
+        ),
+        arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, NUMPIEZA, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, CENTRO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, NUMPIEZA, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
+        )
     )
 
     companion object {

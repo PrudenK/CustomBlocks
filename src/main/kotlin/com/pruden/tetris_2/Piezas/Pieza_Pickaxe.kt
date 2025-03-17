@@ -40,6 +40,13 @@ class Pieza_Pickaxe (override var fila: Int, override var columna: Int,
             intArrayOf(NUMPIEZA_AUX, BLANCO, NUMPIEZA),
             intArrayOf(BLANCO, CENTRO, NUMPIEZA),
             intArrayOf(NUMPIEZA, NUMPIEZA, BLANCO)
+        ),
+        arrayOf(
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA, NUMPIEZA, BLANCO, BLANCO),
+            intArrayOf(BLANCO, BLANCO, CENTRO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, NUMPIEZA_AUX, BLANCO, NUMPIEZA, BLANCO),
+            intArrayOf(BLANCO, BLANCO, BLANCO, BLANCO, BLANCO)
         )
     )
 
