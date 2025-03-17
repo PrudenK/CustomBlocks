@@ -1,9 +1,9 @@
 package com.pruden.tetris_2.Controladores.Modos
 
+import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego
-import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.modoMemoryX
 import com.pruden.tetris_2.Metodos.Modos.cargarCambiosModo
 import javafx.fxml.FXML
 import javafx.scene.control.Button
@@ -19,7 +19,7 @@ class ControladorModoMemoryX : ControladorGEN(){
 
     @FXML
     private fun guardar(){
-        cargarCambiosModo(modoMemoryX)
+        cargarCambiosModo(ModosDeJuego.modoMemoryX)
         cPrin.partdiaNueva()
         stage.close()
         ControladorModosJuego.stageModos.close()

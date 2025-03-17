@@ -168,7 +168,7 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun modosDeJuego() {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Modos/vista_Modos_Juego.fxml", nuevaPartidaB,
-            315.0, 400.0, timelinePartida, 0, -60))
+            355.0, 544.0, timelinePartida, 0, 0))
     }
 
     @FXML fun sesion(){

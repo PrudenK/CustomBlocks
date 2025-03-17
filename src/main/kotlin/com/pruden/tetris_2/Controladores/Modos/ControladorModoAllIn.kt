@@ -1,8 +1,8 @@
 package com.pruden.tetris_2.Controladores.Modos
 
+import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.modoAllIn
 import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.stageModos
 import com.pruden.tetris_2.Metodos.Modos.cargarCambiosModo
 import javafx.fxml.FXML
@@ -18,7 +18,7 @@ class ControladorModoAllIn : ControladorGEN(){
 
     @FXML
     private fun guardar(){
-        cargarCambiosModo(modoAllIn)
+        cargarCambiosModo(ModosDeJuego.modoAllIn)
         cPrin.partdiaNueva()
         stage.close()
         stageModos.close()

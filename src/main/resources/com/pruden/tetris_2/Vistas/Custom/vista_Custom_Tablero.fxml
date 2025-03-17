@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="410.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="410.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
@@ -14,8 +14,8 @@
       <Button layoutX="50.0" layoutY="487.0" mnemonicParsing="false" onAction="#salir" text="Volver" />
       <Button fx:id="guardarB" layoutX="240.0" layoutY="487.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y salir" />
       <ImageView fx:id="carrusel" fitHeight="376.0" fitWidth="300.0" layoutX="81.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="268.0" layoutY="414.0" mnemonicParsing="false" onAction="#siguiente" text="&gt;" />
-      <Button layoutX="119.0" layoutY="414.0" mnemonicParsing="false" onAction="#anterior" text="&lt;" />
+      <Button layoutX="268.0" layoutY="414.0" mnemonicParsing="false" onAction="#siguiente" prefWidth="32.0" text="&gt;" />
+      <Button layoutX="119.0" layoutY="414.0" mnemonicParsing="false" onAction="#anterior" prefWidth="32.0" text="&lt;" />
       <Label fx:id="tableroLabel" layoutX="167.0" layoutY="419.0" prefHeight="23.0" prefWidth="77.0" />
    </children>
 </Pane>
