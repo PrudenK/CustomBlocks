@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Secundarios
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_CELDA_SECUN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_TABLERO_SECUN
+import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasillaSecun
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.scene.canvas.GraphicsContext
@@ -29,9 +30,17 @@ fun pintarPiezaTableroSecundarioTIPO1(gc: GraphicsContext, pieza : Piezas) {
         for (j in forma[i].indices) {
             if (forma[i][j] != Globales.BLANCO && forma[i][j] != Globales.CENTRO_BLANCO) {
                 if (forma[i][j] == pieza.getCentro()) {
-                    pintarCasillaSecun(gc, pieza.getColor(), ( i).toDouble(), ( j).toDouble(), TAMA_CELDA_SECUN)
+                    if (pieza.getCentro() == Globales.CENTRO_PIEZA_PICO){
+                        pintarCasillaSecun(gc, Globales.COLOR_MANGO_PICO, ( i).toDouble(), ( j).toDouble(), TAMA_CELDA_SECUN)
+                    }else{
+                        pintarCasillaSecun(gc, pieza.getColor(), ( i).toDouble(), ( j).toDouble(), TAMA_CELDA_SECUN)
+                    }
                 } else {
-                    pintarCasillaSecun(gc, pieza.getColor(), ( i).toDouble(), (j).toDouble(), TAMA_CELDA_SECUN)
+                    if(forma[i][j] == Globales.NUMPIEZA_PICO){
+                        pintarCasillaSecun(gc, Globales.COLOR_MANGO_PICO, ( i).toDouble(), (j).toDouble(), TAMA_CELDA_SECUN)
+                    }else{
+                        pintarCasillaSecun(gc, pieza.getColor(), ( i).toDouble(), (j).toDouble(), TAMA_CELDA_SECUN)
+                    }
                 }
             }
         }
