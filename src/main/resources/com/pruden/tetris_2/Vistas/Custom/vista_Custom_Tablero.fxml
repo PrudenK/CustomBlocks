@@ -5,17 +5,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="410.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="431.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button layoutX="50.0" layoutY="487.0" mnemonicParsing="false" onAction="#salir" text="Volver" />
-      <Button fx:id="guardarB" layoutX="240.0" layoutY="487.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y salir" />
-      <ImageView fx:id="carrusel" fitHeight="376.0" fitWidth="300.0" layoutX="81.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="268.0" layoutY="414.0" mnemonicParsing="false" onAction="#siguiente" prefWidth="32.0" text="&gt;" />
-      <Button layoutX="119.0" layoutY="414.0" mnemonicParsing="false" onAction="#anterior" prefWidth="32.0" text="&lt;" />
-      <Label fx:id="tableroLabel" layoutX="167.0" layoutY="419.0" prefHeight="23.0" prefWidth="77.0" />
-   </children>
+        <Button layoutX="49.0" layoutY="522.0" mnemonicParsing="false" onAction="#salir" prefWidth="140.0" text="Volver" />
+        <Button fx:id="guardarB" layoutX="242.0" layoutY="522.0" mnemonicParsing="false" onAction="#guardar" prefWidth="140.0" text="Guardar y salir" />
+
+        <!-- StackPane para centrar la imagen -->
+        <StackPane layoutX="66.0" layoutY="84.0" prefHeight="376.0" prefWidth="300.0">
+            <ImageView fx:id="carrusel" fitHeight="376.0" preserveRatio="true" />
+        </StackPane>
+
+        <Button layoutX="304.0" layoutY="470.0" mnemonicParsing="false" onAction="#siguiente" prefWidth="32.0" text="&gt;" />
+        <Button layoutX="95.0" layoutY="470.0" mnemonicParsing="false" onAction="#anterior" prefWidth="32.0" text="&lt;" />
+
+        <Label fx:id="tableroLabel" layoutX="141.0" layoutY="475.0" prefHeight="24.0" prefWidth="150.0" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="18.0" />
+            </font>
+        </Label>
+      <Label layoutX="25.0" layoutY="33.0" text="¡Elige el tamaño del tablero!" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="22.0" />
+         </font>
+      </Label>
+    </children>
 </Pane>

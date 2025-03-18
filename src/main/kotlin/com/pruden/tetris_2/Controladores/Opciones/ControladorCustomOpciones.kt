@@ -98,7 +98,7 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML private fun tablero() {
-        crearStage(ClaseStage("Vistas/Custom/vista_Custom_Tablero.fxml", elemnto,410.0,550.0, null,0, -40))
+        crearStage(ClaseStage("Vistas/Custom/vista_Custom_Tablero.fxml", elemnto,431.0,582.0, null,0, -40))
     }
 
     @FXML private fun tipoTablero() {
