@@ -85,7 +85,7 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
     }
 
     @FXML private fun guardar() {
-        crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Piezas.fxml", elemento, 370.0, 210.0, null, 0, 0))
+        crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Piezas.fxml", elemento, 344.0, 178.0, null, 0, 0))
     }
 
 
