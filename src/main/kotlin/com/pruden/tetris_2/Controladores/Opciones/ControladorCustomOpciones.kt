@@ -19,6 +19,8 @@ import java.net.URL
 import java.util.*
 
 class ControladorCustomOpciones : ControladorGEN(), Initializable{
+    @FXML lateinit var tablero: Button
+
     private lateinit var elemnto : Button
     private lateinit var stageCustomOpciones: Stage
 
@@ -96,7 +98,7 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML private fun tablero() {
-        crearStage(ClaseStage("Vistas/Custom/vista_Custom_Tablero.fxml",elemnto,410.0,550.0, null,0, -40))
+        crearStage(ClaseStage("Vistas/Custom/vista_Custom_Tablero.fxml", elemnto,410.0,550.0, null,0, -40))
     }
 
     @FXML private fun tipoTablero() {

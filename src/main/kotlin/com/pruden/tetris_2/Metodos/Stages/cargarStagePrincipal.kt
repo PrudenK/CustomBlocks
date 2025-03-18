@@ -7,6 +7,7 @@ import com.pruden.tetris_2.Tetris
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
 import javafx.scene.input.KeyEvent
+import javafx.stage.Modality
 import javafx.stage.Stage
 import javafx.stage.StageStyle
 
@@ -23,6 +24,7 @@ fun cargarStagePrincipal(){
     stage.title = "¡CustomGame!"
     stage.scene = scene
     stage.initStyle(StageStyle.UNDECORATED)
+    stage.initModality(Modality.APPLICATION_MODAL)
     stage.isResizable = false
     stage.show()
 

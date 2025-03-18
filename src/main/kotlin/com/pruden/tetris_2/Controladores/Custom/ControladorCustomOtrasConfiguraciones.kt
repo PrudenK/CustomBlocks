@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_R
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
@@ -77,7 +78,8 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     }
 
     @FXML private fun guardar() {
-        crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Otras_Confi.fxml",activarLimite, 370.0, 210.0,null,0,0))
+        crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Otras_Confi.fxml",
+            cPrin.nuevaPartidaB, 370.0, 210.0,null,0,0))
     }
 
     @FXML private fun reestablecer() {

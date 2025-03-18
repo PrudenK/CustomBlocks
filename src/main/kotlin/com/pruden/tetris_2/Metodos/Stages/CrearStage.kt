@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.Stages
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
@@ -34,15 +35,13 @@ fun crearStage(objetoStage: ClaseStage) {
     }
 
     stage.initStyle(StageStyle.UNDECORATED) // Eliminar barra de título
+    stage.initModality(Modality.APPLICATION_MODAL)
 
     stage.isResizable = false // Evitar que se pueda expandir
 
     stage.setScene(scene)
 
     stage.sizeToScene() // Asegura que se calcule el tamaño correcto
-
-
-    stage.initModality(Modality.WINDOW_MODAL)
 
     val c: ControladorGEN = fxmlLoader.getController()
 
@@ -52,6 +51,13 @@ fun crearStage(objetoStage: ClaseStage) {
     val stageOwner = objetoStage.elemento.scene.window as Stage
     stage.initOwner(stageOwner)
 
+
+    if(stageOwner != cPrin.nuevaPartidaB.scene.window as Stage){
+        stageOwner.isIconified = true
+        stage.setOnHidden {
+            stageOwner.isIconified = false // Restaura la ventana anterior
+        }
+    }
 
     stage.onShown = EventHandler {_: WindowEvent? ->
         val centroX = stageOwner.x + (stageOwner.width - stage.width) / 2
