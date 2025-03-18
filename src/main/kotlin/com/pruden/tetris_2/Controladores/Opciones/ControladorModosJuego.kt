@@ -22,15 +22,18 @@ import java.util.*
 
 
 class ControladorModosJuego : ControladorGEN(), Initializable {
-    private lateinit var elemento : Button
+    lateinit var elemento : Button
     @FXML private lateinit var textoModos: Text
     @FXML private lateinit var imgModos: ImageView
+    @FXML lateinit var jugar: Button
 
     companion object{
         lateinit var stageModos: Stage
+        lateinit var cModosJuego: ControladorModosJuego
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+        cModosJuego = this
         cronometro.parar()
         cambairUISegunIndice()
     }

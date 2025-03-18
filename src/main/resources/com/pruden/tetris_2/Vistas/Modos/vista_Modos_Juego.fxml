@@ -20,7 +20,7 @@
                 <Font name="Liberation Mono Bold" size="18.0" />
             </font>
         </Label>
-      <Button layoutX="199.0" layoutY="488.0" mnemonicParsing="false" onAction="#jugar" prefHeight="32.0" prefWidth="132.0" text="Jugar" />
+      <Button fx:id="jugar" layoutX="199.0" layoutY="488.0" mnemonicParsing="false" onAction="#jugar" prefHeight="32.0" prefWidth="132.0" text="Jugar" />
       <Button layoutX="262.0" layoutY="435.0" mnemonicParsing="false" onAction="#siguiente" prefHeight="32.0" prefWidth="32.0" text="&gt;" />
       <Button layoutX="61.0" layoutY="435.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="32.0" text="&lt;" />
       <Text fx:id="textoModos" fill="#e9e8e8" layoutX="107.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clasico" textAlignment="CENTER" wrappingWidth="142.0">
