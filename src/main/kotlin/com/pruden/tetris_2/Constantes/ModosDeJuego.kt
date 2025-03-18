@@ -11,7 +11,7 @@ object ModosDeJuego {
         100, false, -1, true, 2, true, 1, true)
     val modoAlgebra = ModoDeJuego("Algebra",intArrayOf(3, 8, 13, 14, 20, 28), 1800, 5,
         100, true, 4, true, 1, true, 1, false)
-    val modoRapidO  = ModoDeJuego("RapidO",intArrayOf(0, 17, 24, 29), 500, 5,
+    val modoRapidO  = ModoDeJuego("RapidO",intArrayOf(0, 17, 24, 29, 36, 37), 500, 5,
         50, false, -1, true, 0, true,1, true)
     val modoMemory  = ModoDeJuego("Memory",intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 10,
         100, false, -1, true, 1, true, 2, false)
