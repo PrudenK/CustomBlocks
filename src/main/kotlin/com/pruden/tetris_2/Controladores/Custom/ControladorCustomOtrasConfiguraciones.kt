@@ -81,7 +81,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
 
     @FXML private fun guardar() {
         crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Otras_Confi.fxml",
-            cPrin.nuevaPartidaB, 370.0, 210.0,null,0,0))
+            cPrin.nuevaPartidaB, 344.0, 178.0,null,0,0))
     }
 
     @FXML private fun reestablecer() {
