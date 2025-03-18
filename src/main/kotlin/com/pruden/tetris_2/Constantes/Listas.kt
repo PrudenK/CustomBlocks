@@ -2,22 +2,20 @@ package com.pruden.tetris_2.Constantes
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
-import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Piezas.*
-import javafx.stage.Stage
 
 object Listas {
     val LISTA_MODOS_DE_JUEGOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY")
 
     val LISTA_STAGES_MODOS_DE_JUEGOS = listOf(
-        ClaseStage("Vistas/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_Todo.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_Algebra.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_RapidO.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_Memory.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,820.0, null,0, 0)
+        ClaseStage("Vistas/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_Todo.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_Algebra.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_RapidO.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_Memory.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
     )
 
     val LISTA_MODOS_CON_TODOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY", "Todos")

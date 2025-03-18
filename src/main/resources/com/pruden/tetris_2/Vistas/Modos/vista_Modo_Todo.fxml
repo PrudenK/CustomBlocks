@@ -6,341 +6,504 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="700.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Modos.ControladorModoAllIn">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="700.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Modos.ControladorModoAllIn">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-        <Button layoutX="194.0" layoutY="744.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
-        <Label layoutX="249.0" layoutY="22.0" prefHeight="47.0" prefWidth="203.0" text="Modo All In" textFill="#b7b7b7">
+        <Button layoutX="206.0" layoutY="632.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+        <Label layoutX="244.0" layoutY="22.0" prefHeight="47.0" prefWidth="212.0" text="Modo All In" textFill="#e9e8e8">
             <font>
-                <Font name="System Bold" size="32.0" />
+                <Font name="Liberation Mono Bold" size="32.0" />
             </font>
         </Label>
-        <Button fx:id="guarda_y_salir" layoutX="383.0" layoutY="744.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y jugar" />
-        <ScrollPane hbarPolicy="NEVER" layoutX="61.0" layoutY="360.0" prefHeight="368.0" prefWidth="580.0" styleClass="pane-1" vbarPolicy="AS_NEEDED">
+        <Button fx:id="guarda_y_salir" layoutX="387.0" layoutY="631.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y jugar" />
+        <ScrollPane hbarPolicy="NEVER" layoutX="65.0" layoutY="266.0" prefHeight="351.0" prefWidth="570.0" styleClass="pane-1" vbarPolicy="AS_NEEDED">
             <content>
-                <Pane prefHeight="1293.0" prefWidth="568.0">
+                <Pane prefHeight="1837.0" prefWidth="570.0">
                     <children>
-                        <ImageView fitHeight="79.0" fitWidth="77.0" layoutX="39.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="79.0" fitWidth="77.0" layoutX="39.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_O.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="121.0" fitWidth="35.0" layoutX="204.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="121.0" fitWidth="35.0" layoutX="204.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_I.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="95.0" fitWidth="65.0" layoutX="329.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="95.0" fitWidth="65.0" layoutX="329.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_L.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="61.0" fitWidth="94.0" layoutX="440.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="61.0" fitWidth="94.0" layoutX="440.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_Z.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="99.0" fitWidth="63.0" layoutX="45.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="99.0" fitWidth="63.0" layoutX="45.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_J.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="63.0" fitWidth="89.0" layoutX="180.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="63.0" fitWidth="89.0" layoutX="180.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_S.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="63.0" fitWidth="89.0" layoutX="320.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="63.0" fitWidth="89.0" layoutX="320.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_T.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="88.0" fitWidth="67.0" layoutX="464.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="88.0" fitWidth="67.0" layoutX="464.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_P.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="93.0" fitWidth="102.0" layoutX="34.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="93.0" fitWidth="102.0" layoutX="25.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_X.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="62.0" fitWidth="90.0" layoutX="179.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="62.0" fitWidth="90.0" layoutX="170.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_U.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="328.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="320.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_L_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="458.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="449.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_W.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="33.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="29.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_T_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="184.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="179.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_Z_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="329.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="321.0" layoutY="526.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_X_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="92.0" fitWidth="93.0" layoutX="457.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="92.0" fitWidth="93.0" layoutX="440.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_L_v3.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="35.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="35.0" layoutY="676.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_F.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="205.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="205.0" layoutY="676.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="330.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="330.0" layoutY="676.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_S_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="471.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="468.0" layoutY="676.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_B.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="40.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="35.0" layoutY="815.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_Y.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="194.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="191.0" layoutY="815.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_K.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="361.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="354.0" layoutY="815.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_I_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="456.0" layoutY="831.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="440.0" layoutY="815.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_C.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="32.0" layoutY="980.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="32.0" layoutY="964.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v3.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="195.0" layoutY="1006.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="195.0" layoutY="990.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_V.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="338.0" layoutY="980.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="338.0" layoutY="964.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_H.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="110.0" fitWidth="33.0" layoutX="482.0" layoutY="962.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="110.0" fitWidth="33.0" layoutX="482.0" layoutY="946.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_I_v3.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="39.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="39.0" layoutY="1107.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_Y_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="196.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="191.0" layoutY="1107.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v4.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="340.0" layoutY="1123.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="323.0" layoutY="1107.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_J_v2.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="452.0" layoutY="1119.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="87.0" fitWidth="91.0" layoutX="444.0" layoutY="1103.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../../Imagenes/Piezas/Pieza_A.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="36.0" layoutY="161.0" text="Pieza O" textFill="#b7b7b7">
+                        <Label layoutX="36.0" layoutY="145.0" text="Pieza O" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="181.0" layoutY="161.0" text="Pieza I" textFill="#b7b7b7">
+                        <Label layoutX="181.0" layoutY="145.0" text="Pieza I" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="326.0" layoutY="163.0" text="Pieza L" textFill="#b7b7b7">
+                        <Label layoutX="326.0" layoutY="147.0" text="Pieza L" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="454.0" layoutY="162.0" text="Pieza Z" textFill="#b7b7b7">
+                        <Label layoutX="454.0" layoutY="146.0" text="Pieza Z" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="42.0" layoutY="323.0" text="Pieza J" textFill="#b7b7b7">
+                        <Label layoutX="42.0" layoutY="307.0" text="Pieza J" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="186.0" layoutY="323.0" text="Pieza S" textFill="#b7b7b7">
+                        <Label layoutX="186.0" layoutY="307.0" text="Pieza S" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="329.0" layoutY="323.0" text="Pieza T" textFill="#b7b7b7">
+                        <Label layoutX="329.0" layoutY="307.0" text="Pieza T" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="458.0" layoutY="323.0" text="Pieza P" textFill="#b7b7b7">
+                        <Label layoutX="458.0" layoutY="307.0" text="Pieza P" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="41.0" layoutY="489.0" text="Pieza X" textFill="#b7b7b7">
+                        <Label layoutX="41.0" layoutY="473.0" text="Pieza X" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="185.0" layoutY="487.0" text="Pieza U" textFill="#b7b7b7">
+                        <Label layoutX="185.0" layoutY="471.0" text="Pieza U" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="327.0" layoutY="489.0" text="Pieza L v2" textFill="#b7b7b7">
+                        <Label layoutX="327.0" layoutY="473.0" text="Pieza L v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="461.0" layoutY="489.0" text="Pieza W" textFill="#b7b7b7">
+                        <Label layoutX="461.0" layoutY="473.0" text="Pieza W" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="32.0" layoutY="647.0" text="Pieza T v2" textFill="#b7b7b7">
+                        <Label layoutX="32.0" layoutY="631.0" text="Pieza T v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="181.0" layoutY="647.0" text="Pieza Z v2" textFill="#b7b7b7">
+                        <Label layoutX="181.0" layoutY="631.0" text="Pieza Z v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="329.0" layoutY="647.0" text="Pieza X v2" textFill="#b7b7b7">
+                        <Label layoutX="329.0" layoutY="631.0" text="Pieza X v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="453.0" layoutY="647.0" text="Pieza L v3" textFill="#b7b7b7">
+                        <Label layoutX="453.0" layoutY="631.0" text="Pieza L v3" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="50.0" layoutY="791.0" text="Pieza F" textFill="#b7b7b7">
+                        <Label layoutX="50.0" layoutY="775.0" text="Pieza F" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="191.0" layoutY="791.0" text="Pieza O v2" textFill="#b7b7b7">
+                        <Label layoutX="191.0" layoutY="775.0" text="Pieza O v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="329.0" layoutY="791.0" text="Pieza S v2" textFill="#b7b7b7">
+                        <Label layoutX="329.0" layoutY="775.0" text="Pieza S v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="469.0" layoutY="791.0" text="Pieza B" textFill="#b7b7b7">
+                        <Label layoutX="469.0" layoutY="775.0" text="Pieza B" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="49.0" layoutY="928.0" text="Pieza Y" textFill="#b7b7b7">
+                        <Label layoutX="49.0" layoutY="912.0" text="Pieza Y" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="203.0" layoutY="929.0" text="Pieza K" textFill="#b7b7b7">
+                        <Label layoutX="203.0" layoutY="913.0" text="Pieza K" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="335.0" layoutY="930.0" text="Pieza I v2" textFill="#b7b7b7">
+                        <Label layoutX="327.0" layoutY="914.0" text="Pieza I v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="469.0" layoutY="929.0" text="Pieza C" textFill="#b7b7b7">
+                        <Label layoutX="461.0" layoutY="913.0" text="Pieza C" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="32.0" layoutY="1081.0" text="Pieza O v3" textFill="#b7b7b7">
+                        <Label layoutX="32.0" layoutY="1065.0" text="Pieza O v3" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="201.0" layoutY="1081.0" text="Pieza V" textFill="#b7b7b7">
+                        <Label layoutX="201.0" layoutY="1065.0" text="Pieza V" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="342.0" layoutY="1080.0" text="Pieza H" textFill="#b7b7b7">
+                        <Label layoutX="342.0" layoutY="1064.0" text="Pieza H" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="454.0" layoutY="1079.0" text="Pieza I v3" textFill="#b7b7b7">
+                        <Label layoutX="454.0" layoutY="1063.0" text="Pieza I v3" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="33.0" layoutY="1224.0" text="Pieza Y v2" textFill="#b7b7b7">
+                        <Label layoutX="33.0" layoutY="1208.0" text="Pieza Y v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="194.0" layoutY="1223.0" text="Pieza O v4" textFill="#b7b7b7">
+                        <Label layoutX="194.0" layoutY="1207.0" text="Pieza O v4" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="335.0" layoutY="1223.0" text="Pieza J v2" textFill="#b7b7b7">
+                        <Label layoutX="335.0" layoutY="1207.0" text="Pieza J v2" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label layoutX="463.0" layoutY="1223.0" text="Pieza A" textFill="#b7b7b7">
+                        <Label layoutX="463.0" layoutY="1207.0" text="Pieza A" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="67.0" fitWidth="33.0" layoutX="60.0" layoutY="1242.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_I_Mini.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="69.0" fitWidth="68.0" layoutX="194.0" layoutY="1240.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_I_v2_Mini.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="466.0" layoutY="1262.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_O_Mini.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="67.0" fitWidth="72.0" layoutX="340.0" layoutY="1243.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_L_Mini.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="1324.0" text="Pieza Mini I" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="165.0" layoutY="1325.0" text="Pieza Mini I v2" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="322.0" layoutY="1326.0" text="Pieza Mini L" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="441.0" layoutY="1326.0" text="Pieza Mini O" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="103.0" fitWidth="43.0" layoutX="464.0" layoutY="1363.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_E.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="462.0" layoutY="1478.0" text="Pieza E" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="91.0" fitWidth="84.0" layoutX="33.0" layoutY="1382.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v5.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="30.0" layoutY="1478.0" text="Pieza O v5" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="179.0" layoutY="1378.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v6.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="177.0" layoutY="1478.0" text="Pieza O v6" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="326.0" layoutY="1378.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_X_v3.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="325.0" layoutY="1478.0" text="Pieza X v3" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="31.0" layoutY="1521.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_O_Twin.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="21.0" layoutY="1628.0" text="Pieza Twin O" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="179.0" layoutY="1521.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_Y_Twin.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="167.0" layoutY="1628.0" text="Pieza Twin Y" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="332.0" layoutY="1525.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_Pickaxe.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="316.0" layoutY="1628.0" text="Pieza Pickaxe" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="103.0" fitWidth="70.0" layoutX="456.0" layoutY="1519.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_S_v3.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="449.0" layoutY="1628.0" text="Pieza S v3" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="31.0" layoutY="1669.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_O_v2_Twin.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="13.0" layoutY="1779.0" text="Pieza Twin O v2" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="103.0" fitWidth="70.0" layoutX="183.0" layoutY="1667.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_Z_v3.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="181.0" layoutY="1779.0" text="Pieza Z v3" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="70.0" fitWidth="110.0" layoutX="424.0" layoutY="1686.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_H_v2.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="441.0" layoutY="1779.0" text="Pieza H v2" textFill="#e9e8e8">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="309.0" layoutY="1669.0">
+                            <image>
+                                <Image url="@../../../../../Imagenes/Piezas/Pieza_Ladder.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="306.0" layoutY="1779.0" text="Pieza Ladder" textFill="#e9e8e8">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
@@ -349,38 +512,68 @@
                 </Pane>
             </content>
         </ScrollPane>
-        <Label layoutX="60.0" layoutY="75.0" prefHeight="47.0" prefWidth="146.0" text="Descripción" textFill="#b7b7b7">
+        <Label layoutX="232.0" layoutY="219.0" prefHeight="47.0" prefWidth="239.0" text="Piezas disponibles" textFill="#e9e8e8">
             <font>
-                <Font name="System Bold" size="22.0" />
+                <Font name="Liberation Mono Bold" size="22.0" />
             </font>
         </Label>
-        <Label layoutX="423.0" layoutY="75.0" prefHeight="47.0" prefWidth="234.0" text="Otras características" textFill="#b7b7b7">
-            <font>
-                <Font name="System Bold" size="22.0" />
-            </font>
-        </Label>
-        <Label layoutX="249.0" layoutY="311.0" prefHeight="47.0" prefWidth="203.0" text="Piezas disponibles" textFill="#b7b7b7">
-            <font>
-                <Font name="System Bold" size="22.0" />
-            </font>
-        </Label>
-        <Label alignment="TOP_LEFT" layoutX="60.0" layoutY="129.0" prefHeight="60.0" prefWidth="196.0" text="Juega con todas las piezas y con el tablero más grande" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="60.0" layoutY="168.0" prefHeight="60.0" prefWidth="196.0" text="Esta partida tiene pinta de que será larga asi que ponte cómodo..." textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="117.0" prefHeight="20.0" prefWidth="146.0" text="Tiempo de caída inicila -&gt; " textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="144.0" prefHeight="17.0" prefWidth="104.0" text="Lineas por nivel -&gt;" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="585.0" layoutY="117.0" prefHeight="20.0" prefWidth="44.0" text="1500ms" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="598.0" layoutY="143.0" prefHeight="20.0" prefWidth="18.0" text="10" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="171.0" prefHeight="17.0" prefWidth="156.0" text="Salto de tiempo por nivel -&gt;" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="592.0" layoutY="170.0" prefHeight="20.0" prefWidth="49.0" text="100 ms" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="198.0" prefHeight="17.0" prefWidth="128.0" text="Límite de rotaciones -&gt;" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="586.0" layoutY="197.0" prefHeight="20.0" prefWidth="62.0" text="Sin límite" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="223.0" prefHeight="17.0" prefWidth="128.0" text="Hold -&gt;" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="598.0" layoutY="222.0" prefHeight="20.0" prefWidth="36.0" text="Activo" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="247.0" prefHeight="17.0" prefWidth="128.0" text="Tablero principal -&gt;" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="598.0" layoutY="246.0" prefHeight="20.0" prefWidth="36.0" text="30x20" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="274.0" prefHeight="17.0" prefWidth="128.0" text="Siguientes piezas -&gt;" textFill="#e4e4e4" wrapText="true" />
-        <Label alignment="TOP_LEFT" layoutX="586.0" layoutY="273.0" prefHeight="20.0" prefWidth="63.0" text="Disponibles" textFill="#e4e4e4" wrapText="true" />
-      <Label alignment="TOP_LEFT" layoutX="426.0" layoutY="298.0" prefHeight="17.0" prefWidth="128.0" text="Dashes -&gt;" textFill="#e4e4e4" wrapText="true" />
-      <Label alignment="TOP_LEFT" layoutX="586.0" layoutY="296.0" prefHeight="20.0" prefWidth="69.0" text="Activado" textFill="#e4e4e4" wrapText="true" />
+        <GridPane hgap="20" layoutX="51.0" layoutY="89.0" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints minWidth="250.0" />
+                <ColumnConstraints minWidth="250.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30.0" />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+
+            <children>
+                <Label text="Tiempo de caída inicial -&gt; 1500ms" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Líneas por nivel -&gt; 10" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+
+                <Label text="Salto de tiempo por nivel -&gt; 100 ms" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Límite de rotaciones -&gt; Sin límite" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+
+                <Label text="Hold -&gt; Activo" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Tablero principal -&gt; 30x20" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+
+                <Label text="Siguientes piezas -&gt; Disponibles" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Dashes -&gt; Activado" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </GridPane>
     </children>
 </Pane>
