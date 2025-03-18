@@ -5,22 +5,30 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="315.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomTipoPiezas">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="315.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomTipoPiezas">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button layoutX="30.0" layoutY="343.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="85.0" text="Volver" />
-      <Button layoutX="163.0" layoutY="343.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="134.0" text="Guardar y volver" />
-      <ImageView fx:id="imgViewTiposPieza" fitHeight="145.0" fitWidth="159.0" layoutX="83.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="229.0" layoutY="286.0" mnemonicParsing="false" onAction="#siguiente" text="&gt;" />
-      <Button layoutX="66.0" layoutY="285.0" mnemonicParsing="false" onAction="#atras" text="&lt;" />
-      <Label fx:id="labelNombreTipoPieza" alignment="CENTER" layoutX="115.0" layoutY="293.0" prefHeight="17.0" prefWidth="95.0" textFill="#ff9595">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-   </children>
+        <Button layoutX="33.0" layoutY="343.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="100.0" text="Volver" />
+        <Button layoutX="179.0" layoutY="343.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="100.0" text="Guardar" />
+        <StackPane layoutX="70.0" layoutY="101.0" prefHeight="149.0" prefWidth="174.0">
+            <ImageView fx:id="imgViewTiposPieza" fitHeight="149.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true" />
+        </StackPane>
+        <Button layoutX="239.0" layoutY="286.0" mnemonicParsing="false" onAction="#siguiente" text="&gt;" />
+        <Button layoutX="56.0" layoutY="285.0" mnemonicParsing="false" onAction="#atras" text="&lt;" />
+        <Label fx:id="labelNombreTipoPieza" alignment="CENTER" layoutX="99.0" layoutY="292.0" prefHeight="21.0" prefWidth="127.0" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="45.0" layoutY="26.0" text="¡Elige el diseño!" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="22.0" />
+            </font>
+        </Label>
+    </children>
 </Pane>
