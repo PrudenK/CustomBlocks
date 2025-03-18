@@ -163,7 +163,7 @@ class ControladorPrincipal : Initializable {
     }
     @FXML fun custom() {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,
-            315.0,400.0, timelinePartida, 0, -60))
+            315.0,382.0, timelinePartida, 0, -60))
     }
 
     @FXML fun modosDeJuego() {
