@@ -52,6 +52,8 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     private val SALTO_SALTO_TIEMPO_NIVEL = 50
     private val SALTO_ROTACIONES = 1
 
+    private val MS = " ms"
+
     companion object{
         lateinit var stageOtrasConfi: Stage
 
@@ -93,9 +95,9 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         saltoNivel = 10
         saltoTiempoNivel = 100
 
-        labelTiempoCaidaInicial.text = tiempoCaida.toString()
+        labelTiempoCaidaInicial.text = tiempoCaida.toString() + MS
         labelLinesSaltoNivel.text = saltoNivel.toString()
-        labelSaltoTiempoNivel.text = saltoTiempoNivel.toString()
+        labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + MS
 
         activarHoldB.text = "Activo"
         siguientesPiezasB.text = "Activo"
@@ -109,14 +111,14 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     @FXML private fun menosTiempoCaidaInicial() {
         if (tiempoCaida > TIEMPO_MINIMO_CAIDA) {
             tiempoCaida -= SALTO_TIEMPO_CAIDA
-            labelTiempoCaidaInicial.text = tiempoCaida.toString()
+            labelTiempoCaidaInicial.text = tiempoCaida.toString() + MS
         }
     }
 
     @FXML private fun masTiempoCaidaInicial() {
         if (tiempoCaida < TIEMPO_MAXIMO_CAIDA) {
             tiempoCaida += SALTO_TIEMPO_CAIDA
-            labelTiempoCaidaInicial.text = tiempoCaida.toString()
+            labelTiempoCaidaInicial.text = tiempoCaida.toString() + MS
         }
     }
 
@@ -137,14 +139,14 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     @FXML private fun menosSaltoTiempoNivel() {
         if (saltoTiempoNivel > SALTO_TIEMPO_NIVEL_MINIMO) {
             saltoTiempoNivel -= SALTO_SALTO_TIEMPO_NIVEL
-            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString()
+            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + MS
         }
     }
 
     @FXML private fun masSaltoTiempoNivel() {
         if (saltoTiempoNivel < SALTO_TIEMPO_NIVEL_MAXIMO) {
             saltoTiempoNivel += SALTO_SALTO_TIEMPO_NIVEL
-            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString()
+            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + MS
         }
     }
 
@@ -209,9 +211,9 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     }
 
     private fun cargarValoresInit(){
-        labelTiempoCaidaInicial.text = TIEMPO_CAIDA_PIEZAS_INICIAL.toString()
+        labelTiempoCaidaInicial.text = TIEMPO_CAIDA_PIEZAS_INICIAL.toString() + MS
         labelLinesSaltoNivel.text = LINEAS_POR_NIVEL.toString()
-        labelSaltoTiempoNivel.text = REDUCCION_TIEMPO_POR_NIVEL.toString()
+        labelSaltoTiempoNivel.text = REDUCCION_TIEMPO_POR_NIVEL.toString() + MS
 
         tiempoCaida = TIEMPO_CAIDA_PIEZAS_INICIAL
         saltoNivel = LINEAS_POR_NIVEL

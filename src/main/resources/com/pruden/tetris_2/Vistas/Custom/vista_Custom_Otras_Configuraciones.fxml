@@ -6,74 +6,93 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="600.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="643.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button layoutX="55.0" layoutY="457.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
-      <Button layoutX="431.0" layoutY="457.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y volver" />
-      <Button layoutX="184.0" layoutY="457.0" mnemonicParsing="false" onAction="#reestablecer" text="Reestablecer configuración" />
-      <Label layoutX="41.0" layoutY="74.0" prefHeight="25.0" prefWidth="181.0" text="Tiempo de caída inicial" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="349.0" layoutY="78.0" prefHeight="25.0" prefWidth="26.0" text="ms" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="labelTiempoCaidaInicial" layoutX="307.0" layoutY="81.0" prefHeight="18.0" prefWidth="43.0" />
-      <Button layoutX="378.0" layoutY="71.0" minWidth="32.0" mnemonicParsing="false" onAction="#masTiempoCaidaInicial" prefHeight="30.0" prefWidth="32.0" text="+" />
-      <Button layoutX="246.0" layoutY="72.0" mnemonicParsing="false" onAction="#menosTiempoCaidaInicial" text="-" />
-      <Label layoutX="41.0" layoutY="136.0" prefHeight="25.0" prefWidth="181.0" text="Líneas para salto de nivel" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button layoutX="247.0" layoutY="131.0" mnemonicParsing="false" onAction="#menosLinesSaltoNivel" text="-" />
-      <Button layoutX="378.0" layoutY="131.0" mnemonicParsing="false" onAction="#masLinesSaltoNivel" text="+" />
-      <Label fx:id="labelLinesSaltoNivel" layoutX="319.0" layoutY="140.0" prefHeight="18.0" prefWidth="43.0" />
-      <Label layoutX="41.0" layoutY="195.0" prefHeight="25.0" prefWidth="181.0" text="Salto de tiempo por nivel" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button layoutX="247.0" layoutY="193.0" mnemonicParsing="false" onAction="#menosSaltoTiempoNivel" text="-" />
-      <Button layoutX="378.0" layoutY="193.0" mnemonicParsing="false" onAction="#masSaltoTiempoNivel" text="+" />
-      <Label fx:id="labelSaltoTiempoNivel" layoutX="309.0" layoutY="202.0" prefHeight="18.0" prefWidth="36.0" />
-      <Label layoutX="349.0" layoutY="196.0" prefHeight="25.0" prefWidth="26.0" text="ms" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="41.0" layoutY="265.0" prefHeight="25.0" prefWidth="181.0" text="Límite de rotaciones" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button fx:id="menosLimiteRotacionesB" layoutX="246.0" layoutY="263.0" mnemonicParsing="false" onAction="#menosLimiteRotaciones" text="-" />
-      <Button fx:id="masLimiteRotacionesB" layoutX="378.0" layoutY="263.0" mnemonicParsing="false" onAction="#masLimiteRotaciones" text="+" />
-      <Label fx:id="labelLimiteRotaciones" layoutX="319.0" layoutY="269.0" prefHeight="18.0" prefWidth="43.0" />
-      <Button fx:id="activarLimite" layoutX="485.0" layoutY="263.0" mnemonicParsing="false" onAction="#limiteB" text="sin limite" />
-      <Label layoutX="40.0" layoutY="323.0" prefHeight="25.0" prefWidth="181.0" text="Desactivar Hold" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button fx:id="activarHoldB" layoutX="243.0" layoutY="321.0" mnemonicParsing="false" onAction="#activarHold" text="Activo" />
-      <Button fx:id="siguientesPiezasB" layoutX="242.0" layoutY="379.0" mnemonicParsing="false" onAction="#siguientesPiezas" text="Activo" />
-      <Label layoutX="40.0" layoutY="381.0" prefHeight="25.0" prefWidth="181.0" text="Siguientes piezas" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="341.0" layoutY="323.0" prefHeight="25.0" prefWidth="129.0" text="Dashes" textFill="#ddd8d8">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button fx:id="activarDashButton" layoutX="445.0" layoutY="316.0" mnemonicParsing="false" onAction="#activarDashes" text="Desactivado" />
-   </children>
+        <Label layoutX="143.0" layoutY="19.0" prefHeight="41.0" prefWidth="410.0" text="Otras configuraciones" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="32.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="41.0" layoutY="74.0" prefHeight="25.0" prefWidth="226.0" text="Tiempo de caída inicial" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelTiempoCaidaInicial" alignment="CENTER" contentDisplay="CENTER" layoutX="367.0" layoutY="74.0" prefHeight="25.0" prefWidth="71.0" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button layoutX="458.0" layoutY="72.0" mnemonicParsing="false" onAction="#masTiempoCaidaInicial" prefHeight="30.0" prefWidth="32.0" text="+" />
+        <Button layoutX="316.0" layoutY="72.0" mnemonicParsing="false" onAction="#menosTiempoCaidaInicial" prefHeight="30.0" prefWidth="32.0" text="-" />
+
+        <Label layoutX="41.0" layoutY="134.0" prefHeight="25.0" prefWidth="266.0" text="Líneas para salto de nivel" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelLinesSaltoNivel" alignment="CENTER" contentDisplay="CENTER" layoutX="367.0" layoutY="134.0" prefHeight="25.0" prefWidth="71.0" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button layoutX="458.0" layoutY="132.0" mnemonicParsing="false" onAction="#masLinesSaltoNivel" prefHeight="30.0" prefWidth="32.0" text="+" />
+        <Button layoutX="316.0" layoutY="132.0" mnemonicParsing="false" onAction="#menosLinesSaltoNivel" prefHeight="30.0" prefWidth="32.0" text="-" />
+
+        <Label layoutX="41.0" layoutY="194.0" prefHeight="25.0" prefWidth="249.0" text="Salto de tiempo por nivel" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelSaltoTiempoNivel" alignment="CENTER" contentDisplay="CENTER" layoutX="367.0" layoutY="194.0" prefHeight="25.0" prefWidth="71.0" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button layoutX="458.0" layoutY="192.0" mnemonicParsing="false" onAction="#masSaltoTiempoNivel" prefHeight="30.0" prefWidth="32.0" text="+" />
+        <Button layoutX="316.0" layoutY="192.0" mnemonicParsing="false" onAction="#menosSaltoTiempoNivel" prefHeight="30.0" prefWidth="32.0" text="-" />
+
+        <Label layoutX="41.0" layoutY="254.0" prefHeight="25.0" prefWidth="204.0" text="Límite de rotaciones" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelLimiteRotaciones" alignment="CENTER" contentDisplay="CENTER" layoutX="367.0" layoutY="254.0" prefHeight="25.0" prefWidth="71.0" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button fx:id="masLimiteRotacionesB" layoutX="458.0" layoutY="252.0" mnemonicParsing="false" onAction="#masLimiteRotaciones" prefHeight="30.0" prefWidth="32.0" text="+" />
+        <Button fx:id="menosLimiteRotacionesB" layoutX="316.0" layoutY="252.0" mnemonicParsing="false" onAction="#menosLimiteRotaciones" prefHeight="30.0" prefWidth="32.0" text="-" />
+        <Button fx:id="activarLimite" layoutX="525.0" layoutY="252.0" mnemonicParsing="false" onAction="#limiteB" text="Sin limite" />
+
+        <Label layoutX="41.0" layoutY="314.0" prefHeight="25.0" prefWidth="181.0" text="Desactivar Hold" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button fx:id="activarHoldB" layoutX="243.0" layoutY="312.0" mnemonicParsing="false" onAction="#activarHold" text="Activo" />
+
+        <Label layoutX="41.0" layoutY="374.0" prefHeight="25.0" prefWidth="181.0" text="Siguientes piezas" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button fx:id="siguientesPiezasB" layoutX="242.0" layoutY="372.0" mnemonicParsing="false" onAction="#siguientesPiezas" text="Activo" />
+
+        <Label layoutX="334.0" layoutY="346.0" prefHeight="25.0" prefWidth="71.0" text="Dashes" textFill="#e9e8e8">
+            <font>
+                <Font name="Liberation Mono Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button fx:id="activarDashButton" layoutX="428.0" layoutY="344.0" mnemonicParsing="false" onAction="#activarDashes" text="Desactivado" />
+
+        <Button layoutX="78.0" layoutY="430.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+        <Button layoutX="207.0" layoutY="430.0" mnemonicParsing="false" onAction="#reestablecer" text="Reestablecer configuración" />
+        <Button layoutX="454.0" layoutY="430.0" mnemonicParsing="false" onAction="#guardar" text="Guardar y volver" />
+    </children>
 </Pane>

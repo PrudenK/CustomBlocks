@@ -106,7 +106,7 @@ class ControladorCustomOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML private fun otrasConfiguraciones() {
-        crearStage(ClaseStage("Vistas/Custom/vista_Custom_Otras_Configuraciones.fxml", elemnto,600.0,506.0, null,0, -20))
+        crearStage(ClaseStage("Vistas/Custom/vista_Custom_Otras_Configuraciones.fxml", elemnto,643.0,491.0, null,0, -20))
     }
 
 
