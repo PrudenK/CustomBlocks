@@ -78,7 +78,7 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
                     mensajeAdvertenciaTT2 = if (tableroPrincipalNum >= 2) {
                         "Si cambias al talbero Memory tu partida actual se reiniciará ya que este tablero aumenta notablemente las mecánicas del juego "
                     } else { "Has empezado una partida con el tablero Memory, si lo cambias esta se reiniciará, ¿estás seguro?" }
-                    crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tipo_Tablero2.fxml", elemento, 370.0, 210.0, null, 0, 0))
+                    crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tipo_Tablero2.fxml", elemento, 421.0, 192.0, null, 0, 0))
                 }
             }else{
                 if (tableroPrincipalNum >= 2) cPrin.labelModo.text = "Custom"
