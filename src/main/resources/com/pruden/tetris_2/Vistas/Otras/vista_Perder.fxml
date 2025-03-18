@@ -11,8 +11,8 @@
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button layoutX="34.0" layoutY="178.0" mnemonicParsing="false" onAction="#otra" prefHeight="25.0" prefWidth="98.0" text="Jugar otra" />
-      <Button layoutX="156.0" layoutY="178.0" mnemonicParsing="false" onAction="#cerrar" text="Cerrar ventana" />
+      <Button layoutX="34.0" layoutY="178.0" mnemonicParsing="false" onAction="#otra" prefHeight="25.0" prefWidth="100.0" text="Jugar otra" />
+      <Button layoutX="181.0" layoutY="178.0" mnemonicParsing="false" onAction="#cerrar" prefWidth="100.0" text="Cerrar" />
       <Label layoutX="42.0" layoutY="111.0" prefHeight="24.0" prefWidth="78.0" text="Nivel:" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
@@ -25,19 +25,19 @@
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="puntuacion" layoutX="186.0" layoutY="82.0" prefHeight="17.0" prefWidth="33.0" textFill="#e9e8e8">
+      <Label fx:id="puntuacion" layoutX="186.0" layoutY="82.0" prefHeight="24.0" prefWidth="95.0" textFill="#e9e8e8">
          <font>
-            <Font name="Liberation Mono" size="18.0" />
+            <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="nivel" layoutX="186.0" layoutY="110.0" prefHeight="17.0" prefWidth="33.0" textFill="#e9e8e8">
+      <Label fx:id="nivel" layoutX="186.0" layoutY="110.0" prefHeight="17.0" prefWidth="95.0" textFill="#e9e8e8">
          <font>
-            <Font name="Liberation Mono" size="18.0" />
+            <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="lineas" layoutX="186.0" layoutY="136.0" prefHeight="17.0" prefWidth="33.0" textFill="#e9e8e8">
+      <Label fx:id="lineas" layoutX="186.0" layoutY="136.0" prefHeight="17.0" prefWidth="95.0" textFill="#e9e8e8">
          <font>
-            <Font name="Liberation Mono" size="18.0" />
+            <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="59.0" layoutY="27.0" prefHeight="30.0" prefWidth="198.0" text="¡Has perdido!" textFill="#e9e8e8">
+      <Label layoutX="63.0" layoutY="26.0" prefHeight="30.0" prefWidth="190.0" text="¡Has perdido!" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="24.0" />
          </font>
