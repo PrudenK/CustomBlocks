@@ -6,6 +6,7 @@ import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.scene.image.Image
 import javafx.util.Duration
+import okhttp3.internal.platform.Platform
 
 var indiceActualAnuncio = ApiPublicidad.anuncios.size-1
 
@@ -17,9 +18,11 @@ fun cargarTimeLineAuncios(){
 
     Timeline(
         KeyFrame(Duration.seconds(5.0), {
-            indiceActualAnuncio = (indiceActualAnuncio + 1) % ApiPublicidad.anuncios.size
-            val anuncio = ApiPublicidad.anuncios[indiceActualAnuncio]
-            cPrin.imgPublicidad.image = Image(anuncio.imagen)
+            javafx.application.Platform.runLater {
+                indiceActualAnuncio = (indiceActualAnuncio + 1) % ApiPublicidad.anuncios.size
+                val anuncio = ApiPublicidad.anuncios[indiceActualAnuncio]
+                cPrin.imgPublicidad.image = Image(anuncio.imagen)
+            }
         })
     ).apply {
         cycleCount = Timeline.INDEFINITE

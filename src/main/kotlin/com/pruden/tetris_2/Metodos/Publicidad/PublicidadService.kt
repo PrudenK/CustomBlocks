@@ -9,7 +9,7 @@ import retrofit2.http.Path
 
 interface PublicidadService {
     @GET(ConstantesAPI.TODOS_ANUNCIOS)
-    fun getAnuncios(): Call<List<Anuncio>>
+    suspend fun getAnuncios(): List<Anuncio>
 
     @PUT(ConstantesAPI.PATH_CLICK_PUBLICIDAD)
     fun onClickAnuncio(@Path("id") id: Int): Call<ResponseBody>

@@ -13,6 +13,8 @@ module com.pruden.tetris_2 {
     requires retrofit2.converter.gson;
     requires com.google.gson;
     requires okhttp3;
+    requires kotlinx.coroutines.core;
+    requires retrofit2.kotlin.coroutines.adapter;
     opens com.pruden.tetris_2.Metodos.Publicidad to com.google.gson;
 
 

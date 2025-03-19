@@ -41,10 +41,17 @@
       <version>4.9.3</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.jetbrains.kotlinx</groupId>
+      <artifactId>kotlinx-coroutines-javafx</artifactId>
+      <version>1.7.3</version>
+    </dependency>
 
-
-
-
+    <dependency>
+      <groupId>com.jakewharton.retrofit</groupId>
+      <artifactId>retrofit2-kotlin-coroutines-adapter</artifactId>
+      <version>0.9.2</version>
+    </dependency>
 
 
 

@@ -7,7 +7,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 fun onClickAnuncio(id: Int) {
-    ApiPublicidad.apiService.onClickAnuncio(id).enqueue(object : Callback<ResponseBody> {
+    ApiPublicidad.publicidadService.onClickAnuncio(id).enqueue(object : Callback<ResponseBody> {
         override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
             if (response.isSuccessful) {
                 println("Anuncio con ID $id actualizado correctamente.")

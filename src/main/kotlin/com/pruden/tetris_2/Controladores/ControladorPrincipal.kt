@@ -11,6 +11,7 @@ import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
+import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
 import com.pruden.tetris_2.Piezas.Piezas
 import javafx.animation.Timeline
@@ -154,7 +155,7 @@ class ControladorPrincipal : Initializable {
         cPrin = this
         cargarTodoInit()
 
-        //cargarTimeLineAuncios()
+        cargarTimeLineAuncios()
     }
 
     @FXML fun opciones() {
