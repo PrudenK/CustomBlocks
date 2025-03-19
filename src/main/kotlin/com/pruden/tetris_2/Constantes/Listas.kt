@@ -28,13 +28,17 @@ object Listas {
     val NOMBRES_PIEZAS = listOf(
         "numO", "numI", "numL", "numZ", "numJ", "numS", "numT", "numP", "numX", "numU", "numLv2",
         "numW", "numTv2", "numZv2", "numXv2", "numLv3", "numF", "numOv2", "numSv2", "numB", "numY",
-        "numK", "numIv2", "numC", "numOv3", "numV", "numH", "numIv3", "numYv2", "numOv4", "numJv2", "numA"
+        "numK", "numIv2", "numC", "numOv3", "numV", "numH", "numIv3", "numYv2", "numOv4", "numJv2", "numA",
+        "numMiniI", "numMiniIv2", "numMiniL", "numMiniO", "numOv5", "numOv6", "numXv3", "numE", "numTwinO",
+        "numTwinY", "numPickAxe", "numSv3", "numTwinOv2", "numZv3", "numLadder", "numHv2"
     )
 
     val NOMBRES_PIEZAS_Y_TOTAL = listOf(
         "numO", "numI", "numL", "numZ", "numJ", "numS", "numT", "numP", "numX", "numU", "numLv2",
         "numW", "numTv2", "numZv2", "numXv2", "numLv3", "numF", "numOv2", "numSv2", "numB", "numY",
-        "numK", "numIv2", "numC", "numOv3", "numV", "numH", "numIv3", "numYv2", "numOv4", "numJv2", "numA", "total"
+        "numK", "numIv2", "numC", "numOv3", "numV", "numH", "numIv3", "numYv2", "numOv4", "numJv2", "numA",
+        "numMiniI", "numMiniIv2", "numMiniL", "numMiniO", "numOv5", "numOv6", "numXv3", "numE", "numTwinO",
+        "numTwinY", "numPickAxe", "numSv3", "numTwinOv2", "numZv3", "numLadder", "numHv2", "total"
     )
 
     val LISTA_INSTANCIAS_PIEZAS = listOf(
@@ -42,7 +46,10 @@ object Listas {
         Pieza_P::class, Pieza_X::class, Pieza_U::class, Pieza_L_v2::class, Pieza_W::class, Pieza_T_v2::class, Pieza_Z_v2::class,
         Pieza_X_v2::class, Pieza_L_v3::class, Pieza_F::class, Pieza_O_v2::class, Pieza_S_v2::class, Pieza_B::class, Pieza_Y::class,
         Pieza_K::class, Pieza_I_v2::class, Pieza_C::class, Pieza_O_v3::class, Pieza_V::class, Pieza_H::class, Pieza_I_v3::class,
-        Pieza_Y_v2::class, Pieza_O_v4::class, Pieza_J_v2::class, Pieza_A::class
+        Pieza_Y_v2::class, Pieza_O_v4::class, Pieza_J_v2::class, Pieza_A::class, Pieza_Mini_I::class, Pieza_Mini_I_v2::class,
+        Pieza_Mini_L::class, Pieza_Mini_O::class, Pieza_O_v5::class, Pieza_O_v6::class, Pieza_X_v3::class, Pieza_E::class,
+        Pieza_Twin_O::class, Pieza_Twin_Y::class, Pieza_Pickaxe::class, Pieza_S_v3::class, Pieza_Twin_O_v2::class,
+        Pieza_Z_v3::class, Pieza_Ladder::class, Pieza_H_v2::class
     )
 
     val LISTA_PAISES = listOf(
