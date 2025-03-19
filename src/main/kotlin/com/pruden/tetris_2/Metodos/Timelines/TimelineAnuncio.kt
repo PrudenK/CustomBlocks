@@ -11,21 +11,36 @@ import okhttp3.internal.platform.Platform
 var indiceActualAnuncio = ApiPublicidad.anuncios.size-1
 
 
-fun cargarTimeLineAuncios(){
+fun cargarTimeLineAuncios() {
     if (ApiPublicidad.anuncios.isEmpty()) return
 
-    cPrin.imgPublicidad.image = Image(ApiPublicidad.anuncios[indiceActualAnuncio].imagen)
+    precargarImagen(ApiPublicidad.anuncios[indiceActualAnuncio].imagen) { imagen ->
+        cPrin.imgPublicidad.image = imagen
+    }
 
     Timeline(
         KeyFrame(Duration.seconds(5.0), {
-            javafx.application.Platform.runLater {
-                indiceActualAnuncio = (indiceActualAnuncio + 1) % ApiPublicidad.anuncios.size
-                val anuncio = ApiPublicidad.anuncios[indiceActualAnuncio]
-                cPrin.imgPublicidad.image = Image(anuncio.imagen)
+            indiceActualAnuncio = (indiceActualAnuncio + 1) % ApiPublicidad.anuncios.size
+            val anuncio = ApiPublicidad.anuncios[indiceActualAnuncio]
+
+            precargarImagen(anuncio.imagen) { imagen ->
+                javafx.application.Platform.runLater {
+                    cPrin.imgPublicidad.image = imagen
+                }
             }
         })
     ).apply {
         cycleCount = Timeline.INDEFINITE
         play()
     }
+}
+
+private fun precargarImagen(url: String, onImageLoaded: (Image) -> Unit) {
+    Thread {
+        val imagen = Image(url, true)
+        while (!imagen.progressProperty().get().isNaN() && imagen.progressProperty().get() < 1) {
+            Thread.sleep(50)
+        }
+        javafx.application.Platform.runLater { onImageLoaded(imagen) }
+    }.start()
 }
