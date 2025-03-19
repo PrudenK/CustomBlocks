@@ -11,7 +11,7 @@ import javafx.stage.StageStyle
 
 fun cargarStageCargarNivel(stage: Stage){
     val fxmlLoader = FXMLLoader(Tetris::class.java.getResource("Vistas/ModoCampa/vista_CargaNivel.fxml"))
-    val scene = Scene(fxmlLoader.load(), 504.0, 371.0)
+    val scene = Scene(fxmlLoader.load(), 628.0, 351.0)
 
     cCargarNivel.stageCargarNivel = stage
 

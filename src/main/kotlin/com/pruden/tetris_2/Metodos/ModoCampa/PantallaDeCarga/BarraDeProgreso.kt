@@ -25,7 +25,7 @@ fun cargaProgressBarCargarNivel() {
 
                 Platform.runLater {
                     cargaCompleta = true
-                    escLabel.text = "Pulsa esc para ir la nivel"
+                    escLabel.text = "Pulsa esc para ir al nivel"
                     porcentajeCargaLabel.text = "100%"
                 }
                 return null

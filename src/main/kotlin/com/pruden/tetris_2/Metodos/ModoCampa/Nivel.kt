@@ -30,7 +30,7 @@ data class Nivel(
     }
 
     fun limiteRotaciones(): String{
-        return if (limiteRotacionesB) limiteRotacionesNum.toString() else "Sin límite"
+        return if (limiteRotacionesB) limiteRotacionesNum.toString() else "Sin"
     }
 
     fun siguientesPiezas():String{
