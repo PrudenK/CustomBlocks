@@ -49,6 +49,17 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
     private val modoMemoryX = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_MemoryX.jpg")
     private val modoMemoryY = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_MemoryY.jpg")
 
+    private val LISTA_STAGES_MODOS_DE_JUEGOS = listOf(
+        ClaseStage("Vistas/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_Todo.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_Algebra.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_RapidO.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_Memory.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
+        ClaseStage("Vistas/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    )
+
     private val listaImagenesModos = listOf(modoClasico, modoClasicoV2, modoAllIn, modoAlgebra,
         modoRapidO, modoMemory, modoMemoryX, modoMemoryY)
 
@@ -59,7 +70,7 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
     }
 
     @FXML fun jugar(){
-        crearStage(Listas.LISTA_STAGES_MODOS_DE_JUEGOS[indice])
+        crearStage(LISTA_STAGES_MODOS_DE_JUEGOS[indice])
     }
 
     @FXML fun atras(){

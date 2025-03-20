@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Publicidad
 
-import com.pruden.tetris_2.Constantes.ApiPublicidad
+import com.pruden.tetris_2.Constantes.publicidad.ApiPublicidad
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

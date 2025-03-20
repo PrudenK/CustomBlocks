@@ -58,7 +58,7 @@ class ControladorLogin : Initializable{
     }
 
     @FXML fun registrarse(){
-        conexion = getConexion()
+        //conexion = getConexion()
 
         cargarStageRegistrarse(iniciarSesionB)
     }

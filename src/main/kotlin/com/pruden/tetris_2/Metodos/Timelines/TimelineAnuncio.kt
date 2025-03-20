@@ -1,12 +1,11 @@
 package com.pruden.tetris_2.Metodos.Timelines
 
-import com.pruden.tetris_2.Constantes.ApiPublicidad
+import com.pruden.tetris_2.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.scene.image.Image
 import javafx.util.Duration
-import okhttp3.internal.platform.Platform
 
 var indiceActualAnuncio = ApiPublicidad.anuncios.size-1
 

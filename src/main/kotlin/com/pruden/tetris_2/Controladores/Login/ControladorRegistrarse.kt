@@ -25,7 +25,7 @@ class ControladorRegistrarse : Initializable{
     lateinit var stageRegistrarse :Stage
 
     var contraHas = ""
-    var loginCorrecto = true
+    var registroCorrecto = true
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cRegistrarse = this

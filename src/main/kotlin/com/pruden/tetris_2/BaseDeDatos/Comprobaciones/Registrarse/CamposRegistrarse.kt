@@ -6,24 +6,27 @@ import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse.Companion.
 
 fun comprobacionesRegistrar(){
     with(cRegistrarse){
-        loginCorrecto = true
+        registroCorrecto = true
         if(comboPais.value == null){
-            loginCorrecto = false
+            registroCorrecto = false
             errorLabel.text = "Selecciona tu país"
         }
-
+        /*
         if(!comprobarNombreUsuario()) {
             errorLabel.text = "Ese usario ya está registrado"
-        }else if (userInput.text.isBlank()){
-            loginCorrecto = false
+        }else
+
+         */
+        if (userInput.text.isBlank()){
+            registroCorrecto = false
             errorLabel.text = "El nombre no puede estar vacio"
         }else if(passInput.text == repetirPassInput.text){
             if (passInput.text.isBlank()){
-                loginCorrecto = false
+                registroCorrecto = false
                 errorLabel.text = "No puedes tener la contrasña en blanco"
             }else contraHas = hashearContraConSAl(passInput.text)
         } else {
-            loginCorrecto = false
+            registroCorrecto = false
             errorLabel.text = "Las contraseñas no coinciden"
         }
     }

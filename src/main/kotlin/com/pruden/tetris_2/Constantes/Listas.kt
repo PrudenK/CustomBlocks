@@ -7,17 +7,6 @@ import com.pruden.tetris_2.Piezas.*
 object Listas {
     val LISTA_MODOS_DE_JUEGOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY")
 
-    val LISTA_STAGES_MODOS_DE_JUEGOS = listOf(
-        ClaseStage("Vistas/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_Todo.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_Algebra.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_RapidO.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_Memory.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
-    )
-
     val LISTA_MODOS_CON_TODOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY", "Todos")
 
     val LISTA_FILTRARDOS = listOf("Fecha", "Nivel", "Lineas", "Puntuación", "Tiempo")

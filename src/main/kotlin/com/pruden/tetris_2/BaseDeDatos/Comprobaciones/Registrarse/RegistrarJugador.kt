@@ -1,47 +1,43 @@
 package com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Registrarse
 
-import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insertarEnTablaPiezas
-import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insertarEstasGen
-import com.pruden.tetris_2.BaseDeDatos.InsertarDatosRegistro.insetarEnTablasModos
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin
+import com.pruden.tetris_2.BaseDeDatos.Objs.Jugador
+import com.pruden.tetris_2.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse.Companion.cRegistrarse
-import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse.Companion.idNuevoJugador
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 fun registrarJugador(){
     with(cRegistrarse){
-        val consulta = "Insert into jugador (nombre, contrasena, nivel, fechaini, pais, experiencia) values (?,?,0,current_date,?,0)"
-        val preparedStatment = ControladorLogin.conexion.prepareStatement(consulta)
-
         comprobacionesRegistrar()
 
-        if(loginCorrecto){
-            preparedStatment.setString(1, userInput.text)
-            preparedStatment.setString(2, contraHas)
-            preparedStatment.setString(3, comboPais.value)
+        if(registroCorrecto){
+            CoroutineScope(Dispatchers.IO).launch {
+                val jugador = Jugador(
+                    nombre = userInput.text,
+                    contrasena = contraHas,
+                    pais = comboPais.value
+                )
 
-            preparedStatment.executeUpdate()
+                val respuesta = ApiCustom.jugadorService.crearJugador(jugador)
 
-            cargarIdNuevoJugador()
-
-            reiniciarCampos()
-
-            errorLabel.text = "El registro ha sido correcto"
-
-
-            insertarEnTablaPiezas()
-            insetarEnTablasModos()
-            insertarEstasGen()
+                when(respuesta.code()){
+                    201 -> {
+                        javafx.application.Platform.runLater {
+                            reiniciarCampos()
+                            errorLabel.text = "El registro ha sido correcto"
+                        }
+                    }
+                    409 ->{
+                        javafx.application.Platform.runLater {
+                            errorLabel.text = "El nombre está repetido"
+                        }
+                    }
+                }
+            }
         }
     }
 }
-
-
-private fun cargarIdNuevoJugador(){
-    val idNuevo = ControladorLogin.statment.executeQuery("Select max(id) as id from jugador")
-    idNuevo.next()
-    idNuevoJugador = idNuevo.getInt("id")
-}
-
 
 private fun reiniciarCampos(){
     with(cRegistrarse){
