@@ -30,7 +30,7 @@ fun comprbarPerder(){
     }
 }
 
-fun verificarPerdida(): Boolean {
+private fun verificarPerdida(): Boolean {
     for (columna in 0 until Globales.COLUMNAS) {
         if (matrizNumerica[2][columna] != Globales.BLANCO) {  // Si alguna celda no está vacía
             return true // Has perdido

@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.Teclado
 
+import com.pruden.tetris_2.BaseDeDatos.SubirDatos.contadorPiezas
 import com.pruden.tetris_2.BaseDeDatos.SubirDatos.sumarTipoPieza
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
@@ -29,6 +30,7 @@ fun moverEspacio(event : KeyEvent){
 fun moverPiezaAbajo() :Boolean{
     if(piezaActual.bajar()){
         if (jugarOnline) sumarTipoPieza(piezaActual)
+        println(contadorPiezas)
         piezaActual = devolverPiezaAleatoria()
         if (tipoTableroPrin == 3 || tipoTableroPrin == 4) cambiarParesImparesTablero3y4()
         return false

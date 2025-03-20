@@ -6,12 +6,9 @@ fun subirDatosPerder(){
     subirDatosPartida()
 
     if (ControladorPrincipal.cPrin.labelModo.text.equals("Custom")){
-        subirDatosEstaTotalesYCustom("estaCustom")
-    }else{
-        subirDatosModo()
+
     }
 
-    subirDatosEstaTotalesYCustom("estaTotales")
     sumarTipoPieza(ControladorPrincipal.piezaActual)
     subirTodoEstaPiezas()
 }

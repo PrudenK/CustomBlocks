@@ -10,4 +10,7 @@ object ConstantesCustomAPI {
 
     //Partidas
     const val SUBIR_PARTIDA = "/subirPartida"
+
+    //EstaPiezas
+    const val SUBIR_ESTA_PIEZAS = "/subirEstaPiezas"
 }

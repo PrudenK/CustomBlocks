@@ -112,10 +112,10 @@ private fun cargarLista(){
         if (arrayBooleanos[41]) bolsaTemp.add(Pieza_Twin_Y(0, columnaInicial))
         if (arrayBooleanos[42]) bolsaTemp.add(Pieza_Pickaxe(0, columnaInicial))
         if (arrayBooleanos[43]) bolsaTemp.add(Pieza_S_v3(-1, columnaInicial-1))
-        if (arrayBooleanos[44]) bolsaTemp.add(Pieza_Twin_O_v2(-1, columnaInicial-1))
+        if (arrayBooleanos[44]) bolsaTemp.add(Pieza_Twin_O_v2(0, columnaInicial))
         if (arrayBooleanos[45]) bolsaTemp.add(Pieza_Ladder(0, columnaInicial))
         if (arrayBooleanos[46]) bolsaTemp.add(Pieza_Z_v3(-1, columnaInicial-1))
-        if (arrayBooleanos[47]) bolsaTemp.add(Pieza_H_v2(0, columnaInicial))
+        if (arrayBooleanos[47]) bolsaTemp.add(Pieza_H_v2(-1, columnaInicial-1))
     } else {
         bolsaTemp.add(Pieza_O(0, columnaInicial))
         bolsaTemp.add(Pieza_I(0, columnaInicial))
