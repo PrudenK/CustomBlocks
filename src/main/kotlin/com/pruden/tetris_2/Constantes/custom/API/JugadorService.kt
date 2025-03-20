@@ -9,10 +9,14 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface JugadorService {
     @GET(ConstantesCustomAPI.TODOS_JUGADORES)
     suspend fun getTodosJugadores(): List<Jugador>
+
+    @GET(ConstantesCustomAPI.JUGADOR_POR_ID)
+    suspend fun getJugadorPorId(@Path("id") id : Int): Jugador
 
     @POST(ConstantesCustomAPI.CREAR_JUGADOR)
     suspend fun crearJugador(@Body jugador: Jugador): Response<ResponseBody>

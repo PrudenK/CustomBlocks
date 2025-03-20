@@ -2,7 +2,6 @@ package com.pruden.tetris_2.Controladores
 
 import com.pruden.tetris_2.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.Constantes.Globales
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.conexion
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
@@ -34,6 +33,7 @@ import javafx.stage.Stage
 import java.net.URL
 import java.util.*
 import java.util.concurrent.locks.Lock
+import kotlin.system.exitProcess
 
 class ControladorPrincipal : Initializable {
     @FXML lateinit var canvasPrincipal: Canvas
@@ -187,8 +187,8 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun salir() {
-        if (jugarOnline) conexion.close()
         Platform.exit()
+        exitProcess(0)
     }
 
     @FXML fun abrirPublicidad(){

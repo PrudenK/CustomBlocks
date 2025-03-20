@@ -7,10 +7,10 @@ import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse
 fun insertatMundo(){
     val consulta = "Insert into mundo (idMundo, idJugador, completado, desbloqueado) values (?,?,false,false)"
     for (i in 1..9){
-        val preparedStatment = ControladorLogin.conexion.prepareStatement(consulta)
-        preparedStatment.setInt(1, i)
-        preparedStatment.setInt(2, ControladorRegistrarse.idNuevoJugador)
-        preparedStatment.executeUpdate()
+       // val preparedStatment = ControladorLogin.conexion.prepareStatement(consulta)
+        //preparedStatment.setInt(1, i)
+        //preparedStatment.setInt(2, ControladorRegistrarse.idNuevoJugador)
+        //preparedStatment.executeUpdate()
     }
 }
 

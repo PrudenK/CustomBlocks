@@ -13,9 +13,9 @@ fun insetarEnTablasModos(){
                     ?, 0, 0, 0, '00:00:00', 0, 0, '00:00:00'
                 )
             """
-        val preparedStatment = ControladorLogin.conexion.prepareStatement(consulta)
+       // val preparedStatment = ControladorLogin.conexion.prepareStatement(consulta)
 
-        preparedStatment.setInt(1, ControladorRegistrarse.idNuevoJugador)
-        preparedStatment.executeUpdate()
+        //preparedStatment.setInt(1, ControladorRegistrarse.idNuevoJugador)
+       // preparedStatment.executeUpdate()
     }
 }

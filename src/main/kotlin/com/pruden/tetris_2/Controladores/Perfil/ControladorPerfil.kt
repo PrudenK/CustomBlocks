@@ -54,12 +54,12 @@ class ControladorPerfil : ControladorGEN(), Initializable {
         comboBox.value = Listas.LISTA_MODOS_DE_JUEGOS[0]
 
         cargarDatosUsuarioPerfil()
-        cargarDatosModos()
-        cargarDatosEstaTotales()
-        cargarDatosCustom()
+        //cargarDatosModos()
+        //cargarDatosEstaTotales()
+        //cargarDatosCustom()
 
         comboBox.valueProperty().addListener { _, _, _ ->
-            cargarDatosModos()
+            //cargarDatosModos()
         }
     }
 

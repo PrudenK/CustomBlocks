@@ -7,6 +7,7 @@ object ConstantesCustomAPI {
     const val CREAR_JUGADOR = "/crearJugador"
     const val TODOS_JUGADORES = "/jugadores"
     const val INICIAR_SESION = "/iniciarSesion"
+    const val JUGADOR_POR_ID = "/jugador/{id}"
 
     //Partidas
     const val SUBIR_PARTIDA = "/subirPartida"

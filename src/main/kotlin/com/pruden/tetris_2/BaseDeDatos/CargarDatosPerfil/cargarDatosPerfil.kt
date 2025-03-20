@@ -1,23 +1,27 @@
 package com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil
 
 import com.pruden.tetris_2.Constantes.Listas
+import com.pruden.tetris_2.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil.Companion.cPerfil
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 fun cargarDatosUsuarioPerfil(){
-    val consulta = "Select nombre, nivel, fechaini, pais, experiencia from jugador where id = ${ControladorPrincipal.idJugador}"
+    CoroutineScope(Dispatchers.IO).launch {
+        val jugador = ApiCustom.jugadorService.getJugadorPorId(ControladorPrincipal.idJugador)
 
-    val datos = ControladorLogin.statment.executeQuery(consulta)
-
-    datos.next()
-
-    with(cPerfil){
-        usuarioLabel.text = datos.getString("nombre")
-        nivelLabel.text = datos.getInt("nivel").toString()
-        experienciaLabel.text = datos.getInt("experiencia").toString()
-        fechaIniLabel.text = datos.getDate("fechaini").toString()
-        paisLabel.text = datos.getString("pais").toString()
+        javafx.application.Platform.runLater {
+            with(cPerfil){
+                usuarioLabel.text = jugador.nombre
+                nivelLabel.text = jugador.nivel.toString()
+                experienciaLabel.text = jugador.experiencia.toString()
+                fechaIniLabel.text = jugador.getFechaFormateada()
+                paisLabel.text = jugador.pais
+            }
+        }
     }
 }
 
