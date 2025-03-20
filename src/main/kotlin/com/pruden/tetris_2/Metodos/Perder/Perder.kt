@@ -1,7 +1,10 @@
 package com.pruden.tetris_2.Metodos.Perder
 
-import com.pruden.tetris_2.BaseDeDatos.SubirDatos.subirDatosPerder
+import com.pruden.tetris_2.BaseDeDatos.SubirDatos.subirDatosPartida
+import com.pruden.tetris_2.BaseDeDatos.SubirDatos.subirTodoEstaPiezas
+import com.pruden.tetris_2.BaseDeDatos.SubirDatos.sumarTipoPieza
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
@@ -26,8 +29,16 @@ fun comprbarPerder(){
         }
 
 
-        if (jugarOnline && !nivelEnJuego) subirDatosPerder()
+        if (jugarOnline && !nivelEnJuego) {
+            subirDatosPerder()
+        }
     }
+}
+
+private fun subirDatosPerder(){
+    subirDatosPartida()
+    sumarTipoPieza(ControladorPrincipal.piezaActual)
+    subirTodoEstaPiezas()
 }
 
 private fun verificarPerdida(): Boolean {
