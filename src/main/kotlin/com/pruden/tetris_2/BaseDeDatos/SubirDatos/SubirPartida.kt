@@ -1,26 +1,23 @@
 package com.pruden.tetris_2.BaseDeDatos.SubirDatos
 
+import com.pruden.tetris_2.BaseDeDatos.Objs.Partida
+import com.pruden.tetris_2.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin
-import java.sql.Timestamp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 fun subirDatosPartida(){
-    val sentenciaSubirPartida =
-        """
-            INSERT INTO partida (
-                idJugador, modo, nivel, puntuacion, tiempo, lineas, fechaJuego
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
-        """
+    CoroutineScope(Dispatchers.IO).launch {
+        val partida = Partida(
+            idJugador = ControladorPrincipal.idJugador,
+            modo = ControladorPrincipal.cPrin.labelModo.text,
+            nivel = ControladorPrincipal.cPrin.labelNivel.text.toInt(),
+            puntuacion = ControladorPrincipal.cPrin.labelPuntuacion.text.toInt(),
+            tiempo = ControladorPrincipal.cPrin.cronometroLabel.text,
+            lineas = ControladorPrincipal.cPrin.labelLineas.text.toInt()
+        )
 
-    val preparedStatment = ControladorLogin.conexion.prepareStatement(sentenciaSubirPartida)
-
-    preparedStatment.setInt(1, ControladorPrincipal.idJugador)
-    preparedStatment.setString(2, ControladorPrincipal.cPrin.labelModo.text)
-    preparedStatment.setString(3, ControladorPrincipal.cPrin.labelNivel.text)
-    preparedStatment.setString(4, ControladorPrincipal.cPrin.labelPuntuacion.text)
-    preparedStatment.setString(5, ControladorPrincipal.cPrin.cronometroLabel.text)
-    preparedStatment.setString(6, ControladorPrincipal.cPrin.labelLineas.text)
-    preparedStatment.setTimestamp(7, Timestamp(System.currentTimeMillis()) )
-
-    preparedStatment.executeUpdate()
+        ApiCustom.partidaService.subirPartida(partida)
+    }
 }

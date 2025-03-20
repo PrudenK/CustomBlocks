@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Constantes.custom.API
 
+import com.google.gson.JsonObject
 import com.pruden.tetris_2.BaseDeDatos.Objs.Jugador
 import com.pruden.tetris_2.BaseDeDatos.Objs.LoginRequest
 import com.pruden.tetris_2.Constantes.custom.ConstantesCustomAPI
@@ -17,5 +18,5 @@ interface JugadorService {
     suspend fun crearJugador(@Body jugador: Jugador): Response<ResponseBody>
 
     @POST(ConstantesCustomAPI.INICIAR_SESION)
-    suspend fun iniciarSesion(@Body loginRequest: LoginRequest): Response<ResponseBody>
+    suspend fun iniciarSesion(@Body loginRequest: LoginRequest): Response<JsonObject>
 }

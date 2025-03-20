@@ -3,6 +3,7 @@ package com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Login
 import com.pruden.tetris_2.BaseDeDatos.Objs.LoginRequest
 import com.pruden.tetris_2.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
 import kotlinx.coroutines.CoroutineScope
@@ -19,6 +20,9 @@ fun iniciarSesionLogin(){
 
                 when(respuesta.code()){
                     200->{
+                        idJugador = respuesta.body()!!.get("id")!!.asInt
+                        println(idJugador)
+
                         javafx.application.Platform.runLater {
                             cargarStagePrincipal()
                             ControladorPrincipal.jugarOnline = true
