@@ -25,26 +25,25 @@ fun cargarDatosUsuarioPerfil(){
     }
 }
 
-fun cargarDatosModos(){
-    with(cPerfil){
-        val modoActual = Listas.LISTA_MODOS_ESTADISTICAS[Listas.LISTA_MODOS_DE_JUEGOS.indexOf(comboBox.value)]
+    fun cargarDatosModos(){
+        with(cPerfil){
+            val modoActual = Listas.LISTA_MODOS_DE_JUEGOS[Listas.LISTA_MODOS_DE_JUEGOS.indexOf(comboBox.value)]
 
-        val consulta = "Select maxNivel, maxLineas, maxPuntuacion, maxTiempo, lineasSum, puntuacionesSum, " +
-                "tiempoTotal from $modoActual where idJugador = ${ControladorPrincipal.idJugador}"
+            CoroutineScope(Dispatchers.IO).launch {
+                val estadisticas = ApiCustom.partidaService.getEstadisticasPorModoYUsuario(ControladorPrincipal.idJugador, modoActual)
 
-        val datos = ControladorLogin.statment.executeQuery(consulta)
-
-        datos.next()
-
-        maxNivelModoLabel.text = datos.getInt("maxNivel").toString()
-        maxLineasModoLabel.text = datos.getInt("maxLineas").toString()
-        maxPuntuModoLabel.text = datos.getInt("maxPuntuacion").toString()
-        maxTiempoModoLabel.text = datos.getString("maxTiempo")
-        lineasSumModoLabel.text = datos.getInt("lineasSum").toString()
-        puntosSumModoLabel.text = datos.getInt("puntuacionesSum").toString()
-        tiempoSumModoLabel.text = datos.getString("tiempoTotal")
+                javafx.application.Platform.runLater {
+                    maxNivelModoLabel.text = estadisticas.maxNivel.toString()
+                    maxLineasModoLabel.text = estadisticas.maxLineas.toString()
+                    maxPuntuModoLabel.text = estadisticas.maxPuntuacion.toString()
+                    maxTiempoModoLabel.text = estadisticas.maxTiempo
+                    lineasSumModoLabel.text = estadisticas.lineasSum.toString()
+                    puntosSumModoLabel.text = estadisticas.puntuacionesSum.toString()
+                    tiempoSumModoLabel.text = estadisticas.tiempoTotal
+                }
+            }
+        }
     }
-}
 
 fun cargarDatosEstaTotales(){
     val consulta = "Select lineasSum, puntuacionesSum, tiempoTotal, partidas from estaTotales where idJugador = ${ControladorPrincipal.idJugador}"
