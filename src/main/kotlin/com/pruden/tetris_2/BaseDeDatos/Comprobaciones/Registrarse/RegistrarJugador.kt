@@ -47,4 +47,3 @@ private fun reiniciarCampos(){
         comboPais.value = null
     }
 }
-

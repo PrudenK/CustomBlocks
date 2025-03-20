@@ -1,7 +1,6 @@
 package com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Registrarse
 
 import com.pruden.tetris_2.BaseDeDatos.hashearContraConSAl
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse.Companion.cRegistrarse
 
 fun comprobacionesRegistrar(){
@@ -11,12 +10,7 @@ fun comprobacionesRegistrar(){
             registroCorrecto = false
             errorLabel.text = "Selecciona tu país"
         }
-        /*
-        if(!comprobarNombreUsuario()) {
-            errorLabel.text = "Ese usario ya está registrado"
-        }else
 
-         */
         if (userInput.text.isBlank()){
             registroCorrecto = false
             errorLabel.text = "El nombre no puede estar vacio"
@@ -30,14 +24,4 @@ fun comprobacionesRegistrar(){
             errorLabel.text = "Las contraseñas no coinciden"
         }
     }
-}
-
-private fun comprobarNombreUsuario() :Boolean{
-    val todosNombres = ControladorLogin.statment.executeQuery("Select nombre from jugador")
-    while (todosNombres.next()){
-        if (cRegistrarse.userInput.text == todosNombres.getString("nombre")){
-            return false
-        }
-    }
-    return true
 }

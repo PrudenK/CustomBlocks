@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Metodos.Stages
 
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
 import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse
 import com.pruden.tetris_2.Tetris

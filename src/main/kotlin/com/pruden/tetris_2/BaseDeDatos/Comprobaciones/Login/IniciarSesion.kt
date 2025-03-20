@@ -1,33 +1,43 @@
 package com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Login
 
-import com.pruden.tetris_2.BaseDeDatos.comprobarContra
-import com.pruden.tetris_2.BaseDeDatos.getConexion
+import com.pruden.tetris_2.BaseDeDatos.Objs.LoginRequest
+import com.pruden.tetris_2.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 fun iniciarSesionLogin(){
     with(cLogin){
-        ControladorLogin.conexion = getConexion()
+        if(userInput.text.isNotBlank() && passInput.text.isNotBlank()){
+            CoroutineScope(Dispatchers.IO).launch {
+                val respuesta = ApiCustom.jugadorService.iniciarSesion(
+                    LoginRequest(userInput.text, passInput.text)
+                )
 
-        var loginCorrecto = false
-
-        val nombresContras = ControladorLogin.statment.executeQuery("Select id, nombre, contrasena from jugador")
-        while (nombresContras.next()){
-            if (userInput.text == nombresContras.getString("nombre")
-                && comprobarContra(passInput.text, nombresContras.getNString("contrasena"))
-            ){
-                ControladorPrincipal.idJugador = nombresContras.getInt("id")
-                loginCorrecto = true
-                break
-
+                when(respuesta.code()){
+                    200->{
+                        javafx.application.Platform.runLater {
+                            cargarStagePrincipal()
+                            ControladorPrincipal.jugarOnline = true
+                        }
+                    }
+                    404->{
+                        javafx.application.Platform.runLater {
+                            errorLabel.text = "Usuario no encontrado"
+                        }
+                    }
+                    401->{
+                        javafx.application.Platform.runLater {
+                            errorLabel.text = "Contraseña incorrecta"
+                        }
+                    }
+                }
             }
+        }else{
+            errorLabel.text = "Hay campos en blanco"
         }
-
-        if(loginCorrecto){
-            cargarStagePrincipal()
-            ControladorPrincipal.jugarOnline = true
-        }else errorLabel.text = "Login incorrecto"
     }
 }

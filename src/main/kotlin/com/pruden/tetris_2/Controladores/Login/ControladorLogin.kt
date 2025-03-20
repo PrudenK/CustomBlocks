@@ -50,16 +50,10 @@ class ControladorLogin : Initializable{
     @FXML fun jugarOff(){
         cargarStagePrincipal()
 
-        try {
-            conexion.close()
-        }catch (ignored: Exception){}
-
         jugarOnline = false
     }
 
     @FXML fun registrarse(){
-        //conexion = getConexion()
-
         cargarStageRegistrarse(iniciarSesionB)
     }
 
