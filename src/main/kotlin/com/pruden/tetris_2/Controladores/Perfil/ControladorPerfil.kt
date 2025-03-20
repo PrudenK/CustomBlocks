@@ -28,7 +28,6 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     @FXML lateinit var lineasTotalesLabel: Label
     @FXML lateinit var partidasTotalesLabel: Label
     @FXML lateinit var tiempoTotalLabel: Label
-    @FXML lateinit var totalPiezas: Label
     @FXML lateinit var maxNivelModoLabel: Label
     @FXML lateinit var maxLineasModoLabel: Label
     @FXML lateinit var maxPuntuModoLabel: Label
@@ -36,12 +35,12 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     @FXML lateinit var lineasSumModoLabel: Label
     @FXML lateinit var puntosSumModoLabel: Label
     @FXML lateinit var tiempoSumModoLabel: Label
+    @FXML lateinit var partidasJugadasModos: Label
 
     @FXML lateinit var puntosCustomLabel: Label
     @FXML lateinit var lineasCustomLabel: Label
     @FXML lateinit var partidasCustomLabel: Label
     @FXML lateinit var tiempoCustomLabel: Label
-    @FXML lateinit var customPiezasLabel: Label
 
     @FXML lateinit var comboBox: ComboBox<String>
 
@@ -54,12 +53,12 @@ class ControladorPerfil : ControladorGEN(), Initializable {
         comboBox.value = Listas.LISTA_MODOS_DE_JUEGOS[0]
 
         cargarDatosUsuarioPerfil()
-        cargarDatosModos()
-        //cargarDatosEstaTotales()
-        //cargarDatosCustom()
+        cargarDatosPartidas("Custom")
+        cargarDatosPartidas("Todos")
+        cargarDatosPartidas()
 
         comboBox.valueProperty().addListener { _, _, _ ->
-            cargarDatosModos()
+            cargarDatosPartidas()
         }
     }
 

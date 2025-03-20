@@ -25,69 +25,43 @@ fun cargarDatosUsuarioPerfil(){
     }
 }
 
-    fun cargarDatosModos(){
-        with(cPerfil){
-            val modoActual = Listas.LISTA_MODOS_DE_JUEGOS[Listas.LISTA_MODOS_DE_JUEGOS.indexOf(comboBox.value)]
+fun cargarDatosPartidas(otroModo: String = ""){
+    with(cPerfil){
+        var modoActual = Listas.LISTA_MODOS_DE_JUEGOS[Listas.LISTA_MODOS_DE_JUEGOS.indexOf(comboBox.value)]
 
-            CoroutineScope(Dispatchers.IO).launch {
-                val estadisticas = ApiCustom.partidaService.getEstadisticasPorModoYUsuario(ControladorPrincipal.idJugador, modoActual)
+        if(otroModo.isNotBlank()){
+            modoActual = otroModo
+        }
 
-                javafx.application.Platform.runLater {
-                    maxNivelModoLabel.text = estadisticas.maxNivel.toString()
-                    maxLineasModoLabel.text = estadisticas.maxLineas.toString()
-                    maxPuntuModoLabel.text = estadisticas.maxPuntuacion.toString()
-                    maxTiempoModoLabel.text = estadisticas.maxTiempo
-                    lineasSumModoLabel.text = estadisticas.lineasSum.toString()
-                    puntosSumModoLabel.text = estadisticas.puntuacionesSum.toString()
-                    tiempoSumModoLabel.text = estadisticas.tiempoTotal
+        CoroutineScope(Dispatchers.IO).launch {
+            val estadisticas = ApiCustom.partidaService.getEstadisticasPorModoYUsuario(ControladorPrincipal.idJugador, modoActual)
+
+            javafx.application.Platform.runLater {
+                when(modoActual){
+                    "Custom" -> {
+                        lineasCustomLabel.text = estadisticas.lineasSum.toString()
+                        puntosCustomLabel.text = estadisticas.puntuacionesSum.toString()
+                        tiempoCustomLabel.text = estadisticas.tiempoTotal
+                        partidasCustomLabel.text = estadisticas.totalDePartidas.toString()
+                    }
+                    "Todos" -> {
+                        lineasTotalesLabel.text = estadisticas.lineasSum.toString()
+                        puntosTotalesLabel.text = estadisticas.puntuacionesSum.toString()
+                        tiempoTotalLabel.text = estadisticas.tiempoTotal
+                        partidasTotalesLabel.text = estadisticas.totalDePartidas.toString()
+                    }
+                    else -> {
+                        maxNivelModoLabel.text = estadisticas.maxNivel.toString()
+                        maxLineasModoLabel.text = estadisticas.maxLineas.toString()
+                        maxPuntuModoLabel.text = estadisticas.maxPuntuacion.toString()
+                        maxTiempoModoLabel.text = estadisticas.maxTiempo
+                        lineasSumModoLabel.text = estadisticas.lineasSum.toString()
+                        puntosSumModoLabel.text = estadisticas.puntuacionesSum.toString()
+                        tiempoSumModoLabel.text = estadisticas.tiempoTotal
+                        partidasJugadasModos.text = estadisticas.totalDePartidas.toString()
+                    }
                 }
             }
         }
     }
-
-fun cargarDatosEstaTotales(){
-    val consulta = "Select lineasSum, puntuacionesSum, tiempoTotal, partidas from estaTotales where idJugador = ${ControladorPrincipal.idJugador}"
-    val consultaNumPieza = "Select total from estaPiezas where idJugador = ${ControladorPrincipal.idJugador}"
-
-    var datos = ControladorLogin.statment.executeQuery(consulta)
-
-    datos.next()
-    with(cPerfil){
-        lineasTotalesLabel.text = datos.getInt("lineasSum").toString()
-        puntosTotalesLabel.text = datos.getInt("puntuacionesSum").toString()
-        tiempoTotalLabel.text = datos.getString("tiempoTotal").toString()
-        partidasTotalesLabel.text = datos.getInt("partidas").toString()
-
-        datos = ControladorLogin.statment.executeQuery(consultaNumPieza)
-
-        datos.next()
-
-        totalPiezas.text = datos.getInt("total").toString()
-    }
-}
-
-fun cargarDatosCustom(){
-    val consulta = "Select lineasSum, puntuacionesSum, tiempoTotal, partidas from estaCustom where idJugador = ${ControladorPrincipal.idJugador}"
-
-    var datos = ControladorLogin.statment.executeQuery(consulta)
-
-    datos.next()
-
-    with(cPerfil){
-        lineasCustomLabel.text = datos.getInt("lineasSum").toString()
-        puntosCustomLabel.text = datos.getInt("puntuacionesSum").toString()
-        tiempoCustomLabel.text = datos.getString("tiempoTotal")
-        partidasCustomLabel.text = datos.getInt("partidas").toString()
-
-        val selectPiezasDistintoACero = Listas.NOMBRES_PIEZAS.joinToString(" + ") { "SIGN($it)" }
-
-        val consultaPiezasJugadas = "Select ($selectPiezasDistintoACero) as piezasNoCero from estaPiezas where idJugador = ${ControladorPrincipal.idJugador}"
-
-        datos = ControladorLogin.statment.executeQuery(consultaPiezasJugadas)
-
-        datos.next()
-
-        customPiezasLabel.text = datos.getInt("piezasNoCero").toString()+"/32"
-    }
-
 }

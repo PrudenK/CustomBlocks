@@ -7,5 +7,6 @@ data class EstadisticasModo(
     val maxTiempo: String,
     val lineasSum: Int,
     val puntuacionesSum: Int,
-    val tiempoTotal: String
+    val tiempoTotal: String,
+    val totalDePartidas: Int
 )
