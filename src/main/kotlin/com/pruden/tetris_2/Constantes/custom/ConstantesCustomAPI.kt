@@ -12,6 +12,7 @@ object ConstantesCustomAPI {
     //Partidas
     const val SUBIR_PARTIDA = "/subirPartida"
     const val ESTA_MODOS_PARTIDA = "/estadisticasModos/{idJugador}/{modo}"
+    const val MEJORES_PARTIDAS = "/mejoresPartidas/{pais}/{modo}"
 
     //EstaPiezas
     const val SUBIR_ESTA_PIEZAS = "/subirEstaPiezas"

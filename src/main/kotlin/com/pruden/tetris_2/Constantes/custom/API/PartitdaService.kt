@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Constantes.custom.API
 import com.pruden.tetris_2.BaseDeDatos.Objs.EstadisticasModo
 import com.pruden.tetris_2.BaseDeDatos.Objs.Partida
 import com.pruden.tetris_2.Constantes.custom.ConstantesCustomAPI
+import com.pruden.tetris_2.BaseDeDatos.Objs.JugadorRanking
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -17,4 +18,7 @@ interface PartitdaService {
 
     @GET(ConstantesCustomAPI.ESTA_MODOS_PARTIDA)
     suspend fun getEstadisticasPorModoYUsuario(@Path("idJugador") idJugador: Int, @Path("modo") modo: String): EstadisticasModo
+
+    @GET(ConstantesCustomAPI.MEJORES_PARTIDAS)
+    suspend fun getMejoresPartidas(@Path("pais") pais: String, @Path("modo") modo: String): List<JugadorRanking>
 }

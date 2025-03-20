@@ -32,7 +32,7 @@ fun initRankingDatos(){
         nivelPartida.cellValueFactory = PropertyValueFactory("nivelPartida")
         lineas.cellValueFactory = PropertyValueFactory("lineas")
         puntu.cellValueFactory = PropertyValueFactory("puntuacion")
-        tiempoPartida.cellValueFactory = PropertyValueFactory("tiempoPartida")
+        tiempoPartida.cellValueFactory = PropertyValueFactory("tiempo")
         pais.cellValueFactory = PropertyValueFactory("pais")
 
         tableView.items = datosRanking

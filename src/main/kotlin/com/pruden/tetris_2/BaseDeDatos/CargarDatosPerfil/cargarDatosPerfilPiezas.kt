@@ -2,10 +2,7 @@ package com.pruden.tetris_2.BaseDeDatos.CargarDatosPerfil
 
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.Constantes.custom.ConstantesCustomAPI
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPiezasPerfil.Companion.cPiezasPerfil
 import javafx.application.Platform
 import javafx.scene.control.Label
@@ -23,6 +20,5 @@ fun cargarDatosPiezasPerfil(){
                 label.text =  jsonObject.get(columna)?.asInt.toString() ?: "0"
             }
         }
-
     }
 }
