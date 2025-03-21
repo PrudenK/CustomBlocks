@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.IniciarPartida
 
-import com.pruden.tetris_2.BaseDeDatos.SubirDatos.contadorPiezas
+import com.pruden.tetris_2.Metodos.SubirDatos.contadorPiezas
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline

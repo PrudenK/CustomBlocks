@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Controladores.Login
 
-import com.pruden.tetris_2.BaseDeDatos.Comprobaciones.Registrarse.registrarJugador
+import com.pruden.tetris_2.Metodos.Comprobaciones.Registrarse.registrarJugador
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun

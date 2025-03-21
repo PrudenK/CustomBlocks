@@ -1,12 +1,10 @@
 package com.pruden.tetris_2.Metodos.RankingVistaDatos
 
-import com.pruden.tetris_2.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.Controladores.Login.ControladorLogin
+import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings.Companion.cRanking
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.sql.ResultSet
 
 fun cargarDatosRanking(){
     CoroutineScope(Dispatchers.IO).launch {

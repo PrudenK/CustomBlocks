@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Timelines
 
-import com.pruden.tetris_2.Constantes.publicidad.ApiPublicidad
+import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline

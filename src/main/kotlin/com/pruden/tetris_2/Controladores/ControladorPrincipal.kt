@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Controladores
 
-import com.pruden.tetris_2.Constantes.publicidad.ApiPublicidad
+import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion

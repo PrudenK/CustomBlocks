@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.Teclado
 
-import com.pruden.tetris_2.BaseDeDatos.SubirDatos.contadorPiezas
-import com.pruden.tetris_2.BaseDeDatos.SubirDatos.sumarTipoPieza
+import com.pruden.tetris_2.Metodos.SubirDatos.contadorPiezas
+import com.pruden.tetris_2.Metodos.SubirDatos.sumarTipoPieza
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objPuntuacionBajar

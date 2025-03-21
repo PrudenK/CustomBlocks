@@ -1,8 +1,8 @@
 package com.pruden.tetris_2.Metodos.Perder
 
-import com.pruden.tetris_2.BaseDeDatos.SubirDatos.subirDatosPartida
-import com.pruden.tetris_2.BaseDeDatos.SubirDatos.subirTodoEstaPiezas
-import com.pruden.tetris_2.BaseDeDatos.SubirDatos.sumarTipoPieza
+import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosPartida
+import com.pruden.tetris_2.Metodos.SubirDatos.subirTodoEstaPiezas
+import com.pruden.tetris_2.Metodos.SubirDatos.sumarTipoPieza
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
