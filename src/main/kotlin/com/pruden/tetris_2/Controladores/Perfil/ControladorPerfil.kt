@@ -1,17 +1,30 @@
 package com.pruden.tetris_2.Controladores.Perfil
 
+import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Metodos.CargarDatosPerfil.*
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
+import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.ComboBox
 import javafx.scene.control.Label
+import javafx.scene.image.Image
+import javafx.scene.image.ImageView
+import javafx.stage.FileChooser
 import javafx.stage.Stage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.net.URL
 import java.util.*
 
@@ -45,6 +58,7 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     @FXML lateinit var comboBox: ComboBox<String>
 
     @FXML lateinit var verPiezasB: Button
+    @FXML lateinit var imagenPerfil: ImageView
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cPerfil = this
@@ -59,6 +73,10 @@ class ControladorPerfil : ControladorGEN(), Initializable {
 
         comboBox.valueProperty().addListener { _, _, _ ->
             cargarDatosPartidas()
+        }
+
+        imagenPerfil.setOnMouseClicked {
+            subirImagenPerfilADB()
         }
     }
 

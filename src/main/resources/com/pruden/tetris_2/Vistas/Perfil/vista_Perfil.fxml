@@ -21,9 +21,9 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="29.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenPerfil" fitHeight="143.0" fitWidth="140.0" layoutX="44.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Imagenes/Logos/logoCustom.png" />
+            <Image url="@../../../../../Imagenes/Logos/Imagen_perfil_deff.jpg" />
          </image>
       </ImageView>
       <Label layoutX="226.0" layoutY="83.0" text="Miembro desde:" />

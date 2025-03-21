@@ -1,7 +1,5 @@
 package com.pruden.tetris_2.Constantes
 
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Piezas.*
 
 object Listas {
@@ -10,9 +8,6 @@ object Listas {
     val LISTA_MODOS_CON_TODOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY", "Todos")
 
     val LISTA_FILTRARDOS = listOf("Fecha", "Nivel", "Lineas", "Puntuación", "Tiempo")
-
-    val LISTA_MODOS_ESTADISTICAS = listOf("estaClasico", "estaClasicoV2", "estaAllIn", "estaAlgebra", "estaRapidO",
-        "estaMemory", "estaMemoryX", "estaMemoryY")
 
     val NOMBRES_PIEZAS = listOf(
         "numO", "numI", "numL", "numZ", "numJ", "numS", "numT", "numP", "numX", "numU", "numLv2",

@@ -28,8 +28,6 @@ class ControladorLogin : Initializable{
     companion object{
         lateinit var cLogin : ControladorLogin
         lateinit var stageLogin: Stage
-        lateinit var conexion : Connection
-        lateinit var statment : Statement
     }
 
 

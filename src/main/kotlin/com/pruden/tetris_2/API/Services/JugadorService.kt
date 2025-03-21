@@ -4,12 +4,10 @@ import com.google.gson.JsonObject
 import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.API.ObjsAux.LoginRequest
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
+import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface JugadorService {
     @GET(ConstantesCustomAPI.TODOS_JUGADORES)
@@ -23,4 +21,9 @@ interface JugadorService {
 
     @POST(ConstantesCustomAPI.INICIAR_SESION)
     suspend fun iniciarSesion(@Body loginRequest: LoginRequest): Response<JsonObject>
+
+    @Multipart
+    @POST(ConstantesCustomAPI.SUBIR_IMAGEN)
+    suspend fun subirImagen(@Path("id") id: Int, @Part imagen: MultipartBody.Part): Response<ResponseBody>
+
 }

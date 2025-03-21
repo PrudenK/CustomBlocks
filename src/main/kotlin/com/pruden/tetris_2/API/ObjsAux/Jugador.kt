@@ -11,7 +11,8 @@ data class Jugador(
     val fechaini: Date = Date(),
     val pais: String,
     val experiencia: Int = 0,
-    var clan: Clan? = null
+    var clan: Clan? = null,
+    var imagen: String? = null
 ){
     fun getFechaFormateada(): String {
         val formato = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
