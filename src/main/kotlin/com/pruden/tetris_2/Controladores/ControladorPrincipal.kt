@@ -1,7 +1,9 @@
 package com.pruden.tetris_2.Controladores
 
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
+import com.pruden.tetris_2.API.ObjsAux.Suscripcion
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarSuscripciones
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
@@ -148,6 +150,8 @@ class ControladorPrincipal : Initializable {
 
         var nivelTerminado = false
         var nivelCompletado = false
+
+        var listaSuscripciones = mutableListOf<Suscripcion>()
     }
 
 
@@ -184,6 +188,7 @@ class ControladorPrincipal : Initializable {
         TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
         imprimirMatriz_TAB()
         println(ApiPublicidad.anuncios)
+        println(listaSuscripciones)
     }
 
     @FXML fun salir() {
@@ -198,5 +203,9 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun campa(){
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModoCampa/vista_Menu_Mundos.fxml", nuevaPartidaB, 600.0, 797.0, timelinePartida, 0, 0))
+    }
+
+    @FXML fun suscripciones(){
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
     }
 }

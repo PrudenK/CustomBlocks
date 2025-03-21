@@ -19,4 +19,7 @@ object ConstantesCustomAPI {
     //EstaPiezas
     const val SUBIR_ESTA_PIEZAS = "/subirEstaPiezas"
     const val ESTA_PIEZAS_POR_JUGADOR = "/estaPiezas/{id}"
+
+    //Suscripciones
+    const val OBTENER_SUSCRIPCIONES = "/suscripciones"
 }

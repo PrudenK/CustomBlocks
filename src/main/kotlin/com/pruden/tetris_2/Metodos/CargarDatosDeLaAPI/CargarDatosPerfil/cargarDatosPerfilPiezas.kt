@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.CargarDatosPerfil
+package com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.CargarDatosPerfil
 
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom

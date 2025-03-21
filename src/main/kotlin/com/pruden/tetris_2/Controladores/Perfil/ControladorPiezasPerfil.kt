@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Controladores.Perfil
 
-import com.pruden.tetris_2.Metodos.CargarDatosPerfil.cargarDatosPiezasPerfil
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.CargarDatosPerfil.cargarDatosPiezasPerfil
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import javafx.fxml.FXML
 import javafx.fxml.Initializable

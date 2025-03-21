@@ -35,6 +35,7 @@ module com.pruden.tetris_2 {
     opens com.pruden.tetris_2.Controladores.Partidas to javafx.fxml;
     opens com.pruden.tetris_2.Controladores.Rankings to javafx.fxml;
     opens com.pruden.tetris_2.Controladores.ModoCampa to javafx.fxml;
+    opens com.pruden.tetris_2.Controladores.Suscripciones to javafx.fxml;
 
     exports com.pruden.tetris_2;
 

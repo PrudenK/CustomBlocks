@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Controladores.Perfil
 
-import com.pruden.tetris_2.Metodos.CargarDatosPerfil.*
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.CargarDatosPerfil.*
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
