@@ -42,7 +42,7 @@ class ControladorOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun perfil(){
-        crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", sonidoo_B, 440.0, 647.0, timelinePartida, 0, 0))
+        crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", sonidoo_B, 683.0, 602.0, timelinePartida, 0, 0))
     }
 
     @FXML fun rankings(){

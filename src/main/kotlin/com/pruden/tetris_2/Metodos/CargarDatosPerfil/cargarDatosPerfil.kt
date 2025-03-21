@@ -18,7 +18,6 @@ fun cargarDatosUsuarioPerfil(){
             with(cPerfil){
                 usuarioLabel.text = jugador.nombre
                 nivelLabel.text = jugador.nivel.toString()
-                experienciaLabel.text = jugador.experiencia.toString()
                 fechaIniLabel.text = jugador.getFechaFormateada()
                 paisLabel.text = jugador.pais
                 imagenPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.imagen}", true)

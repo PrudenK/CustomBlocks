@@ -7,74 +7,204 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="440.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="683.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil">
     <stylesheets>
-        <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
-        <URL value="@../../styles/perfil.css" />
     </stylesheets>
    <children>
-      <Label fx:id="usuarioLabel" layoutX="226.0" layoutY="40.0" text="Nombre usuario">
+      <Label fx:id="usuarioLabel" layoutX="235.0" layoutY="33.0" text="Nombre usuario" textFill="#e9e8e8">
          <font>
-            <Font size="20.0" />
+            <Font name="Liberation Mono Bold" size="32.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenPerfil" fitHeight="143.0" fitWidth="140.0" layoutX="44.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Imagenes/Logos/Imagen_perfil_deff.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="226.0" layoutY="83.0" text="Miembro desde:" />
-      <Label fx:id="fechaIniLabel" layoutX="339.0" layoutY="83.0" text="00-00-0000" />
-      <Label layoutX="226.0" layoutY="108.0" text="Nivel:" />
-      <Label fx:id="nivelLabel" layoutX="272.0" layoutY="108.0" text="0" />
-      <Label layoutX="227.0" layoutY="131.0" text="Ranking global:" />
-      <Label fx:id="rankingLabel" layoutX="351.0" layoutY="131.0" text="#1" />
-      <Label layoutX="228.0" layoutY="156.0" text="País:" />
-      <Label fx:id="paisLabel" layoutX="344.0" layoutY="156.0" text="España" />
-      <ComboBox fx:id="comboBox" layoutX="248.0" layoutY="200.0" prefHeight="25.0" prefWidth="140.0" />
-      <Label layoutX="73.0" layoutY="204.0" text="Estadísticas modo clásico" />
-      <Label layoutX="79.0" layoutY="369.0" text="Estadísticas totales" />
-      <Label layoutX="29.0" layoutY="404.0" text="Puntus acumulados:" />
-      <Label fx:id="puntosTotalesLabel" layoutX="162.0" layoutY="404.0" text="Puntos" />
-      <Label layoutX="29.0" layoutY="432.0" text="Lineas totales:" />
-      <Label fx:id="lineasTotalesLabel" layoutX="167.0" layoutY="432.0" text="Lineas" />
-      <Label layoutX="29.0" layoutY="463.0" text="Partidas jugadas:" />
-      <Label fx:id="partidasTotalesLabel" layoutX="162.0" layoutY="463.0" text="Partidas" />
-      <Label layoutX="29.0" layoutY="491.0" text="Tiempo jugado:" />
-      <Label fx:id="tiempoTotalLabel" layoutX="162.0" layoutY="491.0" text="00:00:00" />
-      <Button fx:id="verPiezasB" layoutX="47.0" layoutY="556.0" mnemonicParsing="false" onAction="#verPiezas" text="Ver piezas en detalle" />
-      <Button layoutX="290.0" layoutY="565.0" mnemonicParsing="false" onAction="#volver" text="Volver atrás" />
-      <Label layoutX="39.0" layoutY="241.0" text="Max nivel:" />
-      <Label layoutX="39.0" layoutY="265.0" text="Max lineas:" />
-      <Label layoutX="38.0" layoutY="293.0" text="Max puntuación:" />
-      <Label layoutX="38.0" layoutY="322.0" text="Max tiempo:" />
-      <Label fx:id="maxNivelModoLabel" layoutX="150.0" layoutY="241.0" text="maxNivel" />
-      <Label fx:id="maxLineasModoLabel" layoutX="150.0" layoutY="265.0" text="maxLineas" />
-      <Label fx:id="maxPuntuModoLabel" layoutX="161.0" layoutY="293.0" text="maxP" />
-      <Label fx:id="maxTiempoModoLabel" layoutX="153.0" layoutY="322.0" text="00:00:00" />
-      <Label layoutX="237.0" layoutY="265.0" text="Lineas totales:" />
-      <Label layoutX="235.0" layoutY="293.0" text="Puntus acumulados:" />
-      <Label layoutX="235.0" layoutY="322.0" text="Tiempo jugado:" />
-      <Label fx:id="lineasSumModoLabel" layoutX="369.0" layoutY="265.0" text="12" />
-      <Label fx:id="puntosSumModoLabel" layoutX="374.0" layoutY="293.0" text="12" />
-      <Label fx:id="tiempoSumModoLabel" layoutX="357.0" layoutY="322.0" text="00:00:00" />
-      <Label layoutX="305.0" layoutY="108.0" text="Experiencia:" />
-      <Label fx:id="experienciaLabel" layoutX="388.0" layoutY="108.0" text="0" />
-      <Label layoutX="265.0" layoutY="369.0" text="Estadísticas custom" />
-      <Label layoutX="238.0" layoutY="404.0" text="Puntus acumulados:" />
-      <Label layoutX="238.0" layoutY="432.0" text="Lineas totales:" />
-      <Label layoutX="238.0" layoutY="463.0" text="Partidas jugadas:" />
-      <Label layoutX="238.0" layoutY="491.0" text="Tiempo jugado:" />
-      <Label fx:id="puntosCustomLabel" layoutX="371.0" layoutY="404.0" text="Puntos" />
-      <Label fx:id="lineasCustomLabel" layoutX="376.0" layoutY="432.0" text="Lineas" />
-      <Label fx:id="partidasCustomLabel" layoutX="371.0" layoutY="463.0" text="Partidas" />
-      <Label fx:id="tiempoCustomLabel" layoutX="371.0" layoutY="491.0" text="00:00:00" />
-      <Button layoutX="48.0" layoutY="597.0" mnemonicParsing="false" onAction="#registroPartidas" prefHeight="32.0" prefWidth="163.0" text="Registro partidas" />
-      <Label layoutX="238.0" layoutY="241.0" text="Partidas jugadas" />
-      <Label fx:id="partidasJugadasModos" layoutX="378.0" layoutY="240.0" text="2" />
+      <StackPane layoutX="69.0" layoutY="37.0" prefHeight="145.0" prefWidth="145.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-alignment: center;">
+
+         <ImageView fx:id="imagenPerfil" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../../Imagenes/Logos/Imagen_perfil_deff.jpg" />
+            </image>
+         </ImageView>
+
+      </StackPane>
+      <Label layoutX="235.0" layoutY="83.0" text="Miembro desde:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="fechaIniLabel" layoutX="388.0" layoutY="83.0" text="00-00-0000" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="235.0" layoutY="111.0" text="Nivel:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="nivelLabel" layoutX="311.0" layoutY="111.0" text="0" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="235.0" layoutY="137.0" text="Ranking global:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="rankingLabel" layoutX="403.0" layoutY="137.0" text="#1" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="235.0" layoutY="164.0" text="País:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="paisLabel" layoutX="302.0" layoutY="164.0" text="España" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font></Label>
+      <ComboBox fx:id="comboBox" layoutX="477.0" layoutY="209.0" prefHeight="25.0" prefWidth="140.0" />
+      <Label layoutX="95.0" layoutY="207.0" prefHeight="30.0" prefWidth="411.0" text="Estadísticas modo clásico" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="24.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="368.0" text="Estadísticas totales" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="24.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="404.0" text="Puntus acumulados:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="puntosTotalesLabel" layoutX="222.0" layoutY="404.0" text="Puntos" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="432.0" text="Lineas totales:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="lineasTotalesLabel" layoutX="222.0" layoutY="432.0" text="Lineas" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="463.0" text="Partidas jugadas:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="partidasTotalesLabel" layoutX="222.0" layoutY="463.0" text="Partidas" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="491.0" text="Tiempo jugado:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="tiempoTotalLabel" layoutX="222.0" layoutY="491.0" text="00:00:00" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Button fx:id="verPiezasB" layoutX="54.0" layoutY="542.0" mnemonicParsing="false" onAction="#verPiezas" text="Ver piezas en detalle" />
+      <Button layoutX="511.0" layoutY="542.0" mnemonicParsing="false" onAction="#volver" text="Volver atrás" />
+      <Label layoutX="64.0" layoutY="247.0" text="Max nivel:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="64.0" layoutY="271.0" text="Max lineas:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="64.0" layoutY="299.0" text="Max puntuación:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="64.0" layoutY="328.0" text="Max tiempo:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="maxNivelModoLabel" layoutX="225.0" layoutY="247.0" text="maxNivel" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="maxLineasModoLabel" layoutX="225.0" layoutY="271.0" text="maxLineas" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="maxPuntuModoLabel" layoutX="226.0" layoutY="300.0" text="maxP" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="maxTiempoModoLabel" layoutX="228.0" layoutY="328.0" text="00:00:00" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="364.0" layoutY="271.0" text="Lineas totales:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="364.0" layoutY="299.0" text="Puntus acumulados:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="364.0" layoutY="328.0" text="Tiempo jugado:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="lineasSumModoLabel" layoutX="554.0" layoutY="271.0" text="12" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="puntosSumModoLabel" layoutX="554.0" layoutY="299.0" text="12" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="tiempoSumModoLabel" layoutX="554.0" layoutY="328.0" text="00:00:00" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="360.0" layoutY="369.0" text="Estadísticas custom" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="24.0" />
+         </font></Label>
+      <Label layoutX="368.0" layoutY="404.0" text="Puntus acumulados:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="368.0" layoutY="432.0" text="Lineas totales:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="368.0" layoutY="463.0" text="Partidas jugadas:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="368.0" layoutY="491.0" text="Tiempo jugado:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="puntosCustomLabel" layoutX="554.0" layoutY="404.0" text="Puntos" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="lineasCustomLabel" layoutX="554.0" layoutY="432.0" text="Lineas" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="partidasCustomLabel" layoutX="554.0" layoutY="463.0" text="Partidas" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="tiempoCustomLabel" layoutX="554.0" layoutY="491.0" text="00:00:00" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Button layoutX="279.0" layoutY="542.0" mnemonicParsing="false" onAction="#registroPartidas" prefHeight="32.0" prefWidth="163.0" text="Registro partidas" />
+      <Label layoutX="364.0" layoutY="247.0" text="Partidas jugadas" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="partidasJugadasModos" layoutX="554.0" layoutY="246.0" text="2" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
    </children>
 
 </Pane>
