@@ -12,10 +12,10 @@ fun subirDatosPartida(){
         val partida = Partida(
             idJugador = ControladorPrincipal.idJugador,
             modo = ControladorPrincipal.cPrin.labelModo.text,
-            nivel = ControladorPrincipal.cPrin.labelNivel.text.toInt(),
-            puntuacion = ControladorPrincipal.cPrin.labelPuntuacion.text.toInt(),
-            tiempo = ControladorPrincipal.cPrin.cronometroLabel.text,
-            lineas = ControladorPrincipal.cPrin.labelLineas.text.toInt()
+            nivel = ControladorPrincipal.cPrin.labelNivel.text.split("/")[0].toInt(),
+            puntuacion = ControladorPrincipal.cPrin.labelPuntuacion.text.split("/")[0].toInt(),
+            tiempo = ControladorPrincipal.cPrin.cronometroLabel.text.split("/")[0],
+            lineas = ControladorPrincipal.cPrin.labelLineas.text.split("/")[0].toInt()
         )
 
         ApiCustom.partidaService.subirPartida(partida)

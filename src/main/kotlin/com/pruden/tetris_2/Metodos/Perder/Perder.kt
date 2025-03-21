@@ -29,13 +29,11 @@ fun comprbarPerder(){
         }
 
 
-        if (jugarOnline && !nivelEnJuego) {
-            subirDatosPerder()
-        }
+        subirDatosPerder()
     }
 }
 
-private fun subirDatosPerder(){
+fun subirDatosPerder(){
     subirDatosPartida()
     sumarTipoPieza(ControladorPrincipal.piezaActual)
     subirTodoEstaPiezas()

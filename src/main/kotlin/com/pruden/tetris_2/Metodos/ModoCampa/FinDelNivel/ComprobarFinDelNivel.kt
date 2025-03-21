@@ -5,13 +5,16 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Metodos.BorrarPiezas.objLineasNivel
 import com.pruden.tetris_2.Metodos.Cronometro.formatoASegundos
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
+import com.pruden.tetris_2.Metodos.Perder.subirDatosPerder
 
 fun comprobarPasarNivel(){
     if (seHaAlcanzadoElNivelObj()) {
         cambioVariablesAlTerminarNivel()
 
-        if (seCumpleTiempoLineasYPuntuacionObjetivo()) ganarNivelModoCampa()
-        else perderNivelModoCampa()
+        if (seCumpleTiempoLineasYPuntuacionObjetivo()) {
+            ganarNivelModoCampa()
+            subirDatosPerder()
+        } else perderNivelModoCampa()
     }
 }
 

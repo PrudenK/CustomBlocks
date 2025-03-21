@@ -30,7 +30,7 @@ class ControladorMundos : ControladorGEN(), Initializable {
     @FXML lateinit var labelNumMundo: Label
 
     val listaNivelesMundos = listOf(listaNivelesMundo1, listaNivelesMundo2, listaNivelesMundo3, listaNivelesMundo4,
-        listaNivelesMundo5, listaNivelesMundo6)
+        listaNivelesMundo5, listaNivelesMundo6, listaNivelesMundo7)
 
     companion object{
         lateinit var cMundo1: ControladorMundos
