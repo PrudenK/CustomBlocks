@@ -21,4 +21,7 @@ interface PartitdaService {
 
     @GET(ConstantesCustomAPI.MEJORES_PARTIDAS)
     suspend fun getMejoresPartidas(@Path("pais") pais: String, @Path("modo") modo: String): List<JugadorRanking>
+
+    @GET(ConstantesCustomAPI.PARTIDAS_DEL_JUGADOR)
+    suspend fun getPartidasDelJugador(@Path("idJugador") idJugador: Int, @Path("modo") modo: String): List<Partida>
 }

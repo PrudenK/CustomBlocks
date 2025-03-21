@@ -1,8 +1,8 @@
 package com.pruden.tetris_2.Controladores.Partidas
 
+import com.pruden.tetris_2.BaseDeDatos.Objs.Partida
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
-import com.pruden.tetris_2.Metodos.PartidaVistaDatos.Partida
 import com.pruden.tetris_2.Metodos.PartidaVistaDatos.initPartidaDatos
 import javafx.collections.ObservableList
 import javafx.fxml.FXML
