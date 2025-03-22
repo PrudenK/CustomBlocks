@@ -58,10 +58,10 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
     @FXML private lateinit var ck_Tw_Y: CheckBox
     @FXML private lateinit var ck_Pick: CheckBox
     @FXML private lateinit var ck_S_v3: CheckBox
-    @FXML private lateinit var ck_H_v2: CheckBox
+    @FXML private lateinit var ck_Tw_O_v2: CheckBox
     @FXML private lateinit var ck_Ladder: CheckBox
     @FXML private lateinit var ck_Z_v3: CheckBox
-    @FXML private lateinit var ck_Tw_O_v2: CheckBox
+    @FXML private lateinit var ck_H_v2: CheckBox
 
     private lateinit var elemento : Button
 
@@ -104,7 +104,7 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
             ck_S_v2, ck_B, ck_Y, ck_K, ck_I_v2, ck_C, ck_O_v3, ck_V, ck_H,
             ck_I_v3, ck_Y_v2, ck_O_v4, ck_J_v2, ck_A, ck_Mini_I, ck_Mini_I_v2,
             ck_Mini_L_v2, ck_Mini_O, ck_O_v5, ck_O_v6, ck_X_v3, ck_E, ck_Tw_O,
-            ck_Tw_Y, ck_Pick, ck_S_v3, ck_H_v2, ck_Ladder, ck_Z_v3, ck_Tw_O_v2
+            ck_Tw_Y, ck_Pick, ck_S_v3, ck_Tw_O_v2, ck_Ladder, ck_Z_v3, ck_H_v2
         )
     }
 

@@ -208,4 +208,8 @@ class ControladorPrincipal : Initializable {
     @FXML fun suscripciones(){
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
     }
+
+    @FXML fun logros(){
+
+    }
 }
