@@ -1,5 +1,7 @@
 package com.pruden.tetris_2.Metodos.ModoCampa.Dataº
 
+import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa.Companion.cModoCampa
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.mundoActual
@@ -7,6 +9,7 @@ import com.pruden.tetris_2.Metodos.ModoCampa.CargarNivel.cargarStageCargaYNivel
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.application.Platform
+import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 
 fun cargarAccionesImageViewsNiveles(){
@@ -14,6 +17,8 @@ fun cargarAccionesImageViewsNiveles(){
         for (i in 1 .. 9){
             val imgView = cMundo1.stageMundo1.scene.lookup("#nivel$i") as ImageView
             imgView.setOnMouseClicked { cargarStageCargaYNivel(cMundo1.listaNivelesMundos[mundoActual][i-1], cMundo1.stageMundo1) }
+            //imgView.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[i-1].imagen}", true)
+            //println("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[i-1].imagen}")
         }
         println(mundoActual)
     }
@@ -24,6 +29,8 @@ fun cargarAccionesImageViewsMundos(){
         for (i in 1 .. 9){
             val imgView = cModoCampa.stageModoCampa.scene.lookup("#imgViewMundo$i") as ImageView
             imgView.setOnMouseClicked {abrirMundo(i) }
+            imgView.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[i-1].imagen}", true)
+
         }
     }
 }

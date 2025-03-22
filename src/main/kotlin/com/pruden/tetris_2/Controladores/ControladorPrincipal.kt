@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores
 
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
+import com.pruden.tetris_2.API.ObjsAux.Mundos
 import com.pruden.tetris_2.API.ObjsAux.Suscripcion
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarSuscripciones
@@ -152,6 +153,7 @@ class ControladorPrincipal : Initializable {
         var nivelCompletado = false
 
         var listaSuscripciones = mutableListOf<Suscripcion>()
+        var listaMundos = mutableListOf<Mundos>()
     }
 
 
@@ -189,6 +191,7 @@ class ControladorPrincipal : Initializable {
         imprimirMatriz_TAB()
         println(ApiPublicidad.anuncios)
         println(listaSuscripciones)
+        println(listaMundos)
     }
 
     @FXML fun salir() {
@@ -202,7 +205,7 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun campa(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModoCampa/vista_Menu_Mundos.fxml", nuevaPartidaB, 600.0, 797.0, timelinePartida, 0, 0))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModoCampa/vista_Menu_Mundos.fxml", nuevaPartidaB, 711.0, 809.0, timelinePartida, 0, 0))
     }
 
     @FXML fun suscripciones(){

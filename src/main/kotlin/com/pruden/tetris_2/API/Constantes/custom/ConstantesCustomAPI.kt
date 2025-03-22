@@ -22,4 +22,7 @@ object ConstantesCustomAPI {
 
     //Suscripciones
     const val OBTENER_SUSCRIPCIONES = "/suscripciones"
+
+    //Mundo
+    const val OBTENER_MUNDOS = "/mundos"
 }

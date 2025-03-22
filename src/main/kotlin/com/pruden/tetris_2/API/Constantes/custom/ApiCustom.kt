@@ -1,10 +1,7 @@
 package com.pruden.tetris_2.API.Constantes.custom
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.pruden.tetris_2.API.Services.EstaPiezasService
-import com.pruden.tetris_2.API.Services.JugadorService
-import com.pruden.tetris_2.API.Services.PartitdaService
-import com.pruden.tetris_2.API.Services.SuscripcionesService
+import com.pruden.tetris_2.API.Services.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,5 +16,5 @@ object ApiCustom {
     val partidaService: PartitdaService = retrofitCustom.create(PartitdaService::class.java)
     val estaPiezasService: EstaPiezasService = retrofitCustom.create(EstaPiezasService::class.java)
     val suscripcionService: SuscripcionesService = retrofitCustom.create(SuscripcionesService::class.java)
-
+    val mundoService: MundoService = retrofitCustom.create(MundoService::class.java)
 }

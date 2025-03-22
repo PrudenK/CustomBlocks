@@ -1,6 +1,8 @@
 package com.pruden.tetris_2.Controladores.ModoCampa
 
+import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
 import com.pruden.tetris_2.Metodos.ModoCampa.Data.*
 import com.pruden.tetris_2.Metodos.ModoCampa.Dataº.cargarAccionesImageViewsNiveles
 import javafx.application.Platform
@@ -8,6 +10,7 @@ import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.Label
+import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.stage.Stage
 import java.net.URL
@@ -42,6 +45,12 @@ class ControladorMundos : ControladorGEN(), Initializable {
         cMundo1 = this
 
         cargarAccionesImageViewsNiveles()
+
+
+        nivel1.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[0].imagen}", true)
+
+        println("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[0].imagen}")
+        println(nivel1.image)
     }
 
 

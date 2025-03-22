@@ -22,3 +22,5 @@ val nivel1_9 =  Nivel("Mundo 1, Nivel 9",intArrayOf(0, 1, 17, 22, 27), 1500, 4, 
     -1, true, 2, true, 1, true, 12000, "/0:04:30", 24, 6)
 
 val listaNivelesMundo1 = listOf(nivel1_1, nivel1_2, nivel1_3, nivel1_4, nivel1_5, nivel1_6, nivel1_7, nivel1_8, nivel1_9)
+
+
