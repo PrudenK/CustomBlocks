@@ -199,6 +199,8 @@ class ControladorPrincipal : Initializable {
         println(listaMundosJugador)
         println(listaNivelesJugador)
         println(idNivelActual)
+
+        println(tiempoCaidaPieza)
     }
 
     @FXML fun salir() {
