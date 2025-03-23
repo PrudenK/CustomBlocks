@@ -37,4 +37,6 @@ object ConstantesCustomAPI {
 
     //Nivel jugador
     const val NIVEL_JUGADOR = "/nivelJugador/{id}"
+    const val COMPLETAR_NIVEL = "/completarNivel/{id}/{idNivel}"
+
 }

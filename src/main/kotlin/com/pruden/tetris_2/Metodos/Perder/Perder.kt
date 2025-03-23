@@ -8,7 +8,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
@@ -29,11 +28,11 @@ fun comprbarPerder(){
         }
 
 
-        subirDatosPerder()
+        subirDatosFinDePartida()
     }
 }
 
-fun subirDatosPerder(){
+fun subirDatosFinDePartida(){
     subirDatosPartida()
     sumarTipoPieza(ControladorPrincipal.piezaActual)
     subirTodoEstaPiezas()

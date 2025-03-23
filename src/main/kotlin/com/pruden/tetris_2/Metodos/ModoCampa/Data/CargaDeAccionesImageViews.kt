@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.ModoCampa.Dataº
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
@@ -38,7 +39,10 @@ fun cargarAccionesImageViewsNiveles(){
             if(!nivelJugador.desbloqueado){
                 imgViewCadena.image = Image(ConstantesCustomAPI.IMAGEN_CADENA, true)
             }else{
-                imgViewCadena.setOnMouseClicked { cargarStageCargaYNivel(listaAux[i-1], cMundo1.stageMundo1) }
+                imgViewCadena.setOnMouseClicked {
+                    cargarStageCargaYNivel(listaAux[i-1], cMundo1.stageMundo1)
+                    idNivelActual = listaAux[i-1].idNivel
+                }
                 imgViewCadena.image = null
             }
 
@@ -58,9 +62,12 @@ fun cargarAccionesImageViewsMundos(){
 
             val mundoJugador = listaMundosJugador[i-1]
 
+
+            val listaNivelesJugadorDelMundo = listaNivelesJugador.filter { it.idMundo == i && it.completado}
+
             if(!mundoJugador.completado){
                 val grayscale = ColorAdjust().apply {
-                    saturation = -1.0
+                    saturation = -1.0 + (listaNivelesJugadorDelMundo.size.toDouble() / 9)
                 }
                 imgView.effect = grayscale
             }

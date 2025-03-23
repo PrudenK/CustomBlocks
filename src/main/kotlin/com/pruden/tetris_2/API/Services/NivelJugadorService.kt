@@ -2,10 +2,14 @@ package com.pruden.tetris_2.API.Services
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.NivelJugador
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface NivelJugadorService {
     @GET(ConstantesCustomAPI.NIVEL_JUGADOR)
     suspend fun getNivelesJugador(@Path("id") id : Int): MutableList<NivelJugador>
+
+    @FormUrlEncoded
+    @POST(ConstantesCustomAPI.COMPLETAR_NIVEL)
+    suspend fun completarNivel(@Field("tiempo") tiempo: String, @Field("puntuacion") puntuacion : Int,
+                               @Path("id") id: Int, @Path("idNivel") idNivel: Int)
 }
