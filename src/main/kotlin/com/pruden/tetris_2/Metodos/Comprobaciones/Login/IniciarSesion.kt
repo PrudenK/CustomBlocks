@@ -5,7 +5,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
-import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosMundos
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosModoCampa
 import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarSuscripciones
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
 import kotlinx.coroutines.CoroutineScope
@@ -29,7 +29,7 @@ fun iniciarSesionLogin(){
                             //TODO OOOOOOOOOOOOOOOOO
                             cargarSuscripciones()
 
-                            cargarDatosMundos()
+                            cargarDatosModoCampa()
 
                             cargarStagePrincipal()
                             ControladorPrincipal.jugarOnline = true

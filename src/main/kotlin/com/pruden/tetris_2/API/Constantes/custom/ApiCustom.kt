@@ -17,4 +17,5 @@ object ApiCustom {
     val estaPiezasService: EstaPiezasService = retrofitCustom.create(EstaPiezasService::class.java)
     val suscripcionService: SuscripcionesService = retrofitCustom.create(SuscripcionesService::class.java)
     val mundoService: MundoService = retrofitCustom.create(MundoService::class.java)
+    val nivelService: NivelService = retrofitCustom.create(NivelService::class.java)
 }

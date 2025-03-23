@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.ModoCampa.CargarNivel
 
+import com.pruden.tetris_2.API.ObjsAux.Nivel
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
@@ -10,28 +11,27 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero
 import com.pruden.tetris_2.Metodos.BorrarPiezas.objLineasNivel
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
-import com.pruden.tetris_2.Metodos.ModoCampa.Nivel
 import com.pruden.tetris_2.Metodos.Modos.cargarPosicionesPiezasModos
 
 fun cargarNivel(nivel: Nivel){
     with(cPrin) {
         with(nivel) {
             mundoNivel.text = nivel.nombre
-            ControladorCustomPiezas.listaPiezasSeleccionadas = cargarPosicionesPiezasModos(piezasDisponiblesPosiciones)
+            ControladorCustomPiezas.listaPiezasSeleccionadas = cargarPosicionesPiezasModos(getPiezas().toIntArray())
 
             ControladorPrincipal.TIEMPO_CAIDA_PIEZAS_INICIAL = tiempoCaidaInicial
-            ControladorPrincipal.LINEAS_POR_NIVEL = lineasParaAumento
+            ControladorPrincipal.LINEAS_POR_NIVEL = lienasParaAumentar
 
             ControladorPrincipal.REDUCCION_TIEMPO_POR_NIVEL = saltoDeTiempoPorLineas
 
             ControladorPrincipal.LIMITE_ROTACIONES_B = limiteRotacionesB
             if (ControladorPrincipal.LIMITE_ROTACIONES_B) ControladorPrincipal.LIMITE_ROTACIONES = limiteRotacionesNum
 
-            ControladorPrincipal.holdActivo = holdActivoNivel
+            ControladorPrincipal.holdActivo = holdActivado
 
 
 
-            ControladorPrincipal.siguientesPiezaActivo = siguientesDisponibles
+            ControladorPrincipal.siguientesPiezaActivo = siguientesDisponibles == 1
 
             ControladorPrincipal.tipoTableroPrin = tipoTablero
 

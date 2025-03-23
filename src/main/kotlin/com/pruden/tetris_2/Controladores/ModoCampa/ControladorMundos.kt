@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Controladores.ModoCampa
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
 import com.pruden.tetris_2.Metodos.ModoCampa.Data.*
 import com.pruden.tetris_2.Metodos.ModoCampa.Dataº.cargarAccionesImageViewsNiveles
 import javafx.application.Platform
@@ -31,9 +32,6 @@ class ControladorMundos : ControladorGEN(), Initializable {
     @FXML lateinit var nivel9 : ImageView
 
     @FXML lateinit var labelNumMundo: Label
-
-    val listaNivelesMundos = listOf(listaNivelesMundo1, listaNivelesMundo2, listaNivelesMundo3, listaNivelesMundo4,
-        listaNivelesMundo5, listaNivelesMundo6, listaNivelesMundo7, listaNivelesMundo8, listaNivelesMundo9)
 
     companion object{
         lateinit var cMundo1: ControladorMundos
@@ -67,8 +65,10 @@ class ControladorMundos : ControladorGEN(), Initializable {
         Platform.runLater {
             val listaImageView = listOf(nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9)
 
-            for (i in imagenesMundo1.indices){
-                listaImageView[i].image = listaImagenesMundos[mundoActual][i]
+            val listaNivelesAux = listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
+
+            for (i in listaNivelesAux.indices){
+                listaImageView[i].image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaNivelesAux[i].imagen}")
             }
         }
     }

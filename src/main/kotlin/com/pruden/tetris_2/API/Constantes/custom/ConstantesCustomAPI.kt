@@ -25,4 +25,8 @@ object ConstantesCustomAPI {
 
     //Mundo
     const val OBTENER_MUNDOS = "/mundos"
+
+    // Nivel
+    const val OBTENER_NIVELES = "/niveles"
+
 }

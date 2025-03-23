@@ -1,10 +1,10 @@
 package com.pruden.tetris_2.Controladores
 
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
-import com.pruden.tetris_2.API.ObjsAux.Mundos
+import com.pruden.tetris_2.API.ObjsAux.Mundo
+import com.pruden.tetris_2.API.ObjsAux.Nivel
 import com.pruden.tetris_2.API.ObjsAux.Suscripcion
 import com.pruden.tetris_2.Constantes.Globales
-import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarSuscripciones
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
@@ -153,7 +153,8 @@ class ControladorPrincipal : Initializable {
         var nivelCompletado = false
 
         var listaSuscripciones = mutableListOf<Suscripcion>()
-        var listaMundos = mutableListOf<Mundos>()
+        var listaMundos = mutableListOf<Mundo>()
+        var listaNiveles = mutableListOf<Nivel>()
     }
 
 
@@ -192,6 +193,7 @@ class ControladorPrincipal : Initializable {
         println(ApiPublicidad.anuncios)
         println(listaSuscripciones)
         println(listaMundos)
+        println(listaNiveles)
     }
 
     @FXML fun salir() {

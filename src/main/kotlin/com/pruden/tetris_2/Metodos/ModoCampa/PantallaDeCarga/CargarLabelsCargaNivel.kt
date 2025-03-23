@@ -1,18 +1,18 @@
 package com.pruden.tetris_2.Metodos.ModoCampa.PantallaDeCarga
 
+import com.pruden.tetris_2.API.ObjsAux.Nivel
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorCargarNivel.Companion.cCargarNivel
-import com.pruden.tetris_2.Metodos.ModoCampa.Nivel
 
 
-lateinit var nivel : Nivel
+lateinit var nivelModoCampa : Nivel
 
 fun cargarLabelsCargaNivel(){
-    with(nivel){
+    with(nivelModoCampa){
         with(cCargarNivel){
             tituloLabel.text = nombre
             caidaInicialLabel.text = tiempoCaidaInicial.toString()
             saltoTiempoLabel.text = saltoDeTiempoPorLineas.toString()
-            saltoTiempoLineasLabel.text = lineasParaAumento.toString()
+            saltoTiempoLineasLabel.text = lienasParaAumentar.toString()
             limiteRotacionesLabel.text = limiteRotaciones()
             holdLabel.text = holdTxt()
             tamaTableroLabel.text= tableroTxt()
