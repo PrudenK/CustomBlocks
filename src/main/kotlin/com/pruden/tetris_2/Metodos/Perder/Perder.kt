@@ -14,6 +14,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timeline
 import com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel.perderNivelModoCampa
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
+import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelPerdido
 
 fun comprbarPerder(){
     if (verificarPerdida()) {
@@ -23,6 +24,7 @@ fun comprbarPerder(){
 
         if(nivelEnJuego){
             perderNivelModoCampa()
+            subirDatosNivelPerdido()
         }else{
             crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 232.0, null, 0, -120))
         }

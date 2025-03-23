@@ -12,4 +12,7 @@ interface NivelJugadorService {
     @POST(ConstantesCustomAPI.COMPLETAR_NIVEL)
     suspend fun completarNivel(@Field("tiempo") tiempo: String, @Field("puntuacion") puntuacion : Int,
                                @Path("id") id: Int, @Path("idNivel") idNivel: Int)
+
+    @POST(ConstantesCustomAPI.NIVEL_PERDIDO)
+    suspend fun perderNivel(@Path("id") id: Int, @Path("idNivel") idNivel: Int)
 }

@@ -29,3 +29,9 @@ fun subirDatosNivelCompeltado(){
         }
     }
 }
+
+fun subirDatosNivelPerdido(){
+    CoroutineScope(Dispatchers.IO).launch {
+        ApiCustom.nivelJugadorService.perderNivel(idJugador, idNivelActual)
+    }
+}
