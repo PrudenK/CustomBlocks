@@ -3,6 +3,9 @@ package com.pruden.tetris_2.API.Constantes.custom
 object ConstantesCustomAPI {
     const val PATH_CUSTOM = "http://localhost:8088"
 
+    //Imagen cadena
+    const val IMAGEN_CADENA = "$PATH_CUSTOM/uploads/images/cadena.png"
+
     //Jugadores
     const val CREAR_JUGADOR = "/crearJugador"
     const val TODOS_JUGADORES = "/jugadores"
@@ -29,4 +32,6 @@ object ConstantesCustomAPI {
     // Nivel
     const val OBTENER_NIVELES = "/niveles"
 
+    //Mundo jugador
+    const val MUNDO_JUGADOR = "/mundoJugador/{id}"
 }
