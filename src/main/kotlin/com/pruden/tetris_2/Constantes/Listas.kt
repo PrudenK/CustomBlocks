@@ -5,7 +5,7 @@ import com.pruden.tetris_2.Piezas.*
 object Listas {
     val LISTA_MODOS_DE_JUEGOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY")
 
-    val LISTA_MODOS_CON_TODOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY", "Todos")
+    val LISTA_MODOS_CON_TODOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY","Campaña", "Todos")
 
     val LISTA_FILTRARDOS = listOf("Fecha", "Nivel", "Lineas", "Puntuación", "Tiempo")
 
