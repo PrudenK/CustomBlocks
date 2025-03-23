@@ -4,6 +4,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNivelesJugador
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa.Companion.cModoCampa
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.mundoActual
@@ -17,10 +18,31 @@ import javafx.scene.image.ImageView
 
 fun cargarAccionesImageViewsNiveles(){
     Platform.runLater{
+        val listaAux = listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
+        val listaAuxNivelJugador = listaNivelesJugador.filter { it.idMundo == mundoActual+1}
+
         for (i in 1 .. 9){
             val imgView = cMundo1.stageMundo1.scene.lookup("#nivel$i") as ImageView
-            val listaAux = listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
-            imgView.setOnMouseClicked { cargarStageCargaYNivel(listaAux[i-1], cMundo1.stageMundo1) }
+            val imgViewCadena = cMundo1.stageMundo1.scene.lookup("#cadenaNivel$i") as ImageView
+
+
+            val nivelJugador = listaAuxNivelJugador[i-1]
+
+            if(!nivelJugador.completado){
+                val grayscale = ColorAdjust().apply {
+                    saturation = -1.0
+                }
+                imgView.effect = grayscale
+            }
+
+            if(!nivelJugador.desbloqueado){
+                imgViewCadena.image = Image(ConstantesCustomAPI.IMAGEN_CADENA, true)
+            }else{
+                imgViewCadena.setOnMouseClicked { cargarStageCargaYNivel(listaAux[i-1], cMundo1.stageMundo1) }
+                imgViewCadena.image = null
+            }
+
+
         }
         println(mundoActual)
     }
@@ -49,9 +71,6 @@ fun cargarAccionesImageViewsMundos(){
                 imgViewCadena.setOnMouseClicked {abrirMundo(i) }
                 imgViewCadena.image = null
             }
-
-
-
         }
     }
 }

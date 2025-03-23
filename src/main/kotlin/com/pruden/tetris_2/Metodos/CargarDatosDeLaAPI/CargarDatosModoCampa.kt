@@ -5,6 +5,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugado
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNivelesJugador
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,5 +15,6 @@ fun cargarDatosModoCampa(){
         listaMundos = ApiCustom.mundoService.getAllMundos().toMutableList()
         listaNiveles = ApiCustom.nivelService.getAllNiveles().toMutableList()
         listaMundosJugador = ApiCustom.mundoJugadorService.getMundosDelJugador(idJugador)
+        listaNivelesJugador = ApiCustom.nivelJugadorService.getNivelesJugador(idJugador)
     }
 }

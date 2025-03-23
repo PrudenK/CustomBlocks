@@ -20,4 +20,5 @@ object ApiCustom {
     val mundoService: MundoService = retrofitCustom.create(MundoService::class.java)
     val nivelService: NivelService = retrofitCustom.create(NivelService::class.java)
     val mundoJugadorService: MundoJugadorService = retrofitCustom.create(MundoJugadorService::class.java)
+    val nivelJugadorService: NivelJugadorService = retrofitCustom.create(NivelJugadorService::class.java)
 }

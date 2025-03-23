@@ -34,4 +34,7 @@ object ConstantesCustomAPI {
 
     //Mundo jugador
     const val MUNDO_JUGADOR = "/mundoJugador/{id}"
+
+    //Nivel jugador
+    const val NIVEL_JUGADOR = "/nivelJugador/{id}"
 }
