@@ -5,6 +5,7 @@ import com.pruden.tetris_2.API.ObjsAux.LogroJugador
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.effect.ColorAdjust
+import javafx.scene.effect.GaussianBlur
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 
@@ -24,6 +25,11 @@ class ControladorItemLogro {
                 val grayscale = ColorAdjust().apply {
                     saturation = -1.0
                 }
+
+                val blur = GaussianBlur(5.0)
+
+                grayscale.input = blur
+
                 iconoLogro.effect = grayscale
             }
         }

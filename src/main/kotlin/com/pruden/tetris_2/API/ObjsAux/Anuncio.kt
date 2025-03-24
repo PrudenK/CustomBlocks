@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.Publicidad
+package com.pruden.tetris_2.API.ObjsAux
 
 data class Anuncio(
     var id: Int,
