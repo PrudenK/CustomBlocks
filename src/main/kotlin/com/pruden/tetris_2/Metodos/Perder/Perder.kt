@@ -37,8 +37,12 @@ fun comprbarPerder(){
                     completarLogro(Logros.NOVATO)
                 }
 
-                if(numeroPartidasClasicas == 15){
+                if(numeroPartidasClasicas == 100){
                     completarLogro(Logros.AFICIONADO)
+                }
+
+                if(numeroPartidasClasicas == 500){
+                    completarLogro(Logros.MAQUINON)
                 }
             }
 
