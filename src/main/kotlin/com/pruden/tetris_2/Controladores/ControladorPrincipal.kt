@@ -159,7 +159,7 @@ class ControladorPrincipal : Initializable {
         var listaLogrosJugador = mutableListOf<LogroJugador>()
 
         var numeroPartidasClasicas = -1
-        var numeroLineas = -1
+        var numeroLineasAcumuladas = -1
         var puntuacionAcumulada = -1
 
         var idNivelActual = -1
@@ -212,7 +212,7 @@ class ControladorPrincipal : Initializable {
         println(listaLogrosJugador)
 
         println(numeroPartidasClasicas)
-        println(numeroLineas)
+        println(numeroLineasAcumuladas)
         println(puntuacionAcumulada)
 
 
