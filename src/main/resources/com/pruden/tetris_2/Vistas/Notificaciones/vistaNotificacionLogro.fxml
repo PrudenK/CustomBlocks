@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="257.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Notificaciones.NotificacionController">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+   <children>
+      <ImageView fx:id="imagenLogro" fitHeight="65.0" fitWidth="65.0" layoutX="184.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="nombreLogro" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="23.0" prefHeight="35.0" prefWidth="176.0" text="¡Logro conseguido!" textAlignment="CENTER" textFill="#e9e8e8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+
+</Pane>

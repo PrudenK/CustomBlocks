@@ -10,6 +10,7 @@ import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
+import com.pruden.tetris_2.Metodos.Stages.cargarStageNotificacionLogro
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
@@ -209,6 +210,8 @@ class ControladorPrincipal : Initializable {
         println(listaLogrosJugador)
 
         println(numeroPartidasClasicas)
+
+        cargarStageNotificacionLogro(Stage(), listaLogrosJugador[0])
     }
 
     @FXML fun salir() {
