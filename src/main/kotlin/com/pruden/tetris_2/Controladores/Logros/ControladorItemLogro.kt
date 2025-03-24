@@ -15,8 +15,7 @@ class ControladorItemLogro {
 
     fun setDataLogroJugador(logro: LogroJugador) {
         with(logro){
-            iconoLogro.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}/uploads/mund1/Nivel_1_1.jpg")
-            //iconoLogro.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}$imagen")
+            iconoLogro.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}$imagen")
             tituloLogro.text = titulo
 
 

@@ -155,6 +155,7 @@ class ControladorPrincipal : Initializable {
         var listaNiveles = mutableListOf<Nivel>()
         var listaMundosJugador = mutableListOf<MundoJugador>()
         var listaNivelesJugador = mutableListOf<NivelJugador>()
+        var listaLogrosJugador = mutableListOf<LogroJugador>()
 
         var idNivelActual = -1
     }
@@ -201,6 +202,9 @@ class ControladorPrincipal : Initializable {
         println(idNivelActual)
 
         println(tiempoCaidaPieza)
+
+
+        println(listaLogrosJugador)
     }
 
     @FXML fun salir() {

@@ -39,4 +39,7 @@ object ConstantesCustomAPI {
     const val NIVEL_JUGADOR = "/nivelJugador/{id}"
     const val COMPLETAR_NIVEL = "/completarNivel/{id}/{idNivel}"
     const val NIVEL_PERDIDO = "/nivelPerdido/{id}/{idNivel}"
+
+    // Logros del juagdor
+    const val LOGROS_DEL_JUGADOR = "/logros/{id}"
 }

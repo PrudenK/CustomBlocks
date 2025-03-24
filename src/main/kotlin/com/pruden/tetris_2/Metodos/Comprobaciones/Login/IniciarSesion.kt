@@ -5,6 +5,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosDelJugador
 import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosModoCampa
 import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarSuscripciones
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
@@ -30,6 +31,8 @@ fun iniciarSesionLogin(){
                             cargarSuscripciones()
 
                             cargarDatosModoCampa()
+
+                            cargarDatosDelJugador()
 
                             cargarStagePrincipal()
                             ControladorPrincipal.jugarOnline = true
