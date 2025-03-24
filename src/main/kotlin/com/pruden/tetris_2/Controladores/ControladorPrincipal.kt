@@ -222,6 +222,6 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun logros(){
-
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Logros/vistaLogros.fxml", nuevaPartidaB, 676.0, 727.0, timelinePartida, 0, 0))
     }
 }
