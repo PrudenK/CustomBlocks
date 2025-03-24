@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Constantes
 
+import com.pruden.tetris_2.API.ObjsAux.LogroJugador
 import javafx.scene.paint.Color
 
 object Globales {
@@ -14,4 +15,8 @@ object Globales {
     var FILAS = 20
     var COLUMNAS = 10
     var TAMANO_CELDA =33
+
+    val colaLogros: ArrayDeque<LogroJugador> = ArrayDeque()
+    var mostrandoNotificacion = false
+
 }
