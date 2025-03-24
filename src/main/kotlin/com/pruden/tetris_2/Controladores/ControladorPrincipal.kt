@@ -160,6 +160,7 @@ class ControladorPrincipal : Initializable {
 
         var numeroPartidasClasicas = -1
         var numeroLineas = -1
+        var puntuacionAcumulada = -1
 
         var idNivelActual = -1
     }
@@ -212,7 +213,7 @@ class ControladorPrincipal : Initializable {
 
         println(numeroPartidasClasicas)
         println(numeroLineas)
-
+        println(puntuacionAcumulada)
 
 
         cargarStageNotificacionLogro(Stage(), listaLogrosJugador[0])

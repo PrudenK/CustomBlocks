@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLog
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numLineas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puntuacionAcumulada
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,5 +16,6 @@ fun cargarDatosDelJugador(){
         listaLogrosJugador = ApiCustom.logroService.getLogrosDelJugador(idJugador).toMutableList()
         numeroPartidasClasicas = ApiCustom.partidaService.getNumPartidasClasicas(idJugador).body()!!
         numeroLineas = ApiCustom.partidaService.getNumLineas(idJugador)
+        puntuacionAcumulada = ApiCustom.partidaService.getNumPuntos(idJugador)
     }
 }

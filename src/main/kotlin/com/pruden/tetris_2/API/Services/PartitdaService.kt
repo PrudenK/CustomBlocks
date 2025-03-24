@@ -30,4 +30,7 @@ interface PartitdaService {
 
     @GET(ConstantesCustomAPI.NUM_LINEAS)
     suspend fun getNumLineas(@Path("id") id: Int): Int
+
+    @GET(ConstantesCustomAPI.NUM_PUNTOS)
+    suspend fun getNumPuntos(@Path("id") id: Int): Int
 }
