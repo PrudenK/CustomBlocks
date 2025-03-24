@@ -9,41 +9,40 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="936.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Rankings.ControladorRankings">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="731.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Rankings.ControladorRankings">
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
         <URL value="@../../styles/partidaVista.css" />
     </stylesheets>
     <children>
-        <TableView fx:id="tableView" layoutX="30.0" layoutY="169.0" prefHeight="431.0" prefWidth="872.0">
+        <TableView fx:id="tableView" layoutX="35.0" layoutY="138.0" prefHeight="393.0" prefWidth="661.0">
             <columns>
-                <TableColumn fx:id="nombre" prefWidth="154.0" text="Nombre" />
-                <TableColumn fx:id="nivelUser" prefWidth="102.0" text="Nivel Usuario" />
-                <TableColumn fx:id="nivelPartida" prefWidth="105.0" text="Nivel Partida" />
-                <TableColumn fx:id="lineas" prefWidth="67.0" text="Lineas" />
+                <TableColumn fx:id="nombre" prefWidth="146.0" text="Nombre" />
+                <TableColumn fx:id="nivelPartida" prefWidth="98.0" text="Nivel" />
+                <TableColumn fx:id="lineas" prefWidth="84.0" text="Lineas" />
             <TableColumn fx:id="puntu" prefWidth="97.0" text="Puntuación" />
-            <TableColumn fx:id="tiempoPartida" prefWidth="170.0" text="Tiempo de partida" />
-            <TableColumn fx:id="pais" prefWidth="152.0" text="Pais" />
+            <TableColumn fx:id="tiempoPartida" prefWidth="82.0" text="Tiempo" />
+            <TableColumn fx:id="pais" prefWidth="113.0" text="Pais" />
             </columns>
         </TableView>
-        <Label layoutX="165.0" layoutY="38.0" prefHeight="27.0" prefWidth="618.0" text="Bienvenido a los rankings donde aparecen los mejores jugadores del mundo" textFill="#fcfcfc">
+        <Button layoutX="328.0" layoutY="544.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+        <ComboBox fx:id="comboModo" layoutX="174.0" layoutY="88.0" prefWidth="150.0" />
+        <Label layoutX="74.0" layoutY="90.0" text="Por modo" textFill="#e9e8e8">
             <font>
-                <Font size="18.0" />
+                <Font name="Liberation Mono Bold" size="18.0" />
             </font>
         </Label>
-        <Button layoutX="454.0" layoutY="616.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
-        <ComboBox fx:id="comboModo" layoutX="162.0" layoutY="120.0" prefWidth="150.0" />
-        <Label layoutX="30.0" layoutY="120.0" text="Filtrar por modo" textFill="WHITE">
+        <Label layoutX="408.0" layoutY="90.0" text="Por pais" textFill="#e9e8e8">
             <font>
-                <Font size="16.0" />
+                <Font name="Liberation Mono Bold" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="372.0" layoutY="120.0" text="Filtrar por pais" textFill="WHITE">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Label>
-        <ComboBox fx:id="comboPais" layoutX="485.0" layoutY="120.0" prefWidth="150.0" />
+        <ComboBox fx:id="comboPais" layoutX="508.0" layoutY="88.0" prefWidth="150.0" />
+      <Label layoutX="119.0" layoutY="29.0" text="Ranking de las mejores partidas" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="26.0" />
+         </font>
+      </Label>
     </children>
 </Pane>

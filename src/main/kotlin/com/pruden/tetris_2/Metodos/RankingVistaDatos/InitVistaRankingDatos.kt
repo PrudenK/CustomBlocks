@@ -28,7 +28,6 @@ fun initRankingDatos(){
         }
 
         nombre.cellValueFactory = PropertyValueFactory("nombre")
-        nivelUser.cellValueFactory = PropertyValueFactory("nivelJugador")
         nivelPartida.cellValueFactory = PropertyValueFactory("nivelPartida")
         lineas.cellValueFactory = PropertyValueFactory("lineas")
         puntu.cellValueFactory = PropertyValueFactory("puntuacion")

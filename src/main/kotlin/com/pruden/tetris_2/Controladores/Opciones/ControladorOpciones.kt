@@ -46,7 +46,7 @@ class ControladorOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun rankings(){
-        crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", sonidoo_B, 936.0, 675.0, timelinePartida, 0, 0))
+        crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", sonidoo_B, 731.0, 600.0, timelinePartida, 0, 0))
     }
 
     override fun setStage(stage: Stage?) {

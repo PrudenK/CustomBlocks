@@ -29,9 +29,12 @@
     -fx-background-color: #4b4b4b; /* Fondo gris oscuro para filas impares */
 }
 
+.table-view .table-cell .text {
+    -fx-fill: #cccccc;
+}
+
 .table-view .table-row-cell:selected {
     -fx-background-color: #6c6c6c; /* Fondo gris intermedio al seleccionar */
-    -fx-text-fill: white; /* Texto blanco */
 }
 
 .table-view .table-cell {
@@ -43,7 +46,8 @@
 }
 
 .table-view .column-header .label {
-    -fx-text-fill: white; /* Texto blanco */
+    -fx-text-fill: #e9e8e8; /* Texto blanco */
+    -fx-font-family: "Liberation Mono";
 }
 
 .table-view .focus-indicator {

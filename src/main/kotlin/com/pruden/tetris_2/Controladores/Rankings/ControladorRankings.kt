@@ -21,7 +21,6 @@ class ControladorRankings: ControladorGEN(), Initializable {
     @FXML lateinit var tableView: TableView<JugadorRanking>
 
     @FXML lateinit var nombre: TableColumn<JugadorRanking, String>
-    @FXML lateinit var nivelUser: TableColumn<JugadorRanking, Int>
     @FXML lateinit var nivelPartida: TableColumn<JugadorRanking, Int>
     @FXML lateinit var lineas: TableColumn<JugadorRanking, Int>
     @FXML lateinit var puntu: TableColumn<JugadorRanking, Int>
@@ -38,6 +37,8 @@ class ControladorRankings: ControladorGEN(), Initializable {
     }
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cRanking = this
+        tableView.columnResizePolicy = TableView.CONSTRAINED_RESIZE_POLICY;
+
         initRankingDatos()
     }
 
