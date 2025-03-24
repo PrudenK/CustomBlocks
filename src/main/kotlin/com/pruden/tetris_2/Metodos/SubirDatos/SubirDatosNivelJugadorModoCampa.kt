@@ -5,8 +5,8 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundosJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNivelesJugador
+import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,6 +26,8 @@ fun subirDatosNivelCompeltado(){
         if(idNivelActual % 9 == 0){
             listaMundosJugador[idNivelActual / 9].desbloqueado = true
             listaMundosJugador[(idNivelActual / 9)-1].completado = true
+
+            completarLogro(idNivelActual / 9)
         }
     }
 }

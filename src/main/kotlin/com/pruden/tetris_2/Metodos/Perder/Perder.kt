@@ -8,9 +8,12 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel.perderNivelModoCampa
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -26,6 +29,18 @@ fun comprbarPerder(){
             perderNivelModoCampa()
             subirDatosNivelPerdido()
         }else{
+            if(cPrin.labelModo.text == "Clásico"){
+                numeroPartidasClasicas++
+                println(numeroPartidasClasicas)
+                if(numeroPartidasClasicas == 10){
+                    completarLogro(11)
+                }
+
+                if(numeroPartidasClasicas == 15){
+                    completarLogro(10)
+                }
+            }
+
             crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 232.0, null, 0, -120))
         }
 

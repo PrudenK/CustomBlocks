@@ -18,6 +18,7 @@ object ConstantesCustomAPI {
     const val ESTA_MODOS_PARTIDA = "/estadisticasModos/{idJugador}/{modo}"
     const val MEJORES_PARTIDAS = "/mejoresPartidas/{pais}/{modo}"
     const val PARTIDAS_DEL_JUGADOR = "/partidasDelJugador/{idJugador}/{modo}"
+    const val NUM_PARTIDAS_CLASICAS = "/numPartidasClasicas/{id}"
 
     //EstaPiezas
     const val SUBIR_ESTA_PIEZAS = "/subirEstaPiezas"
@@ -42,4 +43,5 @@ object ConstantesCustomAPI {
 
     // Logros del juagdor
     const val LOGROS_DEL_JUGADOR = "/logros/{id}"
+    const val COMPLETAR_LOGRO = "/logros/{id}/{idJugador}"
 }
