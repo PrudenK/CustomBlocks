@@ -159,6 +159,7 @@ class ControladorPrincipal : Initializable {
         var listaLogrosJugador = mutableListOf<LogroJugador>()
 
         var numeroPartidasClasicas = -1
+        var numeroLineas = -1
 
         var idNivelActual = -1
     }
@@ -210,6 +211,9 @@ class ControladorPrincipal : Initializable {
         println(listaLogrosJugador)
 
         println(numeroPartidasClasicas)
+        println(numeroLineas)
+
+
 
         cargarStageNotificacionLogro(Stage(), listaLogrosJugador[0])
     }

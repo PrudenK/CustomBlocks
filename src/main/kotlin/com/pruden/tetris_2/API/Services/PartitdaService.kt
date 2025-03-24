@@ -27,4 +27,7 @@ interface PartitdaService {
 
     @GET(ConstantesCustomAPI.NUM_PARTIDAS_CLASICAS)
     suspend fun getNumPartidasClasicas(@Path("id") id: Int): Response<Int>
+
+    @GET(ConstantesCustomAPI.NUM_LINEAS)
+    suspend fun getNumLineas(@Path("id") id: Int): Int
 }
