@@ -79,7 +79,7 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     @FXML fun volver() = stagePerfil.close()
 
     @FXML fun registroPartidas(){
-        crearStage(ClaseStage("Vistas/Partidas/vista_Partidas.fxml", verPiezasB, 658.0, 675.0, timelinePartida, 0, 0))
+        crearStage(ClaseStage("Vistas/Partidas/vista_Partidas.fxml", verPiezasB, 699.0, 634.0, timelinePartida, 0, 0))
     }
 
     override fun setStage(stage: Stage?) {
