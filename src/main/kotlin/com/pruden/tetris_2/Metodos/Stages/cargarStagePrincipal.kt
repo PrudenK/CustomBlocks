@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Metodos.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
 import com.pruden.tetris_2.Metodos.Teclado.moverPiezas
+import com.pruden.tetris_2.Metodos.Teclado.onKeyReleased
 import com.pruden.tetris_2.Tetris
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
@@ -29,6 +30,7 @@ fun cargarStagePrincipal(){
     stage.show()
 
     scene.addEventFilter(KeyEvent.KEY_PRESSED) { event -> moverPiezas(event) }
+    scene.setOnKeyReleased { onKeyReleased(it) }
 
     ControladorPrincipal.stagePrincipal = stage
 

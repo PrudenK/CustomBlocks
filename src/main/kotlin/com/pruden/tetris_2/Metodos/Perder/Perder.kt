@@ -4,6 +4,7 @@ import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosPartida
 import com.pruden.tetris_2.Metodos.SubirDatos.subirTodoEstaPiezas
 import com.pruden.tetris_2.Metodos.SubirDatos.sumarTipoPieza
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
@@ -33,11 +34,11 @@ fun comprbarPerder(){
                 numeroPartidasClasicas++
                 println(numeroPartidasClasicas)
                 if(numeroPartidasClasicas == 10){
-                    completarLogro(11)
+                    completarLogro(Logros.NOVATO)
                 }
 
                 if(numeroPartidasClasicas == 15){
-                    completarLogro(10)
+                    completarLogro(Logros.AFICIONADO)
                 }
             }
 
