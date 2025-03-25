@@ -48,4 +48,7 @@ object ConstantesCustomAPI {
     // Logros del juagdor
     const val LOGROS_DEL_JUGADOR = "/logros/{id}"
     const val COMPLETAR_LOGRO = "/logros/{id}/{idJugador}"
+
+    //Clan
+    const val CREAR_CLAN = "/crearClan"
 }

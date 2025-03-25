@@ -5,6 +5,9 @@ import java.util.Date
 data class Clan(
     val idClan: Int,
     val nombre: String,
-    val fechaInit: Date,
-    val idLider: Int
+    val fechaInit: Date = Date(),
+    val idLider: Int,
+    var imagen: String,
+    var descripcion: String,
+    var ubicacion: String
 )

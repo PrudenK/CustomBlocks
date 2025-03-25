@@ -49,9 +49,9 @@
             <Font name="Liberation Mono Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="crear" layoutX="274.0" layoutY="479.0" mnemonicParsing="false" prefWidth="120.0" text="Crear Clan" />
-      <Button fx:id="volver" layoutX="72.0" layoutY="479.0" mnemonicParsing="false" prefWidth="120.0" text="Volver" />
-      <Label fx:id="labelError" alignment="CENTER" layoutX="91.0" layoutY="436.0" prefHeight="24.0" prefWidth="285.0" textAlignment="CENTER" textFill="#9a1111">
+      <Button layoutX="274.0" layoutY="479.0" mnemonicParsing="false" onAction="#crear" prefWidth="120.0" text="Crear Clan" />
+      <Button layoutX="72.0" layoutY="479.0" mnemonicParsing="false" onAction="#volver" prefWidth="120.0" text="Volver" />
+      <Label fx:id="labelError" alignment="CENTER" layoutX="61.0" layoutY="436.0" prefHeight="24.0" prefWidth="342.0" textAlignment="CENTER" textFill="#67a8f2">
          <font>
             <Font name="Liberation Mono Bold" size="16.0" />
          </font>
