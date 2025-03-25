@@ -26,4 +26,7 @@ interface ClanService {
 
     @GET(ConstantesCustomAPI.DATOS_DE_UN_CLAN)
     suspend fun getDatosDeUnClan(@Path("id") id: Int): Clan
+
+    @GET(ConstantesCustomAPI.TODOS_LOS_CLANES)
+    suspend fun getTodosLosClanes(): List<Clan>
 }
