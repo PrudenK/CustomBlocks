@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Clan
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
@@ -13,7 +14,9 @@ class ControladorOpcionesClan : ControladorGEN() {
 
 
     @FXML fun miClan(){
-
+        if(idClanDelJugador != -1){
+            crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 625.0, null, 0, 0))
+        }
     }
 
     @FXML fun buscarClan(){
@@ -21,7 +24,11 @@ class ControladorOpcionesClan : ControladorGEN() {
     }
 
     @FXML fun crearClan(){
-        crearStage(ClaseStage("Vistas/Clan/vistaCrearClan.fxml", cPrin.nuevaPartidaB, 466.0, 539.0, null, 0, 0))
+        if(idClanDelJugador == -1){
+            crearStage(ClaseStage("Vistas/Clan/vistaCrearClan.fxml", cPrin.nuevaPartidaB, 466.0, 539.0, null, 0, 0))
+        }else{
+
+        }
     }
 
 

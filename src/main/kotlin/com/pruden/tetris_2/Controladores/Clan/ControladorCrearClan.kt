@@ -46,7 +46,7 @@ class ControladorCrearClan: ControladorGEN(), Initializable {
         }
 
         descripClan.textFormatter = TextFormatter<String> { change ->
-            if (change.controlNewText.length <= 75) change else null
+            if (change.controlNewText.length <= 200) change else null
         }
 
         fotoClan.setOnMouseClicked {
