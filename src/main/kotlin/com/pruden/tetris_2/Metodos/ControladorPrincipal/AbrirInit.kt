@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Metodos.ControladorPrincipal
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.logroZZZ
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
@@ -48,6 +49,7 @@ private fun cargarArrastrar(){
 private fun cargarObervablesInit(){
     cargarObervableCerrarStageAltF4()
     cargarObervableNivel()
+    logroZZZ = false
 }
 
 private fun cargarMusicaInit(){

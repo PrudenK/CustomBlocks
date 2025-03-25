@@ -17,9 +17,6 @@ fun cargarObersvablePiezas(){
                 )
             }
 
-
-            
-
             val configZZZ = List(48) { false }.toMutableList().apply {
                 this[3] = true
                 this[13] = true
@@ -27,9 +24,6 @@ fun cargarObersvablePiezas(){
             }
 
             logroZZZ = ControladorCustomPiezas.listaPiezasSeleccionadas == configZZZ
-
-
-
 
             cargarPiezasEstandarSiChecksVacios()
             ControladorCustomOpciones.cambioPiezas = true
