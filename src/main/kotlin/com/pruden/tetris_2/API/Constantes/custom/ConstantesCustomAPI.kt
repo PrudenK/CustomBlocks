@@ -6,6 +6,9 @@ object ConstantesCustomAPI {
     //Imagen cadena
     const val IMAGEN_CADENA = "$PATH_CUSTOM/uploads/images/cadena.png"
 
+    //Clan por defecto
+    const val IMAGEN_CLAN_DEFAULT = "$PATH_CUSTOM/uploads/clanes/fotoPerfilClan.jpg"
+
     //Jugadores
     const val CREAR_JUGADOR = "/crearJugador"
     const val TODOS_JUGADORES = "/jugadores"
@@ -53,4 +56,5 @@ object ConstantesCustomAPI {
     //Clan
     const val CREAR_CLAN = "/crearClan"
     const val JUGADORES_DE_UN_CLAN = "/clan/{id}/jugadores"
+    const val DATOS_DE_UN_CLAN = "/clan/{id}"
 }

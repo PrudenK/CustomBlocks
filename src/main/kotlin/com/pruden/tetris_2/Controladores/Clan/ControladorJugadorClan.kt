@@ -18,6 +18,6 @@ class ControladorJugadorClan {
         nombre.text = jugador.nombre
         nivel.text = "Lv: ${jugador.nivel}"
         posicion.text = "#$pos"
-        fotoPerfil.image = Image(ConstantesCustomAPI.IMAGEN_CADENA, true)
+        fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.imagen}", true)
     }
 }
