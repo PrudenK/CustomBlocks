@@ -66,7 +66,7 @@ class ControladorPerfil : ControladorGEN(), Initializable {
         }
 
         editarPerfil.setOnMouseClicked {
-            subirImagenPerfilADB()
+            subirImagenPerfilADB("Seleccionar imagen de perfil", imagenPerfil)
         }
     }
 
