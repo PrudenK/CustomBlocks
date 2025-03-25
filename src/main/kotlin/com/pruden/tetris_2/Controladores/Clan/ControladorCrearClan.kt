@@ -57,37 +57,52 @@ class ControladorCrearClan: ControladorGEN(), Initializable {
 
 
     @FXML fun crear(){
-        CoroutineScope(Dispatchers.IO).launch {
-            val nombre = nombreClan.text
-            val descripcion = descripClan.text
-            val pais = comboPais.value
+        if(nombreClan.text.isNotBlank()){
+            if(descripClan.text.isNotBlank()){
+                if(comboPais.value != null){
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val nombre = nombreClan.text
+                        val descripcion = descripClan.text
+                        val pais = comboPais.value
 
-            val nombreRB = nombre.toRequestBody("text/plain".toMediaType())
-            val descripcionRB = descripcion.toRequestBody("text/plain".toMediaType())
-            val paisRB = pais.toRequestBody("text/plain".toMediaType())
-            val idLiderRB = idJugador.toString().toRequestBody("text/plain".toMediaType())
+                        val nombreRB = nombre.toRequestBody("text/plain".toMediaType())
+                        val descripcionRB = descripcion.toRequestBody("text/plain".toMediaType())
+                        val paisRB = pais.toRequestBody("text/plain".toMediaType())
+                        val idLiderRB = idJugador.toString().toRequestBody("text/plain".toMediaType())
 
-            val response = ApiCustom.clanService.crearClan(
-                fotoClanSeleccionada, nombreRB, descripcionRB, paisRB, idLiderRB
-            )
+                        val response = ApiCustom.clanService.crearClan(
+                            fotoClanSeleccionada, nombreRB, descripcionRB, paisRB, idLiderRB
+                        )
 
-            println(response.code())
-            println(response)
+                        println(response.code())
+                        println(response)
 
-            when(response.code()){
-                409 ->{
-                    javafx.application.Platform.runLater {
-                        labelError.textFill = Color.web("#9a1111")
-                        labelError.text = "Ya existe un clan con ese nombre"
+                        when(response.code()){
+                            409 ->{
+                                javafx.application.Platform.runLater {
+                                    labelError.textFill = Color.web("#9a1111")
+                                    labelError.text = "Ya existe un clan con ese nombre"
+                                }
+                            }
+                            201->{
+                                javafx.application.Platform.runLater {
+                                    labelError.textFill = Color.web("#67a8f2")
+                                    labelError.text = "Clan creado con éxito"
+                                }
+                            }
+                        }
                     }
+                }else{
+                    labelError.textFill = Color.web("#9a1111")
+                    labelError.text = "Selecciona una país"
                 }
-                201->{
-                    javafx.application.Platform.runLater {
-                        labelError.textFill = Color.web("#67a8f2")
-                        labelError.text = "Clan creado con éxito"
-                    }
-                }
+            }else{
+                labelError.textFill = Color.web("#9a1111")
+                labelError.text = "Descripción vacía"
             }
+        }else{
+            labelError.textFill = Color.web("#9a1111")
+            labelError.text = "Nombre en blanco"
         }
     }
 
