@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.Observables
 
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.logroZZZ
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
 import javafx.beans.property.SimpleBooleanProperty
@@ -15,6 +16,21 @@ fun cargarObersvablePiezas(){
                     checkBox.isSelected
                 )
             }
+
+
+            
+
+            val configZZZ = List(48) { false }.toMutableList().apply {
+                this[3] = true
+                this[13] = true
+                this[46] = true
+            }
+
+            logroZZZ = ControladorCustomPiezas.listaPiezasSeleccionadas == configZZZ
+
+
+
+
             cargarPiezasEstandarSiChecksVacios()
             ControladorCustomOpciones.cambioPiezas = true
             ControladorCustomPiezas.stageCustomPiezas.close()

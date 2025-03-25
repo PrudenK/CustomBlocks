@@ -3,11 +3,15 @@ package com.pruden.tetris_2.Controladores
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.API.ObjsAux.*
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Constantes.Logros
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
+import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
+import com.pruden.tetris_2.Metodos.ModoCampa.PantallaDeCarga.cargaProgressBarCargarNivel
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.cargarStageNotificacionLogro
@@ -161,6 +165,8 @@ class ControladorPrincipal : Initializable {
         var numeroPartidasClasicas = -1
         var numeroLineasAcumuladas = -1
         var puntuacionAcumulada = -1
+        var logroZZZ = false
+
 
         var idNivelActual = -1
     }
@@ -193,6 +199,9 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun partdiaNueva() {
         reiniciarPartida()
+        if(logroZZZ && !listaLogrosJugador.find { it.idLogro == Logros.ZZZ }!!.completado){
+            completarLogro(Logros.ZZZ)
+        }
     }
 
     @FXML fun borrar() {
@@ -215,8 +224,7 @@ class ControladorPrincipal : Initializable {
         println(numeroLineasAcumuladas)
         println(puntuacionAcumulada)
 
-
-        cargarStageNotificacionLogro(Stage(), listaLogrosJugador[0])
+        println(listaPiezasSeleccionadas)
     }
 
     @FXML fun salir() {

@@ -12,4 +12,5 @@ object Logros {
     const val PAR_DE_LINEAS = 17
     const val BASTANTES_RAYAS = 18
     const val MARADONA = 19
+    const val ZZZ = 20
 }
