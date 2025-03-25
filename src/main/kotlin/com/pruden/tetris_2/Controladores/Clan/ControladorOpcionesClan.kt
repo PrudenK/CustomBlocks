@@ -16,6 +16,8 @@ class ControladorOpcionesClan : ControladorGEN() {
     @FXML fun miClan(){
         if(idClanDelJugador != -1){
             crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 625.0, null, 0, 0))
+        }else{
+
         }
     }
 
@@ -31,7 +33,7 @@ class ControladorOpcionesClan : ControladorGEN() {
         }
     }
 
-
+    @FXML fun volver() = stageClanOpciones.close()
 
     override fun setStage(stage: Stage?) {
         stageClanOpciones = stage!!
