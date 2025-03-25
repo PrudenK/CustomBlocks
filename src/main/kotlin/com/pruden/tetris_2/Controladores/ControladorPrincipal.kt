@@ -254,4 +254,8 @@ class ControladorPrincipal : Initializable {
     @FXML fun logros(){
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Logros/vistaLogros.fxml", nuevaPartidaB, 676.0, 727.0, timelinePartida, 0, 0))
     }
+
+    @FXML fun clan(){
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 140.0, timelinePartida, 0, -60))
+    }
 }
