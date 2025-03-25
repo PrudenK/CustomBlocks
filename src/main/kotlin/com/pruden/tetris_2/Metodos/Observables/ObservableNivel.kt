@@ -1,8 +1,11 @@
 package com.pruden.tetris_2.Metodos.Observables
 
+import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoCaidaPieza
+import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
 import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
 import javafx.beans.binding.Bindings
@@ -32,6 +35,20 @@ fun cargarObervableNivel(){
                 }
                 labelNivel.text = nivelActual.toString()+ ControladorPrincipal.objFasesNivel
                 actualizarTimeline()
+            }
+
+            if(cPrin.labelModo.text == "Clásico"){
+                if(nivelActual >= 5 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_I }!!.completado){
+                    completarLogro(Logros.SKILLS_I)
+                }
+
+                if(nivelActual >= 10 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_II }!!.completado){
+                    completarLogro(Logros.SKILLS_II)
+                }
+
+                if(nivelActual >= 15 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_III }!!.completado){
+                    completarLogro(Logros.SKILLS_III)
+                }
             }
         }
     }

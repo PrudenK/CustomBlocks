@@ -13,4 +13,8 @@ object Logros {
     const val BASTANTES_RAYAS = 18
     const val MARADONA = 19
     const val ZZZ = 20
+
+    const val SKILLS_III = 21
+    const val SKILLS_I = 22
+    const val SKILLS_II = 23
 }
