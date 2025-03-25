@@ -52,4 +52,5 @@ object ConstantesCustomAPI {
 
     //Clan
     const val CREAR_CLAN = "/crearClan"
+    const val JUGADORES_DE_UN_CLAN = "/clan/{id}/jugadores"
 }
