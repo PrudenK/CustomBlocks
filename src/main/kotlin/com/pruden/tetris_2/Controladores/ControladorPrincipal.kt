@@ -1,10 +1,12 @@
 package com.pruden.tetris_2.Controladores
 
+import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.API.ObjsAux.*
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
+import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
@@ -194,6 +196,7 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun sesion(){
+        cerrarSesionApi()
         cerrarSesion()
     }
 
@@ -225,9 +228,12 @@ class ControladorPrincipal : Initializable {
         println(puntuacionAcumulada)
 
         println(listaPiezasSeleccionadas)
+
+
     }
 
     @FXML fun salir() {
+        cerrarSesionApi()
         Platform.exit()
         exitProcess(0)
     }

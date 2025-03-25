@@ -11,6 +11,7 @@ import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarSuscripciones
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 fun iniciarSesionLogin(){
@@ -35,6 +36,9 @@ fun iniciarSesionLogin(){
                             cargarDatosDelJugador()
 
                             cargarStagePrincipal()
+
+                            iniciarHeartbeatJugador()
+
                             ControladorPrincipal.jugarOnline = true
                         }
                     }
@@ -53,5 +57,22 @@ fun iniciarSesionLogin(){
         }else{
             errorLabel.text = "Hay campos en blanco"
         }
+    }
+}
+
+fun iniciarHeartbeatJugador() {
+    CoroutineScope(Dispatchers.IO).launch {
+        while (idJugador != -1) {
+            try {
+                ApiCustom.jugadorService.ping(idJugador)
+                println("Ping enviado")
+            } catch (e: Exception) {
+                println("Ping fallido: ${e.message}")
+            }
+
+            delay(10_000)
+        }
+
+        println("Heartbeat detenido: sesión cerrada o no iniciada")
     }
 }

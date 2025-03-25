@@ -26,4 +26,9 @@ interface JugadorService {
     @POST(ConstantesCustomAPI.SUBIR_IMAGEN)
     suspend fun subirImagen(@Path("id") id: Int, @Part imagen: MultipartBody.Part): Response<ResponseBody>
 
+    @POST(ConstantesCustomAPI.CERRAR_SESION)
+    suspend fun cerrarSesion(@Path("id") id: Int)
+
+    @POST(ConstantesCustomAPI.PING_JUGADOR)
+    suspend fun ping(@Path("id") id: Int)
 }
