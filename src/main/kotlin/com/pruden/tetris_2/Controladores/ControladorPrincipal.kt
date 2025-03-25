@@ -169,6 +169,7 @@ class ControladorPrincipal : Initializable {
         var puntuacionAcumulada = -1
         var logroZZZ = false
 
+        var idClanDelJugador = -1
 
         var idNivelActual = -1
     }
@@ -228,7 +229,7 @@ class ControladorPrincipal : Initializable {
         println(puntuacionAcumulada)
 
         println(listaPiezasSeleccionadas)
-
+        println(idClanDelJugador)
 
     }
 

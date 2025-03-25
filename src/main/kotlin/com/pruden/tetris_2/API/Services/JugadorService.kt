@@ -31,4 +31,7 @@ interface JugadorService {
 
     @POST(ConstantesCustomAPI.PING_JUGADOR)
     suspend fun ping(@Path("id") id: Int)
+
+    @GET(ConstantesCustomAPI.CLAN_DEL_JUGADOR)
+    suspend fun clanDelJugador(@Path("id") id: Int): Int
 }

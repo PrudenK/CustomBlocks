@@ -14,6 +14,7 @@ object ConstantesCustomAPI {
     const val SUBIR_IMAGEN = "/subirImagen/{id}"
     const val CERRAR_SESION = "/cerrarSesion/{id}"
     const val PING_JUGADOR = "/jugador/ping/{id}"
+    const val CLAN_DEL_JUGADOR = "/jugador/{id}/clan"
 
     //Partidas
     const val SUBIR_PARTIDA = "/subirPartida"
