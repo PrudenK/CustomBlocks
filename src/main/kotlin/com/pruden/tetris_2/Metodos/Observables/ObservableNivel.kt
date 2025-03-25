@@ -5,6 +5,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoCaidaPieza
+import com.pruden.tetris_2.Metodos.Cronometro.formatoASegundos
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
 import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
@@ -42,6 +43,12 @@ fun cargarObervableNivel(){
                     completarLogro(Logros.SKILLS_I)
                 }
 
+                if(nivelActual == 5 && !listaLogrosJugador.find { it.idLogro == Logros.TECLADO_EN_LLAMAS }!!.completado){
+                    if(formatoASegundos(cPrin.cronometroLabel.text) <= 300){
+                        completarLogro(Logros.TECLADO_EN_LLAMAS)
+                    }
+                }
+
                 if(nivelActual >= 10 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_II }!!.completado){
                     completarLogro(Logros.SKILLS_II)
                 }
@@ -49,6 +56,8 @@ fun cargarObervableNivel(){
                 if(nivelActual >= 15 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_III }!!.completado){
                     completarLogro(Logros.SKILLS_III)
                 }
+
+
             }
         }
     }

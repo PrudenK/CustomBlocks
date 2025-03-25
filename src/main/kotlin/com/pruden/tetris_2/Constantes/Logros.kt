@@ -17,4 +17,6 @@ object Logros {
     const val SKILLS_III = 21
     const val SKILLS_I = 22
     const val SKILLS_II = 23
+
+    const val TECLADO_EN_LLAMAS = 24
 }
