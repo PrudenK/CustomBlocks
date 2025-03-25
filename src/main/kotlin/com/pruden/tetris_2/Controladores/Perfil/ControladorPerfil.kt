@@ -47,6 +47,7 @@ class ControladorPerfil : ControladorGEN(), Initializable {
 
     @FXML lateinit var verPiezasB: Button
     @FXML lateinit var imagenPerfil: ImageView
+    @FXML lateinit var editarPerfil: ImageView
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cPerfil = this
@@ -63,7 +64,7 @@ class ControladorPerfil : ControladorGEN(), Initializable {
             cargarDatosPartidas()
         }
 
-        imagenPerfil.setOnMouseClicked {
+        editarPerfil.setOnMouseClicked {
             subirImagenPerfilADB()
         }
     }

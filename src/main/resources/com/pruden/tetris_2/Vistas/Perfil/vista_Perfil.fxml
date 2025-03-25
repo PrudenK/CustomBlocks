@@ -15,7 +15,7 @@
         <URL value="@../../styles/general.css" />
     </stylesheets>
    <children>
-      <Label fx:id="usuarioLabel" layoutX="235.0" layoutY="33.0" text="Nombre usuario" textFill="#e9e8e8">
+      <Label fx:id="usuarioLabel" layoutX="245.0" layoutY="33.0" text="Nombre usuario" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="32.0" />
          </font>
@@ -29,35 +29,35 @@
          </ImageView>
 
       </StackPane>
-      <Label layoutX="235.0" layoutY="83.0" text="Miembro desde:" textFill="#e9e8e8">
+      <Label layoutX="245.0" layoutY="83.0" text="Miembro desde:" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="fechaIniLabel" layoutX="388.0" layoutY="83.0" text="00-00-0000" textFill="#e9e8e8">
+      <Label fx:id="fechaIniLabel" layoutX="398.0" layoutY="83.0" text="00-00-0000" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="235.0" layoutY="111.0" text="Nivel:" textFill="#e9e8e8">
+      <Label layoutX="245.0" layoutY="111.0" text="Nivel:" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="nivelLabel" layoutX="311.0" layoutY="111.0" text="0" textFill="#e9e8e8">
+      <Label fx:id="nivelLabel" layoutX="321.0" layoutY="111.0" text="0" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="235.0" layoutY="137.0" text="Ranking global:" textFill="#e9e8e8">
+      <Label layoutX="245.0" layoutY="137.0" text="Ranking global:" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="rankingLabel" layoutX="403.0" layoutY="137.0" text="#1" textFill="#e9e8e8">
+      <Label fx:id="rankingLabel" layoutX="413.0" layoutY="137.0" text="#1" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="235.0" layoutY="164.0" text="País:" textFill="#e9e8e8">
+      <Label layoutX="245.0" layoutY="164.0" text="País:" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="paisLabel" layoutX="302.0" layoutY="164.0" text="España" textFill="#e9e8e8">
+      <Label fx:id="paisLabel" layoutX="312.0" layoutY="164.0" text="España" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font></Label>
@@ -205,6 +205,11 @@
          <font>
             <Font name="Liberation Mono Bold" size="16.0" />
          </font></Label>
+      <ImageView fx:id="editarPerfil" fitHeight="30.0" fitWidth="30.0" layoutX="205.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Imagenes/Logos/boton-editar.png" />
+         </image>
+      </ImageView>
    </children>
 
 </Pane>
