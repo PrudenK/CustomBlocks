@@ -42,11 +42,11 @@ class ControladorOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun perfil(){
-        crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", sonidoo_B, 683.0, 602.0, timelinePartida, 0, 0))
+        crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", cPrin.nuevaPartidaB, 683.0, 602.0, timelinePartida, 0, 0))
     }
 
     @FXML fun rankings(){
-        crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", sonidoo_B, 731.0, 600.0, timelinePartida, 0, 0))
+        crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", cPrin.nuevaPartidaB, 731.0, 600.0, timelinePartida, 0, 0))
     }
 
     override fun setStage(stage: Stage?) {
