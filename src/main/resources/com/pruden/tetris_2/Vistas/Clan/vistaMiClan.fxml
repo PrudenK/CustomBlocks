@@ -31,7 +31,7 @@
          </font>
       </Label>
 
-       <ScrollPane fitToWidth="true" layoutX="42.0" layoutY="217.0" prefHeight="349.0" prefWidth="470.0">
+       <ScrollPane hbarPolicy="NEVER" fitToWidth="true" layoutX="42.0" layoutY="217.0" prefHeight="349.0" prefWidth="470.0">
            <content>
                <GridPane fx:id="gridJugadores" hgap="10" vgap="10" />
            </content>

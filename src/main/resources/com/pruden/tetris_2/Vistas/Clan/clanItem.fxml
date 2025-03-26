@@ -5,9 +5,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="81.0" prefWidth="450.0" style="-fx-background-color: #f2f2f2;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorItemClan">
+<?import javafx.scene.layout.StackPane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="81.0" prefWidth="450.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorItemClan">
     <children>
-        <ImageView fx:id="fotoPerfil" fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+        <StackPane layoutX="7.0" layoutY="6.0" prefWidth="70.0" prefHeight="70.0">
+            <ImageView fx:id="fotoPerfil" fitHeight="66.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" />
+        </StackPane>
         <Label fx:id="nombre" layoutX="88.0" layoutY="8.0" prefHeight="29.0" prefWidth="182.0" text="Nombre" textFill="#a8a4a4">
             <font>
                 <Font name="Liberation Mono Bold" size="20.0" />
@@ -18,9 +21,9 @@
                 <Font name="Liberation Mono Bold" size="20.0" />
             </font>
         </Label>
-      <Label fx:id="pais" layoutX="261.0" layoutY="43.0" prefHeight="30.0" prefWidth="172.0" text="Pais" textFill="#a8a4a4">
+      <Label fx:id="pais" layoutX="251.0" layoutY="43.0" prefHeight="30.0" prefWidth="182.0" text="Pais" textFill="#a8a4a4">
          <font>
-            <Font name="Liberation Mono Bold" size="20.0" />
+            <Font name="Liberation Mono Bold" size="16.0" />
          </font>
       </Label>
     </children>

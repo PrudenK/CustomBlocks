@@ -22,7 +22,7 @@ class ControladorOpcionesClan : ControladorGEN() {
     }
 
     @FXML fun buscarClan(){
-        crearStage(ClaseStage("Vistas/Clan/vistaBuscarClan.fxml", cPrin.nuevaPartidaB, 553.0, 625.0, null, 0, 0))
+        crearStage(ClaseStage("Vistas/Clan/vistaBuscarClan.fxml", cPrin.nuevaPartidaB, 534.0, 556.0, null, 0, 0))
     }
 
     @FXML fun crearClan(){
