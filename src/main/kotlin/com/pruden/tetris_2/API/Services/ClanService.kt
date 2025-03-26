@@ -3,6 +3,7 @@ package com.pruden.tetris_2.API.Services
 import com.google.gson.JsonObject
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.Clan
+import com.pruden.tetris_2.API.ObjsAux.ItemClan
 import com.pruden.tetris_2.API.ObjsAux.Jugador
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -28,5 +29,5 @@ interface ClanService {
     suspend fun getDatosDeUnClan(@Path("id") id: Int): Clan
 
     @GET(ConstantesCustomAPI.TODOS_LOS_CLANES)
-    suspend fun getTodosLosClanes(): List<Clan>
+    suspend fun getTodosLosClanes(): List<ItemClan>
 }

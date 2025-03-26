@@ -30,9 +30,7 @@ class ControladorMiClan: ControladorGEN(), Initializable {
     @FXML lateinit var miembros: Label
 
 
-    companion object{
-        var listaJugadoresDeMiClan = mutableListOf<Jugador>()
-    }
+    private var listaJugadoresDeMiClan = mutableListOf<Jugador>()
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         cargarDatosDeLaAPIAlaUI()
