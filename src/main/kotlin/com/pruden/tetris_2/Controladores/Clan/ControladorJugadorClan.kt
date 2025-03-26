@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView
 class ControladorJugadorClan {
 
     @FXML lateinit var fotoPerfil: ImageView
+    @FXML lateinit var imgOnline: ImageView
     @FXML lateinit var imgLider: ImageView
     @FXML lateinit var nombre: Label
     @FXML lateinit var nivel: Label
@@ -29,6 +30,10 @@ class ControladorJugadorClan {
 
         if(jugador.id == idLider){
             imgLider.image = Image(ConstantesCustomAPI.IMAGEN_CORONA, true)
+        }
+
+        if(jugador.online){
+            imgOnline.image = Image(ConstantesCustomAPI.IMAGEN_ONLINE, true)
         }
 
     }

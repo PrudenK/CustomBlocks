@@ -12,6 +12,8 @@ object ConstantesCustomAPI {
     //Imagen corona
     const val IMAGEN_CORONA = "$PATH_CUSTOM/uploads/images/corona.png"
 
+    //Imagen online
+    const val IMAGEN_ONLINE = "$PATH_CUSTOM/uploads/images/online.png"
 
     //Jugadores
     const val CREAR_JUGADOR = "/crearJugador"
