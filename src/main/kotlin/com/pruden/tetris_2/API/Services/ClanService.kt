@@ -20,7 +20,7 @@ interface ClanService {
         @Part("descripcion") descripcion: RequestBody,
         @Part("ubicacion") ubicacion: RequestBody,
         @Part("idLider") idLider: RequestBody
-    ): Response<ResponseBody>
+    ): Response<Clan>
 
     @GET(ConstantesCustomAPI.JUGADORES_DE_UN_CLAN)
     suspend fun getJugadoresDeUnClan(@Path("id") id: Int): List<Jugador>
