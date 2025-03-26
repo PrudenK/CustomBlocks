@@ -2,8 +2,11 @@ package com.pruden.tetris_2.Controladores.Clan
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Constantes.Listas
+import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -87,6 +90,10 @@ class ControladorCrearClan: ControladorGEN(), Initializable {
                                 javafx.application.Platform.runLater {
                                     labelError.textFill = Color.web("#67a8f2")
                                     labelError.text = "Clan creado con éxito"
+                                }
+
+                                if(!listaLogrosJugador.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){
+                                    completarLogro(Logros.VIDA_SOCIAL)
                                 }
                             }
                         }

@@ -3,11 +3,14 @@ package com.pruden.tetris_2.Controladores.Clan
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.Jugador
+import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
@@ -149,6 +152,10 @@ class ControladorClan: ControladorGEN(), Initializable {
                 CoroutineScope(Dispatchers.IO).launch {
                     ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
                     recargarDatos()
+                }
+
+                if(!listaLogrosJugador.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){
+                    completarLogro(Logros.VIDA_SOCIAL)
                 }
             }else{
                 val loader = FXMLLoader(javaClass.getResource("/com/pruden/tetris_2/Vistas/Clan/dialogoAccionesClan.fxml"))
