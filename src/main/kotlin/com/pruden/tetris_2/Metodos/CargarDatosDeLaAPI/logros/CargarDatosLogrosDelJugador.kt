@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.logros
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas
@@ -18,5 +19,6 @@ fun cargarDatosDelJugador(){
         numeroLineasAcumuladas = ApiCustom.partidaService.getNumLineas(idJugador)
         puntuacionAcumulada = ApiCustom.partidaService.getNumPuntos(idJugador)
         idClanDelJugador = ApiCustom.jugadorService.clanDelJugador(idJugador)
+        idJugadorSiEsLiderDeUnClan = ApiCustom.jugadorService.jugadorEsLiderDeUnClan(idJugador)
     }
 }

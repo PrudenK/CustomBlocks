@@ -28,7 +28,7 @@ class ControladorItemClan {
 
         pane.setOnMouseClicked {
             idClanControlador = clan.idClan
-            crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 625.0, null, 0, 0))
+            crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 651.0, null, 0, 0))
         }
     }
 }

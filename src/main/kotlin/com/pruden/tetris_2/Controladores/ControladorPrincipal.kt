@@ -170,6 +170,8 @@ class ControladorPrincipal : Initializable {
         var logroZZZ = false
 
         var idClanDelJugador = -1
+        var idJugadorSiEsLiderDeUnClan = -2
+
 
         var idNivelActual = -1
     }

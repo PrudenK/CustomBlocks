@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="625.0" prefWidth="553.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorMiClan">
+<Pane prefHeight="651.0" prefWidth="553.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorMiClan">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
@@ -31,12 +31,13 @@
          </font>
       </Label>
 
-       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="32.0" layoutY="219.0" prefHeight="349.0" prefWidth="491.0">
+       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="46.0" layoutY="247.0" prefHeight="349.0" prefWidth="491.0">
            <content>
                <GridPane fx:id="gridJugadores" hgap="10" vgap="10" />
            </content>
        </ScrollPane>
-      <Button layoutX="247.0" layoutY="576.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+      <Button layoutX="245.0" layoutY="602.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+      <Button fx:id="btnClan" layoutX="297.0" layoutY="191.0" mnemonicParsing="false" onAction="#accionClan" prefWidth="140.0" text="Unirme al clan" visible="false" />
    </children>
 
 

@@ -20,6 +20,7 @@ object ConstantesCustomAPI {
     const val CERRAR_SESION = "/cerrarSesion/{id}"
     const val PING_JUGADOR = "/jugador/ping/{id}"
     const val CLAN_DEL_JUGADOR = "/jugador/{id}/clan"
+    const val JUGADOR_ES_LIDER_DE_UN_CLAN = "/jugador/{id}/esLider"
 
     //Partidas
     const val SUBIR_PARTIDA = "/subirPartida"

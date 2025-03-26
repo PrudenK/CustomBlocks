@@ -34,4 +34,7 @@ interface JugadorService {
 
     @GET(ConstantesCustomAPI.CLAN_DEL_JUGADOR)
     suspend fun clanDelJugador(@Path("id") id: Int): Int
+
+    @GET(ConstantesCustomAPI.JUGADOR_ES_LIDER_DE_UN_CLAN)
+    suspend fun jugadorEsLiderDeUnClan(@Path("id") id: Int): Int
 }
