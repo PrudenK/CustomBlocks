@@ -30,4 +30,7 @@ interface ClanService {
 
     @GET(ConstantesCustomAPI.TODOS_LOS_CLANES)
     suspend fun getTodosLosClanes(): List<ItemClan>
+
+    @POST(ConstantesCustomAPI.JUGADOR_SE_UNE_A_UN_CLAN)
+    suspend fun jugadorSeUneAUnClan(@Path("id") id: Int, @Path("idJugador") idJugador: Int)
 }

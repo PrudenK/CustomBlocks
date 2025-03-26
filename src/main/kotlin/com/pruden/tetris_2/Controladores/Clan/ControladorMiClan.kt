@@ -6,6 +6,7 @@ import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -48,9 +49,15 @@ class ControladorMiClan: ControladorGEN(), Initializable {
     private var idClanStage = -1
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        cargarDatosDeLaAPIAlaUI()
+        recargarDatos()
+    }
 
-        cargarJugadores(listaJugadoresDeMiClan)
+    private fun recargarDatos(){
+        javafx.application.Platform.runLater {
+            cargarDatosDeLaAPIAlaUI()
+            cargarJugadores(listaJugadoresDeMiClan)
+            ControladorBuscarClan.cBuscarClan.cargarDatosDeLaApiALaUI()
+        }
     }
 
     private fun cargarJugadores(jugadores: List<Jugador>) {
@@ -126,6 +133,11 @@ class ControladorMiClan: ControladorGEN(), Initializable {
             if(idClanDelJugador == -1){
                 idClanDelJugador = idClanStage
                 btnClan.text = "Abandonar"
+
+                CoroutineScope(Dispatchers.IO).launch {
+                    ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
+                    recargarDatos()
+                }
             }else{
                 val loader = FXMLLoader(javaClass.getResource("/com/pruden/tetris_2/Vistas/Clan/dialogoAccionesClan.fxml"))
                 val root = loader.load<Pane>()
@@ -144,10 +156,16 @@ class ControladorMiClan: ControladorGEN(), Initializable {
                     controller.nombre.text = "Eres lider de un Clan, ¿quieres cambiarte?"
                 }
 
+
                 controller.onConfirmar = {
                     idClanDelJugador = idClanStage
                     idJugadorSiEsLiderDeUnClan = -1
                     btnClan.text = "Abandonar"
+
+                    CoroutineScope(Dispatchers.IO).launch {
+                        ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
+                        recargarDatos()
+                    }
                 }
 
                 dialogStage.showAndWait()

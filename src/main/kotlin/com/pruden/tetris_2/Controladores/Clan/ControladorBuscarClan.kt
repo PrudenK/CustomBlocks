@@ -26,12 +26,16 @@ class ControladorBuscarClan: ControladorGEN(), Initializable {
 
     private var listaClanes: List<ItemClan> = emptyList()
 
-    override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        cargarDatosDeLaApiALaUI()
-
+    companion object{
+        lateinit var cBuscarClan : ControladorBuscarClan
     }
 
-    private fun cargarDatosDeLaApiALaUI(){
+    override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        cBuscarClan = this
+        cargarDatosDeLaApiALaUI()
+    }
+
+    fun cargarDatosDeLaApiALaUI(){
         CoroutineScope(Dispatchers.IO).launch {
             listaClanes = ApiCustom.clanService.getTodosLosClanes()
 
