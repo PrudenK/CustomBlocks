@@ -33,4 +33,7 @@ interface ClanService {
 
     @POST(ConstantesCustomAPI.JUGADOR_SE_UNE_A_UN_CLAN)
     suspend fun jugadorSeUneAUnClan(@Path("id") id: Int, @Path("idJugador") idJugador: Int)
+
+    @POST(ConstantesCustomAPI.JUGADOR_ABANDONA_SU_CLAN)
+    suspend fun jugadorAbandonaClan(@Path("idJugador") idJugador: Int)
 }

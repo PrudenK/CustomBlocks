@@ -125,6 +125,10 @@ class ControladorMiClan: ControladorGEN(), Initializable {
             controller.onConfirmar = {
                 idClanDelJugador = -1
                 idJugadorSiEsLiderDeUnClan = -1
+                CoroutineScope(Dispatchers.IO).launch {
+                    ApiCustom.clanService.jugadorAbandonaClan(idJugador)
+                    recargarDatos()
+                }
                 stageMiClan.close()
             }
 
