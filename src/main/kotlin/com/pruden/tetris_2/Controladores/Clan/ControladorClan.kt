@@ -8,15 +8,11 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
-import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.Scene
-import javafx.scene.control.Alert
 import javafx.scene.control.Button
-import javafx.scene.control.ButtonType
 import javafx.scene.control.Label
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
@@ -29,15 +25,18 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.net.URL
+import java.text.SimpleDateFormat
 import java.util.*
 
-class ControladorMiClan: ControladorGEN(), Initializable {
+class ControladorClan: ControladorGEN(), Initializable {
     lateinit var stageMiClan: Stage
     @FXML lateinit var gridJugadores: GridPane
     @FXML lateinit var imagen: ImageView
     @FXML lateinit var nombre: Label
     @FXML lateinit var descripcion: Label
     @FXML lateinit var miembros: Label
+    @FXML lateinit var ubi: Label
+    @FXML lateinit var fecha: Label
     @FXML lateinit var btnClan: Button
 
     private var listaJugadoresDeMiClan = mutableListOf<Jugador>()
@@ -72,6 +71,8 @@ class ControladorMiClan: ControladorGEN(), Initializable {
         }
     }
 
+    private val formato = SimpleDateFormat("dd-MM-yyyy")
+
     private fun cargarDatosDeLaAPIAlaUI() {
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -89,6 +90,8 @@ class ControladorMiClan: ControladorGEN(), Initializable {
                     imagen.image = Image(ConstantesCustomAPI.IMAGEN_CLAN_DEFAULT)
                 }
 
+
+
                 descripcion.text = clan.descripcion
                 nombre.text = clan.nombre
 
@@ -101,6 +104,9 @@ class ControladorMiClan: ControladorGEN(), Initializable {
                 }else{
                     btnClan.text = "Unirme"
                 }
+
+                ubi.text = "Localización: ${clan.ubicacion}"
+                fecha.text = "Fundado: ${formato.format(clan.fechaInit)}"
 
             }
         }

@@ -2,7 +2,7 @@ package com.pruden.tetris_2.Controladores.Clan
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.ItemClan
-import com.pruden.tetris_2.Controladores.Clan.ControladorMiClan.Companion.idClanControlador
+import com.pruden.tetris_2.Controladores.Clan.ControladorClan.Companion.idClanControlador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -28,7 +28,7 @@ class ControladorItemClan {
 
         pane.setOnMouseClicked {
             idClanControlador = clan.idClan
-            crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 651.0, null, 0, 0))
+            crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 668.0, null, 0, 0))
         }
     }
 }

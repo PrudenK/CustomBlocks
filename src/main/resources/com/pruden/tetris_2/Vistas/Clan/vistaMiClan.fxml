@@ -9,35 +9,45 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="651.0" prefWidth="553.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorMiClan">
+<Pane prefHeight="668.0" prefWidth="553.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorClan">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
    <children>
       <ImageView fx:id="imagen" fitHeight="159.0" fitWidth="150.0" layoutX="34.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="nombre" alignment="CENTER" layoutX="201.0" layoutY="34.0" prefHeight="41.0" prefWidth="332.0" textAlignment="CENTER" textFill="#e9e8e8">
+      <Label fx:id="nombre" alignment="CENTER" layoutX="201.0" layoutY="34.0" prefHeight="41.0" prefWidth="332.0" text="adfadf" textAlignment="CENTER" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="32.0" />
          </font>
       </Label>
-      <Label fx:id="descripcion" alignment="TOP_LEFT" layoutX="194.0" layoutY="88.0" prefHeight="98.0" prefWidth="332.0" textFill="#e9e8e8" wrapText="true">
+      <Label fx:id="descripcion" alignment="TOP_LEFT" layoutX="194.0" layoutY="88.0" prefHeight="98.0" prefWidth="332.0" text="adfadfads" textFill="#e9e8e8" wrapText="true">
          <font>
             <Font name="Liberation Mono Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="miembros" layoutX="34.0" layoutY="196.0" prefHeight="21.0" prefWidth="129.0" textFill="#e9e8e8">
+      <Label fx:id="miembros" layoutX="29.0" layoutY="196.0" prefHeight="21.0" prefWidth="116.0" text="adsfadfa" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="16.0" />
          </font>
       </Label>
 
-       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="46.0" layoutY="247.0" prefHeight="349.0" prefWidth="491.0">
+       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="46.0" layoutY="257.0" prefHeight="349.0" prefWidth="491.0">
            <content>
                <GridPane fx:id="gridJugadores" hgap="10" vgap="10" />
            </content>
        </ScrollPane>
-      <Button layoutX="245.0" layoutY="602.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
-      <Button fx:id="btnClan" layoutX="297.0" layoutY="191.0" mnemonicParsing="false" onAction="#accionClan" prefWidth="140.0" text="Unirme al clan" visible="false" />
+      <Button layoutX="245.0" layoutY="617.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+      <Button fx:id="btnClan" layoutX="367.0" layoutY="205.0" mnemonicParsing="false" onAction="#accionClan" prefWidth="140.0" text="Unirme al clan" />
+      <Label fx:id="fecha" layoutX="169.0" layoutY="196.0" prefHeight="21.0" prefWidth="185.0" text="adsfadsfa" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="ubi" layoutX="29.0" layoutY="226.0" prefHeight="21.0" prefWidth="259.0" text="adsfadsfa" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 
 
