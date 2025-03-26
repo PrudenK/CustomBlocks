@@ -17,7 +17,7 @@ class ControladorJugadorClan {
 
     fun setJugador(jugador: Jugador, pos: Int){
         nombre.text = jugador.nombre
-        nivel.text = "Lv: ${jugador.nivel}"
+        nivel.text = "Nivel: ${jugador.nivel}"
         posicion.text = "#$pos"
 
         if(jugador.imagen != null){

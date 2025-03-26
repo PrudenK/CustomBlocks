@@ -31,12 +31,12 @@
          </font>
       </Label>
 
-       <ScrollPane hbarPolicy="NEVER" fitToWidth="true" layoutX="42.0" layoutY="217.0" prefHeight="349.0" prefWidth="470.0">
+       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="32.0" layoutY="219.0" prefHeight="349.0" prefWidth="491.0">
            <content>
                <GridPane fx:id="gridJugadores" hgap="10" vgap="10" />
            </content>
        </ScrollPane>
-      <Button layoutX="247.0" layoutY="572.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+      <Button layoutX="247.0" layoutY="576.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
    </children>
 
 
