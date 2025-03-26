@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.layout.StackPane?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="81.0" prefWidth="450.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorItemClan">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="81.0" prefWidth="450.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorItemClan">
     <children>
         <StackPane layoutX="7.0" layoutY="6.0" prefWidth="70.0" prefHeight="70.0">
             <ImageView fx:id="fotoPerfil" fitHeight="66.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" />

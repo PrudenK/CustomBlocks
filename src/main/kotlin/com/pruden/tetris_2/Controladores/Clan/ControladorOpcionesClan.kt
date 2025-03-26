@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores.Clan
 
+import com.pruden.tetris_2.Controladores.Clan.ControladorMiClan.Companion.idClanControlador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
@@ -15,6 +16,7 @@ class ControladorOpcionesClan : ControladorGEN() {
 
     @FXML fun miClan(){
         if(idClanDelJugador != -1){
+            idClanControlador = idClanDelJugador
             crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 625.0, null, 0, 0))
         }else{
 

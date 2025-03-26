@@ -29,8 +29,11 @@ class ControladorMiClan: ControladorGEN(), Initializable {
     @FXML lateinit var descripcion: Label
     @FXML lateinit var miembros: Label
 
-
     private var listaJugadoresDeMiClan = mutableListOf<Jugador>()
+
+    companion object{
+        var idClanControlador = -1
+    }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         cargarDatosDeLaAPIAlaUI()
@@ -53,8 +56,8 @@ class ControladorMiClan: ControladorGEN(), Initializable {
     private fun cargarDatosDeLaAPIAlaUI() {
         CoroutineScope(Dispatchers.IO).launch {
 
-            listaJugadoresDeMiClan = ApiCustom.clanService.getJugadoresDeUnClan(idClanDelJugador).toMutableList()
-            val clan = ApiCustom.clanService.getDatosDeUnClan(idClanDelJugador)
+            listaJugadoresDeMiClan = ApiCustom.clanService.getJugadoresDeUnClan(idClanControlador).toMutableList()
+            val clan = ApiCustom.clanService.getDatosDeUnClan(idClanControlador)
 
             javafx.application.Platform.runLater {
                 cargarJugadores(listaJugadoresDeMiClan)
