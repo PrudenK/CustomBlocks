@@ -11,11 +11,12 @@ import javafx.scene.image.ImageView
 class ControladorJugadorClan {
 
     @FXML lateinit var fotoPerfil: ImageView
+    @FXML lateinit var imgLider: ImageView
     @FXML lateinit var nombre: Label
     @FXML lateinit var nivel: Label
     @FXML lateinit var posicion: Label
 
-    fun setJugador(jugador: Jugador, pos: Int){
+    fun setJugador(jugador: Jugador, pos: Int, idLider: Int){
         nombre.text = jugador.nombre
         nivel.text = "Nivel: ${jugador.nivel}"
         posicion.text = "#$pos"
@@ -24,6 +25,10 @@ class ControladorJugadorClan {
             fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.imagen}", true)
         }else{
             fotoPerfil.image = deRutaAImagen("/Imagenes/Logos/Imagen_perfil_deff.jpg")
+        }
+
+        if(jugador.id == idLider){
+            imgLider.image = Image(ConstantesCustomAPI.IMAGEN_CORONA, true)
         }
 
     }

@@ -47,6 +47,7 @@ class ControladorMiClan: ControladorGEN(), Initializable {
     }
 
     private var idClanStage = -1
+    private var idLiderDelClan = -1
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         recargarDatos()
@@ -61,12 +62,11 @@ class ControladorMiClan: ControladorGEN(), Initializable {
     }
 
     private fun cargarJugadores(jugadores: List<Jugador>) {
-
         for ((fila, jugador) in jugadores.withIndex()) {
             val loader = FXMLLoader(javaClass.getResource("/com/pruden/tetris_2/Vistas/Clan/jugadorClanItenm.fxml"))
             val item = loader.load<Pane>()
             val controller = loader.getController<ControladorJugadorClan>()
-            controller.setJugador(jugador, fila+1)
+            controller.setJugador(jugador, fila+1, idLiderDelClan)
 
             gridJugadores.add(item, 0, fila) // siempre columna 0
         }
@@ -79,6 +79,7 @@ class ControladorMiClan: ControladorGEN(), Initializable {
             val clan = ApiCustom.clanService.getDatosDeUnClan(idClanControlador)
 
             javafx.application.Platform.runLater {
+                idLiderDelClan = clan.idlider
                 cargarJugadores(listaJugadoresDeMiClan)
                 miembros.text = "Miembros: ${listaJugadoresDeMiClan.size}"
 
@@ -93,6 +94,7 @@ class ControladorMiClan: ControladorGEN(), Initializable {
 
                 btnClan.isVisible = true
                 idClanStage = clan.idclan
+
 
                 if(clan.idclan == idClanDelJugador){
                     btnClan.text = "Abandonar"

@@ -9,7 +9,9 @@ object ConstantesCustomAPI {
     //Clan por defecto
     const val IMAGEN_CLAN_DEFAULT = "$PATH_CUSTOM/uploads/clanes/fotoPerfilClan.jpg"
 
-    //Imagen jugador default
+    //Imagen corona
+    const val IMAGEN_CORONA = "$PATH_CUSTOM/uploads/images/corona.png"
+
 
     //Jugadores
     const val CREAR_JUGADOR = "/crearJugador"
