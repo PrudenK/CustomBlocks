@@ -1,8 +1,9 @@
 package com.pruden.tetris_2.Controladores.Clan
 
+import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nombreJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
 import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
 import com.pruden.tetris_2.WebSocket.MensajeChat
 import javafx.application.Platform
@@ -12,6 +13,9 @@ import javafx.scene.control.*
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Priority
 import javafx.stage.Stage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ControladorChatClan : ControladorGEN() {
     lateinit var stageChatClan: Stage
@@ -34,6 +38,27 @@ class ControladorChatClan : ControladorGEN() {
     @FXML
     fun initialize() {
         listaMensajes.items = mensajes
+
+        CoroutineScope(Dispatchers.Main).launch {
+            val mensajesDelClan = ApiCustom.mensajeClanService.getMensajesDeUnClan(idClanDelJugador)
+
+            javafx.application.Platform.runLater {
+                mensajesDelClan.forEach { mensajeClan ->
+                    val esPropio = mensajeClan.remitente == jugadorActualObj.nombre
+                    val mensajeChat = MensajeChat(
+                        remitente = mensajeClan.remitente,
+                        texto = mensajeClan.mensaje,
+                        esPropio = esPropio
+                    )
+                    mensajes.add(mensajeChat)
+                }
+
+                listaMensajes.refresh()
+
+                listaMensajes.scrollTo(mensajes.size - 1)
+            }
+        }
+
 
         listaMensajes.setCellFactory {
             object : ListCell<MensajeChat>() {
@@ -66,10 +91,11 @@ class ControladorChatClan : ControladorGEN() {
             }
         }
 
-        socket = ClanChatWebSocket("ws://localhost:8080/clan-chat/$clanId", nombreJugador) { mensaje ->
+        socket = ClanChatWebSocket("ws://localhost:8080/clan-chat/$clanId", jugadorActualObj.nombre) { mensaje ->
             Platform.runLater {
                 mensajes.add(mensaje)
                 listaMensajes.refresh()
+                listaMensajes.scrollTo(mensajes.size - 1)
             }
         }
         socket.connect()
@@ -77,7 +103,7 @@ class ControladorChatClan : ControladorGEN() {
         btnAceptar.setOnAction {
             val texto = input.text
             if (texto.isNotBlank()) {
-                val json = """{"nombre": "$nombreJugador", "mensaje": "$texto"}"""
+                val json = """{"nombre": "${jugadorActualObj.nombre}", "mensaje": "$texto"}"""
                 socket.send(json)
                 input.clear()
             }

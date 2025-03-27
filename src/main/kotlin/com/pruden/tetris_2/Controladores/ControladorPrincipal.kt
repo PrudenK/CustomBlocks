@@ -176,9 +176,7 @@ class ControladorPrincipal : Initializable {
 
         //suscripción jugador
         var suscripcionDelJugador: SuscripcionJugador? = null
-
-
-        var nombreJugador = ""
+        lateinit var jugadorActualObj: Jugador
 
         var idNivelActual = -1
     }

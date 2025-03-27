@@ -72,4 +72,6 @@ object ConstantesCustomAPI {
     const val JUGADOR_SE_SUSCRIBE = "/suscribirse/{idJugador}/{tipo}"
     const val COMPROBAR_SI_JUGADOR_ES_PREMIUM = "/comprobarSuscripcionJugador/{idJugador}"
 
+    //Mensajes de un clan
+    const val GET_MENSAJES_DE_UN_CLAN = "/mensajesDelClan/{idClan}"
 }

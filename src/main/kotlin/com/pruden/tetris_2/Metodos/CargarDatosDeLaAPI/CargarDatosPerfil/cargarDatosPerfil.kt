@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nombreJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil.Companion.cPerfil
 import javafx.scene.image.Image
 import kotlinx.coroutines.CoroutineScope
@@ -13,16 +13,14 @@ import kotlinx.coroutines.launch
 
 fun cargarDatosUsuarioPerfil(){
     CoroutineScope(Dispatchers.IO).launch {
-        val jugador = ApiCustom.jugadorService.getJugadorPorId(ControladorPrincipal.idJugador)
 
         javafx.application.Platform.runLater {
             with(cPerfil){
-                nombreJugador = jugador.nombre
-                usuarioLabel.text = jugador.nombre
-                nivelLabel.text = jugador.nivel.toString()
-                fechaIniLabel.text = jugador.getFechaFormateada()
-                paisLabel.text = jugador.pais
-                imagenPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.imagen}", true)
+                usuarioLabel.text = jugadorActualObj.nombre
+                nivelLabel.text = jugadorActualObj.nivel.toString()
+                fechaIniLabel.text = jugadorActualObj.getFechaFormateada()
+                paisLabel.text = jugadorActualObj.pais
+                imagenPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorActualObj.imagen}", true)
             }
         }
     }

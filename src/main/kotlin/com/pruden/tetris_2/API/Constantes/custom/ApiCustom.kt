@@ -23,4 +23,5 @@ object ApiCustom {
     val logroService: LogrosService = retrofitCustom.create(LogrosService::class.java)
     val clanService: ClanService = retrofitCustom.create(ClanService::class.java)
     val suscripcionJugadorService: SuscripcionJugadorService = retrofitCustom.create(SuscripcionJugadorService::class.java)
+    val mensajeClanService: MensajesClanService = retrofitCustom.create(MensajesClanService::class.java)
 }
