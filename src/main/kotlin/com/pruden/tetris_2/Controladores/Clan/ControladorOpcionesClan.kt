@@ -54,7 +54,7 @@ class ControladorOpcionesClan : ControladorGEN() {
     @FXML fun chat(){
         if(idClanDelJugador != -1){
             //idClanControlador = idClanDelJugador
-            crearStage(ClaseStage("Vistas/Clan/vistaChatClan.fxml", cPrin.nuevaPartidaB, 359.0, 471.0, null, 0, 0))
+            crearStage(ClaseStage("Vistas/Clan/vistaChatClan.fxml", cPrin.nuevaPartidaB, 587.0, 614.0, null, 0, 0))
         }else{
             mostrarErrorTemporal("No tienes clan todavía")
         }
