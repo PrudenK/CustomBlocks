@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="383.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="383.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-        <Button layoutX="33.0" layoutY="358.0" mnemonicParsing="false" onAction="#cerrar" prefWidth="120.0" text="Cerrar" />
+        <Button fx:id="cerrar" layoutX="33.0" layoutY="360.0" mnemonicParsing="false" onAction="#cerrar" prefWidth="120.0" text="Cerrar" />
         <Label fx:id="modosSuscripcion" layoutX="42.0" layoutY="191.0" prefHeight="24.0" prefWidth="323.0" text="- Podrs crear 9 modos" textFill="#e9e8e8">
             <font>
                 <Font name="Liberation Mono Bold" size="18.0" />
@@ -37,12 +37,17 @@
             <Font name="Liberation Mono Bold" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="224.0" layoutY="360.0" mnemonicParsing="false" onAction="#comprar" prefWidth="120.0" text="Comprar" />
+      <Button fx:id="comprar" layoutX="224.0" layoutY="360.0" mnemonicParsing="false" onAction="#comprar" prefWidth="120.0" text="Comprar" />
       <Label fx:id="precioSuscripcion" layoutX="42.0" layoutY="251.0" prefHeight="24.0" prefWidth="302.0" text="- Precio: 7.99€" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font>
       </Label>
       <ImageView fx:id="imgSuscripcion" fitHeight="81.0" fitWidth="273.0" layoutX="71.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="mensajeSuscripcion" alignment="CENTER" layoutX="6.0" layoutY="352.0" prefHeight="24.0" prefWidth="371.0" textAlignment="CENTER" textFill="#f88b8b">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+      </Label>
     </children>
 </Pane>

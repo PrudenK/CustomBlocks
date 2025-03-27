@@ -67,4 +67,9 @@ object ConstantesCustomAPI {
     const val TODOS_LOS_CLANES = "/clanes"
     const val JUGADOR_SE_UNE_A_UN_CLAN = "/clan/{id}/unirse/{idJugador}"
     const val JUGADOR_ABANDONA_SU_CLAN = "/jugador/{idJugador}/abandonaSuClan"
+
+    //Suscripcion jugador
+    const val JUGADOR_SE_SUSCRIBE = "/suscribirse/{idJugador}/{tipo}"
+
+
 }
