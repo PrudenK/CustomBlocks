@@ -13,7 +13,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 var indiceActualAnuncio = ApiPublicidad.anuncios.size-1
-
+var timeLineAnuncios: Timeline? = null
 
 fun cargarTimeLineAuncios() {
     if (ApiPublicidad.anuncios.isEmpty()) return
@@ -27,7 +27,7 @@ fun cargarTimeLineAuncios() {
             cPrin.imgPublicidad.image = imagen
         }
 
-        val timeline =  Timeline(
+        timeLineAnuncios =  Timeline(
             KeyFrame(Duration.seconds(5.0), {
                 indiceActualAnuncio = (indiceActualAnuncio + 1) % ApiPublicidad.anuncios.size
                 val anuncio = ApiPublicidad.anuncios[indiceActualAnuncio]
@@ -43,10 +43,14 @@ fun cargarTimeLineAuncios() {
             play()
         }
 
-        if(suscripcionDelJugador!!.tipo != -1) {
-            timeline.stop()
-            cPrin.imgPublicidad.isVisible = false
-        }
+        paraTimeLineAnuncios()
+    }
+}
+
+fun paraTimeLineAnuncios(){
+    if(suscripcionDelJugador!!.tipo != -1) {
+        timeLineAnuncios!!.stop()
+        cPrin.imgPublicidad.isVisible = false
     }
 }
 

@@ -7,6 +7,8 @@ import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaSuscripciones
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
+import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
+import com.pruden.tetris_2.Metodos.Timelines.paraTimeLineAnuncios
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -71,6 +73,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
                         fechainicio = fechaInicio.format(formatter),
                         fechafin = fechaFin.format(formatter)
                     )
+                    paraTimeLineAnuncios()
                 }
                 409->{
                     mostrarErrorTemporal("Ya tienes una suscripción activa")
