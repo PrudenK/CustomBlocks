@@ -28,6 +28,7 @@
 
 
        <Button fx:id="volver" layoutX="175.0" layoutY="135.0" mnemonicParsing="false" onAction="#volver" prefWidth="120.0" text="Volver" />
+      <Button fx:id="chat" layoutX="22.0" layoutY="135.0" mnemonicParsing="false" onAction="#chat" prefWidth="120.0" text="Chat" />
    </children>
 
 </Pane>

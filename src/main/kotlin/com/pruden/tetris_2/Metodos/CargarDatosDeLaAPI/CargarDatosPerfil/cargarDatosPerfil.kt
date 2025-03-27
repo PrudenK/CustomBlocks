@@ -4,6 +4,7 @@ import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nombreJugador
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil.Companion.cPerfil
 import javafx.scene.image.Image
 import kotlinx.coroutines.CoroutineScope
@@ -16,6 +17,7 @@ fun cargarDatosUsuarioPerfil(){
 
         javafx.application.Platform.runLater {
             with(cPerfil){
+                nombreJugador = jugador.nombre
                 usuarioLabel.text = jugador.nombre
                 nivelLabel.text = jugador.nivel.toString()
                 fechaIniLabel.text = jugador.getFechaFormateada()

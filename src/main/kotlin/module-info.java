@@ -16,6 +16,7 @@ module com.pruden.tetris_2 {
     requires kotlinx.coroutines.core;
     requires retrofit2.kotlin.coroutines.adapter;
     requires org.json;
+    requires Java.WebSocket;
     opens com.pruden.tetris_2.Metodos.Publicidad to com.google.gson;
     opens com.pruden.tetris_2.API.ObjsAux to com.google.gson, javafx.base;
 

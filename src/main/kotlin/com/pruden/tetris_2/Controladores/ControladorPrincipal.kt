@@ -178,6 +178,8 @@ class ControladorPrincipal : Initializable {
         var suscripcionDelJugador: SuscripcionJugador? = null
 
 
+        var nombreJugador = ""
+
         var idNivelActual = -1
     }
 
