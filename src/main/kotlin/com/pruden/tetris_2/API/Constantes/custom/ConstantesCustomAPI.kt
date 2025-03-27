@@ -70,6 +70,6 @@ object ConstantesCustomAPI {
 
     //Suscripcion jugador
     const val JUGADOR_SE_SUSCRIBE = "/suscribirse/{idJugador}/{tipo}"
-
+    const val COMPROBAR_SI_JUGADOR_ES_PREMIUM = "/comprobarSuscripcionJugador/{idJugador}"
 
 }

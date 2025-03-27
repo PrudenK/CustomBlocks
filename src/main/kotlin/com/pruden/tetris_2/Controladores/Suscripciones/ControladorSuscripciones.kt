@@ -2,9 +2,11 @@ package com.pruden.tetris_2.Controladores.Suscripciones
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
+import com.pruden.tetris_2.API.ObjsAux.SuscripcionJugador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaSuscripciones
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -20,6 +22,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.net.URL
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class ControladorSuscripciones : ControladorGEN(), Initializable{
@@ -40,6 +44,10 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
     private var animacionEnCurso = false
     private val scope = CoroutineScope(Dispatchers.Default)
 
+    private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    private val fechaInicio = LocalDate.now()
+    private val fechaFin = fechaInicio.plusDays(31)
+
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         indice = 0
         cambiosSuscripcion()
@@ -58,6 +66,11 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
                 201 ->{
                     mostrarErrorTemporal("Suscripción tramitada con éxito")
                     mensajeSuscripcion.textFill = Color.web("#9abbe1")
+                    suscripcionDelJugador = SuscripcionJugador(
+                        tipo = suscripcion.tipo,
+                        fechainicio = fechaInicio.format(formatter),
+                        fechafin = fechaFin.format(formatter)
+                    )
                 }
                 409->{
                     mostrarErrorTemporal("Ya tienes una suscripción activa")

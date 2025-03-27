@@ -8,6 +8,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLog
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puntuacionAcumulada
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,5 +21,6 @@ fun cargarDatosDelJugador(){
         puntuacionAcumulada = ApiCustom.partidaService.getNumPuntos(idJugador)
         idClanDelJugador = ApiCustom.jugadorService.clanDelJugador(idJugador)
         idJugadorSiEsLiderDeUnClan = ApiCustom.jugadorService.jugadorEsLiderDeUnClan(idJugador)
+        suscripcionDelJugador = ApiCustom.suscripcionJugadorService.comprobarSuscripcionDelJugador(idJugador)
     }
 }

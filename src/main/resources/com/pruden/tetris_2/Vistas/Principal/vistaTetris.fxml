@@ -144,11 +144,7 @@
       <font>
          <Font name="Liberation Mono Bold" size="18.0" />
       </font></Label>
-   <ImageView fx:id="imgPublicidad" fitHeight="101.0" fitWidth="207.0" layoutX="672.0" layoutY="26.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@../../../../../Imagenes/Logos/msi.jpg" />
-      </image>
-   </ImageView>
+   <ImageView fx:id="imgPublicidad" fitHeight="101.0" fitWidth="207.0" layoutX="672.0" layoutY="26.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true" />
    <Button fx:id="sesionB" layoutX="661.0" layoutY="737.0" mnemonicParsing="false" onAction="#sesion" prefHeight="32.0" prefWidth="138.0" text="Cerrar sesión" />
    <Button layoutX="39.0" layoutY="682.0" mnemonicParsing="false" onAction="#campa" prefHeight="32.0" prefWidth="138.0" text="Modo campaña" />
    <Label fx:id="mundoNivel" layoutX="27.0" layoutY="357.0" prefHeight="17.0" prefWidth="160.0" style="-fx-text-fill: FFFFFF;" textFill="#e9e8e8">

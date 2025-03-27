@@ -164,13 +164,18 @@ class ControladorPrincipal : Initializable {
         var listaNivelesJugador = mutableListOf<NivelJugador>()
         var listaLogrosJugador = mutableListOf<LogroJugador>()
 
+        //logros
         var numeroPartidasClasicas = -1
         var numeroLineasAcumuladas = -1
         var puntuacionAcumulada = -1
         var logroZZZ = false
 
+        //clan
         var idClanDelJugador = -1
         var idJugadorSiEsLiderDeUnClan = -1
+
+        //suscripción jugador
+        var suscripcionDelJugador: SuscripcionJugador? = null
 
 
         var idNivelActual = -1
