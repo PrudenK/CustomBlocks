@@ -20,4 +20,5 @@ object Logros {
 
     const val TECLADO_EN_LLAMAS = 24
     const val VIDA_SOCIAL = 25
+    const val VIDA_SOCIAL_II = 26
 }

@@ -1,9 +1,12 @@
 package com.pruden.tetris_2.Controladores.Clan
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
+import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
 import com.pruden.tetris_2.WebSocket.MensajeChat
 import javafx.application.Platform
@@ -113,16 +116,10 @@ class ControladorChatClan : ControladorGEN() {
             enviarMensaje()
         }
 
-
-
         btnCancelar.setOnAction {
             socket.close()
             stageChatClan.close()
         }
-    }
-
-    @FXML fun oculto(){
-        enviarMensaje()
     }
 
     private fun enviarMensaje(){
@@ -131,6 +128,10 @@ class ControladorChatClan : ControladorGEN() {
             val json = """{"nombre": "${jugadorActualObj.nombre}", "mensaje": "$texto"}"""
             socket.send(json)
             input.clear()
+        }
+
+        if(!listaLogrosJugador.find { it.idLogro == Logros.VIDA_SOCIAL_II }!!.completado){
+            completarLogro(Logros.VIDA_SOCIAL_II)
         }
     }
 }
