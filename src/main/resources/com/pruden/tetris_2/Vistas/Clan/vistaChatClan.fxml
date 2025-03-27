@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,15 +16,20 @@
     </stylesheets>
     <children>
 
-        <Button fx:id="btnCancelar" layoutX="158.0" layoutY="534.0" minHeight="0.0" prefWidth="90.0" text="Cancelar" />
-        <Button fx:id="btnAceptar" layoutX="324.0" layoutY="534.0" minHeight="0.0" prefWidth="90.0" text="Aceptar" />
-      <Label fx:id="nombre" alignment="CENTER" layoutX="144.0" layoutY="27.0" prefHeight="41.0" prefWidth="300.0" text="chat de la hostia" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+        <Button fx:id="btnCancelar" layoutX="261.0" layoutY="543.0" minHeight="0.0" prefWidth="90.0" text="Volver" />
+        <Button fx:id="btnAceptarOculto" defaultButton="true" layoutX="324.0" layoutY="534.0" minHeight="0.0" onAction="#oculto" prefWidth="90.0" text="Aceptar" visible="false" />
+      <Label fx:id="nombre" alignment="CENTER" layoutY="21.0" prefHeight="41.0" prefWidth="587.0" text="Chat del clan" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
          <font>
-            <Font name="Liberation Mono Bold" size="18.0" />
+            <Font name="Liberation Mono Bold" size="28.0" />
          </font>
       </Label>
       <TextField fx:id="input" layoutX="158.0" layoutY="493.0" prefHeight="26.0" prefWidth="272.0" />
         <ListView fx:id="listaMensajes" layoutX="47.0" layoutY="78.0" prefHeight="400" prefWidth="494.0" />
+      <ImageView fx:id="btnAceptar" fitHeight="43.0" fitWidth="53.0" layoutX="436.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Imagenes/Logos/enviarMensaje.png" />
+         </image>
+      </ImageView>
 
     </children>
 </Pane>

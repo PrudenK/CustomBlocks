@@ -10,6 +10,7 @@ import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.fxml.FXML
 import javafx.scene.control.*
+import javafx.scene.image.ImageView
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Priority
 import javafx.stage.Stage
@@ -21,7 +22,8 @@ class ControladorChatClan : ControladorGEN() {
     lateinit var stageChatClan: Stage
 
     @FXML lateinit var input: TextField
-    @FXML lateinit var btnAceptar: Button
+    @FXML lateinit var nombre: Label
+    @FXML lateinit var btnAceptar: ImageView
     @FXML lateinit var btnCancelar: Button
     @FXML lateinit var listaMensajes: ListView<MensajeChat>
 
@@ -39,10 +41,14 @@ class ControladorChatClan : ControladorGEN() {
     fun initialize() {
         listaMensajes.items = mensajes
 
+        input.setOnAction {
+            enviarMensaje()
+        }
+
         CoroutineScope(Dispatchers.Main).launch {
             val mensajesDelClan = ApiCustom.mensajeClanService.getMensajesDeUnClan(idClanDelJugador)
 
-            javafx.application.Platform.runLater {
+            Platform.runLater {
                 mensajesDelClan.forEach { mensajeClan ->
                     val esPropio = mensajeClan.remitente == jugadorActualObj.nombre
                     val mensajeChat = MensajeChat(
@@ -56,7 +62,10 @@ class ControladorChatClan : ControladorGEN() {
                 listaMensajes.refresh()
 
                 listaMensajes.scrollTo(mensajes.size - 1)
+
+                nombre.text = jugadorActualObj.clan!!.nombre
             }
+
         }
 
 
@@ -100,18 +109,28 @@ class ControladorChatClan : ControladorGEN() {
         }
         socket.connect()
 
-        btnAceptar.setOnAction {
-            val texto = input.text
-            if (texto.isNotBlank()) {
-                val json = """{"nombre": "${jugadorActualObj.nombre}", "mensaje": "$texto"}"""
-                socket.send(json)
-                input.clear()
-            }
+        btnAceptar.setOnMouseClicked {
+            enviarMensaje()
         }
+
+
 
         btnCancelar.setOnAction {
             socket.close()
             stageChatClan.close()
+        }
+    }
+
+    @FXML fun oculto(){
+        enviarMensaje()
+    }
+
+    private fun enviarMensaje(){
+        val texto = input.text
+        if (texto.isNotBlank()) {
+            val json = """{"nombre": "${jugadorActualObj.nombre}", "mensaje": "$texto"}"""
+            socket.send(json)
+            input.clear()
         }
     }
 }
