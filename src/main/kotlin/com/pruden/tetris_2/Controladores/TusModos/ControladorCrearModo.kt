@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Controladores.TusModos
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTipoTablero.Companion.tableroSecundarioNum
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -28,6 +29,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         cargarTamaTableroYTitulo()
         cargarInitDiseTableroPrincipal()
         ponerNombreLabelDisePiezas()
+        cargarInitDiseTableroSecun()
     }
 
 
@@ -219,6 +221,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     @FXML lateinit var labelNombreTipoTableroSecun: Label
 
     private var indiceDisePieza = 4
+    private var indiceDiseTableroSecun = 1
 
     @FXML fun volverDise(){
         saltoPagina(pane4, pane3)
@@ -243,17 +246,31 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     }
 
     @FXML fun atrasDiseTableroSecun(){
-
+        if (indiceDiseTableroSecun == 0) {
+            indiceDiseTableroSecun =
+                Listas.LISTAS_IMAGENES_TIPOS_TABLEROS_SECUNDARIOS.size - 1
+        } else indiceDiseTableroSecun--
+        imgViewTipoTableroSecun.image = Listas.LISTAS_IMAGENES_TIPOS_TABLEROS_SECUNDARIOS[indiceDiseTableroSecun]
+        labelNombreTipoTableroSecun.text = Listas.LISTA_NOMBRES_TABLEROS_SECUNDARIOS[indiceDiseTableroSecun]
     }
 
     @FXML fun siguienteDiseTableroSecun(){
-
+        if (indiceDiseTableroSecun == Listas.LISTAS_IMAGENES_TIPOS_TABLEROS_SECUNDARIOS.size - 1) {
+            indiceDiseTableroSecun = 0
+        } else indiceDiseTableroSecun++
+        imgViewTipoTableroSecun.image = Listas.LISTAS_IMAGENES_TIPOS_TABLEROS_SECUNDARIOS[indiceDiseTableroSecun]
+        labelNombreTipoTableroSecun.text = Listas.LISTA_NOMBRES_TABLEROS_SECUNDARIOS[indiceDiseTableroSecun]
     }
 
     private fun ponerNombreLabelDisePiezas() {
         imgViewTiposPieza.image = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza];
         labelNombreTipoPieza.text = (Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].url.substring(Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].
         url.lastIndexOf("/")+1, Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].url.lastIndexOf(".")));
+    }
+
+    private fun cargarInitDiseTableroSecun(){
+        imgViewTipoTableroSecun.image = Listas.LISTAS_IMAGENES_TIPOS_TABLEROS_SECUNDARIOS[indiceDiseTableroSecun]
+        labelNombreTipoTableroSecun.text = Listas.LISTA_NOMBRES_TABLEROS_SECUNDARIOS[indiceDiseTableroSecun]
     }
 
 
