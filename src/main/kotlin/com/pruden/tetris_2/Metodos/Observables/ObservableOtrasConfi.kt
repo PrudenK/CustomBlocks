@@ -13,7 +13,7 @@ import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarDashes
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarHoldGuardar
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.activarSiguientesPiezasB
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.guardar_valores_otras_confi
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.guardarValoresOtrasConfi
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.limiteRotaciones
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.rotaciones
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.saltoNivel
@@ -24,9 +24,9 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfigurac
 import javafx.beans.property.SimpleBooleanProperty
 
 fun cargarObservableOtrasConfi(){
-    guardar_valores_otras_confi = SimpleBooleanProperty(false)
+    guardarValoresOtrasConfi = SimpleBooleanProperty(false)
 
-    guardar_valores_otras_confi.addListener{ _, _, newValue ->
+    guardarValoresOtrasConfi.addListener{ _, _, newValue ->
         if (newValue) {
             TIEMPO_CAIDA_PIEZAS_INICIAL = tiempoCaida
             LINEAS_POR_NIVEL = saltoNivel

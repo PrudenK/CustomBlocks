@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores.Custom
 
+import com.pruden.tetris_2.Constantes.Configuraciones
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES_B
@@ -34,30 +35,11 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     @FXML private lateinit var labelLinesSaltoNivel: Label
     @FXML private lateinit var labelSaltoTiempoNivel: Label
     @FXML private lateinit var labelLimiteRotaciones: Label
-
-    private val TIEMPO_MAXIMO_CAIDA = 3000
-    private val TIEMPO_MINIMO_CAIDA = 50
-
-    private val LINEAS_SALTO_NIVEL_MINIMO = 1
-    private val LINEAS_SALTO_NIVEL_MAXIMO = 99
-
-    private val SALTO_TIEMPO_NIVEL_MINIMO = 50
-    private val SALTO_TIEMPO_NIVEL_MAXIMO = 500
-
-    private val LIMITE_ROTACIONES_MINIMO = 0
-    private val LIMITE_ROTACIONES_MAXIMO = 10
-
-    private val SALTO_TIEMPO_CAIDA = 50
-    private val SALTO_LINEAS_SALTO_NIVEL = 1
-    private val SALTO_SALTO_TIEMPO_NIVEL = 50
-    private val SALTO_ROTACIONES = 1
-
-    private val MS = " ms"
-
+    
     companion object{
         lateinit var stageOtrasConfi: Stage
 
-        lateinit var guardar_valores_otras_confi: BooleanProperty
+        lateinit var guardarValoresOtrasConfi: BooleanProperty
 
         var tiempoCaida = 0
         var saltoNivel = 0
@@ -75,16 +57,16 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     }
 
 
-    @FXML private fun volver() {
+    @FXML fun volver() {
         stageOtrasConfi.close()
     }
 
-    @FXML private fun guardar() {
+    @FXML fun guardar() {
         crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Otras_Confi.fxml",
             cPrin.nuevaPartidaB, 344.0, 178.0,null,0,0))
     }
 
-    @FXML private fun reestablecer() {
+    @FXML fun reestablecer() {
         activarLimite.text = "Sin límite"
         masLimiteRotacionesB.isDisable = true
         menosLimiteRotacionesB.isDisable = true
@@ -95,9 +77,9 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         saltoNivel = 10
         saltoTiempoNivel = 100
 
-        labelTiempoCaidaInicial.text = tiempoCaida.toString() + MS
+        labelTiempoCaidaInicial.text = tiempoCaida.toString() + Configuraciones.MS
         labelLinesSaltoNivel.text = saltoNivel.toString()
-        labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + MS
+        labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + Configuraciones.MS
 
         activarHoldB.text = "Activo"
         siguientesPiezasB.text = "Activo"
@@ -108,63 +90,63 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         activarDashes = false
     }
 
-    @FXML private fun menosTiempoCaidaInicial() {
-        if (tiempoCaida > TIEMPO_MINIMO_CAIDA) {
-            tiempoCaida -= SALTO_TIEMPO_CAIDA
-            labelTiempoCaidaInicial.text = tiempoCaida.toString() + MS
+    @FXML fun menosTiempoCaidaInicial() {
+        if (tiempoCaida > Configuraciones.TIEMPO_MINIMO_CAIDA) {
+            tiempoCaida -= Configuraciones.SALTO_TIEMPO_CAIDA
+            labelTiempoCaidaInicial.text = tiempoCaida.toString() + Configuraciones.MS
         }
     }
 
-    @FXML private fun masTiempoCaidaInicial() {
-        if (tiempoCaida < TIEMPO_MAXIMO_CAIDA) {
-            tiempoCaida += SALTO_TIEMPO_CAIDA
-            labelTiempoCaidaInicial.text = tiempoCaida.toString() + MS
+    @FXML fun masTiempoCaidaInicial() {
+        if (tiempoCaida < Configuraciones.TIEMPO_MAXIMO_CAIDA) {
+            tiempoCaida += Configuraciones.SALTO_TIEMPO_CAIDA
+            labelTiempoCaidaInicial.text = tiempoCaida.toString() + Configuraciones.MS
         }
     }
 
-    @FXML private fun menosLinesSaltoNivel() {
-        if (saltoNivel > LINEAS_SALTO_NIVEL_MINIMO) {
-            saltoNivel -= SALTO_LINEAS_SALTO_NIVEL
+    @FXML fun menosLinesSaltoNivel() {
+        if (saltoNivel > Configuraciones.LINEAS_SALTO_NIVEL_MINIMO) {
+            saltoNivel -= Configuraciones.SALTO_LINEAS_SALTO_NIVEL
             labelLinesSaltoNivel.text = saltoNivel.toString()
         }
     }
 
-    @FXML private fun masLinesSaltoNivel() {
-        if (saltoNivel < LINEAS_SALTO_NIVEL_MAXIMO) {
-            saltoNivel += SALTO_LINEAS_SALTO_NIVEL
+    @FXML fun masLinesSaltoNivel() {
+        if (saltoNivel < Configuraciones.LINEAS_SALTO_NIVEL_MAXIMO) {
+            saltoNivel += Configuraciones.SALTO_LINEAS_SALTO_NIVEL
             labelLinesSaltoNivel.text = saltoNivel.toString()
         }
     }
 
-    @FXML private fun menosSaltoTiempoNivel() {
-        if (saltoTiempoNivel > SALTO_TIEMPO_NIVEL_MINIMO) {
-            saltoTiempoNivel -= SALTO_SALTO_TIEMPO_NIVEL
-            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + MS
+    @FXML fun menosSaltoTiempoNivel() {
+        if (saltoTiempoNivel > Configuraciones.SALTO_TIEMPO_NIVEL_MINIMO) {
+            saltoTiempoNivel -= Configuraciones.SALTO_SALTO_TIEMPO_NIVEL
+            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + Configuraciones.MS
         }
     }
 
-    @FXML private fun masSaltoTiempoNivel() {
-        if (saltoTiempoNivel < SALTO_TIEMPO_NIVEL_MAXIMO) {
-            saltoTiempoNivel += SALTO_SALTO_TIEMPO_NIVEL
-            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + MS
+    @FXML fun masSaltoTiempoNivel() {
+        if (saltoTiempoNivel < Configuraciones.SALTO_TIEMPO_NIVEL_MAXIMO) {
+            saltoTiempoNivel += Configuraciones.SALTO_SALTO_TIEMPO_NIVEL
+            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + Configuraciones.MS
         }
     }
 
-    @FXML private fun menosLimiteRotaciones() {
-        if (rotaciones > LIMITE_ROTACIONES_MINIMO) {
-            rotaciones -= SALTO_ROTACIONES
+    @FXML fun menosLimiteRotaciones() {
+        if (rotaciones > Configuraciones.LIMITE_ROTACIONES_MINIMO) {
+            rotaciones -= Configuraciones.SALTO_ROTACIONES
             labelLimiteRotaciones.text = rotaciones.toString()
         }
     }
 
-    @FXML private fun masLimiteRotaciones() {
-        if (rotaciones < LIMITE_ROTACIONES_MAXIMO) {
-            rotaciones += SALTO_ROTACIONES
+    @FXML fun masLimiteRotaciones() {
+        if (rotaciones < Configuraciones.LIMITE_ROTACIONES_MAXIMO) {
+            rotaciones += Configuraciones.SALTO_ROTACIONES
             labelLimiteRotaciones.text = rotaciones.toString()
         }
     }
 
-    @FXML private fun limiteB() {
+    @FXML fun limiteB() {
         if (limiteRotaciones) {
             activarLimite.text = "Sin límite"
             masLimiteRotacionesB.isDisable = true
@@ -180,7 +162,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         }
     }
 
-    @FXML private fun activarHold() {
+    @FXML fun activarHold() {
         if (activarHoldB.text == "Activo") {
             activarHoldB.text = "Desactivado"
             activarHoldGuardar = false
@@ -190,7 +172,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         }
     }
 
-    @FXML private fun siguientesPiezas() {
+    @FXML fun siguientesPiezas() {
         if (siguientesPiezasB.text == "Activo") {
             siguientesPiezasB.text = "Desactivado"
             activarSiguientesPiezasB = false
@@ -200,7 +182,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
         }
     }
 
-    @FXML private fun activarDashes(){
+    @FXML fun activarDashes(){
         if (activarDashButton.text == "Activo"){
             activarDashButton.text = "Desactivado"
             activarDashes = false
@@ -211,9 +193,9 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     }
 
     private fun cargarValoresInit(){
-        labelTiempoCaidaInicial.text = TIEMPO_CAIDA_PIEZAS_INICIAL.toString() + MS
+        labelTiempoCaidaInicial.text = TIEMPO_CAIDA_PIEZAS_INICIAL.toString() + Configuraciones.MS
         labelLinesSaltoNivel.text = LINEAS_POR_NIVEL.toString()
-        labelSaltoTiempoNivel.text = REDUCCION_TIEMPO_POR_NIVEL.toString() + MS
+        labelSaltoTiempoNivel.text = REDUCCION_TIEMPO_POR_NIVEL.toString() + Configuraciones.MS
 
         tiempoCaida = TIEMPO_CAIDA_PIEZAS_INICIAL
         saltoNivel = LINEAS_POR_NIVEL

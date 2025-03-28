@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Controladores.Advertencias
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.guardar_valores_otras_confi
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomOtrasConfiguraciones.Companion.guardarValoresOtrasConfi
 import javafx.fxml.FXML
 import javafx.scene.control.Button
 import javafx.stage.Stage
@@ -11,7 +11,7 @@ class ControladorAdvertenciaOtrasConfi : ControladorGEN() {
 
 
     @FXML private fun guardar() {
-        guardar_valores_otras_confi.set(true)
+        guardarValoresOtrasConfi.set(true)
         stage.close()
     }
 
