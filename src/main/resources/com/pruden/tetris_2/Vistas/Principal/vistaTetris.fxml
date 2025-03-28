@@ -114,9 +114,9 @@
          <Font name="Liberation Mono Bold" size="22.0" />
       </font>
    </Label>
-   <Button fx:id="opciones_B" layoutX="661.0" layoutY="682.0" mnemonicParsing="false" onAction="#opciones" prefHeight="32.0" prefWidth="138.0" text="Opciones" />
+   <Button fx:id="opciones_B" layoutX="661.0" layoutY="702.0" mnemonicParsing="false" onAction="#opciones" prefHeight="32.0" prefWidth="138.0" text="Opciones" />
    <Button fx:id="custom_B" layoutX="38.0" layoutY="790.0" mnemonicParsing="false" onAction="#custom" prefHeight="32.0" prefWidth="138.0" text="Custom Game" />
-   <Button layoutX="661.0" layoutY="790.0" mnemonicParsing="false" onAction="#salir" prefHeight="32.0" prefWidth="138.0" text="Salir" />
+   <Button layoutX="661.0" layoutY="810.0" mnemonicParsing="false" onAction="#salir" prefHeight="32.0" prefWidth="138.0" text="Salir" />
    <Canvas fx:id="canvasHold" height="150.0" layoutX="33.0" layoutY="163.0" width="150.0" />
    <Label layoutX="85.0" layoutY="133.0" text="Hold" textFill="#e9e8e8">
       <font>
@@ -145,7 +145,7 @@
          <Font name="Liberation Mono Bold" size="18.0" />
       </font></Label>
    <ImageView fx:id="imgPublicidad" fitHeight="101.0" fitWidth="207.0" layoutX="672.0" layoutY="26.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true" />
-   <Button fx:id="sesionB" layoutX="661.0" layoutY="737.0" mnemonicParsing="false" onAction="#sesion" prefHeight="32.0" prefWidth="138.0" text="Cerrar sesión" />
+   <Button fx:id="sesionB" layoutX="661.0" layoutY="757.0" mnemonicParsing="false" onAction="#sesion" prefHeight="32.0" prefWidth="138.0" text="Cerrar sesión" />
    <Button layoutX="39.0" layoutY="682.0" mnemonicParsing="false" onAction="#campa" prefHeight="32.0" prefWidth="138.0" text="Modo campaña" />
    <Label fx:id="mundoNivel" layoutX="27.0" layoutY="357.0" prefHeight="17.0" prefWidth="160.0" style="-fx-text-fill: FFFFFF;" textFill="#e9e8e8">
       <font>
@@ -154,4 +154,6 @@
    <Button layoutX="38.0" layoutY="26.0" mnemonicParsing="false" onAction="#suscripciones" prefHeight="32.0" prefWidth="138.0" text="Suscripciones" />
    <Button layoutX="38.0" layoutY="76.0" mnemonicParsing="false" onAction="#logros" prefHeight="32.0" prefWidth="138.0" text="Logros" />
    <Button fx:id="clan" layoutX="198.0" layoutY="790.0" mnemonicParsing="false" onAction="#clan" prefHeight="32.0" prefWidth="138.0" text="Clan" />
+   <Button fx:id="tusModos" layoutX="511.0" layoutY="790.0" mnemonicParsing="false" onAction="#tusModos" prefHeight="32.0" prefWidth="138.0" text="Tus modos" />
+   <Button fx:id="guardarModo" layoutX="661.0" layoutY="658.0" mnemonicParsing="false" onAction="#guardarModo" prefHeight="32.0" prefWidth="138.0" text="Guardar modo" />
 </Pane>

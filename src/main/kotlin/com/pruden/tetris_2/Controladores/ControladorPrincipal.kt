@@ -266,4 +266,16 @@ class ControladorPrincipal : Initializable {
     @FXML fun clan(){
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 192.0, timelinePartida, 0, -60))
     }
+
+    @FXML fun tusModos(){
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
+    }
+
+    @FXML fun guardarModo(){
+        if(labelModo.text == "Custom"){
+
+        }else{
+            println("Solo se puede guardar un modo custom")
+        }
+    }
 }
