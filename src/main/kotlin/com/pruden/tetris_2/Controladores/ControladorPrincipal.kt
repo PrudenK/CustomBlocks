@@ -271,11 +271,7 @@ class ControladorPrincipal : Initializable {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
     }
 
-    @FXML fun guardarModo(){
-        if(labelModo.text == "Custom"){
-
-        }else{
-            println("Solo se puede guardar un modo custom")
-        }
+    @FXML fun crearModo(){
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaCrearModo.fxml", nuevaPartidaB, 609.0, 513.0, timelinePartida, 0, 0))
     }
 }
