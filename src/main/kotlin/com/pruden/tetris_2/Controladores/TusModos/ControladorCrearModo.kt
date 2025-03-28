@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.TusModos
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -20,6 +21,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         seleccionarImagen()
+        cargarListaCheckBoxes()
     }
 
 
@@ -113,6 +115,28 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
     @FXML fun siguiente2(){
         saltoPagina(pane2, pane3)
+    }
+
+    private fun cargarListaCheckBoxes(){
+        checkBoxes = listOf(
+            ck_O, ck_I, ck_L, ck_Z, ck_J, ck_S, ck_T, ck_P, ck_X, ck_U,
+            ck_L_v2, ck_W, ck_T_v2, ck_Z_v2, ck_X_v2, ck_L_v3, ck_F, ck_O_v2,
+            ck_S_v2, ck_B, ck_Y, ck_K, ck_I_v2, ck_C, ck_O_v3, ck_V, ck_H,
+            ck_I_v3, ck_Y_v2, ck_O_v4, ck_J_v2, ck_A, ck_Mini_I, ck_Mini_I_v2,
+            ck_Mini_L_v2, ck_Mini_O, ck_O_v5, ck_O_v6, ck_X_v3, ck_E, ck_Tw_O,
+            ck_Tw_Y, ck_Pick, ck_S_v3, ck_Tw_O_v2, ck_Ladder, ck_Z_v3, ck_H_v2
+        )
+    }
+
+    private fun devolverListaPiezas(): String{
+        var listaPiezas = ""
+        for((i, checkBox) in checkBoxes.withIndex()){
+            if(checkBox.isSelected){
+                listaPiezas += i.toString()+"_"
+            }
+        }
+        listaPiezas = listaPiezas.substring(0, listaPiezas.length-1)
+        return listaPiezas
     }
 
 
