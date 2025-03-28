@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.API.ObjsAux
 
-data class ModoDeJuego(
+data class ModoDeJuegoAPI(
     val idJugador: Int,
     val idNumModo: Int,
     val nombre: String,

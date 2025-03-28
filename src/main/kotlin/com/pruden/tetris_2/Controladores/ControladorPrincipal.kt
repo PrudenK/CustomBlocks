@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Controladores
 
-import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.API.ObjsAux.*
 import com.pruden.tetris_2.Constantes.Globales
@@ -13,10 +12,8 @@ import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
-import com.pruden.tetris_2.Metodos.ModoCampa.PantallaDeCarga.cargaProgressBarCargarNivel
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
-import com.pruden.tetris_2.Metodos.Stages.cargarStageNotificacionLogro
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
@@ -178,6 +175,9 @@ class ControladorPrincipal : Initializable {
         var suscripcionDelJugador: SuscripcionJugador? = null
         lateinit var jugadorActualObj: Jugador
 
+        //modos de juego
+        var listaModosDeJuego = mutableListOf<ModoDeJuegoAPI>()
+
         var idNivelActual = -1
     }
 
@@ -238,6 +238,7 @@ class ControladorPrincipal : Initializable {
         println(listaPiezasSeleccionadas)
         println(idClanDelJugador)
 
+        println(listaModosDeJuego)
     }
 
     @FXML fun salir() {

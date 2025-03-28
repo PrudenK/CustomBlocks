@@ -2,10 +2,9 @@ package com.pruden.tetris_2.Controladores.TusModos
 
 import com.google.gson.Gson
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.API.ObjsAux.ModoDeJuego
+import com.pruden.tetris_2.API.ObjsAux.ModoDeJuegoAPI
 import com.pruden.tetris_2.Constantes.Configuraciones
 import com.pruden.tetris_2.Constantes.Listas
-import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
@@ -430,7 +429,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
            rotacionesAux = rotaciones
         }
 
-        val modoJuego = ModoDeJuego(
+        val modoJuego = ModoDeJuegoAPI(
             idJugador = idJugador,
             idNumModo = 1,
             nombre = textFieldNombreModo.text.toString(),
@@ -454,7 +453,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             val requestBodyModoJuego = Gson().toJson(modoJuego)
                 .toRequestBody("application/json; charset=utf-8".toMediaType())
 
-            ApiCustom.modoDeJuegoClanService.crearModoDeJuego(requestBodyModoJuego, fotoModoDeJuegoSeleccionada)
+            ApiCustom.modoDeJuegoService.crearModoDeJuego(requestBodyModoJuego, fotoModoDeJuegoSeleccionada)
         }
     }
 
