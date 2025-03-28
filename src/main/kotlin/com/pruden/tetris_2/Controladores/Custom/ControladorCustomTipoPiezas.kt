@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoPieza
@@ -24,14 +25,6 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
     @FXML private lateinit var imgViewTiposPieza: ImageView
     private lateinit var stage : Stage
 
-    private val pieza0 : Image = deRutaAImagen("/Imagenes/Tipo_De_Pieza/Circulo.png")
-    private val pieza3 = deRutaAImagen("/Imagenes/Tipo_De_Pieza/Triangulo.png")
-    private val pieza4 = deRutaAImagen("/Imagenes/Tipo_De_Pieza/Cuadrado.png")
-    private val pieza5 = deRutaAImagen("/Imagenes/Tipo_De_Pieza/Pentagono.png")
-    private val pieza6 = deRutaAImagen("/Imagenes/Tipo_De_Pieza/Hexagono.png")
-
-    private var listaPiezasIMG: ArrayList<Image> = ArrayList<Image>()
-    private var mapaPiezasIMG: HashMap<Int, Image> = HashMap<Int, Image>()
     private var posicionLista = 0
     private val cambio = false
 
@@ -40,32 +33,32 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
     }
 
 
-    @FXML private fun volver() {
+    @FXML fun volver() {
         stage.close()
     }
 
-    @FXML private fun guardar() {
+    @FXML fun guardar() {
         cambioTipoPieza()
         stage.close()
     }
 
-    @FXML private fun siguiente() {
-        if (posicionLista != listaPiezasIMG.size - 1) {
+    @FXML fun siguiente() {
+        if (posicionLista != Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS.size - 1) {
             posicionLista++
         } else posicionLista = 0
         ponerNombreLabel()
     }
 
-    @FXML private fun atras() {
+    @FXML fun atras() {
         if (posicionLista != 0) {
             posicionLista--
-        } else posicionLista = listaPiezasIMG.size - 1
+        } else posicionLista = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS.size - 1
         ponerNombreLabel()
     }
 
 
     private fun cambioTipoPieza() {
-        tipoPieza = (obtenerClavePorValor(listaPiezasIMG[posicionLista]))
+        tipoPieza = (obtenerClavePorValor(Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista]))
 
 
         if (!cambioDeTAbleroParaTipoPieza){
@@ -81,13 +74,11 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
 
             dibujarPiezasSiguientes(-1)
         }
-
-
     }
 
     private fun obtenerClavePorValor(valor: Any): Int {
         var clave = 4
-        for ((key, value) in mapaPiezasIMG.entries) {
+        for ((key, value) in Listas.MAPA_TIPO_PIEZAS_IMG.entries) {
             if (value == valor) {
                 clave = key
                 break
@@ -97,26 +88,14 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
     }
 
     private fun iniciarListas() {
-        listaPiezasIMG =ArrayList<Image>()
-        mapaPiezasIMG = HashMap<Int, Image>()
-        listaPiezasIMG.add(pieza0)
-        listaPiezasIMG.add(pieza3)
-        listaPiezasIMG.add(pieza4)
-        listaPiezasIMG.add(pieza5)
-        listaPiezasIMG.add(pieza6)
-        mapaPiezasIMG[0] = listaPiezasIMG[0]
-        mapaPiezasIMG[3] = listaPiezasIMG[1]
-        mapaPiezasIMG[4] = listaPiezasIMG[2]
-        mapaPiezasIMG[5] = listaPiezasIMG[3]
-        mapaPiezasIMG[6] = listaPiezasIMG[4]
-        posicionLista = listaPiezasIMG.indexOf(mapaPiezasIMG[tipoPieza])
+        posicionLista = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS.indexOf(Listas.MAPA_TIPO_PIEZAS_IMG[tipoPieza])
         ponerNombreLabel()
     }
 
     private fun ponerNombreLabel() {
-        imgViewTiposPieza.image = listaPiezasIMG[posicionLista];
-        labelNombreTipoPieza.text = (listaPiezasIMG[posicionLista].url.substring(listaPiezasIMG[posicionLista].
-        url.lastIndexOf("/")+1, listaPiezasIMG[posicionLista].url.lastIndexOf(".")));
+        imgViewTiposPieza.image = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista];
+        labelNombreTipoPieza.text = (Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista].url.substring(Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista].
+        url.lastIndexOf("/")+1, Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista].url.lastIndexOf(".")));
     }
 
     override fun setStage(stage: Stage?) {

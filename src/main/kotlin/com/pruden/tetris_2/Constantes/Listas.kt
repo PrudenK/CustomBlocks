@@ -120,4 +120,21 @@ object Listas {
         "Tablero vacío",
         "Tablero clásico"
     )
+
+    val LISTA_IMAGENES_TIPO_DE_PIEZAS = listOf(
+        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Circulo.png"),
+        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Triangulo.png"),
+        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Cuadrado.png"),
+        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Pentagono.png"),
+        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Hexagono.png")
+    )
+
+    val MAPA_TIPO_PIEZAS_IMG: HashMap<Int, javafx.scene.image.Image> = hashMapOf(
+        0 to LISTA_IMAGENES_TIPO_DE_PIEZAS[0],
+        3 to LISTA_IMAGENES_TIPO_DE_PIEZAS[1],
+        4 to LISTA_IMAGENES_TIPO_DE_PIEZAS[2],
+        5 to LISTA_IMAGENES_TIPO_DE_PIEZAS[3],
+        6 to LISTA_IMAGENES_TIPO_DE_PIEZAS[4]
+    )
+
 }
