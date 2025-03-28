@@ -1,7 +1,9 @@
 package com.pruden.tetris_2.Controladores.TusModos
 
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.tabPosicion
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -9,6 +11,7 @@ import javafx.scene.control.Button
 import javafx.scene.control.CheckBox
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
+import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.Pane
 import javafx.stage.Stage
@@ -22,6 +25,9 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         seleccionarImagen()
         cargarListaCheckBoxes()
+
+        cargarTableroYTitulo()
+
     }
 
 
@@ -149,6 +155,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     @FXML lateinit var nombreTamaTablero: Label
     @FXML lateinit var nombreDiseTablero: Label
 
+    private var indiceTamaTablero = 1
 
     @FXML fun volverTablero(){
         saltoPagina(pane3, pane2)
@@ -159,11 +166,17 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     }
 
     @FXML fun siguienteTamaTablero(){
-
+        if (indiceTamaTablero == Listas.LISTA_IMAGENES_DE_TABLEROS.size - 1) {
+            indiceTamaTablero = 0
+        } else indiceTamaTablero++
+        cargarTableroYTitulo()
     }
 
     @FXML fun anteriorTamaTablero(){
-
+        if (indiceTamaTablero == 0) {
+            indiceTamaTablero = Listas.LISTA_IMAGENES_DE_TABLEROS.size - 1
+        } else indiceTamaTablero--
+        cargarTableroYTitulo()
     }
 
     @FXML fun siguienteDiseTablero(){
@@ -172,6 +185,12 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
     @FXML fun anteriorDiseTablero(){
 
+    }
+
+    private fun cargarTableroYTitulo(){
+        val tab: Image = Listas.LISTA_IMAGENES_DE_TABLEROS[indiceTamaTablero]
+        nombreTamaTablero.text = tab.url.substring(tab.url.lastIndexOf("/") + 1, tab.url.lastIndexOf("."))
+        carruselTamaTablero.image = tab
     }
 
 
