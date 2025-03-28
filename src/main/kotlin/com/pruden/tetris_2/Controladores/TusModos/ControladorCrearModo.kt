@@ -27,6 +27,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
         cargarTamaTableroYTitulo()
         cargarInitDiseTableroPrincipal()
+        ponerNombreLabelDisePiezas()
     }
 
 
@@ -217,6 +218,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     @FXML lateinit var labelNombreTipoPieza: Label
     @FXML lateinit var labelNombreTipoTableroSecun: Label
 
+    private var indiceDisePieza = 4
 
     @FXML fun volverDise(){
         saltoPagina(pane4, pane3)
@@ -227,11 +229,17 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     }
 
     @FXML fun atrasDisePiezas(){
-
+        if (indiceDisePieza != 0) {
+            indiceDisePieza--
+        } else indiceDisePieza = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS.size - 1
+        ponerNombreLabelDisePiezas()
     }
 
     @FXML fun siguienteDisePiezas(){
-
+        if (indiceDisePieza != Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS.size - 1) {
+            indiceDisePieza++
+        } else indiceDisePieza = 0
+        ponerNombreLabelDisePiezas()
     }
 
     @FXML fun atrasDiseTableroSecun(){
@@ -240,6 +248,12 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
     @FXML fun siguienteDiseTableroSecun(){
 
+    }
+
+    private fun ponerNombreLabelDisePiezas() {
+        imgViewTiposPieza.image = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza];
+        labelNombreTipoPieza.text = (Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].url.substring(Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].
+        url.lastIndexOf("/")+1, Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].url.lastIndexOf(".")));
     }
 
 
