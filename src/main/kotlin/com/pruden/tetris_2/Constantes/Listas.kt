@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Constantes
 
+import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Piezas.*
 
 object Listas {
@@ -86,5 +87,11 @@ object Listas {
         "Sudán", "Sudán del Sur", "Suecia", "Suiza", "Surinam", "Seychelles", "Tailandia", "Tanzania", "Togo",
         "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay",
         "Uzbekistán", "Vanuatu", "Vaticano", "Venezuela", "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue"
+    )
+
+    val LISTA_IMAGENES_DE_TABLEROS = listOf(
+        deRutaAImagen("/Imagenes/Tableros/Tablero_12x8.jpg"),
+        deRutaAImagen("/Imagenes/Tableros/Tablero_18x10.jpg"),
+        deRutaAImagen("/Imagenes/Tableros/Tablero_30x20.jpg")
     )
 }

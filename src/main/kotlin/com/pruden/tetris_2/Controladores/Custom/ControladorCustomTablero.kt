@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
@@ -23,14 +24,6 @@ class ControladorCustomTablero : ControladorGEN(), Initializable {
     @FXML private lateinit var tableroLabel: Label
     @FXML private lateinit var guardarB: Button
 
-    private val tab1 = deRutaAImagen("/Imagenes/Tableros/Tablero_12x8.jpg")
-    private val tab2 = deRutaAImagen("/Imagenes/Tableros/Tablero_18x10.jpg")
-    private val tab3 = deRutaAImagen("/Imagenes/Tableros/Tablero_30x20.jpg")
-
-    private val listaTableros = ArrayList<Image>()
-
-
-
     companion object{
         lateinit var stageCustomTablero : Stage
         lateinit var guardarTablero: BooleanProperty
@@ -46,42 +39,35 @@ class ControladorCustomTablero : ControladorGEN(), Initializable {
 
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        iniciarListaTablero()
         cargarPosicionTablero()
         cargarTableroYTitulo()
         cargarObservableTablero()
     }
 
 
-    @FXML private fun salir() {
+    @FXML fun salir() {
         stageCustomTablero.close()
     }
 
 
-    @FXML private fun guardar() {
+    @FXML fun guardar() {
         crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tablero.fxml",
             cPrin.nuevaPartidaB, 344.0, 178.0, null, 0, 0))
     }
 
 
-    @FXML private fun siguiente() {
-        if (tabPosicion == listaTableros.size - 1) {
+    @FXML fun siguiente() {
+        if (tabPosicion == Listas.LISTA_IMAGENES_DE_TABLEROS.size - 1) {
             tabPosicion = 0
         } else tabPosicion++
         cargarTableroYTitulo()
     }
 
-    @FXML private fun anterior() {
+    @FXML fun anterior() {
         if (tabPosicion == 0) {
-            tabPosicion = listaTableros.size - 1
+            tabPosicion = Listas.LISTA_IMAGENES_DE_TABLEROS.size - 1
         } else tabPosicion--
         cargarTableroYTitulo()
-    }
-
-    private fun iniciarListaTablero() {
-        listaTableros.add(tab1)
-        listaTableros.add(tab2)
-        listaTableros.add(tab3)
     }
 
     private fun cargarPosicionTablero(){
@@ -89,7 +75,7 @@ class ControladorCustomTablero : ControladorGEN(), Initializable {
     }
 
     private fun cargarTableroYTitulo(){
-        val tab: Image = listaTableros[tabPosicion]
+        val tab: Image = Listas.LISTA_IMAGENES_DE_TABLEROS[tabPosicion]
         tableroLabel.text = tab.url.substring(tab.url.lastIndexOf("/") + 1, tab.url.lastIndexOf("."))
         carrusel.image = tab
     }
