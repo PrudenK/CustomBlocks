@@ -758,12 +758,12 @@
                </font>
             </Label>
             <Button fx:id="siguientesPiezasB" layoutX="220.0" layoutY="375.0" mnemonicParsing="false" onAction="#siguientesPiezas" text="Activo" />
-            <Label layoutX="335.0" layoutY="350.0" prefHeight="25.0" prefWidth="71.0" text="Dashes" textFill="#e9e8e8">
+            <Label layoutX="365.0" layoutY="350.0" prefHeight="25.0" prefWidth="71.0" text="Dashes" textFill="#e9e8e8">
                <font>
                   <Font name="Liberation Mono Bold" size="16.0" />
                </font>
             </Label>
-            <Button fx:id="activarDashButton" layoutX="422.0" layoutY="345.0" mnemonicParsing="false" onAction="#activarDashes" text="Desactivado" />
+            <Button fx:id="activarDashButton" layoutX="452.0" layoutY="345.0" mnemonicParsing="false" onAction="#activarDashes" text="Desactivado" />
          </children>
       </Pane>
    </children>

@@ -20,6 +20,9 @@ object Configuraciones {
 
     const val MS = " ms"
     
-    
+    const val TIEMPO_CAIDA_POR_DEFECTO = 1500
+    const val LINEAS_POR_NIVEL_POR_DEFECTO = 10
+    const val REDUCCION_TIEMPO_POR_NIVEL_POR_DEFECTO = 100
+
     
 }

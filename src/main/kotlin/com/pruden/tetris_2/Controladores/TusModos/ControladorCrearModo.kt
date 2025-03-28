@@ -1,9 +1,9 @@
 package com.pruden.tetris_2.Controladores.TusModos
 
+import com.pruden.tetris_2.Constantes.Configuraciones
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTipoTablero.Companion.tableroSecundarioNum
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -30,16 +30,12 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         cargarInitDiseTableroPrincipal()
         ponerNombreLabelDisePiezas()
         cargarInitDiseTableroSecun()
+        cargarValoresInitOtrasConfiguraciones()
     }
-
-
-
 
     companion object{
         var fotoModoDeJuegoSeleccionada : MultipartBody.Part? = null
     }
-
-
 
     // Apartado de nombre e imagen
 
@@ -61,7 +57,6 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             subirImagenPerfilADB("Seleccionar imagen para modo de juego", imgViewModo)
         }
     }
-
 
     // Apartado de piezas
 
@@ -116,7 +111,6 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     @FXML lateinit var ck_Z_v3: CheckBox
     @FXML lateinit var ck_H_v2: CheckBox
 
-    
     @FXML fun volverPiezas(){
         saltoPagina(pane2, pane1)
     }
@@ -146,7 +140,6 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         listaPiezas = listaPiezas.substring(0, listaPiezas.length-1)
         return listaPiezas
     }
-
 
     // Tablero
 
@@ -291,63 +284,146 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     @FXML lateinit var siguientesPiezasB: Button
     @FXML lateinit var activarDashButton: Button
 
+    private var tiempoCaida = 1500
+    private var saltoNivel = 10
+    private var saltoTiempoNivel = 100
+    private var rotaciones = 0
+    private var limiteRotaciones = false
+    private var activarSiguientesPiezasB = true
+    private var activarHoldGuardar = true
+    private var activarDashes = false
 
-    @FXML fun masTiempoCaidaInicial(){
-
-    }
 
     @FXML fun menosTiempoCaidaInicial(){
-
+        if (tiempoCaida > Configuraciones.TIEMPO_MINIMO_CAIDA) {
+            tiempoCaida -= Configuraciones.SALTO_TIEMPO_CAIDA
+            labelTiempoCaidaInicial.text = tiempoCaida.toString() + Configuraciones.MS
+        }
     }
 
-    @FXML fun masLinesSaltoNivel(){
-
+    @FXML fun masTiempoCaidaInicial(){
+        if (tiempoCaida < Configuraciones.TIEMPO_MAXIMO_CAIDA) {
+            tiempoCaida += Configuraciones.SALTO_TIEMPO_CAIDA
+            labelTiempoCaidaInicial.text = tiempoCaida.toString() + Configuraciones.MS
+        }
     }
 
     @FXML fun menosLinesSaltoNivel(){
-
+        if (saltoNivel > Configuraciones.LINEAS_SALTO_NIVEL_MINIMO) {
+            saltoNivel -= Configuraciones.SALTO_LINEAS_SALTO_NIVEL
+            labelLinesSaltoNivel.text = saltoNivel.toString()
+        }
     }
 
-    @FXML fun masSaltoTiempoNivel(){
-
+    @FXML fun masLinesSaltoNivel(){
+        if (saltoNivel < Configuraciones.LINEAS_SALTO_NIVEL_MAXIMO) {
+            saltoNivel += Configuraciones.SALTO_LINEAS_SALTO_NIVEL
+            labelLinesSaltoNivel.text = saltoNivel.toString()
+        }
     }
 
     @FXML fun menosSaltoTiempoNivel(){
-
+        if (saltoTiempoNivel > Configuraciones.SALTO_TIEMPO_NIVEL_MINIMO) {
+            saltoTiempoNivel -= Configuraciones.SALTO_SALTO_TIEMPO_NIVEL
+            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + Configuraciones.MS
+        }
     }
 
-    @FXML fun masLimiteRotaciones(){
-
+    @FXML fun masSaltoTiempoNivel(){
+        if (saltoTiempoNivel < Configuraciones.SALTO_TIEMPO_NIVEL_MAXIMO) {
+            saltoTiempoNivel += Configuraciones.SALTO_SALTO_TIEMPO_NIVEL
+            labelSaltoTiempoNivel.text = saltoTiempoNivel.toString() + Configuraciones.MS
+        }
     }
 
     @FXML fun menosLimiteRotaciones(){
+        if (rotaciones > Configuraciones.LIMITE_ROTACIONES_MINIMO) {
+            rotaciones -= Configuraciones.SALTO_ROTACIONES
+            labelLimiteRotaciones.text = rotaciones.toString()
+        }
+    }
 
+    @FXML fun masLimiteRotaciones(){
+        if (rotaciones < Configuraciones.LIMITE_ROTACIONES_MAXIMO) {
+            rotaciones += Configuraciones.SALTO_ROTACIONES
+            labelLimiteRotaciones.text = rotaciones.toString()
+        }
     }
 
     @FXML fun limiteB(){
-
+        if (limiteRotaciones) {
+            activarLimite.text = "Sin límite"
+            masLimiteRotacionesB.isDisable = true
+            menosLimiteRotacionesB.isDisable = true
+            limiteRotaciones = false
+            labelLimiteRotaciones.text = "SIN"
+        } else {
+            activarLimite.text = "Con límite"
+            masLimiteRotacionesB.isDisable = false
+            menosLimiteRotacionesB.isDisable = false
+            limiteRotaciones = true
+            labelLimiteRotaciones.text = rotaciones.toString()
+        }
     }
 
     @FXML fun activarHold(){
-
+        if (activarHoldB.text == "Activo") {
+            activarHoldB.text = "Desactivado"
+            activarHoldGuardar = false
+        } else {
+            activarHoldB.text = "Activo"
+            activarHoldGuardar = true
+        }
     }
 
     @FXML fun siguientesPiezas(){
-
+        if (siguientesPiezasB.text == "Activo") {
+            siguientesPiezasB.text = "Desactivado"
+            activarSiguientesPiezasB = false
+        } else {
+            siguientesPiezasB.text = "Activo"
+            activarSiguientesPiezasB = true
+        }
     }
 
     @FXML fun activarDashes(){
+        if (activarDashButton.text == "Activo"){
+            activarDashButton.text = "Desactivado"
+            activarDashes = false
+        }else{
+            activarDashButton.text = "Activo"
+            activarDashes = true
+        }
+    }
 
+    private fun cargarValoresInitOtrasConfiguraciones(){
+        labelTiempoCaidaInicial.text = Configuraciones.TIEMPO_CAIDA_POR_DEFECTO.toString() + Configuraciones.MS
+        labelLinesSaltoNivel.text = Configuraciones.LINEAS_POR_NIVEL_POR_DEFECTO.toString()
+        labelSaltoTiempoNivel.text = Configuraciones.REDUCCION_TIEMPO_POR_NIVEL_POR_DEFECTO.toString() + Configuraciones.MS
+
+
+        activarLimite.text = "Sin límite"
+        masLimiteRotacionesB.isDisable = true
+        menosLimiteRotacionesB.isDisable = true
+        labelLimiteRotaciones.text = "SIN"
+
+        siguientesPiezasB.text = "Activo"
+
+        activarHoldB.text = "Activo"
+
+        activarDashButton.text = "Desactivado"
     }
 
     @FXML fun guardarModo(){
+
+
+        
 
     }
 
     @FXML fun volverConfi(){
         saltoPagina(pane5, pane4)
     }
-
 
 
     private fun saltoPagina(paneActual: Pane, paneMove: Pane){
