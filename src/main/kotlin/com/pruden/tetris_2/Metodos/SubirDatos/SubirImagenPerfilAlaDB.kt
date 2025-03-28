@@ -4,6 +4,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fotoClanSeleccionada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
+import com.pruden.tetris_2.Controladores.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.stage.FileChooser
@@ -36,6 +37,7 @@ fun subirImagenPerfilADB(titulo: String, imageView: ImageView){
        when(titulo){
            "Seleccionar imagen de perfil" -> subirImagenPerfil(imageView, body)
            "Seleccionar imagen del clan" -> subirImagenClan(imageView, selectedFile, body)
+           "Seleccionar imagen para modo de juego" -> subirImagenParaModoDeJuego(imageView, selectedFile, body)
        }
     }
 }
@@ -64,4 +66,10 @@ private fun subirImagenClan(imageView: ImageView, selectedFile: File, body: Mult
     val image = Image(selectedFile.toURI().toString())
     imageView.image = image
     fotoClanSeleccionada = body
+}
+
+private fun subirImagenParaModoDeJuego(imageView: ImageView, selectedFile: File, body: MultipartBody.Part){
+    val image = Image(selectedFile.toURI().toString())
+    imageView.image = image
+    fotoModoDeJuegoSeleccionada = body
 }

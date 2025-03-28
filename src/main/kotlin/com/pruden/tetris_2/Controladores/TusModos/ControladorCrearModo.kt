@@ -1,7 +1,9 @@
 package com.pruden.tetris_2.Controladores.TusModos
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
+import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.CheckBox
 import javafx.scene.control.Label
@@ -9,9 +11,24 @@ import javafx.scene.control.TextField
 import javafx.scene.image.ImageView
 import javafx.scene.layout.Pane
 import javafx.stage.Stage
+import okhttp3.MultipartBody
+import java.net.URL
+import java.util.*
 
-class ControladorCrearModo: ControladorGEN() {
+class ControladorCrearModo: ControladorGEN(), Initializable {
     lateinit var stageCrearModo : Stage
+
+    override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        seleccionarImagen()
+    }
+
+
+
+
+    companion object{
+        var fotoModoDeJuegoSeleccionada : MultipartBody.Part? = null
+    }
+
 
 
     // Apartado de nombre e imagen
@@ -27,6 +44,13 @@ class ControladorCrearModo: ControladorGEN() {
     }
 
     @FXML fun volverSalir() = stageCrearModo.close()
+
+
+    private fun seleccionarImagen(){
+        imgViewModo.setOnMouseClicked {
+            subirImagenPerfilADB("Seleccionar imagen para modo de juego", imgViewModo)
+        }
+    }
 
 
     // Apartado de piezas
