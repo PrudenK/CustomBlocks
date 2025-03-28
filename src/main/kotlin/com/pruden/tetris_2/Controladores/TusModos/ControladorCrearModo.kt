@@ -3,7 +3,6 @@ package com.pruden.tetris_2.Controladores.TusModos
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.tabPosicion
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -26,8 +25,8 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         seleccionarImagen()
         cargarListaCheckBoxes()
 
-        cargarTableroYTitulo()
-
+        cargarTamaTableroYTitulo()
+        cargarInitDiseTableroPrincipal()
     }
 
 
@@ -156,6 +155,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     @FXML lateinit var nombreDiseTablero: Label
 
     private var indiceTamaTablero = 1
+    private var indiceDiseTablero = 1
 
     @FXML fun volverTablero(){
         saltoPagina(pane3, pane2)
@@ -169,28 +169,42 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         if (indiceTamaTablero == Listas.LISTA_IMAGENES_DE_TABLEROS.size - 1) {
             indiceTamaTablero = 0
         } else indiceTamaTablero++
-        cargarTableroYTitulo()
+        cargarTamaTableroYTitulo()
     }
 
     @FXML fun anteriorTamaTablero(){
         if (indiceTamaTablero == 0) {
             indiceTamaTablero = Listas.LISTA_IMAGENES_DE_TABLEROS.size - 1
         } else indiceTamaTablero--
-        cargarTableroYTitulo()
+        cargarTamaTableroYTitulo()
     }
 
     @FXML fun siguienteDiseTablero(){
-
+        if (indiceDiseTablero == Listas.LISTA_IMAGENES_TIPOS_TABLEROS_PRINCIPALES.size - 1) {
+            indiceDiseTablero = 0
+        } else indiceDiseTablero++
+        carruselDiseTablero.image = Listas.LISTA_IMAGENES_TIPOS_TABLEROS_PRINCIPALES[indiceDiseTablero]
+        nombreDiseTablero.text = Listas.LISTA_NOMBRES_TABLEROS_PRINCIPALES[indiceDiseTablero]
+        println(indiceDiseTablero)
     }
 
     @FXML fun anteriorDiseTablero(){
-
+        if (indiceDiseTablero == 0) {
+            indiceDiseTablero = Listas.LISTA_IMAGENES_TIPOS_TABLEROS_PRINCIPALES.size - 1
+        } else indiceDiseTablero--
+        carruselDiseTablero.image = Listas.LISTA_IMAGENES_TIPOS_TABLEROS_PRINCIPALES[indiceDiseTablero]
+        nombreDiseTablero.text = Listas.LISTA_NOMBRES_TABLEROS_PRINCIPALES[indiceDiseTablero]
     }
 
-    private fun cargarTableroYTitulo(){
+    private fun cargarTamaTableroYTitulo(){
         val tab: Image = Listas.LISTA_IMAGENES_DE_TABLEROS[indiceTamaTablero]
         nombreTamaTablero.text = tab.url.substring(tab.url.lastIndexOf("/") + 1, tab.url.lastIndexOf("."))
         carruselTamaTablero.image = tab
+    }
+
+    private fun cargarInitDiseTableroPrincipal(){
+        carruselDiseTablero.image = Listas.LISTA_IMAGENES_TIPOS_TABLEROS_PRINCIPALES[indiceDiseTablero]
+        nombreDiseTablero.text = Listas.LISTA_NOMBRES_TABLEROS_PRINCIPALES[indiceDiseTablero]
     }
 
 
