@@ -6,7 +6,7 @@ data class ModoDeJuego(
     val nombre: String,
     val imagen: String,
     val arrayPiezas: String,
-    val tablero: String,
+    val tablero: Int,
     val tipoTableroPrincipal: Int,
     val tipoPieza: Int,
     val tipoTableroSecun: Int,

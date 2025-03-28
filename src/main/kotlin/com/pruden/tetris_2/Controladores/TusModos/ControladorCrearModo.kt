@@ -1,8 +1,13 @@
 package com.pruden.tetris_2.Controladores.TusModos
 
+import com.google.gson.Gson
+import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
+import com.pruden.tetris_2.API.ObjsAux.ModoDeJuego
 import com.pruden.tetris_2.Constantes.Configuraciones
 import com.pruden.tetris_2.Constantes.Listas
+import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
@@ -15,7 +20,12 @@ import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.Pane
 import javafx.stage.Stage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.net.URL
 import java.util.*
 
@@ -213,7 +223,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     @FXML lateinit var labelNombreTipoPieza: Label
     @FXML lateinit var labelNombreTipoTableroSecun: Label
 
-    private var indiceDisePieza = 4
+    private var indiceDisePieza = 2
     private var indiceDiseTableroSecun = 1
 
     @FXML fun volverDise(){
@@ -415,10 +425,37 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     }
 
     @FXML fun guardarModo(){
+        var rotacionesAux = -1
+        if(limiteRotaciones) {
+           rotacionesAux = rotaciones
+        }
+
+        val modoJuego = ModoDeJuego(
+            idJugador = idJugador,
+            idNumModo = 1,
+            nombre = textFieldNombreModo.text.toString(),
+            imagen = "",
+            arrayPiezas = this.devolverListaPiezas(),
+            tablero = indiceTamaTablero,
+            tipoTableroPrincipal = indiceDiseTablero,
+            tipoPieza = indiceDisePieza,
+            tipoTableroSecun = indiceDiseTableroSecun,
+            tiempoCaidaInicial = tiempoCaida,
+            lineasParaSaltoNivel = saltoNivel,
+            saltoDeTiempoPorNivel = saltoTiempoNivel,
+            limiteRotaciones = rotacionesAux,
+            hold = if (activarHoldGuardar) 1 else 0,
+            piezas = if (activarSiguientesPiezasB) 1 else 0,
+            dashes = if (activarDashes) 1 else 0
+        )
 
 
-        
+        CoroutineScope(Dispatchers.IO).launch {
+            val requestBodyModoJuego = Gson().toJson(modoJuego)
+                .toRequestBody("application/json; charset=utf-8".toMediaType())
 
+            ApiCustom.modoDeJuegoClanService.crearModoDeJuego(requestBodyModoJuego, fotoModoDeJuegoSeleccionada)
+        }
     }
 
     @FXML fun volverConfi(){

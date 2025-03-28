@@ -74,4 +74,7 @@ object ConstantesCustomAPI {
 
     //Mensajes de un clan
     const val GET_MENSAJES_DE_UN_CLAN = "/mensajesDelClan/{idClan}"
+
+    //Modos de juego
+    const val CREAR_MODO_DE_JUEGO = "/crearModoJuego"
 }
