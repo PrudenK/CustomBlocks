@@ -27,6 +27,7 @@ class ControladorOpcionesClan : ControladorGEN() {
     @FXML lateinit var buscarClan: Button
     @FXML lateinit var crearClan: Button
     @FXML lateinit var volver: Button
+    @FXML lateinit var chat: Button
 
     private val scope = CoroutineScope(Dispatchers.Default)
 
@@ -77,6 +78,7 @@ class ControladorOpcionesClan : ControladorGEN() {
             buscarClan.layoutY = 115.0
             crearClan.layoutY = 115.0
             volver.layoutY = 165.0
+            chat.layoutY = 165.0
             pane.prefHeight = 222.0
             stageClanOpciones.height = 222.0
         }
@@ -89,6 +91,7 @@ class ControladorOpcionesClan : ControladorGEN() {
                 buscarClan.layoutY = 85.0
                 crearClan.layoutY = 85.0
                 volver.layoutY = 135.0
+                chat.layoutY = 135.0
                 pane.prefHeight = 192.0
                 stageClanOpciones.height = 192.0
 
