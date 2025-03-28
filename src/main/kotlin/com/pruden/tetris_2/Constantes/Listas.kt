@@ -94,4 +94,30 @@ object Listas {
         deRutaAImagen("/Imagenes/Tableros/Tablero_18x10.jpg"),
         deRutaAImagen("/Imagenes/Tableros/Tablero_30x20.jpg")
     )
+    
+    val LISTA_IMAGENES_TIPOS_TABLEROS_PRINCIPALES = listOf(
+        deRutaAImagen("/Imagenes/Tipos_De_Tableros/vacio_principal.jpg"),
+        deRutaAImagen("/Imagenes/Tipos_De_Tableros/clasico.jpg"),
+        deRutaAImagen("/Imagenes/Tipos_De_Tableros/Memory.jpg"),
+        deRutaAImagen("/Imagenes/Tipos_De_Tableros/MemoryX.jpg"),
+        deRutaAImagen("/Imagenes/Tipos_De_Tableros/MemoryY.jpg")
+    )
+    
+    val LISTA_NOMBRES_TABLEROS_PRINCIPALES = listOf(
+        "Tablero vacío",
+        "Tablero clásico",
+        "Tablero Memory",
+        "Tablero MemoryX",
+        "Tablero MemoryY"
+    )
+    
+    val LISTAS_IMAGENES_TIPOS_TABLEROS_SECUNDARIOS = listOf(
+        deRutaAImagen("/Imagenes/Tipos_De_Tableros/vacio_secundario.jpg"),
+        deRutaAImagen("/Imagenes/Tipos_De_Tableros/clasico_secundario.jpg")
+    )
+
+    val LISTA_NOMBRES_TABLEROS_SECUNDARIOS = listOf(
+        "Tablero vacío",
+        "Tablero clásico"
+    )
 }
