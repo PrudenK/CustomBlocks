@@ -9,6 +9,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import javafx.fxml.FXML
@@ -77,13 +78,12 @@ class ControladorClan: ControladorGEN(), Initializable {
         }
     }
 
-    private val formato = SimpleDateFormat("dd-MM-yyyy")
-
     private fun cargarDatosDeLaAPIAlaUI() {
         CoroutineScope(Dispatchers.IO).launch {
 
             listaJugadoresDeMiClan = ApiCustom.clanService.getJugadoresDeUnClan(idClanControlador).toMutableList()
-            val clan = ApiCustom.clanService.getDatosDeUnClan(idClanControlador)
+            //val clan = ApiCustom.clanService.getDatosDeUnClan(idClanControlador)
+            val clan = jugadorConTodo.clan!!
 
             javafx.application.Platform.runLater {
                 idLiderDelClan = clan.idlider
@@ -112,7 +112,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                 }
 
                 ubi.text = "Localización: ${clan.ubicacion}"
-                fecha.text = "Fundado: ${formato.format(clan.fechaInit)}"
+                fecha.text = "Fundado: ${clan.fechaInit}"
 
             }
         }

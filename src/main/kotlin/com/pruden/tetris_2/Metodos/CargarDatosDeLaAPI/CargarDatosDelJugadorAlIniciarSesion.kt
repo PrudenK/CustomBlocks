@@ -5,12 +5,12 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDe
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNivelesJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaSuscripciones
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas
@@ -18,6 +18,8 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puntuaci
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
 
 suspend fun cargarDatosDelJugadorAlIniciarSesion(){
+    jugadorConTodo = ApiCustom.jugadorService.getDatosIniciarSesion(idJugador)
+    /*
     listaLogrosJugador = ApiCustom.logroService.getLogrosDelJugador(idJugador).toMutableList()
     numeroPartidasClasicas = ApiCustom.partidaService.getNumPartidasClasicas(idJugador).body()!!
     numeroLineasAcumuladas = ApiCustom.partidaService.getNumLineas(idJugador)
@@ -42,4 +44,6 @@ suspend fun cargarDatosDelJugadorAlIniciarSesion(){
         println(response.message())
         println(response)
     }
+
+     */
 }

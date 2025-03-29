@@ -16,6 +16,7 @@ object ConstantesCustomAPI {
     const val IMAGEN_ONLINE = "$PATH_CUSTOM/uploads/images/online.png"
 
     //Jugadores
+    const val INICIAR_SESION_DATOS = "/inicioSesion/{idJugador}"
     const val CREAR_JUGADOR = "/crearJugador"
     const val TODOS_JUGADORES = "/jugadores"
     const val INICIAR_SESION = "/iniciarSesion"

@@ -155,7 +155,6 @@ class ControladorPrincipal : Initializable {
         var nivelTerminado = false
         var nivelCompletado = false
 
-        var listaSuscripciones = mutableListOf<Suscripcion>()
         var listaMundos = mutableListOf<Mundo>()
         var listaNiveles = mutableListOf<Nivel>()
         var listaMundosJugador = mutableListOf<MundoJugador>()
@@ -180,6 +179,8 @@ class ControladorPrincipal : Initializable {
         var listaTusModosDeJuego = mutableListOf<ModoDeJuegoAPI>()
 
         var idNivelActual = -1
+
+        lateinit var jugadorConTodo: JugadorInicioSesion
     }
 
 
@@ -220,7 +221,6 @@ class ControladorPrincipal : Initializable {
         TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
         imprimirMatriz_TAB()
         println(ApiPublicidad.anuncios)
-        println(listaSuscripciones)
         println(listaMundos)
         println(listaNiveles)
         println(listaMundosJugador)
@@ -240,6 +240,26 @@ class ControladorPrincipal : Initializable {
         println(idClanDelJugador)
 
         println(listaTusModosDeJuego)
+
+        println(jugadorConTodo)
+        println(jugadorConTodo.clan)
+        println(jugadorConTodo.listaLogros)
+        println(jugadorConTodo.numeroPartidasClasicas)
+        println(jugadorConTodo.numeroLineasAcumuladas)
+        println(jugadorConTodo.puntuacionAcumulada)
+
+        println(jugadorConTodo.suscripcionDelJugador)
+        println(jugadorConTodo.listaTusModosDeJuego)
+
+        println(jugadorConTodo.listaMundos)
+        println(jugadorConTodo.listaNiveles)
+
+        println(jugadorConTodo.listaMundosJugador)
+        println(jugadorConTodo.listaNivelesJugador)
+
+        println(jugadorConTodo.listaSuscripciones)
+
+
     }
 
     @FXML fun salir() {

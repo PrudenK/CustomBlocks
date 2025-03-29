@@ -5,9 +5,8 @@ import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.SuscripcionJugador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaSuscripciones
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
-import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.paraTimeLineAnuncios
 import javafx.application.Platform
 import javafx.fxml.FXML
@@ -60,7 +59,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun comprar(){
-        val suscripcion = listaSuscripciones[indice]
+        val suscripcion = jugadorConTodo.listaSuscripciones[indice]
         CoroutineScope(Dispatchers.IO).launch {
             val response = ApiCustom.suscripcionJugadorService.jugadorSeSuscribe(idJugador, suscripcion.tipo)
 
@@ -113,20 +112,20 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
 
     @FXML fun atras(){
         if(indice == 0){
-            indice = listaSuscripciones.size-1
+            indice = jugadorConTodo.listaSuscripciones.size-1
         }else indice--
         cambiosSuscripcion()
     }
 
     @FXML fun siguiente(){
-        if(indice == listaSuscripciones.size-1){
+        if(indice == jugadorConTodo.listaSuscripciones.size-1){
             indice = 0
         }else indice++
         cambiosSuscripcion()
     }
 
     private fun cambiosSuscripcion(){
-        val suscripcion = listaSuscripciones[indice]
+        val suscripcion = jugadorConTodo.listaSuscripciones[indice]
         tituloSuscripcion.text = suscripcion.nombre
         modosSuscripcion.text = "- Podrás crear ${suscripcion.nummodos} modos"
         partidasSuscripcion.text = "- Podrás guardar ${suscripcion.numPartidasGuardadas} partidas"

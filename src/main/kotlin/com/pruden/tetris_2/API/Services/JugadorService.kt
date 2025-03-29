@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.API.ObjsAux.LoginRequest
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
+import com.pruden.tetris_2.API.ObjsAux.JugadorInicioSesion
 import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -12,6 +13,9 @@ import retrofit2.http.*
 interface JugadorService {
     @GET(ConstantesCustomAPI.TODOS_JUGADORES)
     suspend fun getTodosJugadores(): List<Jugador>
+
+    @GET(ConstantesCustomAPI.INICIAR_SESION_DATOS)
+    suspend fun getDatosIniciarSesion(@Path("idJugador") idJugador : Int): JugadorInicioSesion
 
     @GET(ConstantesCustomAPI.JUGADOR_POR_ID)
     suspend fun getJugadorPorId(@Path("id") id : Int): Jugador
