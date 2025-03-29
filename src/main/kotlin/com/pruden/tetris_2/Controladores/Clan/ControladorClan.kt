@@ -10,7 +10,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDe
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
@@ -157,7 +156,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                     recargarDatos()
                 }
 
-                if(!listaLogrosJugador.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){
+                if(!jugadorConTodo.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){
                     completarLogro(Logros.VIDA_SOCIAL)
                 }
             }else{

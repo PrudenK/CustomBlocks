@@ -6,7 +6,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugado
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas

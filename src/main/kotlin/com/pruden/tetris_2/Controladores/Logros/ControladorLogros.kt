@@ -3,7 +3,7 @@ package com.pruden.tetris_2.Controladores.Logros
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.LogroJugador
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
@@ -21,7 +21,7 @@ class ControladorLogros: ControladorGEN(), Initializable {
     @FXML lateinit var gridLogros: GridPane
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        cargarLogros(listaLogrosJugador)
+        cargarLogros(jugadorConTodo.listaLogros)
     }
 
     private fun cargarLogros(listaLogros: List<LogroJugador>) {

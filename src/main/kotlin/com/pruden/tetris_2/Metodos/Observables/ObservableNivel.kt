@@ -3,7 +3,7 @@ package com.pruden.tetris_2.Metodos.Observables
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoCaidaPieza
 import com.pruden.tetris_2.Metodos.Cronometro.formatoASegundos
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
@@ -39,21 +39,21 @@ fun cargarObervableNivel(){
             }
 
             if(cPrin.labelModo.text == "Clásico"){
-                if(nivelActual >= 5 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_I }!!.completado){
+                if(nivelActual >= 5 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.SKILLS_I }!!.completado){
                     completarLogro(Logros.SKILLS_I)
                 }
 
-                if(nivelActual == 5 && !listaLogrosJugador.find { it.idLogro == Logros.TECLADO_EN_LLAMAS }!!.completado){
+                if(nivelActual == 5 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.TECLADO_EN_LLAMAS }!!.completado){
                     if(formatoASegundos(cPrin.cronometroLabel.text) <= 300){
                         completarLogro(Logros.TECLADO_EN_LLAMAS)
                     }
                 }
 
-                if(nivelActual >= 10 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_II }!!.completado){
+                if(nivelActual >= 10 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.SKILLS_II }!!.completado){
                     completarLogro(Logros.SKILLS_II)
                 }
 
-                if(nivelActual >= 15 && !listaLogrosJugador.find { it.idLogro == Logros.SKILLS_III }!!.completado){
+                if(nivelActual >= 15 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.SKILLS_III }!!.completado){
                     completarLogro(Logros.SKILLS_III)
                 }
 

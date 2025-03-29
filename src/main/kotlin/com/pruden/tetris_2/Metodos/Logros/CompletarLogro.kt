@@ -4,7 +4,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Constantes.Globales.colaLogros
 import com.pruden.tetris_2.Constantes.Globales.mostrandoNotificacion
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Stages.cargarStageNotificacionLogro
 import javafx.animation.PauseTransition
 import javafx.stage.Stage
@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
 fun completarLogro(idLogro : Int){
     CoroutineScope(Dispatchers.IO).launch {
         ApiCustom.logroService.completarLogro(idLogro, idJugador)
-        val logro = listaLogrosJugador.find{ it.idLogro == idLogro}
+        val logro = jugadorConTodo.listaLogros.find{ it.idLogro == idLogro}
         logro!!.completado = true
 
         withContext(Dispatchers.Main) {

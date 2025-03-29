@@ -9,7 +9,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
@@ -82,29 +82,29 @@ private fun cargarLogrosNumPartidasClasicas(){
 }
 
 private fun cargarLogrosPuntuacion(){
-    if(puntuacionAcumulada >= 100000 && !listaLogrosJugador.find { it.idLogro == Logros.PAR_DE_PUNTOS }!!.completado){
+    if(puntuacionAcumulada >= 100000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.PAR_DE_PUNTOS }!!.completado){
         completarLogro(Logros.PAR_DE_PUNTOS)
     }
 
-    if(puntuacionAcumulada >= 1000000 && !listaLogrosJugador.find { it.idLogro == Logros.APUNTANDO_MANERAS }!!.completado){
+    if(puntuacionAcumulada >= 1000000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.APUNTANDO_MANERAS }!!.completado){
         completarLogro(Logros.APUNTANDO_MANERAS)
     }
 
-    if(puntuacionAcumulada >= 10000000 && !listaLogrosJugador.find { it.idLogro == Logros.POR_LAS_NUBES }!!.completado){
+    if(puntuacionAcumulada >= 10000000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.POR_LAS_NUBES }!!.completado){
         completarLogro(Logros.POR_LAS_NUBES)
     }
 }
 
 private fun cargarLogrosLineas(){
-    if(numeroLineasAcumuladas >= 1000 && !listaLogrosJugador.find { it.idLogro == Logros.PAR_DE_LINEAS }!!.completado){
+    if(numeroLineasAcumuladas >= 1000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.PAR_DE_LINEAS }!!.completado){
         completarLogro(Logros.PAR_DE_LINEAS)
     }
 
-    if(numeroLineasAcumuladas >= 5000 && !listaLogrosJugador.find { it.idLogro == Logros.BASTANTES_RAYAS }!!.completado){
+    if(numeroLineasAcumuladas >= 5000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.BASTANTES_RAYAS }!!.completado){
         completarLogro(Logros.BASTANTES_RAYAS)
     }
 
-    if(numeroLineasAcumuladas >= 10000 && !listaLogrosJugador.find { it.idLogro == Logros.MARADONA }!!.completado){
+    if(numeroLineasAcumuladas >= 10000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.MARADONA }!!.completado){
         completarLogro(Logros.MARADONA)
     }
 }

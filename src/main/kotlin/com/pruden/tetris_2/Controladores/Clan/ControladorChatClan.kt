@@ -5,7 +5,7 @@ import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
 import com.pruden.tetris_2.WebSocket.MensajeChat
@@ -130,7 +130,7 @@ class ControladorChatClan : ControladorGEN() {
             input.clear()
         }
 
-        if(!listaLogrosJugador.find { it.idLogro == Logros.VIDA_SOCIAL_II }!!.completado){
+        if(!jugadorConTodo.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL_II }!!.completado){
             completarLogro(Logros.VIDA_SOCIAL_II)
         }
     }

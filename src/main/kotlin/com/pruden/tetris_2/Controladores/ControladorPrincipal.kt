@@ -155,8 +155,6 @@ class ControladorPrincipal : Initializable {
         var nivelTerminado = false
         var nivelCompletado = false
 
-        var listaLogrosJugador = mutableListOf<LogroJugador>()
-
         //logros
         var numeroPartidasClasicas = -1
         var numeroLineasAcumuladas = -1
@@ -208,7 +206,7 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun partdiaNueva() {
         reiniciarPartida()
-        if(logroZZZ && !listaLogrosJugador.find { it.idLogro == Logros.ZZZ }!!.completado){
+        if(logroZZZ && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.ZZZ }!!.completado){
             completarLogro(Logros.ZZZ)
         }
     }
@@ -222,7 +220,6 @@ class ControladorPrincipal : Initializable {
         println(tiempoCaidaPieza)
 
 
-        println(listaLogrosJugador)
 
         println(numeroPartidasClasicas)
         println(numeroLineasAcumuladas)
