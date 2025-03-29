@@ -59,7 +59,10 @@ class ControladorClan: ControladorGEN(), Initializable {
         javafx.application.Platform.runLater {
             cargarDatosDeLaAPIAlaUI()
             cargarJugadores(listaJugadoresDeMiClan)
-            ControladorBuscarClan.cBuscarClan.cargarDatosDeLaApiALaUI()
+
+            if(ControladorBuscarClan.cBuscarClan != null){
+                ControladorBuscarClan.cBuscarClan!!.cargarDatosDeLaApiALaUI()
+            }
         }
     }
 

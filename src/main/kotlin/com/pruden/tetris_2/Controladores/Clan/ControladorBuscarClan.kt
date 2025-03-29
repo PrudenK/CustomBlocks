@@ -27,7 +27,7 @@ class ControladorBuscarClan: ControladorGEN(), Initializable {
     private var listaClanes: List<ItemClan> = emptyList()
 
     companion object{
-        lateinit var cBuscarClan : ControladorBuscarClan
+        var cBuscarClan : ControladorBuscarClan? = null
     }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
@@ -44,8 +44,6 @@ class ControladorBuscarClan: ControladorGEN(), Initializable {
             }
         }
     }
-
-
 
     private fun cargarClanes(clanes: List<ItemClan>) {
         gridClanes.children.clear()
