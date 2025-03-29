@@ -2,7 +2,6 @@ package com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador

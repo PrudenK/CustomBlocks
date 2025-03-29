@@ -7,7 +7,6 @@ import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import javafx.fxml.FXML
@@ -130,13 +129,12 @@ class ControladorClan: ControladorGEN(), Initializable {
             dialogStage.isResizable = false
             dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
 
-            if(idJugadorSiEsLiderDeUnClan != -1){
+            if(jugadorConTodo.clan!!.idlider == jugadorConTodo.id){
                 controller.nombre.text = "Eres el lider del Clan, ¿quieres abandonarlo?"
             }
 
             controller.onConfirmar = {
                 jugadorConTodo.clan!!.idclan = -1
-                idJugadorSiEsLiderDeUnClan = -1
                 CoroutineScope(Dispatchers.IO).launch {
                     ApiCustom.clanService.jugadorAbandonaClan(idJugador)
                     recargarDatos()
@@ -170,7 +168,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                 dialogStage.isResizable = false
                 dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
 
-                if(idJugadorSiEsLiderDeUnClan == -1){
+                if(jugadorConTodo.clan!!.idlider == jugadorConTodo.id){
                     controller.nombre.text = "Ya perteneces a un Clan, ¿quieres cambiarte?"
                 }else{
                     controller.nombre.text = "Eres lider de un Clan, ¿quieres cambiarte?"
@@ -179,7 +177,6 @@ class ControladorClan: ControladorGEN(), Initializable {
 
                 controller.onConfirmar = {
                     jugadorConTodo.clan!!.idclan = idClanStage
-                    idJugadorSiEsLiderDeUnClan = -1
                     btnClan.text = "Abandonar"
 
                     CoroutineScope(Dispatchers.IO).launch {

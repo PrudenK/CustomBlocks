@@ -158,9 +158,6 @@ class ControladorPrincipal : Initializable {
         //logros
         var logroZZZ = false
 
-        //clan
-        var idJugadorSiEsLiderDeUnClan = -1
-
         //suscripción jugador
         var suscripcionDelJugador: SuscripcionJugador? = null
 
