@@ -14,7 +14,7 @@ interface ModoDeJuegoService {
     suspend fun crearModoDeJuego(
         @Part("modoJuego") modoJuegoJson: RequestBody,
         @Part imagen: MultipartBody.Part? = null
-    ): Response<ResponseBody>
+    ): Response<List<ModoDeJuegoAPI>>
 
     @GET(ConstantesCustomAPI.MODOS_DE_JUEGO_DE_UN_JUGADOR)
     suspend fun getModosDeJuegoDeUnJugador(@Path("idJugador") idJugador: Int): List<ModoDeJuegoAPI>

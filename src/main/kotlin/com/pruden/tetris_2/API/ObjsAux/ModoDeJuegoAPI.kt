@@ -4,7 +4,7 @@ data class ModoDeJuegoAPI(
     val idJugador: Int,
     val idnummodo: Int,
     val nombre: String,
-    val imagen: String,
+    val imagen: String?,
     val arraypiezas: String,
     val tablero: Int,
     val tipotableroprincipal: Int,

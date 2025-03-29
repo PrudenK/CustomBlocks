@@ -176,7 +176,7 @@ class ControladorPrincipal : Initializable {
         lateinit var jugadorActualObj: Jugador
 
         //modos de juego
-        var listaModosDeJuego = mutableListOf<ModoDeJuegoAPI>()
+        var listaTusModosDeJuego = mutableListOf<ModoDeJuegoAPI>()
 
         var idNivelActual = -1
     }
@@ -238,7 +238,7 @@ class ControladorPrincipal : Initializable {
         println(listaPiezasSeleccionadas)
         println(idClanDelJugador)
 
-        println(listaModosDeJuego)
+        println(listaTusModosDeJuego)
     }
 
     @FXML fun salir() {

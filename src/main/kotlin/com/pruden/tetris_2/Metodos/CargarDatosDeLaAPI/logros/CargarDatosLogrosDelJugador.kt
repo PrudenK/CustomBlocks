@@ -6,7 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugado
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaModosDeJuego
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puntuacionAcumulada
@@ -25,6 +25,6 @@ fun cargarDatosDelJugador(){
         idJugadorSiEsLiderDeUnClan = ApiCustom.jugadorService.jugadorEsLiderDeUnClan(idJugador)
         suscripcionDelJugador = ApiCustom.suscripcionJugadorService.comprobarSuscripcionDelJugador(idJugador)
         jugadorActualObj = ApiCustom.jugadorService.getJugadorPorId(idJugador)
-        listaModosDeJuego = ApiCustom.modoDeJuegoService.getModosDeJuegoDeUnJugador(idJugador).toMutableList()
+        listaTusModosDeJuego = ApiCustom.modoDeJuegoService.getModosDeJuegoDeUnJugador(idJugador).toMutableList()
     }
 }
