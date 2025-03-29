@@ -156,7 +156,6 @@ class ControladorPrincipal : Initializable {
         var nivelCompletado = false
 
         //logros
-        var puntuacionAcumulada = -1
         var logroZZZ = false
 
         //clan
@@ -216,10 +215,6 @@ class ControladorPrincipal : Initializable {
         println(idNivelActual)
 
         println(tiempoCaidaPieza)
-
-
-
-        println(puntuacionAcumulada)
 
         println(listaPiezasSeleccionadas)
         println(idClanDelJugador)

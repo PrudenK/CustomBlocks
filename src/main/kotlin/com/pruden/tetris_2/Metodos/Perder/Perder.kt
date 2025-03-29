@@ -12,7 +12,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdi
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puntuacionAcumulada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel.perderNivelModoCampa
@@ -32,7 +31,7 @@ fun comprbarPerder(){
         }else{
             cargarLogrosNumPartidasClasicas()
 
-            puntuacionAcumulada += cPrin.labelPuntuacion.text.toString().split("/")[0].toInt()
+            jugadorConTodo.puntuacionAcumulada += cPrin.labelPuntuacion.text.toString().split("/")[0].toInt()
             jugadorConTodo.numeroLineasAcumuladas += cPrin.labelLineas.text.toString().split("/")[0].toInt()
 
             cargarLogrosPuntuacion()
@@ -79,15 +78,15 @@ private fun cargarLogrosNumPartidasClasicas(){
 }
 
 private fun cargarLogrosPuntuacion(){
-    if(puntuacionAcumulada >= 100000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.PAR_DE_PUNTOS }!!.completado){
+    if(jugadorConTodo.puntuacionAcumulada >= 100000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.PAR_DE_PUNTOS }!!.completado){
         completarLogro(Logros.PAR_DE_PUNTOS)
     }
 
-    if(puntuacionAcumulada >= 1000000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.APUNTANDO_MANERAS }!!.completado){
+    if(jugadorConTodo.puntuacionAcumulada >= 1000000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.APUNTANDO_MANERAS }!!.completado){
         completarLogro(Logros.APUNTANDO_MANERAS)
     }
 
-    if(puntuacionAcumulada >= 10000000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.POR_LAS_NUBES }!!.completado){
+    if(jugadorConTodo.puntuacionAcumulada >= 10000000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.POR_LAS_NUBES }!!.completado){
         completarLogro(Logros.POR_LAS_NUBES)
     }
 }
