@@ -118,11 +118,19 @@ class ControladorCrearClan: ControladorGEN(), Initializable {
     }
 
     @FXML fun volver(){
+        fotoClanSeleccionada = null
         stageCrearClan.close()
+    }
+
+    private fun porSiSeCierraConAltfF4(){
+        stageCrearClan.setOnCloseRequest {
+            fotoClanSeleccionada = null
+        }
     }
 
     override fun setStage(stage: Stage?) {
         stageCrearClan = stage!!
+        porSiSeCierraConAltfF4()
     }
 
     override fun setBoton(b: Button?) {}

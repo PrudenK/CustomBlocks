@@ -1,10 +1,12 @@
 package com.pruden.tetris_2.Metodos.ControladorPrincipal
 
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fotoClanSeleccionada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
+import com.pruden.tetris_2.Controladores.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.Modos.cargarPosicionesPiezasModos
@@ -21,6 +23,11 @@ fun cerrarSesion(){
         vStages()
         idJugador = -1
         suscripcionDelJugador = null
+
+        //Fotos
+        fotoModoDeJuegoSeleccionada = null
+        fotoClanSeleccionada = null
+
     }
 }
 
