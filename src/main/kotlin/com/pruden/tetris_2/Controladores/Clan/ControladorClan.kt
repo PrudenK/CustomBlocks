@@ -6,7 +6,6 @@ import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
@@ -104,7 +103,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                 idClanStage = clan.idclan
 
 
-                if(clan.idclan == idClanDelJugador){
+                if(clan.idclan == jugadorConTodo.clan!!.idclan){
                     btnClan.text = "Abandonar"
                 }else{
                     btnClan.text = "Unirme"
@@ -136,7 +135,7 @@ class ControladorClan: ControladorGEN(), Initializable {
             }
 
             controller.onConfirmar = {
-                idClanDelJugador = -1
+                jugadorConTodo.clan!!.idclan = -1
                 idJugadorSiEsLiderDeUnClan = -1
                 CoroutineScope(Dispatchers.IO).launch {
                     ApiCustom.clanService.jugadorAbandonaClan(idJugador)
@@ -147,8 +146,8 @@ class ControladorClan: ControladorGEN(), Initializable {
 
             dialogStage.showAndWait()
         }else{
-            if(idClanDelJugador == -1){
-                idClanDelJugador = idClanStage
+            if(jugadorConTodo.clan!!.idclan == -1){
+                jugadorConTodo.clan!!.idclan = idClanStage
                 btnClan.text = "Abandonar"
 
                 CoroutineScope(Dispatchers.IO).launch {
@@ -179,7 +178,7 @@ class ControladorClan: ControladorGEN(), Initializable {
 
 
                 controller.onConfirmar = {
-                    idClanDelJugador = idClanStage
+                    jugadorConTodo.clan!!.idclan = idClanStage
                     idJugadorSiEsLiderDeUnClan = -1
                     btnClan.text = "Abandonar"
 

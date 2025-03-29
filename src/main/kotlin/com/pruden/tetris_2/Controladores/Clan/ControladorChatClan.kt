@@ -3,7 +3,6 @@ package com.pruden.tetris_2.Controladores.Clan
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
@@ -32,7 +31,7 @@ class ControladorChatClan : ControladorGEN() {
 
     private val mensajes = FXCollections.observableArrayList<MensajeChat>()
     private lateinit var socket: ClanChatWebSocket
-    private val clanId = idClanDelJugador
+    private val clanId = jugadorConTodo.clan!!.idclan
 
     override fun setStage(stage: Stage?) {
         stageChatClan = stage!!
@@ -49,7 +48,7 @@ class ControladorChatClan : ControladorGEN() {
         }
 
         CoroutineScope(Dispatchers.Main).launch {
-            val mensajesDelClan = ApiCustom.mensajeClanService.getMensajesDeUnClan(idClanDelJugador)
+            val mensajesDelClan = ApiCustom.mensajeClanService.getMensajesDeUnClan(jugadorConTodo.clan!!.idclan)
 
             Platform.runLater {
                 mensajesDelClan.forEach { mensajeClan ->

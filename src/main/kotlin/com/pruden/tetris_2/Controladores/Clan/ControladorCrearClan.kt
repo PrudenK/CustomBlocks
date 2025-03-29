@@ -4,7 +4,6 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idClanDelJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugadorSiEsLiderDeUnClan
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
@@ -94,7 +93,7 @@ class ControladorCrearClan: ControladorGEN(), Initializable {
                                     labelError.text = "Clan creado con éxito"
                                 }
 
-                                idClanDelJugador = response.body()!!.idclan
+                                jugadorConTodo.clan!!.idclan = response.body()!!.idclan
                                 idJugadorSiEsLiderDeUnClan = response.body()!!.idclan
 
                                 if(!jugadorConTodo.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){

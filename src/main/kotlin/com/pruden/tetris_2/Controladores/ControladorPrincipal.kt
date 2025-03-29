@@ -159,7 +159,6 @@ class ControladorPrincipal : Initializable {
         var logroZZZ = false
 
         //clan
-        var idClanDelJugador = -1
         var idJugadorSiEsLiderDeUnClan = -1
 
         //suscripción jugador
@@ -217,7 +216,6 @@ class ControladorPrincipal : Initializable {
         println(tiempoCaidaPieza)
 
         println(listaPiezasSeleccionadas)
-        println(idClanDelJugador)
 
         println(listaTusModosDeJuego)
 
