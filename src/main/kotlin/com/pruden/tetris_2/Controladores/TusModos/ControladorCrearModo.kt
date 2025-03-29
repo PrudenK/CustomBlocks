@@ -59,7 +59,10 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         saltoPagina(pane1, pane2)
     }
 
-    @FXML fun volverSalir() = stageCrearModo.close()
+    @FXML fun volverSalir(){
+        fotoModoDeJuegoSeleccionada = null
+        stageCrearModo.close()
+    }
 
 
     private fun seleccionarImagen(){
@@ -463,6 +466,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             println(response.code())
             println(response)
         }
+        fotoModoDeJuegoSeleccionada = null
     }
 
     @FXML fun volverConfi(){
@@ -477,6 +481,9 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
     override fun setStage(stage: Stage?) {
         stageCrearModo = stage!!
+        stageCrearModo.setOnCloseRequest {
+            fotoModoDeJuegoSeleccionada = null
+        }
     }
 
     override fun setBoton(b: Button?) {}
