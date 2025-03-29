@@ -2,6 +2,7 @@ package com.pruden.tetris_2.API.ObjsAux
 
 data class JugadorInicioSesion(
     val id: Int,
+    val pais: String,
     val nombre: String,
     var nivel: Int,
     val fechaini: String,

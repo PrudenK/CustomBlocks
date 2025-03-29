@@ -3,7 +3,6 @@ package com.pruden.tetris_2.Controladores.Clan
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
@@ -52,7 +51,7 @@ class ControladorChatClan : ControladorGEN() {
 
             Platform.runLater {
                 mensajesDelClan.forEach { mensajeClan ->
-                    val esPropio = mensajeClan.remitente == jugadorActualObj.nombre
+                    val esPropio = mensajeClan.remitente == jugadorConTodo.nombre
                     val mensajeChat = MensajeChat(
                         remitente = mensajeClan.remitente,
                         texto = mensajeClan.mensaje,
@@ -65,7 +64,7 @@ class ControladorChatClan : ControladorGEN() {
 
                 listaMensajes.scrollTo(mensajes.size - 1)
 
-                nombre.text = jugadorActualObj.clan!!.nombre
+                nombre.text = jugadorConTodo.clan!!.nombre
             }
 
         }
@@ -102,7 +101,7 @@ class ControladorChatClan : ControladorGEN() {
             }
         }
 
-        socket = ClanChatWebSocket("ws://localhost:8080/clan-chat/$clanId", jugadorActualObj.nombre) { mensaje ->
+        socket = ClanChatWebSocket("ws://localhost:8080/clan-chat/$clanId", jugadorConTodo.nombre) { mensaje ->
             Platform.runLater {
                 mensajes.add(mensaje)
                 listaMensajes.refresh()
@@ -124,7 +123,7 @@ class ControladorChatClan : ControladorGEN() {
     private fun enviarMensaje(){
         val texto = input.text
         if (texto.isNotBlank()) {
-            val json = """{"nombre": "${jugadorActualObj.nombre}", "mensaje": "$texto"}"""
+            val json = """{"nombre": "${jugadorConTodo.nombre}", "mensaje": "$texto"}"""
             socket.send(json)
             input.clear()
         }

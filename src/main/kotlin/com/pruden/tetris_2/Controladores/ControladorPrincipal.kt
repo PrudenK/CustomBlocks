@@ -163,7 +163,6 @@ class ControladorPrincipal : Initializable {
 
         //suscripción jugador
         var suscripcionDelJugador: SuscripcionJugador? = null
-        lateinit var jugadorActualObj: Jugador
 
         //modos de juego
         var listaTusModosDeJuego = mutableListOf<ModoDeJuegoAPI>()
