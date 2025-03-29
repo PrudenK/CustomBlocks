@@ -7,8 +7,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugado
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorActualObj
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaLogrosJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundosJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNivelesJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego

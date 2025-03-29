@@ -2,8 +2,7 @@ package com.pruden.tetris_2.Metodos.ModoCampa.Dataº
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundosJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNivelesJugador
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa.Companion.cModoCampa
@@ -58,9 +57,9 @@ fun cargarAccionesImageViewsMundos(){
             val imgView = cModoCampa.stageModoCampa.scene.lookup("#imgViewMundo$i") as ImageView
             val imgViewCadena = cModoCampa.stageModoCampa.scene.lookup("#cadenaMundo$i") as ImageView
 
-            imgView.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[i-1].imagen}", true)
+            imgView.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo.listaMundos[i-1].imagen}", true)
 
-            val mundoJugador = listaMundosJugador[i-1]
+            val mundoJugador =  jugadorConTodo.listaMundosJugador[i-1]
 
 
             val listaNivelesJugadorDelMundo = listaNivelesJugador.filter { it.idMundo == i && it.completado}

@@ -2,7 +2,7 @@ package com.pruden.tetris_2.Controladores.ModoCampa
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaMundos
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
 import com.pruden.tetris_2.Metodos.ModoCampa.Data.*
 import com.pruden.tetris_2.Metodos.ModoCampa.Dataº.cargarAccionesImageViewsNiveles
@@ -45,9 +45,9 @@ class ControladorMundos : ControladorGEN(), Initializable {
         cargarAccionesImageViewsNiveles()
 
 
-        nivel1.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[0].imagen}", true)
+        nivel1.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo.listaMundos[0].imagen}", true)
 
-        println("${ConstantesCustomAPI.PATH_CUSTOM}${listaMundos[0].imagen}")
+        println("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo.listaMundos[0].imagen}")
         println(nivel1.image)
     }
 
