@@ -12,7 +12,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdi
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puntuacionAcumulada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
@@ -34,7 +33,7 @@ fun comprbarPerder(){
             cargarLogrosNumPartidasClasicas()
 
             puntuacionAcumulada += cPrin.labelPuntuacion.text.toString().split("/")[0].toInt()
-            numeroLineasAcumuladas += cPrin.labelLineas.text.toString().split("/")[0].toInt()
+            jugadorConTodo.numeroLineasAcumuladas += cPrin.labelLineas.text.toString().split("/")[0].toInt()
 
             cargarLogrosPuntuacion()
             cargarLogrosLineas()
@@ -94,15 +93,15 @@ private fun cargarLogrosPuntuacion(){
 }
 
 private fun cargarLogrosLineas(){
-    if(numeroLineasAcumuladas >= 1000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.PAR_DE_LINEAS }!!.completado){
+    if(jugadorConTodo.numeroLineasAcumuladas >= 1000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.PAR_DE_LINEAS }!!.completado){
         completarLogro(Logros.PAR_DE_LINEAS)
     }
 
-    if(numeroLineasAcumuladas >= 5000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.BASTANTES_RAYAS }!!.completado){
+    if(jugadorConTodo.numeroLineasAcumuladas >= 5000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.BASTANTES_RAYAS }!!.completado){
         completarLogro(Logros.BASTANTES_RAYAS)
     }
 
-    if(numeroLineasAcumuladas >= 10000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.MARADONA }!!.completado){
+    if(jugadorConTodo.numeroLineasAcumuladas >= 10000 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.MARADONA }!!.completado){
         completarLogro(Logros.MARADONA)
     }
 }
