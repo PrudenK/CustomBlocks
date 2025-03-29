@@ -4,7 +4,6 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
 
 suspend fun cargarDatosDelJugadorAlIniciarSesion(){
     jugadorConTodo = ApiCustom.jugadorService.getDatosIniciarSesion(idJugador)

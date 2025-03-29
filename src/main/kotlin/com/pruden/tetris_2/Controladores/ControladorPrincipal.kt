@@ -158,9 +158,6 @@ class ControladorPrincipal : Initializable {
         //logros
         var logroZZZ = false
 
-        //suscripción jugador
-        var suscripcionDelJugador: SuscripcionJugador? = null
-
         //modos de juego
         var listaTusModosDeJuego = mutableListOf<ModoDeJuegoAPI>()
 

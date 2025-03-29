@@ -2,8 +2,8 @@ package com.pruden.tetris_2.Controladores.TusModos
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -56,7 +56,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
             }
         }
 
-        when(suscripcionDelJugador!!.tipo){
+        when(jugadorConTodo.suscripcionDelJugador!!.tipo){
             1 -> {
                 for(i in listaImagenes.indices){
                     if(i >= 3){
@@ -120,8 +120,8 @@ class ControladorTusModos: ControladorGEN(), Initializable {
     private fun actualizarUI(){
         imgModos.image = listaImagenes[indiceActual]
         textoModos.text = listaNombres[indiceActual]
-        if((indiceActual > 2 && suscripcionDelJugador!!.tipo == 1)
-            || (indiceActual > 5 && suscripcionDelJugador!!.tipo == 2)){
+        if((indiceActual > 2 && jugadorConTodo.suscripcionDelJugador!!.tipo == 1)
+            || (indiceActual > 5 && jugadorConTodo.suscripcionDelJugador!!.tipo == 2)){
             jugar.text = "Desbloquear"
         }else{
             if(!listaTusModosDeJuego.map { it.idnummodo }.contains(indiceActual+1)){

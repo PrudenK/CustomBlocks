@@ -2,7 +2,7 @@ package com.pruden.tetris_2.Metodos.Timelines
 
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.scene.image.Image
@@ -19,7 +19,7 @@ fun cargarTimeLineAuncios() {
     if (ApiPublicidad.anuncios.isEmpty()) return
 
     CoroutineScope(Dispatchers.IO).launch {
-        while (suscripcionDelJugador == null) {
+        while (jugadorConTodo.suscripcionDelJugador == null) {
             delay(50)
         }
 
@@ -48,7 +48,7 @@ fun cargarTimeLineAuncios() {
 }
 
 fun paraTimeLineAnuncios(){
-    if(suscripcionDelJugador!!.tipo != -1) {
+    if(jugadorConTodo.suscripcionDelJugador!!.tipo != -1) {
         timeLineAnuncios!!.stop()
         cPrin.imgPublicidad.isVisible = false
     }

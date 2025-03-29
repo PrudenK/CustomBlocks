@@ -6,7 +6,6 @@ import com.pruden.tetris_2.API.ObjsAux.SuscripcionJugador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
 import com.pruden.tetris_2.Metodos.Timelines.paraTimeLineAnuncios
 import javafx.application.Platform
 import javafx.fxml.FXML
@@ -67,7 +66,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
                 201 ->{
                     mostrarErrorTemporal("Suscripción tramitada con éxito")
                     mensajeSuscripcion.textFill = Color.web("#9abbe1")
-                    suscripcionDelJugador = SuscripcionJugador(
+                    jugadorConTodo.suscripcionDelJugador = SuscripcionJugador(
                         tipo = suscripcion.tipo,
                         fechainicio = fechaInicio.format(formatter),
                         fechafin = fechaFin.format(formatter)

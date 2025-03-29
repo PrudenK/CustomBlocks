@@ -16,8 +16,8 @@ data class JugadorInicioSesion(
     var numeroLineasAcumuladas: Int,
     var puntuacionAcumulada: Int,
 
-    val suscripcionDelJugador: SuscripcionJugador,
-    val listaTusModosDeJuego: List<ModoDeJuegoAPI>,
+    var suscripcionDelJugador: SuscripcionJugador?,
+    var listaTusModosDeJuego: List<ModoDeJuegoAPI>,
 
     val listaMundos: List<Mundo>,
     val listaNiveles: List<Nivel>,

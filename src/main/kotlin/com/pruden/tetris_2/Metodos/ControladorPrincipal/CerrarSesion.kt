@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fotoClanSeleccionada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.suscripcionDelJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
 import com.pruden.tetris_2.Controladores.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
@@ -22,7 +22,6 @@ fun cerrarSesion(){
         ControladorCustomPiezas.listaPiezasSeleccionadas = cargarPosicionesPiezasModos(intArrayOf(0, 1, 2, 3, 4, 5, 6))
         vStages()
         idJugador = -1
-        suscripcionDelJugador = null
 
         //Fotos
         fotoModoDeJuegoSeleccionada = null
