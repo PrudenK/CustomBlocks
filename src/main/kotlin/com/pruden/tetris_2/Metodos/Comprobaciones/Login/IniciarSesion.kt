@@ -4,8 +4,8 @@ import com.pruden.tetris_2.API.ObjsAux.LoginRequest
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
-import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosDelJugadorAlIniciarSesion
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +25,7 @@ fun iniciarSesionLogin(){
                         idJugador = respuesta.body()!!.get("id")!!.asInt
                         println(idJugador)
 
-                        cargarDatosDelJugadorAlIniciarSesion()
+                        jugadorConTodo = ApiCustom.jugadorService.getDatosIniciarSesion(idJugador)
 
                         javafx.application.Platform.runLater {
                             iniciarHeartbeatJugador()

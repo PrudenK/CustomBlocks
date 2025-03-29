@@ -158,8 +158,6 @@ class ControladorPrincipal : Initializable {
         //logros
         var logroZZZ = false
 
-        //modos de juego
-        var listaTusModosDeJuego = mutableListOf<ModoDeJuegoAPI>()
 
         var idNivelActual = -1
 
@@ -210,7 +208,6 @@ class ControladorPrincipal : Initializable {
 
         println(listaPiezasSeleccionadas)
 
-        println(listaTusModosDeJuego)
 
         println(jugadorConTodo)
         println(jugadorConTodo.clan)

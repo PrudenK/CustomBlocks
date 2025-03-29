@@ -7,7 +7,7 @@ import com.pruden.tetris_2.Constantes.Configuraciones
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
@@ -460,7 +460,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             val response = ApiCustom.modoDeJuegoService.crearModoDeJuego(requestBodyModoJuego, fotoModoDeJuegoSeleccionada)
             when(response.code()){
                 200 -> {
-                    listaTusModosDeJuego = response.body()!!.toMutableList()
+                    jugadorConTodo.listaTusModosDeJuego = response.body()!!.toMutableList()
                 }
             }
             println(response.code())

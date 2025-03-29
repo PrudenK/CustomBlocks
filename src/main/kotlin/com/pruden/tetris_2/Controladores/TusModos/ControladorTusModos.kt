@@ -3,7 +3,6 @@ package com.pruden.tetris_2.Controladores.TusModos
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaTusModosDeJuego
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -49,7 +48,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         indiceActual = 0
 
-        for(modo in listaTusModosDeJuego){
+        for(modo in jugadorConTodo.listaTusModosDeJuego){
             listaNombres[modo.idnummodo-1] = modo.nombre
             if (!modo.imagen.isNullOrBlank()) {
                 listaImagenes[modo.idnummodo-1] = Image("${ConstantesCustomAPI.PATH_CUSTOM}${modo.imagen}")
@@ -66,7 +65,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
                             listaNombres[i] = "Plan Ultra Mega God  ${i-5}"
                         }
                     }else{
-                        if(!listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
+                        if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
                             listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/AgregarModo.jpg")
                         }
                     }
@@ -78,7 +77,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
                         listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuegoBloqueado.jpg")
                         listaNombres[i] = "Plan Ultra Mega God  ${i-5}"
                     }else{
-                        if(!listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
+                        if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
                             listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/AgregarModo.jpg")
                         }
                     }
@@ -86,7 +85,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
             }
             3->{
                 for(i in listaImagenes.indices){
-                    if(!listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
+                    if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
                         listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/AgregarModo.jpg")
                     }
                 }
@@ -124,7 +123,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
             || (indiceActual > 5 && jugadorConTodo.suscripcionDelJugador!!.tipo == 2)){
             jugar.text = "Desbloquear"
         }else{
-            if(!listaTusModosDeJuego.map { it.idnummodo }.contains(indiceActual+1)){
+            if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(indiceActual+1)){
                 jugar.text = "Crear modo"
             }else{
                 jugar.text = "Jugar"
