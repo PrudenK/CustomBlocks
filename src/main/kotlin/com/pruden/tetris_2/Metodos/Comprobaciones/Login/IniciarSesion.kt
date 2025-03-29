@@ -5,9 +5,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
-import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.logros.cargarDatosDelJugador
-import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosModoCampa
-import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarSuscripciones
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosDelJugadorAlIniciarSesion
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -27,18 +25,11 @@ fun iniciarSesionLogin(){
                         idJugador = respuesta.body()!!.get("id")!!.asInt
                         println(idJugador)
 
+                        cargarDatosDelJugadorAlIniciarSesion()
+
                         javafx.application.Platform.runLater {
-                            //TODO OOOOOOOOOOOOOOOOO
-                            cargarSuscripciones()
-
-                            cargarDatosModoCampa()
-
-                            cargarDatosDelJugador()
-
-                            cargarStagePrincipal()
-
                             iniciarHeartbeatJugador()
-
+                            cargarStagePrincipal()
                             ControladorPrincipal.jugarOnline = true
                         }
                     }
