@@ -13,7 +13,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorC
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroLineasAcumuladas
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.numeroPartidasClasicas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puntuacionAcumulada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
@@ -65,17 +64,16 @@ private fun verificarPerdida(): Boolean {
 
 private fun cargarLogrosNumPartidasClasicas(){
     if(cPrin.labelModo.text == "Clásico"){
-        numeroPartidasClasicas++
-        println(numeroPartidasClasicas)
-        if(numeroPartidasClasicas == 10){
+        jugadorConTodo.numeroPartidasClasicas++
+        if(jugadorConTodo.numeroPartidasClasicas == 10){
             completarLogro(Logros.NOVATO)
         }
 
-        if(numeroPartidasClasicas == 100){
+        if(jugadorConTodo.numeroPartidasClasicas == 100){
             completarLogro(Logros.AFICIONADO)
         }
 
-        if(numeroPartidasClasicas == 500){
+        if(jugadorConTodo.numeroPartidasClasicas == 500){
             completarLogro(Logros.MAQUINON)
         }
     }

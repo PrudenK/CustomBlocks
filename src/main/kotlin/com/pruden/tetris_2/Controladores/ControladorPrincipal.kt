@@ -156,7 +156,6 @@ class ControladorPrincipal : Initializable {
         var nivelCompletado = false
 
         //logros
-        var numeroPartidasClasicas = -1
         var numeroLineasAcumuladas = -1
         var puntuacionAcumulada = -1
         var logroZZZ = false
@@ -221,7 +220,6 @@ class ControladorPrincipal : Initializable {
 
 
 
-        println(numeroPartidasClasicas)
         println(numeroLineasAcumuladas)
         println(puntuacionAcumulada)
 
