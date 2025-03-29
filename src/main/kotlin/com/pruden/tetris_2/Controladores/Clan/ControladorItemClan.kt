@@ -24,7 +24,14 @@ class ControladorItemClan {
         nombre.text = clan.nombre
         pais.text = clan.ubi
         miembros.text = "Miembros: ${clan.miembros}"
-        fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${clan.imagen}", true)
+
+        if(clan.imagen.isNotBlank()){
+            fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${clan.imagen}", true)
+        }else{
+            fotoPerfil.image = Image(ConstantesCustomAPI.IMAGEN_CLAN_DEFAULT)
+        }
+
+        println(clan.imagen)
 
         pane.setOnMouseClicked {
             idClanControlador = clan.idClan

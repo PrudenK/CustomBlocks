@@ -87,7 +87,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                 cargarJugadores(listaJugadoresDeMiClan)
                 miembros.text = "Miembros: ${listaJugadoresDeMiClan.size}"
 
-                if(clan.imagen != null){
+                if(clan.imagen.isNotBlank()){
                     imagen.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${clan.imagen}")
                 }else{
                     imagen.image = Image(ConstantesCustomAPI.IMAGEN_CLAN_DEFAULT)
