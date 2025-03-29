@@ -3,8 +3,6 @@ package com.pruden.tetris_2.Metodos.ModoCampa.Dataº
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNiveles
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.listaNivelesJugador
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa.Companion.cModoCampa
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.mundoActual
@@ -18,8 +16,8 @@ import javafx.scene.image.ImageView
 
 fun cargarAccionesImageViewsNiveles(){
     Platform.runLater{
-        val listaAux = listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
-        val listaAuxNivelJugador = listaNivelesJugador.filter { it.idMundo == mundoActual+1}
+        val listaAux = jugadorConTodo.listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
+        val listaAuxNivelJugador = jugadorConTodo.listaNivelesJugador.filter { it.idMundo == mundoActual+1}
 
         for (i in 1 .. 9){
             val imgView = cMundo1.stageMundo1.scene.lookup("#nivel$i") as ImageView
@@ -62,7 +60,7 @@ fun cargarAccionesImageViewsMundos(){
             val mundoJugador =  jugadorConTodo.listaMundosJugador[i-1]
 
 
-            val listaNivelesJugadorDelMundo = listaNivelesJugador.filter { it.idMundo == i && it.completado}
+            val listaNivelesJugadorDelMundo = jugadorConTodo.listaNivelesJugador.filter { it.idMundo == i && it.completado}
 
             if(!mundoJugador.completado){
                 val grayscale = ColorAdjust().apply {

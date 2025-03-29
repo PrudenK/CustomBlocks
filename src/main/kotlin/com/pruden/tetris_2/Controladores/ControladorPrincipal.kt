@@ -155,8 +155,6 @@ class ControladorPrincipal : Initializable {
         var nivelTerminado = false
         var nivelCompletado = false
 
-        var listaNiveles = mutableListOf<Nivel>()
-        var listaNivelesJugador = mutableListOf<NivelJugador>()
         var listaLogrosJugador = mutableListOf<LogroJugador>()
 
         //logros
@@ -219,8 +217,6 @@ class ControladorPrincipal : Initializable {
         TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
         imprimirMatriz_TAB()
         println(ApiPublicidad.anuncios)
-        println(listaNiveles)
-        println(listaNivelesJugador)
         println(idNivelActual)
 
         println(tiempoCaidaPieza)
