@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Clan
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
+import com.pruden.tetris_2.API.ObjsAux.Clan
 import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
@@ -48,6 +49,7 @@ class ControladorClan: ControladorGEN(), Initializable {
 
     private var idClanStage = -1
     private var idLiderDelClan = -1
+    private lateinit var clanDelStage: Clan
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         recargarDatos()
@@ -79,8 +81,9 @@ class ControladorClan: ControladorGEN(), Initializable {
         CoroutineScope(Dispatchers.IO).launch {
 
             listaJugadoresDeMiClan = ApiCustom.clanService.getJugadoresDeUnClan(idClanControlador).toMutableList()
-            //val clan = ApiCustom.clanService.getDatosDeUnClan(idClanControlador)
-            val clan = jugadorConTodo.clan!!
+            val clan = ApiCustom.clanService.getDatosDeUnClan(idClanControlador)
+            clanDelStage = clan
+            //val clan = jugadorConTodo.clan!!
 
             javafx.application.Platform.runLater {
                 idLiderDelClan = clan.idlider
@@ -102,10 +105,14 @@ class ControladorClan: ControladorGEN(), Initializable {
                 idClanStage = clan.idclan
 
 
-                if(clan.idclan == jugadorConTodo.clan!!.idclan){
-                    btnClan.text = "Abandonar"
-                }else{
+                if(jugadorConTodo.clan == null){
                     btnClan.text = "Unirme"
+                }else{
+                    if(clan.idclan == jugadorConTodo.clan!!.idclan){
+                        btnClan.text = "Abandonar"
+                    }else{
+                        btnClan.text = "Unirme"
+                    }
                 }
 
                 ubi.text = "Localización: ${clan.ubicacion}"
@@ -129,12 +136,16 @@ class ControladorClan: ControladorGEN(), Initializable {
             dialogStage.isResizable = false
             dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
 
-            if(jugadorConTodo.clan!!.idlider == jugadorConTodo.id){
+            println(clanDelStage)
+            println(jugadorConTodo.clan)
+            println(jugadorConTodo.id)
+
+            if(clanDelStage.idlider == jugadorConTodo.id){
                 controller.nombre.text = "Eres el lider del Clan, ¿quieres abandonarlo?"
             }
 
             controller.onConfirmar = {
-                jugadorConTodo.clan!!.idclan = -1
+                jugadorConTodo.clan = null
                 CoroutineScope(Dispatchers.IO).launch {
                     ApiCustom.clanService.jugadorAbandonaClan(idJugador)
                     recargarDatos()
@@ -144,8 +155,8 @@ class ControladorClan: ControladorGEN(), Initializable {
 
             dialogStage.showAndWait()
         }else{
-            if(jugadorConTodo.clan!!.idclan == -1){
-                jugadorConTodo.clan!!.idclan = idClanStage
+            if(jugadorConTodo.clan == null || jugadorConTodo.clan!!.idclan == -1){
+                jugadorConTodo.clan = clanDelStage
                 btnClan.text = "Abandonar"
 
                 CoroutineScope(Dispatchers.IO).launch {
@@ -168,15 +179,18 @@ class ControladorClan: ControladorGEN(), Initializable {
                 dialogStage.isResizable = false
                 dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
 
-                if(jugadorConTodo.clan!!.idlider == jugadorConTodo.id){
+                if(jugadorConTodo.clan!!.idlider != jugadorConTodo.id){
                     controller.nombre.text = "Ya perteneces a un Clan, ¿quieres cambiarte?"
                 }else{
                     controller.nombre.text = "Eres lider de un Clan, ¿quieres cambiarte?"
                 }
 
+                println("lider : ${clanDelStage.idlider}")
+                println("jugador : ${jugadorConTodo.id}")
+
 
                 controller.onConfirmar = {
-                    jugadorConTodo.clan!!.idclan = idClanStage
+                    jugadorConTodo.clan = clanDelStage
                     btnClan.text = "Abandonar"
 
                     CoroutineScope(Dispatchers.IO).launch {

@@ -92,7 +92,8 @@ class ControladorCrearClan: ControladorGEN(), Initializable {
                                     labelError.text = "Clan creado con éxito"
                                 }
 
-                                jugadorConTodo.clan!!.idclan = response.body()!!.idclan
+                                jugadorConTodo.clan = response.body()!!
+                                jugadorConTodo.clan!!.idlider = jugadorConTodo.id
 
                                 if(!jugadorConTodo.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){
                                     completarLogro(Logros.VIDA_SOCIAL)
