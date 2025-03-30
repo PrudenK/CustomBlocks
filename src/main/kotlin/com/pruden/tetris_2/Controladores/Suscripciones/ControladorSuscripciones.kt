@@ -40,7 +40,10 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
     @FXML lateinit var pane: Pane
     @FXML lateinit var mensajeSuscripcion: Label
 
-    private var indice = 0
+    companion object{
+        var indiceSuscripciones = 0
+    }
+
     private var animacionEnCurso = false
     private val scope = CoroutineScope(Dispatchers.Default)
 
@@ -49,7 +52,6 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
     private val fechaFin = fechaInicio.plusDays(31)
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        indice = 0
         cambiosSuscripcion()
     }
 
@@ -58,7 +60,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun comprar(){
-        val suscripcion = jugadorConTodo.listaSuscripciones[indice]
+        val suscripcion = jugadorConTodo.listaSuscripciones[indiceSuscripciones]
         CoroutineScope(Dispatchers.IO).launch {
             val response = ApiCustom.suscripcionJugadorService.jugadorSeSuscribe(idJugador, suscripcion.tipo)
 
@@ -110,21 +112,21 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun atras(){
-        if(indice == 0){
-            indice = jugadorConTodo.listaSuscripciones.size-1
-        }else indice--
+        if(indiceSuscripciones == 0){
+            indiceSuscripciones = jugadorConTodo.listaSuscripciones.size-1
+        }else indiceSuscripciones--
         cambiosSuscripcion()
     }
 
     @FXML fun siguiente(){
-        if(indice == jugadorConTodo.listaSuscripciones.size-1){
-            indice = 0
-        }else indice++
+        if(indiceSuscripciones == jugadorConTodo.listaSuscripciones.size-1){
+            indiceSuscripciones = 0
+        }else indiceSuscripciones++
         cambiosSuscripcion()
     }
 
     private fun cambiosSuscripcion(){
-        val suscripcion = jugadorConTodo.listaSuscripciones[indice]
+        val suscripcion = jugadorConTodo.listaSuscripciones[indiceSuscripciones]
         tituloSuscripcion.text = suscripcion.nombre
         modosSuscripcion.text = "- Podrás crear ${suscripcion.nummodos} modos"
         partidasSuscripcion.text = "- Podrás guardar ${suscripcion.numPartidasGuardadas} partidas"

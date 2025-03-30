@@ -2,9 +2,11 @@ package com.pruden.tetris_2.Controladores.TusModos
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.animacionEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.TusModos.cargarCambiosTusModos
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
@@ -111,6 +113,12 @@ class ControladorTusModos: ControladorGEN(), Initializable {
             }
             "Crear modo"->{
                 crearStage(ClaseStage("Vistas/TusModos/vistaCrearModo.fxml", cPrin.nuevaPartidaB, 609.0, 513.0, timelinePartida, 0, 0))
+                stageTusModos.close()
+            }
+            "Desbloquear"->{
+                val indiceSus = (indiceActual / 3.0).toInt()
+                ControladorSuscripciones.indiceSuscripciones = indiceSus
+                crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", cPrin.nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
                 stageTusModos.close()
             }
         }
