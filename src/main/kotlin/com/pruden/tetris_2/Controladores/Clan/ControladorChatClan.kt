@@ -3,9 +3,11 @@ package com.pruden.tetris_2.Controladores.Clan
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
+import com.pruden.tetris_2.WebSocket.ConstantesServidor
 import com.pruden.tetris_2.WebSocket.MensajeChat
 import javafx.application.Platform
 import javafx.collections.FXCollections
@@ -81,11 +83,28 @@ class ControladorChatClan : ControladorGEN() {
                         val label = Label("${item.remitente}: ${item.texto}")
                         label.maxWidth = 350.0
                         label.isWrapText = true
+
+
                         label.style = if (item.esPropio) {
                             "-fx-background-color: #a2f5a2; -fx-padding: 10px; -fx-background-radius: 10px;"
                         } else {
-                            "-fx-background-color: #e0e0e0; -fx-padding: 10px; -fx-background-radius: 10px;"
+                            if (item.remitente == "Server") {
+                                when {
+                                    item.texto.contains("se ha unido al clan", ignoreCase = true) -> {
+                                        "-fx-background-color: #2e7d32; -fx-padding: 10px; -fx-background-radius: 10px; -fx-font-weight: bold; -fx-text-fill: white;"
+                                    }
+                                    item.texto.contains("ha abandonado el clan", ignoreCase = true) -> {
+                                        "-fx-background-color: #ffcdd2; -fx-padding: 10px; -fx-background-radius: 10px; -fx-font-weight: bold; -fx-text-fill: #b71c1c;"
+                                    }
+                                    else -> {
+                                        "-fx-background-color: #e0e0e0; -fx-padding: 10px; -fx-background-radius: 10px; -fx-font-weight: normal; -fx-text-fill: black;"
+                                    }
+                                }
+                            } else {
+                                "-fx-background-color: #e0e0e0; -fx-padding: 10px; -fx-background-radius: 10px;"
+                            }
                         }
+
 
                         val hbox = HBox(label)
                         if (item.esPropio) {
@@ -101,7 +120,7 @@ class ControladorChatClan : ControladorGEN() {
             }
         }
 
-        socket = ClanChatWebSocket("ws://localhost:8080/clan-chat/$clanId", jugadorConTodo.nombre) { mensaje ->
+        socket = ClanChatWebSocket("${ConstantesServidor.PATH_SERVER}${ConstantesServidor.CLAN_CHAT}/$clanId", jugadorConTodo.nombre) { mensaje ->
             Platform.runLater {
                 mensajes.add(mensaje)
                 listaMensajes.refresh()

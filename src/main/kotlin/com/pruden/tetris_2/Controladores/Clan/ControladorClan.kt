@@ -6,10 +6,12 @@ import com.pruden.tetris_2.API.ObjsAux.Clan
 import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
+import com.pruden.tetris_2.WebSocket.ClanChatEmisor
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
@@ -27,7 +29,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.net.URL
-import java.text.SimpleDateFormat
 import java.util.*
 
 class ControladorClan: ControladorGEN(), Initializable {
@@ -145,11 +146,16 @@ class ControladorClan: ControladorGEN(), Initializable {
             }
 
             controller.onConfirmar = {
+                val clanAnterior = jugadorConTodo.clan!!
+                ClanChatEmisor.enviar(clanAnterior.idclan, "Server", "${jugadorConTodo.nombre} ha abandonado el clan")
+
                 jugadorConTodo.clan = null
                 CoroutineScope(Dispatchers.IO).launch {
                     ApiCustom.clanService.jugadorAbandonaClan(idJugador)
                     recargarDatos()
                 }
+
+
                 stageMiClan.close()
             }
 
@@ -160,7 +166,11 @@ class ControladorClan: ControladorGEN(), Initializable {
                 btnClan.text = "Abandonar"
 
                 CoroutineScope(Dispatchers.IO).launch {
+                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo.nombre} se ha unido al clan")
+
+
                     ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
+
                     recargarDatos()
                 }
 
@@ -190,11 +200,15 @@ class ControladorClan: ControladorGEN(), Initializable {
 
 
                 controller.onConfirmar = {
+                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo.nombre} se ha unido al clan")
+                    ClanChatEmisor.enviar(jugadorConTodo.clan!!.idclan, "Server", "${jugadorConTodo.nombre} ha abandonado el clan")
+
                     jugadorConTodo.clan = clanDelStage
                     btnClan.text = "Abandonar"
 
                     CoroutineScope(Dispatchers.IO).launch {
-                        ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
+                        val response =  ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
+                        println(response)
                         recargarDatos()
                     }
                 }

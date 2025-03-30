@@ -19,6 +19,7 @@ import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
 import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
 import javafx.animation.Timeline
 import javafx.application.Platform
 import javafx.beans.property.BooleanProperty
