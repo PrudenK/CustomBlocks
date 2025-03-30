@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.Modos
+package com.pruden.tetris_2.Metodos.ModosDeJuego.Modos
 
 data class ModoDeJuego(
     val nombre: String,

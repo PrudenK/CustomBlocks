@@ -21,4 +21,6 @@ data class ModoDeJuegoAPI(
     fun siguientesPiezas() = piezas == 1
     fun dashDisponible() = dashes == 1
     fun hayLimiteRotaciones() = limiterotaciones != -1
+    fun hayHoldActivado() = hold == 1
+    fun arraPiezas() = arraypiezas.split("_").map { it.toInt() }.toIntArray()
 }

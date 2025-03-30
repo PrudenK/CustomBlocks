@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.ModoCampa.CargarNivel
+package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.CargarNivel
 
 import com.pruden.tetris_2.API.ObjsAux.Nivel
 import com.pruden.tetris_2.Constantes.Globales
@@ -11,7 +11,7 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero
 import com.pruden.tetris_2.Metodos.BorrarPiezas.objLineasNivel
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
-import com.pruden.tetris_2.Metodos.Modos.cargarPosicionesPiezasModos
+import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModos
 
 fun cargarNivel(nivel: Nivel){
     with(cPrin) {

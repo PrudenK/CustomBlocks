@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
-import com.pruden.tetris_2.Metodos.ModoCampa.cambiarLabelsAlSalirDelModoCampa
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTableroSecundario
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage

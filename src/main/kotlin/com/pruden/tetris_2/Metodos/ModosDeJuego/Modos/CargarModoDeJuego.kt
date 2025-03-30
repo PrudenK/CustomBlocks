@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.Modos
+package com.pruden.tetris_2.Metodos.ModosDeJuego.Modos
 
 
 import com.pruden.tetris_2.Constantes.Globales
@@ -20,7 +20,7 @@ import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
-import com.pruden.tetris_2.Metodos.ModoCampa.cambiarLabelsAlSalirDelModoCampa
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.Timelines.borrarMascara
 
 fun cargarCambiosModo(modo : ModoDeJuego){

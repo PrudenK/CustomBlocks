@@ -3,8 +3,7 @@ package com.pruden.tetris_2.Controladores.ModoCampa
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Metodos.ModoCampa.Data.*
-import com.pruden.tetris_2.Metodos.ModoCampa.Dataº.cargarAccionesImageViewsNiveles
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.Dataº.cargarAccionesImageViewsNiveles
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable

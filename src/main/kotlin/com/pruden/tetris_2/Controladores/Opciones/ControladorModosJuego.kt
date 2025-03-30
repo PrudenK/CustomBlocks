@@ -6,14 +6,11 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
-import com.pruden.tetris_2.Metodos.Modos.ModoDeJuego
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
-import javafx.scene.control.Label
-import javafx.scene.control.TextField
 import javafx.scene.image.ImageView
 import javafx.scene.text.Text
 import javafx.stage.Stage

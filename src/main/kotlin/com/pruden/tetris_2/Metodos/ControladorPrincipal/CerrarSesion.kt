@@ -4,12 +4,11 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fotoClanSeleccionada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
 import com.pruden.tetris_2.Controladores.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
-import com.pruden.tetris_2.Metodos.Modos.cargarPosicionesPiezasModos
+import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModos
 import com.pruden.tetris_2.Metodos.Stages.cargarLogin
 import javafx.stage.Stage
 

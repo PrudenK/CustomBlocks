@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel
+package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
@@ -7,7 +7,6 @@ import com.pruden.tetris_2.Metodos.Cronometro.formatoASegundos
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.Perder.subirDatosFinDePartida
 import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelCompeltado
-import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelPerdido
 
 fun comprobarPasarNivel(){
     if (seHaAlcanzadoElNivelObj()) {

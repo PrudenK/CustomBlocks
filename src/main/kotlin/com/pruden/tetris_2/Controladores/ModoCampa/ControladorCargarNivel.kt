@@ -1,8 +1,8 @@
 package com.pruden.tetris_2.Controladores.ModoCampa
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Metodos.ModoCampa.PantallaDeCarga.cargaProgressBarCargarNivel
-import com.pruden.tetris_2.Metodos.ModoCampa.PantallaDeCarga.cargarLabelsCargaNivel
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.PantallaDeCarga.cargaProgressBarCargarNivel
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.PantallaDeCarga.cargarLabelsCargaNivel
 
 import javafx.application.Platform
 import javafx.fxml.FXML

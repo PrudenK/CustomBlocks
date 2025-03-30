@@ -4,6 +4,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
+import com.pruden.tetris_2.Metodos.ModosDeJuego.TusModos.cargarCambiosTusModos
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -99,7 +100,12 @@ class ControladorTusModos: ControladorGEN(), Initializable {
     private var indiceActual = 0
 
     @FXML fun jugar(){
-
+        when(jugar.text){
+            "Jugar" ->{
+                cargarCambiosTusModos(jugadorConTodo.listaTusModosDeJuego[indiceActual])
+                stageTusModos.close()
+            }
+        }
     }
 
     @FXML fun atras(){

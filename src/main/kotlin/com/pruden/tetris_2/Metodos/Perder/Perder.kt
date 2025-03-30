@@ -14,7 +14,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNu
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
-import com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel.perderNivelModoCampa
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.perderNivelModoCampa
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelPerdido

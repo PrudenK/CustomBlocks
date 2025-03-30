@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.ModoCampa.Dataº
+package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.Dataº
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
@@ -6,7 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorC
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa.Companion.cModoCampa
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.mundoActual
-import com.pruden.tetris_2.Metodos.ModoCampa.CargarNivel.cargarStageCargaYNivel
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.CargarNivel.cargarStageCargaYNivel
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.application.Platform

@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego.Companion.stageModos
-import com.pruden.tetris_2.Metodos.Modos.cargarCambiosModo
+import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
 import javafx.fxml.FXML
 import javafx.scene.control.Button
 import javafx.stage.Stage

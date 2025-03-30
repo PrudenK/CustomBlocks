@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objPuntuacionBajar
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
-import com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel.comprobarPasarNivel
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.comprobarPasarNivel
 import com.pruden.tetris_2.Metodos.Timelines.timelineMascara
 
 val listaPuntuaiones = listOf(0,100,300,500,800,1200)

@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.ModoCampa.PantallaDeCarga
+package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.PantallaDeCarga
 
 import com.pruden.tetris_2.Controladores.ModoCampa.ControladorCargarNivel.Companion.cCargarNivel
 import javafx.application.Platform

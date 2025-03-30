@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Metodos.ModoCampa.FinDelNivel
+package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin

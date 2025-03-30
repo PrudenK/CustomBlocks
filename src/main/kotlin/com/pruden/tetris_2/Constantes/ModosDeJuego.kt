@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Constantes
 
-import com.pruden.tetris_2.Metodos.Modos.ModoDeJuego
+import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.ModoDeJuego
 
 object ModosDeJuego {
     val modoClasico = ModoDeJuego("Clásico",intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 10,
