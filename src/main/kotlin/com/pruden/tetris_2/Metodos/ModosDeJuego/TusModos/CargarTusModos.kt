@@ -27,7 +27,6 @@ import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
-import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarPartida
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModos
 import com.pruden.tetris_2.Metodos.Timelines.borrarMascara

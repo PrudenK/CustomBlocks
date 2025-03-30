@@ -2,9 +2,13 @@ package com.pruden.tetris_2.Controladores.TusModos
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.TusModos.cargarCambiosTusModos
+import com.pruden.tetris_2.Metodos.Stages.ClaseStage
+import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -103,6 +107,10 @@ class ControladorTusModos: ControladorGEN(), Initializable {
         when(jugar.text){
             "Jugar" ->{
                 cargarCambiosTusModos(jugadorConTodo.listaTusModosDeJuego[indiceActual])
+                stageTusModos.close()
+            }
+            "Crear modo"->{
+                crearStage(ClaseStage("Vistas/TusModos/vistaCrearModo.fxml", cPrin.nuevaPartidaB, 609.0, 513.0, timelinePartida, 0, 0))
                 stageTusModos.close()
             }
         }

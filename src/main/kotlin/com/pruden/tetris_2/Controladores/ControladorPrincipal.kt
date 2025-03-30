@@ -261,8 +261,4 @@ class ControladorPrincipal : Initializable {
     @FXML fun tusModos(){
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
     }
-
-    @FXML fun crearModo(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaCrearModo.fxml", nuevaPartidaB, 609.0, 513.0, timelinePartida, 0, 0))
-    }
 }

@@ -155,5 +155,4 @@
    <Button layoutX="38.0" layoutY="76.0" mnemonicParsing="false" onAction="#logros" prefHeight="32.0" prefWidth="138.0" text="Logros" />
    <Button fx:id="clan" layoutX="198.0" layoutY="790.0" mnemonicParsing="false" onAction="#clan" prefHeight="32.0" prefWidth="138.0" text="Clan" />
    <Button fx:id="tusModos" layoutX="511.0" layoutY="790.0" mnemonicParsing="false" onAction="#tusModos" prefHeight="32.0" prefWidth="138.0" text="Tus modos" />
-   <Button fx:id="crearModo" layoutX="661.0" layoutY="658.0" mnemonicParsing="false" onAction="#crearModo" prefHeight="32.0" prefWidth="138.0" text="Crear modo" />
 </Pane>
