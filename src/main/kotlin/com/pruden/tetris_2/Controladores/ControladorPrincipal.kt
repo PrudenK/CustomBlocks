@@ -261,6 +261,10 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun tusModos(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
+        if(jugadorConTodo.suscripcionDelJugador?.tipo != -1){
+            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
+        }else{
+            println("Opción para jugadores premium")
+        }
     }
 }
