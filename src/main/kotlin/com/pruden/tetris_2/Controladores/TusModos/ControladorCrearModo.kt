@@ -12,10 +12,7 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companio
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
-import javafx.scene.control.Button
-import javafx.scene.control.CheckBox
-import javafx.scene.control.Label
-import javafx.scene.control.TextField
+import javafx.scene.control.*
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.Pane
@@ -56,7 +53,14 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
 
     @FXML fun siguiente1(){
-        saltoPagina(pane1, pane2)
+        if(textFieldNombreModo.text.isBlank()){
+            textFieldNombreModo.style = "-fx-border-color: red; -fx-border-width: 2px;"
+            textFieldNombreModo.tooltip = Tooltip("El nombre no puede estar en blanco")
+        }else{
+            textFieldNombreModo.style = ""
+            textFieldNombreModo.tooltip = null
+            saltoPagina(pane1, pane2)
+        }
     }
 
     @FXML fun volverSalir(){
@@ -149,6 +153,9 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             if(checkBox.isSelected){
                 listaPiezas += i.toString()+"_"
             }
+        }
+        if(listaPiezas.isBlank()){
+            listaPiezas = "0_1_2_3_4_5_6_"
         }
         listaPiezas = listaPiezas.substring(0, listaPiezas.length-1)
         return listaPiezas
@@ -433,6 +440,8 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
            rotacionesAux = rotaciones
         }
 
+        println(fotoModoDeJuegoSeleccionada)
+
         val modoJuego = ModoDeJuegoAPI(
             idJugador = idJugador,
             idnummodo = 1,
@@ -465,8 +474,8 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             }
             println(response.code())
             println(response)
+            fotoModoDeJuegoSeleccionada = null
         }
-        fotoModoDeJuegoSeleccionada = null
     }
 
     @FXML fun volverConfi(){
