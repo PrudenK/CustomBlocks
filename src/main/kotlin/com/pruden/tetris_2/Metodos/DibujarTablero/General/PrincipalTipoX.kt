@@ -9,16 +9,12 @@ import javafx.scene.shape.Rectangle
 var paresImparesTableroTipo3y4 = 0
 
 fun dibujarTableroPrincipal(){
-    if (ControladorPrincipal.tipoTableroPrin == 0){
-        dibujarTableroNormalTIPO0()
-    }else if (ControladorPrincipal.tipoTableroPrin == 1){
-        dibujarTableroNormalTIPO1()
-    }else if (ControladorPrincipal.tipoTableroPrin == 2){
-        dibujarTableroNormalTIPO2()
-    }else if (ControladorPrincipal.tipoTableroPrin == 3){
-        dibujarTableroNormalTIPO3()
-    }else if (ControladorPrincipal.tipoTableroPrin == 4){
-        dibujarTableroNormalTIPO4()
+    when (ControladorPrincipal.tipoTableroPrin) {
+        0 -> dibujarTableroNormalTIPO0()
+        1 -> dibujarTableroNormalTIPO1()
+        2 -> dibujarTableroNormalTIPO2()
+        3 -> dibujarTableroNormalTIPO3()
+        4 -> dibujarTableroNormalTIPO4()
     }
 }
 

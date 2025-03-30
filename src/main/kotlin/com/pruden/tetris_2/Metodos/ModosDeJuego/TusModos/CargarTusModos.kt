@@ -61,8 +61,8 @@ fun cargarCambiosTusModos(modo : ModoDeJuegoAPI){
         dashActivo = dashDisponible()
 
         cambioDeTablero()
-
         borrarMascara()
+
         dibujarTableroPrincipal()
         dibujarTableroSecundario(gcHold)
         dibujarTableroSecundario(gcSiguiente1)
@@ -70,6 +70,6 @@ fun cargarCambiosTusModos(modo : ModoDeJuegoAPI){
         dibujarTableroSecundario(gcSiguiente3)
 
         cambiarLabelsAlSalirDelModoCampa()
-        reiniciarPartida()
+        cPrin.partdiaNueva()
     }
 }
