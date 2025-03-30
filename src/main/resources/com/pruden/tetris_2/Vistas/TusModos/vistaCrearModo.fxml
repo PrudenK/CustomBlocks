@@ -766,6 +766,16 @@
             <Button fx:id="activarDashButton" layoutX="452.0" layoutY="345.0" mnemonicParsing="false" onAction="#activarDashes" text="Desactivado" />
          </children>
       </Pane>
+      <Pane fx:id="paneSalir" prefHeight="168.0" prefWidth="430.0" visible="false">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="14.0" prefHeight="75.0" prefWidth="346.0" text="Modo de juego creado con éxito" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+               <font>
+                  <Font name="Liberation Mono Bold" size="26.0" />
+               </font>
+            </Label>
+            <Button layoutX="139.0" layoutY="110.0" mnemonicParsing="false" onAction="#salir" prefWidth="140.0" text="Salir" />
+         </children>
+      </Pane>
    </children>
 
 

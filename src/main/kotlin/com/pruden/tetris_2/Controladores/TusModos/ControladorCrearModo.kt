@@ -23,6 +23,7 @@ import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
+import retrofit2.http.Body
 import java.net.URL
 import java.util.*
 
@@ -476,6 +477,8 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             println(response)
             fotoModoDeJuegoSeleccionada = null
         }
+
+        saltoPagina(pane5, paneSalir, true)
     }
 
     @FXML fun volverConfi(){
@@ -483,9 +486,33 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
     }
 
 
-    private fun saltoPagina(paneActual: Pane, paneMove: Pane){
+    @FXML lateinit var paneSalir: Pane
+
+    private fun saltoPagina(paneActual: Pane, paneMove: Pane, salir: Boolean = false){
         paneActual.isVisible = false
         paneMove.isVisible = true
+
+        if(salir){
+            stageCrearModo.width = paneSalir.width
+            stageCrearModo.height = paneSalir.height
+
+            val parentStage = bPadre.scene.window as Stage
+
+            val parentX = parentStage.x
+            val parentY = parentStage.y
+            val parentWidth = parentStage.width
+            val parentHeight = parentStage.height
+
+            val newWidth = stageCrearModo.width
+            val newHeight = stageCrearModo.height
+
+            stageCrearModo.x = parentX + (parentWidth - newWidth) / 2
+            stageCrearModo.y = (parentY + (parentHeight - newHeight) / 2) -60
+        }
+    }
+
+    @FXML fun salir(){
+        stageCrearModo.close()
     }
 
     override fun setStage(stage: Stage?) {
@@ -495,5 +522,9 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         }
     }
 
-    override fun setBoton(b: Button?) {}
+    private lateinit var bPadre: Button
+
+    override fun setBoton(b: Button?) {
+        bPadre = b!!
+    }
 }
