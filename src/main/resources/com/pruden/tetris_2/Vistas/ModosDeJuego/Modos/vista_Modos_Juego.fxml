@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.layout.StackPane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="355.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ModosDeJuego.Modos.ControladorModosJuego">
+    <stylesheets>
+        <URL value="@../../../styles/general.css" />
+    </stylesheets>
+    <children>
+        <Button layoutX="24.0" layoutY="488.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="132.0" text="Volver" />
+        <Label layoutX="24.0" layoutY="23.0" prefHeight="66.0" prefWidth="307.0" style="-fx-text-fill: #FFFFFF;" text="Estos modos de juego cuentan para el ranking oficial." textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+            <font>
+                <Font name="Liberation Mono Bold" size="18.0" />
+            </font>
+        </Label>
+      <Button fx:id="jugar" layoutX="199.0" layoutY="488.0" mnemonicParsing="false" onAction="#jugar" prefHeight="32.0" prefWidth="132.0" text="Jugar" />
+      <Button layoutX="262.0" layoutY="435.0" mnemonicParsing="false" onAction="#siguiente" prefHeight="32.0" prefWidth="32.0" text="&gt;" />
+      <Button layoutX="61.0" layoutY="435.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="32.0" text="&lt;" />
+      <Text fx:id="textoModos" fill="#e9e8e8" layoutX="107.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clasico" textAlignment="CENTER" wrappingWidth="142.0">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+      </Text>
+        <StackPane layoutX="48.0" layoutY="99.0" prefWidth="260.0" prefHeight="313.0">
+            <ImageView fx:id="imgModos" fitHeight="313.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" />
+        </StackPane>
+    </children>
+</Pane>

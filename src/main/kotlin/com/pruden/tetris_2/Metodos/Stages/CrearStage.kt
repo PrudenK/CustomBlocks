@@ -3,14 +3,14 @@ package com.pruden.tetris_2.Metodos.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
-import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa
-import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorModoCampa
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorMundos.Companion.cMundo1
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioOtrasConfi
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioPiezas
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioTablero
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cerrarYGuardarCambio
-import com.pruden.tetris_2.Controladores.Opciones.ControladorModosJuego
+import com.pruden.tetris_2.Controladores.ModosDeJuego.Modos.ControladorModosJuego
 import com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones
 import com.pruden.tetris_2.Controladores.Otros.ControladorPerder
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas

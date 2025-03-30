@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="628.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorCargarNivel">
+   <stylesheets>
+      <URL value="@../../../styles/custom.css" />
+      <URL value="@../../../styles/general.css" />
+      <URL value="@../../../styles/perfil.css" />
+   </stylesheets>
+   <children>
+      <Label fx:id="tituloLabel" layoutX="170.0" layoutY="28.0" text="Nivel 1 Mundo 1" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="32.0" />
+         </font>
+      </Label>
+
+      <GridPane hgap="10" layoutX="36.0" layoutY="153.0" prefHeight="130.0" prefWidth="585.0" vgap="10">
+         <!-- Primera columna -->
+         <Label text="Tiempo de caída inicial:" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="caidaInicialLabel" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <Label text="Salto de tiempo:" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="saltoTiempoLabel" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <Label text="Líneas para salto de tiempo:" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="saltoTiempoLineasLabel" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <Label text="Límite de rotaciones:" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="limiteRotacionesLabel" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <Label text="Hold:" textFill="#e9e8e8" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="holdLabel" textFill="#e9e8e8" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <!-- Segunda columna -->
+         <Label text="Tamaño del tablero:" textFill="#e9e8e8" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="tamaTableroLabel" textFill="#e9e8e8" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <Label text="Siguientes piezas:" textFill="#e9e8e8" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="siguientesPiezasLabel" textFill="#e9e8e8" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <Label text="Tipo de tablero:" textFill="#e9e8e8" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="tipoTableroLabel" textFill="#e9e8e8" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+
+         <Label text="Dash:" textFill="#e9e8e8" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <font>
+               <Font name="Liberation Mono Bold" size="13.0" />
+            </font></Label>
+         <Label fx:id="dashLabel" textFill="#e9e8e8" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <font>
+               <Font name="Liberation Mono" size="13.0" />
+            </font></Label>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+
+      <Label layoutX="36.0" layoutY="96.0" text="Objetivos:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="objetivosLabel" alignment="CENTER" layoutX="148.0" layoutY="90.0" prefHeight="32.0" prefWidth="438.0" text="6000 puntos y 20 líneas en menos de 00:03:00" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font></Label>
+
+      <Label fx:id="escLabel" layoutX="470.0" layoutY="287.0" prefHeight="47.0" prefWidth="143.0" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+         <font>
+            <Font name="Liberation Mono Bold" size="13.0" />
+         </font></Label>
+      <Button fx:id="escB" layoutX="35.0" layoutY="32.0" mnemonicParsing="false" text="Button" />
+
+      <ProgressBar fx:id="progressBar" layoutX="211.0" layoutY="313.0" prefHeight="16.0" prefWidth="200.0" progress="0.0" />
+      <Label fx:id="porcentajeCargaLabel" layoutX="416.0" layoutY="312.0" text="0%">
+         <font>
+            <Font name="Liberation Mono Bold" size="13.0" />
+         </font></Label>
+   </children>
+</Pane>

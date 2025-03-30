@@ -3,9 +3,9 @@ package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.Dataº
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa.Companion.cModoCampa
-import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.cMundo1
-import com.pruden.tetris_2.Controladores.ModoCampa.ControladorMundos.Companion.mundoActual
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorModoCampa.Companion.cModoCampa
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorMundos.Companion.cMundo1
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorMundos.Companion.mundoActual
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.CargarNivel.cargarStageCargaYNivel
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -79,5 +79,5 @@ fun cargarAccionesImageViewsMundos(){
     }
 }
 private fun abrirMundo(mundo: Int){
-    crearStage(ClaseStage("Vistas/ModoCampa/vista_Mundo1.fxml", cModoCampa.volverB, 711.0, 809.0, null, 0, 0, mundo))
+    crearStage(ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Mundo1.fxml", cModoCampa.volverB, 711.0, 809.0, null, 0, 0, mundo))
 }

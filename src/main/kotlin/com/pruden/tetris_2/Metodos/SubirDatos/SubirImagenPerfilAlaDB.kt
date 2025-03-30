@@ -4,7 +4,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fotoClanSeleccionada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
-import com.pruden.tetris_2.Controladores.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
+import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.stage.FileChooser

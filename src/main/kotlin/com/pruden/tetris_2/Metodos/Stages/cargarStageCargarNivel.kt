@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.Stages
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.ModoCampa.ControladorCargarNivel.Companion.cCargarNivel
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorCargarNivel.Companion.cCargarNivel
 import com.pruden.tetris_2.Tetris
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
@@ -10,7 +10,7 @@ import javafx.stage.Stage
 import javafx.stage.StageStyle
 
 fun cargarStageCargarNivel(stage: Stage){
-    val fxmlLoader = FXMLLoader(Tetris::class.java.getResource("Vistas/ModoCampa/vista_CargaNivel.fxml"))
+    val fxmlLoader = FXMLLoader(Tetris::class.java.getResource("Vistas/ModosDeJuego/ModoCampa/vista_CargaNivel.fxml"))
     val scene = Scene(fxmlLoader.load(), 628.0, 351.0)
 
     cCargarNivel.stageCargarNivel = stage

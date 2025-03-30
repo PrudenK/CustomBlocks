@@ -5,7 +5,7 @@ import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fot
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
-import com.pruden.tetris_2.Controladores.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
+import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModos

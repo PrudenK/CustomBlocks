@@ -184,7 +184,7 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun modosDeJuego() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Modos/vista_Modos_Juego.fxml", nuevaPartidaB,
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modos_Juego.fxml", nuevaPartidaB,
             355.0, 544.0, timelinePartida, 0, 0))
     }
 
@@ -244,7 +244,7 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun campa(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModoCampa/vista_Menu_Mundos.fxml", nuevaPartidaB, 711.0, 809.0, timelinePartida, 0, 0))
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Menu_Mundos.fxml", nuevaPartidaB, 711.0, 809.0, timelinePartida, 0, 0))
     }
 
     @FXML fun suscripciones(){
@@ -262,7 +262,7 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun tusModos(){
         if(jugadorConTodo.suscripcionDelJugador?.tipo != -1){
-            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
+            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
         }else{
             println("Opción para jugadores premium")
         }

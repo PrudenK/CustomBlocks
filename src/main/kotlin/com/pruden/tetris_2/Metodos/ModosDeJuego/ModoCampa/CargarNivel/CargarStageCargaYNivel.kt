@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.CargarNivel
 
 import com.pruden.tetris_2.API.ObjsAux.Nivel
-import com.pruden.tetris_2.Controladores.ModoCampa.ControladorModoCampa
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorModoCampa
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.PantallaDeCarga.nivelModoCampa
 import com.pruden.tetris_2.Metodos.Stages.cargarStageCargarNivel
 import javafx.stage.Stage
