@@ -13,14 +13,15 @@ import kotlinx.coroutines.launch
 
 fun cargarDatosUsuarioPerfil(){
     CoroutineScope(Dispatchers.IO).launch {
-
         javafx.application.Platform.runLater {
             with(cPerfil){
                 usuarioLabel.text = jugadorConTodo!!.nombre
                 nivelLabel.text = jugadorConTodo!!.nivel.toString()
                 fechaIniLabel.text = jugadorConTodo!!.fechaini
                 paisLabel.text = jugadorConTodo!!.pais
-                imagenPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo!!.imagen}", true)
+                if(jugadorConTodo!!.imagen != null){
+                    imagenPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo!!.imagen}", true)
+                }
             }
         }
     }
