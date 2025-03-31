@@ -238,6 +238,23 @@ class ControladorPrincipal : Initializable {
         for (p in jugadorConTodo!!.listaPartidasGuardadas){
             println(p)
         }
+
+        println("--------------")
+
+        imprimirMatriz_TAB()
+
+        println(piezaActual.orientacion)
+        println(piezaActual.getFilaCentro())
+        println(piezaActual.getColumnaCentro())
+
+        piezaActual.limpiar()
+
+
+        imprimirMatriz_TAB()
+
+        println(piezaActual.orientacion)
+        println(piezaActual.getFilaCentro())
+        println(piezaActual.getColumnaCentro())
     }
 
     @FXML fun salir() {

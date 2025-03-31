@@ -158,6 +158,8 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
             piezaHoldS = piezaHold[0].javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", "")
         }
 
+        piezaActual.limpiar()
+
         val partida = PartidaGuardada(
             idJugador = jugadorConTodo!!.id,
             numPartidaGuardada = indicePartidaGuardada,
