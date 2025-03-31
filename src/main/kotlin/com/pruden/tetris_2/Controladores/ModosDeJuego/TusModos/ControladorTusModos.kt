@@ -51,6 +51,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
 
     companion object{
         lateinit var stageTusModos: Stage
+        var indiceActual = 0
     }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
@@ -103,17 +104,15 @@ class ControladorTusModos: ControladorGEN(), Initializable {
         actualizarUI()
     }
 
-    private var indiceActual = 0
 
     @FXML fun jugar(){
         when(jugar.text){
             "Jugar" ->{
-                cargarCambiosTusModos(jugadorConTodo!!.listaTusModosDeJuego[indiceActual])
+                cargarCambiosTusModos(jugadorConTodo!!.listaTusModosDeJuego.find { it.idnummodo == indiceActual +1 }!!)
                 stageTusModos.close()
             }
             "Crear modo"->{
                 crearStage(ClaseStage("Vistas/ModosDeJuego/TusModos/vistaCrearModo.fxml", cPrin.nuevaPartidaB, 609.0, 513.0, timelinePartida, 0, 0))
-                //stageTusModos.close()
             }
             "Desbloquear"->{
                 val indiceSus = (indiceActual / 3.0).toInt()

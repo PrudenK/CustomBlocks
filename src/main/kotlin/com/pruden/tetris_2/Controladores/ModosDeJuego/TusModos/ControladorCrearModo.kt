@@ -445,7 +445,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
         val modoJuego = ModoDeJuegoAPI(
             idJugador = idJugador,
-            idnummodo = 1,
+            idnummodo = ControladorTusModos.indiceActual+1,
             nombre = textFieldNombreModo.text.toString(),
             imagen = "",
             arraypiezas = this.devolverListaPiezas(),
