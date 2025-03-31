@@ -18,13 +18,25 @@ var timeLineAnuncios: Timeline? = null
 
 fun cargarTimeLineAuncios() {
     if (ApiPublicidad.anuncios.isEmpty()) return
+    if (jugarOnline && jugadorConTodo!!.suscripcionDelJugador == null) return
 
-    CoroutineScope(Dispatchers.IO).launch {
-        if(jugadorConTodo != null){ // si está offline pero tiene internet que hayan anuncios también
-            while (jugadorConTodo!!.suscripcionDelJugador!!.tipo == -1) {
-                delay(50)
-            }
+    if(jugarOnline){
+        if(jugadorConTodo!!.suscripcionDelJugador!!.tipo == -1){
+            timeLineAnuncio()
+        }else{
+            paraTimeLineAnuncios()
         }
+    }else{
+        timeLineAnuncio()
+    }
+
+    println(11111)
+}
+
+private fun timeLineAnuncio(){
+    CoroutineScope(Dispatchers.IO).launch {
+        timeLineAnuncios?.stop()
+        cPrin.imgPublicidad.isVisible = true
 
         precargarImagen(ApiPublicidad.anuncios[indiceActualAnuncio].imagen) { imagen ->
             cPrin.imgPublicidad.image = imagen
@@ -46,14 +58,13 @@ fun cargarTimeLineAuncios() {
             play()
         }
 
-        paraTimeLineAnuncios()
+        //paraTimeLineAnuncios()
     }
-
 }
 
 fun paraTimeLineAnuncios(){ // TODO revisar en suscripciones
     if(jugadorConTodo?.suscripcionDelJugador?.tipo != -1) {
-        timeLineAnuncios!!.stop()
+        timeLineAnuncios?.stop()
         cPrin.imgPublicidad.isVisible = false
     }
 }
