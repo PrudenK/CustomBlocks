@@ -3,58 +3,43 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones">
+<Pane prefHeight="385.0" prefWidth="325.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones">
    <stylesheets>
       <URL value="@../../styles/general.css" />
    </stylesheets>
    <children>
-      <VBox alignment="CENTER" prefHeight="350.0" prefWidth="300.0" spacing="20">
-         <children>
-            <Label text="Partida actual" textFill="#e9e8e8">
-               <font>
-                  <Font name="Liberation Mono Bold" size="26.0" />
-               </font>
-            </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="19.0" prefHeight="33.0" prefWidth="325.0" text="Partida actual" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="28.0" />
+         </font>
+      </Label>
 
-            <HBox alignment="CENTER" spacing="20">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#reiniciar" prefHeight="32.0" prefWidth="110.0" text="Reiniciar" />
-                  <Button mnemonicParsing="false" onAction="#reanudar" prefHeight="32.0" prefWidth="110.0" text="Reanudar" />
-               </children>
-            </HBox>
+      <Button layoutX="180.0" layoutY="63.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="32.0" prefWidth="110.0" text="Reiniciar" />
+      <Button layoutX="180.0" layoutY="116.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" />
 
-            <Label text="Perfil" textFill="#e9e8e8">
-               <font>
-                  <Font name="Liberation Mono Bold" size="26.0" />
-               </font>
-            </Label>
+      <Button layoutX="35.0" layoutY="63.0" mnemonicParsing="false" onAction="#reanudar" prefHeight="32.0" prefWidth="110.0" text="Reanudar" />
+      <Button layoutX="35.0" layoutY="116.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="110.0" text="Guardar" />
 
-            <HBox alignment="CENTER" spacing="20">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#perfil" prefHeight="32.0" prefWidth="110.0" text="Perfil" />
-                  <Button mnemonicParsing="false" onAction="#rankings" prefHeight="32.0" prefWidth="110.0" text="Rankings" />
-               </children>
-            </HBox>
+      <Label alignment="CENTER" layoutY="166.0" prefWidth="325.0" text="Perfil" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="28.0" />
+         </font>
+      </Label>
 
-            <Label text="Otras opciones" textFill="#e9e8e8">
-               <font>
-                  <Font name="Liberation Mono Bold" size="26.0" />
-               </font>
-            </Label>
+      <Button layoutX="35.0" layoutY="219.0" mnemonicParsing="false" onAction="#perfil" prefHeight="32.0" prefWidth="110.0" text="Perfil" />
+      <Button layoutX="180.0" layoutY="219.0" mnemonicParsing="false" onAction="#rankings" prefHeight="32.0" prefWidth="110.0" text="Rankings" />
 
-            <HBox alignment="CENTER" spacing="20">
-               <children>
-                  <Button fx:id="sonidoo_B" mnemonicParsing="false" onAction="#sonido" prefHeight="32.0" prefWidth="110.0" text="Sonido" />
-                  <Button mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="110.0" text="Volver" />
-               </children>
-            </HBox>
+      <Label alignment="CENTER" layoutY="272.0" prefWidth="325.0" text="Otras opciones" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="28.0" />
+         </font>
+      </Label>
 
-         </children>
-      </VBox>
+      <Button fx:id="sonidoo_B" layoutX="35.0" layoutY="324.0" mnemonicParsing="false" onAction="#sonido" prefHeight="32.0" prefWidth="110.0" text="Sonido" />
+      <Button layoutX="180.0" layoutY="324.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="110.0" text="Volver" />
+
    </children>
-</StackPane>
+</Pane>

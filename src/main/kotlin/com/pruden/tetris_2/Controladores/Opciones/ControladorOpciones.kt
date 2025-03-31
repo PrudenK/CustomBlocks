@@ -49,6 +49,10 @@ class ControladorOpciones : ControladorGEN(), Initializable{
         crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", cPrin.nuevaPartidaB, 731.0, 600.0, timelinePartida, 0, 0))
     }
 
+    @FXML fun guardar(){
+
+    }
+
     override fun setStage(stage: Stage?) {
         stageOpciones = stage
     }

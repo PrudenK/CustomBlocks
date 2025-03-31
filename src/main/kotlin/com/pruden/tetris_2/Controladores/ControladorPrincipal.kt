@@ -176,7 +176,7 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun opciones() {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB,
-            300.0, 350.0, timelinePartida, 0, 0))
+            325.0, 385.0, timelinePartida, 0, 0))
     }
     @FXML fun custom() {
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,
