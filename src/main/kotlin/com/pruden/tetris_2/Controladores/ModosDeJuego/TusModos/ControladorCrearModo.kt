@@ -469,7 +469,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             val response = ApiCustom.modoDeJuegoService.crearModoDeJuego(requestBodyModoJuego, fotoModoDeJuegoSeleccionada)
             when(response.code()){
                 200 -> {
-                    jugadorConTodo.listaTusModosDeJuego = response.body()!!.toMutableList()
+                    jugadorConTodo!!.listaTusModosDeJuego = response.body()!!.toMutableList()
                 }
             }
             println(response.code())

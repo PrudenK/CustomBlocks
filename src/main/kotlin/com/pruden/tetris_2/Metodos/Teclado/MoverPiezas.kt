@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Metodos.Teclado
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
@@ -28,16 +29,18 @@ fun moverPiezas(evento: KeyEvent) {
                 evento.code == KeyCode.UP -> {
                     rotarPieza()
 
-                    if (upPressedTimeLine == null && piezaActual is Pieza_Z_v3 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.NAIN_NAIN_NAIN }!!.completado) {
-                        upPressedTimeLine = Timeline(
-                            KeyFrame(Duration.seconds(1.0), {
-                                completarLogro(Logros.NAIN_NAIN_NAIN)
-                            })
-                        )
-                        upPressedTimeLine!!.setOnFinished {
-                            upPressedTimeLine = null
+                    if(jugarOnline){
+                        if (upPressedTimeLine == null && piezaActual is Pieza_Z_v3 && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.NAIN_NAIN_NAIN }!!.completado) {
+                            upPressedTimeLine = Timeline(
+                                KeyFrame(Duration.seconds(1.0), {
+                                    completarLogro(Logros.NAIN_NAIN_NAIN)
+                                })
+                            )
+                            upPressedTimeLine!!.setOnFinished {
+                                upPressedTimeLine = null
+                            }
+                            upPressedTimeLine!!.play()
                         }
-                        upPressedTimeLine!!.play()
                     }
 
                 }
@@ -51,9 +54,11 @@ fun moverPiezas(evento: KeyEvent) {
 }
 
 fun onKeyReleased(evento: KeyEvent) {
-    if (evento.code == KeyCode.UP) {
-        upPressedTimeLine?.stop()
-        upPressedTimeLine = null
+    if(jugarOnline){
+        if (evento.code == KeyCode.UP) {
+            upPressedTimeLine?.stop()
+            upPressedTimeLine = null
+        }
     }
 }
 

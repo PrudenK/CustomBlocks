@@ -4,6 +4,8 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fotoClanSeleccionada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas
 import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
@@ -25,7 +27,8 @@ fun cerrarSesion(){
         //Fotos
         fotoModoDeJuegoSeleccionada = null
         fotoClanSeleccionada = null
-
+        jugadorConTodo = null
+        jugarOnline = false
     }
 }
 

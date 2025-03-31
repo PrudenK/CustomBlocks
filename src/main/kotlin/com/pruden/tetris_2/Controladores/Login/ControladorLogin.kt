@@ -45,9 +45,9 @@ class ControladorLogin : Initializable{
     }
 
     @FXML fun jugarOff(){
+        jugarOnline = false
         cargarStagePrincipal()
 
-        jugarOnline = false
     }
 
     @FXML fun registrarse(){

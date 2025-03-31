@@ -106,10 +106,10 @@ class ControladorClan: ControladorGEN(), Initializable {
                 idClanStage = clan.idclan
 
 
-                if(jugadorConTodo.clan == null){
+                if(jugadorConTodo!!.clan == null){
                     btnClan.text = "Unirme"
                 }else{
-                    if(clan.idclan == jugadorConTodo.clan!!.idclan){
+                    if(clan.idclan == jugadorConTodo!!.clan!!.idclan){
                         btnClan.text = "Abandonar"
                     }else{
                         btnClan.text = "Unirme"
@@ -138,18 +138,18 @@ class ControladorClan: ControladorGEN(), Initializable {
             dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
 
             println(clanDelStage)
-            println(jugadorConTodo.clan)
-            println(jugadorConTodo.id)
+            println(jugadorConTodo!!.clan)
+            println(jugadorConTodo!!.id)
 
-            if(clanDelStage.idlider == jugadorConTodo.id){
+            if(clanDelStage.idlider == jugadorConTodo!!.id){
                 controller.nombre.text = "Eres el lider del Clan, ¿quieres abandonarlo?"
             }
 
             controller.onConfirmar = {
-                val clanAnterior = jugadorConTodo.clan!!
-                ClanChatEmisor.enviar(clanAnterior.idclan, "Server", "${jugadorConTodo.nombre} ha abandonado el clan")
+                val clanAnterior = jugadorConTodo!!.clan!!
+                ClanChatEmisor.enviar(clanAnterior.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
 
-                jugadorConTodo.clan = null
+                jugadorConTodo!!.clan = null
                 CoroutineScope(Dispatchers.IO).launch {
                     ApiCustom.clanService.jugadorAbandonaClan(idJugador)
                     recargarDatos()
@@ -161,12 +161,12 @@ class ControladorClan: ControladorGEN(), Initializable {
 
             dialogStage.showAndWait()
         }else{
-            if(jugadorConTodo.clan == null || jugadorConTodo.clan!!.idclan == -1){
-                jugadorConTodo.clan = clanDelStage
+            if(jugadorConTodo!!.clan == null || jugadorConTodo!!.clan!!.idclan == -1){
+                jugadorConTodo!!.clan = clanDelStage
                 btnClan.text = "Abandonar"
 
                 CoroutineScope(Dispatchers.IO).launch {
-                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo.nombre} se ha unido al clan")
+                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
 
 
                     ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
@@ -174,7 +174,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                     recargarDatos()
                 }
 
-                if(!jugadorConTodo.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){
+                if(!jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL }!!.completado){
                     completarLogro(Logros.VIDA_SOCIAL)
                 }
             }else{
@@ -189,21 +189,21 @@ class ControladorClan: ControladorGEN(), Initializable {
                 dialogStage.isResizable = false
                 dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
 
-                if(jugadorConTodo.clan!!.idlider != jugadorConTodo.id){
+                if(jugadorConTodo!!.clan!!.idlider != jugadorConTodo!!.id){
                     controller.nombre.text = "Ya perteneces a un Clan, ¿quieres cambiarte?"
                 }else{
                     controller.nombre.text = "Eres lider de un Clan, ¿quieres cambiarte?"
                 }
 
                 println("lider : ${clanDelStage.idlider}")
-                println("jugador : ${jugadorConTodo.id}")
+                println("jugador : ${jugadorConTodo!!.id}")
 
 
                 controller.onConfirmar = {
-                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo.nombre} se ha unido al clan")
-                    ClanChatEmisor.enviar(jugadorConTodo.clan!!.idclan, "Server", "${jugadorConTodo.nombre} ha abandonado el clan")
+                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
+                    ClanChatEmisor.enviar(jugadorConTodo!!.clan!!.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
 
-                    jugadorConTodo.clan = clanDelStage
+                    jugadorConTodo!!.clan = clanDelStage
                     btnClan.text = "Abandonar"
 
                     CoroutineScope(Dispatchers.IO).launch {

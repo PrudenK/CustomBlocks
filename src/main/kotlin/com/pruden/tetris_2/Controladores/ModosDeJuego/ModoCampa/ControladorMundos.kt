@@ -43,9 +43,9 @@ class ControladorMundos : ControladorGEN(), Initializable {
         cargarAccionesImageViewsNiveles()
 
 
-        nivel1.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo.listaMundos[0].imagen}", true)
+        nivel1.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo!!.listaMundos[0].imagen}", true)
 
-        println("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo.listaMundos[0].imagen}")
+        println("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo!!.listaMundos[0].imagen}")
         println(nivel1.image)
     }
 
@@ -63,7 +63,7 @@ class ControladorMundos : ControladorGEN(), Initializable {
         Platform.runLater {
             val listaImageView = listOf(nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9)
 
-            val listaNivelesAux = jugadorConTodo.listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
+            val listaNivelesAux = jugadorConTodo!!.listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
 
             for (i in listaNivelesAux.indices){
                 listaImageView[i].image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaNivelesAux[i].imagen}")

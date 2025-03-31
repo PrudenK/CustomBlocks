@@ -41,6 +41,7 @@ module com.pruden.tetris_2 {
     opens com.pruden.tetris_2.Controladores.Logros to javafx.fxml;
     opens com.pruden.tetris_2.Controladores.Notificaciones to javafx.fxml;
     opens com.pruden.tetris_2.Controladores.Clan to javafx.fxml;
+    opens com.pruden.tetris_2.Controladores.ModosDeJuego to javafx.fxml;
     opens com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos to javafx.fxml;
 
     exports com.pruden.tetris_2;

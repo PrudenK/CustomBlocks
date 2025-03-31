@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
 fun completarLogro(idLogro : Int){
     CoroutineScope(Dispatchers.IO).launch {
         ApiCustom.logroService.completarLogro(idLogro, idJugador)
-        val logro = jugadorConTodo.listaLogros.find{ it.idLogro == idLogro}
+        val logro = jugadorConTodo!!.listaLogros.find{ it.idLogro == idLogro}
         logro!!.completado = true
 
         withContext(Dispatchers.Main) {

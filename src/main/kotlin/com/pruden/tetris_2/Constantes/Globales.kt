@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Constantes
 
 import com.pruden.tetris_2.API.ObjsAux.LogroJugador
+import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import javafx.scene.paint.Color
 
 object Globales {
@@ -18,5 +19,7 @@ object Globales {
 
     val colaLogros: ArrayDeque<LogroJugador> = ArrayDeque()
     var mostrandoNotificacion = false
+
+    val CADENA = deRutaAImagen("/Imagenes/Logos/cadena.png")
 
 }

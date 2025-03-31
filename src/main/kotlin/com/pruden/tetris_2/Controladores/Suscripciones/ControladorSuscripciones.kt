@@ -60,7 +60,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun comprar(){
-        val suscripcion = jugadorConTodo.listaSuscripciones[indiceSuscripciones]
+        val suscripcion = jugadorConTodo!!.listaSuscripciones[indiceSuscripciones]
         CoroutineScope(Dispatchers.IO).launch {
             val response = ApiCustom.suscripcionJugadorService.jugadorSeSuscribe(idJugador, suscripcion.tipo)
 
@@ -68,7 +68,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
                 201 ->{
                     mostrarErrorTemporal("Suscripción tramitada con éxito")
                     mensajeSuscripcion.textFill = Color.web("#9abbe1")
-                    jugadorConTodo.suscripcionDelJugador = SuscripcionJugador(
+                    jugadorConTodo!!.suscripcionDelJugador = SuscripcionJugador(
                         tipo = suscripcion.tipo,
                         fechainicio = fechaInicio.format(formatter),
                         fechafin = fechaFin.format(formatter)
@@ -113,20 +113,20 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
 
     @FXML fun atras(){
         if(indiceSuscripciones == 0){
-            indiceSuscripciones = jugadorConTodo.listaSuscripciones.size-1
+            indiceSuscripciones = jugadorConTodo!!.listaSuscripciones.size-1
         }else indiceSuscripciones--
         cambiosSuscripcion()
     }
 
     @FXML fun siguiente(){
-        if(indiceSuscripciones == jugadorConTodo.listaSuscripciones.size-1){
+        if(indiceSuscripciones == jugadorConTodo!!.listaSuscripciones.size-1){
             indiceSuscripciones = 0
         }else indiceSuscripciones++
         cambiosSuscripcion()
     }
 
     private fun cambiosSuscripcion(){
-        val suscripcion = jugadorConTodo.listaSuscripciones[indiceSuscripciones]
+        val suscripcion = jugadorConTodo!!.listaSuscripciones[indiceSuscripciones]
         tituloSuscripcion.text = suscripcion.nombre
         modosSuscripcion.text = "- Podrás crear ${suscripcion.nummodos} modos"
         partidasSuscripcion.text = "- Podrás guardar ${suscripcion.numPartidasGuardadas} partidas"

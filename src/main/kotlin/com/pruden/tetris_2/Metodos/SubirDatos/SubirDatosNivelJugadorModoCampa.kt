@@ -19,12 +19,12 @@ fun subirDatosNivelCompeltado(){
             id = idJugador
         )
 
-        jugadorConTodo.listaNivelesJugador[idNivelActual].desbloqueado = true
-        jugadorConTodo.listaNivelesJugador[idNivelActual-1].completado = true
+        jugadorConTodo!!.listaNivelesJugador[idNivelActual].desbloqueado = true
+        jugadorConTodo!!.listaNivelesJugador[idNivelActual-1].completado = true
 
         if(idNivelActual % 9 == 0){
-            jugadorConTodo.listaMundosJugador[idNivelActual / 9].desbloqueado = true
-            jugadorConTodo.listaMundosJugador[(idNivelActual / 9)-1].completado = true
+            jugadorConTodo!!.listaMundosJugador[idNivelActual / 9].desbloqueado = true
+            jugadorConTodo!!.listaMundosJugador[(idNivelActual / 9)-1].completado = true
 
             completarLogro(idNivelActual / 9)
         }

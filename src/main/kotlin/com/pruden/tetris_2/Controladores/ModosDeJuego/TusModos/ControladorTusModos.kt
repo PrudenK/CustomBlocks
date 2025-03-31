@@ -54,14 +54,14 @@ class ControladorTusModos: ControladorGEN(), Initializable {
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         indiceActual = 0
 
-        for(modo in jugadorConTodo.listaTusModosDeJuego){
+        for(modo in jugadorConTodo!!.listaTusModosDeJuego){
             listaNombres[modo.idnummodo-1] = modo.nombre
             if (!modo.imagen.isNullOrBlank()) {
                 listaImagenes[modo.idnummodo-1] = Image("${ConstantesCustomAPI.PATH_CUSTOM}${modo.imagen}")
             }
         }
 
-        when(jugadorConTodo.suscripcionDelJugador!!.tipo){
+        when(jugadorConTodo!!.suscripcionDelJugador!!.tipo){
             1 -> {
                 for(i in listaImagenes.indices){
                     if(i >= 3){
@@ -71,7 +71,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
                             listaNombres[i] = "Plan Ultra Mega God  ${i-5}"
                         }
                     }else{
-                        if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
+                        if(!jugadorConTodo!!.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
                             listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/AgregarModo.jpg")
                         }
                     }
@@ -83,7 +83,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
                         listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuegoBloqueado.jpg")
                         listaNombres[i] = "Plan Ultra Mega God  ${i-5}"
                     }else{
-                        if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
+                        if(!jugadorConTodo!!.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
                             listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/AgregarModo.jpg")
                         }
                     }
@@ -91,7 +91,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
             }
             3->{
                 for(i in listaImagenes.indices){
-                    if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
+                    if(!jugadorConTodo!!.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
                         listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/AgregarModo.jpg")
                     }
                 }
@@ -107,7 +107,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
     @FXML fun jugar(){
         when(jugar.text){
             "Jugar" ->{
-                cargarCambiosTusModos(jugadorConTodo.listaTusModosDeJuego[indiceActual])
+                cargarCambiosTusModos(jugadorConTodo!!.listaTusModosDeJuego[indiceActual])
                 stageTusModos.close()
             }
             "Crear modo"->{
@@ -140,11 +140,11 @@ class ControladorTusModos: ControladorGEN(), Initializable {
     private fun actualizarUI(){
         imgModos.image = listaImagenes[indiceActual]
         textoModos.text = listaNombres[indiceActual]
-        if((indiceActual > 2 && jugadorConTodo.suscripcionDelJugador!!.tipo == 1)
-            || (indiceActual > 5 && jugadorConTodo.suscripcionDelJugador!!.tipo == 2)){
+        if((indiceActual > 2 && jugadorConTodo!!.suscripcionDelJugador!!.tipo == 1)
+            || (indiceActual > 5 && jugadorConTodo!!.suscripcionDelJugador!!.tipo == 2)){
             jugar.text = "Desbloquear"
         }else{
-            if(!jugadorConTodo.listaTusModosDeJuego.map { it.idnummodo }.contains(indiceActual+1)){
+            if(!jugadorConTodo!!.listaTusModosDeJuego.map { it.idnummodo }.contains(indiceActual+1)){
                 jugar.text = "Crear modo"
             }else{
                 jugar.text = "Jugar"

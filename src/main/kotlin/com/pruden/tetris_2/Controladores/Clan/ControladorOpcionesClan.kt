@@ -32,8 +32,8 @@ class ControladorOpcionesClan : ControladorGEN() {
     private val scope = CoroutineScope(Dispatchers.Default)
 
     @FXML fun miClan(){
-        if(jugadorConTodo.clan != null){
-            idClanControlador = jugadorConTodo.clan!!.idclan
+        if(jugadorConTodo!!.clan != null){
+            idClanControlador = jugadorConTodo!!.clan!!.idclan
             crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 668.0, null, 0, 0))
         }else{
             mostrarErrorTemporal("No tienes clan todavía")
@@ -45,7 +45,7 @@ class ControladorOpcionesClan : ControladorGEN() {
     }
 
     @FXML fun crearClan(){
-        if(jugadorConTodo.clan == null){
+        if(jugadorConTodo!!.clan == null){
             crearStage(ClaseStage("Vistas/Clan/vistaCrearClan.fxml", cPrin.nuevaPartidaB, 466.0, 539.0, null, 0, 0))
         }else{
             mostrarErrorTemporal("No puedes crear un clan si ya estás en uno")
@@ -53,7 +53,7 @@ class ControladorOpcionesClan : ControladorGEN() {
     }
 
     @FXML fun chat(){
-        if(jugadorConTodo.clan != null){
+        if(jugadorConTodo!!.clan != null){
             crearStage(ClaseStage("Vistas/Clan/vistaChatClan.fxml", cPrin.nuevaPartidaB, 587.0, 614.0, null, 0, 0))
         }else{
             mostrarErrorTemporal("No tienes clan todavía")

@@ -38,26 +38,26 @@ fun cargarObervableNivel(){
                 actualizarTimeline()
             }
 
-            if(cPrin.labelModo.text == "Clásico"){
-                if(nivelActual >= 5 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.SKILLS_I }!!.completado){
-                    completarLogro(Logros.SKILLS_I)
-                }
+            if(ControladorPrincipal.jugarOnline){
+                if(cPrin.labelModo.text == "Clásico"){
+                    if(nivelActual >= 5 && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.SKILLS_I }!!.completado){
+                        completarLogro(Logros.SKILLS_I)
+                    }
 
-                if(nivelActual == 5 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.TECLADO_EN_LLAMAS }!!.completado){
-                    if(formatoASegundos(cPrin.cronometroLabel.text) <= 300){
-                        completarLogro(Logros.TECLADO_EN_LLAMAS)
+                    if(nivelActual == 5 && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.TECLADO_EN_LLAMAS }!!.completado){
+                        if(formatoASegundos(cPrin.cronometroLabel.text) <= 300){
+                            completarLogro(Logros.TECLADO_EN_LLAMAS)
+                        }
+                    }
+
+                    if(nivelActual >= 10 && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.SKILLS_II }!!.completado){
+                        completarLogro(Logros.SKILLS_II)
+                    }
+
+                    if(nivelActual >= 15 && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.SKILLS_III }!!.completado){
+                        completarLogro(Logros.SKILLS_III)
                     }
                 }
-
-                if(nivelActual >= 10 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.SKILLS_II }!!.completado){
-                    completarLogro(Logros.SKILLS_II)
-                }
-
-                if(nivelActual >= 15 && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.SKILLS_III }!!.completado){
-                    completarLogro(Logros.SKILLS_III)
-                }
-
-
             }
         }
     }

@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Metodos.Timelines
 import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline
 import javafx.scene.image.Image
@@ -19,8 +20,10 @@ fun cargarTimeLineAuncios() {
     if (ApiPublicidad.anuncios.isEmpty()) return
 
     CoroutineScope(Dispatchers.IO).launch {
-        while (jugadorConTodo.suscripcionDelJugador == null) {
-            delay(50)
+        if(jugadorConTodo != null){ // si está offline pero tiene internet que hayan anuncios también
+            while (jugadorConTodo!!.suscripcionDelJugador!!.tipo == -1) {
+                delay(50)
+            }
         }
 
         precargarImagen(ApiPublicidad.anuncios[indiceActualAnuncio].imagen) { imagen ->
@@ -45,10 +48,11 @@ fun cargarTimeLineAuncios() {
 
         paraTimeLineAnuncios()
     }
+
 }
 
-fun paraTimeLineAnuncios(){
-    if(jugadorConTodo.suscripcionDelJugador!!.tipo != -1) {
+fun paraTimeLineAnuncios(){ // TODO revisar en suscripciones
+    if(jugadorConTodo?.suscripcionDelJugador?.tipo != -1) {
         timeLineAnuncios!!.stop()
         cPrin.imgPublicidad.isVisible = false
     }

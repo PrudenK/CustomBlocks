@@ -21,7 +21,7 @@ class ControladorLogros: ControladorGEN(), Initializable {
     @FXML lateinit var gridLogros: GridPane
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        cargarLogros(jugadorConTodo.listaLogros)
+        cargarLogros(jugadorConTodo!!.listaLogros)
     }
 
     private fun cargarLogros(listaLogros: List<LogroJugador>) {

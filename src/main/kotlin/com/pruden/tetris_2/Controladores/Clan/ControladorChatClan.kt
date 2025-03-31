@@ -32,7 +32,7 @@ class ControladorChatClan : ControladorGEN() {
 
     private val mensajes = FXCollections.observableArrayList<MensajeChat>()
     private lateinit var socket: ClanChatWebSocket
-    private val clanId = jugadorConTodo.clan!!.idclan
+    private val clanId = jugadorConTodo!!.clan!!.idclan
 
     override fun setStage(stage: Stage?) {
         stageChatClan = stage!!
@@ -49,11 +49,11 @@ class ControladorChatClan : ControladorGEN() {
         }
 
         CoroutineScope(Dispatchers.Main).launch {
-            val mensajesDelClan = ApiCustom.mensajeClanService.getMensajesDeUnClan(jugadorConTodo.clan!!.idclan)
+            val mensajesDelClan = ApiCustom.mensajeClanService.getMensajesDeUnClan(jugadorConTodo!!.clan!!.idclan)
 
             Platform.runLater {
                 mensajesDelClan.forEach { mensajeClan ->
-                    val esPropio = mensajeClan.remitente == jugadorConTodo.nombre
+                    val esPropio = mensajeClan.remitente == jugadorConTodo!!.nombre
                     val mensajeChat = MensajeChat(
                         remitente = mensajeClan.remitente,
                         texto = mensajeClan.mensaje,
@@ -66,7 +66,7 @@ class ControladorChatClan : ControladorGEN() {
 
                 listaMensajes.scrollTo(mensajes.size - 1)
 
-                nombre.text = jugadorConTodo.clan!!.nombre
+                nombre.text = jugadorConTodo!!.clan!!.nombre
             }
 
         }
@@ -120,7 +120,7 @@ class ControladorChatClan : ControladorGEN() {
             }
         }
 
-        socket = ClanChatWebSocket("${ConstantesServidor.PATH_SERVER}${ConstantesServidor.CLAN_CHAT}/$clanId", jugadorConTodo.nombre) { mensaje ->
+        socket = ClanChatWebSocket("${ConstantesServidor.PATH_SERVER}${ConstantesServidor.CLAN_CHAT}/$clanId", jugadorConTodo!!.nombre) { mensaje ->
             Platform.runLater {
                 mensajes.add(mensaje)
                 listaMensajes.refresh()
@@ -142,12 +142,12 @@ class ControladorChatClan : ControladorGEN() {
     private fun enviarMensaje(){
         val texto = input.text
         if (texto.isNotBlank()) {
-            val json = """{"nombre": "${jugadorConTodo.nombre}", "mensaje": "$texto"}"""
+            val json = """{"nombre": "${jugadorConTodo!!.nombre}", "mensaje": "$texto"}"""
             socket.send(json)
             input.clear()
         }
 
-        if(!jugadorConTodo.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL_II }!!.completado){
+        if(!jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.VIDA_SOCIAL_II }!!.completado){
             completarLogro(Logros.VIDA_SOCIAL_II)
         }
     }

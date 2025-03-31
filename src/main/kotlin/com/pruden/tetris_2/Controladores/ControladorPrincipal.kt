@@ -163,7 +163,7 @@ class ControladorPrincipal : Initializable {
 
         var idNivelActual = -1
 
-        lateinit var jugadorConTodo: JugadorInicioSesion
+        var jugadorConTodo: JugadorInicioSesion? = null
     }
 
 
@@ -184,8 +184,13 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun modosDeJuego() {
+        crearStage(ClaseStage("Vistas/ModosDeJuego/vistaMenuModos.fxml", nuevaPartidaB,
+            355.0, 436.0, timelinePartida, 0, 0))
+        /*
         if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modos_Juego.fxml", nuevaPartidaB,
             355.0, 544.0, timelinePartida, 0, 0))
+
+         */
     }
 
     @FXML fun sesion(){
@@ -195,8 +200,10 @@ class ControladorPrincipal : Initializable {
 
     @FXML fun partdiaNueva() {
         reiniciarPartida()
-        if(logroZZZ && !jugadorConTodo.listaLogros.find { it.idLogro == Logros.ZZZ }!!.completado){
-            completarLogro(Logros.ZZZ)
+        if(jugarOnline){
+            if(logroZZZ && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.ZZZ }!!.completado){
+                completarLogro(Logros.ZZZ)
+            }
         }
     }
 
@@ -212,22 +219,22 @@ class ControladorPrincipal : Initializable {
 
 
         println(jugadorConTodo)
-        println(jugadorConTodo.clan)
-        println(jugadorConTodo.listaLogros)
-        println(jugadorConTodo.numeroPartidasClasicas)
-        println(jugadorConTodo.numeroLineasAcumuladas)
-        println(jugadorConTodo.puntuacionAcumulada)
+        println(jugadorConTodo!!.clan)
+        println(jugadorConTodo!!.listaLogros)
+        println(jugadorConTodo!!.numeroPartidasClasicas)
+        println(jugadorConTodo!!.numeroLineasAcumuladas)
+        println(jugadorConTodo!!.puntuacionAcumulada)
 
-        println(jugadorConTodo.suscripcionDelJugador)
-        println(jugadorConTodo.listaTusModosDeJuego)
+        println(jugadorConTodo!!.suscripcionDelJugador)
+        println(jugadorConTodo!!.listaTusModosDeJuego)
 
-        println(jugadorConTodo.listaMundos)
-        println(jugadorConTodo.listaNiveles)
+        println(jugadorConTodo!!.listaMundos)
+        println(jugadorConTodo!!.listaNiveles)
 
-        println(jugadorConTodo.listaMundosJugador)
-        println(jugadorConTodo.listaNivelesJugador)
+        println(jugadorConTodo!!.listaMundosJugador)
+        println(jugadorConTodo!!.listaNivelesJugador)
 
-        println(jugadorConTodo.listaSuscripciones)
+        println(jugadorConTodo!!.listaSuscripciones)
 
 
     }
@@ -248,20 +255,26 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun suscripciones(){
-        indiceSuscripciones = 0
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
+        if(jugarOnline){
+            indiceSuscripciones = 0
+            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
+        }
     }
 
     @FXML fun logros(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Logros/vistaLogros.fxml", nuevaPartidaB, 676.0, 727.0, timelinePartida, 0, 0))
+        if(jugarOnline){
+            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Logros/vistaLogros.fxml", nuevaPartidaB, 676.0, 727.0, timelinePartida, 0, 0))
+        }
     }
 
     @FXML fun clan(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 192.0, timelinePartida, 0, -60))
+        if(jugarOnline){
+            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 192.0, timelinePartida, 0, -60))
+        }
     }
 
     @FXML fun tusModos(){
-        if(jugadorConTodo.suscripcionDelJugador?.tipo != -1){
+        if(jugadorConTodo?.suscripcionDelJugador?.tipo != -1){
             if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
         }else{
             println("Opción para jugadores premium")

@@ -27,10 +27,10 @@ fun iniciarSesionLogin(){
 
                         jugadorConTodo = ApiCustom.jugadorService.getDatosIniciarSesion(idJugador)
 
+                        ControladorPrincipal.jugarOnline = true
                         javafx.application.Platform.runLater {
                             iniciarHeartbeatJugador()
                             cargarStagePrincipal()
-                            ControladorPrincipal.jugarOnline = true
                         }
                     }
                     404->{

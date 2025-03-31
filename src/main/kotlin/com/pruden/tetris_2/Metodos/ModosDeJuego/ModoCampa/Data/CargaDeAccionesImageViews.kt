@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.Dataº
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
+import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorModoCampa.Companion.cModoCampa
@@ -16,8 +17,8 @@ import javafx.scene.image.ImageView
 
 fun cargarAccionesImageViewsNiveles(){
     Platform.runLater{
-        val listaAux = jugadorConTodo.listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
-        val listaAuxNivelJugador = jugadorConTodo.listaNivelesJugador.filter { it.idMundo == mundoActual+1}
+        val listaAux = jugadorConTodo!!.listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
+        val listaAuxNivelJugador = jugadorConTodo!!.listaNivelesJugador.filter { it.idMundo == mundoActual+1}
 
         for (i in 1 .. 9){
             val imgView = cMundo1.stageMundo1.scene.lookup("#nivel$i") as ImageView
@@ -34,7 +35,7 @@ fun cargarAccionesImageViewsNiveles(){
             }
 
             if(!nivelJugador.desbloqueado){
-                imgViewCadena.image = Image(ConstantesCustomAPI.IMAGEN_CADENA, true)
+                imgViewCadena.image = Globales.CADENA
             }else{
                 imgViewCadena.setOnMouseClicked {
                     cargarStageCargaYNivel(listaAux[i-1], cMundo1.stageMundo1)
@@ -55,12 +56,12 @@ fun cargarAccionesImageViewsMundos(){
             val imgView = cModoCampa.stageModoCampa.scene.lookup("#imgViewMundo$i") as ImageView
             val imgViewCadena = cModoCampa.stageModoCampa.scene.lookup("#cadenaMundo$i") as ImageView
 
-            imgView.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo.listaMundos[i-1].imagen}", true)
+            imgView.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugadorConTodo!!.listaMundos[i-1].imagen}", true)
 
-            val mundoJugador =  jugadorConTodo.listaMundosJugador[i-1]
+            val mundoJugador =  jugadorConTodo!!.listaMundosJugador[i-1]
 
 
-            val listaNivelesJugadorDelMundo = jugadorConTodo.listaNivelesJugador.filter { it.idMundo == i && it.completado}
+            val listaNivelesJugadorDelMundo = jugadorConTodo!!.listaNivelesJugador.filter { it.idMundo == i && it.completado}
 
             if(!mundoJugador.completado){
                 val grayscale = ColorAdjust().apply {
@@ -70,7 +71,7 @@ fun cargarAccionesImageViewsMundos(){
             }
 
             if(!mundoJugador.desbloqueado){
-                imgViewCadena.image = Image(ConstantesCustomAPI.IMAGEN_CADENA, true)
+                imgViewCadena.image = Globales.CADENA
             }else{
                 imgViewCadena.setOnMouseClicked {abrirMundo(i) }
                 imgViewCadena.image = null
