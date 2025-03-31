@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Controladores.ModosDeJuego.Modos
 import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos
 import com.pruden.tetris_2.Controladores.ModosDeJuego.Modos.ControladorModosJuego.Companion.stageModos
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
 import javafx.fxml.FXML
@@ -20,6 +21,7 @@ class ControladorModoClasico : ControladorGEN(){
         cPrin.partdiaNueva()
         stage.close()
         stageModos.close()
+        ControladorMenuModos.cMenuModos.stageMenuMundos.close()
     }
 
     override fun setStage(stage: Stage?) {
