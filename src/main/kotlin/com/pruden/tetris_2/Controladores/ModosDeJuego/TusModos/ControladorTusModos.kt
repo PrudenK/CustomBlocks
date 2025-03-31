@@ -25,7 +25,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
     @FXML lateinit var imgModos: ImageView
     @FXML lateinit var jugar: Button
 
-    var listaNombres = mutableListOf(
+    private var listaNombres = mutableListOf(
         "Modo 1",
         "Modo 2",
         "Modo 3",
@@ -37,7 +37,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
         "Modo 9",
     )
 
-    var listaImagenes = mutableListOf(
+    private var listaImagenes = mutableListOf(
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego1.jpg"),
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego2.jpg"),
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego3.jpg"),
@@ -71,7 +71,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
                         listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuegoBloqueado.jpg")
                         listaNombres[i] = "Plan Fit Me ${i-2}"
                         if(i >= 6){
-                            listaNombres[i] = "Plan Ultra Mega God  ${i-5}"
+                            listaNombres[i] = "Plan Ultra Mega ${i-5}"
                         }
                     }else{
                         if(!jugadorConTodo!!.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
@@ -84,7 +84,7 @@ class ControladorTusModos: ControladorGEN(), Initializable {
                 for(i in listaImagenes.indices){
                     if(i >= 6){
                         listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuegoBloqueado.jpg")
-                        listaNombres[i] = "Plan Ultra Mega God  ${i-5}"
+                        listaNombres[i] = "Plan Ultra Mega ${i-5}"
                     }else{
                         if(!jugadorConTodo!!.listaTusModosDeJuego.map { it.idnummodo }.contains(i+1)){
                             listaImagenes[i] = deRutaAImagen("/Imagenes/ModosDeJuego/AgregarModo.jpg")

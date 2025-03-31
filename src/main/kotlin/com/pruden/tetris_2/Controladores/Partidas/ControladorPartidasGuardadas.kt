@@ -1,16 +1,48 @@
 package com.pruden.tetris_2.Controladores.Partidas
 
+import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
+import com.pruden.tetris_2.API.ObjsAux.PartidaGuardada
+import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Constantes.Globales.FILAS
+import com.pruden.tetris_2.Constantes.Listas.LISTA_VALORES_FILAS_TABLERO
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_POR_NIVEL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaHold
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoCaidaPieza
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoPieza
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
+import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
+import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import javafx.fxml.FXML
+import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.image.ImageView
 import javafx.stage.Stage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.net.URL
+import java.util.*
 
-class ControladorPartidasGuardadas: ControladorGEN() {
+class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     @FXML lateinit var nombre1: Label
     @FXML lateinit var nombre2: Label
     @FXML lateinit var nombre3: Label
+
+    @FXML lateinit var textoInfo: Label
+    @FXML lateinit var titulo: Label
 
     @FXML lateinit var cadena1: ImageView
     @FXML lateinit var cadena2: ImageView
@@ -20,22 +52,155 @@ class ControladorPartidasGuardadas: ControladorGEN() {
     @FXML lateinit var imgGuardado2: ImageView
     @FXML lateinit var imgGuardado3: ImageView
 
+    @FXML lateinit var eliminar1: ImageView
+    @FXML lateinit var eliminar2: ImageView
+    @FXML lateinit var eliminar3: ImageView
+
     companion object{
         lateinit var stagePartidasGuardadas: Stage
+        var modo = "Jugar"
+    }
+
+    private val nombres = arrayOf("Plan básico", "Plan Fit me", "Plan Ultra Mega")
+    private val cadenas = arrayOf(true, true, true)
+    private val efectos = arrayOf(true, true, true)
+    private val visibles = arrayOf(false, false, false)
+
+    private lateinit var nombreLabels: List<Label>
+
+    override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        nombreLabels = listOf(nombre1, nombre2, nombre3)
+        val cadenasImages = listOf(cadena1, cadena2, cadena3)
+        val efectosImgs = listOf(imgGuardado1, imgGuardado2, imgGuardado3)
+        val eliminarBtns = listOf(eliminar1, eliminar2, eliminar3)
+
+        when(jugadorConTodo!!.suscripcionDelJugador!!.tipo){
+            1 -> {
+                nombres[0] = "Vacío 1"
+                cadenas[0] = false
+                efectos[0] = false
+                visibles[0] = true
+            }
+            2 -> {
+                nombres[0] = "Vacío 1"; nombres[1] = "Vacío 2"
+                cadenas[0] = false; cadenas[1] = false
+                efectos[0] = false; efectos[1] = false
+                visibles[0] = true; visibles[1] = true
+            }
+            3 -> {
+                nombres[0] = "Vacío 1"; nombres[1] = "Vacío 2"; nombres[2] = "Vacío 3"
+                cadenas[0] = false; cadenas[1] = false; cadenas[2] = false
+                efectos[0] = false; efectos[1] = false; efectos[2] = false
+                visibles[0] = true; visibles[1] = true; visibles[2] = true
+            }
+        }
+
+        val listaNumsGuardados = jugadorConTodo!!.listaPartidasGuardadas.map { it.numPartidaGuardada }
+
+        for(i in 0..2){
+            if(listaNumsGuardados.contains(i+1) && jugadorConTodo!!.suscripcionDelJugador!!.tipo >= i+1){
+                nombres[i] = "Guardado ${i+1}"
+            }
+        }
+
+        for (i in 0..2) {
+            nombreLabels[i].text = nombres[i]
+            cadenasImages[i].image = if (cadenas[i]) Globales.CADENA else null
+            efectosImgs[i].effect = if (efectos[i]) Globales.GRAYSCALE else null
+            eliminarBtns[i].isVisible = visibles[i]
+        }
+
+        if(modo == "Jugar"){
+
+        }else{
+            textoInfo.text = "Pulsa donde quieres guardar la partida"
+            titulo.text = "Guardar partida"
+            eliminar1.isVisible = false
+            eliminar2.isVisible = false
+            eliminar3.isVisible = false
+        }
     }
 
     @FXML fun marco1(){
-
+        clickEnMarco(0)
     }
     @FXML fun marco2(){
-
+        clickEnMarco(1)
     }
     @FXML fun marco3(){
+        clickEnMarco(2)
+    }
 
+    private fun clickEnMarco(marco: Int){
+        if(modo == "Jugar"){
+
+        }else{
+            if(nombreLabels[marco].text.startsWith("Vacío ")){
+                guardarPartida(marco+1)
+
+            }
+        }
     }
 
     @FXML fun volver(){
         stagePartidasGuardadas.close()
+    }
+
+
+    private fun guardarPartida(indicePartidaGuardada: Int){
+
+        var piezaHoldS = ""
+        if(piezaHold.size == 1){
+            piezaHoldS = piezaHold[0].javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", "")
+        }
+
+        val partida = PartidaGuardada(
+            idJugador = jugadorConTodo!!.id,
+            numPartidaGuardada = indicePartidaGuardada,
+            modo = cPrin.labelModo.text.toString(),
+            tiempo = cPrin.cronometroLabel.text.toString(),
+            puntuacion = cPrin.labelPuntuacion.text.toInt(),
+            lineas = cPrin.labelLineas.text.toInt(),
+            nivel = cPrin.labelNivel.text.toInt(),
+            tableroPartida = matrizNumerica.map { it.toList() },
+            tamaTablero = LISTA_VALORES_FILAS_TABLERO.indexOf(FILAS),
+            diseTablero = tipoTableroPrin,
+            diseTableroSecun = tipoTableroSecun,
+            siguientesPiezasActivo = if (siguientesPiezaActivo) 1 else 0,
+            siguientesPiezas = siguientePieza.map { it.javaClass.toString()
+                .replace("class com.pruden.tetris_2.Piezas.Pieza_", "") }
+                .toString().replace("[", "").replace("]", "")
+                .replace(" ",""),
+            arrayPiezas = codificarPiezasSeleccionadas(listaPiezasSeleccionadas),
+            disePiezas = tipoPieza,
+            holdActivo = if (holdActivo) 1 else 0,
+            dashActivo = if (dashActivo) 1 else 0,
+            piezaEnHold = piezaHoldS,
+            velocidadCaidaActual = tiempoCaidaPieza,
+            lineasParaSaltoDeNivel = LINEAS_POR_NIVEL,
+            saltoDeTiempoPorNivel = REDUCCION_TIEMPO_POR_NIVEL,
+            limiteRotaciones = if(LIMITE_ROTACIONES == 999999999) -1 else LIMITE_ROTACIONES,
+            piezaActual = piezaActual.javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", ""),
+            posicionPiezaActual = "${piezaActual.getFilaCentro()}_${piezaActual.getColumnaCentro()}_${piezaActual.orientacion}",
+            numRotacionesDeLaPiezaActual = rotacionesActuales
+        )
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = ApiCustom.partidaGuardadaService.guardarPartida(partida)
+            when(response.code()){
+                200 ->{
+                    jugadorConTodo!!.listaPartidasGuardadas = response.body()!!
+                }
+            }
+            println(response)
+        }
+    }
+
+    private fun codificarPiezasSeleccionadas(lista: List<Boolean>): String {
+        val resultado = lista.mapIndexedNotNull { index, seleccionada ->
+            if (seleccionada) index else null
+        }.joinToString("_")
+        return if(resultado == "") "0_1_2_3_4_5_6" else resultado
     }
 
     override fun setStage(stage: Stage?) {

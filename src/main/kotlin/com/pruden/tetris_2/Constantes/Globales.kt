@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Constantes
 
 import com.pruden.tetris_2.API.ObjsAux.LogroJugador
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
+import javafx.scene.effect.ColorAdjust
 import javafx.scene.paint.Color
 
 object Globales {
@@ -21,5 +22,9 @@ object Globales {
     var mostrandoNotificacion = false
 
     val CADENA = deRutaAImagen("/Imagenes/Logos/cadena.png")
+
+    val GRAYSCALE = ColorAdjust().apply {
+        saturation = -1.0
+    }
 
 }

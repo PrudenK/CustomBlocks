@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.Clan.ControladorBuscarClan
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
+import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidasGuardadas
 import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones.Companion.indiceSuscripciones
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
@@ -232,18 +233,11 @@ class ControladorPrincipal : Initializable {
 
         println(jugadorConTodo!!.listaSuscripciones)
 
-        println(piezaActual.orientacion)
-        println(piezaActual.getFilaCentro())
-        println(piezaActual.getColumnaCentro())
+        println("---------------")
 
-        println(piezaActual.javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", ""))
-
-        var piezaHoldS = ""
-        if(piezaHold.size == 1){
-            piezaHoldS = piezaHold[0].javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", "")
+        for (p in jugadorConTodo!!.listaPartidasGuardadas){
+            println(p)
         }
-
-        println(piezaHoldS)
     }
 
     @FXML fun salir() {
@@ -271,13 +265,20 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun clan(){
+        ControladorPartidasGuardadas.modo = "Guardar"
+        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vistaPartidasGuardadas.fxml", cPrin.nuevaPartidaB, 610.0, 420.0, timelinePartida, 0, -60))
+
+        /*
         if(jugarOnline){
             if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 192.0, timelinePartida, 0, -60))
         }
+
+         */
     }
 
     @FXML fun guardadas(){
         if(jugarOnline){
+            ControladorPartidasGuardadas.modo = "Jugar"
             if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vistaPartidasGuardadas.fxml", nuevaPartidaB, 610.0, 420.0, timelinePartida, 0, -60))
         }
     }

@@ -24,5 +24,7 @@ data class JugadorInicioSesion(
     val listaMundosJugador: List<MundoJugador>,
     val listaNivelesJugador: List<NivelJugador>,
 
-    val listaSuscripciones: List<Suscripcion>
+    val listaSuscripciones: List<Suscripcion>,
+
+    var listaPartidasGuardadas: List<PartidaGuardada>
 )
