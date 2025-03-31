@@ -29,6 +29,7 @@ import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.image.ImageView
+import javafx.scene.layout.Pane
 import javafx.stage.Stage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -55,6 +56,9 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     @FXML lateinit var eliminar1: ImageView
     @FXML lateinit var eliminar2: ImageView
     @FXML lateinit var eliminar3: ImageView
+
+    @FXML lateinit var pane1: Pane
+    @FXML lateinit var paneGuardado: Pane
 
     companion object{
         lateinit var stagePartidasGuardadas: Stage
@@ -137,7 +141,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
         }else{
             if(nombreLabels[marco].text.startsWith("Vacío ")){
                 guardarPartida(marco+1)
-
+                ajustarPaneTrasGuardar()
             }
         }
     }
@@ -201,6 +205,27 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
             if (seleccionada) index else null
         }.joinToString("_")
         return if(resultado == "") "0_1_2_3_4_5_6" else resultado
+    }
+
+    private fun ajustarPaneTrasGuardar(){
+        pane1.isVisible = false
+        paneGuardado.isVisible = true
+
+        stagePartidasGuardadas.height = paneGuardado.height
+        stagePartidasGuardadas.width = paneGuardado.width
+
+        val parentStage = cPrin.nuevaPartidaB.scene.window as Stage
+
+        val parentX = parentStage.x
+        val parentY = parentStage.y
+        val parentWidth = parentStage.width
+        val parentHeight = parentStage.height
+
+        val newWidth = stagePartidasGuardadas.width
+        val newHeight = stagePartidasGuardadas.height
+
+        stagePartidasGuardadas.x = parentX + (parentWidth - newWidth) / 2
+        stagePartidasGuardadas.y = (parentY + (parentHeight - newHeight) / 2) -60
     }
 
     override fun setStage(stage: Stage?) {
