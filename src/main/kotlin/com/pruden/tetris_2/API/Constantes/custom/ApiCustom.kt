@@ -25,4 +25,6 @@ object ApiCustom {
     val suscripcionJugadorService: SuscripcionJugadorService = retrofitCustom.create(SuscripcionJugadorService::class.java)
     val mensajeClanService: MensajesClanService = retrofitCustom.create(MensajesClanService::class.java)
     val modoDeJuegoService: ModoDeJuegoService = retrofitCustom.create(ModoDeJuegoService::class.java)
+    val partidaGuardadaService: PartidaGuardadaService = retrofitCustom.create(PartidaGuardadaService::class.java)
+
 }

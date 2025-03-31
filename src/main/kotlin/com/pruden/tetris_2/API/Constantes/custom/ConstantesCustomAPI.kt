@@ -79,4 +79,7 @@ object ConstantesCustomAPI {
     //Modos de juego
     const val CREAR_MODO_DE_JUEGO = "/crearModoJuego"
     const val MODOS_DE_JUEGO_DE_UN_JUGADOR = "/modosJugador/{idJugador}"
+
+    //Partidas guardadas
+    const val GUARDAR_PARTIDA = "/guardarPartida"
 }

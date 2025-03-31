@@ -14,11 +14,9 @@ fun cambioDeTablero(){
     matrizNumerica = Array(Globales.FILAS + 1) { IntArray(Globales.COLUMNAS) }
     dibujarTableroPrincipal()
 
-    if (Globales.FILAS == 20) {
-        setStackpane18x10()
-    } else if (Globales.FILAS == 14) {
-        setStackpane12x8()
-    } else if (Globales.FILAS == 32) {
-        setStackpane30x20()
+    when (Globales.FILAS) {
+        20 -> setStackpane18x10()
+        14 -> setStackpane12x8()
+        32 -> setStackpane30x20()
     }
 }

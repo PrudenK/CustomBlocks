@@ -7,6 +7,7 @@ import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.Clan.ControladorBuscarClan
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones.Companion.indiceSuscripciones
+import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
@@ -231,7 +232,18 @@ class ControladorPrincipal : Initializable {
 
         println(jugadorConTodo!!.listaSuscripciones)
 
+        println(piezaActual.orientacion)
+        println(piezaActual.getFilaCentro())
+        println(piezaActual.getColumnaCentro())
 
+        println(piezaActual.javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", ""))
+
+        var piezaHoldS = ""
+        if(piezaHold.size == 1){
+            piezaHoldS = piezaHold[0].javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", "")
+        }
+
+        println(piezaHoldS)
     }
 
     @FXML fun salir() {

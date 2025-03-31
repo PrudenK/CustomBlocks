@@ -4,6 +4,8 @@ import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Piezas.*
 
 object Listas {
+    val LISTA_VALORES_FILAS_TABLERO = listOf(14, 20, 32)
+
     val LISTA_MODOS_DE_JUEGOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY")
 
     val LISTA_MODOS_CON_TODOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY","Campaña", "Todos")
