@@ -275,4 +275,10 @@ class ControladorPrincipal : Initializable {
             if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 192.0, timelinePartida, 0, -60))
         }
     }
+
+    @FXML fun guardadas(){
+        if(jugarOnline){
+            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vistaPartidasGuardadas.fxml", nuevaPartidaB, 610.0, 420.0, timelinePartida, 0, -60))
+        }
+    }
 }

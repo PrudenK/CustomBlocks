@@ -1,7 +1,5 @@
 package com.pruden.tetris_2.API.ObjsAux
 
-import java.sql.SQLXML
-
 data class PartidaGuardada(
     val idJugador: Int,
     val numPartidaGuardada: Int,
