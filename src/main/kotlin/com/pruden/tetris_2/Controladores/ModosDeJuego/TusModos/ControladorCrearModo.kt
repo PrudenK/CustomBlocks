@@ -9,6 +9,7 @@ import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -476,6 +477,9 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
             println(response)
             fotoModoDeJuegoSeleccionada = null
         }
+
+        ControladorTusModos.stageTusModos.close()
+        ControladorMenuModos.cMenuModos.stageMenuMundos.close()
 
         saltoPagina(pane5, paneSalir, true)
     }

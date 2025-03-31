@@ -6,6 +6,7 @@ import com.pruden.tetris_2.API.ObjsAux.SuscripcionJugador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorTusModos
 import com.pruden.tetris_2.Metodos.Timelines.paraTimeLineAnuncios
 import javafx.application.Platform
 import javafx.fxml.FXML
@@ -42,6 +43,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
 
     companion object{
         var indiceSuscripciones = 0
+        var seAbreDesdeTusModos = false
     }
 
     private var animacionEnCurso = false
@@ -57,6 +59,10 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
 
     @FXML fun cerrar(){
         stageSuscripciones.close()
+        if(seAbreDesdeTusModos){
+            seAbreDesdeTusModos = false
+            ControladorTusModos.stageTusModos.show()
+        }
     }
 
     @FXML fun comprar(){

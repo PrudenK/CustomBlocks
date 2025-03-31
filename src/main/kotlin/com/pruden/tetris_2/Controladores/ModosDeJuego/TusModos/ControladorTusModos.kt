@@ -5,6 +5,7 @@ import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos
 import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.TusModos.cargarCambiosTusModos
@@ -20,9 +21,6 @@ import java.net.URL
 import java.util.*
 
 class ControladorTusModos: ControladorGEN(), Initializable {
-    lateinit var stageTusModos: Stage
-
-
     @FXML lateinit var textoModos: javafx.scene.text.Text
     @FXML lateinit var imgModos: ImageView
     @FXML lateinit var jugar: Button
@@ -50,6 +48,10 @@ class ControladorTusModos: ControladorGEN(), Initializable {
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego8.jpg"),
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego9.jpg"),
     )
+
+    companion object{
+        lateinit var stageTusModos: Stage
+    }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         indiceActual = 0
@@ -98,7 +100,6 @@ class ControladorTusModos: ControladorGEN(), Initializable {
             }
         }
 
-
         actualizarUI()
     }
 
@@ -112,13 +113,14 @@ class ControladorTusModos: ControladorGEN(), Initializable {
             }
             "Crear modo"->{
                 crearStage(ClaseStage("Vistas/ModosDeJuego/TusModos/vistaCrearModo.fxml", cPrin.nuevaPartidaB, 609.0, 513.0, timelinePartida, 0, 0))
-                stageTusModos.close()
+                //stageTusModos.close()
             }
             "Desbloquear"->{
                 val indiceSus = (indiceActual / 3.0).toInt()
                 ControladorSuscripciones.indiceSuscripciones = indiceSus
-                crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", cPrin.nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
-                stageTusModos.close()
+                ControladorSuscripciones.seAbreDesdeTusModos = true
+                val stageSuscripciones = ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", cPrin.nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0)
+                crearStage(stageSuscripciones, stageTusModos)
             }
         }
     }
@@ -152,7 +154,10 @@ class ControladorTusModos: ControladorGEN(), Initializable {
         }
     }
 
-    @FXML fun volver() = stageTusModos.close()
+    @FXML fun volver(){
+        stageTusModos.close()
+        ControladorMenuModos.cMenuModos.stageMenuMundos.show()
+    }
 
 
     override fun setStage(stage: Stage?) {

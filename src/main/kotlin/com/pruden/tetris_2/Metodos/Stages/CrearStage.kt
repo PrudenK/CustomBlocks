@@ -1,8 +1,10 @@
 package com.pruden.tetris_2.Metodos.Stages
 
+import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorModoCampa
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorMundos.Companion.cMundo1
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones
@@ -11,6 +13,7 @@ import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Comp
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cambioTablero
 import com.pruden.tetris_2.Controladores.Opciones.ControladorCustomOpciones.Companion.cerrarYGuardarCambio
 import com.pruden.tetris_2.Controladores.ModosDeJuego.Modos.ControladorModosJuego
+import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorTusModos
 import com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones
 import com.pruden.tetris_2.Controladores.Otros.ControladorPerder
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas
@@ -25,7 +28,7 @@ import javafx.stage.Stage
 import javafx.stage.StageStyle
 import javafx.stage.WindowEvent
 
-fun crearStage(objetoStage: ClaseStage) {
+fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null) {
     val fxmlLoader = FXMLLoader(Tetris::class.java.getResource(objetoStage.vista))
     val scene = Scene(fxmlLoader.load(), objetoStage.ancho, objetoStage.alto)
     val stage = Stage()
@@ -89,7 +92,24 @@ fun crearStage(objetoStage: ClaseStage) {
         objetoStage.timeline!!.stop()
     }
 
-    if (c is ControladorPerder) {
+
+    stageParaEsconder?.hide()
+
+    if (c is ControladorPerder || c is ControladorMenuModos || c is ControladorTusModos) {
+
+
+        // TODO mejorar cambios con ALT F4
+        /*
+        if(c is ControladorMenuModos){
+            stage.setOnCloseRequest {
+                stageParaEsconder?.show()
+            }
+        }
+
+         */
+
+
+
         stage.show()
     } else {
         stage.showAndWait()

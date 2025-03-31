@@ -104,7 +104,7 @@ class ControladorMenuModos: ControladorGEN(), Initializable {
             }
             2->{
                 if(jugarOnline && jugadorConTodo!!.suscripcionDelJugador!!.tipo != -1){
-                    crearStage(stagesModos[2])
+                    crearStage(stagesModos[2], stageMenuMundos)
                 }else{
                     mostrarErrorTemporal("¡Necesitas una suscripción!")
                 }
