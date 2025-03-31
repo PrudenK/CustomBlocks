@@ -186,11 +186,6 @@ class ControladorPrincipal : Initializable {
     @FXML fun modosDeJuego() {
         crearStage(ClaseStage("Vistas/ModosDeJuego/vistaMenuModos.fxml", nuevaPartidaB,
             355.0, 436.0, timelinePartida, 0, 0))
-        /*
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modos_Juego.fxml", nuevaPartidaB,
-            355.0, 544.0, timelinePartida, 0, 0))
-
-         */
     }
 
     @FXML fun sesion(){
@@ -250,10 +245,6 @@ class ControladorPrincipal : Initializable {
         opciones()
     }
 
-    @FXML fun campa(){
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Menu_Mundos.fxml", nuevaPartidaB, 711.0, 809.0, timelinePartida, 0, 0))
-    }
-
     @FXML fun suscripciones(){
         if(jugarOnline){
             indiceSuscripciones = 0
@@ -270,14 +261,6 @@ class ControladorPrincipal : Initializable {
     @FXML fun clan(){
         if(jugarOnline){
             if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 192.0, timelinePartida, 0, -60))
-        }
-    }
-
-    @FXML fun tusModos(){
-        if(jugadorConTodo?.suscripcionDelJugador?.tipo != -1){
-            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/ModosDeJuego/TusModos/vistaTusModos.fxml", nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0))
-        }else{
-            println("Opción para jugadores premium")
         }
     }
 }
