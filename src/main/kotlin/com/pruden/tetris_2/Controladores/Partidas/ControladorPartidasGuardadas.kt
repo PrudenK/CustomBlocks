@@ -158,7 +158,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                         cPrin.labelModoEstatico.isVisible = false
                         cuentaAtras()
                     }
-                    delay(3000)
+                    delay(100) //TODO cambiar a 3000
                     javafx.application.Platform.runLater {
                         animacionEnCurso = false
                         cPrin.canvasPrincipal.opacity = 1.0

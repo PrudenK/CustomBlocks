@@ -11,6 +11,7 @@ import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundari
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Matriz.borrarCasillas
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
+import javafx.application.Platform
 
 fun reiniciarPartida(){
     if (!ControladorPrincipal.animacionEnCurso) {
@@ -18,32 +19,39 @@ fun reiniciarPartida(){
         reiniciarLineasBorradas()
         ControladorPrincipal.tiempoCaidaPieza = ControladorPrincipal.TIEMPO_CAIDA_PIEZAS_INICIAL
 
-        borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
-        borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
-        borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
-        borrarTableroSecundario(ControladorPrincipal.gcHold)
+        Platform.runLater {
+            borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
+            borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
+            borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
+            borrarTableroSecundario(ControladorPrincipal.gcHold)
+        }
 
         ControladorPrincipal.cronometro.parar()
         ControladorPrincipal.cronometro.seTCronometroA0()
 
         cuentaAtras()
 
-        borrarCasillas()
-        reiniciarLabels()
+        Platform.runLater {
+            borrarCasillas()
+            reiniciarLabels()
 
-        if (ControladorCustomOpciones.cambioTablero){
-            cambioDeTablero()
-            ControladorCustomOpciones.cambioTablero = false
+            if (ControladorCustomOpciones.cambioTablero){
+                cambioDeTablero()
+                ControladorCustomOpciones.cambioTablero = false
+            }
+
+            if(ControladorCustomOpciones.cambioTipoTablero){
+                cambiosTipoTablero()
+                ControladorCustomOpciones.cambioTipoTablero = false
+            }
+
+            ControladorCustomTablero.cambioDeTAbleroParaTipoPieza = false
         }
 
-        if(ControladorCustomOpciones.cambioTipoTablero){
-            cambiosTipoTablero()
-            ControladorCustomOpciones.cambioTipoTablero = false
-        }
-
-        ControladorCustomTablero.cambioDeTAbleroParaTipoPieza = false
 
         if (jugarOnline) contadorPiezas = MutableList(Listas.NOMBRES_PIEZAS.size) { 0 }
+
+
 
         Thread { iniciarPartida() }.start()
     }

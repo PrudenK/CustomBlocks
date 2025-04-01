@@ -67,15 +67,8 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
         dibujarTableroSecundario(gcSiguiente2)
         dibujarTableroSecundario(gcSiguiente3)
 
-        when(diseTablero){
-            0, 1->{
-            }
-        }
-
-
         borrarMascara()
         dibujarTableroPrincipal()
-
 
         cPrin.labelModo.text = modo
 
@@ -87,7 +80,6 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
         cPrin.labelNivel.text = nivel.toString()
 
         ControladorPrincipal.tipoPieza = disePiezas
-
 
         matrizNumerica = tableroPartida.map { it.toIntArray() }.toTypedArray()
 

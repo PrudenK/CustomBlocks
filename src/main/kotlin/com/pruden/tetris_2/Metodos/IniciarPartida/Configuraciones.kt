@@ -16,7 +16,7 @@ import com.pruden.tetris_2.Metodos.BorrarPiezas.objLineasNivel
 import com.pruden.tetris_2.Metodos.Matriz.rellenarMatriz
 import javafx.application.Platform
 fun configuracionesIniciarPartida(){
-    cPrin.canvasPrincipal.opacity = 1.0
+    cPrin.canvasPrincipal.isVisible = true
     partidaEnCurso = true
     animacionEnCurso = false
 
@@ -30,7 +30,7 @@ fun configuracionesIniciarPartida(){
 }
 
 fun configuracionInicioAnimacion(){
-    cPrin.canvasPrincipal.opacity = 0.1
+    cPrin.canvasPrincipal.isVisible = false
     partidaEnCurso = false
     animacionEnCurso = true
 }
