@@ -33,6 +33,7 @@ import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.paresImparesTableroTipo3y4
 import com.pruden.tetris_2.Metodos.IniciarPartida.cuentaAtras
+import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
 import javafx.application.Platform
@@ -88,6 +89,8 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     private lateinit var efectosImgs: List<ImageView>
     private lateinit var eliminarBtns: List<ImageView>
 
+    private val imagenHuecoLibre = deRutaAImagen("/Imagenes/Logos/huecoLibre.jpg")
+
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         nombreLabels = listOf(nombre1, nombre2, nombre3)
         cadenasImages = listOf(cadena1, cadena2, cadena3)
@@ -123,6 +126,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                     nombres[i] = "Guardado ${i+1}"
                 }else{
                     visibles[i] = false
+                    efectosImgs[i].image = imagenHuecoLibre
                 }
             }
         }
@@ -159,11 +163,12 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
             onConfirmar = {
                 CoroutineScope(Dispatchers.IO).launch {
                     ApiCustom.partidaGuardadaService.borrarPartida(idJugador, indice)
-                    
-                    javafx.application.Platform.runLater {
+
+                    Platform.runLater {
                         jugadorConTodo!!.listaPartidasGuardadas.remove(jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == indice })
                         nombreLabels[indice-1].text = "Vacío $indice"
                         eliminarBtns[indice-1].isVisible = false
+                        efectosImgs[indice-1].image = imagenHuecoLibre
                     }
                 }
             }
@@ -174,30 +179,39 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     private fun clickEnMarco(marco: Int){
         if(modo == "Jugar"){
             if(nombreLabels[marco].text.startsWith("Guardado ")){
-                CoroutineScope(Dispatchers.IO).launch {
-                    javafx.application.Platform.runLater {
-                        cronometro.parar()
-                        cambiarLabelsAlSalirDelModoCampa()
+                mostrarDialogoConAccion(
+                    mensaje = "¿Cargar partida ${marco+1}?",
+                    onConfirmar = {
+                        CoroutineScope(Dispatchers.IO).launch {
+                            val partida = jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!
+                            jugadorConTodo!!.listaPartidasGuardadas.remove(partida)
 
-                        stagePartidasGuardadas.hide()
-                        cPrin.canvasPrincipal.isVisible = false
-                        borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
-                        borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
-                        borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
-                        borrarTableroSecundario(ControladorPrincipal.gcHold)
-                        cPrin.labelModo.text = ""
-                        cPrin.labelModoEstatico.isVisible = false
-                        cuentaAtras()
+                            ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco+1)
+                            Platform.runLater {
+                                cronometro.parar()
+                                cambiarLabelsAlSalirDelModoCampa()
+
+                                stagePartidasGuardadas.hide()
+                                cPrin.canvasPrincipal.isVisible = false
+                                borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
+                                borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
+                                borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
+                                borrarTableroSecundario(ControladorPrincipal.gcHold)
+                                cPrin.labelModo.text = ""
+                                cPrin.labelModoEstatico.isVisible = false
+                                cuentaAtras()
+                            }
+                            delay(3000) //TODO cambiar a 3000
+                            Platform.runLater {
+                                animacionEnCurso = false
+                                cPrin.canvasPrincipal.opacity = 1.0
+                                cPrin.canvasPrincipal.isVisible = true
+                                cPrin.labelModoEstatico.isVisible = true
+                                cargarPartidaGuardada(partida)
+                            }
+                        }
                     }
-                    delay(3000) //TODO cambiar a 3000
-                    javafx.application.Platform.runLater {
-                        animacionEnCurso = false
-                        cPrin.canvasPrincipal.opacity = 1.0
-                        cPrin.canvasPrincipal.isVisible = true
-                        cPrin.labelModoEstatico.isVisible = true
-                        cargarPartidaGuardada(jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!)
-                    }
-                }
+                )
             }else{
                 //TODO OOO
             }
