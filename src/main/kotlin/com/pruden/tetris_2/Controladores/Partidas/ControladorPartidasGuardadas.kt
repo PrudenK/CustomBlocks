@@ -15,6 +15,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
@@ -28,11 +29,13 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTabl
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
+import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.paresImparesTableroTipo3y4
 import com.pruden.tetris_2.Metodos.IniciarPartida.cuentaAtras
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
+import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -81,12 +84,15 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     private val visibles = arrayOf(false, false, false)
 
     private lateinit var nombreLabels: List<Label>
+    private lateinit var cadenasImages: List<ImageView>
+    private lateinit var efectosImgs: List<ImageView>
+    private lateinit var eliminarBtns: List<ImageView>
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         nombreLabels = listOf(nombre1, nombre2, nombre3)
-        val cadenasImages = listOf(cadena1, cadena2, cadena3)
-        val efectosImgs = listOf(imgGuardado1, imgGuardado2, imgGuardado3)
-        val eliminarBtns = listOf(eliminar1, eliminar2, eliminar3)
+        cadenasImages = listOf(cadena1, cadena2, cadena3)
+        efectosImgs = listOf(imgGuardado1, imgGuardado2, imgGuardado3)
+        eliminarBtns = listOf(eliminar1, eliminar2, eliminar3)
 
         when(jugadorConTodo!!.suscripcionDelJugador!!.tipo){
             1 -> {
@@ -143,20 +149,25 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     @FXML fun marco2() = clickEnMarco(1)
     @FXML fun marco3() = clickEnMarco(2)
 
-    @FXML fun eliminar1(){
+    @FXML fun eliminar1() = dialogoBorrarPartida(1)
+    @FXML fun eliminar2() = dialogoBorrarPartida(2)
+    @FXML fun eliminar3() = dialogoBorrarPartida(3)
 
-    }
-
-    @FXML fun eliminar2(){
-
-    }
-
-    @FXML fun eliminar3(){
-
-    }
-
-    private fun dialogoBorrarPartida(){
-
+    private fun dialogoBorrarPartida(indice: Int){
+        mostrarDialogoConAccion(
+            mensaje = "¿Seguro qué quieres borrar la partida?",
+            onConfirmar = {
+                CoroutineScope(Dispatchers.IO).launch {
+                    ApiCustom.partidaGuardadaService.borrarPartida(idJugador, indice)
+                    
+                    javafx.application.Platform.runLater {
+                        jugadorConTodo!!.listaPartidasGuardadas.remove(jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == indice })
+                        nombreLabels[indice-1].text = "Vacío $indice"
+                        eliminarBtns[indice-1].isVisible = false
+                    }
+                }
+            }
+        )
     }
 
 

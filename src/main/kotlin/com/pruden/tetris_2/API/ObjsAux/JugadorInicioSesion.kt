@@ -26,5 +26,5 @@ data class JugadorInicioSesion(
 
     val listaSuscripciones: List<Suscripcion>,
 
-    var listaPartidasGuardadas: List<PartidaGuardada>
+    var listaPartidasGuardadas: MutableList<PartidaGuardada>
 )

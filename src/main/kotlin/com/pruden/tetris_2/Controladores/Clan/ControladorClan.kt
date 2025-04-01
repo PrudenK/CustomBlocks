@@ -129,7 +129,6 @@ class ControladorClan: ControladorGEN(), Initializable {
             }
 
             mostrarDialogoConAccion(
-                owner = cPrin.nuevaPartidaB.scene.window,
                 mensaje = mensaje,
                 onConfirmar = {
                     val clanAnterior = jugadorConTodo!!.clan!!
@@ -167,7 +166,6 @@ class ControladorClan: ControladorGEN(), Initializable {
                 }
 
                 mostrarDialogoConAccion(
-                    owner = cPrin.nuevaPartidaB.scene.window,
                     mensaje = mensaje,
                     onConfirmar = {
                         ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")

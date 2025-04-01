@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.DialogoAccion
 
 
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Dialogos.ControladorDialogoAccion
 import javafx.fxml.FXMLLoader
 import javafx.scene.layout.Pane
@@ -11,7 +12,6 @@ import javafx.stage.Window
 import javafx.scene.Scene
 
 fun mostrarDialogoConAccion(
-    owner: Window,
     mensaje: String,
     onConfirmar: () -> Unit,
     onCancelar: (() -> Unit)? = null
@@ -29,7 +29,7 @@ fun mostrarDialogoConAccion(
     val dialogStage = Stage()
     dialogStage.initStyle(StageStyle.UNDECORATED)
     dialogStage.initModality(Modality.APPLICATION_MODAL)
-    dialogStage.initOwner(owner)
+    dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window,)
     dialogStage.scene = Scene(root)
     dialogStage.isResizable = false
     dialogStage.showAndWait()
