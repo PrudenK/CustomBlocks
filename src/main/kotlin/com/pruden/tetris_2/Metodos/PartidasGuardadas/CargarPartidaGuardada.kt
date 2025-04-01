@@ -186,8 +186,16 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
             }
         }
 
-        ControladorPrincipal.piezaActual.fila = filaCentroPiezaActual() + ajusteFila
-        ControladorPrincipal.piezaActual.columna = columnaCentroPiezaActual() + ajusteColumna
+        // importante hacerlo así pq si se queda una pieza arriba del todoo no se guarda
+
+        var fila = filaCentroPiezaActual() + ajusteFila
+        var columna = columnaCentroPiezaActual() + ajusteColumna
+
+        if(fila < 0) fila = 0
+        if(columna < 0) columna = 0
+
+        ControladorPrincipal.piezaActual.fila = fila
+        ControladorPrincipal.piezaActual.columna = columna
 
 
         actualizarTimeline()
