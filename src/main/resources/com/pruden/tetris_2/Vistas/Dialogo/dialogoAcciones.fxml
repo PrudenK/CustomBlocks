@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="150" prefWidth="300" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Clan.ControladorAccionesClan">
+<Pane prefHeight="150" prefWidth="300" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Dialogos.ControladorDialogoAccion">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
@@ -14,7 +14,7 @@
 
         <Button fx:id="btnCancelar" layoutX="32.0" layoutY="100.0" minHeight="0.0" prefWidth="90.0" text="Cancelar" />
         <Button fx:id="btnAceptar" layoutX="178.0" layoutY="100.0" minHeight="0.0" prefWidth="90.0" text="Aceptar" />
-      <Label fx:id="nombre" alignment="CENTER" layoutX="4.0" layoutY="21.0" prefHeight="64.0" prefWidth="300.0" text="¿Seguro que quieres abandonar el clan?" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+      <Label fx:id="nombre" alignment="CENTER" layoutX="4.0" layoutY="21.0" prefHeight="64.0" prefWidth="300.0" text="Ejemplo XD" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
          </font>

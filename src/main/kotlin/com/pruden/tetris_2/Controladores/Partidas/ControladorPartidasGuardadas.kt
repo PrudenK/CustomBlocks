@@ -112,8 +112,12 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
         val listaNumsGuardados = jugadorConTodo!!.listaPartidasGuardadas.map { it.numPartidaGuardada }
 
         for(i in 0..2){
-            if(listaNumsGuardados.contains(i+1) && jugadorConTodo!!.suscripcionDelJugador!!.tipo >= i+1){
-                nombres[i] = "Guardado ${i+1}"
+            if(jugadorConTodo!!.suscripcionDelJugador!!.tipo >= i+1){
+                if(listaNumsGuardados.contains(i+1)){
+                    nombres[i] = "Guardado ${i+1}"
+                }else{
+                    visibles[i] = false
+                }
             }
         }
 
@@ -135,15 +139,26 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
         }
     }
 
-    @FXML fun marco1(){
-        clickEnMarco(0)
+    @FXML fun marco1() = clickEnMarco(0)
+    @FXML fun marco2() = clickEnMarco(1)
+    @FXML fun marco3() = clickEnMarco(2)
+
+    @FXML fun eliminar1(){
+
     }
-    @FXML fun marco2(){
-        clickEnMarco(1)
+
+    @FXML fun eliminar2(){
+
     }
-    @FXML fun marco3(){
-        clickEnMarco(2)
+
+    @FXML fun eliminar3(){
+
     }
+
+    private fun dialogoBorrarPartida(){
+
+    }
+
 
     private fun clickEnMarco(marco: Int){
         if(modo == "Jugar"){
@@ -172,8 +187,6 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                         cargarPartidaGuardada(jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!)
                     }
                 }
-
-
             }else{
                 //TODO OOO
             }

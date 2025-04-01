@@ -55,12 +55,12 @@
                   <Font name="Liberation Mono Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="nombre2" alignment="CENTER" contentDisplay="CENTER" layoutX="240.0" layoutY="320.0" prefHeight="25.0" prefWidth="130.0" text="Guardado 2" textFill="#e9e8e8">
+            <Label fx:id="nombre2" alignment="CENTER" contentDisplay="CENTER" layoutX="236.0" layoutY="320.0" prefHeight="25.0" prefWidth="130.0" text="Guardado 2" textFill="#e9e8e8">
                <font>
                   <Font name="Liberation Mono Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="nombre3" alignment="CENTER" contentDisplay="CENTER" layoutX="423.0" layoutY="320.0" prefHeight="25.0" prefWidth="164.0" text="Guardado 3" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+            <Label fx:id="nombre3" alignment="CENTER" contentDisplay="CENTER" layoutX="422.0" layoutY="320.0" prefHeight="25.0" prefWidth="164.0" text="Guardado 3" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
                <font>
                   <Font name="Liberation Mono Bold" size="16.0" />
                </font>
@@ -68,17 +68,17 @@
             <ImageView fx:id="cadena1" fitHeight="150.0" fitWidth="150.0" layoutX="30.0" layoutY="157.0" onMouseClicked="#marco1" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="cadena2" fitHeight="150.0" fitWidth="150.0" layoutX="230.0" layoutY="157.0" onMouseClicked="#marco2" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="cadena3" fitHeight="150.0" fitWidth="150.0" layoutX="430.0" layoutY="157.0" onMouseClicked="#marco3" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="eliminar2" fitHeight="25.0" fitWidth="25.0" layoutX="358.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="eliminar2" fitHeight="25.0" fitWidth="25.0" layoutX="354.0" layoutY="320.0" onMouseClicked="#eliminar2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Imagenes/Logos/borrar.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="eliminar1" fitHeight="25.0" fitWidth="25.0" layoutX="158.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="eliminar1" fitHeight="25.0" fitWidth="25.0" layoutX="154.0" layoutY="320.0" onMouseClicked="#eliminar1" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Imagenes/Logos/borrar.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="eliminar3" fitHeight="25.0" fitWidth="25.0" layoutX="558.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="eliminar3" fitHeight="25.0" fitWidth="25.0" layoutX="556.0" layoutY="320.0" onMouseClicked="#eliminar3" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Imagenes/Logos/borrar.png" />
                </image>

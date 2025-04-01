@@ -82,4 +82,5 @@ object ConstantesCustomAPI {
 
     //Partidas guardadas
     const val GUARDAR_PARTIDA = "/guardarPartida"
+    const val BORRAR_PARTIDA_GUARDADA = "/eliminarPartidaGuardada/{idJugador}/{numPartidaGuardada}"
 }

@@ -6,25 +6,22 @@ import com.pruden.tetris_2.API.ObjsAux.Clan
 import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.WebSocket.ClanChatEmisor
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
-import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.GridPane
 import javafx.scene.layout.Pane
-import javafx.stage.Modality
 import javafx.stage.Stage
-import javafx.stage.StageStyle
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -126,40 +123,27 @@ class ControladorClan: ControladorGEN(), Initializable {
     @FXML
     fun accionClan(){
         if(btnClan.text == "Abandonar") {
-            val loader = FXMLLoader(javaClass.getResource("/com/pruden/tetris_2/Vistas/Clan/dialogoAccionesClan.fxml"))
-            val root = loader.load<Pane>()
-            val controller = loader.getController<ControladorAccionesClan>()
-
-            val dialogStage = Stage()
-            dialogStage.initStyle(StageStyle.UNDECORATED)
-            dialogStage.initModality(Modality.APPLICATION_MODAL)
-            dialogStage.scene = Scene(root)
-            dialogStage.isResizable = false
-            dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
-
-            println(clanDelStage)
-            println(jugadorConTodo!!.clan)
-            println(jugadorConTodo!!.id)
-
+            var mensaje = "¿Seguro que quieres abandonar el clan?"
             if(clanDelStage.idlider == jugadorConTodo!!.id){
-                controller.nombre.text = "Eres el lider del Clan, ¿quieres abandonarlo?"
+                mensaje = "Eres el lider del Clan, ¿quieres abandonarlo?"
             }
 
-            controller.onConfirmar = {
-                val clanAnterior = jugadorConTodo!!.clan!!
-                ClanChatEmisor.enviar(clanAnterior.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
+            mostrarDialogoConAccion(
+                owner = cPrin.nuevaPartidaB.scene.window,
+                mensaje = mensaje,
+                onConfirmar = {
+                    val clanAnterior = jugadorConTodo!!.clan!!
+                    ClanChatEmisor.enviar(clanAnterior.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
 
-                jugadorConTodo!!.clan = null
-                CoroutineScope(Dispatchers.IO).launch {
-                    ApiCustom.clanService.jugadorAbandonaClan(idJugador)
-                    recargarDatos()
+                    jugadorConTodo!!.clan = null
+                    CoroutineScope(Dispatchers.IO).launch {
+                        ApiCustom.clanService.jugadorAbandonaClan(idJugador)
+                        recargarDatos()
+                    }
+
+                    stageMiClan.close()
                 }
-
-
-                stageMiClan.close()
-            }
-
-            dialogStage.showAndWait()
+            )
         }else{
             if(jugadorConTodo!!.clan == null || jugadorConTodo!!.clan!!.idclan == -1){
                 jugadorConTodo!!.clan = clanDelStage
@@ -167,7 +151,6 @@ class ControladorClan: ControladorGEN(), Initializable {
 
                 CoroutineScope(Dispatchers.IO).launch {
                     ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
-
 
                     ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
 
@@ -178,42 +161,28 @@ class ControladorClan: ControladorGEN(), Initializable {
                     completarLogro(Logros.VIDA_SOCIAL)
                 }
             }else{
-                val loader = FXMLLoader(javaClass.getResource("/com/pruden/tetris_2/Vistas/Clan/dialogoAccionesClan.fxml"))
-                val root = loader.load<Pane>()
-                val controller = loader.getController<ControladorAccionesClan>()
-
-                val dialogStage = Stage()
-                dialogStage.initStyle(StageStyle.UNDECORATED)
-                dialogStage.initModality(Modality.APPLICATION_MODAL)
-                dialogStage.scene = Scene(root)
-                dialogStage.isResizable = false
-                dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window)
-
+                var mensaje =  "Eres lider de un Clan, ¿quieres cambiarte?"
                 if(jugadorConTodo!!.clan!!.idlider != jugadorConTodo!!.id){
-                    controller.nombre.text = "Ya perteneces a un Clan, ¿quieres cambiarte?"
-                }else{
-                    controller.nombre.text = "Eres lider de un Clan, ¿quieres cambiarte?"
+                    mensaje = "Ya perteneces a un Clan, ¿quieres cambiarte?"
                 }
 
-                println("lider : ${clanDelStage.idlider}")
-                println("jugador : ${jugadorConTodo!!.id}")
+                mostrarDialogoConAccion(
+                    owner = cPrin.nuevaPartidaB.scene.window,
+                    mensaje = mensaje,
+                    onConfirmar = {
+                        ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
+                        ClanChatEmisor.enviar(jugadorConTodo!!.clan!!.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
 
+                        jugadorConTodo!!.clan = clanDelStage
+                        btnClan.text = "Abandonar"
 
-                controller.onConfirmar = {
-                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
-                    ClanChatEmisor.enviar(jugadorConTodo!!.clan!!.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
-
-                    jugadorConTodo!!.clan = clanDelStage
-                    btnClan.text = "Abandonar"
-
-                    CoroutineScope(Dispatchers.IO).launch {
-                        val response =  ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
-                        println(response)
-                        recargarDatos()
+                        CoroutineScope(Dispatchers.IO).launch {
+                            val response =  ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
+                            println(response)
+                            recargarDatos()
+                        }
                     }
-                }
-
-                dialogStage.showAndWait()
+                )
             }
         }
     }
