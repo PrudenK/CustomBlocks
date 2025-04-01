@@ -28,6 +28,14 @@ object Listas {
         "numTwinY", "numPickAxe", "numSv3", "numTwinOv2", "numZv3", "numLadder", "numHv2", "total"
     )
 
+    val LETRAS_PIEZAS = listOf(
+        "O", "I", "L", "Z", "J", "S", "T", "P", "X", "U", "Lv2",
+        "W", "Tv2", "Zv2", "Xv2", "Lv3", "F", "Ov2", "Sv2", "B", "Y",
+        "K", "Iv2", "C", "Ov3", "V", "H", "Iv3", "Yv2", "Ov4", "Jv2", "A",
+        "MiniI", "MiniIv2", "MiniL", "MiniO", "Ov5", "Ov6", "Xv3", "E", "TwinO",
+        "TwinY", "PickAxe", "Sv3", "TwinOv2", "Zv3", "Ladder", "Hv2"
+    )
+
     val LISTA_INSTANCIAS_PIEZAS = listOf(
         Pieza_O::class, Pieza_I::class, Pieza_L::class, Pieza_Z::class, Pieza_J::class, Pieza_S::class, Pieza_T::class,
         Pieza_P::class, Pieza_X::class, Pieza_U::class, Pieza_L_v2::class, Pieza_W::class, Pieza_T_v2::class, Pieza_Z_v2::class,

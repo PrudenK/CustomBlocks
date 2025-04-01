@@ -46,6 +46,14 @@ class Cronometro () {
         }
     }
 
+    fun setTiempo(tiempo : String){
+        val totalSegundos = formatoASegundos(tiempo)
+
+        horas = totalSegundos / 3600
+        minutos = (totalSegundos % 3600) / 60
+        segundos = totalSegundos % 60
+    }
+
 
     private fun encender() {
         if (timelineCronometro == null) {

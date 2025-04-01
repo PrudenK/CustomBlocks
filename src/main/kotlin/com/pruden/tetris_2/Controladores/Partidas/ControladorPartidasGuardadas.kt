@@ -16,6 +16,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorC
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaHold
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puedeHoldear
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoCaidaPieza
@@ -24,6 +25,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTabl
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
+import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
@@ -137,11 +139,19 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
 
     private fun clickEnMarco(marco: Int){
         if(modo == "Jugar"){
+            if(nombreLabels[marco].text.startsWith("Guardado ")){
 
+                cargarPartidaGuardada(jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!)
+
+            }else{
+                //TODO OOO
+            }
         }else{
             if(nombreLabels[marco].text.startsWith("Vacío ")){
                 guardarPartida(marco+1)
                 ajustarPaneTrasGuardar()
+            }else{
+                //TODO OOO
             }
         }
     }
@@ -182,6 +192,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
             holdActivo = if (holdActivo) 1 else 0,
             dashActivo = if (dashActivo) 1 else 0,
             piezaEnHold = piezaHoldS,
+            puedeHolder = if (puedeHoldear) 1 else 0,
             velocidadCaidaActual = tiempoCaidaPieza,
             lineasParaSaltoDeNivel = LINEAS_POR_NIVEL,
             saltoDeTiempoPorNivel = REDUCCION_TIEMPO_POR_NIVEL,
