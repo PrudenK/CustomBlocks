@@ -17,6 +17,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguie
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente2
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente3
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
@@ -36,7 +37,7 @@ import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
 import com.pruden.tetris_2.Piezas.*
 
 fun cargarPartidaGuardada(p : PartidaGuardada){
-    with(p){ // TODO hold disponible y setFila y setColumn
+    with(p){
         //borrarMascara()
         //cambioDeTablero()
         Globales.FILAS = (listaNumFilas[tamaTablero])
@@ -102,7 +103,10 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
         LINEAS_POR_NIVEL = lineasParaSaltoDeNivel
         REDUCCION_TIEMPO_POR_NIVEL = saltoDeTiempoPorNivel
         LIMITE_ROTACIONES_B = hayLimiteDeRotacion()
-        if (LIMITE_ROTACIONES_B) LIMITE_ROTACIONES = limiteRotaciones
+        if (LIMITE_ROTACIONES_B) {
+            LIMITE_ROTACIONES = limiteRotaciones
+            rotacionesActuales = numRotacionesDeLaPiezaActual
+        }
 
 
         siguientesPiezaActivo = siguientesPiezasActivo()
@@ -112,9 +116,6 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
 
         ControladorPrincipal.piezaActual.orientacion = rotacionPiezaActual()
 
-        var ajusteFila = -1
-        var ajusteColumna = -1
-
         /*
             Para 3x3 todas es -1, -1
             Para 4x4 rotación 0, es -1, -1
@@ -123,6 +124,9 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
             MiniI para r1 es -1, -1
 
          */
+
+        var ajusteFila = -1
+        var ajusteColumna = -1
 
         when(this.piezaActual){
             "E", "H_v2", "S_v3", "Z_v3" ->{ // 5x5
@@ -136,10 +140,7 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
                         ajusteFila = -2
                         ajusteColumna = -2
                     }
-                    3 -> {
-                        ajusteFila = -2
-                        //ajusteColumna = -1
-                    }
+                    3 -> ajusteFila = -2
                 }
             }
             // 2x2
@@ -160,9 +161,7 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
                         ajusteColumna = 0
                         ajusteFila = 0
                     }
-                    2->{
-                        ajusteFila = 0
-                    }
+                    2-> ajusteFila = 0
                 }
             }
             "O", "Mini_O"->{
@@ -171,17 +170,9 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
             }
         }
 
-        println("A Fila $ajusteFila")
-        println("A Colum $ajusteColumna")
-
-
-
         ControladorPrincipal.piezaActual.fila = filaCentroPiezaActual() + ajusteFila
         ControladorPrincipal.piezaActual.columna = columnaCentroPiezaActual() + ajusteColumna
 
-        println(ControladorPrincipal.piezaActual.orientacion)
-        println(ControladorPrincipal.piezaActual.fila)
-        println(ControladorPrincipal.piezaActual.columna)
 
         //actualizarTimeline()
         cronometro.reanudar()
@@ -191,14 +182,6 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
         //cambiarLabelsAlSalirDelModoCampa()
 
     }
-
-    /*          F   C
-    Pieza_E -> -2, -2      , H_v2  I_v3
-    5x5 -2, -2
-    3x3, 3x2 -> -1, -1
-
-
-     */
 }
 
 fun mapearLetrasAPiezasGuardadas(letras: String): ArrayList<Piezas> {
