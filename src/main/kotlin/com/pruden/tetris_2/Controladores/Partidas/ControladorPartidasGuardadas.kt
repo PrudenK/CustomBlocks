@@ -192,7 +192,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
             holdActivo = if (holdActivo) 1 else 0,
             dashActivo = if (dashActivo) 1 else 0,
             piezaEnHold = piezaHoldS,
-            puedeHolder = if (puedeHoldear) 1 else 0,
+            puedeHoldear = if (puedeHoldear) 1 else 0,
             velocidadCaidaActual = tiempoCaidaPieza,
             lineasParaSaltoDeNivel = LINEAS_POR_NIVEL,
             saltoDeTiempoPorNivel = REDUCCION_TIEMPO_POR_NIVEL,

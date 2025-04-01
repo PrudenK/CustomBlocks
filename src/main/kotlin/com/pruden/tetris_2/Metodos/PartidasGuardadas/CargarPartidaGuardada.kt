@@ -1,11 +1,9 @@
 package com.pruden.tetris_2.Metodos.PartidasGuardadas
 
-import com.pruden.tetris_2.API.ObjsAux.ModoDeJuegoAPI
 import com.pruden.tetris_2.API.ObjsAux.PartidaGuardada
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES_B
@@ -14,15 +12,12 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCIO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TIEMPO_CAIDA_PIEZAS_INICIAL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcHold
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente1
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente2
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente3
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
@@ -30,18 +25,14 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Compani
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumFilas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaTamaCelda
 import com.pruden.tetris_2.Metodos.BolsaPiezas.dibujarPiezasSiguientes
-import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.pintarPiezaTableroSecun
-import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
-import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModos
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
 import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
-import com.pruden.tetris_2.Metodos.Timelines.borrarMascara
 import com.pruden.tetris_2.Piezas.*
 
 fun cargarPartidaGuardada(p : PartidaGuardada){
@@ -118,9 +109,13 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
 
         ControladorPrincipal.piezaActual = mapearLetrasAPiezasGuardadas(piezaActual)[0]
         ControladorPrincipal.piezaActual.orientacion = rotacionPiezaActual()
-        //ControladorPrincipal.piezaActual
-        actualizarTimeline()
+        ControladorPrincipal.piezaActual.fila = filaCentroPiezaActual()-1
+        ControladorPrincipal.piezaActual.columna = columnaCentroPiezaActual()-1
+
+        //actualizarTimeline()
         cronometro.reanudar()
+
+        ControladorPrincipal.piezaActual.pintar()
 
         //cambiarLabelsAlSalirDelModoCampa()
 

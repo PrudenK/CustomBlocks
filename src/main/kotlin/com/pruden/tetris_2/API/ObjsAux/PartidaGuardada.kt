@@ -27,7 +27,7 @@ data class PartidaGuardada(
     val holdActivo: Int,
     val dashActivo: Int,
     val piezaEnHold: String,
-    val puedeHolder: Int,
+    val puedeHoldear: Int,
 
     val velocidadCaidaActual: Int,
     val lineasParaSaltoDeNivel: Int,
@@ -45,8 +45,8 @@ data class PartidaGuardada(
     fun hayPiezaEnHold() = piezaEnHold != ""
     fun arraPiezas() = arrayPiezas.split("_").map { it.toInt() }.toIntArray()
     fun filaCentroPiezaActual() = posicionPiezaActual.split("_")[0].toInt()
-    fun filaColumnaPiezaActual() = posicionPiezaActual.split("_")[1].toInt()
+    fun columnaCentroPiezaActual() = posicionPiezaActual.split("_")[1].toInt()
     fun rotacionPiezaActual() = posicionPiezaActual.split("_")[2].toInt()
     fun hayLimiteDeRotacion() = limiteRotaciones != -1
-    fun puedeHoldear() = puedeHolder == 1
+    fun puedeHoldear() = puedeHoldear == 1
 }
