@@ -136,7 +136,7 @@
       </font>
    </Label>
    <Button layoutX="39.0" layoutY="737.0" mnemonicParsing="false" onAction="#modosDeJuego" prefHeight="32.0" prefWidth="138.0" text="Modos de juego" />
-   <Label layoutX="27.0" layoutY="322.0" text="Modo:" textFill="#e9e8e8">
+   <Label fx:id="labelModoEstatico" layoutX="27.0" layoutY="322.0" text="Modo:" textFill="#e9e8e8">
       <font>
          <Font name="Liberation Mono Bold" size="18.0" />
       </font></Label>

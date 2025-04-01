@@ -6,9 +6,11 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Globales.FILAS
 import com.pruden.tetris_2.Constantes.Listas.LISTA_VALORES_FILAS_TABLERO
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.animacionEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
@@ -25,6 +27,8 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTabl
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
+import com.pruden.tetris_2.Metodos.IniciarPartida.cuentaAtras
 import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -35,6 +39,7 @@ import javafx.scene.layout.Pane
 import javafx.stage.Stage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.net.URL
 import java.util.*
@@ -141,7 +146,28 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
         if(modo == "Jugar"){
             if(nombreLabels[marco].text.startsWith("Guardado ")){
 
-                cargarPartidaGuardada(jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!)
+                CoroutineScope(Dispatchers.IO).launch {
+                    javafx.application.Platform.runLater {
+                        stagePartidasGuardadas.hide()
+                        cPrin.canvasPrincipal.isVisible = false
+                        borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
+                        borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
+                        borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
+                        borrarTableroSecundario(ControladorPrincipal.gcHold)
+                        cPrin.labelModo.text = ""
+                        cPrin.labelModoEstatico.isVisible = false
+                        cuentaAtras()
+                    }
+                    delay(3000)
+                    javafx.application.Platform.runLater {
+                        animacionEnCurso = false
+                        cPrin.canvasPrincipal.opacity = 1.0
+                        cPrin.canvasPrincipal.isVisible = true
+                        cPrin.labelModoEstatico.isVisible = true
+                        cargarPartidaGuardada(jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!)
+                    }
+                }
+
 
             }else{
                 //TODO OOO

@@ -26,32 +26,55 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Compani
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaNumFilas
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Companion.listaTamaCelda
 import com.pruden.tetris_2.Metodos.BolsaPiezas.dibujarPiezasSiguientes
+import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.pintarPiezaTableroSecun
+import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModos
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
 import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
+import com.pruden.tetris_2.Metodos.Timelines.borrarMascara
 import com.pruden.tetris_2.Piezas.*
 
 fun cargarPartidaGuardada(p : PartidaGuardada){
     with(p){
-        //borrarMascara()
-        //cambioDeTablero()
+        // Eliminr pieza hold de antes si la hay
+        if(ControladorPrincipal.piezaHold.isNotEmpty()){
+            ControladorPrincipal.piezaHold.removeAt(0)
+        }
+        piezasBolsa.clear()
+
+
         Globales.FILAS = (listaNumFilas[tamaTablero])
         Globales.COLUMNAS = (listaNumColumnas[tamaTablero])
         Globales.TAMANO_CELDA = (listaTamaCelda[tamaTablero])
+
+        cambioDeTablero()
 
         tipoTableroPrin = diseTablero
         tipoTableroSecun = tipoTableroSecun
 
         dibujarTableroPrincipal()
+        borrarTableroSecundario(gcHold)
+
+
         dibujarTableroSecundario(gcHold)
         dibujarTableroSecundario(gcSiguiente1)
         dibujarTableroSecundario(gcSiguiente2)
         dibujarTableroSecundario(gcSiguiente3)
+
+        when(diseTablero){
+            0, 1->{
+            }
+        }
+
+
+        borrarMascara()
+        dibujarTableroPrincipal()
 
 
         cPrin.labelModo.text = modo

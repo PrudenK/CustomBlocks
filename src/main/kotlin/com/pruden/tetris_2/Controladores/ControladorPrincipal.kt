@@ -74,6 +74,7 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var tiempoMarcoNivelRes: Label
     @FXML lateinit var puntuacionMarcoNivelRes: Label
     @FXML lateinit var lineasMarcoNivelRes: Label
+    @FXML lateinit var labelModoEstatico: Label
 
     @FXML lateinit var stackPane : StackPane
 
