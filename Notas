@@ -20,3 +20,5 @@ docker exec -it baseCustom mysql -u root -p
 source /tmp/select.sql;
 
 // mirar en ->>>> crontab -e
+
+revisar rotaciones esciales piezas primarias

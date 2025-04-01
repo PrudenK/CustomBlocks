@@ -13,7 +13,7 @@ import javafx.scene.Scene
 
 fun mostrarDialogoConAccion(
     mensaje: String,
-    onConfirmar: () -> Unit,
+    onConfirmar: (() -> Unit)? = null,
     onCancelar: (() -> Unit)? = null
 ) {
     val loader = FXMLLoader(

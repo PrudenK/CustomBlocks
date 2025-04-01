@@ -18,6 +18,8 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActi
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaHold
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puedeHoldear
@@ -58,6 +60,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
 
     @FXML lateinit var textoInfo: Label
     @FXML lateinit var titulo: Label
+    @FXML lateinit var tituloPaneAux: Label
 
     @FXML lateinit var cadena1: ImageView
     @FXML lateinit var cadena2: ImageView
@@ -138,9 +141,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
             eliminarBtns[i].isVisible = visibles[i]
         }
 
-        if(modo == "Jugar"){
-
-        }else{
+        if(modo != "Jugar"){
             textoInfo.text = "Pulsa donde quieres guardar la partida"
             titulo.text = "Guardar partida"
             eliminar1.isVisible = false
@@ -212,24 +213,28 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                         }
                     }
                 )
-            }else{
-                //TODO OOO
             }
         }else{
-            if(nombreLabels[marco].text.startsWith("Vacío ")){
-                guardarPartida(marco+1)
-                ajustarPaneTrasGuardar()
-            }else{
-                mostrarDialogoConAccion(
-                    mensaje = "¿Quieres remplazar el guardado ${marco+1}?",
-                    onConfirmar = {
-                        CoroutineScope(Dispatchers.IO).launch {
-                            ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco +1)
-                            guardarPartida(marco+1)
-                            ajustarPaneTrasGuardar()
-                        }
+            if(partidaEnCurso){
+                if(!nivelEnJuego){
+                    if(nombreLabels[marco].text.startsWith("Vacío ")){
+                        guardarPartida(marco+1)
+                        ajustarPaneTrasGuardar("¡Partida guardada!")
+                    }else{
+                        mostrarDialogoConAccion(
+                            mensaje = "¿Quieres remplazar el guardado ${marco+1}?",
+                            onConfirmar = {
+                                CoroutineScope(Dispatchers.IO).launch {
+                                    ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco +1)
+                                    guardarPartida(marco+1)
+                                    ajustarPaneTrasGuardar("¡Partida guardada!")
+                                }
+                            }
+                        )
                     }
-                )
+                }else ajustarPaneTrasGuardar("No puedes guardar en modo campaña")
+            }else{
+                ajustarPaneTrasGuardar("No hay partida en curso")
             }
         }
     }
@@ -297,9 +302,10 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
         return if(resultado == "") "0_1_2_3_4_5_6" else resultado
     }
 
-    private fun ajustarPaneTrasGuardar(){
+    private fun ajustarPaneTrasGuardar(texto : String){
         pane1.isVisible = false
         paneGuardado.isVisible = true
+        tituloPaneAux.text = texto
 
         stagePartidasGuardadas.height = paneGuardado.height
         stagePartidasGuardadas.width = paneGuardado.width
