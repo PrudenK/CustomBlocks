@@ -28,10 +28,7 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomTablero.Compani
 import com.pruden.tetris_2.Metodos.BolsaPiezas.dibujarPiezasSiguientes
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.pintarPiezaTableroSecun
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.*
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModos
@@ -42,6 +39,10 @@ import com.pruden.tetris_2.Piezas.*
 
 fun cargarPartidaGuardada(p : PartidaGuardada){
     with(p){
+        if(diseTablero == 3 || diseTablero == 4){
+            paresImparesTableroTipo3y4 = estadoMascara
+        }
+
         // Eliminr pieza hold de antes si la hay
         if(ControladorPrincipal.piezaHold.isNotEmpty()){
             ControladorPrincipal.piezaHold.removeAt(0)
@@ -189,12 +190,11 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
         ControladorPrincipal.piezaActual.columna = columnaCentroPiezaActual() + ajusteColumna
 
 
-        //actualizarTimeline()
+        actualizarTimeline()
         cronometro.reanudar()
 
         ControladorPrincipal.piezaActual.pintar()
 
-        //cambiarLabelsAlSalirDelModoCampa()
 
     }
 }

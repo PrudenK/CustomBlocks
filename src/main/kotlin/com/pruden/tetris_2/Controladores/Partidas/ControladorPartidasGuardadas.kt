@@ -12,6 +12,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_P
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.animacionEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
@@ -28,7 +29,9 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTabl
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.paresImparesTableroTipo3y4
 import com.pruden.tetris_2.Metodos.IniciarPartida.cuentaAtras
+import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -145,9 +148,11 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     private fun clickEnMarco(marco: Int){
         if(modo == "Jugar"){
             if(nombreLabels[marco].text.startsWith("Guardado ")){
-
                 CoroutineScope(Dispatchers.IO).launch {
                     javafx.application.Platform.runLater {
+                        cronometro.parar()
+                        cambiarLabelsAlSalirDelModoCampa()
+
                         stagePartidasGuardadas.hide()
                         cPrin.canvasPrincipal.isVisible = false
                         borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
@@ -158,7 +163,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                         cPrin.labelModoEstatico.isVisible = false
                         cuentaAtras()
                     }
-                    delay(100) //TODO cambiar a 3000
+                    delay(3000) //TODO cambiar a 3000
                     javafx.application.Platform.runLater {
                         animacionEnCurso = false
                         cPrin.canvasPrincipal.opacity = 1.0
@@ -225,7 +230,8 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
             limiteRotaciones = if(LIMITE_ROTACIONES == 999999999) -1 else LIMITE_ROTACIONES,
             piezaActual = piezaActual.javaClass.toString().replace("class com.pruden.tetris_2.Piezas.Pieza_", ""),
             posicionPiezaActual = "${piezaActual.getFilaCentro()}_${piezaActual.getColumnaCentro()}_${piezaActual.orientacion}",
-            numRotacionesDeLaPiezaActual = rotacionesActuales
+            numRotacionesDeLaPiezaActual = rotacionesActuales,
+            estadoMascara = paresImparesTableroTipo3y4
         )
 
         CoroutineScope(Dispatchers.IO).launch {

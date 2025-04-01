@@ -36,7 +36,9 @@ data class PartidaGuardada(
 
     val piezaActual: String,
     val posicionPiezaActual: String, //(fCentro_cCentro_orientacion)
-    val numRotacionesDeLaPiezaActual: Int
+    val numRotacionesDeLaPiezaActual: Int,
+
+    val estadoMascara: Int
 ){
     fun tiempoEnSegundos() = formatoASegundos(tiempo)
     fun siguientesPiezasActivo() = siguientesPiezasActivo == 1
