@@ -16,7 +16,7 @@ class Pieza_O(override var fila: Int, override var columna: Int,
 
 
     private val FORMAS_O = arrayOf(
-        arrayOf(
+        arrayOf(       //CENTRO
             intArrayOf(NUMPIEZA, NUMPIEZA),
             intArrayOf(NUMPIEZA, NUMPIEZA)
         ),arrayOf(

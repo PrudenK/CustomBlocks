@@ -107,10 +107,81 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
 
         siguientesPiezaActivo = siguientesPiezasActivo()
 
+        println(piezaActual)
         ControladorPrincipal.piezaActual = mapearLetrasAPiezasGuardadas(piezaActual)[0]
+
         ControladorPrincipal.piezaActual.orientacion = rotacionPiezaActual()
-        ControladorPrincipal.piezaActual.fila = filaCentroPiezaActual()-1
-        ControladorPrincipal.piezaActual.columna = columnaCentroPiezaActual()-1
+
+        var ajusteFila = -1
+        var ajusteColumna = -1
+
+        /*
+            Para 3x3 todas es -1, -1
+            Para 4x4 rotación 0, es -1, -1
+            Para O_v6, X_v3 r0 y única es -1, -1
+
+            MiniI para r1 es -1, -1
+
+         */
+
+        when(this.piezaActual){
+            "E", "H_v2", "S_v3", "Z_v3" ->{ // 5x5
+                ajusteFila = -2
+                ajusteColumna = -2
+            }
+            "I", "Twin_O", "Twin_Y" -> { // 4x4
+                when (rotacionPiezaActual()) {
+                    1 -> ajusteColumna = -2
+                    2 -> {
+                        ajusteFila = -2
+                        ajusteColumna = -2
+                    }
+                    3 -> {
+                        ajusteFila = -2
+                        //ajusteColumna = -1
+                    }
+                }
+            }
+            // 2x2
+            "Mini_I"->{
+                when(rotacionPiezaActual()){
+                    0-> ajusteFila = 0
+                    2-> ajusteColumna = 0
+                    3-> {
+                        ajusteFila = 0
+                        ajusteColumna = 0
+                    }
+                }
+            }
+            "Mini_I_v2", "Mini_L"->{
+                when(rotacionPiezaActual()){
+                    0-> ajusteColumna = 0
+                    1->{
+                        ajusteColumna = 0
+                        ajusteFila = 0
+                    }
+                    2->{
+                        ajusteFila = 0
+                    }
+                }
+            }
+            "O", "Mini_O"->{
+                ajusteFila = 0
+                ajusteColumna = 0
+            }
+        }
+
+        println("A Fila $ajusteFila")
+        println("A Colum $ajusteColumna")
+
+
+
+        ControladorPrincipal.piezaActual.fila = filaCentroPiezaActual() + ajusteFila
+        ControladorPrincipal.piezaActual.columna = columnaCentroPiezaActual() + ajusteColumna
+
+        println(ControladorPrincipal.piezaActual.orientacion)
+        println(ControladorPrincipal.piezaActual.fila)
+        println(ControladorPrincipal.piezaActual.columna)
 
         //actualizarTimeline()
         cronometro.reanudar()
@@ -120,13 +191,21 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
         //cambiarLabelsAlSalirDelModoCampa()
 
     }
+
+    /*          F   C
+    Pieza_E -> -2, -2      , H_v2  I_v3
+    5x5 -2, -2
+    3x3, 3x2 -> -1, -1
+
+
+     */
 }
 
 fun mapearLetrasAPiezasGuardadas(letras: String): ArrayList<Piezas> {
     val columna = Globales.COLUMNAS / 2
     val piezas = ArrayList<Piezas>()
 
-    letras.split(",", "_").forEach { letra ->
+    letras.replace("_", "").split(",").forEach { letra ->
         val index = Listas.LETRAS_PIEZAS.indexOf(letra)
         val pieza = when (index) {
             0 -> Pieza_O(0, columna)
@@ -174,9 +253,9 @@ fun mapearLetrasAPiezasGuardadas(letras: String): ArrayList<Piezas> {
             42 -> Pieza_Pickaxe(0, columna)
             43 -> Pieza_S_v3(-1, columna - 1)
             44 -> Pieza_Twin_O_v2(0, columna)
-            45 -> Pieza_Ladder(0, columna)
-            46 -> Pieza_Z_v3(-1, columna - 1)
-            47 -> Pieza_H_v2(-1, columna - 1)
+            45 -> Pieza_Z_v3(-1, columna - 1)
+            46 -> Pieza_Ladder(0, columna)
+            47 -> Pieza_H_v2(-1, columna-1)
             else -> null
         }
 
