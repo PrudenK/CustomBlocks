@@ -220,14 +220,21 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                 guardarPartida(marco+1)
                 ajustarPaneTrasGuardar()
             }else{
-                //TODO OOO
+                mostrarDialogoConAccion(
+                    mensaje = "¿Quieres remplazar el guardado ${marco+1}?",
+                    onConfirmar = {
+                        CoroutineScope(Dispatchers.IO).launch {
+                            ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco +1)
+                            guardarPartida(marco+1)
+                            ajustarPaneTrasGuardar()
+                        }
+                    }
+                )
             }
         }
     }
 
-    @FXML fun volver(){
-        stagePartidasGuardadas.close()
-    }
+    @FXML fun volver() = stagePartidasGuardadas.close()
 
 
     private fun guardarPartida(indicePartidaGuardada: Int){
