@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Metodos.Timelines.reanudarTimeline
 
 fun reanudarPartida(){
-    if (!ControladorPrincipal.hasPerdido && !ControladorPrincipal.nivelTerminado) {
+    if (!ControladorPrincipal.hasPerdido && !ControladorPrincipal.nivelTerminado && ControladorPrincipal.partidaEnCurso) {
         ControladorPrincipal.cronometro.reanudar()
         reanudarTimeline()
     }

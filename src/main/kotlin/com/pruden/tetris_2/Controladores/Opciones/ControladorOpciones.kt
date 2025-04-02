@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.animacio
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidasGuardadas
 import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones.Companion.indiceSuscripciones
@@ -19,8 +20,6 @@ import java.net.URL
 import java.util.*
 
 class ControladorOpciones : ControladorGEN(), Initializable{
-    @FXML private lateinit var sonidoo_B: Button
-
     companion object{
         lateinit var stageOpciones: Stage
     }
@@ -30,7 +29,9 @@ class ControladorOpciones : ControladorGEN(), Initializable{
         cronometro.parar()
     }
     @FXML fun volver() {
-        reanudarPartida()
+        if(partidaEnCurso){
+            reanudarPartida()
+        }
         stageOpciones.close()
     }
     @FXML fun sonido() {

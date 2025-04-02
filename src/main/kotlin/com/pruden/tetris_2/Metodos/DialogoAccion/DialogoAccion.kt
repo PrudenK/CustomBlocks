@@ -16,6 +16,8 @@ fun mostrarDialogoConAccion(
     onConfirmar: (() -> Unit)? = null,
     onCancelar: (() -> Unit)? = null
 ) {
+    val parentStage = cPrin.nuevaPartidaB.scene.window
+
     val loader = FXMLLoader(
         ControladorDialogoAccion::class.java.getResource("/com/pruden/tetris_2/Vistas/Dialogo/dialogoAcciones.fxml")
     )
@@ -29,7 +31,15 @@ fun mostrarDialogoConAccion(
     val dialogStage = Stage()
     dialogStage.initStyle(StageStyle.UNDECORATED)
     dialogStage.initModality(Modality.APPLICATION_MODAL)
-    dialogStage.initOwner(cPrin.nuevaPartidaB.scene.window,)
+    dialogStage.initOwner(parentStage)
+
+    dialogStage.setOnShown {
+        val x = parentStage.x + (parentStage.width - dialogStage.width) / 2
+        val y = parentStage.y + (parentStage.height - dialogStage.height) / 2
+        dialogStage.x = x
+        dialogStage.y = y
+    }
+
     dialogStage.scene = Scene(root)
     dialogStage.isResizable = false
     dialogStage.showAndWait()

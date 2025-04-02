@@ -15,6 +15,10 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.animacio
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.dashActivo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcHold
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente1
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente2
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.gcSiguiente3
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.holdActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
@@ -34,11 +38,17 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTabl
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones
 import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones.Companion.indiceSuscripciones
+import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
+import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.paresImparesTableroTipo3y4
+import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.IniciarPartida.cuentaAtras
+import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarLabels
+import com.pruden.tetris_2.Metodos.Matriz.rellenarMatriz
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
@@ -205,18 +215,19 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
 
                                     stagePartidasGuardadas.hide()
                                     cPrin.canvasPrincipal.isVisible = false
-                                    borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
-                                    borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
-                                    borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
-                                    borrarTableroSecundario(ControladorPrincipal.gcHold)
+                                    borrarTableroSecundario(gcSiguiente1)
+                                    borrarTableroSecundario(gcSiguiente2)
+                                    borrarTableroSecundario(gcSiguiente3)
+                                    borrarTableroSecundario(gcHold)
                                     cPrin.labelModo.text = ""
                                     cPrin.labelModoEstatico.isVisible = false
 
                                     ControladorOpciones.stageOpciones.close()
-
+                                    reiniciarLabels()
+                                    cronometro.seTCronometroA0()
                                     cuentaAtras()
                                 }
-                                delay(3000) //TODO cambiar a 3000
+                                delay(3000)
                                 Platform.runLater {
                                     animacionEnCurso = false
                                     cPrin.canvasPrincipal.opacity = 1.0
@@ -234,6 +245,31 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                         if(nombreLabels[marco].text.startsWith("Vacío ")){
                             guardarPartida(marco+1)
                             ajustarPaneTrasGuardar("¡Partida guardada!")
+
+                            Platform.runLater {
+                                partidaEnCurso = false
+                                cronometro.seTCronometroA0()
+                                cronometro.parar()
+                                timelinePartida.stop()
+
+                                if(piezaHold.isNotEmpty()){
+                                    piezaHold.removeAt(0)
+                                }
+                                piezasBolsa.clear()
+
+                                cambioDeTablero()
+
+                                reiniciarLabels()
+
+
+                                borrarTableroSecundario(gcHold)
+                                borrarTableroSecundario(gcSiguiente1)
+                                borrarTableroSecundario(gcSiguiente2)
+                                borrarTableroSecundario(gcSiguiente3)
+
+                            }
+
+
                         }else{
                             mostrarDialogoConAccion(
                                 mensaje = "¿Quieres remplazar el guardado ${marco+1}?",

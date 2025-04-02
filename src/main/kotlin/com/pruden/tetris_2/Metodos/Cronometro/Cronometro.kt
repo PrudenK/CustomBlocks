@@ -37,6 +37,8 @@ class Cronometro () {
     fun reanudar(){
         if(timelineCronometro != null){
             timelineCronometro!!.play()
+        }else{
+            encender()
         }
     }
 
