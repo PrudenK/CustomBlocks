@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
@@ -25,6 +26,10 @@
       <StackPane layoutX="48.0" layoutY="36.0" prefHeight="200.0" prefWidth="260.0">
          <ImageView fx:id="imgModos" cache="true" fitHeight="220.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" smooth="true" />
       </StackPane>
+      <ImageView fx:id="imgBorrar" fitHeight="35.0" fitWidth="35.0" layoutX="304.0" layoutY="275.0" onMouseClicked="#borrarModo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Imagenes/Logos/borrar.png" />
+         </image></ImageView>
    </children>
 
 </Pane>

@@ -17,7 +17,7 @@ data class JugadorInicioSesion(
     var puntuacionAcumulada: Int,
 
     var suscripcionDelJugador: SuscripcionJugador?,
-    var listaTusModosDeJuego: List<ModoDeJuegoAPI>,
+    var listaTusModosDeJuego: MutableList<ModoDeJuegoAPI>,
 
     val listaMundos: List<Mundo>,
     val listaNiveles: List<Nivel>,

@@ -149,4 +149,22 @@ object Listas {
         6 to LISTA_IMAGENES_TIPO_DE_PIEZAS[4]
     )
 
+
+    var LISTA_CONSTANTE_DE_NOMBRES_MODOS_DE_JUEGO = mutableListOf(
+        "Modo 1", "Modo 2", "Modo 3",
+        "Modo 4", "Modo 5", "Modo 6",
+        "Modo 7", "Modo 8", "Modo 9",
+    )
+
+    val LISTA_CONSTANTE_DE_IMAGENES_MODOS_DE_JUEGO = listOf(
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego1.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego2.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego3.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego4.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego5.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego6.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego7.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego8.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego9.jpg")
+    )
 }
