@@ -2,7 +2,7 @@ package com.pruden.tetris_2.Controladores.PVP
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.WebSocket.CrearPartida.PartidaEmisor
+import com.pruden.tetris_2.WebSocket.CrearPartida.CrearPartidaEmisor
 import javafx.fxml.FXML
 import javafx.scene.control.Button
 import javafx.stage.Stage
@@ -16,7 +16,7 @@ class ControladorCrearPartidaPVP: ControladorGEN() {
         val modo = "Clásico"
 
 
-        PartidaEmisor.crearPartida(jugadorConTodo!!.id, modo)
+        CrearPartidaEmisor.crearPartida(jugadorConTodo!!.id, modo)
 
     }
 

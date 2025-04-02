@@ -19,7 +19,7 @@ class ControladorMenuPVP: ControladorGEN() {
     }
 
     @FXML fun buscarPartida(){
-
+        crearStage(Stages.BUSCAR_PARTIDA_PVP)
     }
 
     @FXML fun volver() = stageMenuPVP.close()
