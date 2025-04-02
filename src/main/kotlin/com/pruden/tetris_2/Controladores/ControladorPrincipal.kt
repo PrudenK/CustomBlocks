@@ -82,6 +82,25 @@ class ControladorPrincipal : Initializable {
 
     @FXML lateinit var imgPublicidad : ImageView
 
+    @FXML lateinit var paneSinglePlayer: Pane
+    @FXML lateinit var panePVP: Pane
+
+    @FXML lateinit var nivelHostNombre: Label
+    @FXML lateinit var nivelVisiLabel: Label
+    @FXML lateinit var nivelHostLabel: Label
+    @FXML lateinit var nivelVisiNombre: Label
+
+    @FXML lateinit var puntuacionHostNombre: Label
+    @FXML lateinit var puntuacionVisiLabel: Label
+    @FXML lateinit var puntuacionHostLabel: Label
+    @FXML lateinit var puntuacionVisiNombre: Label
+
+    @FXML lateinit var lineasHostNombre: Label
+    @FXML lateinit var lineasVisiLabel: Label
+    @FXML lateinit var lineasHostLabel: Label
+    @FXML lateinit var lineasVisiNombre: Label
+
+
     companion object {
         const val TAMA_TABLERO_SECUN = 5.0
         const val TAMA_CELDA_SECUN = 30.0
