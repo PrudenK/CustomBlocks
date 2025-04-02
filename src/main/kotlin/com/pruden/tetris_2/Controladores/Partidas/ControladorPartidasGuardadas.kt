@@ -26,10 +26,12 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puedeHol
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.siguientesPiezaActivo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tiempoCaidaPieza
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoPieza
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
+import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones.Companion.indiceSuscripciones
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
@@ -38,6 +40,8 @@ import com.pruden.tetris_2.Metodos.IniciarPartida.cuentaAtras
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
+import com.pruden.tetris_2.Metodos.Stages.ClaseStage
+import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -178,63 +182,69 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
 
 
     private fun clickEnMarco(marco: Int){
-        if(modo == "Jugar"){
-            if(nombreLabels[marco].text.startsWith("Guardado ")){
-                mostrarDialogoConAccion(
-                    mensaje = "¿Cargar partida ${marco+1}?",
-                    onConfirmar = {
-                        CoroutineScope(Dispatchers.IO).launch {
-                            val partida = jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!
-                            jugadorConTodo!!.listaPartidasGuardadas.remove(partida)
-
-                            ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco+1)
-                            Platform.runLater {
-                                cronometro.parar()
-                                cambiarLabelsAlSalirDelModoCampa()
-
-                                stagePartidasGuardadas.hide()
-                                cPrin.canvasPrincipal.isVisible = false
-                                borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
-                                borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
-                                borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
-                                borrarTableroSecundario(ControladorPrincipal.gcHold)
-                                cPrin.labelModo.text = ""
-                                cPrin.labelModoEstatico.isVisible = false
-                                cuentaAtras()
-                            }
-                            delay(3000) //TODO cambiar a 3000
-                            Platform.runLater {
-                                animacionEnCurso = false
-                                cPrin.canvasPrincipal.opacity = 1.0
-                                cPrin.canvasPrincipal.isVisible = true
-                                cPrin.labelModoEstatico.isVisible = true
-                                cargarPartidaGuardada(partida)
-                            }
-                        }
-                    }
-                )
-            }
+        if(jugadorConTodo!!.suscripcionDelJugador!!.tipo < marco+1){
+            indiceSuscripciones = marco
+            crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", cPrin.nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
+            stagePartidasGuardadas.close()
         }else{
-            if(partidaEnCurso){
-                if(!nivelEnJuego){
-                    if(nombreLabels[marco].text.startsWith("Vacío ")){
-                        guardarPartida(marco+1)
-                        ajustarPaneTrasGuardar("¡Partida guardada!")
-                    }else{
-                        mostrarDialogoConAccion(
-                            mensaje = "¿Quieres remplazar el guardado ${marco+1}?",
-                            onConfirmar = {
-                                CoroutineScope(Dispatchers.IO).launch {
-                                    ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco +1)
-                                    guardarPartida(marco+1)
-                                    ajustarPaneTrasGuardar("¡Partida guardada!")
+            if(modo == "Jugar"){
+                if(nombreLabels[marco].text.startsWith("Guardado ")){
+                    mostrarDialogoConAccion(
+                        mensaje = "¿Cargar partida ${marco+1}?",
+                        onConfirmar = {
+                            CoroutineScope(Dispatchers.IO).launch {
+                                val partida = jugadorConTodo!!.listaPartidasGuardadas.find { it.numPartidaGuardada == marco +1 }!!
+                                jugadorConTodo!!.listaPartidasGuardadas.remove(partida)
+
+                                ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco+1)
+                                Platform.runLater {
+                                    cronometro.parar()
+                                    cambiarLabelsAlSalirDelModoCampa()
+
+                                    stagePartidasGuardadas.hide()
+                                    cPrin.canvasPrincipal.isVisible = false
+                                    borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
+                                    borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
+                                    borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
+                                    borrarTableroSecundario(ControladorPrincipal.gcHold)
+                                    cPrin.labelModo.text = ""
+                                    cPrin.labelModoEstatico.isVisible = false
+                                    cuentaAtras()
+                                }
+                                delay(3000) //TODO cambiar a 3000
+                                Platform.runLater {
+                                    animacionEnCurso = false
+                                    cPrin.canvasPrincipal.opacity = 1.0
+                                    cPrin.canvasPrincipal.isVisible = true
+                                    cPrin.labelModoEstatico.isVisible = true
+                                    cargarPartidaGuardada(partida)
                                 }
                             }
-                        )
-                    }
-                }else ajustarPaneTrasGuardar("No puedes guardar en modo campaña")
+                        }
+                    )
+                }
             }else{
-                ajustarPaneTrasGuardar("No hay partida en curso")
+                if(partidaEnCurso){
+                    if(!nivelEnJuego){
+                        if(nombreLabels[marco].text.startsWith("Vacío ")){
+                            guardarPartida(marco+1)
+                            ajustarPaneTrasGuardar("¡Partida guardada!")
+                        }else{
+                            mostrarDialogoConAccion(
+                                mensaje = "¿Quieres remplazar el guardado ${marco+1}?",
+                                onConfirmar = {
+                                    CoroutineScope(Dispatchers.IO).launch {
+                                        ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco +1)
+                                        guardarPartida(marco+1)
+                                        ajustarPaneTrasGuardar("¡Partida guardada!")
+                                    }
+                                }
+                            )
+                        }
+                    }else ajustarPaneTrasGuardar("No puedes guardar en modo campaña")
+                }else{
+                    ajustarPaneTrasGuardar("No hay partida en curso")
+                }
             }
         }
     }

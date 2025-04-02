@@ -19,6 +19,7 @@ import com.pruden.tetris_2.Controladores.Otros.ControladorPerder
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil
 import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings
+import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones
 import com.pruden.tetris_2.Tetris
 import javafx.event.EventHandler
 import javafx.fxml.FXMLLoader
@@ -95,7 +96,10 @@ fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null) {
 
     stageParaEsconder?.hide()
 
-    if (c is ControladorPerder || c is ControladorMenuModos || c is ControladorTusModos) {
+    if (c is ControladorPerder || c is ControladorMenuModos || c is ControladorTusModos || c is ControladorSuscripciones
+
+
+        ) {
 
 
         // TODO mejorar cambios con ALT F4
