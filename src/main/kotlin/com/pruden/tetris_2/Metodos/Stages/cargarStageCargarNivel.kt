@@ -18,6 +18,17 @@ fun cargarStageCargarNivel(stage: Stage){
     stage.initOwner(cPrin.nuevaPartidaB.scene.window as Stage)
     stage.initModality(Modality.WINDOW_MODAL)
 
+    val parentStage = cPrin.nuevaPartidaB.scene.window
+
+    stage.initOwner(parentStage)
+
+    stage.setOnShown {
+        val x = parentStage.x + (parentStage.width - stage.width) / 2
+        val y = parentStage.y + (parentStage.height - stage.height) / 2
+        stage.x = x
+        stage.y = y
+    }
+
 
     stage.scene = scene
     stage.initStyle(StageStyle.UNDECORATED)
