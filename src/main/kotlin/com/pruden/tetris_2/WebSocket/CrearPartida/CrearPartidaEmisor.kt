@@ -1,11 +1,18 @@
 package com.pruden.tetris_2.WebSocket.CrearPartida
 
+import com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida.Companion.stageBuscarPartida
+import com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
+import com.pruden.tetris_2.Controladores.PVP.ControladorMenuPVP.Companion.stageMenuPVP
+import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarPartida
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
+import javafx.application.Platform
 import kotlinx.coroutines.*
 import org.json.JSONObject
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.WebSocket
+import java.util.concurrent.CompletableFuture
+import java.util.concurrent.CompletionStage
 
 object CrearPartidaEmisor {
 
@@ -31,6 +38,24 @@ object CrearPartidaEmisor {
 
                 webSocket.request(1)
             }
+
+            override fun onText(webSocket: WebSocket, data: CharSequence, last: Boolean): CompletionStage<*> {
+                println("📥 [CREADOR] Recibido del servidor: $data")
+                val json = JSONObject(data.toString())
+                if (json.has("mensaje") &&  json.optString("mensaje") == "iniciarPartida") {
+                    Platform.runLater {
+                        println("🎮 ¡Partida aceptada! Iniciando como creador")
+                        stageCrearPartidaPVP.close()
+                        stageMenuPVP.close()
+
+                        reiniciarPartida()
+                    }
+                }
+                webSocket.request(1) // Para que siga escuchando
+
+                return CompletableFuture.completedFuture(null)
+            }
+
         })
     }
 }
