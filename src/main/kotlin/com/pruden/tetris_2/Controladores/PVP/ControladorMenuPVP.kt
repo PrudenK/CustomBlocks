@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores.PVP
 
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
@@ -14,14 +15,14 @@ class ControladorMenuPVP: ControladorGEN() {
 
 
     @FXML fun crearPartida(){
-        //crearStage()
+        crearStage(Stages.CREAR_PARTIDA_PVP)
     }
 
     @FXML fun buscarPartida(){
 
     }
 
-
+    @FXML fun volver() = stageMenuPVP.close()
 
     override fun setStage(stage: Stage?) {
         stageMenuPVP = stage!!

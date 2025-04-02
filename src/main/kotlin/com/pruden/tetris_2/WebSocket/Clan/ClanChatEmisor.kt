@@ -1,5 +1,6 @@
-package com.pruden.tetris_2.WebSocket
+package com.pruden.tetris_2.WebSocket.Clan
 
+import com.pruden.tetris_2.WebSocket.ConstantesServidor
 import kotlinx.coroutines.*
 import org.json.JSONObject
 import java.net.URI
@@ -7,7 +8,7 @@ import java.net.http.HttpClient
 import java.net.http.WebSocket
 
 object ClanChatEmisor {
-    fun enviar(clanId: Int, remitente: String, mensaje: String) {
+    fun enviarMensajeClan(clanId: Int, remitente: String, mensaje: String) {
         val client = HttpClient.newHttpClient()
         val uri = URI.create("${ConstantesServidor.PATH_SERVER}${ConstantesServidor.CLAN_CHAT}/$clanId")
 

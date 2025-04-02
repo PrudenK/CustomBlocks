@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.WebSocket
+package com.pruden.tetris_2.WebSocket.Clan
 
 import org.java_websocket.client.WebSocketClient
 import org.java_websocket.handshake.ServerHandshake

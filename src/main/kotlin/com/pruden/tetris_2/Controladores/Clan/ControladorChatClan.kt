@@ -3,12 +3,11 @@ package com.pruden.tetris_2.Controladores.Clan
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
-import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
+import com.pruden.tetris_2.WebSocket.Clan.ClanChatWebSocket
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
-import com.pruden.tetris_2.WebSocket.MensajeChat
+import com.pruden.tetris_2.WebSocket.Clan.MensajeChat
 import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.fxml.FXML

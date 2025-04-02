@@ -6,12 +6,11 @@ import com.pruden.tetris_2.API.ObjsAux.Clan
 import com.pruden.tetris_2.API.ObjsAux.Jugador
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
-import com.pruden.tetris_2.WebSocket.ClanChatEmisor
+import com.pruden.tetris_2.WebSocket.Clan.ClanChatEmisor
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
@@ -132,7 +131,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                 mensaje = mensaje,
                 onConfirmar = {
                     val clanAnterior = jugadorConTodo!!.clan!!
-                    ClanChatEmisor.enviar(clanAnterior.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
+                    ClanChatEmisor.enviarMensajeClan(clanAnterior.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
 
                     jugadorConTodo!!.clan = null
                     CoroutineScope(Dispatchers.IO).launch {
@@ -149,7 +148,7 @@ class ControladorClan: ControladorGEN(), Initializable {
                 btnClan.text = "Abandonar"
 
                 CoroutineScope(Dispatchers.IO).launch {
-                    ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
+                    ClanChatEmisor.enviarMensajeClan(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
 
                     ApiCustom.clanService.jugadorSeUneAUnClan(idClanControlador, idJugador)
 
@@ -168,8 +167,8 @@ class ControladorClan: ControladorGEN(), Initializable {
                 mostrarDialogoConAccion(
                     mensaje = mensaje,
                     onConfirmar = {
-                        ClanChatEmisor.enviar(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
-                        ClanChatEmisor.enviar(jugadorConTodo!!.clan!!.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
+                        ClanChatEmisor.enviarMensajeClan(clanDelStage.idclan, "Server", "${jugadorConTodo!!.nombre} se ha unido al clan")
+                        ClanChatEmisor.enviarMensajeClan(jugadorConTodo!!.clan!!.idclan, "Server", "${jugadorConTodo!!.nombre} ha abandonado el clan")
 
                         jugadorConTodo!!.clan = clanDelStage
                         btnClan.text = "Abandonar"

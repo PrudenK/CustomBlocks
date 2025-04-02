@@ -4,13 +4,8 @@ import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.API.ObjsAux.*
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
-import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Constantes.Stages
-import com.pruden.tetris_2.Controladores.Clan.ControladorBuscarClan
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
-import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidasGuardadas
-import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones.Companion.indiceSuscripciones
-import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
@@ -19,12 +14,10 @@ import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
 import com.pruden.tetris_2.Piezas.Piezas
-import com.pruden.tetris_2.WebSocket.ClanChatWebSocket
 import javafx.animation.Timeline
 import javafx.application.Platform
 import javafx.beans.property.BooleanProperty

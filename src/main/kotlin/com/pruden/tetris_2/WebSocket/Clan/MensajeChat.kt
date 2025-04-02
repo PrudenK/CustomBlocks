@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.WebSocket
+package com.pruden.tetris_2.WebSocket.Clan
 
 data class MensajeChat(
     val remitente: String,
