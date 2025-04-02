@@ -2,11 +2,10 @@ package com.pruden.tetris_2.Constantes
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
-import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorModoCampa.Companion.cModoCampa
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 
 object Stages {
-    val OPCIONES = ClaseStage("Vistas/Otras/vistaOpciones.fxml", cPrin.nuevaPartidaB, 325.0, 385.0, timelinePartida, 0, 0)
+    val OPCIONES = ClaseStage("Vistas/Otras/vistaOpciones.fxml", cPrin.nuevaPartidaB, 325.0, 436.0, timelinePartida, 0, 0)
     val SONIDO = ClaseStage("Vistas/Otras/vistaSonido.fxml", cPrin.nuevaPartidaB, 243.0, 264.0, null, 0, 0)
 
     val CUSTOM_OPCIONES = ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", cPrin.nuevaPartidaB, 315.0,382.0, timelinePartida, 0, -60)

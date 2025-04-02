@@ -268,39 +268,9 @@ class ControladorPrincipal : Initializable {
         opciones()
     }
 
-    @FXML fun suscripciones(){
-        if(jugarOnline){
-            indiceSuscripciones = 0
-            if (!animacionEnCurso) crearStage(Stages.SUSCRIPCIONES)
-        }
-    }
-
-    @FXML fun logros(){
-        if(jugarOnline){
-            if (!animacionEnCurso) crearStage(Stages.LOGROS)
-        }
-    }
-
     @FXML fun clan(){
-        ControladorPartidasGuardadas.modo = "Guardar"
-        if (!animacionEnCurso) crearStage(Stages.PARTIDAS_GUARDADAS)
-
-        /*
         if(jugarOnline){
             if (!animacionEnCurso) crearStage(Stages.CLAN_MENU)
-        }
-
-         */
-
-
-
-
-    }
-
-    @FXML fun guardadas(){
-        if(jugarOnline){
-            ControladorPartidasGuardadas.modo = "Jugar"
-            if (!animacionEnCurso) crearStage(Stages.PARTIDAS_GUARDADAS)
         }
     }
 }

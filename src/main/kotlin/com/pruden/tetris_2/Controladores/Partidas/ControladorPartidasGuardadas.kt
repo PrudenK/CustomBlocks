@@ -32,6 +32,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoPiez
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroSecun
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
+import com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones
 import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones.Companion.indiceSuscripciones
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
@@ -210,6 +211,9 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                                     borrarTableroSecundario(ControladorPrincipal.gcHold)
                                     cPrin.labelModo.text = ""
                                     cPrin.labelModoEstatico.isVisible = false
+
+                                    ControladorOpciones.stageOpciones.close()
+
                                     cuentaAtras()
                                 }
                                 delay(3000) //TODO cambiar a 3000

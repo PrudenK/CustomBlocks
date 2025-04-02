@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="385.0" prefWidth="325.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones">
+<Pane prefHeight="436.0" prefWidth="325.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones">
    <stylesheets>
       <URL value="@../../styles/general.css" />
    </stylesheets>
@@ -17,11 +17,11 @@
          </font>
       </Label>
 
-      <Button layoutX="180.0" layoutY="63.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="32.0" prefWidth="110.0" text="Reiniciar" />
-      <Button layoutX="180.0" layoutY="116.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" />
+      <Button layoutX="178.0" layoutY="63.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="32.0" prefWidth="120.0" text="Reiniciar" />
+      <Button layoutX="178.0" layoutY="116.0" mnemonicParsing="false" onAction="#partidasGuardadas" prefHeight="32.0" prefWidth="120.0" text="Guardados" />
 
-      <Button layoutX="35.0" layoutY="63.0" mnemonicParsing="false" onAction="#reanudar" prefHeight="32.0" prefWidth="110.0" text="Reanudar" />
-      <Button layoutX="35.0" layoutY="116.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="110.0" text="Guardar" />
+      <Button layoutX="27.0" layoutY="63.0" mnemonicParsing="false" onAction="#reanudar" prefHeight="32.0" prefWidth="120.0" text="Reanudar" />
+      <Button layoutX="27.0" layoutY="116.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="120.0" text="Guardar" />
 
       <Label alignment="CENTER" layoutY="166.0" prefWidth="325.0" text="Perfil" textFill="#e9e8e8">
          <font>
@@ -29,17 +29,19 @@
          </font>
       </Label>
 
-      <Button layoutX="35.0" layoutY="219.0" mnemonicParsing="false" onAction="#perfil" prefHeight="32.0" prefWidth="110.0" text="Perfil" />
-      <Button layoutX="180.0" layoutY="219.0" mnemonicParsing="false" onAction="#rankings" prefHeight="32.0" prefWidth="110.0" text="Rankings" />
+      <Button layoutX="27.0" layoutY="219.0" mnemonicParsing="false" onAction="#perfil" prefHeight="32.0" prefWidth="120.0" text="Perfil" />
+      <Button layoutX="178.0" layoutY="219.0" mnemonicParsing="false" onAction="#rankings" prefHeight="32.0" prefWidth="120.0" text="Rankings" />
 
-      <Label alignment="CENTER" layoutY="272.0" prefWidth="325.0" text="Otras opciones" textFill="#e9e8e8">
+      <Label alignment="CENTER" layoutY="322.0" prefWidth="325.0" text="Otras opciones" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="28.0" />
          </font>
       </Label>
 
-      <Button fx:id="sonidoo_B" layoutX="35.0" layoutY="324.0" mnemonicParsing="false" onAction="#sonido" prefHeight="32.0" prefWidth="110.0" text="Sonido" />
-      <Button layoutX="180.0" layoutY="324.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="110.0" text="Volver" />
+      <Button fx:id="sonidoo_B" layoutX="27.0" layoutY="374.0" mnemonicParsing="false" onAction="#sonido" prefHeight="32.0" prefWidth="120.0" text="Sonido" />
+      <Button layoutX="178.0" layoutY="374.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="120.0" text="Volver" />
+      <Button layoutX="27.0" layoutY="272.0" mnemonicParsing="false" onAction="#logros" prefHeight="32.0" prefWidth="120.0" text="Logros" />
+      <Button layoutX="178.0" layoutY="272.0" mnemonicParsing="false" onAction="#suscripciones" prefHeight="32.0" prefWidth="120.0" text="Suscripciones" />
 
    </children>
 </Pane>
