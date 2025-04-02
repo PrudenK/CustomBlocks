@@ -4,10 +4,13 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida.Companion.stageBuscarPartida
+import com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
 import com.pruden.tetris_2.Controladores.PVP.ControladorMenuPVP.Companion.stageMenuPVP
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarPartida
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
+import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
+import com.pruden.tetris_2.WebSocket.BuscarPartida.JugadorConModo
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
 import javafx.application.Platform
 import javafx.fxml.FXML
@@ -33,41 +36,55 @@ class ControladorJugadorBuscarPartida {
 
     @FXML lateinit var paneItemBuscarPartida: Pane
 
-    fun setPartidaJugador(idJugador: Int, modo: String){
+    fun setPartidaJugador(jugador: JugadorConModo){
         CoroutineScope(Dispatchers.IO).launch {
-            val jugador = ApiCustom.jugadorService.getJugadorPorId(idJugador)
-
             Platform.runLater {
                 nombre.text = jugador.nombre
                 nivel.text = "Nivel: ${jugador.nivel}"
-                modoLabel.text = modo
+                modoLabel.text = jugador.modo
 
-                if(jugador.imagen != null){
-                    fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.imagen}", true)
+                if(jugador.foto != null){
+                    fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.foto}", true)
                 }else{
                     fotoPerfil.image = deRutaAImagen("/Imagenes/Logos/Imagen_perfil_deff.jpg")
                 }
 
                 paneItemBuscarPartida.setOnMouseClicked {
                     mostrarDialogoConAccion(
-                        mensaje = "¿Quiérers jugar contra\n${jugador.nombre} en modo $modo?",
+                        mensaje = "¿Quiérers jugar contra\n${jugador.nombre} en modo ${jugador.modo}?",
                         onConfirmar = {
                             CoroutineScope(Dispatchers.IO).launch {
                                 val client = HttpClient.newHttpClient()
-                                val uri = URI.create("${ConstantesServidor.PATH_SERVER}/unirse-partida/${idJugador}/${jugadorConTodo!!.id}")
+                                val uri = URI.create("${ConstantesServidor.PATH_SERVER}/unirse-partida/${jugador.id}/${jugadorConTodo!!.id}")
 
                                 client.newWebSocketBuilder().buildAsync(uri, object : WebSocket.Listener {
                                     override fun onText(webSocket: WebSocket, data: CharSequence, last: Boolean): CompletionStage<*> {
                                         val json = JSONObject(data.toString())
                                         if (json.getString("mensaje") == "iniciarPartida") {
+
+
+
+
                                             Platform.runLater {
-                                                // Cambia de escena aquí para iniciar la partida
-                                                println("✅ Iniciar partida entre ${json.getInt("creadorId")} y ${json.getInt("unidorId")}")
+                                                println("🎮 ¡Partida aceptada! Iniciando como creador")
                                                 stageBuscarPartida.close()
                                                 stageMenuPVP.close()
-
-                                                reiniciarPartida()
                                             }
+                                            CoroutineScope(Dispatchers.IO).launch {
+                                                val creador = ApiCustom.jugadorService.getJugadorPorId(json.getInt("creadorId"))
+                                                val buscador = ApiCustom.jugadorService.getJugadorPorId(json.getInt("unidorId"))
+
+                                                Platform.runLater {
+                                                    reiniciarPartidaParaPVP(
+                                                        DatosPartidaPVP(creador, buscador,  json.getString("modo"))
+                                                    )
+                                                    reiniciarPartida()
+                                                }
+                                            }
+
+
+
+
                                         }
                                         return CompletableFuture.completedFuture(null)
                                     }

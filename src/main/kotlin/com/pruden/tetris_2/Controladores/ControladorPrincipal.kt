@@ -98,7 +98,6 @@ class ControladorPrincipal : Initializable {
         const val TAMA_TABLERO_SECUN = 5.0
         const val TAMA_CELDA_SECUN = 30.0
         val FONDO = Color.web("#595959")!!
-
         var tipoPieza = 4
         var tipoTableroSecun = 1
         var tipoTableroPrin = 1

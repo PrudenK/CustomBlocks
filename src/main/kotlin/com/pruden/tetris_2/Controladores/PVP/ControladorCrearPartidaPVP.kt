@@ -16,7 +16,7 @@ class ControladorCrearPartidaPVP: ControladorGEN() {
         val modo = "Clásico"
 
 
-        CrearPartidaEmisor.crearPartida(jugadorConTodo!!.id, modo)
+        CrearPartidaEmisor.crearPartida(jugadorConTodo!!, modo)
 
     }
 
