@@ -273,4 +273,10 @@ class ControladorPrincipal : Initializable {
             if (!animacionEnCurso) crearStage(Stages.CLAN_MENU)
         }
     }
+
+    @FXML fun abrirMenuPVP(){
+        if(jugarOnline){
+            if (!animacionEnCurso) crearStage(Stages.MENU_PVP)
+        }
+    }
 }

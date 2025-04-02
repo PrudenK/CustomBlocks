@@ -40,4 +40,6 @@ object Stages {
 
     val ABRIR_MUNDO = ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Mundo1.fxml", cPrin.nuevaPartidaB, 711.0, 809.0, null, 0, 0)
     val PERDER = ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 232.0, null, 0, -120)
+
+    val MENU_PVP = ClaseStage("Vistas/PVP/vistaMenuPVP.fxml", cPrin.nuevaPartidaB, 315.0, 232.0, null, 0, -120)
 }

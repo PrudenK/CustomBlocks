@@ -151,4 +151,5 @@
          <Font name="Liberation Mono" size="14.0" />
       </font></Label>
    <Button fx:id="clan" layoutX="38.0" layoutY="680.0" mnemonicParsing="false" onAction="#clan" prefHeight="32.0" prefWidth="138.0" text="Clan" />
+   <Button layoutX="196.0" layoutY="790.0" mnemonicParsing="false" onAction="#abrirMenuPVP" prefWidth="138.0" text="PVP" />
 </Pane>
