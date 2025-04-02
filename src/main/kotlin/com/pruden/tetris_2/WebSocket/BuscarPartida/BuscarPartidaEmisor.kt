@@ -35,7 +35,7 @@ object BuscarPartidaEmisor {
                         val partida = partidasJson.getJSONObject(i)
                         val modo = partida.getString("modo")
                         val creadorId = partida.getInt("creadorId")
-                        listaPartidas.add("ID: $creadorId, Modo: $modo")
+                        listaPartidas.add("$creadorId@$modo")
                     }
 
                     listener.onPartidasRecibidas(listaPartidas)

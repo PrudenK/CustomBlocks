@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="503.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.PVP.ControladorJugadorBuscarPartida">
+    <children>
+        <StackPane layoutX="7.0" layoutY="6.0" prefHeight="70.0" prefWidth="70.0">
+            <ImageView fx:id="fotoPerfil" fitHeight="70.0" fitWidth="70.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+        </StackPane>
+        <Label fx:id="nombre" layoutX="223.0" layoutY="26.0" prefHeight="29.0" prefWidth="133.0" textFill="#a8a4a4">
+            <font>
+                <Font name="Liberation Mono Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="nivel" layoutX="371.0" layoutY="26.0" prefHeight="30.0" prefWidth="116.0" text="Nivel:" textFill="#a8a4a4">
+            <font>
+                <Font name="Liberation Mono Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="modoLabel" layoutX="82.0" layoutY="26.0" prefHeight="30.0" prefWidth="134.0" text="Clasico v32" textFill="#a8a4a4">
+            <font>
+                <Font name="Liberation Mono Bold" size="20.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>
