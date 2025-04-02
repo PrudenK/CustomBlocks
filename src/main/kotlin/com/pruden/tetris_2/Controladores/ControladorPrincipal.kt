@@ -4,6 +4,8 @@ import com.pruden.tetris_2.API.Constantes.publicidad.ApiPublicidad
 import com.pruden.tetris_2.API.ObjsAux.*
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
+import com.pruden.tetris_2.Constantes.ModosDeJuego
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.Clan.ControladorBuscarClan
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidasGuardadas
@@ -178,17 +180,14 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun opciones() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Otras/vistaOpciones.fxml", nuevaPartidaB,
-            325.0, 385.0, timelinePartida, 0, 0))
+        if (!animacionEnCurso) crearStage(Stages.OPCIONES)
     }
     @FXML fun custom() {
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", nuevaPartidaB,
-            315.0,382.0, timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(Stages.CUSTOM_OPCIONES)
     }
 
     @FXML fun modosDeJuego() {
-        crearStage(ClaseStage("Vistas/ModosDeJuego/vistaMenuModos.fxml", nuevaPartidaB,
-            355.0, 436.0, timelinePartida, 0, 0))
+        if(!animacionEnCurso) crearStage(Stages.MODOS_DE_JUEGO)
     }
 
     @FXML fun sesion(){
@@ -272,34 +271,36 @@ class ControladorPrincipal : Initializable {
     @FXML fun suscripciones(){
         if(jugarOnline){
             indiceSuscripciones = 0
-            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
+            if (!animacionEnCurso) crearStage(Stages.SUSCRIPCIONES)
         }
     }
 
     @FXML fun logros(){
         if(jugarOnline){
-            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Logros/vistaLogros.fxml", nuevaPartidaB, 676.0, 727.0, timelinePartida, 0, 0))
+            if (!animacionEnCurso) crearStage(Stages.LOGROS)
         }
     }
 
     @FXML fun clan(){
         ControladorPartidasGuardadas.modo = "Guardar"
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vistaPartidasGuardadas.fxml", cPrin.nuevaPartidaB, 610.0, 420.0, timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(Stages.PARTIDAS_GUARDADAS)
 
         /*
         if(jugarOnline){
-            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Clan/vistaClanMenu.fxml", nuevaPartidaB, 471.0, 192.0, timelinePartida, 0, -60))
+            if (!animacionEnCurso) crearStage(Stages.CLAN_MENU)
         }
 
-
          */
+
+
+
 
     }
 
     @FXML fun guardadas(){
         if(jugarOnline){
             ControladorPartidasGuardadas.modo = "Jugar"
-            if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vistaPartidasGuardadas.fxml", nuevaPartidaB, 610.0, 420.0, timelinePartida, 0, -60))
+            if (!animacionEnCurso) crearStage(Stages.PARTIDAS_GUARDADAS)
         }
     }
 }

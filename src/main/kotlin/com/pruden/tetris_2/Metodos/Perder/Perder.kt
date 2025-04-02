@@ -5,6 +5,7 @@ import com.pruden.tetris_2.Metodos.SubirDatos.subirTodoEstaPiezas
 import com.pruden.tetris_2.Metodos.SubirDatos.sumarTipoPieza
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
@@ -39,7 +40,7 @@ fun comprbarPerder(){
                 cargarLogrosPuntuacion()
                 cargarLogrosLineas()
 
-                crearStage(ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 232.0, null, 0, -120))
+                crearStage(Stages.PERDER)
             }
 
             subirDatosFinDePartida()

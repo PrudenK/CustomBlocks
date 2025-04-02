@@ -10,6 +10,5 @@ data class ClaseStage (
     var alto : Double,
     var timeline: Timeline?,
     var movX : Int,
-    var movY : Int,
-    var mundo: Int = -1
+    var movY : Int
 )

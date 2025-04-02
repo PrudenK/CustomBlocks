@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Constantes.Configuraciones
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES_B
@@ -62,8 +63,7 @@ class ControladorCustomOtrasConfiguraciones : ControladorGEN(), Initializable {
     }
 
     @FXML fun guardar() {
-        crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Otras_Confi.fxml",
-            cPrin.nuevaPartidaB, 344.0, 178.0,null,0,0))
+        crearStage(Stages.ADVERTENCIA_OTRAS_CONFI)
     }
 
     @FXML fun reestablecer() {

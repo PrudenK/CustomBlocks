@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Constantes.Listas
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2.Companion.haGuardadoAdvertencia
 import com.pruden.tetris_2.Controladores.Advertencias.ControladorAdvertenciaTipoTablero2.Companion.mensajeAdvertenciaTT2
 import com.pruden.tetris_2.Controladores.ControladorGEN
@@ -63,7 +64,7 @@ class ControladorCustomTipoTablero: ControladorGEN(), Initializable {
                     mensajeAdvertenciaTT2 = if (tableroPrincipalNum >= 2) {
                         "Si cambias al talbero Memory tu partida actual se reiniciará ya que este tablero aumenta notablemente las mecánicas del juego "
                     } else { "Has empezado una partida con el tablero Memory, si lo cambias esta se reiniciará, ¿estás seguro?" }
-                    crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tipo_Tablero2.fxml", elemento, 421.0, 192.0, null, 0, 0))
+                    crearStage(Stages.ADVERTENCIA_TIPO_TABLERO_2)
                 }
             }else{
                 if (tableroPrincipalNum >= 2) cPrin.labelModo.text = "Custom"

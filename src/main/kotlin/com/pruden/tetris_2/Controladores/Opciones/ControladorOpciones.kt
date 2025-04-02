@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores.Opciones
 
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.animacionEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
@@ -29,7 +30,7 @@ class ControladorOpciones : ControladorGEN(), Initializable{
         stageOpciones!!.close()
     }
     @FXML fun sonido() {
-        crearStage(ClaseStage("Vistas/Otras/vistaSonido.fxml", sonidoo_B, 243.0, 264.0, null, 0, 0))
+        crearStage(Stages.SONIDO)
     }
 
     @FXML fun reiniciar() {
@@ -42,18 +43,16 @@ class ControladorOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun perfil(){
-        crearStage(ClaseStage("Vistas/Perfil/vista_Perfil.fxml", cPrin.nuevaPartidaB, 683.0, 602.0, timelinePartida, 0, 0))
+        crearStage(Stages.PERFIL)
     }
 
     @FXML fun rankings(){
-        crearStage(ClaseStage("Vistas/Rankings/vista_Ranking.fxml", cPrin.nuevaPartidaB, 731.0, 600.0, timelinePartida, 0, 0))
+        crearStage(Stages.RANKINGS)
     }
 
     @FXML fun guardar(){
-        // val matriz = partidaGuardada.tableroPartida.map { it.toIntArray() }.toTypedArray()
-
         ControladorPartidasGuardadas.modo = "Guardar"
-        if (!animacionEnCurso) crearStage(ClaseStage("Vistas/Partidas/vistaPartidasGuardadas.fxml", cPrin.nuevaPartidaB, 610.0, 420.0, timelinePartida, 0, -60))
+        if (!animacionEnCurso) crearStage(Stages.PARTIDAS_GUARDADAS)
 
     }
 

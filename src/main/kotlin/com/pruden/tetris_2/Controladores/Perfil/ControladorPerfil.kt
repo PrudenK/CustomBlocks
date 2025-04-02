@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Perfil
 
 import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.CargarDatosPerfil.*
 import com.pruden.tetris_2.Constantes.Listas
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
@@ -75,13 +76,13 @@ class ControladorPerfil : ControladorGEN(), Initializable {
     }
 
     @FXML fun verPiezas(){
-        crearStage(ClaseStage("Vistas/Perfil/vista_Perfil_Piezas.fxml",cPrin.nuevaPartidaB,700.0,820.0, null,0, 0))
+        crearStage(Stages.PIEZAS_PERFIL)
     }
 
     @FXML fun volver() = stagePerfil.close()
 
     @FXML fun registroPartidas(){
-        crearStage(ClaseStage("Vistas/Partidas/vista_Partidas.fxml", cPrin.nuevaPartidaB, 699.0, 634.0, timelinePartida, 0, 0))
+        crearStage(Stages.REGISTRO_PARTIDAS)
     }
 
     override fun setStage(stage: Stage?) {

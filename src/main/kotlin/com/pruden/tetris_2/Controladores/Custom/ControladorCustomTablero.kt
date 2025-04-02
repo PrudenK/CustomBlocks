@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Custom
 
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Listas
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
@@ -51,8 +52,7 @@ class ControladorCustomTablero : ControladorGEN(), Initializable {
 
 
     @FXML fun guardar() {
-        crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Tablero.fxml",
-            cPrin.nuevaPartidaB, 344.0, 178.0, null, 0, 0))
+        crearStage(Stages.ADVERTENCIA_TABLERO)
     }
 
 

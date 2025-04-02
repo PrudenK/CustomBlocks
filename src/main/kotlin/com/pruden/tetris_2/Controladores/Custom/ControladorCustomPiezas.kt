@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores.Custom
 
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Metodos.Observables.cargarObersvablePiezas
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
@@ -80,12 +81,12 @@ class ControladorCustomPiezas : ControladorGEN(), Initializable {
     }
 
 
-    @FXML private fun salir() {
+    @FXML fun salir() {
         stageCustomPiezas.close()
     }
 
-    @FXML private fun guardar() {
-        crearStage(ClaseStage("Vistas/Advertencias/vista_Advertencia_Piezas.fxml", elemento, 344.0, 178.0, null, 0, 0))
+    @FXML fun guardar() {
+        crearStage(Stages.ADVERTENCIA_PIEZAS)
     }
 
 

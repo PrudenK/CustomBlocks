@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Controladores.Clan
 
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.Clan.ControladorClan.Companion.idClanControlador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
@@ -34,19 +35,19 @@ class ControladorOpcionesClan : ControladorGEN() {
     @FXML fun miClan(){
         if(jugadorConTodo!!.clan != null){
             idClanControlador = jugadorConTodo!!.clan!!.idclan
-            crearStage(ClaseStage("Vistas/Clan/vistaMiClan.fxml", cPrin.nuevaPartidaB, 553.0, 668.0, null, 0, 0))
+            crearStage(Stages.MI_CLAN)
         }else{
             mostrarErrorTemporal("No tienes clan todavía")
         }
     }
 
     @FXML fun buscarClan(){
-        crearStage(ClaseStage("Vistas/Clan/vistaBuscarClan.fxml", cPrin.nuevaPartidaB, 534.0, 556.0, null, 0, 0))
+        crearStage(Stages.BUSCAR_CLAN)
     }
 
     @FXML fun crearClan(){
         if(jugadorConTodo!!.clan == null){
-            crearStage(ClaseStage("Vistas/Clan/vistaCrearClan.fxml", cPrin.nuevaPartidaB, 466.0, 539.0, null, 0, 0))
+            crearStage(Stages.CREAR_CLAN)
         }else{
             mostrarErrorTemporal("No puedes crear un clan si ya estás en uno")
         }
@@ -54,7 +55,7 @@ class ControladorOpcionesClan : ControladorGEN() {
 
     @FXML fun chat(){
         if(jugadorConTodo!!.clan != null){
-            crearStage(ClaseStage("Vistas/Clan/vistaChatClan.fxml", cPrin.nuevaPartidaB, 587.0, 614.0, null, 0, 0))
+            crearStage(Stages.CHAT_DEL_CLAN)
         }else{
             mostrarErrorTemporal("No tienes clan todavía")
         }

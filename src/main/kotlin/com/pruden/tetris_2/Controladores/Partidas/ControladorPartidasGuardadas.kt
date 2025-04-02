@@ -5,6 +5,7 @@ import com.pruden.tetris_2.API.ObjsAux.PartidaGuardada
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Globales.FILAS
 import com.pruden.tetris_2.Constantes.Listas.LISTA_VALORES_FILAS_TABLERO
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
@@ -184,7 +185,7 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
     private fun clickEnMarco(marco: Int){
         if(jugadorConTodo!!.suscripcionDelJugador!!.tipo < marco+1){
             indiceSuscripciones = marco
-            crearStage(ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", cPrin.nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0))
+            crearStage(Stages.SUSCRIPCIONES)
             stagePartidasGuardadas.close()
         }else{
             if(modo == "Jugar"){

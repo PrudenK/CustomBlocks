@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Metodos.Stages
 
-import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
@@ -29,13 +28,13 @@ import javafx.stage.Stage
 import javafx.stage.StageStyle
 import javafx.stage.WindowEvent
 
-fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null) {
+fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null, mundo: Int = -1) {
     val fxmlLoader = FXMLLoader(Tetris::class.java.getResource(objetoStage.vista))
     val scene = Scene(fxmlLoader.load(), objetoStage.ancho, objetoStage.alto)
     val stage = Stage()
 
-    if(objetoStage.mundo != -1){
-        cMundo1.setMundo(objetoStage.mundo)
+    if(mundo != -1){
+        cMundo1.setMundo(mundo)
     }
 
     stage.initStyle(StageStyle.UNDECORATED) // Eliminar barra de título

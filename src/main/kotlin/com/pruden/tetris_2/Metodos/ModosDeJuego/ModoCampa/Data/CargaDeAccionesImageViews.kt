@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.Dataº
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ModoCampa.ControladorModoCampa.Companion.cModoCampa
@@ -80,5 +81,5 @@ fun cargarAccionesImageViewsMundos(){
     }
 }
 private fun abrirMundo(mundo: Int){
-    crearStage(ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Mundo1.fxml", cModoCampa.volverB, 711.0, 809.0, null, 0, 0, mundo))
+    crearStage(Stages.ABRIR_MUNDO, mundo = mundo)
 }
