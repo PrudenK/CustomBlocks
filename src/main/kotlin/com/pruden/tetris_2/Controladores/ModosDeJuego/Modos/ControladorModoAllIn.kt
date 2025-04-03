@@ -19,7 +19,7 @@ class ControladorModoAllIn : ControladorGEN(){
 
     @FXML
     private fun guardar(){
-        cargarCambiosModo(ModosDeJuego.modoAllIn)
+        cargarCambiosModo(ModosDeJuego.ALL_IN)
         cPrin.partdiaNueva()
         stage.close()
         stageModos.close()

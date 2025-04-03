@@ -17,7 +17,7 @@ class ControladorModoClasico : ControladorGEN(){
     }
 
     @FXML private fun guardar(){
-        cargarCambiosModo(ModosDeJuego.modoClasico)
+        cargarCambiosModo(ModosDeJuego.CLASICO)
         cPrin.partdiaNueva()
         stage.close()
         stageModos.close()

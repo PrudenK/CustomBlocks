@@ -180,6 +180,10 @@ class ControladorPrincipal : Initializable {
         var idNivelActual = -1
 
         var jugadorConTodo: JugadorInicioSesion? = null
+
+
+
+        var partidaPVPenCurso = false
     }
 
 

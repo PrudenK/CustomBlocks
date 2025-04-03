@@ -19,7 +19,7 @@ class ControladorModoMemoryX : ControladorGEN(){
 
     @FXML
     private fun guardar(){
-        cargarCambiosModo(ModosDeJuego.modoMemoryX)
+        cargarCambiosModo(ModosDeJuego.MEMORY_X)
         cPrin.partdiaNueva()
         stage.close()
         ControladorModosJuego.stageModos.close()

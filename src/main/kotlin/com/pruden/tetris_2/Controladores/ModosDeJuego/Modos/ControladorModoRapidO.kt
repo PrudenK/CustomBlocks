@@ -19,7 +19,7 @@ class ControladorModoRapidO : ControladorGEN(){
 
     @FXML
     private fun guardar(){
-        cargarCambiosModo(ModosDeJuego.modoRapidO)
+        cargarCambiosModo(ModosDeJuego.RAPID_O)
         cPrin.partdiaNueva()
         stage.close()
         ControladorModosJuego.stageModos.close()

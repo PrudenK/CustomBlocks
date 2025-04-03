@@ -70,15 +70,19 @@ class ControladorJugadorBuscarPartida {
                                                 stageBuscarPartida.close()
                                                 stageMenuPVP.close()
                                             }
-                                            CoroutineScope(Dispatchers.IO).launch {
+
+
+
+
+                                            CoroutineScope(Dispatchers.IO).launch { // TODO cambiar llamadas a la API en el futuro
                                                 val creador = ApiCustom.jugadorService.getJugadorPorId(json.getInt("creadorId"))
                                                 val buscador = ApiCustom.jugadorService.getJugadorPorId(json.getInt("unidorId"))
 
                                                 Platform.runLater {
                                                     reiniciarPartidaParaPVP(
-                                                        DatosPartidaPVP(creador, buscador,  json.getString("modo"))
+                                                        DatosPartidaPVP(creador, buscador,  json.getString("modo"),
+                                                                json.getJSONArray("bolsa").toString())
                                                     )
-                                                    reiniciarPartida()
                                                 }
                                             }
 
