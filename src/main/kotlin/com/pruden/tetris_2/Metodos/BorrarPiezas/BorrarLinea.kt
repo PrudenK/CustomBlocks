@@ -2,7 +2,9 @@ package com.pruden.tetris_2.Metodos.BorrarPiezas
 
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.eresHostPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
 
 private var lineasBorradas = 0
@@ -12,7 +14,17 @@ var objLineasNivel = ""
 fun borrarLinea(){
     val filaBorrar = filasQueHayQueBorrar()
     lineasBorradas += filaBorrar.size
-    cPrin.labelLineas.text = lineasBorradas.toString()+ objLineasNivel
+
+    if(partidaPVPenCurso){
+        if(eresHostPVP){
+            cPrin.lineasHostLabel.text = lineasBorradas.toString()
+        }else{
+            cPrin.lineasVisiLabel.text = lineasBorradas.toString()
+        }
+    }else{
+        cPrin.labelLineas.text = lineasBorradas.toString()+ objLineasNivel
+    }
+
     puntuaciones(filaBorrar.size)
 
     for (i in filaBorrar.indices) {

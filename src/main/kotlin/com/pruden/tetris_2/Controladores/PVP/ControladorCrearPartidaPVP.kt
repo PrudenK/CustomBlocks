@@ -13,7 +13,7 @@ class ControladorCrearPartidaPVP: ControladorGEN() {
     }
 
     @FXML fun crearPartida(){
-        val modo = "Clśico v2"
+        val modo = "Clásico"
 
 
         CrearPartidaEmisor.crearPartida(jugadorConTodo!!, modo)

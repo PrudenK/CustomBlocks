@@ -24,6 +24,8 @@ import javafx.beans.property.BooleanProperty
 import javafx.beans.property.IntegerProperty
 import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleIntegerProperty
+import javafx.beans.value.ChangeListener
+import javafx.beans.value.ObservableValue
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.canvas.Canvas
@@ -184,6 +186,12 @@ class ControladorPrincipal : Initializable {
 
 
         var partidaPVPenCurso = false
+
+        var eresHostPVP = false
+        var eresVisitantePVP = false
+
+        lateinit var listenerNivel: ChangeListener<Number>
+        var listenerNivelRegistrado = false
     }
 
 
@@ -220,12 +228,14 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun borrar() {
-        TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
+        //TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
         imprimirMatriz_TAB()
         println(ApiPublicidad.anuncios)
+        println(tiempoCaidaPieza)
         println(idNivelActual)
 
-        println(tiempoCaidaPieza)
+        //lineasHostLabel.text = "9"
+/*
 
         println(listaPiezasSeleccionadas)
 
@@ -270,6 +280,9 @@ class ControladorPrincipal : Initializable {
         println(piezaActual.orientacion)
         println(piezaActual.getFilaCentro())
         println(piezaActual.getColumnaCentro())
+
+
+ */
     }
 
     @FXML fun salir() {

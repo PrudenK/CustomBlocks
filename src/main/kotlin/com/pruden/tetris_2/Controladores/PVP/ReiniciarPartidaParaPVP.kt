@@ -5,12 +5,15 @@ import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
+import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
 import com.pruden.tetris_2.Piezas.*
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
+import javafx.application.Platform
 
 fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
     cPrin.panePVP.isVisible = true
@@ -30,7 +33,7 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
 
     val modoDeJuego = when(datosPartidaPVP.modo){
         "Clásico" -> ModosDeJuego.CLASICO
-        "Clśico v2" -> ModosDeJuego.CLASICO_V2
+        "Clásico v2" -> ModosDeJuego.CLASICO_V2
         "All in" -> ModosDeJuego.ALL_IN
         "Algebra" -> ModosDeJuego.ALGEBRA
         "Rapid O" -> ModosDeJuego.RAPID_O
@@ -41,8 +44,30 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
     }
     val indices = datosPartidaPVP.bolsa.replace("[", "")
         .replace("]", "").split(",").map { it.toInt() }
-    
+
     cargarCambiosModo(modoDeJuego)
+
+
+
+    if(jugadorConTodo!!.id == datosPartidaPVP.creador.id){
+        ControladorPrincipal.eresHostPVP = true
+        ControladorPrincipal.eresVisitantePVP = false
+    }else{
+        ControladorPrincipal.eresHostPVP = false
+        ControladorPrincipal.eresVisitantePVP = true
+    }
+
+
+    if(ControladorPrincipal.eresHostPVP){
+        println(jugadorConTodo!!.nombre +" es el host")
+    }else{
+        println(jugadorConTodo!!.nombre +" es el visitante")
+    }
+
+
+    Platform.runLater {
+        cargarObervableNivel()
+    }
 
 
     piezasBolsa.clear()
@@ -60,7 +85,7 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
 
 
 
-fun mapearLetrasAPiezasPVP(indices: List<Int>): ArrayList<Piezas> {
+private fun mapearLetrasAPiezasPVP(indices: List<Int>): ArrayList<Piezas> {
     val columna = Globales.COLUMNAS / 2
     val piezas = ArrayList<Piezas>()
 
