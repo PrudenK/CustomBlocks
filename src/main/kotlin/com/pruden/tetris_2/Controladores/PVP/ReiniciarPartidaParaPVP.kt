@@ -55,11 +55,18 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                 mostrarMensajeConAnimacion("¡${rival.nombre} sube de nivel!", cPrin.mensajeRivalNivel)
             }
             "perder"->{
+                actualizarEstadoPVP()
                 elRivarHaPerdido = true
                 mostrarMensajeConAnimacion("¡${rival.nombre} ha perdido!", cPrin.mensajeRivalNivel)
             }
             "hasGanado"->{
-                crearStage(Stages.CUSTOM_TIPO_PIEZAS)
+                actualizarEstadoPVP()
+                ControladorTerminarPartidaPVP.resultado = "Ganas"
+                crearStage(Stages.TERMIANR_PARTIDA_PVP)
+            }
+            "empate"->{
+                ControladorTerminarPartidaPVP.resultado = "Empate"
+                crearStage(Stages.TERMIANR_PARTIDA_PVP)
             }
         }
     }

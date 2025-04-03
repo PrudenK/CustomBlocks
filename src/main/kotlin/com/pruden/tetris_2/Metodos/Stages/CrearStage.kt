@@ -15,6 +15,7 @@ import com.pruden.tetris_2.Controladores.ModosDeJuego.Modos.ControladorModosJueg
 import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorTusModos
 import com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones
 import com.pruden.tetris_2.Controladores.Otros.ControladorPerder
+import com.pruden.tetris_2.Controladores.PVP.ControladorTerminarPartidaPVP
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil
 import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings
@@ -96,7 +97,7 @@ fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null, mundo:
     stageParaEsconder?.hide()
 
     if (c is ControladorPerder || c is ControladorMenuModos || c is ControladorTusModos || c is ControladorSuscripciones
-
+        || c is ControladorTerminarPartidaPVP
 
         ) {
 

@@ -16,6 +16,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNu
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Controladores.PVP.ControladorTerminarPartidaPVP
 import com.pruden.tetris_2.Controladores.PVP.Resultado
 import com.pruden.tetris_2.Controladores.PVP.actualizarEstadoPVP
 import com.pruden.tetris_2.Controladores.PVP.compararJugadoresDesdeUI
@@ -31,6 +32,8 @@ fun comprbarPerder(){
         hasPerdido = true
         timelinePartida.stop()
         cronometro.parar()
+
+        var mostarDialogo = true
 
         if(jugarOnline){
             if(nivelEnJuego){
@@ -53,17 +56,19 @@ fun comprbarPerder(){
 
                     when (compararJugadoresDesdeUI()) {
                         Resultado.GANA_EL_OTRO -> {
-
+                            mostarDialogo = false
                             PartidaEnCursoEmisor.mensajeEstandar("hasGanado")
-
-                            crearStage(Stages.SONIDO)
+                            ControladorTerminarPartidaPVP.resultado = "Pierdes"
+                            crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
                         Resultado.GANA_EL_JUGADOR -> {
                             //marcarComoEsperandoResultado() // ← define esta función como bandera
                         }
                         Resultado.EMPATE -> {
-                            //mostrarMensaje("Empate 🤝")
-                            //enviarMensajeRival("Empate 🤝")
+                            mostarDialogo = false
+                            PartidaEnCursoEmisor.mensajeEstandar("empate")
+                            ControladorTerminarPartidaPVP.resultado = "Empate"
+                            crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
                         Resultado.INDEFINIDO -> {
                             // Nada que hacer aún
@@ -85,7 +90,10 @@ fun comprbarPerder(){
                 }else{
 
                 }
-                crearStage(Stages.PERDER)
+
+                if(mostarDialogo){
+                    crearStage(Stages.PERDER)
+                }
 
             }
 
