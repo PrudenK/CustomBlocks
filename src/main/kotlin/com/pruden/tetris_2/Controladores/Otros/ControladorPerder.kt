@@ -45,8 +45,7 @@ class ControladorPerder : ControladorGEN() {
             ControladorPrincipal.partidaPVPenCurso && !ControladorPrincipal.eresHostPVP -> Triple(
                 cPrin.nivelVisiLabel, cPrin.puntuacionVisiLabel, cPrin.lineasVisiLabel)
 
-            else -> Triple(
-                cPrin.labelNivel, cPrin.labelPuntuacion, cPrin.labelLineas)
+            else -> Triple(cPrin.labelNivel, cPrin.labelPuntuacion, cPrin.labelLineas)
         }
 
 

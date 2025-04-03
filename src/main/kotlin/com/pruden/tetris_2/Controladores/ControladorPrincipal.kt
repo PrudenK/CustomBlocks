@@ -192,6 +192,8 @@ class ControladorPrincipal : Initializable {
         var eresHostPVP = false
         var eresVisitantePVP = false
         var idRivalPVP = -1
+        var elRivarHaPerdido = false
+
 
         lateinit var listenerNivel: ChangeListener<Number>
         var listenerNivelRegistrado = false

@@ -3,8 +3,10 @@ package com.pruden.tetris_2.Controladores.PVP
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Constantes.ModosDeJuego
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.elRivarHaPerdido
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
@@ -13,6 +15,7 @@ import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
+import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Piezas.*
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
@@ -52,9 +55,12 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                 mostrarMensajeConAnimacion("¡${rival.nombre} sube de nivel!", cPrin.mensajeRivalNivel)
             }
             "perder"->{
+                elRivarHaPerdido = true
                 mostrarMensajeConAnimacion("¡${rival.nombre} ha perdido!", cPrin.mensajeRivalNivel)
             }
-
+            "hasGanado"->{
+                crearStage(Stages.CUSTOM_TIPO_PIEZAS)
+            }
         }
     }
 
