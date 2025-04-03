@@ -130,4 +130,7 @@ class Pieza_Mini_L (override var fila: Int, override var columna: Int,
         orientacion = ori
     }
 
+    override fun clonar(): Piezas {
+        return Pieza_Mini_L(this.fila, this.columna)
+    }
 }

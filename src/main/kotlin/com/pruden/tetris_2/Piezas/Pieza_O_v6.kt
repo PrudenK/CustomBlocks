@@ -95,4 +95,8 @@ class Pieza_O_v6(override var fila: Int, override var columna: Int,
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         return false
     }
+
+    override fun clonar(): Piezas {
+        return Pieza_O_v6(this.fila, this.columna)
+    }
 }

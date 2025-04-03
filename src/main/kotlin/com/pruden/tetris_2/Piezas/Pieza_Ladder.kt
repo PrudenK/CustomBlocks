@@ -160,4 +160,7 @@ class Pieza_Ladder (override var fila: Int, override var columna: Int,
         orientacion = ori
     }
 
+    override fun clonar(): Piezas {
+        return Pieza_Ladder(this.fila, this.columna)
+    }
 }

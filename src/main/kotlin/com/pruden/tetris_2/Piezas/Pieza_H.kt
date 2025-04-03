@@ -111,4 +111,7 @@ class Pieza_H (override var fila: Int, override var columna: Int,
         orientacion = ori
     }
 
+    override fun clonar(): Piezas {
+        return Pieza_H(this.fila, this.columna)
+    }
 }

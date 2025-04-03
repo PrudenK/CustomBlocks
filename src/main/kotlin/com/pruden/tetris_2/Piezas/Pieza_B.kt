@@ -139,5 +139,7 @@ class Pieza_B (override var fila: Int, override var columna: Int,
     override fun set_Orientacion(ori: Int) {
         orientacion = ori
     }
-
+    override fun clonar(): Piezas {
+        return Pieza_B(this.fila, this.columna)
+    }
 }

@@ -8,6 +8,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
+import com.pruden.tetris_2.Metodos.BolsaPiezas.copiaEnPVP
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
@@ -113,6 +114,10 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
 
     piezaActual = listaDePiezas.removeAt(0)
 
+    copiaEnPVP.clear()
+    for (pieza in listaDePiezas) {
+        copiaEnPVP.add(pieza.clonar())
+    }
     siguientePieza.addAll(listaDePiezas)
 
     cPrin.partdiaNueva()

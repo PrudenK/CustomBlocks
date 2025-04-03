@@ -150,4 +150,7 @@ class Pieza_Pickaxe (override var fila: Int, override var columna: Int,
         orientacion = ori
     }
 
+    override fun clonar(): Piezas {
+        return Pieza_Pickaxe(this.fila, this.columna)
+    }
 }

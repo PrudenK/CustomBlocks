@@ -181,4 +181,8 @@ class Pieza_Twin_Y (override var fila: Int, override var columna: Int,
     override fun set_Orientacion(ori: Int) {
         orientacion = ori
     }
+
+    override fun clonar(): Piezas {
+        return Pieza_Twin_Y(this.fila, this.columna)
+    }
 }

@@ -96,4 +96,7 @@ class Pieza_X (override var fila: Int, override var columna: Int,
         return false
     }
 
+    override fun clonar(): Piezas {
+        return Pieza_X(this.fila, this.columna)
+    }
 }

@@ -13,7 +13,7 @@ abstract class Piezas(open var fila: Int, open var columna: Int, open var orient
     abstract override fun rotar(): Boolean
     override fun limpiar() {}
     override fun pintar() {}
-
+    abstract fun clonar(): Piezas
 
     abstract override fun getForma(): Array<Array<IntArray>>
     abstract override fun getColumnaCentro(): Int

@@ -89,4 +89,8 @@ class Pieza_O(override var fila: Int, override var columna: Int,
     override fun getColor(): Color {
         return COLOR
     }
+
+    override fun clonar(): Piezas {
+        return Pieza_O(this.fila, this.columna)
+    }
 }
