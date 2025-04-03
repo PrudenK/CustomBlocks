@@ -4,6 +4,7 @@ package com.pruden.tetris_2.Metodos.BolsaPiezas
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES_B
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.puedeHoldear
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.rotacionesActuales
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
@@ -16,8 +17,10 @@ val piezasBolsa: ArrayList<Piezas> = ArrayList()
 private val random = Random()
 
 fun devolverPiezaAleatoria(): Piezas {
-    while (siguientePieza.size < 4){
-        generarPieza()
+    if(!partidaPVPenCurso){
+        while (siguientePieza.size < 4){
+            generarPieza()
+        }
     }
 
     if(LIMITE_ROTACIONES_B) rotacionesActuales = LIMITE_ROTACIONES
@@ -25,23 +28,7 @@ fun devolverPiezaAleatoria(): Piezas {
     dibujarPiezasSiguientes(0)
     puedeHoldear = true
 
-    //return Pieza_Pickaxe(0, 5)
-
     return siguientePieza.removeAt(0)
-/*
-    return if(random.nextBoolean()){
-        Pieza_H_v2(0, 5)
-    }else{
-        Pieza_Mini_O(0,5)
-    }
-
-
- */
-
-
-
-
-
 }
 
 

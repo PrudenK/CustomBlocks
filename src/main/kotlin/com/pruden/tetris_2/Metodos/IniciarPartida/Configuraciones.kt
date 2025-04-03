@@ -7,6 +7,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJ
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objFasesNivel
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objPuntuacionBajar
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaHold
 import com.pruden.tetris_2.Metodos.BolsaPiezas.devolverPiezaAleatoria
@@ -20,8 +21,11 @@ fun configuracionesIniciarPartida(){
     partidaEnCurso = true
     animacionEnCurso = false
 
-    siguientePieza.clear()
-    piezasBolsa.clear()
+    if(!partidaPVPenCurso){
+        siguientePieza.clear()
+        piezasBolsa.clear()
+    }
+
     piezaHold.clear()
 
     rellenarMatriz()
