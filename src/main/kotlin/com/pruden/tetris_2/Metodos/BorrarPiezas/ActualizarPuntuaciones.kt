@@ -1,7 +1,9 @@
 package com.pruden.tetris_2.Metodos.BorrarPiezas
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.eresHostPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.objPuntuacionBajar
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.tipoTableroPrin
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.comprobarPasarNivel
@@ -22,7 +24,14 @@ fun puntuaciones(lineasBorradas: Int) {
         efectoSonido("/Musica/Efectos/romperLineas.mp3")
     }
 
-    cPrin.labelPuntuacion.text = (cPrin.labelPuntuacion.text.split("/")[0].toInt() + puntuacion).toString() + objPuntuacionBajar
+
+    val label = when {
+        partidaPVPenCurso && eresHostPVP -> cPrin.puntuacionHostLabel
+        partidaPVPenCurso && !eresHostPVP -> cPrin.puntuacionVisiLabel
+        else -> cPrin.labelPuntuacion
+    }
+
+    label.text = (label.text.split("/")[0].toInt() + puntuacion).toString() + objPuntuacionBajar
 
     comprobarPasarNivel()
 }
