@@ -51,11 +51,13 @@ object PartidaEnCursoEmisor {
         socket.sendText(json.toString(), true)
     }
 
-    fun subirDeNivel(){
+    fun mensajeEstandar(mensaje: String){
         val json = JSONObject()
-            .put("mensaje", "subirDeNivel")
+            .put("mensaje", mensaje)
             .put("rivalId", ControladorPrincipal.idRivalPVP)
 
         socket.sendText(json.toString(), true)
     }
+
+
 }

@@ -14,12 +14,15 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorC
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Controladores.PVP.actualizarEstadoPVP
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.perderNivelModoCampa
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelPerdido
+import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 
 fun comprbarPerder(){
     if (verificarPerdida()) {
@@ -40,7 +43,14 @@ fun comprbarPerder(){
                 cargarLogrosPuntuacion()
                 cargarLogrosLineas()
 
+                if(partidaPVPenCurso){
+                    PartidaEnCursoEmisor.mensajeEstandar("perder")
+                    actualizarEstadoPVP()
+                }else{
+
+                }
                 crearStage(Stages.PERDER)
+
             }
 
             subirDatosFinDePartida()

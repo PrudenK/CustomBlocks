@@ -7,6 +7,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.eresHost
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
+import com.pruden.tetris_2.Controladores.PVP.actualizarEstadoPVP
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 
@@ -39,16 +40,10 @@ fun borrarLinea(){
         }
     }
 
-    if (filaBorrar.size > 0) {
-        val lbNivel = if(eresHostPVP) cPrin.nivelHostLabel else cPrin.nivelVisiLabel
-        val lbLineas = if(eresHostPVP) cPrin.lineasHostLabel else cPrin.lineasVisiLabel
-        val lbPuntuacion = if(eresHostPVP) cPrin.puntuacionHostLabel else cPrin.puntuacionVisiLabel
-
-        val nivelActual = lbNivel.text.split("/")[0].toInt()
-        val lineasActuales = lbLineas.text.split("/")[0].toInt()
-        val puntuacionActual = lbPuntuacion.text.split("/")[0].toInt()
-
-        PartidaEnCursoEmisor.enviarEstado(nivelActual, lineasActuales, puntuacionActual, idRivalPVP)
+    if(partidaPVPenCurso){
+        if (filaBorrar.size > 0) {
+            actualizarEstadoPVP()
+        }
     }
 }
 

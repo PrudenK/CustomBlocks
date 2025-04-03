@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.Otros
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
+import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
@@ -37,9 +38,21 @@ class ControladorPerder : ControladorGEN() {
 
 
     private fun iniciarLabels(){
-        nivel.text = cPrin.labelNivel.text
-        puntuacion.text = cPrin.labelPuntuacion.text
-        lineas.text = cPrin.labelLineas.text
+        val (nivelC, puntuacionC, lineasC) = when {
+            ControladorPrincipal.partidaPVPenCurso && ControladorPrincipal.eresHostPVP -> Triple(
+                cPrin.nivelHostLabel, cPrin.puntuacionHostLabel, cPrin.lineasHostLabel)
+
+            ControladorPrincipal.partidaPVPenCurso && !ControladorPrincipal.eresHostPVP -> Triple(
+                cPrin.nivelVisiLabel, cPrin.puntuacionVisiLabel, cPrin.lineasVisiLabel)
+
+            else -> Triple(
+                cPrin.labelNivel, cPrin.labelPuntuacion, cPrin.labelLineas)
+        }
+
+
+        nivel.text = nivelC.text
+        puntuacion.text = puntuacionC.text
+        lineas.text = lineasC.text
     }
     private fun musicaPerder(){
         efectoSonido("/Musica/Efectos/sonidoPerder.mp3")

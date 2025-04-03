@@ -71,7 +71,7 @@ private fun accion(labelLineas: Label, labelNivel: Label) {
 
 
                         if(partidaPVPenCurso){
-                            PartidaEnCursoEmisor.subirDeNivel()
+                            PartidaEnCursoEmisor.mensajeEstandar("subirDeNivel")
                         }
 
 

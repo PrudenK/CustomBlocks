@@ -51,6 +51,10 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
             "subirDeNivel"->{
                 mostrarMensajeConAnimacion("¡${rival.nombre} sube de nivel!", cPrin.mensajeRivalNivel)
             }
+            "perder"->{
+                mostrarMensajeConAnimacion("¡${rival.nombre} ha perdido!", cPrin.mensajeRivalNivel)
+            }
+
         }
     }
 
