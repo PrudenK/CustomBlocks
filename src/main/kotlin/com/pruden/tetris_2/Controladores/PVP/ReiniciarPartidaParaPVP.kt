@@ -29,21 +29,26 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
 
     val idJugadorPropio = jugadorConTodo!!.id
     idRivalPVP = if (idJugadorPropio == datosPartidaPVP.creador.id) datosPartidaPVP.buscador.id else datosPartidaPVP.creador.id
-
+    val rival = if (idJugadorPropio == datosPartidaPVP.creador.id) datosPartidaPVP.buscador else datosPartidaPVP.creador
     PartidaEnCursoEmisor.iniciar(idJugadorPropio) { mensaje ->
-        if (mensaje.getString("mensaje") == "actualizarEstado") {
-            val nuevoNivel = mensaje.getInt("nivel")
-            val nuevasLineas = mensaje.getInt("lineas")
-            val nuevaPuntuacion = mensaje.getInt("puntuacion")
+        when(mensaje.getString("mensaje")){
+            "actualizarEstado" ->{
+                val nuevoNivel = mensaje.getInt("nivel")
+                val nuevasLineas = mensaje.getInt("lineas")
+                val nuevaPuntuacion = mensaje.getInt("puntuacion")
 
-            if (ControladorPrincipal.eresHostPVP) {
-                cPrin.nivelVisiLabel.text = "$nuevoNivel"
-                cPrin.lineasVisiLabel.text = "$nuevasLineas"
-                cPrin.puntuacionVisiLabel.text = "$nuevaPuntuacion"
-            } else {
-                cPrin.nivelHostLabel.text = "$nuevoNivel"
-                cPrin.lineasHostLabel.text = "$nuevasLineas"
-                cPrin.puntuacionHostLabel.text = "$nuevaPuntuacion"
+                if (ControladorPrincipal.eresHostPVP) {
+                    cPrin.nivelVisiLabel.text = "$nuevoNivel"
+                    cPrin.lineasVisiLabel.text = "$nuevasLineas"
+                    cPrin.puntuacionVisiLabel.text = "$nuevaPuntuacion"
+                } else {
+                    cPrin.nivelHostLabel.text = "$nuevoNivel"
+                    cPrin.lineasHostLabel.text = "$nuevasLineas"
+                    cPrin.puntuacionHostLabel.text = "$nuevaPuntuacion"
+                }
+            }
+            "subirDeNivel"->{
+                mostrarMensajeConAnimacion("¡${rival.nombre} sube de nivel!", cPrin.mensajeRivalNivel)
             }
         }
     }

@@ -11,6 +11,7 @@ import com.pruden.tetris_2.Metodos.Cronometro.formatoASegundos
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Media.Audio.efectoSonido
 import com.pruden.tetris_2.Metodos.Timelines.actualizarTimeline
+import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 import javafx.beans.binding.Bindings
 import javafx.beans.binding.NumberBinding
 import javafx.beans.value.ChangeListener
@@ -67,6 +68,13 @@ private fun accion(labelLineas: Label, labelNivel: Label) {
                     nivelActual++
                     if (tiempoCaidaPieza > ControladorPrincipal.REDUCCION_TIEMPO_POR_NIVEL) {
                         tiempoCaidaPieza -= ControladorPrincipal.REDUCCION_TIEMPO_POR_NIVEL
+
+
+                        if(partidaPVPenCurso){
+                            PartidaEnCursoEmisor.subirDeNivel()
+                        }
+
+
                     }
                     efectoSonido("/Musica/Efectos/pasarNivel.mp3")
                 }

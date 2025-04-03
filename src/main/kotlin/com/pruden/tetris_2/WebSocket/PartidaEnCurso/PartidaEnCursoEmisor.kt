@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.WebSocket.PartidaEnCurso
 
+import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
 import javafx.application.Platform
 import org.json.JSONObject
@@ -46,6 +47,14 @@ object PartidaEnCursoEmisor {
             .put("lineas", lineas)
             .put("puntuacion", puntuacion)
             .put("rivalId", rivalId)
+
+        socket.sendText(json.toString(), true)
+    }
+
+    fun subirDeNivel(){
+        val json = JSONObject()
+            .put("mensaje", "subirDeNivel")
+            .put("rivalId", ControladorPrincipal.idRivalPVP)
 
         socket.sendText(json.toString(), true)
     }

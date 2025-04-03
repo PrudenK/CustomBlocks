@@ -95,6 +95,8 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var lineasHostLabel: Label
     @FXML lateinit var lineasVisiNombre: Label
 
+    @FXML lateinit var mensajeRivalNivel: Label
+
 
     companion object {
         const val TAMA_TABLERO_SECUN = 5.0

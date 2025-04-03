@@ -25,7 +25,7 @@
             <Pane fx:id="paneCuentaRegresiva" layoutX="71.0" layoutY="181.0" prefHeight="245.0" prefWidth="263.0">
                <children>
                
-                        <ImageView fx:id="cuentaRegresivaIMG" fitHeight="245.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="cuentaRegresivaIMG" fitHeight="245.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="tiempoMarcoNivel" layoutX="48.0" layoutY="87.0" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="16.0" />
@@ -231,4 +231,9 @@
          </Label>
       </children>
    </Pane>
+   <Label fx:id="mensajeRivalNivel" layoutX="27.0" layoutY="685.0" prefHeight="44.0" prefWidth="151.0" text="¡PrudenPrud sube de nivel!" textAlignment="CENTER" textFill="#e9e8e8" visible="false" wrapText="true">
+      <font>
+         <Font name="Liberation Mono Bold" size="16.0" />
+      </font>
+   </Label>
 </Pane>
