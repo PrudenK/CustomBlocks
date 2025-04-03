@@ -45,4 +45,13 @@ object Stages {
     val CREAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaCrearPartidaPVP.fxml", cPrin.nuevaPartidaB, 384.0, 558.0, null, 0, 0)
     val BUSCAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaBuscarPartidaPVP.fxml", cPrin.nuevaPartidaB, 604.0, 445.0, null, 0, 0)
 
+
+    val STAGE_MODO_CLASICO = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    val STAGE_MODO_CLASICO_V2 = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    val STAGE_MODO_ALL_IN = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Todo.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    val STAGE_MODO_ALGEBRA = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Algebra.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    val STAGE_MODO_RAPID_O = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_RapidO.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    val STAGE_MODO_MEMORY =  ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Memory.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    val STAGE_MODO_MEMORY_X = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+    val STAGE_MODO_MEMORY_Y = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
 }

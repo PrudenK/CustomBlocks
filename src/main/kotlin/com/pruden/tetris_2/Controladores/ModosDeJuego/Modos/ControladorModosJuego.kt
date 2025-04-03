@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.ModosDeJuego.Modos
 
 import com.pruden.tetris_2.Constantes.Listas
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
@@ -37,24 +38,13 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
 
     private var indice = 0
 
-    private val LISTA_STAGES_MODOS_DE_JUEGOS = listOf(
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Todo.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Algebra.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_RapidO.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Memory.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
-    )
-
     @FXML fun volver() {
         reanudarPartida()
         stageModos.close()
     }
 
     @FXML fun jugar(){
-        crearStage(LISTA_STAGES_MODOS_DE_JUEGOS[indice])
+        crearStage(Listas.LISTA_STAGES_MODOS_DE_JUEGOS[indice])
     }
 
     @FXML fun atras(){
