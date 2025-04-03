@@ -4,6 +4,7 @@ import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.Clan.ControladorCrearClan.Companion.fotoClanSeleccionada
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorCrearModo.Companion.fotoModoDeJuegoSeleccionada
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
@@ -54,6 +55,8 @@ private fun subirImagenPerfil(imageView: ImageView, body: MultipartBody.Part){
                 val rutaRelativa = json.getString("ruta") // ej: "/uploads/abcd123.png"
 
                 val urlCompleta = "${ConstantesCustomAPI.PATH_CUSTOM}$rutaRelativa" // cambia tu dominio
+
+                jugadorConTodo!!.imagen = rutaRelativa
 
                 val image = Image(urlCompleta, true)
                 imageView.image = image
