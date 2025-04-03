@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="243.0" prefWidth="463.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.PVP.ControladorTerminarPartidaPVP">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+   <children>
+      <ImageView fx:id="img" fitHeight="150.0" fitWidth="150.0" layoutX="300.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="titulo" alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="21.0" prefHeight="37.0" prefWidth="250.0" text="¡Has perdido!" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="49.0" layoutY="62.0" prefHeight="21.0" prefWidth="124.0" text="Host" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="62.0" prefHeight="21.0" prefWidth="116.0" text="Visitante" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="119.0" prefHeight="21.0" prefWidth="69.0" text="Lineas:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="149.0" prefHeight="21.0" prefWidth="68.0" text="Puntos:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="89.0" prefHeight="21.0" prefWidth="64.0" text="Nivel:" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lineasHost" alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="119.0" prefHeight="21.0" prefWidth="69.0" textAlignment="CENTER" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="puntosHost" alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="149.0" prefHeight="21.0" prefWidth="68.0" textAlignment="CENTER" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="nivelHost" alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="89.0" prefHeight="21.0" prefWidth="64.0" textAlignment="CENTER" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lineasVisi" alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" layoutY="119.0" prefHeight="21.0" prefWidth="69.0" textAlignment="CENTER" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="puntosVisi" alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" layoutY="149.0" prefHeight="21.0" prefWidth="68.0" textAlignment="CENTER" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="nivelVisi" alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" layoutY="89.0" prefHeight="21.0" prefWidth="64.0" textAlignment="CENTER" textFill="#e9e8e8">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="70.0" layoutY="186.0" mnemonicParsing="false" onAction="#volver" prefWidth="130.0" text="Vovler" />
+      <Button layoutX="263.0" layoutY="186.0" mnemonicParsing="false" onAction="#revancha" prefWidth="130.0" text="Revancha" />
+   </children>
+
+
+
+</Pane>
