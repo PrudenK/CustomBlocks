@@ -5,4 +5,5 @@ object ConstantesServidor {
     const val CLAN_CHAT = "/clan-chat"
     const val CREAR_PARTIDA = "/crear-partida"
     const val BUSCAR_PARTIDA = "/buscar-partida"
+    const val PARTIDA_EN_CURSO = "/partida-en-curso"
 }

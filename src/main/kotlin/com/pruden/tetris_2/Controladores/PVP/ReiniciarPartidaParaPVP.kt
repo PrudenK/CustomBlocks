@@ -5,6 +5,7 @@ import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
@@ -13,12 +14,42 @@ import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
 import com.pruden.tetris_2.Piezas.*
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
+import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 import javafx.application.Platform
 
 fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
     cPrin.panePVP.isVisible = true
     cPrin.paneSinglePlayer.isVisible = false
     ControladorPrincipal.partidaPVPenCurso = true
+
+
+
+
+
+
+    val idJugadorPropio = jugadorConTodo!!.id
+    idRivalPVP = if (idJugadorPropio == datosPartidaPVP.creador.id) datosPartidaPVP.buscador.id else datosPartidaPVP.creador.id
+
+    PartidaEnCursoEmisor.iniciar(idJugadorPropio) { mensaje ->
+        if (mensaje.getString("mensaje") == "actualizarEstado") {
+            val nuevoNivel = mensaje.getInt("nivel")
+            val nuevasLineas = mensaje.getInt("lineas")
+            val nuevaPuntuacion = mensaje.getInt("puntuacion")
+
+            if (ControladorPrincipal.eresHostPVP) {
+                cPrin.nivelVisiLabel.text = "$nuevoNivel"
+                cPrin.lineasVisiLabel.text = "$nuevasLineas"
+                cPrin.puntuacionVisiLabel.text = "$nuevaPuntuacion"
+            } else {
+                cPrin.nivelHostLabel.text = "$nuevoNivel"
+                cPrin.lineasHostLabel.text = "$nuevasLineas"
+                cPrin.puntuacionHostLabel.text = "$nuevaPuntuacion"
+            }
+        }
+    }
+
+
+
 
 
     cPrin.puntuacionHostNombre.text = datosPartidaPVP.creador.nombre+":"
