@@ -3,28 +3,41 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane prefHeight="377.0" prefWidth="389.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP">
+<Pane prefHeight="558.0" prefWidth="384.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="24.0" prefHeight="33.0" prefWidth="325.0" text="Crear partida PVP" textFill="#e9e8e8">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="24.0" prefHeight="33.0" prefWidth="384.0" text="Crear partida PVP" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="28.0" />
          </font>
       </Label>
-      <Button layoutX="195.0" layoutY="312.0" mnemonicParsing="false" onAction="#crearPartida" text="Crear partida" />
-      <ImageView fitHeight="193.0" fitWidth="248.0" layoutX="98.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../../../../../../../../home/pruden/Documentos/churumbel.jpeg" />
-         </image>
-      </ImageView>
-      <Button layoutX="68.0" layoutY="312.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+      <Button layoutX="224.0" layoutY="502.0" mnemonicParsing="false" onAction="#crearPartida" prefWidth="130.0" text="Crear partida" />
+      <Button layoutX="30.0" layoutY="502.0" mnemonicParsing="false" onAction="#volver" prefWidth="130.0" text="Vovler" />
+      <Label layoutY="58.0" prefHeight="66.0" prefWidth="384.0" style="-fx-text-fill: #FFFFFF;" text="Elige uno de los modos de juego oficial para la partida" textAlignment="CENTER" textFill="#e9e8e8" wrapText="true">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="272.0" layoutY="445.0" mnemonicParsing="false" onAction="#siguiente" prefHeight="32.0" prefWidth="32.0" text="&gt;" />
+      <Button layoutX="80.0" layoutY="445.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="32.0" text="&lt;" />
+      <Text fx:id="textoModos" fill="#e9e8e8" layoutX="119.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clasico" textAlignment="CENTER" wrappingWidth="142.0">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+      </Text>
+      <StackPane layoutX="62.0" layoutY="129.0" prefHeight="313.0" prefWidth="260.0">
+         <children>
+            <ImageView fx:id="imgModos" fitHeight="313.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
    </children>
 
 

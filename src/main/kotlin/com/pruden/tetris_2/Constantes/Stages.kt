@@ -42,7 +42,7 @@ object Stages {
     val PERDER = ClaseStage("Vistas/Otras/vista_Perder.fxml", cPrin.nuevaPartidaB, 315.0, 232.0, null, 0, -120)
 
     val MENU_PVP = ClaseStage("Vistas/PVP/vistaMenuPVP.fxml", cPrin.nuevaPartidaB, 325.0, 178.0, null, 0, -120)
-    val CREAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaCrearPartidaPVP.fxml", cPrin.nuevaPartidaB, 389.0, 377.0, null, 0, 0)
+    val CREAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaCrearPartidaPVP.fxml", cPrin.nuevaPartidaB, 384.0, 558.0, null, 0, 0)
     val BUSCAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaBuscarPartidaPVP.fxml", cPrin.nuevaPartidaB, 604.0, 445.0, null, 0, 0)
 
 }

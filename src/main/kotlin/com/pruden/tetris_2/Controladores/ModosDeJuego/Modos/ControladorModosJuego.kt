@@ -37,15 +37,6 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
 
     private var indice = 0
 
-    private val modoClasico = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_clasico.jpg")
-    private val modoClasicoV2 = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_clasico_v2.jpg")
-    private val modoAllIn = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_all_in.jpg")
-    private val modoAlgebra = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_Algebra.jpg")
-    private val modoRapidO = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_RapidO.jpg")
-    private val modoMemory = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_Memory.jpg")
-    private val modoMemoryX = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_MemoryX.jpg")
-    private val modoMemoryY = deRutaAImagen("/Imagenes/ModosDeJuego/Modo_MemoryY.jpg")
-
     private val LISTA_STAGES_MODOS_DE_JUEGOS = listOf(
         ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
         ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
@@ -56,10 +47,6 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
         ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0),
         ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
     )
-
-    private val listaImagenesModos = listOf(modoClasico, modoClasicoV2, modoAllIn, modoAlgebra,
-        modoRapidO, modoMemory, modoMemoryX, modoMemoryY)
-
 
     @FXML fun volver() {
         reanudarPartida()
@@ -90,7 +77,7 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
 
     private fun cambairUISegunIndice(){
         textoModos.text = Listas.LISTA_MODOS_DE_JUEGOS[indice]
-        imgModos.image = listaImagenesModos[indice]
+        imgModos.image = Listas.LISTA_IMAGENES_MODOS_OFICIALES[indice]
     }
 
     override fun setStage(stage: Stage?) {

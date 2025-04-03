@@ -167,4 +167,15 @@ object Listas {
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego8.jpg"),
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoJuego9.jpg")
     )
+
+    val LISTA_IMAGENES_MODOS_OFICIALES = listOf(
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_clasico.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_clasico_v2.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_all_in.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_Algebra.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_RapidO.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_Memory.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_MemoryX.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/Modo_MemoryY.jpg")
+    )
 }
