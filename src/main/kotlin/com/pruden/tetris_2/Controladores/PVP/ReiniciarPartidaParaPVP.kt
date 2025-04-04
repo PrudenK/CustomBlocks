@@ -6,14 +6,18 @@ import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.elRivarHaPerdido
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.BolsaPiezas.copiaEnPVP
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DialogoAccion.dialogoAccionesActual
+import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarPartida
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -27,7 +31,19 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
+    if(jugadorConTodo!!.id == datosPartidaPVP.creador.id){
+        ControladorPrincipal.eresHostPVP = true
+        ControladorPrincipal.eresVisitantePVP = false
+    }else{
+        ControladorPrincipal.eresHostPVP = false
+        ControladorPrincipal.eresVisitantePVP = true
+    }
+
     cambairUIaPVP(true)
+
+
+
+
 
     val idJugadorPropio = jugadorConTodo!!.id
     idRivalPVP = if (idJugadorPropio == datosPartidaPVP.creador.id) datosPartidaPVP.buscador.id else datosPartidaPVP.creador.id
@@ -108,6 +124,18 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
             "quitar dialogo"->{
 
             }
+            "rivalAbandona"->{
+                ControladorTerminarPartidaPVP.resultado = "Abandono"
+
+                //Cambios en la UI
+                timelinePartida.stop()
+                partidaEnCurso = false
+                cambairUIaPVP(false)
+                cronometro.parar()
+
+
+                crearStage(Stages.TERMIANR_PARTIDA_PVP)
+            }
         }
     }
 
@@ -140,25 +168,6 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
 
 
 
-    if(jugadorConTodo!!.id == datosPartidaPVP.creador.id){
-        ControladorPrincipal.eresHostPVP = true
-        ControladorPrincipal.eresVisitantePVP = false
-    }else{
-        ControladorPrincipal.eresHostPVP = false
-        ControladorPrincipal.eresVisitantePVP = true
-    }
-
-
-    if(ControladorPrincipal.eresHostPVP){
-        println(jugadorConTodo!!.nombre +" es el host")
-    }else{
-        println(jugadorConTodo!!.nombre +" es el visitante")
-    }
-
-
-    Platform.runLater {
-        cargarObervableNivel()
-    }
 
 
     piezasBolsa.clear()
@@ -174,7 +183,7 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
     }
     siguientePieza.addAll(listaDePiezas)
 
-    cPrin.partdiaNueva()
+    reiniciarPartida()
 }
 
 

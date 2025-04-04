@@ -2,6 +2,8 @@ package com.pruden.tetris_2.Controladores.PVP
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
+import javafx.application.Platform
 
 fun cambairUIaPVP(pvp : Boolean){
     cPrin.pvp.isDisable = pvp
@@ -20,5 +22,9 @@ fun cambairUIaPVP(pvp : Boolean){
     cPrin.panePVP.isVisible = pvp
     cPrin.paneSinglePlayer.isVisible = !pvp
     ControladorPrincipal.partidaPVPenCurso = pvp
+
+    Platform.runLater {
+        cargarObervableNivel()
+    }
 
 }

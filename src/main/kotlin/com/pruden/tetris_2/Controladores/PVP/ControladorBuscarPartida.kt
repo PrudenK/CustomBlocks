@@ -33,9 +33,7 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
 
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        println("✅ Inicializando controlador de buscar partida...")
-
-        cargarPartidas() // Primera carga
+        cargarPartidas()
 
         if(ultimaListaPartidas.isEmpty()) {
             noHayPartidas.isVisible = true
@@ -105,6 +103,4 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
         }
     }
     override fun setBoton(b: Button?) {}
-
-
 }

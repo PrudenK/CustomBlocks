@@ -55,6 +55,11 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
                 titulo.text = "¡Empate!"
                 img.image = deRutaAImagen("/Imagenes/Logos/empate.png")
             }
+            "Abandono"->{
+                titulo.text = "Tu rival se ha rendido"
+                img.image = deRutaAImagen("/Imagenes/Logos/ganador.png")
+                titulo.style = "-fx-font-family: 'Liberation Mono'; -fx-font-size: 18px; -fx-text-fill: #e9e8e8; -fx-font-weight: bold;"
+            }
         }
 
         CoroutineScope(Dispatchers.IO).launch {

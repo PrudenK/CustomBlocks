@@ -7,10 +7,12 @@ import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Controladores.PVP.cambairUIaPVP
+import com.pruden.tetris_2.Controladores.PVP.mostrarMensajeConAnimacion
 import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
+import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
@@ -20,6 +22,7 @@ import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
 import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 import javafx.animation.Timeline
 import javafx.application.Platform
 import javafx.beans.property.BooleanProperty
@@ -233,10 +236,25 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun partdiaNueva() {
-        reiniciarPartida()
-        if(jugarOnline){
-            if(logroZZZ && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.ZZZ }!!.completado){
-                completarLogro(Logros.ZZZ)
+        if(nuevaPartidaB.text == "Abandonar partida"){
+            mostrarDialogoConAccion("¿Quieres abandonar la partida?",
+                onConfirmar = {
+                    PartidaEnCursoEmisor.mensajeEstandar("rivalAbandona")
+
+
+
+                    cambairUIaPVP(false)
+                    timelinePartida.stop()
+                    partidaEnCurso =false
+                    cronometro.parar()
+                }
+            )
+        }else{
+            reiniciarPartida()
+            if(jugarOnline){
+                if(logroZZZ && !jugadorConTodo!!.listaLogros.find { it.idLogro == Logros.ZZZ }!!.completado){
+                    completarLogro(Logros.ZZZ)
+                }
             }
         }
     }
