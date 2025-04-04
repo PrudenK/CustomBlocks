@@ -55,7 +55,7 @@ fun comprbarPerder(){
                     actualizarEstadoPVP()
 
 
-
+                    println("rESULTADO -> ${compararJugadoresDesdeUI().toString()}" )
                     when (compararJugadoresDesdeUI()) {
                         Resultado.GANA_EL_OTRO -> {
                             mostarDialogo = false

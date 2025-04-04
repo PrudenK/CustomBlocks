@@ -60,41 +60,48 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                 mostrarMensajeConAnimacion("¡${rival.nombre} sube de nivel!", cPrin.mensajeRivalNivel)
             }
             "perder"->{
-                actualizarEstadoPVP()
-                elRivarHaPerdido = true
-                mostrarMensajeConAnimacion("¡${rival.nombre} ha perdido!", cPrin.mensajeRivalNivel)
+                CoroutineScope(Dispatchers.IO).launch {
+                    delay(150)
 
-                if (ControladorPrincipal.esperarResolucionPVP) {
-                    val resultado = compararJugadoresDesdeUI()
-                    ControladorPrincipal.esperarResolucionPVP = false
+                    Platform.runLater{
+                        actualizarEstadoPVP()
+                        elRivarHaPerdido = true
+                        mostrarMensajeConAnimacion("¡${rival.nombre} ha perdido!", cPrin.mensajeRivalNivel)
 
-                    Platform.runLater {
-                        dialogoAccionesActual?.let {
-                            if (it.isShowing) {
-                                it.close()
-                                println("✅ Diálogo cerrado antes de mostrar resultado")
+                        if (ControladorPrincipal.esperarResolucionPVP) {
+                            val resultado = compararJugadoresDesdeUI()
+                            ControladorPrincipal.esperarResolucionPVP = false
+
+                            Platform.runLater {
+                                dialogoAccionesActual?.let {
+                                    if (it.isShowing) {
+                                        it.close()
+                                        println("✅ Diálogo cerrado antes de mostrar resultado")
+                                    }
+                                    dialogoAccionesActual = null
+                                }
                             }
-                            dialogoAccionesActual = null
+
+
+
+                            when (resultado) {
+                                Resultado.GANA_EL_JUGADOR -> {
+                                    ControladorTerminarPartidaPVP.resultado = "Ganas"
+                                }
+                                Resultado.GANA_EL_OTRO -> {
+                                    ControladorTerminarPartidaPVP.resultado = "Pierdes"
+                                }
+                                Resultado.EMPATE -> {
+                                    ControladorTerminarPartidaPVP.resultado = "Empate"
+                                }
+                                else -> {}
+                            }
+
+                            crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
                     }
-
-
-
-                    when (resultado) {
-                        Resultado.GANA_EL_JUGADOR -> {
-                            ControladorTerminarPartidaPVP.resultado = "Ganas"
-                        }
-                        Resultado.GANA_EL_OTRO -> {
-                            ControladorTerminarPartidaPVP.resultado = "Pierdes"
-                        }
-                        Resultado.EMPATE -> {
-                            ControladorTerminarPartidaPVP.resultado = "Empate"
-                        }
-                        else -> {}
-                    }
-
-                    crearStage(Stages.TERMIANR_PARTIDA_PVP)
                 }
+
             }
             "hasGanado"->{
                 actualizarEstadoPVP()
