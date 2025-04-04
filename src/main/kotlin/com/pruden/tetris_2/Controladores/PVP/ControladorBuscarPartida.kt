@@ -27,12 +27,14 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
         lateinit var stageBuscarPartida: Stage
     }
 
+    private var jobRefrescar: kotlinx.coroutines.Job? = null
+
 
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         cargarPartidas()
 
-        CoroutineScope(Dispatchers.IO).launch {
+        jobRefrescar =  CoroutineScope(Dispatchers.IO).launch {
             while (true){
                 delay(1500)
                 Platform.runLater {
@@ -43,6 +45,7 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
     }
 
     @FXML fun volver(){
+        jobRefrescar?.cancel()
         stageBuscarPartida.close()
     }
 
@@ -68,6 +71,7 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
     }
 
     override fun setStage(stage: Stage?) {
+        jobRefrescar?.cancel()
         stageBuscarPartida = stage!!
     }
     override fun setBoton(b: Button?) {}

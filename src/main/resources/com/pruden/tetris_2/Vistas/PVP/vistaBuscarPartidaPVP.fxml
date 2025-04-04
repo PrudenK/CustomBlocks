@@ -10,24 +10,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="445.0" prefWidth="604.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida">
+<Pane prefHeight="445.0" prefWidth="560.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="35.0" prefHeight="33.0" prefWidth="325.0" text="Partidas PVP" textFill="#e9e8e8">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" prefHeight="33.0" prefWidth="560.0" text="Partidas PVP" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="28.0" />
          </font>
       </Label>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="421.0" layoutY="32.0" onMouseClicked="#recargar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="391.0" layoutY="32.0" onMouseClicked="#recargar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Imagenes/Logos/recargar.png" />
          </image>
       </ImageView>
-      <Button layoutX="231.0" layoutY="384.0" mnemonicParsing="false" onAction="#volver" prefWidth="130.0" text="Vovler" />
+      <Button layoutX="212.0" layoutY="383.0" mnemonicParsing="false" onAction="#volver" prefWidth="130.0" text="Vovler" />
 
-       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="30.0" layoutY="102.0" prefHeight="273.0" prefWidth="538.0">
+       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="30.0" layoutY="102.0" prefHeight="273.0" prefWidth="500.0">
            <content>
                <GridPane fx:id="gridPartidas" hgap="10" vgap="10" />
            </content>
