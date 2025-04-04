@@ -129,8 +129,8 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
         "Clásico" -> ModosDeJuego.CLASICO
         "Clásico v2" -> ModosDeJuego.CLASICO_V2
         "All in" -> ModosDeJuego.ALL_IN
-        "Algebra" -> ModosDeJuego.ALGEBRA
-        "Rapid O" -> ModosDeJuego.RAPID_O
+        "Álgebra" -> ModosDeJuego.ALGEBRA
+        "RapidO" -> ModosDeJuego.RAPID_O
         "Memory" -> ModosDeJuego.MEMORY
         "MemoryX" -> ModosDeJuego.MEMORY_X
         "MemoryY" -> ModosDeJuego.MEMORY_Y

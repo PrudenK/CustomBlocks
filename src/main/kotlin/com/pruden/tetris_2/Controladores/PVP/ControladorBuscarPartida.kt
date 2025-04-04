@@ -13,6 +13,10 @@ import javafx.scene.control.Button
 import javafx.scene.layout.GridPane
 import javafx.scene.layout.Pane
 import javafx.stage.Stage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.net.URL
 import java.util.*
 
@@ -27,6 +31,15 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         cargarPartidas()
+
+        CoroutineScope(Dispatchers.IO).launch {
+            while (true){
+                delay(1500)
+                Platform.runLater {
+                    cargarPartidas()
+                }
+            }
+        }
     }
 
     @FXML fun volver(){

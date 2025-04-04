@@ -11,7 +11,7 @@
         <StackPane layoutX="7.0" layoutY="6.0" prefHeight="70.0" prefWidth="70.0">
             <ImageView fx:id="fotoPerfil" fitHeight="70.0" fitWidth="70.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
         </StackPane>
-        <Label fx:id="nombre" layoutX="223.0" layoutY="26.0" prefHeight="29.0" prefWidth="133.0" textFill="#a8a4a4">
+        <Label fx:id="nombre" layoutX="82.0" layoutY="26.0" prefHeight="29.0" prefWidth="133.0" textFill="#a8a4a4">
             <font>
                 <Font name="Liberation Mono Bold" size="20.0" />
             </font>
@@ -21,7 +21,7 @@
                 <Font name="Liberation Mono Bold" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="modoLabel" layoutX="82.0" layoutY="26.0" prefHeight="30.0" prefWidth="134.0" text="Clasico v32" textFill="#a8a4a4">
+        <Label fx:id="modoLabel" layoutX="223.0" layoutY="26.0" prefHeight="30.0" prefWidth="134.0" text="Clasico v32" textFill="#a8a4a4">
             <font>
                 <Font name="Liberation Mono Bold" size="20.0" />
             </font>
