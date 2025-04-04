@@ -32,17 +32,22 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
 
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        cargarPartidas()
+        println("✅ Inicializando controlador de buscar partida...")
 
-        jobRefrescar =  CoroutineScope(Dispatchers.IO).launch {
-            while (true){
+        cargarPartidas() // Primera carga
+
+        jobRefrescar = CoroutineScope(Dispatchers.IO).launch {
+            while (true) {
+                println("🔁 Job de refresco ejecutándose...")
                 delay(1500)
                 Platform.runLater {
+                    println("🔄 Recargando partidas desde job...")
                     cargarPartidas()
                 }
             }
         }
     }
+
 
     @FXML fun volver(){
         jobRefrescar?.cancel()
@@ -71,8 +76,10 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
     }
 
     override fun setStage(stage: Stage?) {
-        jobRefrescar?.cancel()
         stageBuscarPartida = stage!!
+        stageBuscarPartida.setOnCloseRequest {
+            jobRefrescar?.cancel()
+        }
     }
     override fun setBoton(b: Button?) {}
 
