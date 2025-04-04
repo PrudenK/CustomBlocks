@@ -17,11 +17,11 @@
          </font>
       </Label>
 
-      <Button layoutX="178.0" layoutY="63.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="32.0" prefWidth="120.0" text="Reiniciar" />
-      <Button layoutX="178.0" layoutY="116.0" mnemonicParsing="false" onAction="#partidasGuardadas" prefHeight="32.0" prefWidth="120.0" text="Guardados" />
+      <Button fx:id="reiniciar" layoutX="178.0" layoutY="63.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="32.0" prefWidth="120.0" text="Reiniciar" />
+      <Button fx:id="guardados" layoutX="178.0" layoutY="116.0" mnemonicParsing="false" onAction="#partidasGuardadas" prefHeight="32.0" prefWidth="120.0" text="Guardados" />
 
       <Button layoutX="27.0" layoutY="63.0" mnemonicParsing="false" onAction="#reanudar" prefHeight="32.0" prefWidth="120.0" text="Reanudar" />
-      <Button layoutX="27.0" layoutY="116.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="120.0" text="Guardar" />
+      <Button fx:id="guardar" layoutX="27.0" layoutY="116.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="120.0" text="Guardar" />
 
       <Label alignment="CENTER" layoutY="166.0" prefWidth="325.0" text="Perfil" textFill="#e9e8e8">
          <font>
@@ -29,8 +29,8 @@
          </font>
       </Label>
 
-      <Button layoutX="27.0" layoutY="219.0" mnemonicParsing="false" onAction="#perfil" prefHeight="32.0" prefWidth="120.0" text="Perfil" />
-      <Button layoutX="178.0" layoutY="219.0" mnemonicParsing="false" onAction="#rankings" prefHeight="32.0" prefWidth="120.0" text="Rankings" />
+      <Button fx:id="perfil" layoutX="27.0" layoutY="219.0" mnemonicParsing="false" onAction="#perfil" prefHeight="32.0" prefWidth="120.0" text="Perfil" />
+      <Button fx:id="rankings" layoutX="178.0" layoutY="219.0" mnemonicParsing="false" onAction="#rankings" prefHeight="32.0" prefWidth="120.0" text="Rankings" />
 
       <Label alignment="CENTER" layoutY="322.0" prefWidth="325.0" text="Otras opciones" textFill="#e9e8e8">
          <font>
@@ -40,8 +40,8 @@
 
       <Button fx:id="sonidoo_B" layoutX="27.0" layoutY="374.0" mnemonicParsing="false" onAction="#sonido" prefHeight="32.0" prefWidth="120.0" text="Sonido" />
       <Button layoutX="178.0" layoutY="374.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="120.0" text="Volver" />
-      <Button layoutX="27.0" layoutY="272.0" mnemonicParsing="false" onAction="#logros" prefHeight="32.0" prefWidth="120.0" text="Logros" />
-      <Button layoutX="178.0" layoutY="272.0" mnemonicParsing="false" onAction="#suscripciones" prefHeight="32.0" prefWidth="120.0" text="Suscripciones" />
+      <Button fx:id="logros" layoutX="27.0" layoutY="272.0" mnemonicParsing="false" onAction="#logros" prefHeight="32.0" prefWidth="120.0" text="Logros" />
+      <Button fx:id="suscripciones" layoutX="178.0" layoutY="272.0" mnemonicParsing="false" onAction="#suscripciones" prefHeight="32.0" prefWidth="120.0" text="Suscripciones" />
 
    </children>
 </Pane>
