@@ -110,6 +110,8 @@ fun comprbarPerder(){
             }
 
             subirDatosFinDePartida()
+        }else{
+            crearStage(Stages.PERDER)
         }
     }
 }
