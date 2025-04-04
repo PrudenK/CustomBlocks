@@ -13,6 +13,7 @@ import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
+import javafx.scene.control.Label
 import javafx.scene.layout.GridPane
 import javafx.scene.layout.Pane
 import javafx.stage.Stage
@@ -25,6 +26,7 @@ import java.util.*
 
 class ControladorBuscarPartida: ControladorGEN(), Initializable {
     @FXML lateinit var gridPartidas: GridPane
+    @FXML lateinit var noHayPartidas: Label
 
     companion object{
         lateinit var stageBuscarPartida: Stage
@@ -38,6 +40,10 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
         println("✅ Inicializando controlador de buscar partida...")
 
         cargarPartidas() // Primera carga
+
+        if(ultimaListaPartidas.isEmpty()) {
+            noHayPartidas.isVisible = true
+        }
 
         jobRefrescar = CoroutineScope(Dispatchers.IO).launch {
             while (true) {
@@ -68,15 +74,26 @@ class ControladorBuscarPartida: ControladorGEN(), Initializable {
                 if (jugadores != ultimaListaPartidas) {
                     ultimaListaPartidas = jugadores
 
-                    Platform.runLater {
-                        gridPartidas.children.clear()
-                        for ((fila, j) in jugadores.withIndex()) {
-                            val loader = FXMLLoader(javaClass.getResource("/com/pruden/tetris_2/Vistas/PVP/itemJugadorBuscarPartida.fxml"))
-                            val item = loader.load<Pane>()
-                            val controller = loader.getController<ControladorJugadorBuscarPartida>()
-                            controller.setPartidaJugador(j)
+                    if(ultimaListaPartidas.isEmpty()){
+                        noHayPartidas.isVisible  = true
 
-                            gridPartidas.add(item, 0, fila)
+                        Platform.runLater {
+                            gridPartidas.children.clear()
+                        }
+                    }else{
+                        noHayPartidas.isVisible = false
+
+
+                        Platform.runLater {
+                            gridPartidas.children.clear()
+                            for ((fila, j) in jugadores.withIndex()) {
+                                val loader = FXMLLoader(javaClass.getResource("/com/pruden/tetris_2/Vistas/PVP/itemJugadorBuscarPartida.fxml"))
+                                val item = loader.load<Pane>()
+                                val controller = loader.getController<ControladorJugadorBuscarPartida>()
+                                controller.setPartidaJugador(j)
+
+                                gridPartidas.add(item, 0, fila)
+                            }
                         }
                     }
                 }

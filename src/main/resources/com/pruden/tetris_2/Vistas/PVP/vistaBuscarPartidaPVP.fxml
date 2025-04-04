@@ -32,6 +32,11 @@
                <GridPane fx:id="gridPartidas" hgap="10" vgap="10" />
            </content>
        </ScrollPane>
+      <Label fx:id="noHayPartidas" alignment="CENTER" contentDisplay="CENTER" layoutY="165.0" prefHeight="33.0" prefWidth="560.0" text="¡Vaya no hay partidas todavía...!" textFill="#e9e8e8" visible="false">
+         <font>
+            <Font name="Liberation Mono Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 
 </Pane>
