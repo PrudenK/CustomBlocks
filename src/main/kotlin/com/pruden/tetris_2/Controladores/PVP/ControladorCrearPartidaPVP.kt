@@ -35,6 +35,7 @@ class ControladorCrearPartidaPVP: ControladorGEN(), Initializable {
 
     @FXML fun volver(){
         stageCrearPartidaPVP.close()
+        CrearPartidaEmisor.cancelarPartida(jugadorConTodo!!)
     }
 
     @FXML fun atras(){
@@ -62,6 +63,9 @@ class ControladorCrearPartidaPVP: ControladorGEN(), Initializable {
 
     override fun setStage(stage: Stage?) {
         stageCrearPartidaPVP = stage!!
+        stageCrearPartidaPVP.setOnCloseRequest {
+            CrearPartidaEmisor.cancelarPartida(jugadorConTodo!!)
+        }
     }
 
     override fun setBoton(b: Button?) {}

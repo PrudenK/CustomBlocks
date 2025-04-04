@@ -20,7 +20,7 @@ import java.util.concurrent.CompletionStage
 
 object CrearPartidaEmisor {
 
-    fun crearPartida(jugador: JugadorInicioSesion, modo: String) {
+    fun crearPartida(jugador: JugadorInicioSesion, modo: String, opcion: String = "Crear") {
         val client = HttpClient.newHttpClient()
         val uri = URI.create("${ConstantesServidor.PATH_SERVER}${ConstantesServidor.CREAR_PARTIDA}/${jugador.id}")
 
@@ -29,6 +29,7 @@ object CrearPartidaEmisor {
             override fun onOpen(webSocket: WebSocket) {
                 val json = JSONObject()
                     .put("modo", modo)
+                    .put("opcion", opcion)
                     .put("nombre", jugador.nombre)
                     .put("nivel", jugador.nivel)
                     .put("foto", jugador.imagen)
@@ -83,5 +84,13 @@ object CrearPartidaEmisor {
             }
 
         })
+    }
+
+    fun cancelarPartida(jugador: JugadorInicioSesion) {
+        try {
+            crearPartida(jugador, "Clásico", "cancelar")
+        } catch (e: Exception) {
+            println("⚠️ No se pudo cancelar: ${e.message}")
+        }
     }
 }
