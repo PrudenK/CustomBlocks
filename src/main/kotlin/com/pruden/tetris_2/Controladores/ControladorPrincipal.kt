@@ -231,24 +231,25 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun sesion(){
-        cerrarSesionApi()
-        cerrarSesion()
+        if(partidaPVPenCurso){
+            dialogoAbandonarPartidaPVP("Si sales abandonarás la partida") {
+                cerrarSesionApi()
+                cerrarSesion()
+            }
+        }else{
+            cerrarSesionApi()
+            cerrarSesion()
+        }
     }
 
     @FXML fun partdiaNueva() {
         if(nuevaPartidaB.text == "Abandonar partida"){
-            mostrarDialogoConAccion("¿Quieres abandonar la partida?",
-                onConfirmar = {
-                    PartidaEnCursoEmisor.mensajeEstandar("rivalAbandona")
-
-
-
-                    cambairUIaPVP(false)
-                    timelinePartida.stop()
-                    partidaEnCurso =false
-                    cronometro.parar()
-                }
-            )
+            dialogoAbandonarPartidaPVP("¿Quieres abandonar la partida?") {
+                cambairUIaPVP(false)
+                timelinePartida.stop()
+                partidaEnCurso =false
+                cronometro.parar()
+            }
         }else{
             reiniciarPartida()
             if(jugarOnline){
@@ -318,9 +319,17 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun salir() {
-        cerrarSesionApi()
-        Platform.exit()
-        exitProcess(0)
+        if(partidaPVPenCurso){
+            dialogoAbandonarPartidaPVP("Si sales abandonarás la partida") {
+                cerrarSesionApi()
+                Platform.exit()
+                exitProcess(0)
+            }
+        }else{
+            cerrarSesionApi()
+            Platform.exit()
+            exitProcess(0)
+        }
     }
 
     @FXML fun abrirPublicidad(){
@@ -341,7 +350,15 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun salirPVP(){
-
         cambairUIaPVP(!partidaPVPenCurso)
+    }
+
+    private fun dialogoAbandonarPartidaPVP(mensaje: String ,accion: (() -> Unit) ){
+        mostrarDialogoConAccion(mensaje,
+            onConfirmar = {
+                PartidaEnCursoEmisor.mensajeEstandar("rivalAbandona")
+                accion.invoke()
+            }
+        )
     }
 }
