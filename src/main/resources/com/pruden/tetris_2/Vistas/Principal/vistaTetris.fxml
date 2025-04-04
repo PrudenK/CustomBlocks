@@ -67,7 +67,7 @@
       </Pane>
         
     </StackPane>
-   <Button fx:id="nuevaPartidaB" layoutX="351.0" layoutY="790.0" mnemonicParsing="false" onAction="#partdiaNueva" prefHeight="32.0" prefWidth="138.0" text="Nueva partida" />
+   <Button fx:id="nuevaPartidaB" layoutX="339.0" layoutY="790.0" mnemonicParsing="false" onAction="#partdiaNueva" prefHeight="32.0" prefWidth="165.0" text="Nueva partida" />
    <Button layoutX="600.0" layoutY="60.0" mnemonicParsing="false" onAction="#borrar" prefHeight="32.0" prefWidth="35.0" text="P" />
    <Pane fx:id="paneSinglePlayer" layoutX="27.0" layoutY="469.0" prefHeight="174.0" prefWidth="160.0" style="-fx-background-color: #A9A9A9;">
       <children>
@@ -135,7 +135,7 @@
          <Font name="Liberation Mono Bold" size="18.0" />
       </font>
    </Label>
-   <Button layoutX="39.0" layoutY="737.0" mnemonicParsing="false" onAction="#modosDeJuego" prefHeight="32.0" prefWidth="138.0" text="Modos de juego" />
+   <Button fx:id="modos" layoutX="39.0" layoutY="737.0" mnemonicParsing="false" onAction="#modosDeJuego" prefHeight="32.0" prefWidth="138.0" text="Modos de juego" />
    <Label fx:id="labelModoEstatico" layoutX="27.0" layoutY="322.0" text="Modo:" textFill="#e9e8e8">
       <font>
          <Font name="Liberation Mono Bold" size="18.0" />
@@ -151,7 +151,7 @@
          <Font name="Liberation Mono" size="14.0" />
       </font></Label>
    <Button fx:id="clan" layoutX="42.0" layoutY="26.0" mnemonicParsing="false" onAction="#clan" prefHeight="32.0" prefWidth="138.0" text="Clan" />
-   <Button layoutX="39.0" layoutY="76.0" mnemonicParsing="false" onAction="#abrirMenuPVP" prefWidth="138.0" text="PVP" />
+   <Button fx:id="pvp" layoutX="39.0" layoutY="76.0" mnemonicParsing="false" onAction="#abrirMenuPVP" prefWidth="138.0" text="PVP" />
    <Pane fx:id="panePVP" layoutX="27.0" layoutY="469.0" prefHeight="209.0" prefWidth="160.0" style="-fx-background-color: #A9A9A9;" visible="false">
       <children>
          <Label alignment="CENTER" layoutY="71.0" prefHeight="25.0" prefWidth="160.0" text="Puntuación" textFill="#1b1919">
@@ -236,4 +236,5 @@
          <Font name="Liberation Mono Bold" size="16.0" />
       </font>
    </Label>
+   <Button layoutX="218.0" layoutY="799.0" mnemonicParsing="false" onAction="#salirPVP" text="SalirPVP" />
 </Pane>

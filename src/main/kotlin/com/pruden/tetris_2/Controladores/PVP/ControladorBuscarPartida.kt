@@ -1,13 +1,9 @@
 package com.pruden.tetris_2.Controladores.PVP
 
-import com.pruden.tetris_2.Controladores.Clan.ControladorJugadorClan
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.WebSocket.BuscarPartida.BuscarPartidaEmisor
 import com.pruden.tetris_2.WebSocket.BuscarPartida.JugadorConModo
-import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader

@@ -27,14 +27,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
-    cPrin.panePVP.isVisible = true
-    cPrin.paneSinglePlayer.isVisible = false
-    ControladorPrincipal.partidaPVPenCurso = true
-
-
-
-
-
+    cambairUIaPVP(true)
 
     val idJugadorPropio = jugadorConTodo!!.id
     idRivalPVP = if (idJugadorPropio == datosPartidaPVP.creador.id) datosPartidaPVP.buscador.id else datosPartidaPVP.creador.id
@@ -117,9 +110,6 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
             }
         }
     }
-
-
-
 
 
     cPrin.puntuacionHostNombre.text = datosPartidaPVP.creador.nombre+":"

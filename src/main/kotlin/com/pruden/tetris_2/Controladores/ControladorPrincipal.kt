@@ -6,10 +6,12 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
+import com.pruden.tetris_2.Controladores.PVP.cambairUIaPVP
 import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
+import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
@@ -60,8 +62,15 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var cronometroLabel: Label
     @FXML lateinit var labelModo: Label
     @FXML lateinit var mundoNivel: Label
+
+
     @FXML lateinit var nuevaPartidaB: Button
     @FXML lateinit var sesionB: Button
+    @FXML lateinit var clan: Button
+    @FXML lateinit var pvp: Button
+    @FXML lateinit var modos: Button
+    @FXML lateinit var custom_B: Button
+
 
 
     @FXML lateinit var nivelMarcoNivelTit: Label
@@ -311,5 +320,10 @@ class ControladorPrincipal : Initializable {
         if(jugarOnline){
             if (!animacionEnCurso) crearStage(Stages.MENU_PVP)
         }
+    }
+
+    @FXML fun salirPVP(){
+
+        cambairUIaPVP(!partidaPVPenCurso)
     }
 }
