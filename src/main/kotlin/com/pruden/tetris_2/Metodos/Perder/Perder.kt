@@ -17,10 +17,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNu
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
-import com.pruden.tetris_2.Controladores.PVP.ControladorTerminarPartidaPVP
-import com.pruden.tetris_2.Controladores.PVP.Resultado
-import com.pruden.tetris_2.Controladores.PVP.actualizarEstadoPVP
-import com.pruden.tetris_2.Controladores.PVP.compararJugadoresDesdeUI
+import com.pruden.tetris_2.Controladores.PVP.*
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.perderNivelModoCampa
@@ -58,6 +55,7 @@ fun comprbarPerder(){
                     println("rESULTADO -> ${compararJugadoresDesdeUI().toString()}" )
                     when (compararJugadoresDesdeUI()) {
                         Resultado.GANA_EL_OTRO -> {
+                            reiniciarValoresPVPaUI()
                             mostarDialogo = false
                             PartidaEnCursoEmisor.mensajeEstandar("hasGanado")
                             ControladorTerminarPartidaPVP.resultado = "Pierdes"
@@ -71,14 +69,25 @@ fun comprbarPerder(){
                                     ControladorTerminarPartidaPVP.resultado = "Ganas"
                                     crearStage(Stages.TERMIANR_PARTIDA_PVP)
                                 }else{
-                                    mostrarDialogoConAccion("Vas ganando... \nEsperando resultado final")
+                                    mostrarDialogoConAccion("Vas ganando... \nEsperando resultado final",
+                                        aceptarBtnNombre = "Esperar",
+                                        cancelBtnNombre = "Salir",
+                                        onConfirmar = {
+                                            // Todo añadir botón salir
+                                        },
+                                        onCancelar = {
+                                            reiniciarValoresPVPaUI()
+                                        }
+                                    )
                                 }
                             }else{
+                                reiniciarValoresPVPaUI()
                                 ControladorTerminarPartidaPVP.resultado = "Ganas"
                                 crearStage(Stages.TERMIANR_PARTIDA_PVP)
                             }
                         }
                         Resultado.EMPATE -> {
+                            reiniciarValoresPVPaUI()
                             mostarDialogo = false
                             PartidaEnCursoEmisor.mensajeEstandar("empate")
                             ControladorTerminarPartidaPVP.resultado = "Empate"
@@ -100,7 +109,7 @@ fun comprbarPerder(){
 
 
                 }else{
-
+                    crearStage(Stages.PERDER)
                 }
 
                 if(mostarDialogo){

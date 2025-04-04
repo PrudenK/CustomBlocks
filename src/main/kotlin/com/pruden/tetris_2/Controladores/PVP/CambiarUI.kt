@@ -2,8 +2,18 @@ package com.pruden.tetris_2.Controladores.PVP
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
 import javafx.application.Platform
+
+fun reiniciarValoresPVPaUI(){
+    timelinePartida.stop()
+    partidaEnCurso = false
+    cambairUIaPVP(false)
+    cronometro.parar()
+}
 
 fun cambairUIaPVP(pvp : Boolean){
     cPrin.pvp.isDisable = pvp
@@ -25,6 +35,6 @@ fun cambairUIaPVP(pvp : Boolean){
 
     Platform.runLater {
         cargarObervableNivel()
+        cPrin.mensajeRivalNivel.isVisible = false
     }
-
 }

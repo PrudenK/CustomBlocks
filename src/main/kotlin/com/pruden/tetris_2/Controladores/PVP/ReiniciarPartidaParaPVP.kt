@@ -105,7 +105,7 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                                 }
                                 else -> {}
                             }
-
+                            reiniciarValoresPVPaUI()
                             crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
                     }
@@ -115,25 +115,17 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
             "hasGanado"->{
                 actualizarEstadoPVP()
                 ControladorTerminarPartidaPVP.resultado = "Ganas"
+                reiniciarValoresPVPaUI()
                 crearStage(Stages.TERMIANR_PARTIDA_PVP)
             }
             "empate"->{
                 ControladorTerminarPartidaPVP.resultado = "Empate"
+                reiniciarValoresPVPaUI()
                 crearStage(Stages.TERMIANR_PARTIDA_PVP)
-            }
-            "quitar dialogo"->{
-
             }
             "rivalAbandona"->{
                 ControladorTerminarPartidaPVP.resultado = "Abandono"
-
-                //Cambios en la UI
-                timelinePartida.stop()
-                partidaEnCurso = false
-                cambairUIaPVP(false)
-                cronometro.parar()
-
-
+                reiniciarValoresPVPaUI()
                 crearStage(Stages.TERMIANR_PARTIDA_PVP)
             }
         }

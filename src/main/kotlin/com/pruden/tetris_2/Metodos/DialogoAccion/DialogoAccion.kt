@@ -16,6 +16,8 @@ var dialogoAccionesActual: Stage? = null
 
 fun mostrarDialogoConAccion(
     mensaje: String,
+    cancelBtnNombre: String = "Cancelar",
+    aceptarBtnNombre: String = "Aceptar",
     onConfirmar: (() -> Unit)? = null,
     onCancelar: (() -> Unit)? = null
 ) {
@@ -49,6 +51,8 @@ fun mostrarDialogoConAccion(
         dialogStage.y = y
     }
 
+    controller.btnCancelar.text = cancelBtnNombre
+    controller.btnAceptar.text = aceptarBtnNombre
 
     dialogStage.scene = Scene(root)
     dialogStage.isResizable = false
