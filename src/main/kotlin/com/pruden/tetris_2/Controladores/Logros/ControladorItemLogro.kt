@@ -5,15 +5,19 @@ import com.pruden.tetris_2.API.ObjsAux.LogroJugador
 import com.pruden.tetris_2.Constantes.Globales
 import javafx.fxml.FXML
 import javafx.scene.control.Label
+import javafx.scene.control.Tooltip
 import javafx.scene.effect.ColorAdjust
 import javafx.scene.effect.GaussianBlur
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
+import javafx.scene.layout.Pane
+import javafx.util.Duration
 
 class ControladorItemLogro {
     @FXML lateinit var cadenaLogro: ImageView
     @FXML lateinit var iconoLogro: ImageView
     @FXML lateinit var tituloLogro: Label
+    @FXML lateinit var pane: Pane
 
     fun setDataLogroJugador(logro: LogroJugador) {
         with(logro){
@@ -33,6 +37,13 @@ class ControladorItemLogro {
 
                 iconoLogro.effect = grayscale
             }
+
+            val tooltip = Tooltip(descripcion).apply {
+                showDelay = Duration.millis(350.0)
+                style = "-fx-font-size: 14px; -fx-background-color: #333; -fx-text-fill: white;"
+            }
+
+            Tooltip.install(pane, tooltip)
         }
     }
 }
