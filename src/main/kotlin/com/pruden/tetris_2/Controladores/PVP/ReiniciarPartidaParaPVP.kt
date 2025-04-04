@@ -13,6 +13,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaAct
 import com.pruden.tetris_2.Metodos.BolsaPiezas.copiaEnPVP
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
+import com.pruden.tetris_2.Metodos.DialogoAccion.dialogoAccionesActual
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
 import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -20,6 +21,10 @@ import com.pruden.tetris_2.Piezas.*
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 import javafx.application.Platform
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
     cPrin.panePVP.isVisible = true
@@ -58,6 +63,38 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                 actualizarEstadoPVP()
                 elRivarHaPerdido = true
                 mostrarMensajeConAnimacion("¡${rival.nombre} ha perdido!", cPrin.mensajeRivalNivel)
+
+                if (ControladorPrincipal.esperarResolucionPVP) {
+                    val resultado = compararJugadoresDesdeUI()
+                    ControladorPrincipal.esperarResolucionPVP = false
+
+                    Platform.runLater {
+                        dialogoAccionesActual?.let {
+                            if (it.isShowing) {
+                                it.close()
+                                println("✅ Diálogo cerrado antes de mostrar resultado")
+                            }
+                            dialogoAccionesActual = null
+                        }
+                    }
+
+
+
+                    when (resultado) {
+                        Resultado.GANA_EL_JUGADOR -> {
+                            ControladorTerminarPartidaPVP.resultado = "Ganas"
+                        }
+                        Resultado.GANA_EL_OTRO -> {
+                            ControladorTerminarPartidaPVP.resultado = "Pierdes"
+                        }
+                        Resultado.EMPATE -> {
+                            ControladorTerminarPartidaPVP.resultado = "Empate"
+                        }
+                        else -> {}
+                    }
+
+                    crearStage(Stages.TERMIANR_PARTIDA_PVP)
+                }
             }
             "hasGanado"->{
                 actualizarEstadoPVP()
@@ -67,6 +104,9 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
             "empate"->{
                 ControladorTerminarPartidaPVP.resultado = "Empate"
                 crearStage(Stages.TERMIANR_PARTIDA_PVP)
+            }
+            "quitar dialogo"->{
+
             }
         }
     }

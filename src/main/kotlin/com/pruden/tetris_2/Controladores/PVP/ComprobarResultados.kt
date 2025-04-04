@@ -3,7 +3,8 @@ package com.pruden.tetris_2.Controladores.PVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 
-fun compararJugadoresDesdeUI(): Resultado {
+fun     // Limpieza después de cerrarse
+compararJugadoresDesdeUI(): Resultado {
     val nivelPropio: Int
     val lineasPropias: Int
     val puntosPropios: Int

@@ -41,7 +41,6 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
         var resultado = ""
     }
 
-
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         when(resultado){
             "Ganas" ->{
@@ -77,7 +76,10 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
     }
 
     @FXML fun volver(){
-        stageTerminarPartidaPVP.close()
+        Platform.runLater {
+            val c = nombreVisi.scene.window as Stage
+            c.close()
+        }// lo pongo así pq a veces no funciona de la manera clásica
     }
 
     @FXML fun revancha(){
@@ -86,6 +88,7 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
 
 
     override fun setStage(stage: Stage?) {
+        println(12343143141341341)
         stageTerminarPartidaPVP = stage!!
     }
 

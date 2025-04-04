@@ -9,6 +9,7 @@ import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.esperarResolucionPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
@@ -20,6 +21,7 @@ import com.pruden.tetris_2.Controladores.PVP.ControladorTerminarPartidaPVP
 import com.pruden.tetris_2.Controladores.PVP.Resultado
 import com.pruden.tetris_2.Controladores.PVP.actualizarEstadoPVP
 import com.pruden.tetris_2.Controladores.PVP.compararJugadoresDesdeUI
+import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.perderNivelModoCampa
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
@@ -62,7 +64,19 @@ fun comprbarPerder(){
                             crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
                         Resultado.GANA_EL_JUGADOR -> {
-                            //marcarComoEsperandoResultado() // ← define esta función como bandera
+                            if(!esperarResolucionPVP){
+                                mostarDialogo = false
+                                esperarResolucionPVP = true
+                                if(ControladorPrincipal.elRivarHaPerdido){
+                                    ControladorTerminarPartidaPVP.resultado = "Ganas"
+                                    crearStage(Stages.TERMIANR_PARTIDA_PVP)
+                                }else{
+                                    mostrarDialogoConAccion("Vas ganando... \nEsperando resultado final")
+                                }
+                            }else{
+                                ControladorTerminarPartidaPVP.resultado = "Ganas"
+                                crearStage(Stages.TERMIANR_PARTIDA_PVP)
+                            }
                         }
                         Resultado.EMPATE -> {
                             mostarDialogo = false
@@ -70,9 +84,7 @@ fun comprbarPerder(){
                             ControladorTerminarPartidaPVP.resultado = "Empate"
                             crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
-                        Resultado.INDEFINIDO -> {
-                            // Nada que hacer aún
-                        }
+                        Resultado.INDEFINIDO -> {}
                     }
 
 
