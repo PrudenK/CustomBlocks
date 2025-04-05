@@ -5,15 +5,12 @@ import com.pruden.tetris_2.API.ObjsAux.*
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Constantes.Stages
-import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.listaPiezasSeleccionadas
 import com.pruden.tetris_2.Controladores.PVP.cambairUIaPVP
-import com.pruden.tetris_2.Controladores.PVP.mostrarMensajeConAnimacion
 import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion
 import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
-import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
@@ -30,7 +27,6 @@ import javafx.beans.property.IntegerProperty
 import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.value.ChangeListener
-import javafx.beans.value.ObservableValue
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.canvas.Canvas
@@ -227,7 +223,7 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun modosDeJuego() {
-        if(!animacionEnCurso) crearStage(Stages.MODOS_DE_JUEGO)
+        if(!animacionEnCurso) crearStage(Stages.MENU_MODOS_DE_JUEGO)
     }
 
     @FXML fun sesion(){

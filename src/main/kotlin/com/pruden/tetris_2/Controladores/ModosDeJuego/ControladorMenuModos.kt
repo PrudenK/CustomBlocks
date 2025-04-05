@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Controladores.ModosDeJuego
 
 import com.pruden.tetris_2.Constantes.Globales
+import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
@@ -46,19 +47,21 @@ class ControladorMenuModos: ControladorGEN(), Initializable {
     private var indiceModo = 0
 
     private val listaNombres = listOf(
-        "Modos oficiales", "Modo campaña", "Tus modos"
+        "Modos oficiales", "Modo campaña", "Tus modos", "Modo 1vs1"
     )
 
     private val imagenesModos = listOf(
         deRutaAImagen("/Imagenes/ModosDeJuego/ModosOficialesMenu.jpg"),
         deRutaAImagen("/Imagenes/ModosDeJuego/ModoCampaMenu.jpg"),
         deRutaAImagen("/Imagenes/ModosDeJuego/TusModosMenu.jpg"),
+        deRutaAImagen("/Imagenes/ModosDeJuego/modoPVP.jpg"),
     )
 
     private val stagesModos = listOf(
-        ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modos_Juego.fxml", cPrin.nuevaPartidaB, 355.0, 544.0, timelinePartida, 0, 0),
-        ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Menu_Mundos.fxml", cPrin.nuevaPartidaB, 711.0, 809.0, timelinePartida, 0, 0),
-        ClaseStage("Vistas/ModosDeJuego/TusModos/vistaTusModos.fxml", cPrin.nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0),
+        Stages.MODOS_DE_JUEGO_OFICIALES,
+        Stages.MODO_CAMPA_MENU_MODOS,
+        Stages.MENU_TUS_MODOS_DE_JUEGO,
+        Stages.MENU_PVP
     )
 
 
@@ -95,9 +98,9 @@ class ControladorMenuModos: ControladorGEN(), Initializable {
             0-> {
                 crearStage(stagesModos[0])
             }
-            1->{
+            1, 3->{
                 if(jugarOnline){
-                    crearStage(stagesModos[1])
+                    crearStage(stagesModos[indiceModo])
                 }else{
                     mostrarErrorTemporal("¡Tines que jugar online!")
                 }
@@ -124,7 +127,7 @@ class ControladorMenuModos: ControladorGEN(), Initializable {
                 imgCadena.image = null
                 imgModos.effect = null
             }
-            1->{
+            1, 3->{
                 if(!jugarOnline){
                     imgCadena.image = Globales.CADENA
                     imgModos.effect = grayscale

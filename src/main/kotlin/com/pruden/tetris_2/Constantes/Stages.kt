@@ -9,7 +9,7 @@ object Stages {
     val SONIDO = ClaseStage("Vistas/Otras/vistaSonido.fxml", cPrin.nuevaPartidaB, 243.0, 264.0, null, 0, 0)
 
     val CUSTOM_OPCIONES = ClaseStage("Vistas/Custom/vista_Custom_Opciones.fxml", cPrin.nuevaPartidaB, 315.0,382.0, timelinePartida, 0, -60)
-    val MODOS_DE_JUEGO = ClaseStage("Vistas/ModosDeJuego/vistaMenuModos.fxml", cPrin.nuevaPartidaB, 355.0, 436.0, timelinePartida, 0, 0)
+    val MENU_MODOS_DE_JUEGO = ClaseStage("Vistas/ModosDeJuego/vistaMenuModos.fxml", cPrin.nuevaPartidaB, 355.0, 436.0, timelinePartida, 0, 0)
     val SUSCRIPCIONES = ClaseStage("Vistas/Suscripciones/vistaSuscripciones.fxml", cPrin.nuevaPartidaB, 383.0, 416.0, timelinePartida, 0, 0)
     val LOGROS = ClaseStage("Vistas/Logros/vistaLogros.fxml", cPrin.nuevaPartidaB, 676.0, 727.0, timelinePartida, 0, 0)
     val PARTIDAS_GUARDADAS = ClaseStage("Vistas/Partidas/vistaPartidasGuardadas.fxml", cPrin.nuevaPartidaB, 610.0, 420.0, timelinePartida, 0, -60)
@@ -46,6 +46,9 @@ object Stages {
     val BUSCAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaBuscarPartidaPVP.fxml", cPrin.nuevaPartidaB, 560.0, 445.0, null, 0, 0)
     val TERMIANR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaTerminarPartidaPVP.fxml", cPrin.nuevaPartidaB, 463.0, 243.0, null, 0, 0)
 
+    val MODOS_DE_JUEGO_OFICIALES = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modos_Juego.fxml", cPrin.nuevaPartidaB, 355.0, 544.0, timelinePartida, 0, 0)
+    val MODO_CAMPA_MENU_MODOS = ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Menu_Mundos.fxml", cPrin.nuevaPartidaB, 711.0, 809.0, timelinePartida, 0, 0)
+    val MENU_TUS_MODOS_DE_JUEGO = ClaseStage("Vistas/ModosDeJuego/TusModos/vistaTusModos.fxml", cPrin.nuevaPartidaB, 355.0, 391.0, timelinePartida, 0, 0)
 
     val STAGE_MODO_CLASICO = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Clasico.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
     val STAGE_MODO_CLASICO_V2 = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_ClasicoV2.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
