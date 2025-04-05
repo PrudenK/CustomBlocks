@@ -28,7 +28,7 @@
             <Font name="Liberation Mono Bold" size="18.0" />
          </font>
       </Text>
-      <ImageView fx:id="imgCadena" fitHeight="250.0" fitWidth="250.0" layoutX="51.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgCadena" fitHeight="250.0" fitWidth="250.0" layoutX="51.0" layoutY="65.0" onMouseClicked="#entrar" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="mensajeError" alignment="CENTER" contentDisplay="CENTER" layoutY="52.0" prefHeight="33.0" prefWidth="355.0" textFill="#f88b8b">
          <font>
             <Font name="Liberation Mono Bold" size="18.0" />
