@@ -122,9 +122,9 @@ class ControladorClan: ControladorGEN(), Initializable {
     @FXML
     fun accionClan(){
         if(btnClan.text == "Abandonar") {
-            var mensaje = "¿Seguro que quieres abandonar el clan?"
+            var mensaje = "¿Seguro qué quieres abandonar el clan?"
             if(clanDelStage.idlider == jugadorConTodo!!.id){
-                mensaje = "Eres el lider del Clan, ¿quieres abandonarlo?"
+                mensaje = "Eres el lider del Clan, ¿quiéres abandonarlo?"
             }
 
             mostrarDialogoConAccion(
@@ -159,9 +159,9 @@ class ControladorClan: ControladorGEN(), Initializable {
                     completarLogro(Logros.VIDA_SOCIAL)
                 }
             }else{
-                var mensaje =  "Eres lider de un Clan, ¿quieres cambiarte?"
+                var mensaje =  "Eres lider de un Clan, ¿quiéres cambiarte?"
                 if(jugadorConTodo!!.clan!!.idlider != jugadorConTodo!!.id){
-                    mensaje = "Ya perteneces a un Clan, ¿quieres cambiarte?"
+                    mensaje = "Ya perteneces a un Clan, ¿quiéres cambiarte?"
                 }
 
                 mostrarDialogoConAccion(

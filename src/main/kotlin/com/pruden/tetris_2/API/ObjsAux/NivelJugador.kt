@@ -8,4 +8,8 @@ data class NivelJugador(
     val mejorTiempo: String?,
     val mejorPuntuacion: Int?,
     val numIntentos: Int?
-)
+){
+    fun getStats():String{
+        return "Mejor tiempo: ${mejorTiempo!!.replace("/", "")}\nMejor puntuación: $mejorPuntuacion\nNúmero de intentos: $numIntentos"
+    }
+}

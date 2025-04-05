@@ -9,9 +9,11 @@ import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.Label
+import javafx.scene.control.Tooltip
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.stage.Stage
+import javafx.util.Duration
 import java.net.URL
 import java.util.*
 
@@ -28,6 +30,17 @@ class ControladorMundos : ControladorGEN(), Initializable {
     @FXML lateinit var nivel7 : ImageView
     @FXML lateinit var nivel8 : ImageView
     @FXML lateinit var nivel9 : ImageView
+
+
+    @FXML lateinit var cadenaNivel1 : ImageView
+    @FXML lateinit var cadenaNivel2 : ImageView
+    @FXML lateinit var cadenaNivel3 : ImageView
+    @FXML lateinit var cadenaNivel4 : ImageView
+    @FXML lateinit var cadenaNivel5 : ImageView
+    @FXML lateinit var cadenaNivel6 : ImageView
+    @FXML lateinit var cadenaNivel7 : ImageView
+    @FXML lateinit var cadenaNivel8 : ImageView
+    @FXML lateinit var cadenaNivel9 : ImageView
 
     @FXML lateinit var labelNumMundo: Label
 
@@ -62,11 +75,23 @@ class ControladorMundos : ControladorGEN(), Initializable {
 
         Platform.runLater {
             val listaImageView = listOf(nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9)
+            val listaImageViewCadena = listOf(cadenaNivel1, cadenaNivel2, cadenaNivel3, cadenaNivel4, cadenaNivel5,
+                cadenaNivel6, cadenaNivel7, cadenaNivel8, cadenaNivel9)
 
             val listaNivelesAux = jugadorConTodo!!.listaNiveles.filter { it.mundo.idMundo == mundoActual+1 }
+            val listaNivelesJugadorAux = jugadorConTodo!!.listaNivelesJugador.filter { it.idMundo == mundoActual+1 }
 
             for (i in listaNivelesAux.indices){
                 listaImageView[i].image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${listaNivelesAux[i].imagen}")
+                if(listaNivelesJugadorAux[i].completado){
+                    val tooltip = Tooltip(listaNivelesJugadorAux[i].getStats()).apply {
+                        showDelay = Duration.millis(350.0)
+                        style = "-fx-font-size: 14px; -fx-background-color: #333; -fx-text-fill: white;"
+                    }
+
+                    Tooltip.install(listaImageViewCadena[i], tooltip)
+                }
+
             }
         }
     }
