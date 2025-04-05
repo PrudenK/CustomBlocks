@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Controladores.PVP
+package com.pruden.tetris_2.Controladores.ModosDeJuego.PVP
 
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN

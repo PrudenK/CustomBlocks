@@ -15,7 +15,7 @@ import com.pruden.tetris_2.Controladores.ModosDeJuego.Modos.ControladorModosJueg
 import com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos.ControladorTusModos
 import com.pruden.tetris_2.Controladores.Opciones.ControladorOpciones
 import com.pruden.tetris_2.Controladores.Otros.ControladorPerder
-import com.pruden.tetris_2.Controladores.PVP.ControladorTerminarPartidaPVP
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorTerminarPartidaPVP
 import com.pruden.tetris_2.Controladores.Partidas.ControladorPartidas
 import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil
 import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings

@@ -1,25 +1,21 @@
-package com.pruden.tetris_2.Controladores.PVP
+package com.pruden.tetris_2.Metodos.ModosDeJuego.PVP
 
 import com.pruden.tetris_2.Constantes.Globales
-import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Constantes.ModosDeJuego
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.elRivarHaPerdido
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorTerminarPartidaPVP
 import com.pruden.tetris_2.Metodos.BolsaPiezas.copiaEnPVP
 import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DialogoAccion.dialogoAccionesActual
 import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarPartida
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarCambiosModo
-import com.pruden.tetris_2.Metodos.Observables.cargarObervableNivel
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Piezas.*
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP

@@ -5,7 +5,7 @@ import com.pruden.tetris_2.API.ObjsAux.*
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Constantes.Stages
-import com.pruden.tetris_2.Controladores.PVP.cambairUIaPVP
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.cambairUIaPVP
 import com.pruden.tetris_2.Metodos.Comprobaciones.Login.cerrarSesionApi
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cargarTodoInit
 import com.pruden.tetris_2.Metodos.ControladorPrincipal.cerrarSesion

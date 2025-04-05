@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Controladores.PVP
+package com.pruden.tetris_2.Metodos.ModosDeJuego.PVP
 
 import javafx.animation.FadeTransition
 import javafx.application.Platform

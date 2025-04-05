@@ -3,11 +3,9 @@ package com.pruden.tetris_2.WebSocket.CrearPartida
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.ObjsAux.JugadorInicioSesion
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos.Companion.cMenuModos
-import com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida.Companion.stageBuscarPartida
-import com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
-import com.pruden.tetris_2.Controladores.PVP.ControladorMenuPVP.Companion.stageMenuPVP
-import com.pruden.tetris_2.Controladores.PVP.reiniciarPartidaParaPVP
-import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarPartida
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorMenuPVP.Companion.stageMenuPVP
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.reiniciarPartidaParaPVP
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
 import javafx.application.Platform

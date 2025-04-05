@@ -18,11 +18,14 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNu
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.nivelEnJuego
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
-import com.pruden.tetris_2.Controladores.PVP.*
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.*
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.perderNivelModoCampa
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.Resultado
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.actualizarEstadoPVP
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.compararJugadoresDesdeUI
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.reiniciarValoresPVPaUI
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelPerdido
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor

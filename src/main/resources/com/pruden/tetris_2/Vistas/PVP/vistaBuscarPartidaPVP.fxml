@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="445.0" prefWidth="560.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida">
+<Pane prefHeight="445.0" prefWidth="560.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorBuscarPartida">
     <stylesheets>
         <URL value="@../../styles/general.css" />
     </stylesheets>

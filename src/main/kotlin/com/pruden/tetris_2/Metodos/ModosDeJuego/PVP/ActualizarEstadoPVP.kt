@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.Controladores.PVP
+package com.pruden.tetris_2.Metodos.ModosDeJuego.PVP
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.eresHostPVP

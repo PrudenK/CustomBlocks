@@ -5,13 +5,12 @@ import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.eresHostPVP
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
-import com.pruden.tetris_2.Controladores.PVP.ControladorTerminarPartidaPVP
-import com.pruden.tetris_2.Controladores.PVP.Resultado
-import com.pruden.tetris_2.Controladores.PVP.actualizarEstadoPVP
-import com.pruden.tetris_2.Controladores.PVP.compararJugadoresDesdeUI
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorTerminarPartidaPVP
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.Resultado
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.actualizarEstadoPVP
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.compararJugadoresDesdeUI
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor

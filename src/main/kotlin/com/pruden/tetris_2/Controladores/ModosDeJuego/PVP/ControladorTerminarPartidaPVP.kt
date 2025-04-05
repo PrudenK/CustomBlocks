@@ -1,7 +1,6 @@
-package com.pruden.tetris_2.Controladores.PVP
+package com.pruden.tetris_2.Controladores.ModosDeJuego.PVP
 
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import javafx.application.Platform

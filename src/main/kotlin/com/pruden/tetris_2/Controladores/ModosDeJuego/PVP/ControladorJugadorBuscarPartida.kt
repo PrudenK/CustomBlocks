@@ -1,15 +1,14 @@
-package com.pruden.tetris_2.Controladores.PVP
+package com.pruden.tetris_2.Controladores.ModosDeJuego.PVP
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos.Companion.cMenuModos
-import com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida.Companion.stageBuscarPartida
-import com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
-import com.pruden.tetris_2.Controladores.PVP.ControladorMenuPVP.Companion.stageMenuPVP
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorBuscarPartida.Companion.stageBuscarPartida
+import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorMenuPVP.Companion.stageMenuPVP
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
-import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarPartida
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.reiniciarPartidaParaPVP
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
 import com.pruden.tetris_2.WebSocket.BuscarPartida.JugadorConModo
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
