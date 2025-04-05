@@ -262,56 +262,6 @@ class ControladorPrincipal : Initializable {
         println(ApiPublicidad.anuncios)
         println(tiempoCaidaPieza)
         println(idNivelActual)
-
-        //lineasHostLabel.text = "9"
-/*
-
-        println(listaPiezasSeleccionadas)
-
-
-        println(jugadorConTodo)
-        println(jugadorConTodo!!.clan)
-        println(jugadorConTodo!!.listaLogros)
-        println(jugadorConTodo!!.numeroPartidasClasicas)
-        println(jugadorConTodo!!.numeroLineasAcumuladas)
-        println(jugadorConTodo!!.puntuacionAcumulada)
-
-        println(jugadorConTodo!!.suscripcionDelJugador)
-        println(jugadorConTodo!!.listaTusModosDeJuego)
-
-        println(jugadorConTodo!!.listaMundos)
-        println(jugadorConTodo!!.listaNiveles)
-
-        println(jugadorConTodo!!.listaMundosJugador)
-        println(jugadorConTodo!!.listaNivelesJugador)
-
-        println(jugadorConTodo!!.listaSuscripciones)
-
-        println("---------------")
-
-        for (p in jugadorConTodo!!.listaPartidasGuardadas){
-            println(p)
-        }
-
-        println("--------------")
-
-        imprimirMatriz_TAB()
-
-        println(piezaActual.orientacion)
-        println(piezaActual.getFilaCentro())
-        println(piezaActual.getColumnaCentro())
-
-        piezaActual.limpiar()
-
-
-        imprimirMatriz_TAB()
-
-        println(piezaActual.orientacion)
-        println(piezaActual.getFilaCentro())
-        println(piezaActual.getColumnaCentro())
-
-
- */
     }
 
     @FXML fun salir() {
@@ -337,16 +287,6 @@ class ControladorPrincipal : Initializable {
         if(jugarOnline){
             if (!animacionEnCurso) crearStage(Stages.CLAN_MENU)
         }
-    }
-
-    @FXML fun abrirMenuPVP(){
-        if(jugarOnline){
-            if (!animacionEnCurso) crearStage(Stages.MENU_PVP)
-        }
-    }
-
-    @FXML fun salirPVP(){
-        cambairUIaPVP(!partidaPVPenCurso)
     }
 
     private fun dialogoAbandonarPartidaPVP(mensaje: String ,accion: (() -> Unit) ){

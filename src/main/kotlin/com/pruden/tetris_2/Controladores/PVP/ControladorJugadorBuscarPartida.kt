@@ -3,6 +3,7 @@ package com.pruden.tetris_2.Controladores.PVP
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos.Companion.cMenuModos
 import com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida.Companion.stageBuscarPartida
 import com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
 import com.pruden.tetris_2.Controladores.PVP.ControladorMenuPVP.Companion.stageMenuPVP
@@ -69,6 +70,7 @@ class ControladorJugadorBuscarPartida {
                                                 println("🎮 ¡Partida aceptada! Iniciando como creador")
                                                 stageBuscarPartida.close()
                                                 stageMenuPVP.close()
+                                                cMenuModos.stageMenuMundos.close()
                                             }
 
 

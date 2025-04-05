@@ -2,6 +2,7 @@ package com.pruden.tetris_2.WebSocket.CrearPartida
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.ObjsAux.JugadorInicioSesion
+import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos.Companion.cMenuModos
 import com.pruden.tetris_2.Controladores.PVP.ControladorBuscarPartida.Companion.stageBuscarPartida
 import com.pruden.tetris_2.Controladores.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
 import com.pruden.tetris_2.Controladores.PVP.ControladorMenuPVP.Companion.stageMenuPVP
@@ -60,6 +61,7 @@ object CrearPartidaEmisor {
                         println("🎮 ¡Partida aceptada! Iniciando como creador")
                         stageCrearPartidaPVP.close()
                         stageMenuPVP.close()
+                        cMenuModos.stageMenuMundos.close()
                     }
                     CoroutineScope(Dispatchers.IO).launch { // TODO cambiar llamadas a la API en el futuro
                         val creador = ApiCustom.jugadorService.getJugadorPorId(json.getInt("creadorId"))

@@ -114,9 +114,9 @@
          <Font name="Liberation Mono Bold" size="22.0" />
       </font>
    </Label>
-   <Button fx:id="opciones_B" layoutX="661.0" layoutY="672.0" mnemonicParsing="false" onAction="#opciones" prefHeight="32.0" prefWidth="138.0" text="Opciones" />
+   <Button fx:id="opciones_B" layoutX="661.0" layoutY="740.0" mnemonicParsing="false" onAction="#opciones" prefHeight="32.0" prefWidth="138.0" text="Opciones" />
    <Button fx:id="custom_B" layoutX="38.0" layoutY="790.0" mnemonicParsing="false" onAction="#custom" prefHeight="32.0" prefWidth="138.0" text="Custom Game" />
-   <Button layoutX="661.0" layoutY="780.0" mnemonicParsing="false" onAction="#salir" prefHeight="32.0" prefWidth="138.0" text="Salir" />
+   <Button layoutX="661.0" layoutY="790.0" mnemonicParsing="false" onAction="#salir" prefHeight="32.0" prefWidth="138.0" text="Salir" />
    <Canvas fx:id="canvasHold" height="150.0" layoutX="33.0" layoutY="163.0" width="150.0" />
    <Label layoutX="85.0" layoutY="133.0" text="Hold" textFill="#e9e8e8">
       <font>
@@ -135,7 +135,7 @@
          <Font name="Liberation Mono Bold" size="18.0" />
       </font>
    </Label>
-   <Button fx:id="modos" layoutX="39.0" layoutY="737.0" mnemonicParsing="false" onAction="#modosDeJuego" prefHeight="32.0" prefWidth="138.0" text="Modos de juego" />
+   <Button fx:id="modos" layoutX="39.0" layoutY="740.0" mnemonicParsing="false" onAction="#modosDeJuego" prefHeight="32.0" prefWidth="138.0" text="Modos de juego" />
    <Label fx:id="labelModoEstatico" layoutX="27.0" layoutY="322.0" text="Modo:" textFill="#e9e8e8">
       <font>
          <Font name="Liberation Mono Bold" size="18.0" />
@@ -145,13 +145,12 @@
          <Font name="Liberation Mono Bold" size="18.0" />
       </font></Label>
    <ImageView fx:id="imgPublicidad" fitHeight="101.0" fitWidth="207.0" layoutX="672.0" layoutY="26.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true" />
-   <Button fx:id="sesionB" layoutX="661.0" layoutY="727.0" mnemonicParsing="false" onAction="#sesion" prefHeight="32.0" prefWidth="138.0" text="Cerrar sesión" />
+   <Button fx:id="sesionB" layoutX="661.0" layoutY="690.0" mnemonicParsing="false" onAction="#sesion" prefHeight="32.0" prefWidth="138.0" text="Cerrar sesión" />
    <Label fx:id="mundoNivel" layoutX="27.0" layoutY="357.0" prefHeight="17.0" prefWidth="160.0" style="-fx-text-fill: FFFFFF;" textFill="#e9e8e8">
       <font>
          <Font name="Liberation Mono" size="14.0" />
       </font></Label>
-   <Button fx:id="clan" layoutX="42.0" layoutY="26.0" mnemonicParsing="false" onAction="#clan" prefHeight="32.0" prefWidth="138.0" text="Clan" />
-   <Button fx:id="pvp" layoutX="39.0" layoutY="76.0" mnemonicParsing="false" onAction="#abrirMenuPVP" prefWidth="138.0" text="PVP" />
+   <Button fx:id="clan" layoutX="38.0" layoutY="690.0" mnemonicParsing="false" onAction="#clan" prefHeight="32.0" prefWidth="138.0" text="Clan" />
    <Pane fx:id="panePVP" layoutX="27.0" layoutY="469.0" prefHeight="209.0" prefWidth="160.0" style="-fx-background-color: #A9A9A9;" visible="false">
       <children>
          <Label alignment="CENTER" layoutY="71.0" prefHeight="25.0" prefWidth="160.0" text="Puntuación" textFill="#1b1919">
@@ -236,5 +235,4 @@
          <Font name="Liberation Mono Bold" size="16.0" />
       </font>
    </Label>
-   <Button layoutX="218.0" layoutY="799.0" mnemonicParsing="false" onAction="#salirPVP" text="SalirPVP" />
 </Pane>
