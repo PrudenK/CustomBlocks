@@ -11,6 +11,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.esperarResolucionPVP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.hasPerdido
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelActual
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
@@ -38,6 +39,7 @@ fun comprbarPerder(){
             if(nivelEnJuego){
                 perderNivelModoCampa()
                 subirDatosNivelPerdido()
+                jugadorConTodo!!.listaNivelesJugador[idNivelActual -1].sumarIntento()
             }else{
                 cargarLogrosNumPartidasClasicas()
 

@@ -5,11 +5,15 @@ data class NivelJugador(
     val idMundo: Int,
     var completado: Boolean,
     var desbloqueado: Boolean,
-    val mejorTiempo: String?,
-    val mejorPuntuacion: Int?,
-    val numIntentos: Int?
+    var mejorTiempo: String?,
+    var mejorPuntuacion: Int?,
+    var numIntentos: Int
 ){
     fun getStats():String{
         return "Mejor tiempo: ${mejorTiempo!!.replace("/", "")}\nMejor puntuación: $mejorPuntuacion\nNúmero de intentos: $numIntentos"
+    }
+
+    fun sumarIntento(){
+        numIntentos += 1
     }
 }

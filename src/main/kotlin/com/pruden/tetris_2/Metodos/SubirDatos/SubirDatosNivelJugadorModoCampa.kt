@@ -12,12 +12,18 @@ import kotlinx.coroutines.launch
 
 fun subirDatosNivelCompeltado(){
     CoroutineScope(Dispatchers.IO).launch {
-        ApiCustom.nivelJugadorService.completarNivel(
+        val response = ApiCustom.nivelJugadorService.completarNivel(
             tiempo = "/${cPrin.cronometroLabel.text.split("/")[0]}",
             puntuacion = cPrin.labelPuntuacion.text.split("/")[0].toInt(),
             idNivel = idNivelActual,
             id = idJugador
         )
+
+        println(response.body())
+
+        jugadorConTodo!!.listaNivelesJugador[idNivelActual-1].mejorTiempo = response.body()!!.mejorTiempo
+        jugadorConTodo!!.listaNivelesJugador[idNivelActual-1].numIntentos = response.body()!!.numIntentos
+        jugadorConTodo!!.listaNivelesJugador[idNivelActual-1].mejorPuntuacion = response.body()!!.mejorPuntuacion
 
         jugadorConTodo!!.listaNivelesJugador[idNivelActual].desbloqueado = true
         jugadorConTodo!!.listaNivelesJugador[idNivelActual-1].completado = true
