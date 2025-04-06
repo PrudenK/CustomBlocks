@@ -27,6 +27,6 @@ fun ajusteExpAlTerminarNivel(){
     }
 
     if(nuevoNivel > nivelAntiguo){
-        mostrarMensajeConAnimacion("Has subido al nivel $nuevoNivel", cPrin.mundoNivel)
+        mostrarMensajeConAnimacion("¡Has subido al nivel $nuevoNivel!", cPrin.hasSubidDeNivel)
     }
 }

@@ -4,21 +4,10 @@ object SistemaProgresion {
     private const val BASE = 1200.0
     private const val FACTOR = 2.2
 
-    // Experiencia necesaria para subir de un nivel al siguiente
-    fun experienciaParaNivel(nivel: Int): Int {
+    private fun experienciaParaNivel(nivel: Int): Int {
         return (BASE * Math.pow(nivel.toDouble(), FACTOR)).toInt()
     }
 
-    // Experiencia acumulada total para llegar a cierto nivel
-    fun experienciaTotalHastaNivel(nivel: Int): Int {
-        var total = 0
-        for (i in 1..nivel) {
-            total += experienciaParaNivel(i)
-        }
-        return total
-    }
-
-    // Dado el total de XP actual, devuelve el nivel correspondiente
     fun calcularNivelPorXP(xpActual: Int): Int {
         var nivel = 1
         var acumulado = 0
@@ -28,12 +17,6 @@ object SistemaProgresion {
             nivel++
         }
         return nivel
-    }
-
-    // Cuánta XP se necesita para subir del nivel actual al siguiente
-    fun xpRestanteParaSiguienteNivel(nivelActual: Int, xpActual: Int): Int {
-        val xpObjetivo = experienciaTotalHastaNivel(nivelActual)
-        return xpObjetivo - xpActual
     }
 
     fun calcularXPLinea(lineas: Int, modo: String, tipoTablero: Int): Int {

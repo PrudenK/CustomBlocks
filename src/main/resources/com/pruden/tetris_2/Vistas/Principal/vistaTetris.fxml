@@ -235,4 +235,9 @@
          <Font name="Liberation Mono Bold" size="16.0" />
       </font>
    </Label>
+   <Label fx:id="hasSubidDeNivel" alignment="CENTER" layoutX="22.0" layoutY="42.0" prefHeight="70.0" prefWidth="178.0" text="¡Has subido al nivel 100!" textAlignment="CENTER" textFill="#e9e8e8" visible="false" wrapText="true">
+      <font>
+         <Font name="Liberation Mono Bold" size="18.0" />
+      </font>
+   </Label>
 </Pane>

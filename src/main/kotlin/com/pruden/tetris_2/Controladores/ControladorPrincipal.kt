@@ -103,6 +103,7 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var lineasVisiNombre: Label
 
     @FXML lateinit var mensajeRivalNivel: Label
+    @FXML lateinit var hasSubidDeNivel: Label
 
 
     companion object {
