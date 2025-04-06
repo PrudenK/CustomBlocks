@@ -5,6 +5,7 @@ import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
 import com.pruden.tetris_2.Metodos.Stages.cargarLogin
+import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.ComboBox
@@ -33,6 +34,12 @@ class ControladorRegistrarse : Initializable{
         arrastrarFun(paneLogin, stageLogin)
 
         comboPais.items.addAll(Listas.LISTA_PAISES)
+
+        Platform.runLater {
+            stageRegistrarse.setOnCloseRequest {
+                cargarLogin(Stage())
+            }
+        }
     }
 
     companion object{

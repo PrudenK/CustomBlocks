@@ -11,46 +11,46 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="367.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse">
+<Pane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="367.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse">
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-        <Button layoutX="40.0" layoutY="495.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="103.0" text="Volver" />
-        <ImageView fitHeight="212.0" fitWidth="217.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+        <Button layoutX="40.0" layoutY="425.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="120.0" text="Volver" />
+        <ImageView fitHeight="262.0" fitWidth="290.0" layoutX="52.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../../../Imagenes/Logos/logoCustom.png" />
             </image>
         </ImageView>
-        <Button layoutX="193.0" layoutY="495.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="32.0" prefWidth="103.0" text="Registrarse" />
-        <Label layoutX="43.0" layoutY="218.0" text="Usuario" textFill="WHITE">
+        <Button layoutX="207.0" layoutY="425.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="32.0" prefWidth="120.0" text="Registrarse" />
+        <Label alignment="CENTER" layoutX="21.0" layoutY="218.0" prefWidth="160.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Label>
-        <TextField fx:id="userInput" layoutX="193.0" layoutY="218.0" />
-        <Label layoutX="31.0" layoutY="260.0" text="Contraseña" textFill="WHITE">
+        <TextField fx:id="userInput" layoutX="193.0" layoutY="218.0" prefWidth="150.0" />
+        <Label alignment="CENTER" layoutX="21.0" layoutY="260.0" prefWidth="160.0" text="Contraseña" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Label>
-        <PasswordField fx:id="passInput" layoutX="193.0" layoutY="258.0" />
-        <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="407.0" prefHeight="27.0" prefWidth="283.0" style="-fx-text-fill: Blue;">
+        <PasswordField fx:id="passInput" layoutX="193.0" layoutY="258.0" prefWidth="150.0" />
+        <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="386.0" prefHeight="27.0" prefWidth="283.0" style="-fx-text-fill: Blue;">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="21.0" layoutY="301.0" text="Repetir contraseña" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="21.0" layoutY="301.0" prefWidth="160.0" text="Repetir contraseña" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="repetirPassInput" layoutX="193.0" layoutY="301.0" />
-      <Label layoutX="28.0" layoutY="345.0" text="Introduce tu pais" textFill="WHITE">
+      <PasswordField fx:id="repetirPassInput" layoutX="193.0" layoutY="301.0" prefWidth="150.0" />
+      <Label alignment="CENTER" layoutX="21.0" layoutY="345.0" prefWidth="160.0" text="Introduce tu pais" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-        <ComboBox fx:id="comboPais" layoutX="193.0" layoutY="345.0" prefHeight="25.0" prefWidth="149.0" promptText="País" />
+        <ComboBox fx:id="comboPais" layoutX="193.0" layoutY="345.0" prefHeight="26.0" prefWidth="150.0" promptText="País" />
     </children>
 </Pane>

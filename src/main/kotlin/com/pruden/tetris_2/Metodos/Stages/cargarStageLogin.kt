@@ -18,7 +18,12 @@ fun cargarLogin(stage: Stage){
 
     stage.title = "¡Login!"
     stage.scene = scene
-    stage.initStyle(StageStyle.UNDECORATED)
+    stage.initStyle(StageStyle.DECORATED)
     stage.isResizable = false
+
+    stage.minWidth = ANCHO
+    stage.maxWidth = ANCHO
+    stage.minHeight = ALTO
+    stage.maxHeight = ALTO
     stage.show()
 }

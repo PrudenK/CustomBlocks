@@ -10,32 +10,32 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="314.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Login.ControladorLogin">
+<Pane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="314.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Login.ControladorLogin">
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
     </stylesheets>
     <children>
-      <Button fx:id="iniciarSesionB" defaultButton="true" layoutX="105.0" layoutY="348.0" mnemonicParsing="false" onAction="#iniciarSesion" text="IniciarSesión" />
-        <ImageView fitHeight="212.0" fitWidth="217.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="iniciarSesionB" defaultButton="true" layoutX="97.0" layoutY="350.0" mnemonicParsing="false" onAction="#iniciarSesion" prefWidth="120.0" text="IniciarSesión" />
+        <ImageView fitHeight="243.0" fitWidth="254.0" layoutX="31.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../../../Imagenes/Logos/logoCustom.png" />
             </image>
         </ImageView>
-      <Button layoutX="55.0" layoutY="398.0" mnemonicParsing="false" onAction="#jugarOff" text="Jugar offline" />
-      <Button layoutX="182.0" layoutY="398.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="32.0" prefWidth="103.0" text="Registrarse" />
-      <Label layoutX="35.0" layoutY="218.0" text="Usuario" textFill="WHITE">
+      <Button layoutX="25.0" layoutY="398.0" mnemonicParsing="false" onAction="#jugarOff" prefWidth="120.0" text="Jugar offline" />
+      <Button layoutX="169.0" layoutY="398.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="32.0" prefWidth="120.0" text="Registrarse" />
+      <Label layoutX="35.0" layoutY="225.0" text="Usuario" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="userInput" layoutX="117.0" layoutY="218.0" />
-      <Label layoutX="21.0" layoutY="263.0" text="Contraseña" textFill="WHITE">
+      <TextField fx:id="userInput" layoutX="123.0" layoutY="225.0" />
+      <Label layoutX="21.0" layoutY="270.0" text="Contraseña" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="passInput" layoutX="117.0" layoutY="263.0" />
+      <PasswordField fx:id="passInput" layoutX="123.0" layoutY="270.0" />
       <Label fx:id="errorLabel" alignment="CENTER" layoutX="54.0" layoutY="313.0" prefHeight="17.0" prefWidth="217.0" style="-fx-text-fill: blue;">
          <font>
             <Font size="16.0" />

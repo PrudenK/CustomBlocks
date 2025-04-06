@@ -12,28 +12,19 @@ import javafx.stage.StageStyle
 
 
 
-fun cargarStageRegistrarse(elemento : Button){
+fun cargarStageRegistrarse(){
     val stage = Stage()
 
     val fxmlLoader = FXMLLoader(Tetris::class.java.getResource("Vistas/Login/vista_Registrarse.fxml"))
-    val scene = Scene(fxmlLoader.load(), 367.0, 555.0)
+    val scene = Scene(fxmlLoader.load(), 367.0, 481.0)
 
     val controladorRegistrarse = fxmlLoader.getController<ControladorRegistrarse>()
-
-
-
     stage.title = "¡Registrarse!"
     stage.scene = scene
     stage.initStyle(StageStyle.UNDECORATED)
 
-
-
-
     stage.initModality(Modality.WINDOW_MODAL)
     stage.isResizable = false
-
-
-
 
     controladorRegistrarse.stageRegistrarse = stage
 

@@ -34,7 +34,6 @@ class ControladorLogin : Initializable{
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cLogin = this
 
-        arrastrarFun(paneLogin)
         userInput.text = "Pruden"
         passInput.text = "1234"
 
@@ -51,7 +50,7 @@ class ControladorLogin : Initializable{
     }
 
     @FXML fun registrarse(){
-        cargarStageRegistrarse(iniciarSesionB)
+        cargarStageRegistrarse()
         stageLogin.close()
     }
 
