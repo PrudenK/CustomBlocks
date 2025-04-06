@@ -243,41 +243,14 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                 if(partidaEnCurso){
                     if(!nivelEnJuego){
                         if(nombreLabels[marco].text.startsWith("Vacío ")){
-                            guardarPartida(marco+1)
-                            ajustarPaneTrasGuardar("¡Partida guardada!")
-
-                            Platform.runLater {
-                                partidaEnCurso = false
-                                cronometro.seTCronometroA0()
-                                cronometro.parar()
-                                timelinePartida.stop()
-
-                                if(piezaHold.isNotEmpty()){
-                                    piezaHold.removeAt(0)
-                                }
-                                piezasBolsa.clear()
-
-                                cambioDeTablero()
-
-                                reiniciarLabels()
-
-
-                                borrarTableroSecundario(gcHold)
-                                borrarTableroSecundario(gcSiguiente1)
-                                borrarTableroSecundario(gcSiguiente2)
-                                borrarTableroSecundario(gcSiguiente3)
-
-                            }
-
-
+                          accionesGuardarPartida(marco)
                         }else{
                             mostrarDialogoConAccion(
                                 mensaje = "¿Quieres remplazar el guardado ${marco+1}?",
                                 onConfirmar = {
                                     CoroutineScope(Dispatchers.IO).launch {
                                         ApiCustom.partidaGuardadaService.borrarPartida(idJugador, marco +1)
-                                        guardarPartida(marco+1)
-                                        ajustarPaneTrasGuardar("¡Partida guardada!")
+                                        accionesGuardarPartida(marco)
                                     }
                                 }
                             )
@@ -287,6 +260,33 @@ class ControladorPartidasGuardadas: ControladorGEN(), Initializable {
                     ajustarPaneTrasGuardar("No hay partida en curso")
                 }
             }
+        }
+    }
+
+    private fun accionesGuardarPartida(marco: Int){
+        guardarPartida(marco+1)
+        ajustarPaneTrasGuardar("¡Partida guardada!")
+
+        Platform.runLater {
+            partidaEnCurso = false
+            cronometro.seTCronometroA0()
+            cronometro.parar()
+            timelinePartida.stop()
+
+            if(piezaHold.isNotEmpty()){
+                piezaHold.removeAt(0)
+            }
+            piezasBolsa.clear()
+
+            cambioDeTablero()
+
+            reiniciarLabels()
+
+            borrarTableroSecundario(gcHold)
+            borrarTableroSecundario(gcSiguiente1)
+            borrarTableroSecundario(gcSiguiente2)
+            borrarTableroSecundario(gcSiguiente3)
+
         }
     }
 
