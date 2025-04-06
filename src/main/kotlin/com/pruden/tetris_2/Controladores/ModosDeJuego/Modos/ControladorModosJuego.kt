@@ -31,14 +31,14 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
     }
 
     private val LISTA_STAGES_MODOS_DE_JUEGOS = listOf(
-        Stages.STAGE_MODO_CLASICO,
-        Stages.STAGE_MODO_CLASICO_V2,
-        Stages.STAGE_MODO_ALL_IN,
-        Stages.STAGE_MODO_ALGEBRA,
-        Stages.STAGE_MODO_RAPID_O,
-        Stages.STAGE_MODO_MEMORY,
-        Stages.STAGE_MODO_MEMORY_X,
-        Stages.STAGE_MODO_MEMORY_Y,
+        Stages.STAGE_MODO_CLASICO,          // -> 150
+        Stages.STAGE_MODO_CLASICO_V2,          // -> 200
+        Stages.STAGE_MODO_ALL_IN,          // -> 400
+        Stages.STAGE_MODO_ALGEBRA,          // -> 800
+        Stages.STAGE_MODO_RAPID_O,          // -> 200
+        Stages.STAGE_MODO_MEMORY,          // -> 250
+        Stages.STAGE_MODO_MEMORY_X,          // -> 300
+        Stages.STAGE_MODO_MEMORY_Y,          // -> 300
     )
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {

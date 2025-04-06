@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idNivelA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.BorrarPiezas.objLineasNivel
 import com.pruden.tetris_2.Metodos.Cronometro.formatoASegundos
+import com.pruden.tetris_2.Metodos.ExperienciaYNiveles.ajusteExpAlTerminarNivel
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.Perder.subirDatosFinDePartida
 import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelCompeltado
@@ -22,6 +23,7 @@ fun comprobarPasarNivel(){
             perderNivelModoCampa()
             jugadorConTodo!!.listaNivelesJugador[idNivelActual -1].sumarIntento()
         }
+        ajusteExpAlTerminarNivel()
     }
 }
 

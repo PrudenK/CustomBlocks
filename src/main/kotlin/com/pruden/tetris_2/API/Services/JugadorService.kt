@@ -41,4 +41,8 @@ interface JugadorService {
 
     @GET(ConstantesCustomAPI.JUGADOR_ES_LIDER_DE_UN_CLAN)
     suspend fun jugadorEsLiderDeUnClan(@Path("id") id: Int): Int
+
+    @FormUrlEncoded
+    @POST(ConstantesCustomAPI.ACTUALIZAR_NIVEL_EXP)
+    suspend fun jugarActualizaNivelEXP(@Path("id") id: Int, @Field("exp") exp: Int, @Field("nivel") nivel: Int)
 }
