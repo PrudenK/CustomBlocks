@@ -35,17 +35,23 @@ class ControladorOpciones : ControladorGEN(), Initializable{
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        if(partidaPVPenCurso){
-            guardados.isDisable = true
-            perfil.isDisable = true
-            rankings.isDisable = true
-            suscripciones.isDisable = true
-            logros.isDisable = true
-            guardar.isDisable = true
-            reiniciar.isDisable = true
-        }else{
-            timelinePartida.stop()
-            cronometro.parar()
+        when{
+            partidaPVPenCurso || !jugarOnline->{
+                guardados.isDisable = true
+                perfil.isDisable = true
+                rankings.isDisable = true
+                suscripciones.isDisable = true
+                logros.isDisable = true
+                guardar.isDisable = true
+
+                if(partidaPVPenCurso){
+                    reiniciar.isDisable = true
+                }
+            }
+            else->{ 
+                timelinePartida.stop()
+                cronometro.parar()
+            }
         }
     }
     @FXML fun volver() {

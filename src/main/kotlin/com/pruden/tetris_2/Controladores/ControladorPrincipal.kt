@@ -66,7 +66,6 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var nuevaPartidaB: Button
     @FXML lateinit var sesionB: Button
     @FXML lateinit var clan: Button
-    @FXML lateinit var pvp: Button
     @FXML lateinit var modos: Button
     @FXML lateinit var custom_B: Button
 
@@ -213,6 +212,10 @@ class ControladorPrincipal : Initializable {
         cargarTodoInit()
 
         cargarTimeLineAuncios()
+
+        if(!jugarOnline){
+            clan.isDisable = true
+        }
     }
 
     @FXML fun opciones() {

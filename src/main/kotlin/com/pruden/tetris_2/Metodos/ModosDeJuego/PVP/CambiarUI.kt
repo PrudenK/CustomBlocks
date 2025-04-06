@@ -23,7 +23,6 @@ fun reiniciarValoresPVPaUI(){
 }
 
 fun cambairUIaPVP(pvp : Boolean){
-    cPrin.pvp.isDisable = pvp
     cPrin.clan.isDisable = pvp
     cPrin.custom_B.isDisable = pvp
     cPrin.modos.isDisable = pvp
