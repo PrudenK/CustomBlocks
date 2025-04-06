@@ -145,121 +145,81 @@ import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.CENTRO_Z_v3
 import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.COLOR_Z_v3
 import com.pruden.tetris_2.Piezas.Pieza_Z_v3.Companion.NUMPIEZA_Z_v3
 
-fun pintarMatriz(j : Int, tipo : Int){
+val mapaColores = mapOf(
+    NUMPIEZA_O to COLOR_O,
+    NUMPIEZA_J to COLOR_J, CENTRO_J to COLOR_J,
+    NUMPIEZA_L to COLOR_L, CENTRO_L to COLOR_L,
+    NUMPIEZA_S to COLOR_S, CENTRO_S to COLOR_S,
+    NUMPIEZA_Z to COLOR_Z, CENTRO_Z to COLOR_Z,
+    NUMPIEZA_T to COLOR_T, CENTRO_T to COLOR_T,
+    NUMPIEZA_I to COLOR_I, CENTRO_I to COLOR_I,
+    NUMPIEZA_U to COLOR_U, CENTRO_U to COLOR_U,
+    NUMPIEZA_V to COLOR_V, CENTRO_V to COLOR_V,
+    NUMPIEZA_J_v2 to COLOR_J_v2, CENTRO_J_v2 to COLOR_J_v2,
+    NUMPIEZA_B to COLOR_B, CENTRO_B to COLOR_B,
+    NUMPIEZA_C to COLOR_C,
+    NUMPIEZA_F to COLOR_F, CENTRO_F to COLOR_F,
+    NUMPIEZA_H to COLOR_H, CENTRO_H to COLOR_H,
+    NUMPIEZA_H_v2 to COLOR_H_v2, CENTRO_H_v2 to COLOR_H_v2,
+    NUMPIEZA_I_v2 to COLOR_I_v2, CENTRO_I_v2 to COLOR_I_v2,
+    NUMPIEZA_I_v3 to COLOR_I_v3, CENTRO_I_v3 to COLOR_I_v3,
+    NUMPIEZA_K to COLOR_K, CENTRO_K to COLOR_K,
+    NUMPIEZA_L_v2 to COLOR_L_v2,
+    NUMPIEZA_L_v3 to COLOR_L_v3, CENTRO_L_v3 to COLOR_L_v3,
+    NUMPIEZA_O_v2 to COLOR_O_v2, CENTRO_O_v2 to COLOR_O_v2,
+    NUMPIEZA_O_v3 to COLOR_O_v3, CENTRO_O_v3 to COLOR_O_v3,
+    NUMPIEZA_O_v4 to COLOR_O_v4, CENTRO_O_v4 to COLOR_O_v4,
+    NUMPIEZA_O_v5 to COLOR_O_v5, CENTRO_O_v5 to COLOR_O_v5,
+    NUMPIEZA_O_v6 to COLOR_O_v6, CENTRO_O_v6 to COLOR_O_v6,
+    NUMPIEZA_P to COLOR_P, CENTRO_P to COLOR_P,
+    NUMPIEZA_S_v2 to COLOR_S_v2, CENTRO_S_v2 to COLOR_S_v2,
+    NUMPIEZA_S_v3 to COLOR_S_v3, CENTRO_S_v3 to COLOR_S_v3,
+    NUMPIEZA_T_v2 to COLOR_T_v2, CENTRO_T_v2 to COLOR_T_v2,
+    NUMPIEZA_W to COLOR_W, CENTRO_W to COLOR_W,
+    NUMPIEZA_X to COLOR_X, CENTRO_X to COLOR_X,
+    NUMPIEZA_X_v2 to COLOR_X_v2, CENTRO_X_v2 to COLOR_X_v2,
+    NUMPIEZA_X_v3 to COLOR_X_v3, CENTRO_X_v3 to COLOR_X_v3,
+    NUMPIEZA_Y to COLOR_Y, CENTRO_Y to COLOR_Y,
+    NUMPIEZA_Y_v2 to COLOR_Y_v2, CENTRO_Y_v2 to COLOR_Y_v2,
+    NUMPIEZA_Z_v2 to COLOR_Z_v2, CENTRO_Z_v2 to COLOR_Z_v2,
+    NUMPIEZA_Z_v3 to COLOR_Z_v3, CENTRO_Z_v3 to COLOR_Z_v3,
+    NUMPIEZA_A to COLOR_A, CENTRO_A to COLOR_A,
+    NUMPIEZA_E to COLOR_E, CENTRO_E to COLOR_E,
+    NUMPIEZA_MINI_I to COLOR_MINI_I, CENTRO_MINI_I to COLOR_MINI_I,
+    NUMPIEZA_MINI_I_v2 to COLOR_MINI_I_v2, CENTRO_MINI_I_v2 to COLOR_MINI_I_v2,
+    NUMPIEZA_MINI_L to COLOR_MINI_L, CENTRO_MINI_L to COLOR_MINI_L,
+    CENTRO_MINI_O to COLOR_MINI_O,
+    NUMPIEZA_TWIN_O to COLOR_TWIN_O, CENTRO_TWIN_O to COLOR_TWIN_O,
+    NUMPIEZA_TWIN_O_v2 to COLOR_TWIN_O_v2, CENTRO_TWIN_O_v2 to COLOR_TWIN_O_v2,
+    NUMPIEZA_TWIN_Y to COLOR_TWIN_Y, CENTRO_TWIN_Y to COLOR_TWIN_Y,
+    NUMPIEZA_LADDER to COLOR_LADDER, CENTRO_LADDER to COLOR_LADDER,
+    NUMPIEZA_PICKAXE to COLOR_PICKAXE,
+    CENTRO_PICKAXE to Globales.COLOR_MANGO_PICO,
+    Globales.NUMPIEZA_PICO to Globales.COLOR_MANGO_PICO
+)
+
+
+fun pintarMatriz(j: Int, tipo: Int) {
     for (k in matrizNumerica[0].indices) {
-        if(j == tipo){
+        if (j == tipo) {
             matrizNumerica[j][k] = Globales.BLANCO
-            pintarCasilla(FONDO, j.toDouble(), k.toDouble());
-        }else {
-            if(tipo == 0){
-                matrizNumerica[j][k] = matrizNumerica[j-1][k];
+            pintarCasilla(FONDO, j.toDouble(), k.toDouble())
+        } else {
+            if (tipo == 0) {
+                matrizNumerica[j][k] = matrizNumerica[j - 1][k]
             }
 
-            if (matrizNumerica[j][k] == Globales.BLANCO) {
+            val valor = matrizNumerica[j][k]
+            val color = mapaColores[valor]
+
+            if (valor == Globales.BLANCO) {
                 pintarCasilla(FONDO, j.toDouble(), k.toDouble())
-            } else if (matrizNumerica[j][k] == NUMPIEZA_O) {
-                pintarCasilla(COLOR_O, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_J || matrizNumerica[j][k] == CENTRO_J){
-                pintarCasilla(COLOR_J, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_L || matrizNumerica[j][k] == CENTRO_L){
-                pintarCasilla(COLOR_L, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_S || matrizNumerica[j][k] == CENTRO_S){
-                pintarCasilla(COLOR_S, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_Z || matrizNumerica[j][k] == CENTRO_Z){
-                pintarCasilla(COLOR_Z, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_T || matrizNumerica[j][k] == CENTRO_T){
-                pintarCasilla(COLOR_T, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_I || matrizNumerica[j][k] == CENTRO_I){
-                pintarCasilla(COLOR_I, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_U || matrizNumerica[j][k] == CENTRO_U){
-                pintarCasilla(COLOR_U, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_V || matrizNumerica[j][k] == CENTRO_V){
-                pintarCasilla(COLOR_V, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_J_v2 || matrizNumerica[j][k] == CENTRO_J_v2){
-                pintarCasilla(COLOR_J_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_B || matrizNumerica[j][k] == CENTRO_B){
-                pintarCasilla(COLOR_B, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_C){
-                pintarCasilla(COLOR_C, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_F || matrizNumerica[j][k] == CENTRO_F){
-                pintarCasilla(COLOR_F, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_H || matrizNumerica[j][k] == CENTRO_H){
-                pintarCasilla(COLOR_H, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_I_v2 || matrizNumerica[j][k] == CENTRO_I_v2){
-                pintarCasilla(COLOR_I_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_I_v3 || matrizNumerica[j][k] == CENTRO_I_v3){
-                pintarCasilla(COLOR_I_v3, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_K || matrizNumerica[j][k] == CENTRO_K){
-                pintarCasilla(COLOR_K, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_L_v2){
-                pintarCasilla(COLOR_L_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_O_v2 || matrizNumerica[j][k] == CENTRO_O_v2){
-                pintarCasilla(COLOR_O_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_O_v3 || matrizNumerica[j][k] == CENTRO_O_v3){
-                pintarCasilla(COLOR_O_v3, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_O_v4 || matrizNumerica[j][k] == CENTRO_O_v4){
-                pintarCasilla(COLOR_O_v4, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_P || matrizNumerica[j][k] == CENTRO_P){
-                pintarCasilla(COLOR_P, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_S_v2 || matrizNumerica[j][k] == CENTRO_S_v2){
-                pintarCasilla(COLOR_S_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_T_v2 || matrizNumerica[j][k] == CENTRO_T_v2){
-                pintarCasilla(COLOR_T_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_W || matrizNumerica[j][k] == CENTRO_W){
-                pintarCasilla(COLOR_W, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_X || matrizNumerica[j][k] == CENTRO_X){
-                pintarCasilla(COLOR_X, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_X_v2 || matrizNumerica[j][k] == CENTRO_X_v2){
-                pintarCasilla(COLOR_X_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_Y || matrizNumerica[j][k] == CENTRO_Y){
-                pintarCasilla(COLOR_Y, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_Y_v2 || matrizNumerica[j][k] == CENTRO_Y_v2){
-                pintarCasilla(COLOR_Y_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_Z_v2 || matrizNumerica[j][k] == CENTRO_Z_v2){
-                pintarCasilla(COLOR_Z_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_A || matrizNumerica[j][k] == CENTRO_A){
-                pintarCasilla(COLOR_A, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_L_v3 || matrizNumerica[j][k] == CENTRO_L_v3){
-                pintarCasilla(COLOR_L_v3, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == CENTRO_MINI_O){
-                pintarCasilla(COLOR_MINI_O, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_MINI_I || matrizNumerica[j][k] == CENTRO_MINI_I){
-                pintarCasilla(COLOR_MINI_I, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_MINI_L || matrizNumerica[j][k] == CENTRO_MINI_L){
-                pintarCasilla(COLOR_MINI_L, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_MINI_I_v2 || matrizNumerica[j][k] == CENTRO_MINI_I_v2){
-                pintarCasilla(COLOR_MINI_I_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_E || matrizNumerica[j][k] == CENTRO_E){
-                pintarCasilla(COLOR_E, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_O_v5 || matrizNumerica[j][k] == CENTRO_O_v5){
-                pintarCasilla(COLOR_O_v5, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_O_v6 || matrizNumerica[j][k] == CENTRO_O_v6){
-                pintarCasilla(COLOR_O_v6, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_TWIN_O || matrizNumerica[j][k] == CENTRO_TWIN_O){
-                pintarCasilla(COLOR_TWIN_O, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_TWIN_Y || matrizNumerica[j][k] == CENTRO_TWIN_Y){
-                pintarCasilla(COLOR_TWIN_Y, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_X_v3 || matrizNumerica[j][k] == CENTRO_X_v3){
-                pintarCasilla(COLOR_X_v3, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_Z_v3 || matrizNumerica[j][k] == CENTRO_Z_v3){
-                pintarCasilla(COLOR_Z_v3, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_TWIN_O_v2 || matrizNumerica[j][k] == CENTRO_TWIN_O_v2){
-                pintarCasilla(COLOR_TWIN_O_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_LADDER || matrizNumerica[j][k] == CENTRO_LADDER){
-                pintarCasilla(COLOR_LADDER, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_S_v3 || matrizNumerica[j][k] == CENTRO_S_v3){
-                pintarCasilla(COLOR_S_v3, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_H_v2 || matrizNumerica[j][k] == CENTRO_H_v2){
-                pintarCasilla(COLOR_H_v2, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == NUMPIEZA_PICKAXE){
-                pintarCasilla(COLOR_PICKAXE, j.toDouble(), k.toDouble())
-            }else if (matrizNumerica[j][k] == CENTRO_PICKAXE || matrizNumerica[j][k] == Globales.NUMPIEZA_PICO){
-                pintarCasilla(Globales.COLOR_MANGO_PICO, j.toDouble(), k.toDouble())
+            } else if (color != null) {
+                pintarCasilla(color, j.toDouble(), k.toDouble())
             }
 
-
-            if(tipo == -10){
-                matrizNumerica[j][k] = matrizNumerica[j][k];
+            if (tipo == -10) {
+                matrizNumerica[j][k] = valor
             }
         }
     }
