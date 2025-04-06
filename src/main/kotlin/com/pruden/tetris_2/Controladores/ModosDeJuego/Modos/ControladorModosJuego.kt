@@ -30,6 +30,17 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
         lateinit var cModosJuego: ControladorModosJuego
     }
 
+    private val LISTA_STAGES_MODOS_DE_JUEGOS = listOf(
+        Stages.STAGE_MODO_CLASICO,
+        Stages.STAGE_MODO_CLASICO_V2,
+        Stages.STAGE_MODO_ALL_IN,
+        Stages.STAGE_MODO_ALGEBRA,
+        Stages.STAGE_MODO_RAPID_O,
+        Stages.STAGE_MODO_MEMORY,
+        Stages.STAGE_MODO_MEMORY_X,
+        Stages.STAGE_MODO_MEMORY_Y,
+    )
+
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cModosJuego = this
         cronometro.parar()
@@ -44,7 +55,7 @@ class ControladorModosJuego : ControladorGEN(), Initializable {
     }
 
     @FXML fun jugar(){
-        crearStage(Listas.LISTA_STAGES_MODOS_DE_JUEGOS[indice])
+        crearStage(LISTA_STAGES_MODOS_DE_JUEGOS[indice])
     }
 
     @FXML fun atras(){

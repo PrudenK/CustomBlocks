@@ -4,6 +4,7 @@ import com.pruden.tetris_2.Metodos.Comprobaciones.Registrarse.registrarJugador
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
 import com.pruden.tetris_2.Metodos.Eventos.arrastrarFun
+import com.pruden.tetris_2.Metodos.Stages.cargarLogin
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.ComboBox
@@ -36,7 +37,6 @@ class ControladorRegistrarse : Initializable{
 
     companion object{
         lateinit var cRegistrarse : ControladorRegistrarse
-        var idNuevoJugador = -1
     }
 
     @FXML fun volver(){
@@ -45,8 +45,7 @@ class ControladorRegistrarse : Initializable{
 
         stageRegistrarse.close()
 
-
-        stageLogin.isIconified = false
+        cargarLogin(Stage())
 
     }
 

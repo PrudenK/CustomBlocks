@@ -52,6 +52,7 @@ class ControladorLogin : Initializable{
 
     @FXML fun registrarse(){
         cargarStageRegistrarse(iniciarSesionB)
+        stageLogin.close()
     }
 
 }

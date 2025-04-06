@@ -21,6 +21,8 @@ fun registrarJugador(){
 
                 val respuesta = ApiCustom.jugadorService.crearJugador(jugador)
 
+                println(respuesta)
+
                 when(respuesta.code()){
                     201 -> {
                         javafx.application.Platform.runLater {

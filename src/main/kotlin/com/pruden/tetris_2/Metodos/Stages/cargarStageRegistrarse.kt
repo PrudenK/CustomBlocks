@@ -34,11 +34,6 @@ fun cargarStageRegistrarse(elemento : Button){
 
 
 
-    val stageOwner = elemento.scene.window as Stage
-    stage.initOwner(stageOwner)
-
-
-
 
     controladorRegistrarse.stageRegistrarse = stage
 
@@ -46,10 +41,4 @@ fun cargarStageRegistrarse(elemento : Button){
     stage.y = stageLogin.y
 
     stage.show()
-
-
-
-
-
-
 }

@@ -13,7 +13,8 @@ data class Jugador(
     val experiencia: Int = 0,
     var clan: Clan? = null,
     var imagen: String? = null,
-    var online: Boolean = false
+    var online: Boolean = false,
+    var lastSeen: Date = Date()
 ){
     fun getFechaFormateada(): String {
         val formato = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
