@@ -82,6 +82,16 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
 
                 nombreHost.text = cPrin.lineasHostNombre.text.substring(0,cPrin.lineasHostNombre.text.length-1)
                 nombreVisi.text = cPrin.lineasVisiNombre.text.substring(0,cPrin.lineasVisiNombre.text.length-1)
+
+                cPrin.nivelHostLabel.text = "1"
+                cPrin.lineasHostLabel.text = "0"
+                cPrin.puntuacionHostLabel.text = "0"
+
+                cPrin.nivelVisiLabel.text = "1"
+                cPrin.lineasVisiLabel.text = "0"
+                cPrin.puntuacionVisiLabel.text = "0"
+
+                cPrin.mensajeRivalNivel.isVisible = false
             }
 
             if(eresHostPVP){
