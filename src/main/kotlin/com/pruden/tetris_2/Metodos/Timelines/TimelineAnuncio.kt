@@ -71,6 +71,8 @@ fun paraTimeLineAnuncios(){ // TODO revisar en suscripciones
         timeLineAnuncios?.stop()
         cPrin.imgPublicidad.isVisible = false
         cPrin.nombreAnunciosPC.isVisible = false
+        cPrin.gifPublicidad.isVisible = false
+        cPrin.nombreGif.isVisible = false
     }
 }
 
