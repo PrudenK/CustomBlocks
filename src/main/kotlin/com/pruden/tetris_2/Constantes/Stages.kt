@@ -34,7 +34,6 @@ object Stages {
     val CUSTOM_OTRAS_CONFIGURACIONES = ClaseStage("Vistas/Custom/vista_Custom_Otras_Configuraciones.fxml", cPrin.nuevaPartidaB,643.0,491.0, null,0, -20)
 
     val PERFIL = ClaseStage("Vistas/Perfil/vista_Perfil.fxml", cPrin.nuevaPartidaB, 683.0, 602.0, timelinePartida, 0, 0)
-    val RANKINGS = ClaseStage("Vistas/Rankings/vista_Ranking.fxml", cPrin.nuevaPartidaB, 731.0, 600.0, timelinePartida, 0, 0)
     val PIEZAS_PERFIL = ClaseStage("Vistas/Perfil/vista_Perfil_Piezas.fxml",cPrin.nuevaPartidaB,700.0,820.0, null,0, 0)
     val REGISTRO_PARTIDAS = ClaseStage("Vistas/Partidas/vista_Partidas.fxml", cPrin.nuevaPartidaB, 699.0, 634.0, timelinePartida, 0, 0)
 
@@ -58,4 +57,7 @@ object Stages {
     val STAGE_MODO_MEMORY =  ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_Memory.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
     val STAGE_MODO_MEMORY_X = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryX.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
     val STAGE_MODO_MEMORY_Y = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
+
+    val MENU_RANKINGS = ClaseStage("Vistas/Rankings/vistaMenuRankings.fxml", cPrin.nuevaPartidaB, 580.0, 427.0, null, 0, 0)
+    val RANKINGS_PARTIDAS = ClaseStage("Vistas/Rankings/vistaRankingPartidas.fxml", cPrin.nuevaPartidaB, 731.0, 600.0, timelinePartida, 0, 0)
 }

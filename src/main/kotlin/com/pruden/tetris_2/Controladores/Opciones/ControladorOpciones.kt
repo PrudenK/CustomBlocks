@@ -16,7 +16,6 @@ import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
-import javafx.scene.control.Label
 import javafx.stage.Stage
 import java.net.URL
 import java.util.*
@@ -80,7 +79,7 @@ class ControladorOpciones : ControladorGEN(), Initializable{
     }
 
     @FXML fun rankings(){
-        crearStage(Stages.RANKINGS)
+        crearStage(Stages.MENU_RANKINGS)
     }
 
     @FXML fun guardar(){
