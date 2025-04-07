@@ -44,6 +44,7 @@ object Stages {
     val CREAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaCrearPartidaPVP.fxml", cPrin.nuevaPartidaB, 384.0, 558.0, null, 0, 0)
     val BUSCAR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaBuscarPartidaPVP.fxml", cPrin.nuevaPartidaB, 560.0, 445.0, null, 0, 0)
     val TERMIANR_PARTIDA_PVP = ClaseStage("Vistas/PVP/vistaTerminarPartidaPVP.fxml", cPrin.nuevaPartidaB, 463.0, 243.0, null, 0, 0)
+    val HISTORIAL_PARTIDAS_PVP = ClaseStage("Vistas/PVP/vistaHistorialPVP.fxml", cPrin.nuevaPartidaB, 660.0, 529.0, null, 0, 0)
 
     val MODOS_DE_JUEGO_OFICIALES = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modos_Juego.fxml", cPrin.nuevaPartidaB, 355.0, 544.0, timelinePartida, 0, 0)
     val MODO_CAMPA_MENU_MODOS = ClaseStage("Vistas/ModosDeJuego/ModoCampa/vista_Menu_Mundos.fxml", cPrin.nuevaPartidaB, 711.0, 809.0, timelinePartida, 0, 0)

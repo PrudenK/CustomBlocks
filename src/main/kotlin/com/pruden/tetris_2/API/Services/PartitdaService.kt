@@ -1,10 +1,7 @@
 package com.pruden.tetris_2.API.Services
 
-import com.pruden.tetris_2.API.ObjsAux.EstadisticasModo
-import com.pruden.tetris_2.API.ObjsAux.Partida
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
-import com.pruden.tetris_2.API.ObjsAux.JugadorRanking
-import com.pruden.tetris_2.API.ObjsAux.PartidaPVP
+import com.pruden.tetris_2.API.ObjsAux.*
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -27,4 +24,7 @@ interface PartitdaService {
 
     @POST(ConstantesCustomAPI.SUBIR_PARTIDA_PVP)
     suspend fun subirPartidaPVP(@Body partidaPVP: PartidaPVP): Response<ResponseBody>
+
+    @GET(ConstantesCustomAPI.GET_PARTIDAS_PVP)
+    suspend fun getPartidasPVPporUsuario(@Path("id") id : Int): MutableList<PartidaPVPconJugadores>
 }

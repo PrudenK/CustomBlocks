@@ -23,7 +23,7 @@ class ControladorMenuPVP: ControladorGEN() {
     }
 
     @FXML fun historial(){
-
+        crearStage(Stages.HISTORIAL_PARTIDAS_PVP)
     }
 
     @FXML fun volver() = stageMenuPVP.close()

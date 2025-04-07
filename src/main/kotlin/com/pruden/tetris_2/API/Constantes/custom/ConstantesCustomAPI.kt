@@ -3,9 +3,6 @@ package com.pruden.tetris_2.API.Constantes.custom
 object ConstantesCustomAPI {
     const val PATH_CUSTOM = "http://localhost:8088"
 
-    //Imagen cadena
-    const val IMAGEN_CADENA = "$PATH_CUSTOM/uploads/images/cadena.png"
-
     //Clan por defecto
     const val IMAGEN_CLAN_DEFAULT = "$PATH_CUSTOM/uploads/clanes/fotoPerfilClan.jpg"
 
@@ -34,6 +31,7 @@ object ConstantesCustomAPI {
     const val PARTIDAS_DEL_JUGADOR = "/partidasDelJugador/{idJugador}/{modo}"
     //PVP
     const val SUBIR_PARTIDA_PVP = "/subirPartidaPVP"
+    const val GET_PARTIDAS_PVP = "/getPartidasJugador/{id}"
 
     //EstaPiezas
     const val SUBIR_ESTA_PIEZAS = "/subirEstaPiezas"

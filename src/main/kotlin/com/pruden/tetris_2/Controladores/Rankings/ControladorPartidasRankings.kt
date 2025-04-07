@@ -43,7 +43,6 @@ class ControladorPartidasRankings: ControladorGEN(), Initializable {
     }
 
     @FXML fun volver(){
-        reanudarPartida()
         stageRankings.close()
     }
 
