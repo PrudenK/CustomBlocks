@@ -18,7 +18,8 @@
       </Label>
       <Button layoutX="20.0" layoutY="77.0" mnemonicParsing="false" onAction="#crearPartida" prefWidth="130.0" text="Crear partida" />
       <Button layoutX="175.0" layoutY="78.0" mnemonicParsing="false" onAction="#buscarPartida" prefWidth="130.0" text="Buscar partida" />
-      <Button layoutX="98.0" layoutY="125.0" mnemonicParsing="false" onAction="#volver" prefWidth="130.0" text="Vovler" />
+      <Button layoutX="175.0" layoutY="125.0" mnemonicParsing="false" onAction="#volver" prefWidth="130.0" text="Vovler" />
+      <Button layoutX="20.0" layoutY="125.0" mnemonicParsing="false" onAction="#historial" prefWidth="130.0" text="Historial" />
    </children>
 
 </Pane>

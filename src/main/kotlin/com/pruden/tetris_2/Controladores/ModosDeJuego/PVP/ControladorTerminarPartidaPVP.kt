@@ -1,7 +1,12 @@
 package com.pruden.tetris_2.Controladores.ModosDeJuego.PVP
 
+import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
+import com.pruden.tetris_2.API.ObjsAux.PartidaPVP
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.eresHostPVP
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idRivalPVP
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import javafx.application.Platform
 import javafx.fxml.FXML
@@ -41,6 +46,7 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
     }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        var resultadoNombre = "1-0"
         when(resultado){
             "Ganas" ->{
                 titulo.text = "¡Has ganado!"
@@ -49,10 +55,12 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
             "Pierdes"->{
                 titulo.text = "¡Has perdido!"
                 img.image = deRutaAImagen("/Imagenes/Logos/perder.png")
+                resultadoNombre = "0-1"
             }
             "Empate"->{
                 titulo.text = "¡Empate!"
                 img.image = deRutaAImagen("/Imagenes/Logos/empate.png")
+                resultadoNombre = "1/2"
             }
             "Abandono"->{
                 titulo.text = "Tu rival se ha rendido"
@@ -74,6 +82,19 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
 
                 nombreHost.text = cPrin.lineasHostNombre.text.substring(0,cPrin.lineasHostNombre.text.length-1)
                 nombreVisi.text = cPrin.lineasVisiNombre.text.substring(0,cPrin.lineasVisiNombre.text.length-1)
+            }
+
+            if(eresHostPVP){
+                val response = ApiCustom.partidaService.subirPartidaPVP(
+                    PartidaPVP(
+                        host = jugadorConTodo!!.id,
+                        visitante = idRivalPVP,
+                        modo = cPrin.labelModo.text,
+                        resultado = resultadoNombre
+                    )
+                )
+
+                println(response)
             }
         }
 

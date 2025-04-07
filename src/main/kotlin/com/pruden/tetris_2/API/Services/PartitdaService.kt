@@ -4,6 +4,7 @@ import com.pruden.tetris_2.API.ObjsAux.EstadisticasModo
 import com.pruden.tetris_2.API.ObjsAux.Partida
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.JugadorRanking
+import com.pruden.tetris_2.API.ObjsAux.PartidaPVP
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -12,7 +13,6 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface PartitdaService {
-
     @POST(ConstantesCustomAPI.SUBIR_PARTIDA)
     suspend fun subirPartida(@Body partida: Partida): Response<ResponseBody>
 
@@ -24,4 +24,7 @@ interface PartitdaService {
 
     @GET(ConstantesCustomAPI.PARTIDAS_DEL_JUGADOR)
     suspend fun getPartidasDelJugador(@Path("idJugador") idJugador: Int, @Path("modo") modo: String): List<Partida>
+
+    @POST(ConstantesCustomAPI.SUBIR_PARTIDA_PVP)
+    suspend fun subirPartidaPVP(@Body partidaPVP: PartidaPVP): Response<ResponseBody>
 }
