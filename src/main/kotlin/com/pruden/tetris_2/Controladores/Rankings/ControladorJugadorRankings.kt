@@ -16,11 +16,13 @@ class ControladorJugadorRankings {
     @FXML lateinit var nombre: Label
     @FXML lateinit var nivel: Label
     @FXML lateinit var posicion: Label
+    @FXML lateinit var exp: Label
 
     fun setJugador(jugador: Jugador, pos: Int, global: Boolean){
         nombre.text = jugador.nombre
         nivel.text = "Nivel: ${jugador.nivel}"
         posicion.text = "#$pos"
+        exp.text = "XP: ${jugador.experiencia}"
 
         if(jugador.imagen != null){
             fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.imagen}", true)

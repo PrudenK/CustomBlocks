@@ -17,7 +17,7 @@
                 <Font name="Liberation Mono Bold" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="nivel" layoutX="331.0" layoutY="26.0" prefHeight="30.0" prefWidth="116.0" text="Nivel:" textFill="#a8a4a4">
+        <Label fx:id="nivel" layoutX="331.0" layoutY="19.0" prefHeight="30.0" prefWidth="116.0" text="Nivel:" textFill="#a8a4a4">
             <font>
                 <Font name="Liberation Mono Bold" size="20.0" />
             </font>
@@ -28,5 +28,10 @@
             </font>
         </Label>
         <ImageView fx:id="imgPais" fitHeight="35.0" fitWidth="35.0" layoutX="132.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="exp" layoutX="331.0" layoutY="47.0" prefHeight="19.0" prefWidth="125.0" text="XP: " textFill="#a8a4a4">
+         <font>
+            <Font name="Liberation Mono Bold" size="14.0" />
+         </font>
+      </Label>
     </children>
 </Pane>
