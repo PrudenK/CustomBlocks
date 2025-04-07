@@ -69,7 +69,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
         val suscripcion = jugadorConTodo!!.listaSuscripciones[indiceSuscripciones]
         CoroutineScope(Dispatchers.IO).launch {
             val response = ApiCustom.suscripcionJugadorService.jugadorSeSuscribe(idJugador, suscripcion.tipo)
-
+            println(response)
             when(response.code()){
                 201 ->{
                     mostrarErrorTemporal("Suscripción tramitada con éxito")
@@ -79,11 +79,12 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
                         fechainicio = fechaInicio.format(formatter),
                         fechafin = fechaFin.format(formatter)
                     )
+
+                    Platform.runLater {
+                        comprar.text = "Activa"
+                        comprar.isDisable = true
+                    }
                     paraTimeLineAnuncios()
-                }
-                409->{
-                    mostrarErrorTemporal("Ya tienes una suscripción activa")
-                    mensajeSuscripcion.textFill = Color.web("#f88b8b")
                 }
             }
         }
@@ -139,6 +140,19 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
         precioSuscripcion.text = "- Precio: ${suscripcion.precio}"
         nombreSusCarrusel.text = suscripcion.nombre
         imgSuscripcion.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${suscripcion.imagen}", true)
+
+        val suscripcionJugador = jugadorConTodo!!.suscripcionDelJugador!!.tipo
+        if(suscripcionJugador != -1){
+            if(indiceSuscripciones > suscripcionJugador-1){
+                comprar.text = "Mejorar"
+            }else{
+                comprar.text = "Activa"
+            }
+        }else{
+            comprar.text = "Comprar"
+        }
+        comprar.isDisable = indiceSuscripciones <= suscripcionJugador-1
+
     }
 
     override fun setStage(stage: Stage?) {
