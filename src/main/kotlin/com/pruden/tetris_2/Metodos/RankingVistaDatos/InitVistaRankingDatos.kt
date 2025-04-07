@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.RankingVistaDatos
 
 import com.pruden.tetris_2.Constantes.Listas
-import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings.Companion.cRanking
+import com.pruden.tetris_2.Controladores.Rankings.ControladorPartidasRankings.Companion.cRanking
 import javafx.collections.FXCollections
 import javafx.scene.control.cell.PropertyValueFactory
 

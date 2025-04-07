@@ -11,6 +11,9 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface JugadorService {
+    @GET(ConstantesCustomAPI.TODOS_JUGADORES)
+    suspend fun getTodosJugadores(): MutableList<Jugador>
+
     @GET(ConstantesCustomAPI.INICIAR_SESION_DATOS)
     suspend fun getDatosIniciarSesion(@Path("idJugador") idJugador : Int): JugadorInicioSesion
 

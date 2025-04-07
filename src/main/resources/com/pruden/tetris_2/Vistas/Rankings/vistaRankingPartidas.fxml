@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="731.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Rankings.ControladorRankings">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="731.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Rankings.ControladorPartidasRankings">
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
@@ -26,7 +26,7 @@
             <TableColumn fx:id="pais" prefWidth="113.0" text="Pais" />
             </columns>
         </TableView>
-        <Button layoutX="328.0" layoutY="544.0" mnemonicParsing="false" onAction="#volver" text="Vovler" />
+        <Button layoutX="296.0" layoutY="542.0" mnemonicParsing="false" onAction="#volver" prefWidth="140.0" text="Vovler" />
         <ComboBox fx:id="comboModo" layoutX="174.0" layoutY="88.0" prefWidth="150.0" />
         <Label layoutX="74.0" layoutY="90.0" text="Por modo" textFill="#e9e8e8">
             <font>

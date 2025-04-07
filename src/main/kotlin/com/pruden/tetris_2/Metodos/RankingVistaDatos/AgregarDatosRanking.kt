@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Metodos.RankingVistaDatos
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings.Companion.cRanking
+import com.pruden.tetris_2.Controladores.Rankings.ControladorPartidasRankings.Companion.cRanking
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

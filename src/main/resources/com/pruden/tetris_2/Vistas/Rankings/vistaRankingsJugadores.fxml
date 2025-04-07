@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="560.0" styleClass="pane-1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Rankings.ControladorJugadoresRankings">
+    <stylesheets>
+        <URL value="@../../styles/general.css" />
+    </stylesheets>
+    <Label alignment="CENTER" layoutY="25.0" prefWidth="560.0" text="Ranking de los mejores jugadores" textAlignment="CENTER" textFill="#e9e8e8">
+        <font>
+            <Font name="Liberation Mono Bold" size="26.0" />
+        </font>
+    </Label>
+   <Label layoutX="278.0" layoutY="80.0" text="Por pais" textFill="#e9e8e8">
+      <font>
+         <Font name="Liberation Mono Bold" size="18.0" />
+      </font>
+   </Label>
+   <ComboBox fx:id="comboPais" layoutX="378.0" layoutY="78.0" prefWidth="150.0" />
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="35.0" layoutY="121.0" prefHeight="349.0" prefWidth="490.0">
+        <content>
+            <GridPane fx:id="gridJugadores" hgap="10" vgap="10" />
+        </content>
+    </ScrollPane>
+   <Button layoutX="210.0" layoutY="493.0" mnemonicParsing="false" onAction="#volver" prefWidth="140.0" text="Volver" />
+</Pane>

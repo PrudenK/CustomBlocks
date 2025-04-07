@@ -21,7 +21,7 @@ class ControladorMenuRankings: ControladorGEN() {
     }
 
     @FXML fun jugadores(){
-
+        crearStage(Stages.RANKINGS_JUGADORES)
     }
 
 

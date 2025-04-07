@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="464.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pruden.tetris_2.Controladores.Rankings.ControladorJugadorRankings">
+    <children>
+        <StackPane layoutX="7.0" layoutY="6.0" prefHeight="70.0" prefWidth="70.0">
+            <ImageView fx:id="fotoPerfil" fitHeight="70.0" fitWidth="70.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+        </StackPane>
+        <ImageView fx:id="imgOnline" fitHeight="20.0" fitWidth="20.0" layoutX="65.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
+        <Label fx:id="nombre" layoutX="172.0" layoutY="26.0" prefHeight="29.0" prefWidth="133.0" text="Nombre" textFill="#a8a4a4">
+            <font>
+                <Font name="Liberation Mono Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="nivel" layoutX="331.0" layoutY="26.0" prefHeight="30.0" prefWidth="116.0" text="Nivel:" textFill="#a8a4a4">
+            <font>
+                <Font name="Liberation Mono Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="posicion" layoutX="82.0" layoutY="26.0" prefHeight="30.0" prefWidth="45.0" text="#1" textFill="#a8a4a4">
+            <font>
+                <Font name="Liberation Mono Bold" size="20.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="imgPais" fitHeight="35.0" fitWidth="35.0" layoutX="132.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</Pane>

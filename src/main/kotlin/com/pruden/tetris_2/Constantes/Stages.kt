@@ -59,5 +59,6 @@ object Stages {
     val STAGE_MODO_MEMORY_Y = ClaseStage("Vistas/ModosDeJuego/Modos/vista_Modo_MemoryY.fxml", cPrin.nuevaPartidaB,700.0,694.0, null,0, 0)
 
     val MENU_RANKINGS = ClaseStage("Vistas/Rankings/vistaMenuRankings.fxml", cPrin.nuevaPartidaB, 580.0, 427.0, null, 0, 0)
-    val RANKINGS_PARTIDAS = ClaseStage("Vistas/Rankings/vistaRankingPartidas.fxml", cPrin.nuevaPartidaB, 731.0, 600.0, timelinePartida, 0, 0)
+    val RANKINGS_PARTIDAS = ClaseStage("Vistas/Rankings/vistaRankingPartidas.fxml", cPrin.nuevaPartidaB, 731.0, 600.0, null, 0, 0)
+    val RANKINGS_JUGADORES = ClaseStage("Vistas/Rankings/vistaRankingsJugadores.fxml", cPrin.nuevaPartidaB, 560.0, 546.0, null, 0, 0)
 }

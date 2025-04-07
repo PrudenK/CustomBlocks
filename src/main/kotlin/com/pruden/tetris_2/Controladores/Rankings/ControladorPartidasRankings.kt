@@ -15,7 +15,7 @@ import javafx.stage.Stage
 import java.net.URL
 import java.util.*
 
-class ControladorRankings: ControladorGEN(), Initializable {
+class ControladorPartidasRankings: ControladorGEN(), Initializable {
     lateinit var stageRankings : Stage
 
     @FXML lateinit var tableView: TableView<JugadorRanking>
@@ -33,11 +33,11 @@ class ControladorRankings: ControladorGEN(), Initializable {
     lateinit var datosRanking: ObservableList<JugadorRanking>
 
     companion object{
-        lateinit var cRanking : ControladorRankings
+        lateinit var cRanking : ControladorPartidasRankings
     }
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         cRanking = this
-        tableView.columnResizePolicy = TableView.CONSTRAINED_RESIZE_POLICY;
+        tableView.columnResizePolicy = TableView.CONSTRAINED_RESIZE_POLICY
 
         initRankingDatos()
     }
