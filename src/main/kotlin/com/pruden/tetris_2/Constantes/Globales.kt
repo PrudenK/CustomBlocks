@@ -27,4 +27,5 @@ object Globales {
         saturation = -1.0
     }
 
+    const val LINK_GIF_KEY = "https://www.kickstarter.com/projects/qeeke/cr840-worlds-first-mechanical-keyboard-with-stream-deck?lang=es"
 }

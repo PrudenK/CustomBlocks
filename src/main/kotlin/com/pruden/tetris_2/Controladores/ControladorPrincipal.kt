@@ -106,6 +106,11 @@ class ControladorPrincipal : Initializable {
     @FXML lateinit var hasSubidDeNivel: Label
 
 
+    @FXML lateinit var nombreAnunciosPC: Label
+    @FXML lateinit var gifPublicidad: ImageView
+    @FXML lateinit var nombreGif: Label
+
+
     companion object {
         const val TAMA_TABLERO_SECUN = 5.0
         const val TAMA_CELDA_SECUN = 30.0
@@ -216,6 +221,11 @@ class ControladorPrincipal : Initializable {
 
         if(!jugarOnline){
             clan.isDisable = true
+        }else{
+            if(jugadorConTodo!!.suscripcionDelJugador!!.tipo != -1){
+                gifPublicidad.isVisible = false
+                nombreGif.isVisible = false
+            }
         }
     }
 
@@ -260,14 +270,6 @@ class ControladorPrincipal : Initializable {
         }
     }
 
-    @FXML fun borrar() {
-        //TIEMPO_CAIDA_PIEZAS_INICIAL = 32411234
-        imprimirMatriz_TAB()
-        println(ApiPublicidad.anuncios)
-        println(tiempoCaidaPieza)
-        println(idNivelActual)
-    }
-
     @FXML fun salir() {
         if(partidaPVPenCurso){
             dialogoAbandonarPartidaPVP("Si sales abandonarás la partida") {
@@ -291,6 +293,11 @@ class ControladorPrincipal : Initializable {
         if(jugarOnline){
             if (!animacionEnCurso) crearStage(Stages.CLAN_MENU)
         }
+    }
+
+    @FXML fun publicidadKey(){
+        abrirBanner(Globales.LINK_GIF_KEY)
+        opciones()
     }
 
     private fun dialogoAbandonarPartidaPVP(mensaje: String ,accion: (() -> Unit) ){

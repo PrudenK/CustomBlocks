@@ -68,7 +68,6 @@
         
     </StackPane>
    <Button fx:id="nuevaPartidaB" layoutX="339.0" layoutY="790.0" mnemonicParsing="false" onAction="#partdiaNueva" prefHeight="32.0" prefWidth="165.0" text="Nueva partida" />
-   <Button layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#borrar" prefHeight="32.0" prefWidth="35.0" text="P" />
    <Pane fx:id="paneSinglePlayer" layoutX="27.0" layoutY="469.0" prefHeight="174.0" prefWidth="160.0" style="-fx-background-color: #A9A9A9;">
       <children>
          <Label alignment="CENTER" layoutY="61.0" prefHeight="25.0" prefWidth="160.0" text="Puntuación" textFill="#1b1919">
@@ -139,7 +138,7 @@
       <font>
          <Font name="Liberation Mono Bold" size="18.0" />
       </font></Label>
-   <ImageView fx:id="imgPublicidad" fitHeight="101.0" fitWidth="207.0" layoutX="672.0" layoutY="26.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="imgPublicidad" fitHeight="81.0" fitWidth="178.0" layoutX="679.0" layoutY="19.0" onMouseClicked="#abrirPublicidad" pickOnBounds="true" preserveRatio="true" />
    <Button fx:id="sesionB" layoutX="661.0" layoutY="740.0" mnemonicParsing="false" onAction="#sesion" prefHeight="32.0" prefWidth="138.0" text="Cerrar sesión" />
    <Label fx:id="mundoNivel" layoutX="27.0" layoutY="357.0" prefHeight="17.0" prefWidth="160.0" style="-fx-text-fill: FFFFFF;" textFill="#e9e8e8">
       <font>
@@ -240,4 +239,19 @@
             <Image url="@../../../../../Imagenes/Logos/logoCB3.png" />
         </image>
     </ImageView>
+   <Label fx:id="nombreAnunciosPC" alignment="CENTER" layoutX="677.0" layoutY="98.0" prefHeight="21.0" prefWidth="138.0" textAlignment="CENTER" textFill="#e9e8e8">
+      <font>
+         <Font name="Liberation Mono Bold" size="16.0" />
+      </font>
+   </Label>
+   <ImageView fx:id="gifPublicidad" fitHeight="81.0" fitWidth="138.0" layoutX="37.0" layoutY="14.0" onMouseClicked="#publicidadKey" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../../../Imagenes/Logos/gifPublicidad.gif" />
+      </image>
+   </ImageView>
+   <Label fx:id="nombreGif" alignment="CENTER" layoutX="37.0" layoutY="98.0" prefHeight="21.0" prefWidth="138.0" text="CR840 Keyboard" textAlignment="CENTER" textFill="#e9e8e8">
+      <font>
+         <Font name="Liberation Mono Bold" size="16.0" />
+      </font>
+   </Label>
 </Pane>

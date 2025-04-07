@@ -35,23 +35,27 @@ fun cargarTimeLineAuncios() {
 
 private fun timeLineAnuncio(){
     CoroutineScope(Dispatchers.IO).launch {
+        val anunciosPortatiles = ApiPublicidad.anuncios.filter { it.tipo == 1 }
         timeLineAnuncios?.stop()
         cPrin.imgPublicidad.isVisible = true
+        cPrin.nombreAnunciosPC.isVisible = true
 
-        precargarImagen(ApiPublicidad.anuncios[indiceActualAnuncio].imagen) { imagen ->
+        precargarImagen(anunciosPortatiles[indiceActualAnuncio].imagen) { imagen ->
             cPrin.imgPublicidad.image = imagen
         }
+        cPrin.nombreAnunciosPC.text = anunciosPortatiles[indiceActualAnuncio].nombre
 
         timeLineAnuncios =  Timeline(
             KeyFrame(Duration.seconds(5.0), {
-                indiceActualAnuncio = (indiceActualAnuncio + 1) % ApiPublicidad.anuncios.size
-                val anuncio = ApiPublicidad.anuncios[indiceActualAnuncio]
+                indiceActualAnuncio = (indiceActualAnuncio + 1) % anunciosPortatiles.size
+                val anuncio = anunciosPortatiles[indiceActualAnuncio]
 
                 precargarImagen(anuncio.imagen) { imagen ->
                     javafx.application.Platform.runLater {
                         cPrin.imgPublicidad.image = imagen
                     }
                 }
+                cPrin.nombreAnunciosPC.text = anuncio.nombre
             })
         ).apply {
             cycleCount = Timeline.INDEFINITE
@@ -66,6 +70,7 @@ fun paraTimeLineAnuncios(){ // TODO revisar en suscripciones
     if(jugadorConTodo?.suscripcionDelJugador?.tipo != -1) {
         timeLineAnuncios?.stop()
         cPrin.imgPublicidad.isVisible = false
+        cPrin.nombreAnunciosPC.isVisible = false
     }
 }
 
