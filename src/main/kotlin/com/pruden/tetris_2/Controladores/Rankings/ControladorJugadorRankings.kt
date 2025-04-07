@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Controladores.Rankings
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
 import com.pruden.tetris_2.API.ObjsAux.Jugador
+import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import javafx.fxml.FXML
 import javafx.scene.control.Label
@@ -29,12 +30,14 @@ class ControladorJugadorRankings {
         }else{
             fotoPerfil.image = deRutaAImagen("/Imagenes/Logos/Imagen_perfil_deff.jpg")
         }
-/*
-        if(!global){
-            imgPais.image =
+
+        if(global){
+            val codigo = Listas.MAPA_PAISES_SIMBOLOS_BANDERAS[jugador.pais]!!.lowercase()
+            val url = "https://flagcdn.com/w80/$codigo.png"
+            val image = Image(url)
+            imgPais.image = image
         }
 
- */
 
         if(jugador.online){
             imgOnline.image = Image(ConstantesCustomAPI.IMAGEN_ONLINE, true)
