@@ -143,7 +143,7 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
 
         val suscripcionJugador = jugadorConTodo!!.suscripcionDelJugador!!.tipo
         if(suscripcionJugador != -1){
-            if(indiceSuscripciones > suscripcionJugador-1){
+            if(indiceSuscripciones > suscripcionJugador -1 ){
                 comprar.text = "Mejorar"
             }else{
                 comprar.text = "Activa"
@@ -152,6 +152,9 @@ class ControladorSuscripciones : ControladorGEN(), Initializable{
             comprar.text = "Comprar"
         }
         comprar.isDisable = indiceSuscripciones <= suscripcionJugador-1
+
+        println("Indice: $indiceSuscripciones")
+        println("Sus user: $suscripcionJugador")
 
     }
 
