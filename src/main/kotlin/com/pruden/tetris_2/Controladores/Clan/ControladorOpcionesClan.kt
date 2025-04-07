@@ -3,12 +3,15 @@ package com.pruden.tetris_2.Controladores.Clan
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.Clan.ControladorClan.Companion.idClanControlador
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.application.Platform
 import javafx.fxml.FXML
+import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.layout.Pane
@@ -17,8 +20,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.net.URL
+import java.util.*
 
-class ControladorOpcionesClan : ControladorGEN() {
+class ControladorOpcionesClan : ControladorGEN(), Initializable {
     lateinit var stageClanOpciones: Stage
 
     @FXML lateinit var pane: Pane
@@ -31,6 +36,13 @@ class ControladorOpcionesClan : ControladorGEN() {
     @FXML lateinit var chat: Button
 
     private val scope = CoroutineScope(Dispatchers.Default)
+
+    override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        if(!partidaPVPenCurso){
+            cronometro.parar()
+            timelinePartida.stop()
+        }
+    }
 
     @FXML fun miClan(){
         if(jugadorConTodo!!.clan != null){
@@ -61,10 +73,13 @@ class ControladorOpcionesClan : ControladorGEN() {
         }
     }
 
-    @FXML fun volver() = stageClanOpciones.close()
+    @FXML fun volver() {
+        reanudarPartida()
+        stageClanOpciones.close()
+    }
+
 
     private var animacionEnCurso = false
-
 
     private fun mostrarErrorTemporal(texto: String) {
         if (animacionEnCurso) return
@@ -103,6 +118,5 @@ class ControladorOpcionesClan : ControladorGEN() {
     override fun setStage(stage: Stage?) {
         stageClanOpciones = stage!!
     }
-
     override fun setBoton(b: Button?) {}
 }

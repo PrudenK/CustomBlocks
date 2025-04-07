@@ -1,5 +1,6 @@
 package com.pruden.tetris_2.Metodos.Stages
 
+import com.pruden.tetris_2.Controladores.Clan.ControladorOpcionesClan
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cerrarStageAltF4
@@ -21,6 +22,7 @@ import com.pruden.tetris_2.Controladores.Perfil.ControladorPerfil
 import com.pruden.tetris_2.Controladores.Rankings.ControladorRankings
 import com.pruden.tetris_2.Controladores.Suscripciones.ControladorSuscripciones
 import com.pruden.tetris_2.Tetris
+import javafx.application.Platform
 import javafx.event.EventHandler
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
@@ -64,14 +66,15 @@ fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null, mundo:
     }
 
     stage.onShown = EventHandler {_: WindowEvent? ->
-        val centroX = stageOwner.x + (stageOwner.width - stage.width) / 2
-        val centroY = stageOwner.y + (stageOwner.height - stage.height) / 2
-        stage.x = centroX + objetoStage.movX
-        stage.y = centroY + objetoStage.movY
+        Platform.runLater {
+            val centroX = stageOwner.x + (stageOwner.width - stage.width) / 2
+            val centroY = stageOwner.y + (stageOwner.height - stage.height) / 2
+            stage.x = centroX + objetoStage.movX
+            stage.y = centroY + objetoStage.movY
+        }
     }
 
-    if (c is ControladorCustomOpciones || c is ControladorOpciones || c is ControladorPerfil || c is ControladorRankings
-        || c is ControladorModoCampa || c is ControladorModosJuego || c is ControladorPartidas //|| c is ControladorCargarNivel
+    if (c is ControladorCustomOpciones || c is ControladorOpciones || c is ControladorOpcionesClan || c is ControladorMenuModos
     ) {
         if (c is ControladorCustomOpciones) {
             stage.onCloseRequest = EventHandler { _: WindowEvent? ->
@@ -81,7 +84,6 @@ fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null, mundo:
                         cerrarStageAltF4.set(true)
                     }
                 }
-
         } else {
             stage.onCloseRequest = EventHandler { _: WindowEvent? ->
                 cerrarStageAltF4.set(true)

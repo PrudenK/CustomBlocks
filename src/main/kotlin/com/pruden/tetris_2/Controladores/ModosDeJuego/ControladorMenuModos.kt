@@ -4,9 +4,12 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cronometro
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnline
+import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaPVPenCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Metodos.IniciarPartida.reanudarPartida
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
@@ -71,6 +74,9 @@ class ControladorMenuModos: ControladorGEN(), Initializable {
 
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        cronometro.parar()
+        timelinePartida.stop()
+
         cMenuModos = this
         actualizarUI()
     }
@@ -90,7 +96,10 @@ class ControladorMenuModos: ControladorGEN(), Initializable {
         actualizarUI()
     }
 
-    @FXML fun volver() = stageMenuMundos.close()
+    @FXML fun volver() {
+        reanudarPartida()
+        stageMenuMundos.close()
+    }
 
 
     @FXML fun entrar(){
