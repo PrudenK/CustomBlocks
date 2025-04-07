@@ -24,6 +24,7 @@ object ConstantesCustomAPI {
     const val CERRAR_SESION = "/cerrarSesion/{id}"
     const val PING_JUGADOR = "/jugador/ping/{id}"
     const val ACTUALIZAR_NIVEL_EXP = "/jugador/{id}/actualizarExp"
+    const val RANKING_JUGADOR = "/jugador/{id}/posicion"
 
     //Partidas
     const val SUBIR_PARTIDA = "/subirPartida"

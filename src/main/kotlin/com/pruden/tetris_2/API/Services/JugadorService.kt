@@ -36,4 +36,7 @@ interface JugadorService {
     @FormUrlEncoded
     @POST(ConstantesCustomAPI.ACTUALIZAR_NIVEL_EXP)
     suspend fun jugarActualizaNivelEXP(@Path("id") id: Int, @Field("exp") exp: Int, @Field("nivel") nivel: Int)
+
+    @GET(ConstantesCustomAPI.RANKING_JUGADOR)
+    suspend fun getRankingJugador(@Path("id") id: Int): Int
 }

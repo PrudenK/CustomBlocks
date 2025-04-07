@@ -13,8 +13,10 @@ import kotlinx.coroutines.launch
 
 fun cargarDatosUsuarioPerfil(){
     CoroutineScope(Dispatchers.IO).launch {
+        val rankingJugador = ApiCustom.jugadorService.getRankingJugador(jugadorConTodo!!.id)
         javafx.application.Platform.runLater {
             with(cPerfil){
+                rankingLabel.text = "#$rankingJugador"
                 usuarioLabel.text = jugadorConTodo!!.nombre
                 nivelLabel.text = jugadorConTodo!!.nivel.toString()
                 fechaIniLabel.text = jugadorConTodo!!.fechaini
