@@ -11,9 +11,6 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface JugadorService {
-    @GET(ConstantesCustomAPI.TODOS_JUGADORES)
-    suspend fun getTodosJugadores(): List<Jugador>
-
     @GET(ConstantesCustomAPI.INICIAR_SESION_DATOS)
     suspend fun getDatosIniciarSesion(@Path("idJugador") idJugador : Int): JugadorInicioSesion
 
@@ -35,12 +32,6 @@ interface JugadorService {
 
     @POST(ConstantesCustomAPI.PING_JUGADOR)
     suspend fun ping(@Path("id") id: Int)
-
-    @GET(ConstantesCustomAPI.CLAN_DEL_JUGADOR)
-    suspend fun clanDelJugador(@Path("id") id: Int): Int
-
-    @GET(ConstantesCustomAPI.JUGADOR_ES_LIDER_DE_UN_CLAN)
-    suspend fun jugadorEsLiderDeUnClan(@Path("id") id: Int): Int
 
     @FormUrlEncoded
     @POST(ConstantesCustomAPI.ACTUALIZAR_NIVEL_EXP)

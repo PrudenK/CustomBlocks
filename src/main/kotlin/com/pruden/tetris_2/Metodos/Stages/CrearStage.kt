@@ -45,7 +45,7 @@ fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null, mundo:
 
     stage.isResizable = false // Evitar que se pueda expandir
 
-    stage.setScene(scene)
+    stage.scene = scene
 
     stage.sizeToScene() // Asegura que se calcule el tamaño correcto
 
@@ -100,21 +100,7 @@ fun crearStage(objetoStage: ClaseStage, stageParaEsconder: Stage? = null, mundo:
 
     if (c is ControladorPerder || c is ControladorMenuModos || c is ControladorTusModos || c is ControladorSuscripciones
         || c is ControladorTerminarPartidaPVP
-
         ) {
-
-
-        // TODO mejorar cambios con ALT F4
-        /*
-        if(c is ControladorMenuModos){
-            stage.setOnCloseRequest {
-                stageParaEsconder?.show()
-            }
-        }
-
-         */
-
-
 
         stage.show()
     } else {

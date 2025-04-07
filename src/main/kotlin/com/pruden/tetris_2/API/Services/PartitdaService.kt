@@ -24,13 +24,4 @@ interface PartitdaService {
 
     @GET(ConstantesCustomAPI.PARTIDAS_DEL_JUGADOR)
     suspend fun getPartidasDelJugador(@Path("idJugador") idJugador: Int, @Path("modo") modo: String): List<Partida>
-
-    @GET(ConstantesCustomAPI.NUM_PARTIDAS_CLASICAS)
-    suspend fun getNumPartidasClasicas(@Path("id") id: Int): Response<Int>
-
-    @GET(ConstantesCustomAPI.NUM_LINEAS)
-    suspend fun getNumLineas(@Path("id") id: Int): Int
-
-    @GET(ConstantesCustomAPI.NUM_PUNTOS)
-    suspend fun getNumPuntos(@Path("id") id: Int): Int
 }

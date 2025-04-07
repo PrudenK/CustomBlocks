@@ -21,7 +21,7 @@ fun dibujarTableroPrincipal(){
 fun cargarTablero(){
     with(ControladorPrincipal.cPrin){
         ControladorPrincipal.gcPrincipal.clearRect(0.0,0.0, canvasPrincipal.width, canvasPrincipal.height)
-        canvasPrincipal.clip = Rectangle(0.0, (2 * Globales.TAMANO_CELDA).toDouble(), canvasPrincipal.width, canvasPrincipal.height - 2 * Globales.TAMANO_CELDA)
+        canvasPrincipal.clip = Rectangle(0.0, (Globales.TAMA_MASCARA * Globales.TAMANO_CELDA).toDouble(), canvasPrincipal.width, canvasPrincipal.height - Globales.TAMA_MASCARA * Globales.TAMANO_CELDA)
     }
 }
 

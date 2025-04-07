@@ -17,6 +17,7 @@ object Globales {
     var FILAS = 20
     var COLUMNAS = 10
     var TAMANO_CELDA =33
+    var TAMA_MASCARA = 2
 
     val colaLogros: ArrayDeque<LogroJugador> = ArrayDeque()
     var mostrandoNotificacion = false

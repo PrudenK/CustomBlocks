@@ -18,14 +18,11 @@ object ConstantesCustomAPI {
     //Jugadores
     const val INICIAR_SESION_DATOS = "/inicioSesion/{idJugador}"
     const val CREAR_JUGADOR = "/crearJugador"
-    const val TODOS_JUGADORES = "/jugadores"
     const val INICIAR_SESION = "/iniciarSesion"
     const val JUGADOR_POR_ID = "/jugador/{id}"
     const val SUBIR_IMAGEN = "/subirImagen/{id}"
     const val CERRAR_SESION = "/cerrarSesion/{id}"
     const val PING_JUGADOR = "/jugador/ping/{id}"
-    const val CLAN_DEL_JUGADOR = "/jugador/{id}/clan"
-    const val JUGADOR_ES_LIDER_DE_UN_CLAN = "/jugador/{id}/esLider"
     const val ACTUALIZAR_NIVEL_EXP = "/jugador/{id}/actualizarExp"
 
     //Partidas
@@ -33,33 +30,16 @@ object ConstantesCustomAPI {
     const val ESTA_MODOS_PARTIDA = "/estadisticasModos/{idJugador}/{modo}"
     const val MEJORES_PARTIDAS = "/mejoresPartidas/{pais}/{modo}"
     const val PARTIDAS_DEL_JUGADOR = "/partidasDelJugador/{idJugador}/{modo}"
-    const val NUM_PARTIDAS_CLASICAS = "/numPartidasClasicas/{id}"
-    const val NUM_LINEAS = "/numLineas/{id}"
-    const val NUM_PUNTOS = "/puntuacion/{id}"
 
     //EstaPiezas
     const val SUBIR_ESTA_PIEZAS = "/subirEstaPiezas"
     const val ESTA_PIEZAS_POR_JUGADOR = "/estaPiezas/{id}"
 
-    //Suscripciones
-    const val OBTENER_SUSCRIPCIONES = "/suscripciones"
-
-    //Mundo
-    const val OBTENER_MUNDOS = "/mundos"
-
-    // Nivel
-    const val OBTENER_NIVELES = "/niveles"
-
-    //Mundo jugador
-    const val MUNDO_JUGADOR = "/mundoJugador/{id}"
-
     //Nivel jugador
-    const val NIVEL_JUGADOR = "/nivelJugador/{id}"
     const val COMPLETAR_NIVEL = "/completarNivel/{id}/{idNivel}"
     const val NIVEL_PERDIDO = "/nivelPerdido/{id}/{idNivel}"
 
     // Logros del juagdor
-    const val LOGROS_DEL_JUGADOR = "/logros/{id}"
     const val COMPLETAR_LOGRO = "/logros/{id}/{idJugador}"
 
     //Clan
@@ -72,14 +52,12 @@ object ConstantesCustomAPI {
 
     //Suscripcion jugador
     const val JUGADOR_SE_SUSCRIBE = "/suscribirse/{idJugador}/{tipo}"
-    const val COMPROBAR_SI_JUGADOR_ES_PREMIUM = "/comprobarSuscripcionJugador/{idJugador}"
 
     //Mensajes de un clan
     const val GET_MENSAJES_DE_UN_CLAN = "/mensajesDelClan/{idClan}"
 
     //Modos de juego
     const val CREAR_MODO_DE_JUEGO = "/crearModoJuego"
-    const val MODOS_DE_JUEGO_DE_UN_JUGADOR = "/modosJugador/{idJugador}"
     const val ELIMINAR_MODO_DE_JUEGO = "/modoJuego/{idJugador}/{idNumModo}"
 
     //Partidas guardadas

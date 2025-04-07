@@ -6,9 +6,6 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface NivelJugadorService {
-    @GET(ConstantesCustomAPI.NIVEL_JUGADOR)
-    suspend fun getNivelesJugador(@Path("id") id : Int): MutableList<NivelJugador>
-
     @FormUrlEncoded
     @POST(ConstantesCustomAPI.COMPLETAR_NIVEL)
     suspend fun completarNivel(@Field("tiempo") tiempo: String, @Field("puntuacion") puntuacion : Int,

@@ -36,8 +36,8 @@ private fun tablerosInit(){
     rellenarMatriz()
     cargarGc()
     cargarTableros()
-    cPrin.canvasPrincipal.clip = Rectangle(0.0, (2 * Globales.TAMANO_CELDA).toDouble(),
-        cPrin.canvasPrincipal.width, cPrin.canvasPrincipal.height - 2 * Globales.TAMANO_CELDA)
+    cPrin.canvasPrincipal.clip = Rectangle(0.0, (Globales.TAMA_MASCARA * Globales.TAMANO_CELDA).toDouble(),
+        cPrin.canvasPrincipal.width, cPrin.canvasPrincipal.height - Globales.TAMA_MASCARA * Globales.TAMANO_CELDA)
     ControladorPrincipal.stackPaneX = cPrin.stackPane.layoutX
     ControladorPrincipal.stackPaneY = cPrin.stackPane.layoutY
     setStackpane18x10()

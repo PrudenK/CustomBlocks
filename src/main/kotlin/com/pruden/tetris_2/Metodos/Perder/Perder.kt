@@ -1,6 +1,5 @@
 package com.pruden.tetris_2.Metodos.Perder
 
-import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosPartida
 import com.pruden.tetris_2.Metodos.SubirDatos.subirTodoEstaPiezas
 import com.pruden.tetris_2.Metodos.SubirDatos.sumarTipoPieza
@@ -21,7 +20,6 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaP
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
 import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.*
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
-import com.pruden.tetris_2.Metodos.ExperienciaYNiveles.SistemaProgresion
 import com.pruden.tetris_2.Metodos.ExperienciaYNiveles.ajusteExpAlTerminarNivel
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.FinDelNivel.perderNivelModoCampa
@@ -29,9 +27,6 @@ import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.*
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.SubirDatos.subirDatosNivelPerdido
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 fun comprbarPerder(){
     if (verificarPerdida()) {
@@ -60,7 +55,7 @@ fun comprbarPerder(){
                     actualizarEstadoPVP()
 
 
-                    println("rESULTADO -> ${compararJugadoresDesdeUI().toString()}" )
+                    println("rESULTADO -> ${compararJugadoresDesdeUI()}" )
                     when (compararJugadoresDesdeUI()) {
                         Resultado.GANA_EL_OTRO -> {
                             reiniciarValoresPVPaUI()
@@ -69,15 +64,17 @@ fun comprbarPerder(){
                             ControladorTerminarPartidaPVP.resultado = "Pierdes"
                             crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
+
                         Resultado.GANA_EL_JUGADOR -> {
-                            if(!esperarResolucionPVP){
+                            if (!esperarResolucionPVP) {
                                 mostarDialogo = false
                                 esperarResolucionPVP = true
-                                if(ControladorPrincipal.elRivarHaPerdido){
+                                if (ControladorPrincipal.elRivarHaPerdido) {
                                     ControladorTerminarPartidaPVP.resultado = "Ganas"
                                     crearStage(Stages.TERMIANR_PARTIDA_PVP)
-                                }else{
-                                    mostrarDialogoConAccion("Vas ganando... \nEsperando resultado final",
+                                } else {
+                                    mostrarDialogoConAccion(
+                                        "Vas ganando... \nEsperando resultado final",
                                         aceptarBtnNombre = "Esperar",
                                         cancelBtnNombre = "Salir",
                                         onConfirmar = {
@@ -88,12 +85,13 @@ fun comprbarPerder(){
                                         }
                                     )
                                 }
-                            }else{
+                            } else {
                                 reiniciarValoresPVPaUI()
                                 ControladorTerminarPartidaPVP.resultado = "Ganas"
                                 crearStage(Stages.TERMIANR_PARTIDA_PVP)
                             }
                         }
+
                         Resultado.EMPATE -> {
                             reiniciarValoresPVPaUI()
                             mostarDialogo = false
@@ -101,19 +99,9 @@ fun comprbarPerder(){
                             ControladorTerminarPartidaPVP.resultado = "Empate"
                             crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
+
                         Resultado.INDEFINIDO -> {}
                     }
-
-
-
-
-
-
-
-
-
-
-
                 }else{
                     crearStage(Stages.PERDER)
                 }

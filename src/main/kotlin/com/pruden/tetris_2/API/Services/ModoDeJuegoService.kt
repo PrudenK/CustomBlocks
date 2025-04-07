@@ -16,9 +16,6 @@ interface ModoDeJuegoService {
         @Part imagen: MultipartBody.Part? = null
     ): Response<List<ModoDeJuegoAPI>>
 
-    @GET(ConstantesCustomAPI.MODOS_DE_JUEGO_DE_UN_JUGADOR)
-    suspend fun getModosDeJuegoDeUnJugador(@Path("idJugador") idJugador: Int): List<ModoDeJuegoAPI>
-
     @DELETE(ConstantesCustomAPI.ELIMINAR_MODO_DE_JUEGO)
     suspend fun borrarModoDeJuego(@Path("idJugador") idJugador: Int, @Path("idNumModo") idNumModo: Int)
 }

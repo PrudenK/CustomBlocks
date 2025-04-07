@@ -15,10 +15,6 @@ object ApiCustom {
     val jugadorService: JugadorService = retrofitCustom.create(JugadorService::class.java)
     val partidaService: PartitdaService = retrofitCustom.create(PartitdaService::class.java)
     val estaPiezasService: EstaPiezasService = retrofitCustom.create(EstaPiezasService::class.java)
-    val suscripcionService: SuscripcionesService = retrofitCustom.create(SuscripcionesService::class.java)
-    val mundoService: MundoService = retrofitCustom.create(MundoService::class.java)
-    val nivelService: NivelService = retrofitCustom.create(NivelService::class.java)
-    val mundoJugadorService: MundoJugadorService = retrofitCustom.create(MundoJugadorService::class.java)
     val nivelJugadorService: NivelJugadorService = retrofitCustom.create(NivelJugadorService::class.java)
     val logroService: LogrosService = retrofitCustom.create(LogrosService::class.java)
     val clanService: ClanService = retrofitCustom.create(ClanService::class.java)
@@ -26,5 +22,4 @@ object ApiCustom {
     val mensajeClanService: MensajesClanService = retrofitCustom.create(MensajesClanService::class.java)
     val modoDeJuegoService: ModoDeJuegoService = retrofitCustom.create(ModoDeJuegoService::class.java)
     val partidaGuardadaService: PartidaGuardadaService = retrofitCustom.create(PartidaGuardadaService::class.java)
-
 }
