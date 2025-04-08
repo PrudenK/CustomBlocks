@@ -34,12 +34,10 @@ private fun pintarComun(gc : GraphicsContext, color : Color, fila : Double, colu
     if (color == FONDO) {
         gc.fillRect(x + 1, y + 1, (tama - 2), (tama - 2))
     } else {
-        if (tipoPieza == 4) {  // cuadradoh
-            gc.fillRect(x + 1, y + 1, (tama - 2), (tama - 2))
-        } else if (tipoPieza == 0) { // círculo
-            gc.fillOval(x + 1, y + 1, (tama - 2), (tama - 2))
-        } else { //polígono dependiendo de los lados (tipo_pieza)
-            poligono(y, x, tipoPieza, gc, tama.toInt())
+        when (tipoPieza) {
+            4 -> gc.fillRect(x + 1, y + 1, (tama - 2), (tama - 2))
+            0 -> gc.fillOval(x + 1, y + 1, (tama - 2), (tama - 2))
+            else -> poligono(y, x, tipoPieza, gc, tama.toInt())
         }
     }
 }

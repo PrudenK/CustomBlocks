@@ -13,7 +13,7 @@
     <stylesheets>
         <URL value="@../../styles/custom.css" />
         <URL value="@../../styles/general.css" />
-        <URL value="@../../styles/partidaVista.css" />
+        <URL value="@../../styles/tableViews.css" />
     </stylesheets>
    <children>
       <TableView fx:id="tableView" layoutX="32.0" layoutY="131.0" prefHeight="431.0" prefWidth="635.0">

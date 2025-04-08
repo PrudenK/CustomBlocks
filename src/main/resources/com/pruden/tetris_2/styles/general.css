@@ -2,17 +2,17 @@
 
 /* Estilo para todos los botones */
 .button {
-    -fx-background-color: #4b4b4b; /* Gris oscuro */
-    -fx-text-fill: white; /* Texto blanco */
-    -fx-font-size: 14px; /* Tamaño de la fuente */
-    -fx-font-weight: bold; /* Fuente en negrita */
-    -fx-padding: 4 8; /* Espaciado interno */
-    -fx-border-radius: 5; /* Bordes redondeados */
-    -fx-background-radius: 5; /* Bordes redondeados */
-    -fx-border-color: #6c6c6c; /* Gris más claro para el borde */
-    -fx-border-width: 2; /* Ancho del borde */
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.5, 0, 2); /* Sombra */
-    -fx-cursor: hand; /* Cursor de mano al pasar sobre el botón */
+    -fx-background-color: #4b4b4b;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 8;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-color: #6c6c6c;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.5, 0, 2);
+    -fx-cursor: hand;
 }
 
 .button:hover {

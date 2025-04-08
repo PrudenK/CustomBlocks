@@ -138,7 +138,8 @@ object Listas {
         deRutaAImagen("/Imagenes/Tipo_De_Pieza/Triangulo.png"),
         deRutaAImagen("/Imagenes/Tipo_De_Pieza/Cuadrado.png"),
         deRutaAImagen("/Imagenes/Tipo_De_Pieza/Pentagono.png"),
-        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Hexagono.png")
+        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Hexagono.png"),
+        deRutaAImagen("/Imagenes/Tipo_De_Pieza/Octagono.png")
     )
 
     val MAPA_TIPO_PIEZAS_IMG: HashMap<Int, javafx.scene.image.Image> = hashMapOf(
@@ -146,7 +147,17 @@ object Listas {
         3 to LISTA_IMAGENES_TIPO_DE_PIEZAS[1],
         4 to LISTA_IMAGENES_TIPO_DE_PIEZAS[2],
         5 to LISTA_IMAGENES_TIPO_DE_PIEZAS[3],
-        6 to LISTA_IMAGENES_TIPO_DE_PIEZAS[4]
+        6 to LISTA_IMAGENES_TIPO_DE_PIEZAS[4],
+        8 to LISTA_IMAGENES_TIPO_DE_PIEZAS[5],
+    )
+
+    val MAPA_TIPO_PIEZAS_NOMBRES: HashMap<Int, String> = hashMapOf(
+        0 to "Círculo",
+        1 to "Triángulo",
+        2 to "Cuadrado",
+        3 to "Pentágono",
+        4 to "Hexágono",
+        5 to "Octágono",
     )
 
 

@@ -26,7 +26,6 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
     private lateinit var stage : Stage
 
     private var posicionLista = 0
-    private val cambio = false
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         iniciarListas()
@@ -94,8 +93,7 @@ class ControladorCustomTipoPiezas : ControladorGEN(), Initializable {
 
     private fun ponerNombreLabel() {
         imgViewTiposPieza.image = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista];
-        labelNombreTipoPieza.text = (Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista].url.substring(Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista].
-        url.lastIndexOf("/")+1, Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[posicionLista].url.lastIndexOf(".")));
+        labelNombreTipoPieza.text = Listas.MAPA_TIPO_PIEZAS_NOMBRES[posicionLista]
     }
 
     override fun setStage(stage: Stage?) {
