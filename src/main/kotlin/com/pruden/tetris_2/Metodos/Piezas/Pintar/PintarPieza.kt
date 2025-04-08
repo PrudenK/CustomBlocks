@@ -2,10 +2,10 @@ package com.pruden.tetris_2.Metodos.Piezas.Pintar
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Constantes.Globales
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 import javafx.scene.paint.Color
 
-fun pintarPieza(pieza: Piezas) : IntArray{
+fun pintarPieza(pieza: Pieza) : IntArray{
     val forma = pieza.getForma()[pieza.orientacion]
     val filaColumna = IntArray(2)
 

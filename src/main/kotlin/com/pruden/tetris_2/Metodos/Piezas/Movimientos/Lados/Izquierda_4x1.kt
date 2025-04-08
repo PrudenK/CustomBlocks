@@ -1,9 +1,9 @@
 package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun izquierda_4x1(pieza: Piezas): Boolean {
+fun izquierda_4x1(pieza: Pieza): Boolean {
     var puedeMoverse = true
     with(pieza){
         if (orientacion == 0) {

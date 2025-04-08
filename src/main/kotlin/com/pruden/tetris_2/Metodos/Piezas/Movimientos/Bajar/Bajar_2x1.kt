@@ -4,9 +4,9 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.BorrarPiezas.borrarLinea
 import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun bajar2x1(pieza: Piezas):Boolean{
+fun bajar2x1(pieza: Pieza):Boolean{
     with(pieza){
         val puedeBajar = if (orientacion == 0) {
             matrizNumerica[getFilaCentro() + 2][getColumnaCentro()] == Globales.BLANCO

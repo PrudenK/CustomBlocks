@@ -9,7 +9,7 @@ import javafx.scene.paint.Color
 
 class Pieza_O(override var fila: Int, override var columna: Int,
               override var orientacion : Int = 0, override var condicionEspecial_b : Boolean = false)
-    : Piezas(fila, columna, orientacion, condicionEspecial_b) {
+    : Pieza(fila, columna, orientacion, condicionEspecial_b) {
     private val CENTRO = 18
     private val NUMPIEZA = 1
     private val COLOR = Color.YELLOW
@@ -63,9 +63,6 @@ class Pieza_O(override var fila: Int, override var columna: Int,
         return FORMAS_O
     }
 
-    override fun set_Orientacion(ori: Int) {
-    }
-
     override fun puedeRotar(nuevaOrientacion: Int): Boolean {
         return true
     }
@@ -90,7 +87,7 @@ class Pieza_O(override var fila: Int, override var columna: Int,
         return COLOR
     }
 
-    override fun clonar(): Piezas {
+    override fun clonar(): Pieza {
         return Pieza_O(this.fila, this.columna)
     }
 }

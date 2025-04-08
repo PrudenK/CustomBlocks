@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 var contadorPiezas = MutableList(Listas.NOMBRES_PIEZAS.size) { 0 }
 
-fun sumarTipoPieza(pieza : Piezas){
+fun sumarTipoPieza(pieza : Pieza){
     for ((indice, p) in Listas.LISTA_INSTANCIAS_PIEZAS.withIndex()){
         if (p.isInstance(pieza)){
             contadorPiezas[indice] += 1

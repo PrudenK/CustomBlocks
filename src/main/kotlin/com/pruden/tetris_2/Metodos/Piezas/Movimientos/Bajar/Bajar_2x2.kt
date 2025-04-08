@@ -5,9 +5,9 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.BorrarPiezas.borrarLinea
 import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun bajar2x2(pieza : Piezas, desplazamientos: IntArray ): Boolean{
+fun bajar2x2(pieza : Pieza, desplazamientos: IntArray ): Boolean{
     with(pieza) {
         var puedeBajar = true
         if (orientacion == 0) {

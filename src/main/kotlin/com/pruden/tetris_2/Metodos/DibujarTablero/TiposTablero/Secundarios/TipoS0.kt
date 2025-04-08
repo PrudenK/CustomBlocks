@@ -6,7 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.ANCHO_CA
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_CELDA_SECUN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_TABLERO_SECUN
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasillaSecun
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 import javafx.scene.canvas.GraphicsContext
 
 
@@ -24,7 +24,7 @@ fun dibujarTableroSecundarioTIPO0(gc: GraphicsContext) {
 }
 
 
-fun pintarPiezaTableroSecundarioTIPO0(gc: GraphicsContext, pieza: Piezas) {
+fun pintarPiezaTableroSecundarioTIPO0(gc: GraphicsContext, pieza: Pieza) {
     val forma = pieza.getForma()[pieza.orientacion]
 
     // Calcular el tamaño del tablero en píxeles

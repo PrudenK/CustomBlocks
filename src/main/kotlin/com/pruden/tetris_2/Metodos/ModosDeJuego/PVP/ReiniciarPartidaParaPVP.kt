@@ -177,9 +177,9 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
 
 
 
-private fun mapearLetrasAPiezasPVP(indices: List<Int>): ArrayList<Piezas> {
+private fun mapearLetrasAPiezasPVP(indices: List<Int>): ArrayList<Pieza> {
     val columna = Globales.COLUMNAS / 2
-    val piezas = ArrayList<Piezas>()
+    val piezas = ArrayList<Pieza>()
 
     indices.forEach { i ->
         val pieza = when (i) {

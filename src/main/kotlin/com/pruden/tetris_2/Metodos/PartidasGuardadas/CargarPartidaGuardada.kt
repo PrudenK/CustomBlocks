@@ -207,9 +207,9 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
     }
 }
 
-fun mapearLetrasAPiezasGuardadas(letras: String): ArrayList<Piezas> {
+fun mapearLetrasAPiezasGuardadas(letras: String): ArrayList<Pieza> {
     val columna = Globales.COLUMNAS / 2
-    val piezas = ArrayList<Piezas>()
+    val piezas = ArrayList<Pieza>()
 
     letras.replace("_", "").split(",").forEach { letra ->
         val index = Listas.LETRAS_PIEZAS.indexOf(letra)

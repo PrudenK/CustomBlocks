@@ -2,9 +2,9 @@ package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados
 
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun moverDerecha_O_2x2(pieza: Piezas): Boolean{
+fun moverDerecha_O_2x2(pieza: Pieza): Boolean{
     with(pieza){
         if (columna != Globales.COLUMNAS - 2) {
             if (!(matrizNumerica[fila][columna + 2] != 0 || matrizNumerica[fila + 1][columna + 2] != 0)) {
@@ -18,7 +18,7 @@ fun moverDerecha_O_2x2(pieza: Piezas): Boolean{
     }
 }
 
-fun moverIzquierda_O_2x2(pieza: Piezas): Boolean{
+fun moverIzquierda_O_2x2(pieza: Pieza): Boolean{
     with(pieza){
         if (columna > 0) {
             if (!(matrizNumerica[fila][columna - 1] != 0 || matrizNumerica[fila + 1][columna - 1] != 0)) {
@@ -32,7 +32,7 @@ fun moverIzquierda_O_2x2(pieza: Piezas): Boolean{
     }
 }
 
-fun moverDerechaIzquierda_2x2(pieza: Piezas, desplazamientos: IntArray, direccion: Int) : Boolean { //1 o -1
+fun moverDerechaIzquierda_2x2(pieza: Pieza, desplazamientos: IntArray, direccion: Int) : Boolean { //1 o -1
     var puedeMoverse = true
     with(pieza){
         if (orientacion == 0) {

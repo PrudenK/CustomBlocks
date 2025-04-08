@@ -11,12 +11,12 @@ import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companio
 import com.pruden.tetris_2.Piezas.*
 import java.util.*
 
-val copiaEnPVP: ArrayList<Piezas> = ArrayList()
-val siguientePieza: ArrayList<Piezas> = ArrayList()
-val piezasBolsa: ArrayList<Piezas> = ArrayList()
+val copiaEnPVP: ArrayList<Pieza> = ArrayList()
+val siguientePieza: ArrayList<Pieza> = ArrayList()
+val piezasBolsa: ArrayList<Pieza> = ArrayList()
 private val random = Random()
 
-fun devolverPiezaAleatoria(): Piezas {
+fun devolverPiezaAleatoria(): Pieza {
     if(partidaPVPenCurso){
       if(siguientePieza.size < 4){
           siguientePieza.addAll(copiaEnPVP.map { it.clonar() })
@@ -51,7 +51,7 @@ private fun guardarPiezaSiBolsaVacia(){
 
 private fun cargarLista(){
     val columnaInicial = Globales.COLUMNAS /2
-    val bolsaTemp: ArrayList<Piezas> = ArrayList()
+    val bolsaTemp: ArrayList<Pieza> = ArrayList()
     val piezasAgregar : ArrayList<Boolean> = listaPiezasSeleccionadas
 
     if (piezasAgregar.isNotEmpty() && !piezasAgregar.stream().allMatch { b: Boolean? -> !b!! }) {

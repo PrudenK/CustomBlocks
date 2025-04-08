@@ -21,12 +21,12 @@ fun holdear(){
         borrarTableroSecundario(gcHold)
         piezaActual.limpiar()
 
-        piezaActual.set_Orientacion(0)
+        piezaActual.orientacion = 0
         if (piezaActual is Pieza_I) {
-            piezaActual.set_Orientacion(4)
+            piezaActual.orientacion = 4
         }
         if(piezaActual is Pieza_Pickaxe){
-            piezaActual.set_Orientacion(2)
+            piezaActual.orientacion = 2
         }
         pintarPiezaTableroSecun(gcHold, piezaActual)
         piezaHold.add(piezaActual)
@@ -36,9 +36,9 @@ fun holdear(){
         } else {
             piezaActual = piezaHold.removeAt(0)
             piezaActual.fila = 0
-            piezaActual.set_Orientacion(0)
+            piezaActual.orientacion = 0
             if(piezaActual is Pieza_Pickaxe){
-                piezaActual.set_Orientacion(2)
+                piezaActual.orientacion = 2
             }
             piezaActual.columna = (Globales.COLUMNAS / 2 - 2)
             piezaActual.pintar()

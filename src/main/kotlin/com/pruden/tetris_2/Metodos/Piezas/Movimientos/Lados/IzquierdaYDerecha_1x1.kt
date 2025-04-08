@@ -2,9 +2,9 @@ package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados
 
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun moverDerecha_1x1(pieza: Piezas): Boolean{
+fun moverDerecha_1x1(pieza: Pieza): Boolean{
     with(pieza){
         if (columna != Globales.COLUMNAS - 1) {
             if (matrizNumerica[fila][columna + 1] == 0) {
@@ -18,7 +18,7 @@ fun moverDerecha_1x1(pieza: Piezas): Boolean{
     }
 }
 
-fun moverIzquierda_1x1(pieza: Piezas): Boolean{
+fun moverIzquierda_1x1(pieza: Pieza): Boolean{
     with(pieza){
         if (columna > 0) {
             if (matrizNumerica[fila][columna - 1] == 0) {

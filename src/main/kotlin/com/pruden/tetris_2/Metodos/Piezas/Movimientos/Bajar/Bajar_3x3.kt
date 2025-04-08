@@ -6,9 +6,9 @@ import com.pruden.tetris_2.Metodos.BorrarPiezas.borrarLinea
 import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
 import com.pruden.tetris_2.Piezas.Pieza_U
 import com.pruden.tetris_2.Piezas.Pieza_V
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun bajar3x3(pieza: Piezas, desplazamientos: IntArray): Boolean {
+fun bajar3x3(pieza: Pieza, desplazamientos: IntArray): Boolean {
     with(pieza) {
         var puedeBajar = true
         if (orientacion == 0) {

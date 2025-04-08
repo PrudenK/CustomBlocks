@@ -3,9 +3,8 @@ package com.pruden.tetris_2.Metodos.DibujarTablero.TiposTablero.Secundarios
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_CELDA_SECUN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.TAMA_TABLERO_SECUN
-import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasillaSecun
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.paint.Color
 
@@ -24,7 +23,7 @@ fun dibujarTableroSecundarioTIPO1(gc: GraphicsContext) {
     }
 }
 
-fun pintarPiezaTableroSecundarioTIPO1(gc: GraphicsContext, pieza : Piezas) {
+fun pintarPiezaTableroSecundarioTIPO1(gc: GraphicsContext, pieza : Pieza) {
     val forma = pieza.getForma()[pieza.getForma().size-1]
     for (i in forma.indices) {
         for (j in forma[i].indices) {

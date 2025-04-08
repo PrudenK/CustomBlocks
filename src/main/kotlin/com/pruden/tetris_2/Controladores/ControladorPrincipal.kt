@@ -13,12 +13,11 @@ import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
-import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
 import com.pruden.tetris_2.Metodos.Timelines.indiceActualAnuncio
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 import javafx.animation.Timeline
 import javafx.application.Platform
@@ -139,7 +138,7 @@ class ControladorPrincipal : Initializable {
 
         var partidaEnCurso = false
 
-        lateinit var piezaActual : Piezas
+        lateinit var piezaActual : Pieza
 
 
         lateinit var gcPrincipal: GraphicsContext
@@ -156,7 +155,7 @@ class ControladorPrincipal : Initializable {
 
 
         var matrizNumerica: Array<IntArray> = Array(Globales.FILAS +1) { IntArray(Globales.COLUMNAS) }
-        var piezaHold: ArrayList<Piezas> = ArrayList()
+        var piezaHold: ArrayList<Pieza> = ArrayList()
 
 
         var hasPerdido = false

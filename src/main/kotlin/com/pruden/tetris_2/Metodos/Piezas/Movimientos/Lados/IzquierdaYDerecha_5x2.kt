@@ -2,9 +2,9 @@ package com.pruden.tetris_2.Metodos.Piezas.Movimientos.Lados
 
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun moverDerechaIzquierda5x2(pieza: Piezas, desplazamientos: IntArray, direccion: Int) : Boolean { //1 o -1
+fun moverDerechaIzquierda5x2(pieza: Pieza, desplazamientos: IntArray, direccion: Int) : Boolean { //1 o -1
     var puedeMoverse = true
     with(pieza){
         if (orientacion == 0) {

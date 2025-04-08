@@ -4,7 +4,7 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Metodos.BorrarPiezas.borrarLinea
 import com.pruden.tetris_2.Metodos.Perder.comprbarPerder
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
 // esto funcionará así pq no voy a hacer piezas de 5x3 de este estilo
 /*
@@ -13,7 +13,7 @@ import com.pruden.tetris_2.Piezas.Piezas
     01110
  */
 
-fun bajar5x3(pieza: Piezas, desplazamientos: IntArray): Boolean {
+fun bajar5x3(pieza: Pieza, desplazamientos: IntArray): Boolean {
     with(pieza) {
         var puedeBajar = true
         if (orientacion == 0) {

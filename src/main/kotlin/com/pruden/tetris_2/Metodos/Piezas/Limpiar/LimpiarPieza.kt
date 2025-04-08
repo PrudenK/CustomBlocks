@@ -4,9 +4,9 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.FONDO
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Metodos.Piezas.Pintar.pintarCasilla
 import com.pruden.tetris_2.Constantes.Globales
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun limpiarPieza(pieza: Piezas){
+fun limpiarPieza(pieza: Pieza){
     val forma = pieza.getForma()[pieza.orientacion]
     for (i in forma.indices) {
         for (j in forma[i].indices) {

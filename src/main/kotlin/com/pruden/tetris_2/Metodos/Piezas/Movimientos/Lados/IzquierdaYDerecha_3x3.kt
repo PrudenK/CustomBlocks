@@ -4,9 +4,9 @@ import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNumerica
 import com.pruden.tetris_2.Piezas.Pieza_U
 import com.pruden.tetris_2.Piezas.Pieza_V
-import com.pruden.tetris_2.Piezas.Piezas
+import com.pruden.tetris_2.Piezas.Pieza
 
-fun moverDerechaIzquierda_3x3(pieza: Piezas, desplazamientos: IntArray, direccion: Int) : Boolean { //1 o -1
+fun moverDerechaIzquierda_3x3(pieza: Pieza, desplazamientos: IntArray, direccion: Int) : Boolean { //1 o -1
     var puedeMoverse = true
     with(pieza){
         if (orientacion == 0) {
