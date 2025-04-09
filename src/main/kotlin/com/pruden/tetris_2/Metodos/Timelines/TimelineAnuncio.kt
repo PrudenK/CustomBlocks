@@ -35,7 +35,9 @@ fun cargarTimeLineAuncios() {
 
 private fun timeLineAnuncio(){
     CoroutineScope(Dispatchers.IO).launch {
-        val anunciosPortatiles = ApiPublicidad.anuncios.filter { it.tipo == 1 }
+        //println(ApiPublicidad.anuncios)
+
+        val anunciosPortatiles = ApiPublicidad.anuncios.filter { it.tipo.id == 1 }
         timeLineAnuncios?.stop()
         cPrin.imgPublicidad.isVisible = true
         cPrin.nombreAnunciosPC.isVisible = true

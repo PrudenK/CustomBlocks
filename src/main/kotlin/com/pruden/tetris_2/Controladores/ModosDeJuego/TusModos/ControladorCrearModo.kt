@@ -278,8 +278,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
 
     private fun ponerNombreLabelDisePiezas() {
         imgViewTiposPieza.image = Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza];
-        labelNombreTipoPieza.text = (Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].url.substring(Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].
-        url.lastIndexOf("/")+1, Listas.LISTA_IMAGENES_TIPO_DE_PIEZAS[indiceDisePieza].url.lastIndexOf(".")));
+        labelNombreTipoPieza.text = Listas.MAPA_TIPO_PIEZAS_NOMBRES[indiceDisePieza]
     }
 
     private fun cargarInitDiseTableroSecun(){
@@ -444,7 +443,7 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
         println(fotoModoDeJuegoSeleccionada)
 
         val modoJuego = ModoDeJuegoAPI(
-            idJugador = idJugador,
+            idJugador = jugadorConTodo!!.id,
             idnummodo = ControladorTusModos.indiceActual+1,
             nombre = textFieldNombreModo.text.toString(),
             imagen = "",
@@ -473,7 +472,6 @@ class ControladorCrearModo: ControladorGEN(), Initializable {
                     jugadorConTodo!!.listaTusModosDeJuego = response.body()!!.toMutableList()
                 }
             }
-            println(response.code())
             println(response)
             fotoModoDeJuegoSeleccionada = null
         }

@@ -81,7 +81,8 @@ class Pieza_A (override var fila: Int, override var columna: Int,
                 true
             } else {
                 if (matrizNumerica[filaCentro + 1][columnaCentro] != BLANCO) {
-                    condicionRotarEspecial(this, intArrayOf(-1,-2,-2), intArrayOf(1,-1,0), false, -1)
+                    condicionRotarEspecial(this, intArrayOf(-1,-2,-2),
+                        intArrayOf(1,-1,0), false, -1)
                 } else condicionRotarEspecial(this, intArrayOf(1,-1,0), intArrayOf(-1,0,1), true, 1) ||
                         condicionRotarEspecial(this, intArrayOf(2,2,1), intArrayOf(-1,0,0), true, 1)
             }
@@ -103,15 +104,26 @@ class Pieza_A (override var fila: Int, override var columna: Int,
 
 
     override fun bajar(): Boolean {
-        return bajar3x3(this, intArrayOf(2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1, 0, 2, 2, 2, 1, 1, 1, 1, 2, 2, 0, 2))
+        return bajar3x3(this, intArrayOf(2, 2, 1, 1, 2, 2,  //R0
+                                               1, 1, 2, 2, 1, 1,  //R2
+                                               0, 2, 2, 2, 1, 1,  //R1
+                                               1, 1, 2, 2, 0, 2)) //R3
     }
 
     override fun derecha(): Boolean {
-        return moverDerechaIzquierda_3x3(this, intArrayOf(1, 1, 2, 2, 0, 2, 0, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2), 1)
+        return moverDerechaIzquierda_3x3(this, intArrayOf(1, 1, 2, 2, 0, 2,
+                                                                0, 2, 2, 2, 1, 1,
+                                                                1, 1, 2, 2, 1, 1,
+                                                                2, 2, 1, 1, 2, 2),
+                                                                       1)
     }
 
     override fun izquierda(): Boolean {
-       return moverDerechaIzquierda_3x3(this, intArrayOf(-1, -1, -2, -2, 0, -2, 0, -2, -2, -2, -1, -1, -2, -2, -1, -1, -2, -2, -1, -1, -2, -2, -1, -1), -1)
+       return moverDerechaIzquierda_3x3(this, intArrayOf(-1, -1, -2, -2, 0, -2,
+                                                                0, -2, -2, -2, -1, -1,
+                                                                -2, -2, -1, -1, -2, -2,
+                                                                -1, -1, -2, -2, -1, -1),
+                                                                            -1)
     }
 
     override fun getForma(): Array<Array<IntArray>>  {

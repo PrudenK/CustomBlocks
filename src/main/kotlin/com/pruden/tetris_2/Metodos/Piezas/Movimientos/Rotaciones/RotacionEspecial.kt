@@ -5,7 +5,9 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.matrizNu
 import com.pruden.tetris_2.Piezas.Pieza
 
 
-fun condicionRotarEspecial(pieza : Pieza, dFilas : IntArray, dColumnas : IntArray, columnaB: Boolean, movimiento: Int): Boolean {
+fun condicionRotarEspecial(pieza : Pieza, dFilas : IntArray,
+                           dColumnas : IntArray, columnaB: Boolean,
+                           movimiento: Int): Boolean {
     with(pieza) {
         var condicion = true
         for (i in dFilas.indices){

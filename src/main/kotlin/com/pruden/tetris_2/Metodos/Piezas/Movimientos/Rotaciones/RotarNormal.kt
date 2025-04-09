@@ -8,7 +8,7 @@ fun rotarNormal(pieza : Pieza, mod : Int): Boolean {
     with(pieza){
         val nuevaOrientacion = (orientacion + 1) % mod
         if (puedeRotar(nuevaOrientacion)) {
-            if (!condicionEspecial_b || pieza is Pieza_P) {
+            if (!condicionEspecial_b) {
                 limpiar()
             }
             orientacion = nuevaOrientacion

@@ -5,6 +5,6 @@ data class Anuncio(
     var imagen: String,
     var link: String,
     var vecesclickado: Int,
-    var tipo: Int,
+    var tipo: TipoAnuncio,
     var nombre: String
 )
