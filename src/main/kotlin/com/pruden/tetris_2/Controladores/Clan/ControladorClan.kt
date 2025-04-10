@@ -10,7 +10,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugado
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
-import com.pruden.tetris_2.WebSocket.Clan.ClanChatEmisor
+import com.pruden.tetris_2.WebSocket.ChatClan.ClanChatEmisor
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable

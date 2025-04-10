@@ -5,9 +5,9 @@ import com.pruden.tetris_2.Constantes.Logros
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
-import com.pruden.tetris_2.WebSocket.Clan.ClanChatWebSocket
+import com.pruden.tetris_2.WebSocket.ChatClan.ClanChatWebSocket
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
-import com.pruden.tetris_2.WebSocket.Clan.MensajeChat
+import com.pruden.tetris_2.WebSocket.ChatClan.MensajeChat
 import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.fxml.FXML

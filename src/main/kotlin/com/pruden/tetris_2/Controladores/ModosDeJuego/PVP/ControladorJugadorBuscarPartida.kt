@@ -11,6 +11,7 @@ import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.reiniciarPartidaParaPVP
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
 import com.pruden.tetris_2.WebSocket.BuscarPartida.JugadorConModo
+import com.pruden.tetris_2.WebSocket.BuscarPartida.UnirsePartidaEmisor
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
 import javafx.application.Platform
 import javafx.fxml.FXML
@@ -53,47 +54,8 @@ class ControladorJugadorBuscarPartida {
                     mostrarDialogoConAccion(
                         mensaje = "¿Quiérers jugar contra\n${jugador.nombre} en modo ${jugador.modo}?",
                         onConfirmar = {
-                            CoroutineScope(Dispatchers.IO).launch {
-                                val client = HttpClient.newHttpClient()
-                                val uri = URI.create("${ConstantesServidor.PATH_SERVER}/unirse-partida/${jugador.id}/${jugadorConTodo!!.id}")
-
-                                client.newWebSocketBuilder().buildAsync(uri, object : WebSocket.Listener {
-                                    override fun onText(webSocket: WebSocket, data: CharSequence, last: Boolean): CompletionStage<*> {
-                                        val json = JSONObject(data.toString())
-                                        if (json.getString("mensaje") == "iniciarPartida") {
-
-
-
-
-                                            Platform.runLater {
-                                                println("🎮 ¡Partida aceptada! Iniciando como creador")
-                                                stageBuscarPartida.close()
-                                                stageMenuPVP.close()
-                                                cMenuModos.stageMenuMundos.close()
-                                            }
-
-
-
-
-                                            CoroutineScope(Dispatchers.IO).launch { // TODO cambiar llamadas a la API en el futuro
-                                                val creador = ApiCustom.jugadorService.getJugadorPorId(json.getInt("creadorId"))
-                                                val buscador = ApiCustom.jugadorService.getJugadorPorId(json.getInt("unidorId"))
-
-                                                Platform.runLater {
-                                                    reiniciarPartidaParaPVP(
-                                                        DatosPartidaPVP(creador, buscador,  json.getString("modo"),
-                                                                json.getJSONArray("bolsa").toString())
-                                                    )
-                                                }
-                                            }
-
-
-
-
-                                        }
-                                        return CompletableFuture.completedFuture(null)
-                                    }
-                                })
+                            UnirsePartidaEmisor.conectar(jugador.id, jugadorConTodo!!.id) {
+                                reiniciarPartidaParaPVP(it)
                             }
                         }
                     )
