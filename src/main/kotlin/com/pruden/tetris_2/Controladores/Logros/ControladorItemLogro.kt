@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Controladores.Logros
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
-import com.pruden.tetris_2.API.ObjsAux.LogroJugador
+import com.pruden.tetris_2.API.ObjsAuxApi.LogroJugador
 import com.pruden.tetris_2.Constantes.Globales
 import javafx.fxml.FXML
 import javafx.scene.control.Label

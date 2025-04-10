@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.WebSocket.CrearPartida
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.API.ObjsAux.JugadorInicioSesion
+import com.pruden.tetris_2.API.ObjsAuxApi.JugadorInicioSesion
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos.Companion.cMenuModos
 import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorCrearPartidaPVP.Companion.stageCrearPartidaPVP
 import com.pruden.tetris_2.Controladores.ModosDeJuego.PVP.ControladorMenuPVP.Companion.stageMenuPVP

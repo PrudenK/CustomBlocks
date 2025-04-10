@@ -1,8 +1,7 @@
 package com.pruden.tetris_2.Controladores.Clan
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.API.ObjsAux.ItemClan
-import com.pruden.tetris_2.API.ObjsAux.Jugador
+import com.pruden.tetris_2.API.ObjsAuxApi.ItemClan
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader

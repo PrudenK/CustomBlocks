@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Stages
 
-import com.pruden.tetris_2.API.ObjsAux.LogroJugador
+import com.pruden.tetris_2.API.ObjsAuxApi.LogroJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.Notificaciones.NotificacionController
 import com.pruden.tetris_2.Tetris

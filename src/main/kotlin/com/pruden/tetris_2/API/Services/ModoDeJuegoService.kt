@@ -1,10 +1,9 @@
 package com.pruden.tetris_2.API.Services
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
-import com.pruden.tetris_2.API.ObjsAux.ModoDeJuegoAPI
+import com.pruden.tetris_2.API.ObjsAuxApi.ModoDeJuegoAPI
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.*
 

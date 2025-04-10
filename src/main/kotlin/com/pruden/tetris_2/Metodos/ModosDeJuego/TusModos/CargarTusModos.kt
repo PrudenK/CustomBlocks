@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.ModosDeJuego.TusModos
 
-import com.pruden.tetris_2.API.ObjsAux.ModoDeJuegoAPI
+import com.pruden.tetris_2.API.ObjsAuxApi.ModoDeJuegoAPI
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES

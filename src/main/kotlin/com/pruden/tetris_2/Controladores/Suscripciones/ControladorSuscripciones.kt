@@ -2,7 +2,7 @@ package com.pruden.tetris_2.Controladores.Suscripciones
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
-import com.pruden.tetris_2.API.ObjsAux.SuscripcionJugador
+import com.pruden.tetris_2.API.ObjsAuxApi.SuscripcionJugador
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo

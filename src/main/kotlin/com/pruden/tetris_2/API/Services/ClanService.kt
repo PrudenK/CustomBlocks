@@ -1,9 +1,9 @@
 package com.pruden.tetris_2.API.Services
 
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
-import com.pruden.tetris_2.API.ObjsAux.Clan
-import com.pruden.tetris_2.API.ObjsAux.ItemClan
-import com.pruden.tetris_2.API.ObjsAux.Jugador
+import com.pruden.tetris_2.API.ObjsAuxApi.Clan
+import com.pruden.tetris_2.API.ObjsAuxApi.ItemClan
+import com.pruden.tetris_2.API.ObjsAuxApi.Jugador
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody

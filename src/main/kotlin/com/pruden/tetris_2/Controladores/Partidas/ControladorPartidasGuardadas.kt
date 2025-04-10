@@ -1,13 +1,12 @@
 package com.pruden.tetris_2.Controladores.Partidas
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.API.ObjsAux.PartidaGuardada
+import com.pruden.tetris_2.API.ObjsAuxApi.PartidaGuardada
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Globales.FILAS
 import com.pruden.tetris_2.Constantes.Listas.LISTA_VALORES_FILAS_TABLERO
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LIMITE_ROTACIONES
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.LINEAS_POR_NIVEL
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.REDUCCION_TIEMPO_POR_NIVEL
@@ -42,17 +41,13 @@ import com.pruden.tetris_2.Metodos.BolsaPiezas.piezasBolsa
 import com.pruden.tetris_2.Metodos.BolsaPiezas.siguientePieza
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.borrarTableroSecundario
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroPrincipal
-import com.pruden.tetris_2.Metodos.DibujarTablero.General.dibujarTableroSecundario
 import com.pruden.tetris_2.Metodos.DibujarTablero.General.paresImparesTableroTipo3y4
 import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.IniciarPartida.cuentaAtras
 import com.pruden.tetris_2.Metodos.IniciarPartida.reiniciarLabels
-import com.pruden.tetris_2.Metodos.Matriz.rellenarMatriz
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.cambiarLabelsAlSalirDelModoCampa
 import com.pruden.tetris_2.Metodos.PartidasGuardadas.cargarPartidaGuardada
-import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import javafx.application.Platform
 import javafx.fxml.FXML

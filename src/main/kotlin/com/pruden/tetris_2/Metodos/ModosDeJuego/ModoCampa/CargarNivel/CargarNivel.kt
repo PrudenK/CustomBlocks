@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.ModosDeJuego.ModoCampa.CargarNivel
 
-import com.pruden.tetris_2.API.ObjsAux.Nivel
+import com.pruden.tetris_2.API.ObjsAuxApi.Nivel
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin

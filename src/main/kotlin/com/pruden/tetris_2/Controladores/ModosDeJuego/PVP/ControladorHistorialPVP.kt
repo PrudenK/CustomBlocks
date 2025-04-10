@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.Controladores.ModosDeJuego.PVP
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.API.ObjsAux.PartidaPVPconJugadores
+import com.pruden.tetris_2.API.ObjsAuxApi.PartidaPVPconJugadores
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import javafx.application.Platform

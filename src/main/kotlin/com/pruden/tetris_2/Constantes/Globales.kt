@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Constantes
 
-import com.pruden.tetris_2.API.ObjsAux.LogroJugador
+import com.pruden.tetris_2.API.ObjsAuxApi.LogroJugador
 import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import javafx.scene.effect.ColorAdjust
 import javafx.scene.paint.Color

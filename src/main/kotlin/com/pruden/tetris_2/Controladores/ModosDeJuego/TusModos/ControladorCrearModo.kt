@@ -2,11 +2,10 @@ package com.pruden.tetris_2.Controladores.ModosDeJuego.TusModos
 
 import com.google.gson.Gson
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.API.ObjsAux.ModoDeJuegoAPI
+import com.pruden.tetris_2.API.ObjsAuxApi.ModoDeJuegoAPI
 import com.pruden.tetris_2.Constantes.Configuraciones
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.Custom.ControladorCustomPiezas.Companion.checkBoxes
 import com.pruden.tetris_2.Controladores.ModosDeJuego.ControladorMenuModos

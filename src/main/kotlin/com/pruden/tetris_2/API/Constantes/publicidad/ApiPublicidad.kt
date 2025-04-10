@@ -1,7 +1,7 @@
 package com.pruden.tetris_2.API.Constantes.publicidad
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.pruden.tetris_2.API.ObjsAux.Anuncio
+import com.pruden.tetris_2.API.ObjsAuxApi.Anuncio
 import com.pruden.tetris_2.API.Services.PublicidadService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

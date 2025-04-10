@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.WebSocket.BuscarPartida
 
-import com.pruden.tetris_2.API.ObjsAux.JugadorInicioSesion
+import com.pruden.tetris_2.API.ObjsAuxApi.JugadorInicioSesion
 import com.pruden.tetris_2.WebSocket.ConstantesServidor
 import kotlinx.coroutines.*
 import org.json.JSONArray

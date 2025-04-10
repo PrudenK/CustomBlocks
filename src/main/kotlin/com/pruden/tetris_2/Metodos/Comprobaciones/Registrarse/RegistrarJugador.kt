@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.Comprobaciones.Registrarse
 
-import com.pruden.tetris_2.API.ObjsAux.Jugador
+import com.pruden.tetris_2.API.ObjsAuxApi.Jugador
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse.Companion.cRegistrarse
 import kotlinx.coroutines.CoroutineScope

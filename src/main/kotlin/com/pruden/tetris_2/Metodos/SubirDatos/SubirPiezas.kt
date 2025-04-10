@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.SubirDatos
 
-import com.pruden.tetris_2.API.ObjsAux.EstaPiezas
+import com.pruden.tetris_2.API.ObjsAuxApi.EstaPiezas
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador

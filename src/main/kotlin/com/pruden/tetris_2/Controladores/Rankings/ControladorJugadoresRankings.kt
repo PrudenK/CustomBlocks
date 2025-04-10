@@ -1,11 +1,9 @@
 package com.pruden.tetris_2.Controladores.Rankings
 
 import com.pruden.tetris_2.API.Constantes.custom.ApiCustom
-import com.pruden.tetris_2.API.ObjsAux.Jugador
+import com.pruden.tetris_2.API.ObjsAuxApi.Jugador
 import com.pruden.tetris_2.Constantes.Listas
-import com.pruden.tetris_2.Controladores.Clan.ControladorJugadorClan
 import com.pruden.tetris_2.Controladores.ControladorGEN
-import com.pruden.tetris_2.Metodos.RankingVistaDatos.cargarDatosRanking
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader

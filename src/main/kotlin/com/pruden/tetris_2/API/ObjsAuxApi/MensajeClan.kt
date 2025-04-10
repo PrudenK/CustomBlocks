@@ -1,4 +1,4 @@
-package com.pruden.tetris_2.API.ObjsAux
+package com.pruden.tetris_2.API.ObjsAuxApi
 
 data class MensajeClan(
     val idmensaje: Int,

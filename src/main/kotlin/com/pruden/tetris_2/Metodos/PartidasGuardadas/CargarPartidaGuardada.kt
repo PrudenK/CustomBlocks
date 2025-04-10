@@ -1,6 +1,6 @@
 package com.pruden.tetris_2.Metodos.PartidasGuardadas
 
-import com.pruden.tetris_2.API.ObjsAux.PartidaGuardada
+import com.pruden.tetris_2.API.ObjsAuxApi.PartidaGuardada
 import com.pruden.tetris_2.Constantes.Globales
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Controladores.ControladorPrincipal

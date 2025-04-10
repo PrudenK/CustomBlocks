@@ -1,10 +1,10 @@
 package com.pruden.tetris_2.API.Services
 
 import com.google.gson.JsonObject
-import com.pruden.tetris_2.API.ObjsAux.Jugador
-import com.pruden.tetris_2.API.ObjsAux.LoginRequest
+import com.pruden.tetris_2.API.ObjsAuxApi.Jugador
+import com.pruden.tetris_2.API.ObjsAuxApi.LoginRequest
 import com.pruden.tetris_2.API.Constantes.custom.ConstantesCustomAPI
-import com.pruden.tetris_2.API.ObjsAux.JugadorInicioSesion
+import com.pruden.tetris_2.API.ObjsAuxApi.JugadorInicioSesion
 import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.Response

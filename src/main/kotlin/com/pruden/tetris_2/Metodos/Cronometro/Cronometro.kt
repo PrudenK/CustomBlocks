@@ -9,7 +9,7 @@ import javafx.event.ActionEvent
 import javafx.scene.control.Label
 import javafx.util.Duration
 
-class Cronometro () {
+class Cronometro {
     private var cronometroLabel : Label = cPrin.cronometroLabel
     private var horas = 0
     private var minutos = 0
