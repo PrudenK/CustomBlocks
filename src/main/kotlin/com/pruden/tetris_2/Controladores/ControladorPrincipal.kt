@@ -13,6 +13,7 @@ import com.pruden.tetris_2.Metodos.Cronometro.Cronometro
 import com.pruden.tetris_2.Metodos.DialogoAccion.mostrarDialogoConAccion
 import com.pruden.tetris_2.Metodos.IniciarPartida.*
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
+import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Metodos.Publicidad.abrirBanner
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.Timelines.cargarTimeLineAuncios
@@ -229,6 +230,7 @@ class ControladorPrincipal : Initializable {
     }
 
     @FXML fun opciones() {
+        imprimirMatriz_TAB()
         if (!animacionEnCurso) crearStage(Stages.OPCIONES)
     }
     @FXML fun custom() {

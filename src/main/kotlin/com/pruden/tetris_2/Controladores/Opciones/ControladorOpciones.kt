@@ -45,6 +45,9 @@ class ControladorOpciones : ControladorGEN(), Initializable{
 
                 if(partidaPVPenCurso){
                     reiniciar.isDisable = true
+                }else{
+                    timelinePartida.stop()
+                    cronometro.parar()
                 }
             }
             else->{ 
