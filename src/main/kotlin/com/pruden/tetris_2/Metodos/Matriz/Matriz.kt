@@ -29,7 +29,7 @@ fun borrarCasillas(){
 
 
 fun imprimirMatriz_TAB() {
-    val ancho = 4
+    val ancho = 7
     for (i in matrizNumerica.indices) {
         for (j in matrizNumerica[0].indices) {
             print(String.format("%" + ancho + "d", matrizNumerica[i][j]))

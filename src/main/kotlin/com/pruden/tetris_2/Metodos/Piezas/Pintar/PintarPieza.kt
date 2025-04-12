@@ -29,10 +29,11 @@ fun pintarPieza(pieza: Pieza) : IntArray{
                 } else {
                     if(forma[i][j] == Globales.NUMPIEZA_PICO){
                         pintarCasilla(Globales.COLOR_MANGO_PICO, (pieza.fila + i).toDouble(), (pieza.columna + j).toDouble())
+                        matrizNumerica[pieza.fila + i][pieza.columna + j] = Globales.NUMPIEZA_PICO
                     }else{
                         pintarCasilla(pieza.getColor(), (pieza.fila + i).toDouble(), (pieza.columna + j).toDouble())
+                        matrizNumerica[pieza.fila + i][pieza.columna + j] = pieza.getNumpieza()
                     }
-                    matrizNumerica[pieza.fila + i][pieza.columna + j] = pieza.getNumpieza()
                 }
             }
         }
