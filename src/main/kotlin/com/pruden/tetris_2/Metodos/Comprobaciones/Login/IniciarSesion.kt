@@ -6,6 +6,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.idJugador
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugadorConTodo
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.cLogin
+import com.pruden.tetris_2.Metodos.Comprobaciones.hashearContraConSAl
 import com.pruden.tetris_2.Metodos.Stages.cargarStagePrincipal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,37 +17,42 @@ fun iniciarSesionLogin(){
     with(cLogin){
         if(userInput.text.isNotBlank() && passInput.text.isNotBlank()){
             CoroutineScope(Dispatchers.IO).launch {
-                val respuesta = ApiCustom.jugadorService.iniciarSesion(
-                    LoginRequest(userInput.text, passInput.text)
-                )
+                val saltResponse = ApiCustom.jugadorService.getSaltDelUsuario(userInput.text)
+                if(saltResponse.isSuccessful){
 
-                when(respuesta.code()){
-                    200->{
-                        idJugador = respuesta.body()!!.get("id")!!.asInt
-                        println(idJugador)
+                    val respuesta = ApiCustom.jugadorService.iniciarSesion(
+                        LoginRequest(userInput.text, hashearContraConSAl(passInput.text, saltResponse.body()!!))
+                    )
 
-                        jugadorConTodo = ApiCustom.jugadorService.getDatosIniciarSesion(idJugador)
+                    println(respuesta)
 
-                        ControladorPrincipal.jugarOnline = true
-                        javafx.application.Platform.runLater {
-                            iniciarHeartbeatJugador()
-                            cargarStagePrincipal()
+                    when(respuesta.code()){
+                        200->{
+                            idJugador = respuesta.body()!!.get("id")!!.asInt
+                            println(idJugador)
+
+                            jugadorConTodo = ApiCustom.jugadorService.getDatosIniciarSesion(idJugador)
+
+                            ControladorPrincipal.jugarOnline = true
+                            javafx.application.Platform.runLater {
+                                iniciarHeartbeatJugador()
+                                cargarStagePrincipal()
+                            }
+                        }
+                        401->{
+                            javafx.application.Platform.runLater {
+                                errorLabel.text = "Contraseña incorrecta"
+                            }
+                        }
+                        409->{
+                            javafx.application.Platform.runLater {
+                                errorLabel.text = "Esa cuenta está online"
+                            }
                         }
                     }
-                    404->{
-                        javafx.application.Platform.runLater {
-                            errorLabel.text = "Usuario no encontrado"
-                        }
-                    }
-                    401->{
-                        javafx.application.Platform.runLater {
-                            errorLabel.text = "Contraseña incorrecta"
-                        }
-                    }
-                    409->{
-                        javafx.application.Platform.runLater {
-                            errorLabel.text = "Esa cuenta está online"
-                        }
+                }else{
+                    javafx.application.Platform.runLater {
+                        errorLabel.text = "Usuario no encontrado"
                     }
                 }
             }

@@ -42,4 +42,8 @@ interface JugadorService {
 
     @GET(ConstantesCustomAPI.RANKING_JUGADOR)
     suspend fun getRankingJugador(@Path("id") id: Int): Int
+
+    @FormUrlEncoded
+    @POST(ConstantesCustomAPI.SALT)
+    suspend fun getSaltDelUsuario(@Field("nombre") nombre: String): Response<String>
 }

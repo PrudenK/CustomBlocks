@@ -4,8 +4,13 @@ import java.security.MessageDigest
 import java.security.SecureRandom
 import java.util.Base64
 
-fun hashearContraConSAl(contra: String): String {
-    val salt = generarSal()
+fun hashearContraConSAl(contra: String, saltContra: String? = null): String {
+    val salt = if (saltContra != null) {
+        Base64.getDecoder().decode(saltContra)
+    } else {
+        generarSal()
+    }
+    println("sal $saltContra")
     val hashedPassword = hashPassword(contra, salt)
     val saltString = Base64.getEncoder().encodeToString(salt)
     return "$saltString:$hashedPassword"
