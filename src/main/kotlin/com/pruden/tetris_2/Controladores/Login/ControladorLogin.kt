@@ -13,6 +13,10 @@ import javafx.scene.control.PasswordField
 import javafx.scene.control.TextField
 import javafx.scene.layout.Pane
 import javafx.stage.Stage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.net.URL
 import java.sql.Connection
 import java.sql.Statement
@@ -40,6 +44,11 @@ class ControladorLogin : Initializable{
     }
 
     @FXML fun iniciarSesion(){
+        CoroutineScope(Dispatchers.Default).launch {
+            iniciarSesionB.isDisable = true
+            delay(2000)
+            iniciarSesionB.isDisable = false
+        }
         iniciarSesionLogin()
     }
 
