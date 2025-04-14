@@ -42,15 +42,13 @@ class ControladorHistorialPVP: ControladorGEN(), Initializable {
 
 
 
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.Default).launch {
             val partidas = ApiCustom.partidaService.getPartidasPVPporUsuario(ControladorPrincipal.jugadorConTodo!!.id)
 
-            println(partidas)
+            val partidasOrdenadas = partidas.sortedByDescending { it.fecha }
 
-            Platform.runLater{
-                for (p in partidas){
-                    datosPartidasPVP.add(p)
-                }
+            Platform.runLater {
+                datosPartidasPVP.setAll(partidasOrdenadas)
             }
 
             host.cellValueFactory = PropertyValueFactory("host")
