@@ -111,10 +111,7 @@ class ControladorTerminarPartidaPVP: ControladorGEN(), Initializable {
     }
 
     @FXML fun volver(){
-        Platform.runLater {
-            val c = nombreVisi.scene.window as Stage
-            c.close()
-        }// lo pongo así pq a veces no funciona de la manera clásica
+       stageTerminarPartidaPVP.close()
     }
 
     @FXML fun revancha(){

@@ -77,9 +77,6 @@ fun comprbarPerder(){
                                         "Vas ganando... \nEsperando resultado final",
                                         aceptarBtnNombre = "Esperar",
                                         cancelBtnNombre = "Salir",
-                                        onConfirmar = {
-                                            // Todo añadir botón salir
-                                        },
                                         onCancelar = {
                                             reiniciarValoresPVPaUI()
                                         }

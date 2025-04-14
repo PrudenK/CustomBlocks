@@ -108,12 +108,6 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                 }
 
             }
-            "hasGanado"->{
-                actualizarEstadoPVP()
-                ControladorTerminarPartidaPVP.resultado = "Ganas"
-                reiniciarValoresPVPaUI()
-                crearStage(Stages.TERMIANR_PARTIDA_PVP)
-            }
             "empate"->{
                 ControladorTerminarPartidaPVP.resultado = "Empate"
                 reiniciarValoresPVPaUI()
