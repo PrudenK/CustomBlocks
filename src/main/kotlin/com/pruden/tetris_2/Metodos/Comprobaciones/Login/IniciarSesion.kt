@@ -45,7 +45,7 @@ fun iniciarSesionLogin(){
                     }
                     409->{
                         javafx.application.Platform.runLater {
-                            errorLabel.text = "Esa cuenta está online."
+                            errorLabel.text = "Esa cuenta está online"
                         }
                     }
                 }
