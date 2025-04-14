@@ -33,6 +33,12 @@ class ControladorRegistrarse : Initializable{
         cRegistrarse = this
         arrastrarFun(paneLogin, stageLogin)
 
+        userInput.textProperty().addListener { _, _, newValue ->
+            if (newValue.length > 12) {
+                userInput.text = newValue.substring(0, 12)
+            }
+        }
+
         comboPais.items.addAll(Listas.LISTA_PAISES)
 
         Platform.runLater {
