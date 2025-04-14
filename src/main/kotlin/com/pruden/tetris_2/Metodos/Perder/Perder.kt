@@ -99,8 +99,6 @@ fun comprbarPerder(){
 
                         Resultado.INDEFINIDO -> {}
                     }
-                }else{
-                    crearStage(Stages.PERDER)
                 }
 
                 if(mostarDialogo){
