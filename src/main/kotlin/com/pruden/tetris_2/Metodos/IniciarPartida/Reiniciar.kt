@@ -12,6 +12,10 @@ import com.pruden.tetris_2.Metodos.DibujarTablero.cambioDeTablero
 import com.pruden.tetris_2.Metodos.Matriz.borrarCasillas
 import com.pruden.tetris_2.Metodos.Observables.cambiosTipoTablero
 import javafx.application.Platform
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 fun reiniciarPartida(){
     if (!ControladorPrincipal.animacionEnCurso) {
@@ -19,11 +23,14 @@ fun reiniciarPartida(){
         reiniciarLineasBorradas()
         ControladorPrincipal.tiempoCaidaPieza = ControladorPrincipal.TIEMPO_CAIDA_PIEZAS_INICIAL
 
-        Platform.runLater {
-            borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
-            borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
-            borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
-            borrarTableroSecundario(ControladorPrincipal.gcHold)
+        CoroutineScope(Dispatchers.Default).launch {
+            delay(250)
+            Platform.runLater {
+                borrarTableroSecundario(ControladorPrincipal.gcSiguiente1)
+                borrarTableroSecundario(ControladorPrincipal.gcSiguiente2)
+                borrarTableroSecundario(ControladorPrincipal.gcSiguiente3)
+                borrarTableroSecundario(ControladorPrincipal.gcHold)
+            }
         }
 
         ControladorPrincipal.cronometro.parar()
