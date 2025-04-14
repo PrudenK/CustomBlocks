@@ -1,6 +1,7 @@
 package com.pruden.tetris_2.Metodos.Stages
 
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
+import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Tetris
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
@@ -13,6 +14,8 @@ private val ALTO = 449.0
 fun cargarLogin(stage: Stage){
     val fxmlLoader = FXMLLoader(Tetris::class.java.getResource("Vistas/Login/vista_Login.fxml"))
     val scene = Scene(fxmlLoader.load(), ANCHO, ALTO)
+
+    stage.icons.add(deRutaAImagen("/Imagenes/Logos/logoCustomIcon.png"))
 
     ControladorLogin.stageLogin = stage
 

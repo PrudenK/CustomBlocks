@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Metodos.Stages
 
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin.Companion.stageLogin
 import com.pruden.tetris_2.Controladores.Login.ControladorRegistrarse
+import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Tetris
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
@@ -22,6 +23,8 @@ fun cargarStageRegistrarse(){
     stage.title = "¡Registrarse!"
     stage.scene = scene
     stage.initStyle(StageStyle.UNDECORATED)
+
+    stage.icons.add(deRutaAImagen("/Imagenes/Logos/logoCustomIcon.png"))
 
     stage.initModality(Modality.WINDOW_MODAL)
     stage.isResizable = false

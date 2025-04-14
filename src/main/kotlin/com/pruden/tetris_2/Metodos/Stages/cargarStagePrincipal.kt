@@ -2,6 +2,7 @@ package com.pruden.tetris_2.Metodos.Stages
 
 import com.pruden.tetris_2.Controladores.ControladorPrincipal
 import com.pruden.tetris_2.Controladores.Login.ControladorLogin
+import com.pruden.tetris_2.Metodos.Media.deRutaAImagen
 import com.pruden.tetris_2.Metodos.Teclado.moverPiezas
 import com.pruden.tetris_2.Metodos.Teclado.onKeyReleased
 import com.pruden.tetris_2.Tetris
@@ -21,6 +22,8 @@ fun cargarStagePrincipal(){
     val stage = Stage()
     val fxmlLoader = FXMLLoader(Tetris::class.java.getResource("Vistas/Principal/vistaTetris.fxml"))
     val scene = Scene(fxmlLoader.load(), ANCHO, ALTO)
+
+    stage.icons.add(deRutaAImagen("/Imagenes/Logos/logoCustomIcon.png"))
 
     stage.title = "¡CustomGame!"
     stage.scene = scene
