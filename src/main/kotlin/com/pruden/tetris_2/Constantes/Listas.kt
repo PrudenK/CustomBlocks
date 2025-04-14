@@ -5,8 +5,10 @@ import com.pruden.tetris_2.Piezas.*
 
 object Listas {
     val LISTA_VALORES_FILAS_TABLERO = listOf(14, 20, 32)
-    val LISTA_VALORES_COLUMNAS_TABLERO = listOf(8, 12, 20)
+    val LISTA_VALORES_COLUMNAS_TABLERO = listOf(8, 10, 20)
     val LISTA_VALORES_TAMA_CELDAS = intArrayOf(45, 33, 20)
+
+
 
     val LISTA_MODOS_DE_JUEGOS = listOf("Clásico", "Clásico v2", "All in", "Álgebra", "RapidO", "Memory", "MemoryX", "MemoryY")
 

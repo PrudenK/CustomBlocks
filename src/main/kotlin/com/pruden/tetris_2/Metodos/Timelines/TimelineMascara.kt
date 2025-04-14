@@ -17,16 +17,16 @@ fun timelineMascara(lineas : Int){
             borrarMascara()
         }),
         KeyFrame(Duration.seconds(0.5 * lineas), { _: ActionEvent? ->
-            if(tipoTableroPrin == 2) ponerMascaraTableroTIPO2()
-            if(tipoTableroPrin == 3) ponerMascaraTableroTIPO3()
-            if(tipoTableroPrin == 4) ponerMascaraTableroTIPO4()
+            when(tipoTableroPrin){
+                2 ->  ponerMascaraTableroTIPO2()
+                3 ->  ponerMascaraTableroTIPO3()
+                4 ->  ponerMascaraTableroTIPO4()
+            }
         })
     )
     timelineMascara.cycleCount = 1
     timelineMascara.play()
 }
-
-
 
 fun borrarMascara(){
     gcMascara.clearRect(0.0,0.0, cPrin.canvasMascara.width,cPrin.canvasMascara.height)

@@ -37,8 +37,8 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
 
     cambairUIaPVP(true)
 
-
-
+    ControladorPrincipal.esperarResolucionPVP = false
+    elRivarHaPerdido = false
 
 
     val idJugadorPropio = jugadorConTodo!!.id

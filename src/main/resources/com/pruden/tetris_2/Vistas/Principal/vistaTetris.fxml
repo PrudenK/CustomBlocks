@@ -224,7 +224,7 @@
          </Label>
       </children>
    </Pane>
-   <Label fx:id="mensajeRivalNivel" layoutX="27.0" layoutY="685.0" prefHeight="44.0" prefWidth="151.0" text="¡PrudenPrud sube de nivel!" textAlignment="CENTER" textFill="#e9e8e8" visible="false" wrapText="true">
+   <Label fx:id="mensajeRivalNivel" layoutX="183.0" layoutY="784.0" prefHeight="44.0" prefWidth="151.0" text="¡PrudenPrud sube de nivel!" textAlignment="CENTER" textFill="#e9e8e8" visible="false" wrapText="true">
       <font>
          <Font name="Liberation Mono Bold" size="16.0" />
       </font>
