@@ -43,6 +43,11 @@ fun iniciarSesionLogin(){
                             errorLabel.text = "Contraseña incorrecta"
                         }
                     }
+                    409->{
+                        javafx.application.Platform.runLater {
+                            errorLabel.text = "Esa cuenta está online."
+                        }
+                    }
                 }
             }
         }else{
