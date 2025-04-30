@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact name="Maven__com_squareup_retrofit2_converter-gson_2_9_0">
+    <output-path>$PROJECT_DIR$/out/artifacts/Maven__com_squareup_retrofit2_converter_gson_2_9_0</output-path>
+    <root id="root" />
+  </artifact>
+</component>

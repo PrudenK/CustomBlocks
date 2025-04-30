@@ -207,7 +207,7 @@ fun cargarPartidaGuardada(p : PartidaGuardada){
     }
 }
 
-fun mapearLetrasAPiezasGuardadas(letras: String): ArrayList<Pieza> {
+private fun mapearLetrasAPiezasGuardadas(letras: String): ArrayList<Pieza> {
     val columna = Globales.COLUMNAS / 2
     val piezas = ArrayList<Pieza>()
 

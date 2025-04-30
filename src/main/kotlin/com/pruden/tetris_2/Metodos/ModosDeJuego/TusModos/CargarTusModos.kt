@@ -32,7 +32,7 @@ import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.cargarPosicionesPiezasModo
 import com.pruden.tetris_2.Metodos.Timelines.borrarMascara
 
 fun cargarCambiosTusModos(modo : ModoDeJuegoAPI){
-    val listaIndicesAjustadosDisePiezas = listOf(0,3,4,5,6)
+    val listaIndicesAjustadosDisePiezas = listOf(0,3,4,5,6,8)
     with(modo){
         listaPiezasSeleccionadas = cargarPosicionesPiezasModos(arraPiezas())
         TIEMPO_CAIDA_PIEZAS_INICIAL = tiempocaidainicial

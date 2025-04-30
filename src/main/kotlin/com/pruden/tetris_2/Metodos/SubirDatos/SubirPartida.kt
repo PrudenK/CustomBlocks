@@ -15,6 +15,11 @@ fun subirDatosPartida(){
             modo = "Custom"
         }
 
+        if(ControladorPrincipal.cPrin.labelModo.text.contains("Campaña")){
+            modo = "Campaña"
+        }
+
+
         val partida = Partida(
             idJugador = ControladorPrincipal.idJugador,
             modo = modo,

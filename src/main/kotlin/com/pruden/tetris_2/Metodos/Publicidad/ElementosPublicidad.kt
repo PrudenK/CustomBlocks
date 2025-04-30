@@ -22,6 +22,7 @@ fun abrirBanner(web: String, id: Int = -1){
 fun obtenerAnuncios() {
     CoroutineScope(Dispatchers.IO).launch{
         ApiPublicidad.anuncios = ApiPublicidad.publicidadService.getAnuncios()
+        println(ApiPublicidad.anuncios)
     }
 }
 

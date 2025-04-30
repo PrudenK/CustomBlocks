@@ -1,11 +1,12 @@
 package com.pruden.tetris_2.Controladores.Perfil
 
-import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.CargarDatosPerfil.*
 import com.pruden.tetris_2.Constantes.Listas
 import com.pruden.tetris_2.Constantes.Stages
 import com.pruden.tetris_2.Controladores.ControladorGEN
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.cPrin
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.timelinePartida
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosPartidas
+import com.pruden.tetris_2.Metodos.CargarDatosDeLaAPI.cargarDatosUsuarioPerfil
 import com.pruden.tetris_2.Metodos.Stages.ClaseStage
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.Metodos.SubirDatos.subirImagenPerfilADB

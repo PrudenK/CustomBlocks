@@ -7,6 +7,7 @@ import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.jugarOnl
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.partidaEnCurso
 import com.pruden.tetris_2.Controladores.ControladorPrincipal.Companion.piezaActual
 import com.pruden.tetris_2.Metodos.Logros.completarLogro
+import com.pruden.tetris_2.Metodos.Matriz.imprimirMatriz_TAB
 import com.pruden.tetris_2.Piezas.Pieza_Z_v3
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline
@@ -47,6 +48,7 @@ fun moverPiezas(evento: KeyEvent) {
                 evento.code == KeyCode.SPACE -> moverEspacio(evento)
                 evento.code == KeyCode.H -> holdear()
             }
+            imprimirMatriz_TAB()
         } catch (e: Exception) {
             println("error")
         }

@@ -44,7 +44,7 @@ class ControladorJugadorBuscarPartida {
                 nivel.text = "Nivel: ${jugador.nivel}"
                 modoLabel.text = jugador.modo
 
-                if(jugador.foto != null){
+                if(jugador.foto != "Sin foto"){
                     fotoPerfil.image = Image("${ConstantesCustomAPI.PATH_CUSTOM}${jugador.foto}", true)
                 }else{
                     fotoPerfil.image = deRutaAImagen("/Imagenes/Logos/Imagen_perfil_deff.jpg")

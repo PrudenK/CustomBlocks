@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="Maven__com_google_code_gson_gson_2_8_9">
+    <output-path>$PROJECT_DIR$/out/artifacts/Maven__com_google_code_gson_gson_2_8_9</output-path>
+    <root id="root">
+      <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />
+    </root>
+  </artifact>
+</component>

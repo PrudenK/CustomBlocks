@@ -1,0 +1,57 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CustomBlocks:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CustomBlocks_jar</output-path>
+    <root id="archive" name="Tetris_2.jar">
+      <element id="module-output" name="Tetris_2" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.8.22/kotlin-stdlib-1.8.22.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/11.1.2/controlsfx-11.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.6.0/formsfx-core-11.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/synedra/validatorfx/0.4.0/validatorfx-0.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-javafx:1.7.3" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.26.1-eap13" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:0.26.1-eap13" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3" />
+      <element id="library" level="project" name="Maven: com.dlsc.formsfx:formsfx-core:11.6.0" />
+      <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.21.9" />
+      <element id="library" level="project" name="Maven: com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2" />
+      <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.33" />
+      <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:4.9.3" />
+      <element id="library" level="project" name="Maven: com.squareup.okio:okio:2.8.0" />
+      <element id="library" level="project" name="Maven: com.squareup.retrofit2:retrofit:2.9.0" />
+      <element id="library" level="project" name="Maven: net.synedra:validatorfx:0.4.0" />
+      <element id="library" level="project" name="Maven: org.controlsfx:controlsfx:11.1.2" />
+      <element id="library" level="project" name="Maven: org.java-websocket:Java-WebSocket:1.5.3" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.8.22" />
+      <element id="library" level="project" name="Maven: org.jetbrains.kotlinx:atomicfu-common:0.11.7-eap13" />
+      <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
+      <element id="library" level="project" name="Maven: org.json:json:20210307" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:17.0.6" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:linux:17.0.6" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:17.0.6" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:linux:17.0.6" />
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-media:21.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-media:linux:21.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:linux:17.0.6" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:17.0.6" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:linux:17.0.6" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:17.0.6" />
+      <element id="artifact" artifact-name="Maven__com_google_code_gson_gson_2_8_9" />
+      <element id="artifact" artifact-name="Maven__com_squareup_retrofit2_converter-gson_2_9_0" />
+    </root>
+  </artifact>
+</component>

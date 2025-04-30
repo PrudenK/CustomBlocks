@@ -26,6 +26,11 @@ object CrearPartidaEmisor {
         // Establecer conexión WebSocket
         client.newWebSocketBuilder().buildAsync(uri, object : WebSocket.Listener {
             override fun onOpen(webSocket: WebSocket) {
+                if(jugador.imagen == null){
+                    jugador.imagen = "Sin foto"
+                }
+
+
                 val json = JSONObject()
                     .put("modo", modo)
                     .put("opcion", opcion)
