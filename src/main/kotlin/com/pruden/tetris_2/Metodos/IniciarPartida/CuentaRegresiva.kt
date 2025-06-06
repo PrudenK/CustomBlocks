@@ -24,9 +24,9 @@ fun cuentaAtras(){
 
     val timeline = Timeline( // TODO cambiar tiempo
         crearFrame(0.0, num3, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
-        crearFrame(1.0/10, num2, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
-        crearFrame(2.0/10, num1, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
-        crearFrame(3.0/10, null, "/Musica/Efectos/cuenta_final.mp3", cPrin.cuentaRegresivaIMG)
+        crearFrame(1.0, num2, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
+        crearFrame(2.0, num1, "/Musica/Efectos/cuenta_regresiva_3_2_1.mp3", cPrin.cuentaRegresivaIMG),
+        crearFrame(3.0, null, "/Musica/Efectos/cuenta_final.mp3", cPrin.cuentaRegresivaIMG)
     )
     timeline.cycleCount = 1
 

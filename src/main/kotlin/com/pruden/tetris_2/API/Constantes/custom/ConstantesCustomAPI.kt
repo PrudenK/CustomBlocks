@@ -1,16 +1,18 @@
 package com.pruden.tetris_2.API.Constantes.custom
 
 object ConstantesCustomAPI {
-    const val PATH_CUSTOM = "http://localhost:8088"
+    var PATH_CUSTOM: String = System.getProperty("serverIp")?.let {
+        "http://$it:8088"
+    } ?: "http://localhost:8088"
 
     //Clan por defecto
-    const val IMAGEN_CLAN_DEFAULT = "$PATH_CUSTOM/uploads/clanes/fotoPerfilClan.jpg"
+    val IMAGEN_CLAN_DEFAULT = "$PATH_CUSTOM/uploads/clanes/fotoPerfilClan.jpg"
 
     //Imagen corona
-    const val IMAGEN_CORONA = "$PATH_CUSTOM/uploads/images/corona.png"
+    val IMAGEN_CORONA = "$PATH_CUSTOM/uploads/images/corona.png"
 
     //Imagen online
-    const val IMAGEN_ONLINE = "$PATH_CUSTOM/uploads/images/online.png"
+    val IMAGEN_ONLINE = "$PATH_CUSTOM/uploads/images/online.png"
 
     //Jugadores
     const val TODOS_JUGADORES = "/jugadores"

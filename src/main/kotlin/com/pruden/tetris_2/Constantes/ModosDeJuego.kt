@@ -3,7 +3,7 @@ package com.pruden.tetris_2.Constantes
 import com.pruden.tetris_2.Metodos.ModosDeJuego.Modos.ModoDeJuego
 
 object ModosDeJuego {
-    val CLASICO = ModoDeJuego("Clásico",intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 1,
+    val CLASICO = ModoDeJuego("Clásico",intArrayOf(0, 1, 2, 3, 4, 5, 6), 1500, 10,
         100, false, -1, true, 1, true, 1,false)
     val CLASICO_V2 = ModoDeJuego("Clásico v2",intArrayOf(10, 12, 13, 17, 18, 22, 30), 1500, 10,
         100, false, -1, true, 1, true, 1, false)
