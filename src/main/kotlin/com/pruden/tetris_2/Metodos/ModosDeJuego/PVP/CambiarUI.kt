@@ -51,4 +51,6 @@ fun cambairUIaPVP(pvp : Boolean){
     objPuntuacionBajar = ""
     tiempoObj = ""
     hasPerdido = false
+
+    cPrin.cronometroLabel.text = "0:00:00"
 }

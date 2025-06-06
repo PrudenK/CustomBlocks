@@ -113,38 +113,48 @@
                 </Label>
 
                 <!-- Segunda fila -->
-                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="60.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="40.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../Imagenes/Piezas/Pieza_Z.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="85.0" layoutY="300.0" text="Pieza Z" textFill="#e9e8e8">
+                <Label layoutX="65.0" layoutY="300.0" text="Pieza Z" textFill="#e9e8e8">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
 
-                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="230.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="171.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../Imagenes/Piezas/Pieza_S.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="255.0" layoutY="300.0" text="Pieza S" textFill="#e9e8e8">
+                <Label layoutX="196.0" layoutY="300.0" text="Pieza S" textFill="#e9e8e8">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
 
-                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="400.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="311.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../Imagenes/Piezas/Pieza_T.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="425.0" layoutY="300.0" text="Pieza T" textFill="#e9e8e8">
+                <Label layoutX="336.0" layoutY="300.0" text="Pieza T" textFill="#e9e8e8">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="452.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Imagenes/Piezas/Pieza_J.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="468.0" layoutY="303.0" text="Pieza J" textFill="#e9e8e8">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
 

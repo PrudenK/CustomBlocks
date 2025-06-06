@@ -25,7 +25,7 @@
             </columns>
         </TableView>
         <Button layoutX="260.0" layoutY="478.0" mnemonicParsing="false" onAction="#volver" prefWidth="140.0" text="Vovler" />
-      <Label alignment="CENTER" layoutY="23.0" prefWidth="660.0" text="Ranking de los mejores jugadores" textAlignment="CENTER" textFill="#e9e8e8">
+      <Label alignment="CENTER" layoutY="23.0" prefWidth="660.0" text="Historial partidas PVP" textAlignment="CENTER" textFill="#e9e8e8">
          <font>
             <Font name="Liberation Mono Bold" size="26.0" />
          </font>

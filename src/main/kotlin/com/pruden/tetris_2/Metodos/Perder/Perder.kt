@@ -70,6 +70,7 @@ fun comprbarPerder(){
                                 mostarDialogo = false
                                 esperarResolucionPVP = true
                                 if (ControladorPrincipal.elRivarHaPerdido) {
+                                    reiniciarValoresPVPaUI()
                                     ControladorTerminarPartidaPVP.resultado = "Ganas"
                                     crearStage(Stages.TERMIANR_PARTIDA_PVP)
                                 } else {

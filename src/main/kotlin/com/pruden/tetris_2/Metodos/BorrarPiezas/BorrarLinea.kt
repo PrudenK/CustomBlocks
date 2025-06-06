@@ -12,6 +12,7 @@ import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.Resultado
 import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.actualizarEstadoPVP
 import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.compararJugadoresDesdeUI
 import com.pruden.tetris_2.Metodos.Matriz.pintarMatriz
+import com.pruden.tetris_2.Metodos.ModosDeJuego.PVP.reiniciarValoresPVPaUI
 import com.pruden.tetris_2.Metodos.Stages.crearStage
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 
@@ -53,6 +54,8 @@ fun borrarLinea(){
                 println(resultado.toString())
                 if(resultado == Resultado.GANA_EL_JUGADOR){
                     PartidaEnCursoEmisor.mensajeEstandar("perder")
+                    reiniciarValoresPVPaUI()
+
                     ControladorTerminarPartidaPVP.resultado = "Ganas"
                     crearStage(Stages.TERMIANR_PARTIDA_PVP)
                 }

@@ -21,10 +21,7 @@ import com.pruden.tetris_2.Piezas.*
 import com.pruden.tetris_2.WebSocket.BuscarPartida.DatosPartidaPVP
 import com.pruden.tetris_2.WebSocket.PartidaEnCurso.PartidaEnCursoEmisor
 import javafx.application.Platform
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
     if(jugadorConTodo!!.id == datosPartidaPVP.creador.id){
@@ -65,6 +62,8 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                 mostrarMensajeConAnimacion("¡${rival.nombre} sube de nivel!", cPrin.mensajeRivalNivel)
             }
             "perder"->{
+                println("11111111111")
+
                 CoroutineScope(Dispatchers.IO).launch {
                     delay(150)
 
@@ -81,7 +80,6 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                                 dialogoAccionesActual?.let {
                                     if (it.isShowing) {
                                         it.close()
-                                        println("✅ Diálogo cerrado antes de mostrar resultado")
                                     }
                                     dialogoAccionesActual = null
                                 }
@@ -92,6 +90,7 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                             when (resultado) {
                                 Resultado.GANA_EL_JUGADOR -> {
                                     ControladorTerminarPartidaPVP.resultado = "Ganas"
+                                    println(222222222222222222)
                                 }
                                 Resultado.GANA_EL_OTRO -> {
                                     ControladorTerminarPartidaPVP.resultado = "Pierdes"
@@ -101,12 +100,24 @@ fun reiniciarPartidaParaPVP(datosPartidaPVP: DatosPartidaPVP){
                                 }
                                 else -> {}
                             }
+
+                            println(44444444)
+                            println(resultado)
                             reiniciarValoresPVPaUI()
                             crearStage(Stages.TERMIANR_PARTIDA_PVP)
                         }
                     }
                 }
 
+            }
+            "hasGanado"->{
+                if(!ControladorPrincipal.esperarResolucionPVP){
+                    ControladorTerminarPartidaPVP.resultado = "Ganas"
+                    reiniciarValoresPVPaUI()
+                    crearStage(Stages.TERMIANR_PARTIDA_PVP)
+                    println(333333333333)
+
+                }
             }
             "empate"->{
                 ControladorTerminarPartidaPVP.resultado = "Empate"
