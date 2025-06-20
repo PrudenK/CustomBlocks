@@ -75,12 +75,12 @@ Y aquí podemos ver los **diseños de las piezas**
   <img src="asets/dise_piezas.png" />
 </div>
 
-Funcionamiento más detallado de las piezas en `asets/Piezas.pdf`
+Funcionamiento más detallado de las piezas en [Piezas.pdf](./asets/Piezas.pdf)
 
 ### 🧱 Tablero
 
 Tanto el tablero como las piezas funcionan con matrices internas de números.
-Para más información al respecto `asets/Tablero.pdf`
+Para más información al respecto en [Tablero.pdf](./asets/Tablero.pdf)
 
 ### 💾 Base de datos
 
